@@ -2,23 +2,14 @@
 
 import React from 'react';
 import { Backdrop } from './Backdrop';
-import { Particles } from './Particles';
-import { Stage } from './Stage';
-import { PillarsRing } from './PillarsRing';
 import { CameraRig } from './CameraRig';
-import { Bot } from './Bot';
-import { Drone } from './Drone';
 
 export const SceneManager: React.FC = () => {
+  // Ultra-clean 3D scene: No dark cylinders, no noisy rotating stages, no dirty particle storms
   return (
     <>
       <CameraRig />
       <Backdrop />
-      <Particles />
-      <Stage />
-      <PillarsRing />
-      <Bot />
-      <Drone />
     </>
   );
 };
