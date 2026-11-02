@@ -67,13 +67,20 @@ export default async function SolutionPage({ params }: SolutionPageProps) {
             </div>
 
             {/* Quick Actions */}
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
+              <Link
+                href={`/solution/${solution.slug}/demo`}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-[#0070F2] to-[#00B8F5] text-white shadow-lg shadow-[#0070F2]/30 hover:brightness-110 transition"
+              >
+                <span>Launch 3D Interactive Walkthrough</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
               {solution.demoUrl && (
                 <a
                   href={solution.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-sap-blue text-white shadow-md hover:bg-sap-darkBlue transition"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#102A5C]/40 border border-white/10 text-white hover:bg-[#102A5C]/70 transition"
                 >
                   <span>Open Live Application</span>
                   <ExternalLink className="w-3.5 h-3.5" />
