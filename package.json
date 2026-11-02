@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "vitest run",
     "content:check": "npx tsx scripts/validate-content.ts",
     "prebuild": "npm run content:check",
     "assets:placeholders": "npx tsx scripts/make-placeholders.ts"
@@ -44,6 +45,7 @@
     "postcss": "8.4.49",
     "tailwindcss": "3.4.16",
     "tsx": "4.23.15",
-    "typescript": "5.7.2"
+    "typescript": "5.7.2",
+    "vite": "8.3.5"
   }
 }

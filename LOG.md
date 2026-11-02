@@ -140,3 +140,20 @@ Standard: Master Build Prompt v1.0 (Strict Antigravity Protocol)
   - `npm run build` -> Code 0 (All 79 static pages generated)
 - **Known Issues / Risks**:
   - None.
+
+---
+
+## Phase 6: WebXR, Big-Screen & Testing
+- **Date**: 2026-11-02
+- **Status**: Completed. Verified with `npm test` (5/5 tests passed) and `npm run build` (0 errors across 79 static routes).
+- **Files Created/Touched**:
+  - `tests/content.test.ts`: Vitest suite validating Site, Pillars, Solutions catalog, all 28 8-card scripts, and flagship PODZO production content.
+  - `vitest.config.ts`: Vitest test runner configuration.
+  - `package.json`: Pinned `vite@8.3.5` and added `"test": "vitest run"`.
+  - `components/AppProvider.tsx`: Added 3s idle cursor auto-hide for Big-Screen and kiosk modes (`?kiosk=1` or width >= 2560), autoplay defaulting.
+  - `components/hud/VRButton.tsx`: Added WebXR VR session initiation using `@react-three/xr` store.
+- **Commands Run**:
+  - `npm test` -> Code 0 (5/5 tests passed in 77ms)
+  - `npm run build` -> Code 0 (All 79 static pages generated)
+- **Known Issues / Risks**:
+  - None.
