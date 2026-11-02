@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { AppProvider } from '@/components/AppProvider';
-import ChibiMascot from '@/components/mascot/ChibiMascot';
+import { Director } from '@/components/mascot/Director';
 
 export const metadata: Metadata = {
   title: 'AIS Experience Centre — Enterprise SAP BTP, AI & SAC Portfolio',
@@ -19,8 +19,8 @@ export default function RootLayout({
       <body className="antialiased min-h-screen bg-[#050E22] text-[#EAF2FF] overflow-x-hidden">
         <AppProvider>
           {children}
-          {/* Global Interactive Chibi Lead Architect Mascot */}
-          <ChibiMascot />
+          {/* Global Chibi Lead Architect Director */}
+          <Director />
         </AppProvider>
       </body>
     </html>

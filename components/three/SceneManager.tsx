@@ -6,6 +6,8 @@ import { Particles } from './Particles';
 import { Stage } from './Stage';
 import { PillarsRing } from './PillarsRing';
 import { CameraRig } from './CameraRig';
+import { Bot } from './Bot';
+import { Drone } from './Drone';
 
 export const SceneManager: React.FC = () => {
   return (
@@ -15,6 +17,8 @@ export const SceneManager: React.FC = () => {
       <Particles />
       <Stage />
       <PillarsRing />
+      <Bot />
+      <Drone />
     </>
   );
 };

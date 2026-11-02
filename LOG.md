@@ -86,3 +86,19 @@ Standard: Master Build Prompt v1.0 (Strict Antigravity Protocol)
   - `npm run build` -> Code 0 (All 17 static pages compiled cleanly)
 - **Known Issues / Risks**:
   - None.
+
+---
+
+## Phase 3: Bot & Drone (Mascot Guide & Cinematic Drop-in)
+- **Date**: 2026-11-02
+- **Status**: Completed. Verified with `npm run build` (0 errors).
+- **Files Created/Touched**:
+  - `components/three/Drone.tsx`: Cartoon quadcopter mesh with 4 carbon-fiber spinning rotor blades, glowing cyan sensor underbelly ring, visor, retractable claw, and 3-stage cinematic drop-in sequence (`hovering` -> `dropping` -> `lifting` -> `hidden`) with audio triggers (`drone_arrive`, `drone_drop`, `drone_leave`).
+  - `components/three/Bot.tsx`: 3D Lead Architect mascot bot on stage with shadow decal, dynamic sprite texture switching across states (`idle`, `point`, `explain`, `celebrate`), and breathing/celebration animations.
+  - `components/three/SceneManager.tsx`: Mounted Bot and Drone into the continuous WebGL scene.
+  - `components/mascot/Director.tsx`: DOM Director speech bubble with typewriter effect, Web Audio API procedural bot chirps, minimize toggle, and user agency switcher (`[ Guide: ON | Tour Only | OFF ]`).
+  - `app/layout.tsx`: Hooked Director into the root layout.
+- **Commands Run**:
+  - `npm run build` -> Code 0 (All 17 static pages compiled cleanly)
+- **Known Issues / Risks**:
+  - None.
