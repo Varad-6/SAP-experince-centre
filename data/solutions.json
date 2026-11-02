@@ -1,0 +1,502 @@
+[
+  {
+    "slug": "podzo",
+    "name": "PODZO",
+    "tagline": "AI-Powered Enterprise Logistics Execution & Siding Dispatch",
+    "pillar": 2,
+    "pillarName": "BTP Custom Applications",
+    "status": "live",
+    "team": "Logistics & Transport Execution",
+    "lead": "Varad & Logistics Lead",
+    "visibility": "client",
+    "useCase": "Autonomous siding dispatch, weighbridge tare/gross match, and Proof-of-Delivery across the Order-to-Cash (O2C) lifecycle.",
+    "problem": [
+      "Manual railcar siding allocation causes congestion and rail demurrage penalties.",
+      "Weighbridge paper slips and physical POD delivery notes take 4-7 days to be manually verified and keyed into SAP.",
+      "Discrepancies between physical dispatch gross weight and sales orders delay customer billing and trigger payment disputes."
+    ],
+    "solution": [
+      "Autonomous Siding Dispatch: Dynamically allocates siding capacity based on active S/4HANA Sales Orders (VA03).",
+      "Computer Vision OCR: Extracts stamps, signatures, and tare/gross weights from physical PODs with 99.2% extraction accuracy.",
+      "Deterministic 3-Way Match: Automatically cross-checks weighbridge data against outbound delivery notes (VL03N) and triggers instant MIRO settlement."
+    ],
+    "flow": [
+      {
+        "step": "01",
+        "title": "Sales Order Dispatch Trigger",
+        "description": "Active S/4HANA Sales Order (#2318, #2322) is matched against transporter allocation and digital siding slot."
+      },
+      {
+        "step": "02",
+        "title": "Weighbridge Vision OCR",
+        "description": "Live camera and document OCR extracts vehicle license, tare/gross weight, and signed delivery confirmation."
+      },
+      {
+        "step": "03",
+        "title": "Autonomous MIRO Settlement",
+        "description": "Tolerance engine validates weight and triggers touchless invoice settlement in SAP S/4HANA."
+      }
+    ],
+    "sapTouchpoints": ["SAP SD (VA03)", "Logistics (VL03N)", "Billing (VF01)", "Settlement (MIRO)"],
+    "heroKpi": {
+      "value": "<30 Secs",
+      "label": "Cycle Time Compression",
+      "description": "Proof-of-delivery reconciliation compressed from 4 days to under 30 seconds."
+    },
+    "techStack": ["SAP BTP Cloud Foundry", "Node.js CAP", "Vision OCR", "SAP Build Work Zone", "REST APIs"],
+    "prerequisites": ["Cloud Foundry Runtime", "Destination Service", "SAP S/4HANA Cloud / On-Premise", "SAP Build Work Zone"],
+    "demoUrl": "https://sap-btp-ais-d0a7p7v8.launchpad.cfapps.eu30.hana.ondemand.com/site?siteId=a70e83a1-241a-44ba-9f8e-5a760483a8d2#podzone-dispatch",
+    "repoUrl": "https://github.com/Varad-6/SAP-experince-centre",
+    "docsUrl": "/docs/podzo"
+  },
+  {
+    "slug": "invoice-decision-intelligence",
+    "name": "Invoice Decision Intelligence",
+    "tagline": "Cognitive S/4HANA Intake, Validation & Finance Decision Support",
+    "pillar": 2,
+    "pillarName": "BTP Custom Applications",
+    "status": "live",
+    "team": "Finance & P2P Intelligence",
+    "lead": "Finance Lead",
+    "visibility": "client",
+    "useCase": "Eliminating manual invoice verification latency, 3-way discrepancy bottlenecks, and settlement risks across multi-channel procurement.",
+    "problem": [
+      "Accounts payable teams are inundated with multi-channel invoices (PDF, EDI, supplier portal, scanned paper).",
+      "Line-item discrepancies against purchase orders require extensive manual back-and-forth between buyers and suppliers.",
+      "Statutory tax code mismatches lead to lost input tax credits and regulatory compliance audit penalties."
+    ],
+    "solution": [
+      "Multi-Channel Ingestion: Normalizes invoices from email, EDI, and portal into a unified canonical JSON schema.",
+      "Deterministic Context Binding: Live validation against S/4HANA purchasing org, vendor tax IDs, and payment terms.",
+      "Cognitive Exception Routing: Categorizes price vs. quantity variances and routes edge breaks directly to designated buyers."
+    ],
+    "flow": [
+      {
+        "step": "01",
+        "title": "Cognitive Multi-Channel Intake",
+        "description": "Extracts header, line items, tax rates, and bank details from heterogeneous invoice formats."
+      },
+      {
+        "step": "02",
+        "title": "Tolerance & Compliance Engine",
+        "description": "Validates line prices against S/4HANA PO conditions within contracted variance buffers."
+      },
+      {
+        "step": "03",
+        "title": "Touchless Posting / Approval",
+        "description": "Touchless posting to SAP FI-AP or routing to interactive manager approval dashboard."
+      }
+    ],
+    "sapTouchpoints": ["SAP MM (ME23N)", "FI-AP (FB60)", "Tax Compliance", "Vendor Master (BP)"],
+    "heroKpi": {
+      "value": "85%",
+      "label": "Touchless Invoice Posting",
+      "description": "85% of standard procurement invoices post directly without human touch."
+    },
+    "techStack": ["SAP BTP Cloud Foundry", "AI Core Vision OCR", "SAP CAP", "SAP Fiori UI5"],
+    "prerequisites": ["Cloud Foundry Runtime", "Destination Service", "SAP AI Core", "SAP S/4HANA FI-AP"],
+    "demoUrl": "/demos/invoice-decision",
+    "repoUrl": "https://github.com/Varad-6/SAP-experince-centre",
+    "docsUrl": "/docs/invoice-decision"
+  },
+  {
+    "slug": "reconly",
+    "name": "RECONLY",
+    "tagline": "AI-Powered Enterprise Vendor Reconciliation (P2P)",
+    "pillar": 2,
+    "pillarName": "BTP Custom Applications",
+    "status": "live",
+    "team": "Procure-to-Pay Automation",
+    "lead": "P2P Lead",
+    "visibility": "client",
+    "useCase": "Automating supplier statement intake, discrepancy categorization, and autonomous MIRO settlement in SAP S/4HANA.",
+    "problem": [
+      "Vendor statement reconciliation is performed manually on Excel spreadsheets under month-end time pressure.",
+      "Missing invoices, timing differences, and disputed debit notes remain undetected until vendors hold credit.",
+      "Discrepancies lead to duplicate vendor payments or forfeited early-payment cash discounts."
+    ],
+    "solution": [
+      "Universal Statement Parser: Ingests vendor statements in PDF, Excel, and scan formats regardless of layout variation.",
+      "Automated Line-Item Matcher: Matches statement transactions against live SAP S/4HANA open items (BSEG/BSAK).",
+      "Discrepancy Categorization: Automatically flags missing invoices, credit note disputes, and timing lags."
+    ],
+    "flow": [
+      {
+        "step": "01",
+        "title": "Statement Ingestion & OCR",
+        "description": "Vision OCR extracts line items, invoice numbers, currency, and running balances from statements."
+      },
+      {
+        "step": "02",
+        "title": "Sub-Ledger Reconciliation",
+        "description": "High-speed matching engine reconciles vendor ledger against internal SAP AP items."
+      },
+      {
+        "step": "03",
+        "title": "Autonomous Resolution",
+        "description": "Triggers MIRO settlement for verified lines and notifies supplier of missing invoices."
+      }
+    ],
+    "sapTouchpoints": ["SAP P2P", "FI-AP (BSEG)", "Vendor Ledger", "Settlement (MIRO)"],
+    "heroKpi": {
+      "value": "14d → 2h",
+      "label": "Month-End Acceleration",
+      "description": "Vendor statement reconciliation cycle compressed from 14 days to under 2 hours."
+    },
+    "techStack": ["SAP BTP Cloud Foundry", "Vision OCR", "Node.js CAP", "SAP Fiori Elements"],
+    "prerequisites": ["Cloud Foundry Runtime", "Destination Service", "SAP S/4HANA"],
+    "demoUrl": "/demos/reconly",
+    "repoUrl": "https://github.com/Varad-6/SAP-experince-centre",
+    "docsUrl": "/docs/reconly"
+  },
+  {
+    "slug": "product-cost-simulator",
+    "name": "Product Cost Simulator",
+    "tagline": "Discrete Manufacturing Cost Engine & Margin-Based Pricing",
+    "pillar": 2,
+    "pillarName": "BTP Custom Applications",
+    "status": "live",
+    "team": "Manufacturing & Presales",
+    "lead": "Manufacturing Lead",
+    "visibility": "client",
+    "useCase": "Live S/4HANA BOM explosion, deterministic 3M Cost Engine (COGM), and real-time margin simulation for presales bids.",
+    "problem": [
+      "Costing complex discrete manufacturing tenders with multi-tier BOMs takes 3-5 days across engineering and finance.",
+      "Fluctuating commodity raw material prices result in bidding on outdated cost benchmarks.",
+      "Spreadsheet calculations lack S/4HANA governance, creating risk of winning contracts that deliver negative EBITDA."
+    ],
+    "solution": [
+      "Recursive BOM Explosion: Dynamically extracts multi-level Bill of Materials and routing operations directly from SAP S/4HANA.",
+      "Deterministic 3M Engine: Computes Material (gross/scrap), Machine (work center rates), and Manpower labor costs in seconds.",
+      "Margin Sensitivity Simulation: Live slider interface simulating bid profitability under changing raw material costs."
+    ],
+    "flow": [
+      {
+        "step": "01",
+        "title": "Tender Intake & Mapping",
+        "description": "Uploads RFP specification; maps required technical components to S/4HANA material masters."
+      },
+      {
+        "step": "02",
+        "title": "3M Cost Engine Calculation",
+        "description": "Calculates direct materials, scrap allowances, machine capacity, and overhead surcharges in seconds."
+      },
+      {
+        "step": "03",
+        "title": "Commercial Quotation Push",
+        "description": "Generates auditable techno-commercial quotation and pushes approved bid to SAP SD."
+      }
+    ],
+    "sapTouchpoints": ["SAP PP (CS03)", "CO-PC (CK11N)", "MM (MM03)", "SD Quotation (VA21)"],
+    "heroKpi": {
+      "value": "72h → 45s",
+      "label": "Presales Velocity",
+      "description": "Tender costing turnaround compressed from 72 hours to under 45 seconds."
+    },
+    "techStack": ["SAP BTP Cloud Foundry", "SAP HANA Cloud", "SAP CAP", "Fiori Horizon"],
+    "prerequisites": ["Cloud Foundry Runtime", "SAP HANA Cloud", "SAP S/4HANA PP/CO"],
+    "demoUrl": "/demos/cost-simulator",
+    "repoUrl": "https://github.com/Varad-6/SAP-experince-centre",
+    "docsUrl": "/docs/cost-simulator"
+  },
+  {
+    "slug": "ais-debug-studio",
+    "name": "AIS ABAP & CDS AI Debug Studio",
+    "tagline": "SAP ADT Automation, MCP & 1-Click Code Auto-Repair",
+    "pillar": 3,
+    "pillarName": "Enterprise AI & Joule",
+    "status": "live",
+    "team": "SAP Developer Experience",
+    "lead": "Varad & AI Core Team",
+    "visibility": "client",
+    "useCase": "Turning SAP short dumps, ABAP source, and CDS activation errors into plain-English diagnosis and live 1-click repairs pushed via ADT.",
+    "problem": [
+      "Senior developers waste hours diagnosing complex ST22 runtime dumps (zerodivide, timeout, null pointer).",
+      "Reproducing errors in quality environments is difficult when data-dependent variables are not clearly documented.",
+      "Manual code fixes risk introducing regressions or violating Clean ABAP cloud-ready programming standards."
+    ],
+    "solution": [
+      "Model Context Protocol (MCP) Server: Connects LLM agents directly to live SAP ADT REST endpoints on BTP CF eu10.",
+      "ST22 Dump Cognitive Diagnostic: Translates raw kernel dumps into plain-English explanations with line-level failure pinpointing.",
+      "1-Click AI Code Repair: Generates Clean ABAP patches with boundary guards and pushes them directly to open SAP transport requests."
+    ],
+    "flow": [
+      {
+        "step": "01",
+        "title": "Dump Ingestion via ADT",
+        "description": "MCP agent fetches active ST22 dump via ADT REST API and isolates the failing program line."
+      },
+      {
+        "step": "02",
+        "title": "Visual Side-by-Side Diff",
+        "description": "Presents developer with git-style visual diff between broken code and proposed AI patch."
+      },
+      {
+        "step": "03",
+        "title": "Transport Push & Activation",
+        "description": "Developer authorizes patch; system pushes change to selected SAP Workbench transport request."
+      }
+    ],
+    "sapTouchpoints": ["SAP ADT REST APIs", "ST22 Kernel Dumps", "ABAP Cleaner", "CTS Transport System"],
+    "heroKpi": {
+      "value": "80%",
+      "label": "Incident Resolution Speedup",
+      "description": "Short-dump diagnosis and patch deployment compressed from 3 hours to 4 minutes."
+    },
+    "techStack": ["Model Context Protocol (MCP)", "SAP ADT REST", "SAP BTP CF eu10", "Claude 3.5 Sonnet / GPT-4o"],
+    "prerequisites": ["SAP BTP Cloud Foundry", "SAP S/4HANA ADT Service", "SAP AI Core Extended"],
+    "demoUrl": "/demos/ais-debug-studio",
+    "repoUrl": "https://github.com/Varad-6/SAP-experince-centre",
+    "docsUrl": "/docs/ais-debug-studio"
+  },
+  {
+    "slug": "joule-copilot-architecture",
+    "name": "SAP Joule Copilot & Autonomous Skills",
+    "tagline": "Autonomous Operational Execution Copilot Embedded in Build Work Zone",
+    "pillar": 3,
+    "pillarName": "Enterprise AI & Joule",
+    "status": "live",
+    "team": "Enterprise AI & Copilots",
+    "lead": "Varad & AI Practice Lead",
+    "visibility": "client",
+    "useCase": "Transforming SAP Joule from a passive conversational search bot into an autonomous operational execution copilot.",
+    "problem": [
+      "Business users must navigate across dozens of disparate Fiori apps and legacy GUI transactions to complete simple tasks.",
+      "Standard conversational assistants cannot execute operational write-backs into SAP backend systems.",
+      "Direct database manipulation by conversational bots introduces extreme data corruption and audit violation risks."
+    ],
+    "solution": [
+      "Persistent Floating Copilot: Embedded directly into the SAP Build Work Zone header across all enterprise workspaces.",
+      "Zero Direct DB Manipulation: All conversational actions execute strictly through authenticated Cloud Foundry REST services.",
+      "Enterprise RBAC Enforcement: Inherits user authorizations, ensuring users cannot trigger actions beyond their SAP security profile."
+    ],
+    "flow": [
+      {
+        "step": "01",
+        "title": "Conversational Prompt",
+        "description": "User prompts Joule: 'Dispatch Sales Order 2318 to Siding B and confirm weighbridge.'"
+      },
+      {
+        "step": "02",
+        "title": "Intent Routing & Guardrails",
+        "description": "Joule classifies intent with >0.85 confidence and calls CF `podzone-srv` via JWT Bearer token."
+      },
+      {
+        "step": "03",
+        "title": "Backend S/4HANA Execution",
+        "description": "Microservice executes standard S/4HANA BAPIs and returns an interactive Adaptive Card."
+      }
+    ],
+    "sapTouchpoints": ["SAP Build Work Zone", "SAP Joule Copilot", "Cloud Foundry podzone-srv", "JWT OAuth2"],
+    "heroKpi": {
+      "value": "12 Clicks → 1 Prompt",
+      "label": "Workflow Compression",
+      "description": "Multi-screen ERP siding allocation reduced to a single natural-language conversation."
+    },
+    "techStack": ["SAP Joule", "SAP Build Work Zone", "Cloud Foundry EU30", "JWT Bearer Tokens"],
+    "prerequisites": ["SAP Build Work Zone Standard", "SAP Joule Subscription", "Cloud Foundry Runtime"],
+    "demoUrl": "/demos/joule-chat",
+    "repoUrl": "https://github.com/Varad-6/SAP-experince-centre",
+    "docsUrl": "/docs/joule-skills"
+  },
+  {
+    "slug": "hanamorph",
+    "name": "HanaMorph",
+    "tagline": "Automated SAP HANA to SAP Datasphere Modernization Studio",
+    "pillar": 4,
+    "pillarName": "Modernization Accelerators",
+    "status": "live",
+    "team": "Data Modernization & Datasphere",
+    "lead": "Varad & Data Practice Lead",
+    "visibility": "client",
+    "useCase": "Autonomous 1:1 modernization of complex N-tier HANA calculation views into native SAP Datasphere visual lineage models.",
+    "problem": [
+      "Enterprises face thousands of legacy calculation views built over 15+ years of ad-hoc project development.",
+      "Existing migration scripts collapse views into unmaintainable 'monolithic SQL CTE black boxes', destroying visual modeling lineage.",
+      "Manual remodeling takes weeks per view and frequently regresses due to missing dependent dimension views."
+    ],
+    "solution": [
+      "Node-for-Node Graphical Parity: Translates Projection, Join, Union, and Aggregation nodes 1:1 into Datasphere visual builder.",
+      "AI Deduplication Layer: Consolidates redundant calculation pipelines (1,800 legacy views → 200 Golden Core models).",
+      "Self-Contained CSN 2.0 Packages: Bundles parent views, child dimensions, and associations into a single deployable package."
+    ],
+    "flow": [
+      {
+        "step": "01",
+        "title": "Live Catalog Introspection",
+        "description": "Connects via @sap/hana-client, discovering calculation views, dimensions, and dependencies."
+      },
+      {
+        "step": "02",
+        "title": "XML AST Graph Decomposition",
+        "description": "Decompiles calculation view XML into discrete nodes, join inputs, and mapping cardinalities."
+      },
+      {
+        "step": "03",
+        "title": "Atomic CSN 2.0 Deployment",
+        "description": "Compiles self-contained package and verifies 100% pre-import readiness into SAP Datasphere."
+      }
+    ],
+    "sapTouchpoints": ["SAP HANA Cloud / On-Prem", "SAP Datasphere Models", "CSN 2.0 JSON", "Eclipse Studio DAG"],
+    "heroKpi": {
+      "value": "95%",
+      "label": "Modernization Time Savings",
+      "description": "Complex calculation view modernization compressed from 3 weeks to under 3 minutes."
+    },
+    "techStack": ["Node.js AST Parser", "@sap/hana-client", "CSN 2.0 Compiler", "SAP Datasphere APIs"],
+    "prerequisites": ["SAP HANA Database", "SAP Datasphere Tenant", "Space Authorization"],
+    "demoUrl": "/demos/hanamorph",
+    "repoUrl": "https://github.com/Varad-6/SAP-experince-centre",
+    "docsUrl": "/docs/hanamorph"
+  },
+  {
+    "slug": "manufacturing-yield-scrap",
+    "name": "Manufacturing Yield & Scrap Cockpit",
+    "tagline": "Harmonizing PP, MM & QM Touchpoints for Zero-Defect Production",
+    "pillar": 5,
+    "pillarName": "SAP Analytics Cloud",
+    "status": "live",
+    "team": "Manufacturing Analytics",
+    "lead": "Tejas",
+    "visibility": "client",
+    "useCase": "Harmonizing SAP PP and QM touchpoints to maximize production yield and eliminate shop-floor downtime.",
+    "problem": [
+      "Plant managers lack unified visibility into production order yield, work-center scrap, and rework volume across shifts.",
+      "Difficult to identify whether declining yield is caused by machine wear, operator error, or substandard raw materials.",
+      "Unplanned machine micro-stoppages erode Overall Equipment Effectiveness (OEE) and increase unit production costs."
+    ],
+    "solution": [
+      "Harmonized PP-QM Data Pipeline: Fuses production orders (AFKO/AFPO), confirmations, and QM defect logs in Datasphere.",
+      "Line-Level Yield Tracking: Real-time monitoring of finished goods output vs. planned batch quantity across manufacturing lines.",
+      "OEE Deep-Dive Analytics: Real-time radial gauges tracking Availability, Performance, and Quality components."
+    ],
+    "flow": [
+      {
+        "step": "01",
+        "title": "Production Order Extraction",
+        "description": "Extracts order status, actual confirmations, scrap quantities, and inspection lot results."
+      },
+      {
+        "step": "02",
+        "title": "Datasphere Semantic Harmonization",
+        "description": "Calculates net yield %, scrap variance %, and machine downtime correlation."
+      },
+      {
+        "step": "03",
+        "title": "Interactive SAC Boardroom Story",
+        "description": "Executive dashboard with drill-down to plant, production line, work center, and shift."
+      }
+    ],
+    "sapTouchpoints": ["SAP PP (AFKO/AFPO)", "SAP MM (Components)", "SAP QM (Inspection Lots)", "Lead: Tejas"],
+    "heroKpi": {
+      "value": "15%",
+      "label": "Scrap Cost Reduction",
+      "description": "Identifies root-cause yield loss, saving ~15% in scrap costs within 60 days."
+    },
+    "techStack": ["SAP Datasphere", "SAP Analytics Cloud (SAC)", "Replication Flows", "SAP S/4HANA PP/QM"],
+    "prerequisites": ["SAP Datasphere Tenant", "SAC Subscription", "SAP S/4HANA Connection"],
+    "demoUrl": "/demos/sac-manufacturing-yield",
+    "repoUrl": "https://github.com/Varad-6/SAP-experince-centre",
+    "docsUrl": "/docs/sac-manufacturing"
+  },
+  {
+    "slug": "asset-reliability-mro",
+    "name": "Asset Reliability & MRO Optimization",
+    "tagline": "Mitigating Unplanned Downtime & Optimizing Spare Parts Working Capital",
+    "pillar": 5,
+    "pillarName": "SAP Analytics Cloud",
+    "status": "live",
+    "team": "Plant Maintenance Analytics",
+    "lead": "Aji",
+    "visibility": "client",
+    "useCase": "Mitigating unplanned production downtime and optimizing maintenance spare parts inventory carrying capital.",
+    "problem": [
+      "Unplanned equipment breakdowns cause severe volume losses and production line stoppages across manufacturing facilities.",
+      "Excessive or slow-moving spare parts tie up working capital while critical replacement parts face stockout risks.",
+      "Maintenance managers cannot correlate equipment MTBF with specific spare parts failure rates and work orders."
+    ],
+    "solution": [
+      "Integrated Asset Reliability Model: Harmonizes S/4HANA PM equipment logs with MM inventory balances and CO cost centers.",
+      "Predictive MTBF / MTTR Monitoring: Tracks Mean Time Between Failures and Mean Time to Repair across plant equipment hierarchies.",
+      "MRO Inventory Optimization: Aligns safety stock buffers with machine criticality and historical breakdown frequency."
+    ],
+    "flow": [
+      {
+        "step": "01",
+        "title": "Maintenance Data Extraction",
+        "description": "Extracts breakdown notifications (QMEL), maintenance orders (AUFK), and spare usage (MSEG)."
+      },
+      {
+        "step": "02",
+        "title": "Reliability & Inventory Modeling",
+        "description": "Calculates asset availability %, breakdown frequency trends, and MRO turnover velocity."
+      },
+      {
+        "step": "03",
+        "title": "SAC Asset Health Cockpit",
+        "description": "Interactive asset health heat map with critical spare parts stockout risk indicators."
+      }
+    ],
+    "sapTouchpoints": ["SAP PM (Equipment)", "MM (Spare Parts Inventory)", "FI-CO (Cost Centers)", "Lead: Aji"],
+    "heroKpi": {
+      "value": "22%",
+      "label": "MRO Inventory Savings",
+      "description": "Reduces emergency maintenance freight and trims MRO carrying costs by 22%."
+    },
+    "techStack": ["SAP Datasphere", "SAP Analytics Cloud", "SAP S/4HANA PM/MM"],
+    "prerequisites": ["SAP Datasphere Tenant", "SAC Subscription", "SAP S/4HANA PM"],
+    "demoUrl": "/demos/sac-asset-reliability",
+    "repoUrl": "https://github.com/Varad-6/SAP-experince-centre",
+    "docsUrl": "/docs/sac-asset-reliability"
+  },
+  {
+    "slug": "sales-margin-analytics",
+    "name": "Sales & Margin Executive Steering",
+    "tagline": "Uncovering Customer Profitability Drivers & Defending EBITDA Margins",
+    "pillar": 5,
+    "pillarName": "SAP Analytics Cloud",
+    "status": "live",
+    "team": "Commercial Analytics",
+    "lead": "Tej",
+    "visibility": "client",
+    "useCase": "Uncovering customer and product profitability drivers to defend EBITDA margins and eliminate margin-diluting SKUs.",
+    "problem": [
+      "Executive leadership lacks visibility into true net margin after accounting for customer-specific distribution costs.",
+      "High top-line revenue masked by negative gross margins on specific low-volume customized product configurations.",
+      "Sales teams lack dynamic margin simulation tools during major customer contract renegotiation meetings."
+    ],
+    "solution": [
+      "Granular Profitability Model: Fuses S/4HANA Sales Orders (SD) with CO-PA cost component splits in SAP Datasphere.",
+      "Interactive Margin Walk: Waterfall chart isolating price variance, volume impact, COGS, and currency fluctuations.",
+      "Customer Profitability Matrix: Stratifies customers into Champions, Potential, Volume Drivers, and Margin Drainers."
+    ],
+    "flow": [
+      {
+        "step": "01",
+        "title": "Profitability Data Extraction",
+        "description": "Extracts sales revenues, cost of goods sold, freight expenses, and rebate provisions."
+      },
+      {
+        "step": "02",
+        "title": "Datasphere Profitability Modeling",
+        "description": "Calculates Gross Margin %, Contribution Margin I & II, and Operating Profit per SKU."
+      },
+      {
+        "step": "03",
+        "title": "Executive Boardroom Story",
+        "description": "High-impact SAC story with customer quadrant matrix and target vs. actual variance."
+      }
+    ],
+    "sapTouchpoints": ["SAP FI-CO (CO-PA)", "SD (Sales Orders)", "MM (Material Master)", "Lead: Tej"],
+    "heroKpi": {
+      "value": "3.4%",
+      "label": "EBITDA Margin Expansion",
+      "description": "Identifies and eliminates margin-diluting accounts, expanding EBITDA margin by 3.4%."
+    },
+    "techStack": ["SAP Datasphere", "SAP Analytics Cloud", "SAP S/4HANA SD/CO-PA"],
+    "prerequisites": ["SAP Datasphere Tenant", "SAC Subscription", "SAP S/4HANA SD"],
+    "demoUrl": "/demos/sac-sales-margin",
+    "repoUrl": "https://github.com/Varad-6/SAP-experince-centre",
+    "docsUrl": "/docs/sac-sales-margin"
+  }
+]
