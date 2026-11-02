@@ -1,7 +1,9 @@
-# TEMP_FILES.md — Scratch & Transient Files Ledger
+# TEMP_FILES.md — Ledger of Transient & Scratch Files
 
-This ledger tracks any temporary files or one-off verification scripts used during the development of the AIS Experience Centre.
+All scratch and transient files generated during development cycles are recorded here.
 
-| File Path | Purpose | Created At | Status |
-|---|---|---|---|
-| *(No transient files currently active)* | — | — | — |
+| Path | Purpose | Created | Status |
+| :--- | :--- | :--- | :--- |
+| `scripts/generate-stubs.ts` | One-off script generating the 27 valid stub app scripts conforming to 8-card schema | Phase 1 | Preserved for schema re-generation |
+| `scripts/make-placeholders.ts` | Procedural SVG asset generator for zero-asset fallback guarantee | Phase 1 | Permanent utility (`npm run assets:placeholders`) |
+| `scripts/validate-content.ts` | Prebuild content validation utility | Phase 1 | Permanent utility (`npm run content:check`) |
