@@ -1,0 +1,34 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-11-02T16:22:53.628Z",
+  "assets": [
+    {
+      "id": "mascot-standing",
+      "url": "/mascot/mascot_standing.png",
+      "type": "image",
+      "placeholder": "procedural",
+      "fallbackColor": "#0070F2"
+    },
+    {
+      "id": "mascot-pointing",
+      "url": "/mascot/mascot_pointing.png",
+      "type": "image",
+      "placeholder": "procedural",
+      "fallbackColor": "#00B8F5"
+    },
+    {
+      "id": "mascot-explaining",
+      "url": "/mascot/mascot_explaining.png",
+      "type": "image",
+      "placeholder": "procedural",
+      "fallbackColor": "#8B5CF6"
+    },
+    {
+      "id": "podzo-screenshot",
+      "url": "/assets/apps/podzo/screen-1.png",
+      "type": "image",
+      "placeholder": "svg",
+      "fallbackColor": "#0070F2"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "p1",
+    "accent": "#0070F2",
+    "title": "Foundation & Clean Core",
+    "tagline": "Zero-modification enterprise governance, event mesh and side-by-side extensibility.",
+    "icon": "Layers",
+    "order": 1,
+    "solutionCount": 5
+  },
+  {
+    "id": "p2",
+    "accent": "#00B8F5",
+    "title": "Custom BTP Applications",
+    "tagline": "Tailored cloud applications extending S/4HANA Order-to-Cash, Procure-to-Pay, and Logistics.",
+    "icon": "Box",
+    "order": 2,
+    "solutionCount": 6
+  },
+  {
+    "id": "p3",
+    "accent": "#8B5CF6",
+    "title": "Enterprise AI & Joule",
+    "tagline": "Autonomous agents, SAP Joule copilots, generative ABAP code diagnostics and document AI.",
+    "icon": "Cpu",
+    "order": 3,
+    "solutionCount": 6
+  },
+  {
+    "id": "p4",
+    "accent": "#F0AB00",
+    "title": "HanaMorph & Modernization",
+    "tagline": "1:1 visual lineage parity, calculation view modernization and automated ABAP Cloud transformation.",
+    "icon": "Zap",
+    "order": 4,
+    "solutionCount": 5
+  },
+  {
+    "id": "p5",
+    "accent": "#19C3A6",
+    "title": "SAC Executive Dashboards",
+    "tagline": "Real-time boardroom decision steering, OEE manufacturing analytics and MRO reliability.",
+    "icon": "BarChart3",
+    "order": 5,
+    "solutionCount": 6
+  }
+]

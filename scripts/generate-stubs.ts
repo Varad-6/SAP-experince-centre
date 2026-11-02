@@ -1,0 +1,159 @@
+import * as fs from 'fs';
+import * as path from 'path';
+
+const solutionsPath = path.join(process.cwd(), 'content', 'solutions.json');
+const solutions = JSON.parse(fs.readFileSync(solutionsPath, 'utf8'));
+
+const appsDir = path.join(process.cwd(), 'content', 'apps');
+if (!fs.existsSync(appsDir)) {
+  fs.mkdirSync(appsDir, { recursive: true });
+}
+
+for (const sol of solutions) {
+  if (sol.slug === 'podzo') continue; // Flagship already written
+
+  const appData = {
+    slug: sol.slug,
+    pillarId: sol.pillarId,
+    title: sol.title,
+    heroHeadline: sol.oneLiner,
+    sapComponents: ['SAP S/4HANA Core', 'SAP BTP Services', 'Cloud Connector'],
+    hasContent: false,
+    cards: [
+      {
+        index: 0,
+        type: 'hook',
+        title: `Introduction: ${sol.title}`,
+        botDialogue: `Welcome to ${sol.title}. This solution delivers ${sol.roiMetric.toLowerCase()} across enterprise operations.`,
+        stat: {
+          number: sol.roiMetric,
+          label: 'Primary Impact'
+        },
+        bullets: [
+          'Engineered for Clean Core compliance',
+          'Decoupled extension architecture on SAP BTP',
+          'Production-tested across Tier-1 enterprise landscapes'
+        ]
+      },
+      {
+        index: 1,
+        type: 'challenge',
+        title: 'Legacy Challenge & Enterprise Friction',
+        botDialogue: 'Traditional architectures struggle with upgrade dependencies, manual reconciliation, and lack of real-time visibility.',
+        visual: 'before-after',
+        bullets: [
+          'Monolithic customizations hinder ERP lifecycle upgrades',
+          'High latency and asynchronous data synchronization errors',
+          'Excessive operational overhead for support engineering'
+        ]
+      },
+      {
+        index: 2,
+        type: 'solution',
+        title: 'Modern Architecture Overview',
+        botDialogue: 'Our solution decouples business logic into secure SAP BTP runtime services while preserving transactional integrity.',
+        diagram: {
+          nodes: [
+            { id: 'src', label: 'SAP S/4HANA ERP' },
+            { id: 'btp', label: 'BTP Processing Engine' },
+            { id: 'ai', label: 'Intelligence Layer' },
+            { id: 'ui', label: 'Executive Cockpit' }
+          ],
+          edges: [
+            { from: 'src', to: 'btp' },
+            { from: 'btp', to: 'ai' },
+            { from: 'ai', to: 'ui' }
+          ]
+        }
+      },
+      {
+        index: 3,
+        type: 'live-ui',
+        title: 'Application Control Center',
+        botDialogue: 'Here is the interactive interface. Inspect key operational signals and workflow states.',
+        screenshot: `/assets/apps/${sol.slug}/screen-1.png`,
+        hotspots: [
+          {
+            x: 25,
+            y: 30,
+            label: 'Status Monitor',
+            tooltip: 'Live synchronization health and active pipeline telemetry.'
+          },
+          {
+            x: 75,
+            y: 30,
+            label: 'Action Console',
+            tooltip: 'Autonomous validation and exception routing controls.'
+          }
+        ]
+      },
+      {
+        index: 4,
+        type: 'workflow',
+        title: 'Execution Workflow',
+        botDialogue: 'Every transaction flows deterministically through 3 validated checkpoints.',
+        steps: [
+          {
+            step: 1,
+            title: 'Trigger Event',
+            desc: 'Business event captured via SAP Event Mesh.',
+            sapAction: 'Event Emitted'
+          },
+          {
+            step: 2,
+            title: 'Automated Processing',
+            desc: 'Clean Core rules engine evaluates business context.',
+            sapAction: 'Rules Executed'
+          },
+          {
+            step: 3,
+            title: 'Ledger Settlement',
+            desc: 'Validated updates committed back to S/4HANA.',
+            sapAction: 'S/4HANA Commit'
+          }
+        ]
+      },
+      {
+        index: 5,
+        type: 'tech-stack',
+        title: 'Technology Stack & Integrations',
+        botDialogue: 'Leveraging standard SAP BTP runtime artifacts and cloud native development standards.',
+        chips: [
+          { layer: 'Platform', tech: 'SAP BTP' },
+          { layer: 'Integration', tech: 'Cloud Connector' },
+          { layer: 'Runtime', tech: 'Cloud Foundry / Kyma' },
+          { layer: 'Core', tech: 'SAP S/4HANA' }
+        ]
+      },
+      {
+        index: 6,
+        type: 'impact',
+        title: 'Measurable Business Value',
+        botDialogue: 'Measurable operational gains achieved with zero custom core modifications.',
+        metrics: [
+          { value: sol.roiMetric, label: 'Primary Benefit', delta: 'Verified' },
+          { value: '100%', label: 'Clean Core Compliant', delta: 'Zero Mod' },
+          { value: '24/7', label: 'Availability', delta: 'SLA 99.9%' }
+        ]
+      },
+      {
+        index: 7,
+        type: 'cta',
+        title: 'Explore Architecture & Deployment',
+        botDialogue: 'Review the technical prerequisites or schedule a live architecture deep dive with our engineering leads.',
+        actions: [
+          { label: 'View Prerequisites', type: 'prereq' },
+          { label: 'Architecture View', type: 'architecture' },
+          { label: 'Export Solution Spec', type: 'pdf' }
+        ]
+      }
+    ]
+  };
+
+  fs.writeFileSync(
+    path.join(appsDir, `${sol.slug}.json`),
+    JSON.stringify(appData, null, 2)
+  );
+}
+
+console.log('Successfully generated 27 stub app files.');

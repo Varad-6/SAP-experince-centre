@@ -1,0 +1,21 @@
+{
+  "brand": "Abhiyanta India Solutions",
+  "subBrand": "AIS Experience Centre",
+  "heroTitle": "Architecting the Intelligent SAP Enterprise",
+  "heroSubtitle": "Real-time 3D showcase of 28 production solutions across 5 architectural pillars. Clean Core compliance, Autonomous AI agents, and enterprise BTP engineering.",
+  "stats": [
+    { "value": "28", "label": "Enterprise Solutions" },
+    { "value": "5", "label": "Architectural Pillars" },
+    { "value": "100%", "label": "Clean Core Compliant" },
+    { "value": "<30s", "label": "Reconciliation Cycle" }
+  ],
+  "footer": {
+    "copyright": "© 2026 Abhiyanta India Solutions (AIS). Confidential. All rights reserved.",
+    "links": [
+      { "label": "Architecture", "href": "/architecture" },
+      { "label": "Prerequisites", "href": "/prerequisites" },
+      { "label": "Present Mode", "href": "/present" },
+      { "label": "Clean Core Standard", "href": "https://sap.com" }
+    ]
+  }
+}

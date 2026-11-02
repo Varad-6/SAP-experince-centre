@@ -95,14 +95,30 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Live Production Card & Presenter Spotlight */}
+            {/* Right Live Production System Spotlight */}
             <div className="lg:col-span-5 relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 group">
+                {/* Browser Top Bar Mockup */}
+                <div className="px-4 py-2.5 bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-amber-400" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
+                  </div>
+                  <div className="px-3 py-0.5 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[10px] font-mono text-slate-500 truncate max-w-[220px]">
+                    sap-btp-ais-eu30.hana.ondemand.com
+                  </div>
+                  <span className="text-[10px] font-bold text-emerald-600 flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    LIVE
+                  </span>
+                </div>
+
+                {/* System Screen */}
                 <img 
-                  src="/media/lead_architect_presenting.jpg" 
-                  alt="AIS Lead Architect presenting at SAP innovation session" 
+                  src="/media/podzo_live_production_screen.png" 
+                  alt="PODZO Cloud Foundry Live Production Console" 
                   className="w-full h-72 object-cover object-top transition duration-500 group-hover:scale-105"
-                  onError={(e)=>{ (e.target as HTMLElement).style.display='none'; }}
                 />
                 
                 {/* Overlay Banner */}
@@ -110,15 +126,15 @@ export default function HomePage() {
                   <div className="flex items-center justify-between mb-1.5">
                     <span className="text-xs font-bold text-sap-blue flex items-center gap-1.5">
                       <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
-                      Presented Live at SAP
+                      Live SAP Cloud Foundry Production
                     </span>
-                    <span className="text-[11px] font-mono text-slate-400">EU30 Cloud Foundry</span>
+                    <span className="text-[11px] font-mono text-slate-400">EU30 Frankfurt</span>
                   </div>
                   <h4 className="text-sm font-bold text-slate-900 dark:text-white">
-                    PODZO Control Tower & AI Dispatch Session
+                    PODZO Control Tower & AI Dispatch Console
                   </h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2">
-                    Live demonstration of autonomous sales order allocation, computer vision weighbridge matching, and zero-touch MIRO settlement.
+                    Live enterprise execution: Autonomous sales order allocation, computer vision weighbridge matching, and zero-touch MIRO settlement.
                   </p>
                 </div>
               </div>
