@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "vitest run",
+    "test:e2e": "playwright test",
     "content:check": "npx tsx scripts/validate-content.ts",
     "prebuild": "npm run content:check",
     "assets:placeholders": "npx tsx scripts/make-placeholders.ts",
@@ -29,6 +30,7 @@
     "zustand": "5.0.16"
   },
   "devDependencies": {
+    "@playwright/test": "^1.64.1",
     "@types/node": "22.10.2",
     "@types/react": "19.0.1",
     "@types/react-dom": "19.0.2",
