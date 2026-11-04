@@ -5,6 +5,7 @@ import Link from 'next/link';
 import pillarsData from '@/content/pillars.json';
 import solutionsData from '@/content/solutions.json';
 import { BotSprite } from '@/components/BotSprite';
+import { BotBubble } from '@/components/BotBubble';
 import { ArrowRight, Layers, Box, Cpu, Zap, BarChart3, ShieldCheck } from 'lucide-react';
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -17,14 +18,6 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function PillarsHubPage() {
   const [showBubble, setShowBubble] = useState<boolean>(true);
-
-  // Auto-hide bubble after 5s
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowBubble(false);
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <div className="min-h-[calc(100vh-56px)] bg-[var(--bg)] text-[var(--text)] px-6 sm:px-8 py-10 sm:py-14 max-w-[1200px] mx-auto relative pb-32">
@@ -53,7 +46,7 @@ export default function PillarsHubPage() {
             <Link
               key={pillar.id}
               href={`/pillar/${pillar.id}`}
-              className={`group card block p-6 sm:p-7 relative transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[var(--shadow)] ${colSpan}`}
+              className={`group card block p-6 sm:p-7 relative transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--brand)] hover:shadow-[var(--shadow)] ${colSpan}`}
               style={{
                 borderTop: `3px solid ${pillar.accent}`,
               }}
@@ -96,19 +89,23 @@ export default function PillarsHubPage() {
         className="fixed bottom-6 right-6 z-30 flex items-end gap-3 pointer-events-auto"
         onMouseEnter={() => setShowBubble(true)}
       >
-        {/* Speech Bubble */}
+        {/* Thinking Speech Bubble */}
         {showBubble && (
-          <div className="relative mb-2 px-4 py-2.5 rounded-xl bg-[var(--surface)] border border-[var(--border)] shadow-[var(--shadow)] text-xs text-[var(--text)] max-w-[200px] animate-fadeIn">
-            <span className="font-semibold text-[var(--navy)]">Pick a pillar to explore.</span>
-            {/* Bubble Tail pointing to the right */}
-            <div className="absolute top-1/2 -right-1.5 -translate-y-1/2 w-3 h-3 bg-[var(--surface)] border-t border-r border-[var(--border)] rotate-45" />
-          </div>
+          <BotBubble
+            text="Pick a pillar to explore."
+            durationMs={5000}
+            placement="left"
+            onDismiss={() => setShowBubble(false)}
+          />
         )}
 
         {/* Bot Avatar */}
-        <div className="relative cursor-pointer group">
-          <BotSprite pose="idle" width={110} height={110} alt="Docked Lead Architect Bot" />
-          <div className="w-20 h-2.5 bg-black/10 rounded-full blur-[2px] mx-auto mt-[-4px]" />
+        <div
+          className="relative cursor-pointer group shrink-0"
+          onClick={() => setShowBubble((prev) => !prev)}
+        >
+          <BotSprite pose="idle" heightPx={130} alt="Docked Lead Architect Bot" />
+          <div className="w-16 h-2 bg-black/10 rounded-full blur-[2px] mx-auto mt-[-4px]" />
         </div>
       </aside>
     </div>

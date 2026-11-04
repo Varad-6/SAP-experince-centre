@@ -1,43 +1,91 @@
-export type PoseName =
+import metaJson from '@/public/assets/bot/_meta.json';
+
+export type ActivePoseName =
   | 'idle'
   | 'wave'
+  | 'point'
+  | 'tablet'
+  | 'laptop'
   | 'present'
+  | 'beckon'
+  | 'thanks';
+
+export type PoseName =
+  | ActivePoseName
   | 'explain'
   | 'think'
-  | 'point'
   | 'alert'
   | 'celebrate'
-  | 'thanks'
-  | 'laptop'
   | 'fly'
   | 'fall';
 
-export const BOT_POSES: Record<PoseName, string> = {
-  idle: '/assets/bot/idle.webp',
-  wave: '/assets/bot/wave.webp',
-  present: '/assets/bot/present.webp',
-  explain: '/assets/bot/explain.webp',
-  think: '/assets/bot/think.webp',
-  point: '/assets/bot/point.webp',
-  alert: '/assets/bot/alert.webp',
-  celebrate: '/assets/bot/celebrate.webp',
-  thanks: '/assets/bot/thanks.webp',
-  laptop: '/assets/bot/laptop.webp',
-  fly: '/assets/bot/fly.webp',
-  fall: '/assets/bot/fall.webp',
+export interface PoseHeadMeta {
+  hairTop: number;
+  hairLeft: number;
+  hairRight: number;
+  headCx: number;
+  headCy: number;
+}
+
+export interface PoseMeta {
+  w: number;
+  h: number;
+  anchorX: number;
+  anchorY: number;
+  head: PoseHeadMeta;
+}
+
+export const POSE_META: Record<string, PoseMeta> = metaJson as unknown as Record<string, PoseMeta>;
+
+/**
+ * Standard standing reference height in pixels.
+ * All bot sprites are authored to this baseline.
+ */
+export const STANDING_HEIGHT_PX = 620;
+
+/**
+ * Legacy/Semantic alias mappings ensuring backwards compatibility
+ */
+const POSE_ALIASES: Record<string, ActivePoseName> = {
+  explain: 'tablet',
+  think: 'point',
+  alert: 'point',
+  celebrate: 'wave',
+  fly: 'wave',
+  fall: 'idle',
 };
 
-export const POSE_FIT: Record<PoseName, { scale: number; offsetY: number }> = {
-  idle: { scale: 1, offsetY: 0 },
-  wave: { scale: 1, offsetY: 0 },
-  present: { scale: 1, offsetY: 0 },
-  explain: { scale: 1, offsetY: 0 },
-  think: { scale: 1, offsetY: 0 },
-  point: { scale: 1, offsetY: 0 },
-  alert: { scale: 1, offsetY: 0 },
-  celebrate: { scale: 1.05, offsetY: -4 },
-  thanks: { scale: 1, offsetY: 0 },
-  laptop: { scale: 0.95, offsetY: 2 },
-  fly: { scale: 1, offsetY: -10 },
-  fall: { scale: 1, offsetY: 0 },
+export function resolvePose(pose?: string): ActivePoseName {
+  if (!pose) return 'idle';
+  const clean = pose.toLowerCase();
+  if (clean in POSE_META) return clean as ActivePoseName;
+  if (clean in POSE_ALIASES) return POSE_ALIASES[clean];
+  return 'idle';
+}
+
+export function getPoseMeta(pose: string): PoseMeta {
+  const resolved = resolvePose(pose);
+  return POSE_META[resolved] || POSE_META['idle'];
+}
+
+export const BOT_POSES: Record<ActivePoseName, string> = {
+  idle: '/assets/bot/idle.webp',
+  wave: '/assets/bot/wave.webp',
+  point: '/assets/bot/point.webp',
+  tablet: '/assets/bot/tablet.webp',
+  laptop: '/assets/bot/laptop.webp',
+  present: '/assets/bot/present.webp',
+  beckon: '/assets/bot/beckon.webp',
+  thanks: '/assets/bot/thanks.webp',
+};
+
+export const BOT_POSES_PNG: Record<ActivePoseName, string> = {
+  idle: '/assets/bot/idle.png',
+  wave: '/assets/bot/wave.png',
+  point: '/assets/bot/point.png',
+  tablet: '/assets/bot/tablet.png',
+  laptop: '/assets/bot/laptop.png',
+  present: '/assets/bot/present.png',
+  beckon: '/assets/bot/beckon.png',
+  thanks: '/assets/bot/thanks.png',
 };

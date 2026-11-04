@@ -341,3 +341,21 @@ Standard: Clean Fiori Horizon Professional Stack, 2D GSAP Bot, Zero 3D / Zero Au
 - **Verification**:
   - Zero audio files or audio code in public/assets.
   - TypeScript build passes cleanly.
+
+---
+
+## Phase 2 (Master Prompt v3): Feet-Anchored Sprites, Thinking BotBubble & Dock Layout
+- **Date**: 2026-11-04
+- **Status**: Completed. Verified with `npm run content:check`, `npm test` (9/9 pass), and `npm run build` (0 errors, 79/79 static pages generated).
+- **Files Created/Touched**:
+  - `lib/poses.ts`: Implemented active 8 poses (`ActivePoseName`), backwards-compatible pose resolution, and baseline reference height (`STANDING_HEIGHT_PX = 620`).
+  - `components/BotSprite.tsx`: Completely rebuilt around feet anchor formula ($left = dockX - anchorX \times k$, $top = dockY - anchorY \times k$), reporting head position, picture tag with WebP + PNG fallback, and `_placeholder.svg` error handler.
+  - `components/BotBubble.tsx`: Created translucent thinking bubble with 3-circle tail (6px, 9px, 12px with stagger), 22ms/char `requestAnimationFrame` typewriter, auto-dismiss, and keyboard `'C'` shortcut for caption toggling.
+  - `components/PillarBotDock.tsx`: Created docked bot guide for `/pillar/[id]` with `point` pose.
+  - `app/pillars/page.tsx`: Integrated `BotBubble` with 5s auto-hide and `idle` docked sprite.
+  - `app/pillar/[id]/page.tsx`: Embedded `PillarBotDock`.
+  - `app/solution/[slug]/SolutionDetailClient.tsx`: Added top action buttons (Interactive demo + Architecture smooth scroll) and reactive hover pose swap (`present` -> `beckon`).
+- **Commands Run**:
+  - `npm run content:check` -> Code 0
+  - `npm test` -> Code 0 (9/9 passed)
+  - `npm run build` -> Code 0 (79/79 static pages generated)
