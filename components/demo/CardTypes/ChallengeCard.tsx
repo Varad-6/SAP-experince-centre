@@ -6,60 +6,61 @@ import { AlertTriangle, CheckCircle2 } from 'lucide-react';
 type CardData = z.infer<typeof CardSchema>;
 
 export const ChallengeCard: React.FC<{ card: CardData }> = ({ card }) => {
+  const bullets = card.bullets && card.bullets.length > 0 ? card.bullets : [
+    'Legacy customization sprawl creates technical debt and prevents seamless cloud upgrades.',
+    'Asynchronous multi-system data synchronization introduces latency and reconciliation backlogs.',
+    'Lack of centralized enterprise visibility impedes rapid operational decision-making.'
+  ];
+
+  const frictionPoints = bullets.slice(0, 3);
+
   return (
     <div className="space-y-6">
-      {/* Before / After Comparison Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        {/* Legacy Bottleneck */}
+        {/* Operational Friction */}
         <div className="p-5 sm:p-6 rounded-xl bg-[#FFF5F5] border border-[#FED7D7]">
           <div className="flex items-center gap-2 mb-3 text-[var(--danger)]">
             <AlertTriangle className="w-4 h-4" />
-            <span className="text-xs font-bold uppercase tracking-wide">Legacy Friction</span>
+            <span className="text-xs font-bold uppercase tracking-wide">Legacy Friction & Root Cause</span>
           </div>
-          <ul className="space-y-2 text-xs sm:text-sm text-[var(--text)]">
-            <li className="flex items-start gap-2">
-              <span className="text-[var(--danger)] font-bold">•</span>
-              <span>Manual paper slips taking 4–7 days to reconcile into SAP.</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-[var(--danger)] font-bold">•</span>
-              <span>Demurrage penalty charges on railcar holding tracks.</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-[var(--danger)] font-bold">•</span>
-              <span>Billing friction and cash flow withholding disputes.</span>
-            </li>
+          <ul className="space-y-2.5 text-xs sm:text-sm text-[var(--text)]">
+            {frictionPoints.map((b, i) => (
+              <li key={i} className="flex items-start gap-2">
+                <span className="text-[var(--danger)] font-bold mt-0.5">•</span>
+                <span className="leading-relaxed">{b}</span>
+              </li>
+            ))}
           </ul>
         </div>
 
-        {/* AIS Autonomous Flow */}
+        {/* Clean Core Target State */}
         <div className="p-5 sm:p-6 rounded-xl bg-[#E6F7ED] border border-[#A6E9BD]">
           <div className="flex items-center gap-2 mb-3 text-[var(--ok)]">
             <CheckCircle2 className="w-4 h-4" />
-            <span className="text-xs font-bold uppercase tracking-wide">AIS Modern Flow</span>
+            <span className="text-xs font-bold uppercase tracking-wide">AIS Clean Core Target State</span>
           </div>
-          <ul className="space-y-2 text-xs sm:text-sm text-[var(--text)]">
+          <ul className="space-y-2.5 text-xs sm:text-sm text-[var(--text)]">
             <li className="flex items-start gap-2">
-              <span className="text-[var(--ok)] font-bold">•</span>
-              <span>Automated computer vision OCR in &lt;30 seconds.</span>
+              <span className="text-[var(--ok)] font-bold mt-0.5">•</span>
+              <span className="leading-relaxed">Decoupled extension architecture operating on SAP BTP.</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-[var(--ok)] font-bold">•</span>
-              <span>Direct S/4HANA MIRO touchless ledger posting.</span>
+              <span className="text-[var(--ok)] font-bold mt-0.5">•</span>
+              <span className="leading-relaxed">Real-time sub-second data processing with zero standard core modifications.</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-[var(--ok)] font-bold">•</span>
-              <span>100% audit trail with Clean Core extensibility.</span>
+              <span className="text-[var(--ok)] font-bold mt-0.5">•</span>
+              <span className="leading-relaxed">Complete audit traceability and automated quarterly upgrade safety.</span>
             </li>
           </ul>
         </div>
       </div>
 
-      {/* Summary Bullets */}
-      {card.bullets && (
+      {/* Additional Challenge Context if available */}
+      {bullets.length > 3 && (
         <div className="p-4 rounded-xl bg-[var(--surface-2)] border border-[var(--border)] text-xs sm:text-sm text-[var(--text)] space-y-1.5">
-          <span className="font-semibold text-[var(--navy)] block mb-1">Key Operational Challenges:</span>
-          {card.bullets.map((b, i) => (
+          <span className="font-semibold text-[var(--navy)] block mb-1">Extended Process Impacts:</span>
+          {bullets.slice(3).map((b, i) => (
             <div key={i} className="flex items-start gap-2 text-[var(--text-dim)]">
               <span className="text-[var(--brand)] font-bold">•</span>
               <span>{b}</span>

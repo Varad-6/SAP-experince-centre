@@ -66,40 +66,24 @@ export default async function PillarDetailPage({
         <SoundToggle />
       </div>
 
-      {/* Grid of Project Cards (repeat(auto-fill, minmax(240px, 1fr))) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      {/* Grid of Clean Enterprise Project Cards (No Photos) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 items-stretch">
         {solutions.map((sol) => {
           const isProd = sol.featured || sol.hasFullDemo;
-          const thumbnailPath =
-            sol.slug === 'sap-btp-vibe-coding'
-              ? '/assets/apps/sap-btp-vibe-coding/01_Entitlements_Entity_Assignments.png'
-              : `/assets/apps/${sol.slug}/screen-1.png`;
 
           return (
             <Link
               key={sol.slug}
               href={`/solution/${sol.slug}`}
-              className="group card block overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[var(--shadow)] flex flex-col justify-between"
+              className="group card p-5 sm:p-6 transition-all duration-200 hover:-translate-y-1 hover:border-[var(--brand)] hover:shadow-[var(--shadow-lg)] flex flex-col justify-between h-full relative"
+              style={{
+                borderTop: `3px solid ${pillar.accent}`,
+              }}
             >
               <div>
-                {/* 16:9 Thumbnail */}
-                <div className="relative aspect-video w-full bg-[var(--surface-2)] overflow-hidden border-b border-[var(--border)] flex items-center justify-center">
-                  <ThumbnailImage
-                    src={thumbnailPath}
-                    alt={sol.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  {sol.featured && (
-                    <span className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-bold bg-[var(--brand)] text-white shadow-sm">
-                      FLAGSHIP
-                    </span>
-                  )}
-                </div>
-
-                {/* Card Content */}
-                <div className="p-4 sm:p-5">
-                  {/* Status & ROI Chips */}
-                  <div className="flex flex-wrap items-center gap-2 mb-2.5">
+                {/* Status & ROI Chips */}
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                  <div className="flex items-center gap-1.5">
                     <span
                       className={`inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold ${
                         isProd
@@ -109,27 +93,47 @@ export default async function PillarDetailPage({
                     >
                       {isProd ? 'Production' : 'Preview'}
                     </span>
-                    <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-[var(--surface-2)] text-[var(--navy)] border border-[var(--border)]">
-                      {sol.roiMetric}
-                    </span>
+                    {sol.featured && (
+                      <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-[var(--brand)] text-white">
+                        FLAGSHIP
+                      </span>
+                    )}
                   </div>
 
-                  {/* Title (700, 16px) */}
-                  <h2 className="text-base font-bold text-[var(--navy)] group-hover:text-[var(--brand)] transition-colors mb-1.5 leading-snug">
-                    {sol.title}
-                  </h2>
-
-                  {/* 2-line Tagline (text-dim, 13px) */}
-                  <p className="text-[13px] text-[var(--text-dim)] leading-relaxed line-clamp-2">
-                    {sol.oneLiner}
-                  </p>
+                  <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-[var(--surface-2)] text-[var(--navy)] border border-[var(--border)]">
+                    {sol.roiMetric}
+                  </span>
                 </div>
+
+                {/* Title */}
+                <h2 className="text-base font-bold text-[var(--navy)] group-hover:text-[var(--brand)] transition-colors mb-2 leading-snug">
+                  {sol.title}
+                </h2>
+
+                {/* One-Liner */}
+                <p className="text-xs sm:text-sm text-[var(--text-dim)] leading-relaxed mb-4">
+                  {sol.oneLiner}
+                </p>
+
+                {/* Tags */}
+                {sol.tags && (
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {sol.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-[var(--brand-50)] text-[var(--brand-600)]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
 
-              {/* Card Footer Link */}
-              <div className="px-4 sm:px-5 pb-4 pt-1 flex items-center justify-between text-xs font-semibold text-[var(--brand)]">
-                <span>View details</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              {/* Action Link aligned at bottom */}
+              <div className="pt-3 border-t border-[var(--border)]/60 flex items-center justify-between text-xs font-semibold text-[var(--brand)] group-hover:translate-x-0.5 transition-transform mt-auto">
+                <span>View solution architecture</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </div>
             </Link>
           );

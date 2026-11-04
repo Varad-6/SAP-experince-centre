@@ -19,6 +19,11 @@ const path = require('path');
   await page.waitForTimeout(1000);
   await page.screenshot({ path: path.join(__dirname, '../public/snap_pillars.png') });
 
+  console.log('Navigating to pillar p2 (custom apps)...');
+  await page.goto('http://localhost:3000/pillar/p2');
+  await page.waitForTimeout(1000);
+  await page.screenshot({ path: path.join(__dirname, '../public/snap_pillar_p2_nophoto.png') });
+
   console.log('Navigating to podzo demo...');
   await page.goto('http://localhost:3000/solution/podzo/demo');
   await page.waitForTimeout(1000);

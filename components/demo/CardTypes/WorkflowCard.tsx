@@ -20,7 +20,14 @@ export const WorkflowCard: React.FC<{ card: CardData }> = ({ card }) => {
             </div>
             <div>
               <h4 className="text-sm font-bold text-[var(--navy)] mb-0.5">{st.title}</h4>
-              <p className="text-xs text-[var(--text-dim)] leading-relaxed">{st.desc}</p>
+              {(() => {
+                const cleanDesc = st.desc && st.desc.startsWith(st.title)
+                  ? st.desc.slice(st.title.length).replace(/^[\s:–—-]+/, '').trim()
+                  : st.desc;
+                return cleanDesc && cleanDesc !== st.title ? (
+                  <p className="text-xs text-[var(--text-dim)] leading-relaxed">{cleanDesc}</p>
+                ) : null;
+              })()}
             </div>
           </div>
 
