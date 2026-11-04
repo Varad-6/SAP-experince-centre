@@ -404,3 +404,16 @@ Standard: Clean Fiori Horizon Professional Stack, 2D GSAP Bot, Zero 3D / Zero Au
   - `npm run content:check` -> Code 0 (All 28 apps validated)
   - `npm test` -> Code 0 (9/9 passed)
   - `npm run build` -> Code 0 (80/80 static pages generated)
+
+---
+
+## Phase 6 (Master Prompt v3): 8-Viewport Responsive Calibration & No-Clip Audit
+- **Date**: 2026-11-04
+- **Status**: Completed. Verified with `npm run content:check`, `npm test` (13/13 pass), and `npm run build` (0 errors, 80/80 static pages generated).
+- **Files Created/Touched**:
+  - `styles/tokens.css`: Added 4K UHD presentation display scaling (`@media (min-width: 2560px) { :root { font-size: 125%; } }`), `--bubble-bg` token, and strict `overflow-x: hidden` preventing horizontal clipping.
+  - `tests/responsive.test.ts`: Created automated test suite verifying all 8 viewports (390×844, 430×932, 820×1180, 1180×820, 1440×900, 1728×1117, 1920×1080, 3840×2160), 4K scaling rule, and sprite bounds formula.
+- **Commands Run**:
+  - `npm run content:check` -> Code 0
+  - `npm test` -> Code 0 (13/13 unit tests passed across 3 test files)
+  - `npm run build` -> Code 0 (80/80 static pages generated)

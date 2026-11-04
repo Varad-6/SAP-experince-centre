@@ -19,6 +19,7 @@
   --focus: 0 0 0 3px rgba(0, 112, 242, 0.35);
   --sky-top: #CFE3FF;
   --sky-bottom: #F5F7FA;
+  --bubble-bg: rgba(255, 255, 255, 0.86);
 }
 
 * {
@@ -28,11 +29,20 @@
 html,
 body {
   margin: 0;
+  width: 100%;
+  overflow-x: hidden;
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+}
+
+/* 4K UHD Large Screen / Boardroom Display Scaling */
+@media (min-width: 2560px) {
+  :root {
+    font-size: 125%;
+  }
 }
 
 h1 {
