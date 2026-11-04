@@ -5,40 +5,39 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [2.0.0] — 2026-11-04 — Change Request v2: Enterprise Fiori Horizon & 2D Sprite Stack
+
+### Summary
+Replaced experimental 3D/WebXR/audio stack with a lightweight, clean, executive SAP Fiori Horizon-inspired platform (`#F5F7FA`, `#0070F2`, `#0A1F44`). Swapped heavy Three.js canvases for crisp 2D sprite pose-swapping, GSAP parachute drop timeline, and streamlined 8-slide walkthrough deck with dedicated Closing Slide and contact modal.
+
+### Removed
+- **All Audio**: Removed `howler`, `@types/howler`, `lib/audio.ts`, Web Audio API synthesizer, sound toggles, and audio keyboard shortcuts (`M`, `C`).
+- **Heavy 3D Stack**: Removed `three`, `@react-three/fiber`, `@react-three/drei`, `@react-three/postprocessing`, `@react-three/xr`, `three-stdlib`, `@types/three`, `lenis`, WebXR sessions, 3D camera rigs, particle storms, glassmorphism blur, neon glow, and gradient text.
+
+### Added & Restructured
+- **Design Tokens**: Standardized on [tokens.css](file:///C:/Users/Varad/Documents/GitHub/SAP-experince-centre/styles/tokens.css) (Fiori Horizon tokens: `--bg: #F5F7FA`, `--surface: #FFFFFF`, `--surface-2: #EEF2F7`, `--border: #D9E0EA`, `--brand: #0070F2`, `--navy: #0A1F44`, `--ok: #188918`, `--warn: #E9730C`, `--danger: #D20A0A`).
+- **Typography**: Single clean font **Inter** loaded via `next/font/google`.
+- **Pages & Flow**:
+  - `/` Landing: Full-height sky stage (`linear-gradient(var(--sky-top), var(--sky-bottom))`), drifting clouds, 14% ground strip (`#E3E9F2`), title block, "Explore solutions" CTA, and animated drone drop-in bot.
+  - `/pillars`: 5 clean cards in a 6-col responsive grid (cards 1–2 span 3 cols, cards 3–5 span 2 cols), 3px pillar accent top borders, docked bot with 5s auto-hide speech bubble (*"Pick a pillar to explore."*).
+  - `/pillar/[id]`: Clean header with `< All pillars` link, pillar title, and clean grid (`repeat(auto-fill, minmax(240px, 1fr))`) of solution cards with 16:9 thumbnails via [ThumbnailImage.tsx](file:///C:/Users/Varad/Documents/GitHub/SAP-experince-centre/components/ThumbnailImage.tsx), status chips (`Production` / `Preview`), and ROI badges.
+  - `/solution/[slug]`: Breadcrumb (`Pillars > [Pillar Title] > [Solution Title]`), H1, 1-line intro, status chips, center 16:9 `.card` hero preview, bottom action row with TWO buttons ("Contact for details" opening `ContactDialog` and "Demo" navigating to walkthrough), docked bot in `present` pose with `basicIntro` speech bubble.
+  - `/solution/[slug]/demo`: [SlideDeck.tsx](file:///C:/Users/Varad/Documents/GitHub/SAP-experince-centre/components/demo/SlideDeck.tsx) presenting 8 slides + Slide 9 Closing slide with "Thank You", live demo credentials info (`closing.liveDemoInfo`), "Share feedback" link, and "Demo contact" button.
+- **2D Bot & Drone Engine**:
+  - [poses.ts](file:///C:/Users/Varad/Documents/GitHub/SAP-experince-centre/lib/poses.ts): 12 sprite poses with vertical calibration offsets (`POSE_FIT`).
+  - [BotSprite.tsx](file:///C:/Users/Varad/Documents/GitHub/SAP-experince-centre/components/BotSprite.tsx): Dynamic pose-swapping sprite component with zero-break `_placeholder.svg` fallback.
+  - [optimize-assets.ts](file:///C:/Users/Varad/Documents/GitHub/SAP-experince-centre/scripts/optimize-assets.ts): Automated Sharp pipeline generating trimmed, 85-quality WebP sprites.
+  - [IntroDrop.tsx](file:///C:/Users/Varad/Documents/GitHub/SAP-experince-centre/components/IntroDrop.tsx): 2D GSAP timeline with drone fly-in, claw drop, parachute deployment, gentle swaying float, ground touchdown, parachute collapse, pose transitions (`fly` -> `fall` -> `wave` -> `idle`), and typewriter speech bubble. Features "Skip intro (Esc)" button, `sessionStorage` caching (`ais.intro=1`), and `prefers-reduced-motion` compliance.
+  - [ContactDialog.tsx](file:///C:/Users/Varad/Documents/GitHub/SAP-experince-centre/components/ContactDialog.tsx): Clean corporate modal supporting email, phone, and Microsoft Teams integration.
+- **Content & Validation**:
+  - Extended [schema.ts](file:///C:/Users/Varad/Documents/GitHub/SAP-experince-centre/lib/schema.ts) with `ContactSchema`, `ClosingSchema`, `basicIntro`, `contact`, `closing`, and `botPose`.
+  - Enriched all 28 enterprise application scripts in `content/apps/` via [enrich-apps.ts](file:///C:/Users/Varad/Documents/GitHub/SAP-experince-centre/scripts/enrich-apps.ts).
+  - Strict validator in [validate-content.ts](file:///C:/Users/Varad/Documents/GitHub/SAP-experince-centre/scripts/validate-content.ts).
+  - 9/9 Vitest tests passing in [content.test.ts](file:///C:/Users/Varad/Documents/GitHub/SAP-experince-centre/tests/content.test.ts) and [routes.test.ts](file:///C:/Users/Varad/Documents/GitHub/SAP-experince-centre/tests/routes.test.ts).
+
+---
+
 ## [1.0.0] — 2026-11-02 — Master Build Prompt v1.0 Release
 
 ### Added
-- **Phase 0: Audit & Master Architecture**:
-  - `docs/REPO_AUDIT.md`: Complete audit of Next.js 15 app router structure, preserved routes, and clean core migration map.
-  - `LOG.md`: Master execution ledger recording phases, pinned package versions, and verification runs.
-- **Phase 1: Foundation & Toolchain**:
-  - Pinned exact dependencies for React 19 (`@react-three/fiber@9.8.2`, `@react-three/drei@10.7.9`, `three@0.171.0`, `gsap@3.12.5`, `zustand@5.0.16`, `zod@4.6.7`, `vite@8.3.5`).
-  - Dark-only Design DNA (`--navy-950: #050E22`, `--sap-blue: #0070F2`, `--cyan: #00B8F5`, P1-P5 accents) in `lib/tokens.ts` and `app/globals.css`.
-  - Self-hosted typography: Space Grotesk Bold, Inter Regular, JetBrains Mono Regular in `public/fonts/`.
-  - Global Zustand state machine (`lib/store.ts`), hardware quality tier monitor (`lib/quality.ts`, `lib/device.ts`), global keyboard/swipe input (`lib/input.ts`), and Web Audio API synthesizer (`lib/audio.ts`).
-  - Zero-asset guarantee with SVG/Canvas procedural placeholders (`scripts/make-placeholders.ts`).
-  - Content schema validation (`lib/schema.ts`, `scripts/validate-content.ts`).
-  - Complete content database: `content/site.json`, `content/pillars.json`, `content/solutions.json` (all 28 enterprise solutions), `content/apps/podzo.json` (flagship 8-card script), and 27 generated app scripts.
-  - UI kit in `components/ui/` (`Button`, `Chip`, `GlassPanel`, `Tooltip`, `IconButton`, `Toast`) and HUD controls in `components/hud/` (`TopBar`, `PillarRail`, `BackButton`, `FullscreenButton`, `VRButton`, `CaptionBar`).
-- **Phase 2: 3D Stage & Environment**:
-  - `components/three/Stage.tsx`: Circular rotating metallic stage, concentric neon energy rings, glass floor plate, center hologram beacon.
-  - `components/three/PillarTile.tsx` & `PillarsRing.tsx`: 5 floating 3D octahedron crystal pedestals with active pillar glow and click selection.
-  - `components/three/CameraRig.tsx`: State-driven camera positions with mathematical dampening and interactive mouse parallax.
-- **Phase 3: Bot & Drone (Mascot Guide & Cinematic Drop-in)**:
-  - `components/three/Drone.tsx`: Cartoon quadcopter with spinning rotor blades, cyan sensor underbelly, visor, and 3-stage cinematic drop-in sequence with audio triggers.
-  - `components/three/Bot.tsx`: 3D Lead Architect mascot bot on stage with shadow decal, dynamic sprite texture switching across states, and breathing/celebration animations.
-  - `components/mascot/Director.tsx`: DOM Director speech bubble with typewriter effect, procedural audio chirps, and guide agency mode switcher (`[ Guide: ON | Tour Only | OFF ]`).
-- **Phase 4: Hub & Navigation**:
-  - `app/pillars/page.tsx`: 5 Pillar Hub cards with solution counts and clean core badges.
-  - `app/pillar/[id]/page.tsx`: Dynamic pillar detail pages (`p1` to `p5`).
-  - `app/solution/[slug]/page.tsx`: Solution overview pages with clean core badges and direct walkthrough launch.
-  - `app/page.tsx`: Redesigned executive landing page with dynamic pillar filtering across all 28 solutions.
-- **Phase 5: Demo Stage & 8-Card System**:
-  - `components/demo/CardTypes/*`: `HookCard`, `ChallengeCard`, `SolutionCard` (interactive DAG), `LiveUiCard` (screenshot with interactive coordinate hotspots), `WorkflowCard` (3-step mapped SAP actions), `TechStackCard`, `ImpactCard`, `CtaCard`.
-  - `components/demo/ProgressDots.tsx`: 8-step progress indicator with active glow and direct jumping.
-  - `components/demo/DemoStage.tsx`: Interactive card shell with responsive navigation.
-  - `app/solution/[slug]/demo/page.tsx`: Static route generating interactive walkthroughs for all 28 enterprise solutions.
-- **Phase 6: WebXR, Big-Screen & Testing**:
-  - Vitest test suite (`tests/content.test.ts`) validating 100% of content schemas, 5 pillars, 28 solutions, and 28 8-card scripts.
-  - Big-screen & kiosk mode with 3s idle cursor auto-hide and automatic autoplay.
-  - WebXR VR headset session integration via `@react-three/xr`.
+- Initial 3D platform foundation with Next.js 15, R3F, 28 enterprise solutions across 5 pillars, and WebXR.
