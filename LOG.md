@@ -359,3 +359,19 @@ Standard: Clean Fiori Horizon Professional Stack, 2D GSAP Bot, Zero 3D / Zero Au
   - `npm run content:check` -> Code 0
   - `npm test` -> Code 0 (9/9 passed)
   - `npm run build` -> Code 0 (79/79 static pages generated)
+
+---
+
+## Phase 3 (Master Prompt v3): ActorVideo, 3-Act Landing Sequence & Safari WebGL Chroma-Key Shader
+- **Date**: 2026-11-04
+- **Status**: Completed. Verified with `npm run content:check`, `npm test` (9/9 pass), and `npm run build` (0 errors, 80/80 static pages generated).
+- **Files Created/Touched**:
+  - `components/ChromaKeyCanvas.tsx`: Built WebGL shader rendering `_nokey.mp4` by computing distance in Cb-Cr colour space from keyColor (`#E95DCF`, `#F445AE`, `#F647BC`).
+  - `components/ActorVideo.tsx`: Video component with transparent WebM VP9 playback, Safari/iOS WebGL fallback, reduced-motion still posters, and `requestVideoFrameCallback` time tracking.
+  - `components/LandingActorSequence.tsx`: Orchestrates the 3-act sequence (`intro_drop` -> `analytics_laptop` -> `explain_close`) with 400ms crossfade, synchronized dialogue bubbles, skip/replay controls, and `sessionStorage` persistence.
+  - `app/page.tsx`: Replaced legacy drone drop with `LandingActorSequence`, aligning "Explore solutions" CTA with the mascot's final open-palm gesture.
+  - `app/debug/key/page.tsx`: Created interactive shader calibration route (`/debug/key?video=intro_drop`) with checkered background, live color picker, similarity, and smoothness sliders.
+- **Commands Run**:
+  - `npm run content:check` -> Code 0
+  - `npm test` -> Code 0 (9/9 passed)
+  - `npm run build` -> Code 0 (80/80 static pages generated including `/debug/key`)

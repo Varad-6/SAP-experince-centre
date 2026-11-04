@@ -1,23 +1,25 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import siteData from '@/content/site.json';
-import { IntroDrop } from '@/components/IntroDrop';
-import { ArrowRight, ShieldCheck } from 'lucide-react';
+import { LandingActorSequence } from '@/components/LandingActorSequence';
+import { ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
 
 export default function LandingPage() {
+  const [introDone, setIntroDone] = useState(false);
+
   return (
     <div className="relative w-full min-h-[calc(100vh-56px)] overflow-hidden flex flex-col justify-between bg-gradient-to-b from-[var(--sky-top)] to-[var(--sky-bottom)]">
       {/* Drifting Clouds */}
       <div className="cloud cloud-1" aria-hidden="true" />
       <div className="cloud cloud-2" aria-hidden="true" />
 
-      {/* GSAP Drone Drop & Bot Guide Layer */}
-      <IntroDrop />
+      {/* 3-Act Video Intro Layer */}
+      <LandingActorSequence onSequenceComplete={() => setIntroDone(true)} />
 
       {/* Main Content Area */}
-      <div className="relative z-10 max-w-[1200px] w-full mx-auto px-6 sm:px-8 pt-12 sm:pt-20 pb-20 flex-1 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pointer-events-auto">
+      <div className="relative z-10 max-w-[1200px] w-full mx-auto px-6 sm:px-8 pt-10 sm:pt-16 pb-20 flex-1 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pointer-events-auto">
         {/* Left Title Block */}
         <div className="lg:col-span-7 space-y-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--surface)] border border-[var(--border)] text-xs font-semibold text-[var(--brand)] shadow-sm">
@@ -36,9 +38,10 @@ export default function LandingPage() {
 
           <div className="pt-2 flex flex-wrap items-center gap-4">
             <Link href="/pillars">
-              <button className="btn btn-primary h-12 px-7 text-base inline-flex items-center gap-2.5 shadow-md">
+              <button className="btn btn-primary h-12 px-7 text-base inline-flex items-center gap-2.5 shadow-md hover:scale-[1.02] transition-transform">
+                <Sparkles className="w-4 h-4" />
                 <span>Explore solutions</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 ml-1" />
               </button>
             </Link>
 
@@ -60,8 +63,8 @@ export default function LandingPage() {
           </div>
         </div>
 
-        {/* Right Stage Spacer (IntroDrop renders bot into this screen area) */}
-        <div className="hidden lg:block lg:col-span-5 min-h-[380px]" aria-hidden="true" />
+        {/* Right Stage Spacer (LandingActorSequence video sits in this corner) */}
+        <div className="hidden lg:block lg:col-span-5 min-h-[420px]" aria-hidden="true" />
       </div>
 
       {/* Ground Strip (14% height, #E3E9F2) */}
