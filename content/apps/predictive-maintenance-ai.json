@@ -23,7 +23,8 @@
         "Engineered for Clean Core compliance",
         "Decoupled extension architecture on SAP BTP",
         "Production-tested across Tier-1 enterprise landscapes"
-      ]
+      ],
+      "botPose": "wave"
     },
     {
       "index": 1,
@@ -35,7 +36,8 @@
         "Monolithic customizations hinder ERP lifecycle upgrades",
         "High latency and asynchronous data synchronization errors",
         "Excessive operational overhead for support engineering"
-      ]
+      ],
+      "botPose": "alert"
     },
     {
       "index": 2,
@@ -75,7 +77,8 @@
             "to": "ui"
           }
         ]
-      }
+      },
+      "botPose": "present"
     },
     {
       "index": 3,
@@ -96,7 +99,8 @@
           "label": "Action Console",
           "tooltip": "Autonomous validation and exception routing controls."
         }
-      ]
+      ],
+      "botPose": "point"
     },
     {
       "index": 4,
@@ -122,7 +126,8 @@
           "desc": "Validated updates committed back to S/4HANA.",
           "sapAction": "S/4HANA Commit"
         }
-      ]
+      ],
+      "botPose": "explain"
     },
     {
       "index": 5,
@@ -146,7 +151,8 @@
           "layer": "Core",
           "tech": "SAP S/4HANA"
         }
-      ]
+      ],
+      "botPose": "laptop"
     },
     {
       "index": 6,
@@ -169,7 +175,8 @@
           "label": "Availability",
           "delta": "SLA 99.9%"
         }
-      ]
+      ],
+      "botPose": "celebrate"
     },
     {
       "index": 7,
@@ -189,7 +196,27 @@
           "label": "Export Solution Spec",
           "type": "pdf"
         }
-      ]
+      ],
+      "botPose": "present"
     }
-  ]
+  ],
+  "basicIntro": "Sensor telemetry anomaly detection triggering proactive PM maintenance orders in SAP PM.",
+  "intro": "Sensor telemetry anomaly detection triggering proactive PM maintenance orders in SAP PM.",
+  "contact": {
+    "name": "Varad Rane",
+    "role": "Chief SAP Solutions Architect",
+    "email": "contact@abhiyantaindia.com",
+    "phone": "+91 (022) 6982-1000",
+    "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=contact@abhiyantaindia.com"
+  },
+  "closing": {
+    "liveDemoInfo": "Accessible on SAP BTP Cloud Foundry tenant with pre-configured single sign-on.",
+    "contact": {
+      "name": "Varad Rane",
+      "role": "Chief SAP Solutions Architect",
+      "email": "contact@abhiyantaindia.com",
+      "phone": "+91 (022) 6982-1000",
+      "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=contact@abhiyantaindia.com"
+    }
+  }
 }

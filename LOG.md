@@ -288,3 +288,23 @@ Standard: Clean Fiori Horizon Professional Stack, 2D GSAP Bot, Zero 3D / Zero Au
   - `npm run build` -> Code 0 (All 79 static pages generated)
 - **Known Issues / Risks**:
   - None. Clean Core architecture, strict TypeScript compliance, zero dead code.
+
+---
+
+## Phase 5: Content Schema & Validation
+- **Date**: 2026-11-04
+- **Status**: Completed. Verified with `npm run content:check` (0 errors), `npm test` (5/5 tests passed), and `npm run build` (0 errors across 79 static routes).
+- **Files Created/Modified**:
+  - `lib/schema.ts`: Added `ContactSchema`, `ClosingSchema`, `basicIntro`, `intro`, `contact`, and `closing` to `AppContentSchema`, calibrated `botPose` enum across all 12 valid poses in `CardSchema`, and updated `SiteSchema` with `botName`, `tagline`, `sub`, `introLines`, and `defaultContact`.
+  - `content/apps/podzo.json`: Fully enriched flagship logistics application script with realistic Clean Core parameters, `basicIntro`, corporate contact, `closing` with SAP BTP `EU30-HANA` tenant note, feedback link, and explicit bot poses for each card (`wave`, `alert`, `present`, `point`, `explain`, `laptop`, `celebrate`, `present`).
+  - `scripts/enrich-apps.ts`: Synchronized all 28 app scripts with standard `basicIntro`, `contact`, `closing`, and calibrated pose sequences.
+  - `content/apps/*.json`: 27 application JSON scripts updated and enriched.
+  - `scripts/validate-content.ts`: Strict validation script checking `site.json` (3 introLines, defaultContact, botName, tagline), `pillars.json` (5 pillars), `solutions.json` (28 solutions), and all 28 apps (`basicIntro`, valid `contact`, `closing` with `liveDemoInfo`, and 8 cards with non-empty `botDialogue` and valid `botPose`).
+  - `tests/content.test.ts`: Vitest suite updated with assertions testing all new schema fields across all 28 apps.
+- **Commands Run**:
+  - `npx tsx scripts/enrich-apps.ts` -> Code 0 (Updated 27 app scripts)
+  - `npm run content:check` -> Code 0 (Strict validation passed across site, pillars, solutions, and all 28 apps)
+  - `npm test` -> Code 0 (5/5 unit tests passed)
+  - `npm run build` -> Code 0 (All 79 static pages generated)
+- **Known Issues / Risks**:
+  - None. 100% schema integrity enforced by prebuild hook.

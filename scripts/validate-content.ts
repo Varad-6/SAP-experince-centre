@@ -13,8 +13,18 @@ function validate() {
 
   // 1. Site schema
   const siteData = JSON.parse(fs.readFileSync(path.join(contentDir, 'site.json'), 'utf8'));
-  SiteSchema.parse(siteData);
-  console.log('✓ site.json valid');
+  const parsedSite = SiteSchema.parse(siteData);
+
+  if (!parsedSite.introLines || parsedSite.introLines.length !== 3) {
+    throw new Error(`site.json introLines must have exactly 3 strings, got ${parsedSite.introLines?.length}`);
+  }
+  if (!parsedSite.defaultContact || !parsedSite.defaultContact.email) {
+    throw new Error('site.json must define defaultContact with valid email');
+  }
+  if (!parsedSite.botName || !parsedSite.tagline || !parsedSite.sub) {
+    throw new Error('site.json missing required botName, tagline, or sub');
+  }
+  console.log('✓ site.json valid (brand, botName, 3 introLines, defaultContact)');
 
   // 2. Pillars schema
   const pillarsData = JSON.parse(fs.readFileSync(path.join(contentDir, 'pillars.json'), 'utf8'));
@@ -44,9 +54,29 @@ function validate() {
       throw new Error(`Missing app JSON: ${appPath}`);
     }
     const appData = JSON.parse(fs.readFileSync(appPath, 'utf8'));
-    AppContentSchema.parse(appData);
+    const parsed = AppContentSchema.parse(appData);
+
+    if (!parsed.basicIntro || parsed.basicIntro.trim().length === 0) {
+      throw new Error(`App ${sol.slug} missing non-empty basicIntro`);
+    }
+    if (!parsed.contact || !parsed.contact.email) {
+      throw new Error(`App ${sol.slug} missing valid contact object`);
+    }
+    if (!parsed.closing || !parsed.closing.liveDemoInfo) {
+      throw new Error(`App ${sol.slug} missing valid closing object with liveDemoInfo`);
+    }
+
+    // Verify 8 cards have non-empty botDialogue and valid botPose
+    parsed.cards.forEach((card, idx) => {
+      if (!card.botDialogue || card.botDialogue.trim().length === 0) {
+        throw new Error(`App ${sol.slug} card ${idx} has empty botDialogue`);
+      }
+      if (!card.botPose) {
+        throw new Error(`App ${sol.slug} card ${idx} missing botPose`);
+      }
+    });
   }
-  console.log('✓ all 28 app JSON files valid (8 cards per app)');
+  console.log('✓ all 28 app JSON files valid (basicIntro, contact, closing, 8 cards with botPose & botDialogue)');
 
   console.log('\nAll content successfully validated!');
 }

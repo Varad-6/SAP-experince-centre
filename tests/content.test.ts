@@ -11,10 +11,13 @@ import {
 describe('Content Architecture & Schema Validation', () => {
   const contentDir = path.join(process.cwd(), 'content');
 
-  it('validates site.json matches SiteSchema', () => {
+  it('validates site.json matches SiteSchema with botName, 3 introLines, and defaultContact', () => {
     const raw = fs.readFileSync(path.join(contentDir, 'site.json'), 'utf8');
     const parsed = SiteSchema.parse(JSON.parse(raw));
     expect(parsed.brand).toBe('Abhiyanta India Solutions');
+    expect(parsed.botName).toBe('The Lead Architect');
+    expect(parsed.introLines).toHaveLength(3);
+    expect(parsed.defaultContact?.email).toBeTruthy();
     expect(parsed.stats.length).toBeGreaterThanOrEqual(4);
   });
 
@@ -36,7 +39,7 @@ describe('Content Architecture & Schema Validation', () => {
     }
   });
 
-  it('validates all 28 apps conform to strict 8-card AppContentSchema', () => {
+  it('validates all 28 apps conform to strict 8-card AppContentSchema with basicIntro, contact, closing', () => {
     const raw = fs.readFileSync(path.join(contentDir, 'solutions.json'), 'utf8');
     const solutions = JSON.parse(raw);
     const appsDir = path.join(contentDir, 'apps');
@@ -47,6 +50,14 @@ describe('Content Architecture & Schema Validation', () => {
       const appData = JSON.parse(fs.readFileSync(appFile, 'utf8'));
       const parsed = AppContentSchema.parse(appData);
       expect(parsed.cards).toHaveLength(8);
+      expect(parsed.basicIntro).toBeTruthy();
+      expect(parsed.contact?.email).toBeTruthy();
+      expect(parsed.closing?.liveDemoInfo).toBeTruthy();
+
+      parsed.cards.forEach((card) => {
+        expect(card.botDialogue.length).toBeGreaterThan(0);
+        expect(card.botPose).toBeTruthy();
+      });
     }
   });
 
@@ -56,5 +67,6 @@ describe('Content Architecture & Schema Validation', () => {
     expect(podzo.hasContent).toBe(true);
     expect(podzo.cards[0].stat?.number).toBe('99.2%');
     expect(podzo.cards[3].hotspots).toHaveLength(4);
+    expect(podzo.closing?.liveDemoInfo).toContain('EU30-HANA');
   });
 });

@@ -26,7 +26,8 @@
         "Pre-authenticated multi-region SAP BTP Cloud Foundry runtime (EU30/EU10)",
         "Automated deployment of Anthropic Claude Sonnet 4.5 via SAP AI Core",
         "Single-command workstation health verification and zero environment drift"
-      ]
+      ],
+      "botPose": "wave"
     },
     {
       "index": 1,
@@ -38,7 +39,8 @@
         "Manual workstation setup across Node, CDS-DK, MBT, and CF takes 3 to 5 business days per developer",
         "Opaque AI integrations risk enterprise data leakage and breach SAP Clean Core guidelines",
         "Multi-step cockpit provisioning of AI Core instances and service keys results in configuration drift"
-      ]
+      ],
+      "botPose": "alert"
     },
     {
       "index": 2,
@@ -47,17 +49,39 @@
       "botDialogue": "Here is how our vibe coding pipeline activates developer agents: subaccount space creation, automated AI Core model deployment, and direct VS Code Cline pairing.",
       "diagram": {
         "nodes": [
-          { "id": "n1", "label": "BTP Subaccount Quotas" },
-          { "id": "n2", "label": "AI Core Claude 4.5" },
-          { "id": "n3", "label": "Cline Agent Pairing" },
-          { "id": "n4", "label": "Live CAP Deployment" }
+          {
+            "id": "n1",
+            "label": "BTP Subaccount Quotas"
+          },
+          {
+            "id": "n2",
+            "label": "AI Core Claude 4.5"
+          },
+          {
+            "id": "n3",
+            "label": "Cline Agent Pairing"
+          },
+          {
+            "id": "n4",
+            "label": "Live CAP Deployment"
+          }
         ],
         "edges": [
-          { "from": "n1", "to": "n2" },
-          { "from": "n2", "to": "n3" },
-          { "from": "n3", "to": "n4" }
+          {
+            "from": "n1",
+            "to": "n2"
+          },
+          {
+            "from": "n2",
+            "to": "n3"
+          },
+          {
+            "from": "n3",
+            "to": "n4"
+          }
         ]
-      }
+      },
+      "botPose": "present"
     },
     {
       "index": 3,
@@ -84,7 +108,8 @@
           "label": "Deterministic Mode",
           "tooltip": "Orchestration Mode disabled for sub-second low-latency code execution"
         }
-      ]
+      ],
+      "botPose": "point"
     },
     {
       "index": 4,
@@ -110,7 +135,8 @@
           "desc": "Automated key scrubbing ensures zero persistent credentials on workstations, keeping the landscape secure.",
           "sapAction": "Ephemeral XSUAA OAuth2 Token Rotation"
         }
-      ]
+      ],
+      "botPose": "explain"
     },
     {
       "index": 5,
@@ -118,12 +144,28 @@
       "title": "Enterprise Cloud Architecture & Clean Core Security",
       "botDialogue": "Everything runs 100% decoupled in SAP BTP Cloud Foundry with strict XSUAA OAuth2 scopes, communicating via standard REST BAPIs.",
       "chips": [
-        { "layer": "Runtime", "tech": "Cloud Foundry v8 (Space: dev)" },
-        { "layer": "AI Layer", "tech": "SAP AI Core Extended (Claude 4.5)" },
-        { "layer": "Toolchain", "tech": "VS Code + Cline v4.1.17 + CDS-DK 9.9.6" },
-        { "layer": "Security", "tech": "SAP IAS + XSUAA OAuth2 Bearer Tokens" },
-        { "layer": "Database", "tech": "SAP HANA Cloud HDI Containers" }
-      ]
+        {
+          "layer": "Runtime",
+          "tech": "Cloud Foundry v8 (Space: dev)"
+        },
+        {
+          "layer": "AI Layer",
+          "tech": "SAP AI Core Extended (Claude 4.5)"
+        },
+        {
+          "layer": "Toolchain",
+          "tech": "VS Code + Cline v4.1.17 + CDS-DK 9.9.6"
+        },
+        {
+          "layer": "Security",
+          "tech": "SAP IAS + XSUAA OAuth2 Bearer Tokens"
+        },
+        {
+          "layer": "Database",
+          "tech": "SAP HANA Cloud HDI Containers"
+        }
+      ],
+      "botPose": "laptop"
     },
     {
       "index": 6,
@@ -146,7 +188,8 @@
           "label": "Clean Core Compliance",
           "delta": "0 ERP Core mods"
         }
-      ]
+      ],
+      "botPose": "celebrate"
     },
     {
       "index": 7,
@@ -166,7 +209,27 @@
           "label": "Architecture Specification",
           "type": "architecture"
         }
-      ]
+      ],
+      "botPose": "present"
     }
-  ]
+  ],
+  "basicIntro": "Side-by-side decoupled architecture governance for SAP S/4HANA upgrades.",
+  "intro": "Enterprise AI cloud runtime, autonomous agent toolchains, and zero-prompt SAP CAP acceleration.",
+  "contact": {
+    "name": "Varad Rane",
+    "role": "Chief SAP Solutions Architect",
+    "email": "contact@abhiyantaindia.com",
+    "phone": "+91 (022) 6982-1000",
+    "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=contact@abhiyantaindia.com"
+  },
+  "closing": {
+    "liveDemoInfo": "Accessible on SAP BTP Cloud Foundry tenant with pre-configured single sign-on.",
+    "contact": {
+      "name": "Varad Rane",
+      "role": "Chief SAP Solutions Architect",
+      "email": "contact@abhiyantaindia.com",
+      "phone": "+91 (022) 6982-1000",
+      "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=contact@abhiyantaindia.com"
+    }
+  }
 }
