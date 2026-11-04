@@ -28,13 +28,13 @@ function validate() {
 
   // 2. Pillars schema
   const pillarsData = JSON.parse(fs.readFileSync(path.join(contentDir, 'pillars.json'), 'utf8'));
-  if (!Array.isArray(pillarsData) || pillarsData.length !== 5) {
-    throw new Error(`Expected exactly 5 pillars, got ${pillarsData?.length}`);
+  if (!Array.isArray(pillarsData) || pillarsData.length !== 4) {
+    throw new Error(`Expected exactly 4 pillars, got ${pillarsData?.length}`);
   }
   for (const pillar of pillarsData) {
     PillarSchema.parse(pillar);
   }
-  console.log('✓ pillars.json valid (5 pillars)');
+  console.log('✓ pillars.json valid (4 pillars)');
 
   // 3. Solutions schema
   const solutionsData = JSON.parse(fs.readFileSync(path.join(contentDir, 'solutions.json'), 'utf8'));

@@ -23,7 +23,7 @@ export default function LandingPage() {
       <LandingActorSequence onSequenceComplete={() => setIntroDone(true)} />
 
       {/* Top Floating Baseline Bar (Moved Upside) */}
-      <div className="relative z-30 max-w-[1200px] w-full mx-auto px-6 sm:px-8 pt-4 flex items-center justify-between pointer-events-auto">
+      <div className="relative z-40 max-w-[1200px] w-full mx-auto px-6 sm:px-8 pt-4 flex items-center justify-between pointer-events-auto">
         <div className="flex items-center gap-2.5">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--surface)]/90 backdrop-blur border border-[var(--border)] text-xs font-semibold text-[var(--ok)] shadow-xs">
             <ShieldCheck size={14} />
@@ -51,18 +51,27 @@ export default function LandingPage() {
       <div className="relative z-10 max-w-[1200px] w-full mx-auto px-6 sm:px-8 pt-8 sm:pt-14 pb-16 flex-1 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pointer-events-auto">
         {/* Left Title Block */}
         <div className="lg:col-span-7 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--surface)] border border-[var(--border)] text-xs font-semibold text-[var(--brand)] shadow-sm">
-            <ShieldCheck className="w-4 h-4 text-[var(--brand)]" />
-            <span>ABHIYANTA INDIA SOLUTIONS</span>
-          </div>
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[var(--surface)] border border-[var(--border)] text-xs font-semibold text-[var(--brand-vivid)] shadow-xs">
+              <ShieldCheck className="w-3.5 h-3.5 text-[var(--brand-vivid)]" />
+              <span className="tracking-wider uppercase font-bold text-[11px]">Abhiyanta India Solutions</span>
+            </div>
 
-          <h1 className="text-[var(--navy)] font-bold text-display tracking-tight">
-            {siteData.tagline || 'Next-Gen SAP Enterprise Solutions'}
-          </h1>
+            <h1 className="text-[var(--navy)] font-black text-[clamp(2.75rem,5.5vw,5rem)] tracking-tight leading-[1.05]">
+              Aayam
+              <span className="block text-[var(--brand-vivid)] text-[clamp(1.25rem,2.4vw,2.25rem)] font-bold tracking-tight mt-1">
+                AIS Experience Centre
+              </span>
+            </h1>
+
+            <p className="text-[var(--brand-600)] font-semibold text-sm sm:text-base tracking-wide uppercase">
+              Exploring new dimensions of technology
+            </p>
+          </div>
 
           <p className="text-[var(--text-dim)] text-base sm:text-lg max-w-xl leading-relaxed">
             {siteData.sub ||
-              'Explore 28 production solutions built across SAP BTP, Clean Core extensibility, and Agentic AI.'}
+              'Explore 28 production solutions built across SAP BTP, Clean Core extensibility, and modern enterprise intelligence.'}
           </p>
 
           <div className="pt-2 flex flex-wrap items-center gap-4">

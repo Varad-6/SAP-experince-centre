@@ -20,9 +20,9 @@ export const LandingActorSequence: React.FC<LandingActorSequenceProps> = ({
   const [hasVisited, setHasVisited] = useState<boolean>(false);
 
   const introLines = siteData.introLines || [
-    "Hi, I'm the Lead Architect bot at Abhiyanta India Solutions.",
-    "We build enterprise AI, SAP BTP extensions, and real-time operational copilots.",
-    "Explore our 5 architectural pillars and 28 production solutions.",
+    "Hi! I am Aayam from Abhiyanta India Solutions. Welcome to the AIS Experience Centre!",
+    "Watch how we eliminate technical debt using S/4HANA Clean Core extensibility, event-driven architectures, and high-velocity SAP BTP vibe coding.",
+    "Every solution here is live, validated, and ready for your enterprise landscape. Click 'Explore Solutions' to inspect the architecture and live cockpits.",
   ];
 
   // Check sessionStorage on mount
@@ -127,7 +127,7 @@ export const LandingActorSequence: React.FC<LandingActorSequenceProps> = ({
           <div className="relative w-full h-full flex items-end justify-center">
             <img
               src="/assets/video/explain_close_last.png"
-              alt="Lead Architect Ready"
+              alt="Aayam Ready"
               className="w-full h-full object-contain pointer-events-none"
             />
             <div className="absolute top-6 left-1/2 -translate-x-1/2">

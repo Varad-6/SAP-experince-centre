@@ -1,15 +1,15 @@
 {
   "brand": "Abhiyanta India Solutions",
-  "subBrand": "AIS Experience Centre",
-  "botName": "The Lead Architect",
-  "tagline": "Next-Gen SAP Enterprise Solutions",
-  "sub": "Explore 28 production solutions built across SAP BTP, Clean Core extensibility, and Agentic AI.",
-  "heroTitle": "Next-Gen SAP Enterprise Solutions",
-  "heroSubtitle": "Explore 28 production solutions built across SAP BTP, Clean Core extensibility, and Agentic AI.",
+  "subBrand": "Aayam — AIS Experience Centre",
+  "botName": "Aayam",
+  "tagline": "Exploring new dimensions of technology",
+  "sub": "Explore 28 production solutions built across SAP BTP, Clean Core extensibility, and modern enterprise intelligence.",
+  "heroTitle": "Aayam",
+  "heroSubtitle": "AIS Experience Centre — Exploring new dimensions of technology",
   "introLines": [
-    "Welcome to Abhiyanta India Solutions.",
-    "I'm your Lead Architect bot.",
-    "Explore 28 production SAP & AI solutions across 5 pillars."
+    "Hi! I am Aayam from Abhiyanta India Solutions. Welcome to the AIS Experience Centre!",
+    "Watch how we eliminate technical debt using S/4HANA Clean Core extensibility, event-driven architectures, and high-velocity SAP BTP vibe coding.",
+    "Every solution here is live, validated, and ready for your enterprise landscape. Click 'Explore Solutions' to inspect the architecture and live cockpits."
   ],
   "defaultContact": {
     "name": "Varad Rane",
@@ -20,7 +20,7 @@
   },
   "stats": [
     { "value": "28", "label": "Enterprise Solutions" },
-    { "value": "5", "label": "Architectural Pillars" },
+    { "value": "4", "label": "Architectural Pillars" },
     { "value": "100%", "label": "Clean Core Compliant" },
     { "value": "<30s", "label": "Reconciliation Cycle" }
   ],

@@ -109,7 +109,7 @@ export default function PillarsHubPage() {
           className="relative cursor-pointer group shrink-0"
           onClick={() => setShowBubble((prev) => !prev)}
         >
-          <BotSprite pose="idle" heightPx={130} alt="Docked Lead Architect Bot" />
+          <BotSprite pose="idle" heightPx={130} alt="Docked Aayam Guide" />
           <div className="w-16 h-2 bg-black/10 rounded-full blur-[2px] mx-auto mt-[-4px]" />
         </div>
       </aside>

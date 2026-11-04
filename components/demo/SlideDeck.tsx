@@ -329,13 +329,13 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
           </div>
         </div>
 
-        {/* Right Column (4 cols): Lead Architect Presenter Column */}
+        {/* Right Column (4 cols): Aayam Presenter Column */}
         <div className="lg:col-span-4 flex flex-col justify-between items-center p-5 card bg-gradient-to-b from-[var(--surface)] to-[var(--surface-2)] border border-[var(--border)] shadow-[var(--shadow)] overflow-hidden">
           {/* Top: Thinking Speech Bubble */}
           <div className="w-full flex-1 flex flex-col justify-center items-center">
             <BotBubble
               text={currentDialogue}
-              speakerName="The Lead Architect"
+              speakerName="Aayam"
               placement="top"
               showTail={true}
               className="w-full max-w-sm mb-2"
@@ -347,7 +347,7 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
             <BotSprite
               pose={currentPose}
               heightPx={280}
-              alt="Lead Architect Explaining"
+              alt="Aayam Explaining"
               priority={true}
             />
             {/* Soft Pedestal Shadow */}

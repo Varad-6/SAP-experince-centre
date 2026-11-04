@@ -25,7 +25,7 @@ export function PillarBotDock() {
         className="relative cursor-pointer group shrink-0"
         onClick={() => setShowBubble((prev) => !prev)}
       >
-        <BotSprite pose="point" heightPx={130} alt="Lead Architect Bot Pointing" />
+        <BotSprite pose="point" heightPx={130} alt="Aayam Pointing" />
         <div className="w-16 h-2 bg-black/10 rounded-full blur-[2px] mx-auto mt-[-4px]" />
       </div>
     </aside>

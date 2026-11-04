@@ -17,7 +17,7 @@ export interface BotBubbleProps {
 
 export const BotBubble: React.FC<BotBubbleProps> = ({
   text,
-  speakerName = 'Lead Architect',
+  speakerName = 'Aayam',
   headPos,
   placement = 'auto',
   onDismiss,

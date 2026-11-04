@@ -3,45 +3,36 @@
     "id": "p1",
     "accent": "#0070F2",
     "title": "Foundation & Clean Core",
-    "tagline": "Zero-modification enterprise governance, event mesh and side-by-side extensibility.",
+    "tagline": "Zero-modification enterprise governance, event mesh and SAP BTP vibe coding.",
     "icon": "Layers",
     "order": 1,
-    "solutionCount": 5
+    "solutionCount": 7
   },
   {
     "id": "p2",
-    "accent": "#00B8F5",
+    "accent": "#0084FF",
     "title": "Custom BTP Applications",
-    "tagline": "Tailored cloud applications extending S/4HANA Order-to-Cash, Procure-to-Pay, and Logistics.",
+    "tagline": "Tailored cloud applications extending S/4HANA Order-to-Cash, logistics, and procurement.",
     "icon": "Box",
     "order": 2,
-    "solutionCount": 6
+    "solutionCount": 7
   },
   {
     "id": "p3",
-    "accent": "#8B5CF6",
-    "title": "Enterprise AI & Joule",
-    "tagline": "Autonomous agents, SAP Joule copilots, generative ABAP code diagnostics and document AI.",
-    "icon": "Cpu",
+    "accent": "#00A6FF",
+    "title": "HanaMorph & Modernization",
+    "tagline": "1:1 visual lineage parity, calculation view modernization and automated data fabrics.",
+    "icon": "Zap",
     "order": 3,
-    "solutionCount": 6
+    "solutionCount": 7
   },
   {
     "id": "p4",
-    "accent": "#F0AB00",
-    "title": "HanaMorph & Modernization",
-    "tagline": "1:1 visual lineage parity, calculation view modernization and automated ABAP Cloud transformation.",
-    "icon": "Zap",
-    "order": 4,
-    "solutionCount": 5
-  },
-  {
-    "id": "p5",
-    "accent": "#19C3A6",
+    "accent": "#0070F2",
     "title": "SAC Executive Dashboards",
     "tagline": "Real-time boardroom decision steering, OEE manufacturing analytics and MRO reliability.",
     "icon": "BarChart3",
-    "order": 5,
-    "solutionCount": 6
+    "order": 4,
+    "solutionCount": 7
   }
 ]

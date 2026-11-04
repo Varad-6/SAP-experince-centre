@@ -45,8 +45,8 @@ export const BotSprite: React.FC<BotSpriteProps> = ({
   dockY,
   className = '',
   onClick,
-  title = 'Abhiyanta Guide',
-  alt = 'Lead Architect Bot',
+  title = 'Aayam - Enterprise Architect Guide',
+  alt = 'Aayam Chibi Mascot',
   priority = false,
   onHeadPosition,
 }) => {

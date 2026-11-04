@@ -2,8 +2,8 @@
   "slug": "sap-btp-vibe-coding",
   "pillarId": "p1",
   "title": "SAP BTP Vibe Coding & Enterprise AI Foundation",
-  "heroHeadline": "10x Velocity (92% Setup Cycle Time Reduction: 5 Days → 25 Mins)",
-  "basicIntro": "Welcome to the foundation layer! I'm your Lead Architect. Before writing custom code, we provision governed multi-region BTP runtimes, SAP AI Core with Claude Sonnet 4.5, and autonomous developer agents.",
+  "heroHeadline": "10x Velocity (92% Setup Cycle Time Reduction: 5 Days -> 25 Mins)",
+  "basicIntro": "\"Welcome to the foundation layer! I'm your Lead Architect. Before writing custom code, we provision governed multi-region BTP runtimes, SAP AI Core with Claude Sonnet 4.5, and autonomous developer agents.\"",
   "sapComponents": [
     "SAP AI Core (Plan: extended)",
     "SAP Generative AI Hub (Anthropic Claude 4.5)",
@@ -17,54 +17,55 @@
     {
       "index": 0,
       "type": "hook",
-      "title": "Welcome to SAP BTP Vibe Coding: Enterprise AI Foundation",
-      "botDialogue": "Welcome to the foundation layer! I'm your Lead Architect. Before writing custom code, we provision governed multi-region BTP runtimes, SAP AI Core with Claude Sonnet 4.5, and autonomous developer agents.",
+      "title": "Strategic Opportunity & Market Impact",
+      "botPose": "present",
+      "botDialogue": "Welcome! I am Aayam. Let's look at the strategic business opportunity for SAP BTP Vibe Coding & Enterprise AI Foundation. Here is how we transform operational velocity.",
       "stat": {
-        "number": "10x",
-        "label": "Developer Velocity"
+        "number": "35%",
+        "label": "1. 10x Developer Productivit"
       },
       "bullets": [
-        "Pre-authenticated multi-region SAP BTP Cloud Foundry runtime (EU30/EU10)",
-        "Automated deployment of Anthropic Claude Sonnet 4.5 via SAP AI Core",
-        "Single-command workstation health verification and zero environment drift"
-      ],
-      "botPose": "present"
+        "Fragmented Developer Tooling: Traditional SAP setups require 3-5 days across disparate CLIs, Node runtimes, and MTA tools with constant environment drift and permission mismatches.",
+        "Opaque AI Integration & Cloud Governance: Connecting modern LLMs (Anthropic Claude 3.7 / 4.5) to SAP enterprise workflows often breaches Clean Core standards or incurs uncontrolled cloud egress.",
+        "Complex Cloud Foundry & AI Core Provisioning: Manually provisioning Cloud Foundry spaces, role collections, extended AI Core plans, and service keys is error-prone and delays modernization."
+      ]
     },
     {
       "index": 1,
       "type": "challenge",
-      "title": "The Operational Bottleneck: 5-Day Onboarding & Cloud Drift",
-      "botDialogue": "Traditional SAP developer onboarding requires days of manual toolchain configuration, frequent version mismatches, and unsecured API tokens.",
-      "visual": "before-after",
+      "title": "Enterprise Process Bottlenecks",
+      "botPose": "explain",
+      "botDialogue": "Examining the core friction points in current operations. Notice the process bottlenecks that create revenue leakage.",
+      "visual": "pain-matrix",
       "bullets": [
-        "Manual workstation setup across Node, CDS-DK, MBT, and CF takes 3 to 5 business days per developer",
-        "Opaque AI integrations risk enterprise data leakage and breach SAP Clean Core guidelines",
-        "Multi-step cockpit provisioning of AI Core instances and service keys results in configuration drift"
-      ],
-      "botPose": "point"
+        "Disconnected data silos across regional plants and commercial entities.",
+        "High variance between physical operations and digital ledger postings.",
+        "Heavy developer dependency on proprietary legacy custom code."
+      ]
     },
     {
       "index": 2,
       "type": "solution",
-      "title": "3-Step Foundation Flow: From Cloud Cockpit to Developer Target",
-      "botDialogue": "Here is how our vibe coding pipeline activates developer agents: subaccount space creation, automated AI Core model deployment, and direct VS Code Cline pairing.",
+      "title": "Clean Core Solution Architecture",
+      "botPose": "tablet",
+      "botDialogue": "Here is our decoupled Clean Core architecture. Notice how SAP BTP handles high-velocity transactions while keeping S/4HANA untouched.",
       "diagram": {
         "nodes": [
           {
             "id": "n1",
-            "label": "BTP Subaccount Quotas"
+            "label": "Enterprise Edge Telemetry"
           },
           {
             "id": "n2",
-            "label": "AI Core Claude 4.5"
+            "label": "SAP BTP Cloud Foundry"
           },
           {
             "id": "n3",
-            "label": "Cline Agent Pairing"
+            "label": "Autonomous Rules Engine"
           },
           {
             "id": "n4",
-            "label": "Live CAP Deployment"
+            "label": "S/4HANA Clean Core"
           }
         ],
         "edges": [
@@ -81,111 +82,136 @@
             "to": "n4"
           }
         ]
-      },
-      "botPose": "tablet"
+      }
     },
     {
       "index": 3,
       "type": "live-ui",
-      "title": "Live Developer Cockpit: VS Code Cline Connected to SAP AI Core",
-      "botDialogue": "This is our verified developer cockpit. Cline runs natively inside VS Code, communicating directly with SAP AI Core via ephemeral OAuth2 tokens.",
-      "screenshot": "/assets/apps/sap-btp-vibe-coding/btp_vibe_c2_1.png",
+      "title": "Interactive Production Cockpit",
+      "botPose": "point",
+      "botDialogue": "Let's inspect the live production dashboard. Every metric here connects to real-time S/4HANA master data.",
+      "screenshot": "/assets/apps/sap-btp-vibe-coding/screen-1.png",
       "hotspots": [
         {
-          "x": 20,
-          "y": 25,
-          "label": "SAP AI Core Provider",
-          "tooltip": "Direct enterprise service connection using service key credentials"
+          "x": 28,
+          "y": 32,
+          "label": "Real-time Telemetry Status",
+          "tooltip": "Live stream validation with zero ledger lag."
         },
         {
-          "x": 20,
+          "x": 68,
           "y": 48,
-          "label": "Claude Sonnet 4.5",
-          "tooltip": "Enterprise foundation model served via SAP Generative AI Hub"
+          "label": "Autonomous Variance Detection",
+          "tooltip": "Automated tolerance checks against PO baselines."
         },
         {
-          "x": 20,
-          "y": 68,
-          "label": "Deterministic Mode",
-          "tooltip": "Orchestration Mode disabled for sub-second low-latency code execution"
+          "x": 50,
+          "y": 78,
+          "label": "One-Click Settlement",
+          "tooltip": "Direct BAPI/OData posting into SAP S/4HANA."
         }
-      ],
-      "botPose": "point"
+      ]
     },
     {
       "index": 4,
       "type": "workflow",
-      "title": "Automated Setup Pipeline & Master Health Check",
-      "botDialogue": "A single PowerShell command verifies your complete toolchain, while our automated script handles Claude 4.5 deployment in under 5 minutes.",
+      "title": "End-to-End Execution Flow",
+      "botPose": "tablet",
+      "botDialogue": "Notice our 3-step automated flow. From transaction intake to verified settlement, the process is fast and auditable.",
       "steps": [
         {
-          "number": "01",
-          "title": "Master Toolchain Health Check",
-          "description": "One-line verification script tests Node.js v24, CDS-DK 9.9.6, Make 4.4.1, MBT 1.2.47, and CF CLI v8."
+          "step": 1,
+          "title": "1. Cloud Subaccount & Space Activation: Entitlements assigned, Cloud Foundry space 'dev' enabled, and Space Developer role assigned.",
+          "desc": "1. Cloud Subaccount & Space Activation: Entitlements assigned, Cloud Foundry space 'dev' enabled, and Space Developer role assigned.",
+          "sapAction": "BTP Ingest & Validation"
         },
         {
-          "number": "02",
-          "title": "Automated Claude 4.5 Provisioning",
-          "description": "PowerShell script reads key.json, queries OAuth token, builds AI configuration, and verifies RUNNING status."
+          "step": 2,
+          "title": "2. SAP AI Core & Claude Model Deployment: Automated PowerShell script provisions extended AI Core instance and starts Claude 4.5 deployment.",
+          "desc": "2. SAP AI Core & Claude Model Deployment: Automated PowerShell script provisions extended AI Core instance and starts Claude 4.5 deployment.",
+          "sapAction": "BTP Ingest & Validation"
         },
         {
-          "number": "03",
-          "title": "Zero-Leak Credential Management",
-          "description": "Automated key scrubbing ensures zero persistent credentials on workstations, keeping the landscape secure."
+          "step": 3,
+          "title": "3. Autonomous Cline Agent Pairing: Service credentials injected into VS Code Cline for prompt-driven CAP/Fiori vibe coding.",
+          "desc": "3. Autonomous Cline Agent Pairing: Service credentials injected into VS Code Cline for prompt-driven CAP/Fiori vibe coding.",
+          "sapAction": "Automated S/4HANA Clean Core Event"
         }
-      ],
-      "botPose": "tablet"
+      ]
     },
     {
       "index": 5,
       "type": "tech-stack",
-      "title": "Enterprise Cloud Architecture & Clean Core Security",
-      "botDialogue": "Everything runs 100% decoupled in SAP BTP Cloud Foundry with strict XSUAA OAuth2 scopes, communicating via standard REST BAPIs.",
-      "architecture": {
-        "tier1": "SAP S/4HANA & SAP HANA Cloud (Clean Core Record of Truth)",
-        "tier2": "SAP BTP Cloud Foundry Runtime & SAP AI Core Extended Plan",
-        "tier3": "VS Code, Cline Agent v4.1.17 & SAP Build Work Zone"
-      },
-      "botPose": "laptop"
+      "title": "SAP BTP & Clean Core Topology",
+      "botPose": "laptop",
+      "botDialogue": "From an engineering standpoint, this is built 100% on SAP BTP Cloud Foundry with XSUAA role collections and Cloud Connector security.",
+      "chips": [
+        {
+          "layer": "Runtime",
+          "tech": "SAP BTP Cloud Foundry"
+        },
+        {
+          "layer": "Core ERP",
+          "tech": "SAP S/4HANA Cloud / On-Prem"
+        },
+        {
+          "layer": "Messaging",
+          "tech": "SAP Event Mesh"
+        },
+        {
+          "layer": "Database",
+          "tech": "SAP HANA Cloud"
+        },
+        {
+          "layer": "Security",
+          "tech": "XSUAA OAuth 2.0"
+        }
+      ]
     },
     {
       "index": 6,
       "type": "impact",
-      "title": "Quantified Business ROI: 5 Days Reduced to 25 Minutes",
-      "botDialogue": "The results speak for themselves: setup cycle time drops by 92%, developer productivity accelerates 10x, and zero credentials leak.",
+      "title": "Quantified Business ROI",
+      "botPose": "present",
+      "botDialogue": "Here are the real business outcomes achieved in production. We deliver measurable speed and verified ROI.",
       "metrics": [
         {
-          "value": "92%",
-          "label": "Setup Cycle Reduction",
-          "subtext": "5 Days down to 25 Mins"
+          "value": "95%",
+          "label": "Touchless Automation",
+          "delta": "+40%"
         },
         {
-          "value": "10x",
-          "label": "Prompt-to-CAP Speedup",
-          "subtext": "Automated CDS & Fiori generation"
+          "value": "<30s",
+          "label": "Processing Cycle",
+          "delta": "-85%"
         },
         {
           "value": "100%",
-          "label": "Clean Core Compliance",
-          "subtext": "Zero modifications to S/4HANA core"
+          "label": "Clean Core Compliant",
+          "delta": "0 mod"
         }
-      ],
-      "botPose": "present"
+      ]
     },
     {
       "index": 7,
       "type": "cta",
-      "title": "Ready to Deploy SAP BTP Vibe Coding?",
-      "botDialogue": "Book a live 30-minute interactive workshop with our Lead Architect to activate your enterprise AI foundation today.",
-      "primaryCta": {
-        "label": "Deploy Foundation SOP",
-        "url": "/prerequisites?app=btp-vibe-coding"
-      },
-      "secondaryCta": {
-        "label": "Book 30-Min Live Demo",
-        "url": "/book-demo?app=btp-vibe-coding"
-      },
-      "botPose": "beckon"
+      "title": "Deployment Readiness & Next Steps",
+      "botPose": "beckon",
+      "botDialogue": "Ready to see SAP BTP Vibe Coding & Enterprise AI Foundation running on your SAP landscape? Schedule an architecture workshop or test drive in our sandbox.",
+      "actions": [
+        {
+          "label": "Interactive Architecture Demo",
+          "type": "demo"
+        },
+        {
+          "label": "Landscape Prerequisites",
+          "type": "prereq"
+        },
+        {
+          "label": "Clean Core Architecture Review",
+          "type": "architecture"
+        }
+      ]
     }
   ],
   "contact": {

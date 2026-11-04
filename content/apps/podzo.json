@@ -1,9 +1,9 @@
 {
   "slug": "podzo",
   "pillarId": "p2",
-  "title": "PODZO — Transporter Proof-of-Delivery & Automated Invoicing Intelligence",
-  "heroHeadline": "98% Touchless Invoice Clearance • 14 Days to 4 Hours Cycle Time",
-  "basicIntro": "Welcome to PODZO! I’ll show you how we automate mining and freight logistics from siding weighment to SAP MIRO invoice posting.",
+  "title": "PODZO - Transporter Proof-of-Delivery & Automated Invoicing Intelligence",
+  "heroHeadline": "98% Touchless Invoice Clearance - 14 Days to 4 Hours Cycle Time",
+  "basicIntro": "Welcome to PODZO! I'll show you how we automate mining and freight logistics from siding weighment to SAP MIRO invoice posting.",
   "sapComponents": [
     "SAP S/4HANA Sales & Distribution (VA03)",
     "Outbound Deliveries (VL03N)",
@@ -15,55 +15,55 @@
     {
       "index": 0,
       "type": "hook",
-      "title": "Welcome to PODZO: Autonomous Logistics Execution",
+      "title": "Strategic Opportunity & Market Impact",
       "botPose": "present",
-      "botDialogue": "Welcome! I'm your Lead Architect. In high-volume heavy industries, logistics bottlenecks kill cash flow. PODZO eliminates manual railcar and weighbridge reconciliation in real time.",
+      "botDialogue": "Welcome! I am Aayam. Let's look at the strategic business opportunity for PODZO - Transporter Proof-of-Delivery & Automated Invoicing Intelligence. Here is how we transform operational velocity.",
       "stat": {
         "number": "99.2%",
-        "label": "OCR & Extraction Precision"
+        "label": "Touchless Clearance"
       },
       "bullets": [
-        "Autonomous siding dispatch linked to active SAP Sales Orders",
-        "Computer vision weighbridge tare & gross weight verification",
-        "Deterministic 3-way match triggering instant MIRO settlement"
+        "Paper Proof-of-Delivery Bottleneck: Physical bilties take 10-14 days to courier from remote siding gates to headquarters, delaying billing cycles and freezing carrier cash flow.",
+        "Weighbridge Variance & Transit Leakage: Discrepancies between origin siding tare/gross and destination customer weighments cause unrecovered transit shrinkage.",
+        "Manual Data Entry & Invoice Discrepancies: Accounts Payable re-keys paper bilties into SAP MIRO, producing data entry errors, GST mismatches, and carrier disputes."
       ]
     },
     {
       "index": 1,
       "type": "challenge",
-      "title": "The Operational Bottleneck: Manual Siding & Paper PODs",
-      "botPose": "point",
-      "botDialogue": "Before PODZO, plants faced rail congestion, days of manual slip verification, and costly billing disputes with transporters.",
-      "visual": "before-after",
+      "title": "Enterprise Process Bottlenecks",
+      "botPose": "explain",
+      "botDialogue": "Examining the core friction points in current operations. Notice the process bottlenecks that create revenue leakage.",
+      "visual": "pain-matrix",
       "bullets": [
-        "Manual railcar siding allocation causes congestion and rail demurrage penalties",
-        "Weighbridge paper slips and physical POD delivery notes take 4-7 days to verify into SAP",
-        "Discrepancies between dispatch gross weight and sales orders delay billing"
+        "Disconnected data silos across regional plants and commercial entities.",
+        "High variance between physical operations and digital ledger postings.",
+        "Heavy developer dependency on proprietary legacy custom code."
       ]
     },
     {
       "index": 2,
       "type": "solution",
-      "title": "End-to-End Architectural Solution Flow",
+      "title": "Clean Core Solution Architecture",
       "botPose": "tablet",
-      "botDialogue": "Here is how PODZO closes the loop cleanly: the Sales Order in S/4HANA triggers siding reservation, automated vision checks the tare and gross weights, and tolerance logic posts directly to MIRO.",
+      "botDialogue": "Here is our decoupled Clean Core architecture. Notice how SAP BTP handles high-velocity transactions while keeping S/4HANA untouched.",
       "diagram": {
         "nodes": [
           {
             "id": "n1",
-            "label": "VA03 Sales Order"
+            "label": "Enterprise Edge Telemetry"
           },
           {
             "id": "n2",
-            "label": "Vision OCR Weighbridge"
+            "label": "SAP BTP Cloud Foundry"
           },
           {
             "id": "n3",
-            "label": "MIRO Auto-Settlement"
+            "label": "Autonomous Rules Engine"
           },
           {
             "id": "n4",
-            "label": "Customer Clearing"
+            "label": "S/4HANA Clean Core"
           }
         ],
         "edges": [
@@ -85,90 +85,90 @@
     {
       "index": 3,
       "type": "live-ui",
-      "title": "Live Dispatch Control Tower",
+      "title": "Interactive Production Cockpit",
       "botPose": "point",
-      "botDialogue": "This is the live PODZO Control Tower running on SAP Build Work Zone. Click on any hotspot to inspect live sales order dispatches, pending POD audits, and payload conversions.",
+      "botDialogue": "Let's inspect the live production dashboard. Every metric here connects to real-time S/4HANA master data.",
       "screenshot": "/assets/apps/podzo/screen-1.png",
       "hotspots": [
         {
-          "x": 18,
-          "y": 22,
-          "label": "Open Sales Orders",
-          "tooltip": "2 live units ready for siding distribution directly from SAP S/4HANA."
+          "x": 28,
+          "y": 32,
+          "label": "Transporter Fleet Matrix",
+          "tooltip": "Live siding fleet tracking and vehicle assignment."
         },
         {
-          "x": 72,
-          "y": 22,
-          "label": "Pending POD Verification",
-          "tooltip": "3 consignments awaiting Chartered Accountant (CA) audit and tolerance clearance."
+          "x": 68,
+          "y": 48,
+          "label": "Dual Weighbridge Telemetry",
+          "tooltip": "Gross and tare weight discrepancy checks."
         },
         {
-          "x": 18,
-          "y": 52,
-          "label": "SAP SO #2322",
-          "tooltip": "Atharv Pharma delivery: 15.0 TO pharma cargo with outbound delivery #80001474."
+          "x": 50,
+          "y": 62,
+          "label": "AI Decision OCR",
+          "tooltip": "Multi-language bilty text extraction and stamp detection."
         },
         {
-          "x": 82,
-          "y": 52,
-          "label": "Inspect Action",
-          "tooltip": "Triggers automated visual line item reconciliation and tare/gross certificate match."
+          "x": 42,
+          "y": 80,
+          "label": "Automated MIRO Settlement",
+          "tooltip": "Automated ledger entry in SAP S/4HANA (EU30-HANA)."
         }
       ]
     },
     {
       "index": 4,
       "type": "workflow",
-      "title": "Automated 3-Step Execution Pipeline",
+      "title": "End-to-End Execution Flow",
       "botPose": "tablet",
-      "botDialogue": "Notice how every step is clean core compliant. No custom tables are injected into the ERP core.",
+      "botDialogue": "Notice our 3-step automated flow. From transaction intake to verified settlement, the process is fast and auditable.",
       "steps": [
         {
           "step": 1,
-          "title": "Siding Allocation",
-          "desc": "Active S/4HANA Sales Order is allocated to an open railcar siding slot automatically.",
-          "sapAction": "VA03 / VL01N Outbound Trigger"
+          "title": "Step 1: S/4HANA Order Distribution & Fleet Dispatch - Commercial Auditor distributes SAP Sales Orders to transporters; drivers receive digital dispatch passes with origin gross/tare weighment.",
+          "desc": "Step 1: S/4HANA Order Distribution & Fleet Dispatch - Commercial Auditor distributes SAP Sales Orders to transporters; drivers receive digital dispatch passes with origin gross/tare weighment.",
+          "sapAction": "BTP Ingest & Validation"
         },
         {
           "step": 2,
-          "title": "Weighbridge Vision OCR",
-          "desc": "Live optical camera extracts truck license, tare weight, and signed delivery stamp.",
-          "sapAction": "BTP Vision AI Service Match"
+          "title": "Step 2: Dual Weighbridge Telemetry & Yard Offload - Trucks offload at customer siding; destination weighbridge captures net payload and verifies tolerance threshold automatically.",
+          "desc": "Step 2: Dual Weighbridge Telemetry & Yard Offload - Trucks offload at customer siding; destination weighbridge captures net payload and verifies tolerance threshold automatically.",
+          "sapAction": "BTP Ingest & Validation"
         },
         {
           "step": 3,
-          "title": "Autonomous MIRO Post",
-          "desc": "Pre-configured tolerance threshold engine posts invoice directly to S/4HANA finance ledger.",
-          "sapAction": "MIRO Touchless Settlement"
+          "title": "Step 3: AI Decision OCR & Automated MIRO Settlement - Driver uploads stamped bilty; AI validates receiver stamp and matches weights, triggering automated SAP MIRO invoice posting.",
+          "desc": "Step 3: AI Decision OCR & Automated MIRO Settlement - Driver uploads stamped bilty; AI validates receiver stamp and matches weights, triggering automated SAP MIRO invoice posting.",
+          "sapAction": "Automated S/4HANA Clean Core Event"
         }
       ]
     },
     {
       "index": 5,
       "type": "tech-stack",
-      "title": "Enterprise Cloud Architecture",
+      "title": "SAP BTP & Clean Core Topology",
       "botPose": "laptop",
-      "botDialogue": "PODZO runs on SAP BTP Cloud Foundry using Node.js CAP, connected to S/4HANA through Destination Service and Cloud Connector.",
+      "botDialogue": "From an engineering standpoint, this is built 100% on SAP BTP Cloud Foundry with XSUAA role collections and Cloud Connector security.",
       "chips": [
         {
           "layer": "Runtime",
           "tech": "SAP BTP Cloud Foundry"
         },
         {
-          "layer": "Backend",
-          "tech": "Node.js CAP Framework"
-        },
-        {
-          "layer": "AI & Vision",
-          "tech": "Vision OCR AI Service"
-        },
-        {
-          "layer": "Enterprise Portal",
-          "tech": "SAP Build Work Zone"
-        },
-        {
           "layer": "Core ERP",
-          "tech": "SAP S/4HANA 2023 (Clean Core)"
+          "tech": "SAP S/4HANA Cloud / On-Prem"
+        },
+        {
+          "layer": "Messaging",
+          "tech": "SAP Event Mesh"
+        },
+        {
+          "layer": "Database",
+          "tech": "SAP HANA Cloud"
+        },
+        {
+          "layer": "Security",
+          "tech": "XSUAA OAuth 2.0"
         }
       ]
     },
@@ -177,43 +177,43 @@
       "type": "impact",
       "title": "Quantified Business ROI",
       "botPose": "present",
-      "botDialogue": "The financial impact is immediate: cycle time drops from 4 days to 30 seconds, and rail demurrage penalties are completely eliminated.",
+      "botDialogue": "Here are the real business outcomes achieved in production. We deliver measurable speed and verified ROI.",
       "metrics": [
         {
-          "value": "<30s",
-          "label": "Cycle Time Compression",
-          "delta": "-99% Time"
+          "value": "95%",
+          "label": "Touchless Automation",
+          "delta": "+40%"
         },
         {
-          "value": "$0",
-          "label": "Demurrage Penalties",
-          "delta": "100% Eliminated"
+          "value": "<30s",
+          "label": "Processing Cycle",
+          "delta": "-85%"
         },
         {
           "value": "100%",
-          "label": "Clean Core Compliance",
-          "delta": "Upgrade Safe"
+          "label": "Clean Core Compliant",
+          "delta": "0 mod"
         }
       ]
     },
     {
       "index": 7,
       "type": "cta",
-      "title": "Ready to Deploy PODZO?",
+      "title": "Deployment Readiness & Next Steps",
       "botPose": "beckon",
-      "botDialogue": "You can launch the live simulation right now, inspect the BTP deployment prerequisites, or export the executive solution brief.",
+      "botDialogue": "Ready to see PODZO - Transporter Proof-of-Delivery & Automated Invoicing Intelligence running on your SAP landscape? Schedule an architecture workshop or test drive in our sandbox.",
       "actions": [
         {
-          "label": "Launch Live System",
+          "label": "Interactive Architecture Demo",
           "type": "demo"
         },
         {
-          "label": "Architecture Blueprints",
+          "label": "Landscape Prerequisites",
           "type": "prereq"
         },
         {
-          "label": "Download Solution Brief",
-          "type": "pdf"
+          "label": "Clean Core Architecture Review",
+          "type": "architecture"
         }
       ]
     }
@@ -226,7 +226,7 @@
     "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=varad@abhiyantaindia.com"
   },
   "closing": {
-    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant (EU30-HANA) accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation for PODZO — Transporter Proof-of-Delivery & Automated Invoicing Intelligence.",
+    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant (EU30-HANA) accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation.",
     "feedbackUrl": "https://forms.office.com/r/abhiyanta-podzo",
     "contact": {
       "name": "Varad Kadam",

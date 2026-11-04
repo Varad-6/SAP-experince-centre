@@ -15,22 +15,22 @@ describe('Content Architecture & Schema Validation', () => {
     const raw = fs.readFileSync(path.join(contentDir, 'site.json'), 'utf8');
     const parsed = SiteSchema.parse(JSON.parse(raw));
     expect(parsed.brand).toBe('Abhiyanta India Solutions');
-    expect(parsed.botName).toBe('The Lead Architect');
+    expect(parsed.botName).toBe('Aayam');
     expect(parsed.introLines).toHaveLength(3);
     expect(parsed.defaultContact?.email).toBeTruthy();
     expect(parsed.stats.length).toBeGreaterThanOrEqual(4);
   });
 
-  it('validates pillars.json has exactly 5 pillars', () => {
+  it('validates pillars.json has exactly 4 pillars', () => {
     const raw = fs.readFileSync(path.join(contentDir, 'pillars.json'), 'utf8');
     const pillars = JSON.parse(raw);
-    expect(pillars).toHaveLength(5);
+    expect(pillars).toHaveLength(4);
     for (const p of pillars) {
       expect(() => PillarSchema.parse(p)).not.toThrow();
     }
   });
 
-  it('validates solutions.json has exactly 28 solutions across 5 pillars', () => {
+  it('validates solutions.json has exactly 28 solutions across 4 pillars', () => {
     const raw = fs.readFileSync(path.join(contentDir, 'solutions.json'), 'utf8');
     const solutions = JSON.parse(raw);
     expect(solutions).toHaveLength(28);
