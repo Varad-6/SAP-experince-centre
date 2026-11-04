@@ -31,56 +31,56 @@ export default function PillarsHubPage() {
             <span>ENTERPRISE ARCHITECTURE HUBS</span>
           </div>
           <h1 className="text-h1 font-bold text-[var(--navy)] tracking-tight mb-3">
-            The 5 Pillars of Enterprise SAP Excellence
+            The 4 Pillars of Enterprise SAP Excellence
           </h1>
           <p className="text-base text-[var(--text-dim)] leading-relaxed">
-            Select an architectural pillar to inspect our 28 production solutions, custom BTP applications, agentic AI copilots, and real-time executive steering.
+            Select an architectural pillar to inspect our 28 production solutions, custom BTP applications, data modernization pipelines, and real-time executive steering.
           </p>
         </div>
         <SoundToggle />
       </div>
 
-      {/* 5 Cards in a 6-Column Responsive Grid */}
-      {/* Cards 1-2 span 3 cols each, Cards 3-5 span 2 cols each */}
-      <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
-        {pillarsData.map((pillar, idx) => {
+      {/* Symmetrical 4-Card Responsive Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch">
+        {pillarsData.map((pillar) => {
           const solutionCount = solutionsData.filter((s) => s.pillarId === pillar.id).length;
-          const colSpan = idx < 2 ? 'md:col-span-3' : 'md:col-span-2';
 
           return (
             <Link
               key={pillar.id}
               href={`/pillar/${pillar.id}`}
-              className={`group card block p-6 sm:p-7 relative transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--brand)] hover:shadow-[var(--shadow)] ${colSpan}`}
+              className="group card flex flex-col justify-between p-6 sm:p-7 relative transition-all duration-200 hover:-translate-y-1 hover:border-[var(--brand)] hover:shadow-[var(--shadow-lg)] h-full"
               style={{
                 borderTop: `3px solid ${pillar.accent}`,
               }}
             >
-              <div className="flex items-start justify-between gap-4 mb-4">
-                <div
-                  className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
-                  style={{
-                    backgroundColor: `${pillar.accent}15`,
-                    color: pillar.accent,
-                  }}
-                >
-                  {iconMap[pillar.icon] || <Layers className="w-6 h-6" />}
+              <div>
+                <div className="flex items-start justify-between gap-4 mb-4">
+                  <div
+                    className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
+                    style={{
+                      backgroundColor: `${pillar.accent}15`,
+                      color: pillar.accent,
+                    }}
+                  >
+                    {iconMap[pillar.icon] || <Layers className="w-6 h-6" />}
+                  </div>
+
+                  <span className="chip">
+                    {solutionCount} solutions
+                  </span>
                 </div>
 
-                <span className="chip">
-                  {solutionCount} solutions
-                </span>
+                <h2 className="text-lg font-bold text-[var(--navy)] mb-2 group-hover:text-[var(--brand)] transition-colors leading-tight">
+                  {pillar.title}
+                </h2>
+
+                <p className="text-xs sm:text-sm text-[var(--text-dim)] leading-relaxed mb-6">
+                  {pillar.tagline}
+                </p>
               </div>
 
-              <h2 className="text-lg sm:text-xl font-bold text-[var(--navy)] mb-2 group-hover:text-[var(--brand)] transition-colors">
-                {pillar.title}
-              </h2>
-
-              <p className="text-xs sm:text-sm text-[var(--text-dim)] leading-relaxed mb-6 line-clamp-2">
-                {pillar.tagline}
-              </p>
-
-              <div className="flex items-center text-xs font-semibold text-[var(--brand)] group-hover:translate-x-1 transition-transform">
+              <div className="flex items-center text-xs font-semibold text-[var(--brand)] group-hover:translate-x-1 transition-transform mt-auto pt-3 border-t border-[var(--border)]/50">
                 <span>Inspect solutions</span>
                 <ArrowRight className="w-3.5 h-3.5 ml-1" />
               </div>

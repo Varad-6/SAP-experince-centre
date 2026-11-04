@@ -5,6 +5,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [5.0.0] — 2026-11-04 — Master Plan v5: Real Software Dashboard Curation, Thought-Wave Bubble Engine & Exact 4-Pillar Redistribution
+
+### Summary
+Executed complete architectural overhaul per Master Plan v5: replaced all summary/PPT slides with genuine live software UI dashboards across all 28 applications, implemented overhead Thought-Wave speech bubble clearance engine, rebalanced the 4 pillars symmetrically (`p1`: 3, `p2`: 7, `p3`: 6, `p4`: 12), and added first-class applications for `mdr`, `reconly`, `revenue-analytics`, `vendor-management`, and `quality-management-analytics`.
+
+### Added & Updated
+- **Overhead Thought-Wave Bubble Engine**: Re-engineered `BotBubble.tsx` and `LandingActorSequence.tsx` with a generous 72px overhead clearance buffer and 3-circle thought-wave trail, ensuring 100% head and face visibility throughout all 3 videos.
+- **Three-Act Video Scripts**: Synchronized narrative focusing on Abhiyanta India Solutions, modern AI engineering, and Clean Core standards.
+- **Real Software Dashboards**: Replaced all PPT graphics with genuine production software consoles (e.g. PODZO Transporter Command Console `screen-1.png`, Reconly 3-way match cockpit, MDR master data workspace).
+- **Exact Pillar Catalog**:
+  - `p1`: Foundation & BTP Infrastructure (3 solutions: Vibe Coding, Connectivity Mesh, CPI Hybrid Cloud)
+  - `p2`: Custom BTP Applications (7 solutions: PODZO, RECONLY, Product Cost Simulator, MDR, Invoice Decision Intelligence, AIS Debug Studio, ABAP Cloud Converter)
+  - `p3`: HanaMorph & Data Modernization (6 solutions: HanaMorph, Datasphere Lineage, Calc View Optimizer, BW/4HANA Accelerator, Doc Intelligence, Contract Intelligence)
+  - `p4`: SAC Executive Dashboards (12 solutions: Manufacturing Yield, Asset Reliability, Sales & Margin, Revenue Analytics, Vendor Spend, Quality Management, Autonomous Procurement, Clean Core Extensibility, Identity & Access Governance, ESG, Supply Chain, CFO Liquidity)
+- **Symmetrical 4-Pillar Grid**: Upgraded `/pillars` to a balanced 4-column layout (`xl:grid-cols-4`) with equal-height cards and aligned baselines.
+- **Verification**: `npm run content:check` (100% valid), `npm test` (13/13 passing), `npm run build` (79/79 static pages generated).
+
+---
+
 ## [4.0.0] — 2026-11-04 — Aayam Rebrand, Procreate Blue Palette, 4-Pillar Architecture & Ingestion
 
 ### Summary

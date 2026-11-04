@@ -20,9 +20,9 @@ export const LandingActorSequence: React.FC<LandingActorSequenceProps> = ({
   const [hasVisited, setHasVisited] = useState<boolean>(false);
 
   const introLines = siteData.introLines || [
-    "Hi! I am Aayam from Abhiyanta India Solutions. Welcome to the AIS Experience Centre!",
-    "Watch how we eliminate technical debt using S/4HANA Clean Core extensibility, event-driven architectures, and high-velocity SAP BTP vibe coding.",
-    "Every solution here is live, validated, and ready for your enterprise landscape. Click 'Explore Solutions' to inspect the architecture and live cockpits.",
+    "Welcome to Abhiyanta India Solutions! I am Aayam, your enterprise architect. We build high-impact enterprise applications that modernize mission-critical operations.",
+    "Here is how we leverage enterprise AI and SAP BTP: autonomous agents and decision engines integrated seamlessly with SAP S/4HANA Clean Core architecture.",
+    "Ready to explore? Step inside our 4 core architectural pillars below to inspect live production cockpits, workflows, and verified business ROI.",
   ];
 
   // Check sessionStorage on mount
@@ -130,7 +130,7 @@ export const LandingActorSequence: React.FC<LandingActorSequenceProps> = ({
               alt="Aayam Ready"
               className="w-full h-full object-contain pointer-events-none"
             />
-            <div className="absolute top-6 left-1/2 -translate-x-1/2">
+            <div className="absolute -top-16 left-1/2 -translate-x-1/2">
               <BotBubble
                 text={introLines[2]}
                 durationMs={12000}

@@ -1,0 +1,233 @@
+{
+  "slug": "quality-management-analytics",
+  "pillarId": "p4",
+  "title": "Quality Management & Inspection Cockpit",
+  "heroHeadline": "Unified View of Inspection Lots, Rejection Rates & Cost of Poor Quality",
+  "basicIntro": "Welcome to Quality Management & Inspection Cockpit! I am Aayam. Let me show you how we connect production confirmations with QM inspection lots to stop scrap before it spreads.",
+  "sapComponents": [
+    "SAP Analytics Cloud (SAC)",
+    "SAP Datasphere",
+    "SAP S/4HANA Quality Management (QM)",
+    "SAP S/4HANA Production Planning (PP)"
+  ],
+  "hasContent": true,
+  "cards": [
+    {
+      "index": 0,
+      "type": "hook",
+      "title": "Strategic Opportunity & Executive Visibility",
+      "botPose": "present",
+      "botDialogue": "Welcome! I am Aayam. Let's inspect Quality Management & Inspection Cockpit. Here is how we transform enterprise steering velocity.",
+      "stat": {
+        "number": "-30%",
+        "label": "Defect Recurrence"
+      },
+      "bullets": [
+        "Quality inspection data isolated from production confirmations and supplier lots.",
+        "Delayed root-cause analysis when defect rates spike across manufacturing shifts.",
+        "Rising Cost of Poor Quality (COPQ) without visibility into supplier-related returns."
+      ]
+    },
+    {
+      "index": 1,
+      "type": "challenge",
+      "title": "Operational Process Friction",
+      "botPose": "explain",
+      "botDialogue": "Notice the process friction points: fragmented data silos, delayed analytics, and lack of real-time drill-down capabilities.",
+      "visual": "pain-matrix",
+      "bullets": [
+        "Quality inspection data isolated from production confirmations and supplier lots.",
+        "Delayed root-cause analysis when defect rates spike across manufacturing shifts.",
+        "Rising Cost of Poor Quality (COPQ) without visibility into supplier-related returns."
+      ]
+    },
+    {
+      "index": 2,
+      "type": "solution",
+      "title": "Data Fabric & Analytics Architecture",
+      "botPose": "tablet",
+      "botDialogue": "Here is our analytics architecture: SAP Datasphere provides a unified business semantic layer directly consumed by SAP Analytics Cloud.",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "SAP S/4HANA Core Ledgers"
+          },
+          {
+            "id": "n2",
+            "label": "SAP Datasphere Data Fabric"
+          },
+          {
+            "id": "n3",
+            "label": "SAC Semantic Modeling"
+          },
+          {
+            "id": "n4",
+            "label": "Boardroom Executive Story"
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2"
+          },
+          {
+            "from": "n2",
+            "to": "n3"
+          },
+          {
+            "from": "n3",
+            "to": "n4"
+          }
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "type": "live-ui",
+      "title": "Interactive Executive Dashboard",
+      "botPose": "point",
+      "botDialogue": "Let us inspect the live production dashboard. Every KPI connects to live S/4HANA enterprise master data.",
+      "screenshot": "/assets/apps/quality-management-analytics/screen-1.png",
+      "hotspots": [
+        {
+          "x": 25,
+          "y": 30,
+          "label": "First-Pass Yield Metric",
+          "tooltip": "Real-time production yield and lot acceptance rate across plants."
+        },
+        {
+          "x": 65,
+          "y": 48,
+          "label": "Defect Pareto Matrix",
+          "tooltip": "Root-cause ranking by material, vendor lot, machine, and shift."
+        },
+        {
+          "x": 80,
+          "y": 70,
+          "label": "Supplier Quality Scorecard",
+          "tooltip": "Incoming goods rejection rates and vendor return credit notes."
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "type": "workflow",
+      "title": "End-to-End Governance Flow",
+      "botPose": "tablet",
+      "botDialogue": "From data ingestion to C-suite decision steering, the analytical pipeline runs with sub-second responsiveness.",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Inspection Lot Aggregation",
+          "desc": "Extract QM inspection results, defects, and notifications from S/4HANA.",
+          "sapAction": "QM Data Product Ingestion"
+        },
+        {
+          "step": 2,
+          "title": "Pareto & Trend Analysis",
+          "desc": "Correlate scrap events with work centers, shifts, and raw material vendor lots.",
+          "sapAction": "SAC Analytical Model"
+        },
+        {
+          "step": 3,
+          "title": "Corrective Action Workflow",
+          "desc": "Trigger automated CAPA quality notifications and supplier quality holds.",
+          "sapAction": "S/4HANA QM Notification"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "type": "tech-stack",
+      "title": "SAP Architecture Topology",
+      "botPose": "laptop",
+      "botDialogue": "Built on SAP Analytics Cloud and SAP Datasphere, fully compliant with Clean Core principles and zero modifications.",
+      "chips": [
+        {
+          "layer": "Presentation",
+          "tech": "SAP Analytics Cloud (SAC)"
+        },
+        {
+          "layer": "Data Fabric",
+          "tech": "SAP Datasphere"
+        },
+        {
+          "layer": "Source ERP",
+          "tech": "SAP S/4HANA QM / PP / MM"
+        },
+        {
+          "layer": "Modeling",
+          "tech": "Datasphere Quality View"
+        },
+        {
+          "layer": "Security",
+          "tech": "Role-Based Row Security"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "type": "impact",
+      "title": "Quantified Business ROI",
+      "botPose": "present",
+      "botDialogue": "Measurable impact delivered across executive operations, working capital, and governance agility.",
+      "metrics": [
+        {
+          "value": "-30%",
+          "label": "Defect Recurrence",
+          "delta": "-18% COPQ"
+        },
+        {
+          "value": "99.2%",
+          "label": "Lot Inspection Compliance",
+          "delta": "+8%"
+        },
+        {
+          "value": "<4h",
+          "label": "Root-Cause Identification",
+          "delta": "-4 days"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "type": "cta",
+      "title": "Deployment Readiness & Next Steps",
+      "botPose": "beckon",
+      "botDialogue": "Ready to deploy Quality Management & Inspection Cockpit on your SAP landscape? Schedule an executive briefing with our architecture team.",
+      "actions": [
+        {
+          "label": "Interactive Architecture Demo",
+          "type": "demo"
+        },
+        {
+          "label": "Landscape Prerequisites",
+          "type": "prereq"
+        },
+        {
+          "label": "Clean Core Architecture Review",
+          "type": "architecture"
+        }
+      ]
+    }
+  ],
+  "contact": {
+    "name": "Varad Rane",
+    "role": "Chief SAP Solutions Architect",
+    "email": "contact@abhiyantaindia.com",
+    "phone": "+91 (022) 6982-1000",
+    "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=contact@abhiyantaindia.com"
+  },
+  "closing": {
+    "liveDemoInfo": "Live SAP Analytics Cloud tenant accessible for authenticated enterprise reviewers. Single Sign-On enabled.",
+    "feedbackUrl": "https://forms.office.com/r/abhiyanta-quality-management-analytics",
+    "contact": {
+      "name": "Varad Rane",
+      "role": "Chief SAP Solutions Architect",
+      "email": "contact@abhiyantaindia.com",
+      "phone": "+91 (022) 6982-1000",
+      "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=contact@abhiyantaindia.com"
+    }
+  }
+}

@@ -1,17 +1,17 @@
 [
   {
-    "slug": "clean-core-extensibility-hub",
+    "slug": "sap-btp-vibe-coding",
     "pillarId": "p1",
-    "title": "Clean Core Extensibility Hub",
-    "oneLiner": "Side-by-side decoupled architecture governance for SAP S/4HANA upgrades.",
+    "title": "SAP BTP Vibe Coding & Enterprise AI",
+    "oneLiner": "High-velocity AI-assisted CAP development with enterprise cloud governance.",
     "tags": [
-      "Clean Core",
       "BTP",
-      "Governance"
+      "CAP",
+      "Vibe Coding"
     ],
-    "roiMetric": "100% Upgrade Safe",
+    "roiMetric": "4x Dev Velocity",
     "featured": true,
-    "hasFullDemo": false
+    "hasFullDemo": true
   },
   {
     "slug": "sap-btp-connectivity-mesh",
@@ -28,34 +28,6 @@
     "hasFullDemo": false
   },
   {
-    "slug": "identity-access-governance",
-    "pillarId": "p1",
-    "title": "Cloud Identity & Access Governance",
-    "oneLiner": "Automated role-based segregation of duties and unified authentication for BTP apps.",
-    "tags": [
-      "IAM",
-      "SoD",
-      "Compliance"
-    ],
-    "roiMetric": "0 SoD Violations",
-    "featured": false,
-    "hasFullDemo": false
-  },
-  {
-    "slug": "event-mesh-telemetry",
-    "pillarId": "p1",
-    "title": "Enterprise Event Mesh & Telemetry",
-    "oneLiner": "Asynchronous event-driven messaging layer for sub-second S/4HANA business events.",
-    "tags": [
-      "EventMesh",
-      "Kafka",
-      "Decoupling"
-    ],
-    "roiMetric": "<50ms Event Delivery",
-    "featured": false,
-    "hasFullDemo": false
-  },
-  {
     "slug": "hybrid-cloud-integration-suite",
     "pillarId": "p1",
     "title": "Hybrid Cloud Integration Suite",
@@ -66,35 +38,6 @@
       "Integration"
     ],
     "roiMetric": "85% Pre-built Flows",
-    "featured": false,
-    "hasFullDemo": false
-  },
-  {
-    "slug": "sap-btp-vibe-coding",
-    "pillarId": "p1",
-    "title": "SAP BTP Vibe Coding & Enterprise AI",
-    "oneLiner": "High-velocity AI-assisted SAP Cloud Application Programming model on SAP BTP.",
-    "tags": [
-      "BTP",
-      "CAP",
-      "Vibe Coding",
-      "AI Foundation"
-    ],
-    "roiMetric": "4x Dev Velocity",
-    "featured": true,
-    "hasFullDemo": true
-  },
-  {
-    "slug": "abap-cloud-syntax-converter",
-    "pillarId": "p1",
-    "title": "ABAP Cloud Syntax Transformer",
-    "oneLiner": "Refactoring classic dynpro and direct table queries into RAP managed BOs and CDS views.",
-    "tags": [
-      "RAP",
-      "CDS",
-      "Clean Core"
-    ],
-    "roiMetric": "Zero Classic Calls",
     "featured": false,
     "hasFullDemo": false
   },
@@ -114,156 +57,143 @@
     "hasFullDemo": true
   },
   {
-    "slug": "invoice-decision-intelligence",
-    "pillarId": "p2",
-    "title": "Invoice Decision Intelligence",
-    "oneLiner": "Cognitive S/4HANA intake, 3-way matching and tolerance exception resolution.",
-    "tags": [
-      "Finance",
-      "P2P",
-      "AP Automation"
-    ],
-    "roiMetric": "94% Touchless AP",
-    "featured": true,
-    "hasFullDemo": false
-  },
-  {
-    "slug": "ais-debug-studio",
-    "pillarId": "p2",
-    "title": "AIS ABAP & CDS AI Debug Studio",
-    "oneLiner": "Autonomous code comprehension, syntax fix suggestions, and Clean Core refactoring.",
-    "tags": [
-      "ABAP Cloud",
-      "AI",
-      "Developer Tools"
-    ],
-    "roiMetric": "70% Faster Debugging",
-    "featured": true,
-    "hasFullDemo": false
-  },
-  {
     "slug": "reconly",
     "pillarId": "p2",
-    "title": "RECONLY Intercompany Reconciliation",
-    "oneLiner": "Autonomous intercompany balance clearing across multi-ledger S/4HANA entities.",
+    "title": "RECONLY Automated 3-Way Match",
+    "oneLiner": "Enterprise vendor reconciliation with live PO, GRN and invoice comparison.",
     "tags": [
-      "Intercompany",
-      "Financial Close",
-      "RTR"
+      "Finance",
+      "Reconciliation",
+      "3-Way Match"
     ],
-    "roiMetric": "3 Days Saved / Month",
-    "featured": false,
-    "hasFullDemo": false
+    "roiMetric": "80.9% Match Rate",
+    "featured": true,
+    "hasFullDemo": true
   },
   {
     "slug": "product-cost-simulator",
     "pillarId": "p2",
     "title": "Product Cost Simulator",
-    "oneLiner": "Real-time BOM explosion and volatile raw material price hedging simulation.",
+    "oneLiner": "Dynamic simulation of multi-tier BOM costs and currency impact on product margins.",
     "tags": [
       "CO-PC",
-      "BOM",
-      "Manufacturing"
+      "Costing",
+      "Simulation"
     ],
-    "roiMetric": "+4.2% Margin Protection",
-    "featured": false,
-    "hasFullDemo": false
+    "roiMetric": "100% Target Precision",
+    "featured": true,
+    "hasFullDemo": true
   },
   {
-    "slug": "autonomous-procurement-agent",
+    "slug": "mdr",
     "pillarId": "p2",
-    "title": "Autonomous Procurement Agent",
-    "oneLiner": "Agentic purchasing bot negotiating quotes and drafting POs within approved matrixes.",
+    "title": "MDR Master Data Remediation",
+    "oneLiner": "Controlled SAPUI5 master data maintenance, AI bulk validation & S/4HANA push.",
     "tags": [
-      "Agents",
-      "MM",
-      "Procurement"
+      "MDG",
+      "Master Data",
+      "Clean Core"
     ],
-    "roiMetric": "12% Spend Reduction",
-    "featured": false,
-    "hasFullDemo": false
+    "roiMetric": "75% Cycle Time Cut",
+    "featured": true,
+    "hasFullDemo": true
   },
   {
-    "slug": "supplier-portal-onboarding",
+    "slug": "invoice-decision-intelligence",
     "pillarId": "p2",
-    "title": "Autonomous Supplier Onboarding",
-    "oneLiner": "Self-service vendor qualification, banking verification, and automated BP creation.",
+    "title": "Invoice Decision Intelligence",
+    "oneLiner": "Cognitive intake and exception resolution for high-volume supplier invoices.",
     "tags": [
-      "Ariba",
-      "Supplier",
-      "Master Data"
+      "Invoicing",
+      "ML",
+      "Finance"
     ],
-    "roiMetric": "1 Day Onboarding",
+    "roiMetric": "92% Touchless Processing",
+    "featured": true,
+    "hasFullDemo": true
+  },
+  {
+    "slug": "ais-debug-studio",
+    "pillarId": "p2",
+    "title": "AIS ABAP & CDS AI Debug Studio",
+    "oneLiner": "Intelligent SAP ADT debugging with ST22 dump root-cause diagnosis.",
+    "tags": [
+      "ABAP",
+      "ADT",
+      "CDS",
+      "AI Debug"
+    ],
+    "roiMetric": "60% Faster Bug Fixes",
+    "featured": true,
+    "hasFullDemo": true
+  },
+  {
+    "slug": "abap-cloud-syntax-converter",
+    "pillarId": "p2",
+    "title": "ABAP Cloud Syntax Converter",
+    "oneLiner": "Automated transformation of classical ABAP code to Clean Core compliant ABAP Cloud syntax.",
+    "tags": [
+      "ABAP Cloud",
+      "Refactoring",
+      "Modernization"
+    ],
+    "roiMetric": "90% Automated Fixes",
     "featured": false,
     "hasFullDemo": false
   },
   {
     "slug": "hanamorph",
     "pillarId": "p3",
-    "title": "HanaMorph Migration Suite",
-    "oneLiner": "Automated migration of legacy calculation views to modern SAP Datasphere graphical models.",
+    "title": "HanaMorph Automated Migration Studio",
+    "oneLiner": "Automated transformation of SAP HANA calculation views to SAP Datasphere models.",
     "tags": [
       "Datasphere",
-      "Calculation Views",
-      "HANA"
+      "HANA",
+      "Migration"
     ],
-    "roiMetric": "95% Faster Migration",
+    "roiMetric": "10x Faster Migration",
     "featured": true,
-    "hasFullDemo": false
+    "hasFullDemo": true
   },
   {
     "slug": "datasphere-lineage-parity",
     "pillarId": "p3",
-    "title": "1:1 Architectural Visual Lineage Parity",
-    "oneLiner": "Eliminating monolithic CTE black boxes with node-for-node graphical parity.",
+    "title": "Datasphere Semantic Lineage Parity",
+    "oneLiner": "End-to-end data lineage visualization bridging SAP Datasphere and enterprise catalogs.",
     "tags": [
       "Lineage",
-      "Datasphere",
-      "DAG"
+      "Metadata",
+      "Governance"
     ],
-    "roiMetric": "100% Parity Verified",
-    "featured": true,
+    "roiMetric": "100% Traceability",
+    "featured": false,
     "hasFullDemo": false
   },
   {
     "slug": "calc-view-optimizer",
     "pillarId": "p3",
-    "title": "Calculation View Performance Optimizer",
-    "oneLiner": "Static analysis of join cardinality, union pruning, and memory execution plans.",
+    "title": "Calculation View Topology Optimizer",
+    "oneLiner": "Automated performance tuning and anti-pattern detection for large-scale HANA views.",
     "tags": [
-      "HANA",
       "Optimization",
-      "In-Memory"
+      "HANA",
+      "Performance"
     ],
-    "roiMetric": "4x Query Speedup",
+    "roiMetric": "40% Query Speedup",
     "featured": false,
     "hasFullDemo": false
   },
   {
     "slug": "bw4hana-migration-accelerator",
     "pillarId": "p3",
-    "title": "BW/4HANA Migration Accelerator",
-    "oneLiner": "Automated conversion of 7.x transfer rules and update rules to modern ADSOs and DTPs.",
+    "title": "BW/4HANA Cloud Transformation",
+    "oneLiner": "Automated readiness checks and object conversion for legacy SAP BW systems to BW/4HANA.",
     "tags": [
       "BW/4HANA",
-      "Data Warehouse",
-      "Modernization"
+      "Analytics",
+      "Conversion"
     ],
-    "roiMetric": "80% Automation",
-    "featured": false,
-    "hasFullDemo": false
-  },
-  {
-    "slug": "smart-warehouse-execution",
-    "pillarId": "p3",
-    "title": "Smart Warehouse Execution",
-    "oneLiner": "Mobile RF scanner interface directly integrated with SAP EWM task interleaving.",
-    "tags": [
-      "EWM",
-      "Mobile",
-      "Warehouse"
-    ],
-    "roiMetric": "40% Pick Path Cut",
+    "roiMetric": "70% Effort Reduction",
     "featured": false,
     "hasFullDemo": false
   },
@@ -271,13 +201,13 @@
     "slug": "doc-intelligence-extractor",
     "pillarId": "p3",
     "title": "Document Information AI Extractor",
-    "oneLiner": "Multilingual layout-aware extraction of unstructured contracts, packing lists and BOLs.",
+    "oneLiner": "Generative and vision AI extraction of complex multi-page enterprise documents.",
     "tags": [
-      "Document AI",
-      "Vision",
+      "DocAI",
+      "Extraction",
       "OCR"
     ],
-    "roiMetric": "99.2% Accuracy",
+    "roiMetric": "98% Field Accuracy",
     "featured": false,
     "hasFullDemo": false
   },
@@ -285,13 +215,13 @@
     "slug": "contract-intelligence-analyzer",
     "pillarId": "p3",
     "title": "Contract Intelligence Analyzer",
-    "oneLiner": "Semantic clause risk scoring and SLA breach warning mapped to S/4HANA outline agreements.",
+    "oneLiner": "NLP-driven analysis of enterprise contracts, payment terms, and vendor SLAs.",
     "tags": [
-      "Legal Tech",
-      "Contracts",
-      "AI"
+      "NLP",
+      "Legal",
+      "Procurement"
     ],
-    "roiMetric": "0 Untracked Renewals",
+    "roiMetric": "80% Faster Review",
     "featured": false,
     "hasFullDemo": false
   },
@@ -299,16 +229,16 @@
     "slug": "manufacturing-yield-scrap",
     "pillarId": "p4",
     "title": "Manufacturing Yield & Scrap Cockpit",
-    "oneLiner": "Plant-floor scrap loss root-cause tracking with real-time OEE drill-down.",
+    "oneLiner": "Plant-floor scrap loss root-cause tracking with real-time OEE drill-downs.",
     "tags": [
-      "SAC",
       "PP",
-      "OEE",
-      "Manufacturing"
+      "QM",
+      "Manufacturing",
+      "Yield"
     ],
     "roiMetric": "-14% Scrap Rate",
     "featured": true,
-    "hasFullDemo": false
+    "hasFullDemo": true
   },
   {
     "slug": "asset-reliability-mro",
@@ -316,41 +246,109 @@
     "title": "Asset Reliability & MRO Optimization",
     "oneLiner": "Mean Time Between Failures (MTBF) and critical spare parts inventory optimization.",
     "tags": [
-      "SAC",
       "PM",
       "MRO",
       "Reliability"
     ],
-    "roiMetric": "$1.8M Working Capital Cut",
+    "roiMetric": ".8M Working Capital Cut",
     "featured": true,
-    "hasFullDemo": false
+    "hasFullDemo": true
   },
   {
     "slug": "sales-margin-analytics",
     "pillarId": "p4",
     "title": "Sales & Margin Executive Steering",
-    "oneLiner": "Multi-dimensional contribution margin analysis by customer, channel, and product line.",
+    "oneLiner": "Multi-dimensional contribution margin analysis by customer, product, and territory.",
     "tags": [
-      "SAC",
       "CO-PA",
       "Sales",
-      "Executive"
+      "Profitability"
     ],
-    "roiMetric": "Boardroom Real-time",
+    "roiMetric": "+2.4% Margin Lift",
+    "featured": true,
+    "hasFullDemo": true
+  },
+  {
+    "slug": "revenue-analytics",
+    "pillarId": "p4",
+    "title": "Revenue & Profitability Intelligence",
+    "oneLiner": "Multi-dimensional revenue waterfalls, regional gross margins, and price realization.",
+    "tags": [
+      "SAC",
+      "Revenue",
+      "Profitability"
+    ],
+    "roiMetric": "+3.1% Top-Line Growth",
     "featured": false,
     "hasFullDemo": false
   },
   {
-    "slug": "predictive-maintenance-ai",
+    "slug": "vendor-management",
     "pillarId": "p4",
-    "title": "Predictive Asset Maintenance AI",
-    "oneLiner": "Sensor telemetry anomaly detection triggering proactive PM maintenance orders in SAP PM.",
+    "title": "Procurement Spend & Vendor Steering",
+    "oneLiner": "Supplier on-time delivery %, price variance tracking, and contract compliance.",
     "tags": [
-      "IoT",
-      "PM",
-      "Machine Learning"
+      "MM",
+      "Procurement",
+      "Spend"
     ],
-    "roiMetric": "35% Less Downtime",
+    "roiMetric": "12% Cost Leakage Avoided",
+    "featured": false,
+    "hasFullDemo": false
+  },
+  {
+    "slug": "quality-management-analytics",
+    "pillarId": "p4",
+    "title": "Quality Management & Inspection Cockpit",
+    "oneLiner": "First-pass yield %, inspection lot defect distribution, and vendor return rates.",
+    "tags": [
+      "QM",
+      "Quality",
+      "Defects"
+    ],
+    "roiMetric": "-30% Defect Recurrence",
+    "featured": false,
+    "hasFullDemo": false
+  },
+  {
+    "slug": "autonomous-procurement-agent",
+    "pillarId": "p4",
+    "title": "Autonomous Procurement & P2P Intake",
+    "oneLiner": "Automated purchase requisition routing, vendor quotation comparison, and PO creation.",
+    "tags": [
+      "Procurement",
+      "Agents",
+      "P2P"
+    ],
+    "roiMetric": "65% Cycle Time Cut",
+    "featured": true,
+    "hasFullDemo": true
+  },
+  {
+    "slug": "clean-core-extensibility-hub",
+    "pillarId": "p4",
+    "title": "Clean Core Extensibility Governance",
+    "oneLiner": "Side-by-side decoupled architecture governance for SAP S/4HANA upgrades.",
+    "tags": [
+      "Clean Core",
+      "Governance",
+      "Upgrades"
+    ],
+    "roiMetric": "100% Upgrade Safe",
+    "featured": true,
+    "hasFullDemo": false
+  },
+  {
+    "slug": "identity-access-governance",
+    "pillarId": "p4",
+    "title": "Cloud Identity & Access Governance",
+    "oneLiner": "Automated role-based segregation of duties and unified authentication for BTP apps.",
+    "tags": [
+      "IAM",
+      "SoD",
+      "Compliance"
+    ],
+    "roiMetric": "0 SoD Violations",
     "featured": false,
     "hasFullDemo": false
   },
@@ -358,12 +356,11 @@
     "slug": "esg-sustainability-cockpit",
     "pillarId": "p4",
     "title": "ESG & Carbon Sustainability Cockpit",
-    "oneLiner": "Scope 1, 2, and 3 emission ledger calculations mapped against product footprint records.",
+    "oneLiner": "Scope 1, 2, and 3 emission ledger calculations mapped against global standards.",
     "tags": [
       "ESG",
       "Sustainability",
-      "Carbon",
-      "SAC"
+      "Compliance"
     ],
     "roiMetric": "Automated Audit Filing",
     "featured": false,
@@ -372,29 +369,28 @@
   {
     "slug": "supply-chain-control-tower",
     "pillarId": "p4",
-    "title": "Supply Chain Control Tower",
-    "oneLiner": "End-to-end multi-tier pipeline visibility predicting carrier port delays and stockouts.",
+    "title": "Supply Chain Operational Control Tower",
+    "oneLiner": "Predictive shipment delay detection and multi-echelon inventory balancing.",
     "tags": [
-      "IBP",
-      "Control Tower",
-      "Logistics"
+      "SCM",
+      "Logistics",
+      "Visibility"
     ],
-    "roiMetric": "3 Days Early Warning",
+    "roiMetric": "48h Early Disruption Alert",
     "featured": false,
     "hasFullDemo": false
   },
   {
     "slug": "cfo-liquidity-planner",
     "pillarId": "p4",
-    "title": "CFO Liquidity & Cash Flow Simulator",
-    "oneLiner": "Monte Carlo cash forecasting factoring live AP payment terms, AR aging, and treasury fx.",
+    "title": "CFO Liquidity & Working Capital Planner",
+    "oneLiner": "Real-time cash flow forecasting integrating AP/AR ledger positions.",
     "tags": [
       "Treasury",
-      "Cash Flow",
-      "CFO",
-      "SAC"
+      "CashFlow",
+      "Finance"
     ],
-    "roiMetric": "98% Forecast Precision",
+    "roiMetric": "99% Cash Flow Precision",
     "featured": false,
     "hasFullDemo": false
   }

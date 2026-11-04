@@ -1,207 +1,131 @@
 {
   "slug": "reconly",
   "pillarId": "p2",
-  "title": "RECONLY Intercompany Reconciliation",
-  "heroHeadline": "Autonomous intercompany balance clearing across multi-ledger S/4HANA entities.",
+  "title": "RECONLY — Automated Invoice Reconciliation & 3-Way Match",
+  "heroHeadline": "Enterprise Vendor Reconciliation with Live PO, GRN and Invoice 3-Way Match",
+  "basicIntro": "Welcome to RECONLY! I am Aayam. Let me show you how we eliminate accounts payable bottlenecks with automated 3-way matching across SAP S/4HANA Purchase Orders, Goods Receipts, and Vendor Invoices.",
   "sapComponents": [
-    "SAP S/4HANA Core",
-    "SAP BTP Services",
-    "Cloud Connector"
+    "SAP BTP Cloud Foundry (Node.js 20)",
+    "SAP S/4HANA Sourcing & Procurement (MM)",
+    "SAP S/4HANA Financial Accounting (FI-AP)",
+    "SAP S/4HANA MIRO Invoice Verification",
+    "SAP Event Mesh"
   ],
-  "hasContent": false,
+  "hasContent": true,
   "cards": [
     {
       "index": 0,
       "type": "hook",
-      "title": "Introduction: RECONLY Intercompany Reconciliation",
-      "botDialogue": "Welcome to RECONLY Intercompany Reconciliation. This solution delivers 3 days saved / month across enterprise operations.",
+      "title": "Strategic Accounts Payable Velocity",
+      "botPose": "present",
+      "botDialogue": "Welcome to RECONLY! Manual three-way matching across paper invoices, POs, and goods receipts consumes hundreds of AP hours monthly. RECONLY automates 80.9% of matching on first pass.",
       "stat": {
-        "number": "3 Days Saved / Month",
-        "label": "Primary Impact"
+        "number": "80.9%",
+        "label": "Automated Match Rate"
       },
       "bullets": [
-        "Engineered for Clean Core compliance",
-        "Decoupled extension architecture on SAP BTP",
-        "Production-tested across Tier-1 enterprise landscapes"
-      ],
-      "botPose": "wave"
+        "Manual reconciliation across disparate POs, bilties, and invoices stalls payment cycles.",
+        "Pricing and quantity discrepancies trigger carrier disputes and vendor friction.",
+        "Delayed exception handling causes month-end financial close backlogs."
+      ]
     },
     {
       "index": 1,
       "type": "challenge",
-      "title": "Legacy Challenge & Enterprise Friction",
-      "botDialogue": "Traditional architectures struggle with upgrade dependencies, manual reconciliation, and lack of real-time visibility.",
-      "visual": "before-after",
+      "title": "Core Reconciliation Friction Points",
+      "botPose": "explain",
+      "botDialogue": "Notice the core friction points: line-item quantity variances between receiving docks and vendor invoices, currency exchange mismatches, and delayed debit note creation.",
+      "visual": "pain-matrix",
       "bullets": [
-        "Monolithic customizations hinder ERP lifecycle upgrades",
-        "High latency and asynchronous data synchronization errors",
-        "Excessive operational overhead for support engineering"
-      ],
-      "botPose": "alert"
+        "High exception rates requiring cross-departmental email chases between plant receivers and AP.",
+        "Lack of centralized multi-entity reconciliation cockpit across corporate group companies.",
+        "Manual data entry into SAP MIRO leading to duplicate payment vulnerabilities."
+      ]
     },
     {
       "index": 2,
       "type": "solution",
-      "title": "Modern Architecture Overview",
-      "botDialogue": "Our solution decouples business logic into secure SAP BTP runtime services while preserving transactional integrity.",
+      "title": "Clean Core 3-Way Reconciliation Architecture",
+      "botPose": "tablet",
+      "botDialogue": "Here is our decoupled reconciliation architecture on SAP BTP. Real-time OData feeds stream PO and GRN line items from S/4HANA into an autonomous rules engine, keeping core ledgers untouched.",
       "diagram": {
         "nodes": [
-          {
-            "id": "src",
-            "label": "SAP S/4HANA ERP"
-          },
-          {
-            "id": "btp",
-            "label": "BTP Processing Engine"
-          },
-          {
-            "id": "ai",
-            "label": "Intelligence Layer"
-          },
-          {
-            "id": "ui",
-            "label": "Executive Cockpit"
-          }
+          {"id": "n1", "label": "Vendor Invoice Intake (OCR/EDI)"},
+          {"id": "n2", "label": "BTP Automated Matching Engine"},
+          {"id": "n3", "label": "Variance & Tolerance Rules"},
+          {"id": "n4", "label": "S/4HANA MIRO Auto-Post"}
         ],
         "edges": [
-          {
-            "from": "src",
-            "to": "btp"
-          },
-          {
-            "from": "btp",
-            "to": "ai"
-          },
-          {
-            "from": "ai",
-            "to": "ui"
-          }
+          {"from": "n1", "to": "n2"},
+          {"from": "n2", "to": "n3"},
+          {"from": "n3", "to": "n4"}
         ]
-      },
-      "botPose": "present"
+      }
     },
     {
       "index": 3,
       "type": "live-ui",
-      "title": "Application Control Center",
-      "botDialogue": "Here is the interactive interface. Inspect key operational signals and workflow states.",
+      "title": "Interactive Reconciliation Command Cockpit",
+      "botPose": "point",
+      "botDialogue": "Inspecting the live Reconly cockpit. Notice real-time visibility into 162 active invoices, 80.9% match confidence, and categorized financial exception work queues.",
       "screenshot": "/assets/apps/reconly/screen-1.png",
       "hotspots": [
-        {
-          "x": 25,
-          "y": 30,
-          "label": "Status Monitor",
-          "tooltip": "Live synchronization health and active pipeline telemetry."
-        },
-        {
-          "x": 75,
-          "y": 30,
-          "label": "Action Console",
-          "tooltip": "Autonomous validation and exception routing controls."
-        }
-      ],
-      "botPose": "point"
+        {"x": 20, "y": 25, "label": "Match Rate Telemetry", "tooltip": "Live overview of 162 invoices with 80.9% automated clearance rate."},
+        {"x": 60, "y": 48, "label": "Line-Item Tolerance Matrix", "tooltip": "Autonomous variance comparison across unit prices, quantities, and tax codes."},
+        {"x": 82, "y": 72, "label": "Automated MIRO Posting", "tooltip": "One-click batch approval triggering touchless SAP MIRO accounting entries."}
+      ]
     },
     {
       "index": 4,
       "type": "workflow",
-      "title": "Execution Workflow",
-      "botDialogue": "Every transaction flows deterministically through 3 validated checkpoints.",
+      "title": "3-Step Governed Execution Flow",
+      "botPose": "tablet",
+      "botDialogue": "From invoice intake to ledger clearance, our 3-step workflow ensures verified audit trails with zero manual data entry.",
       "steps": [
-        {
-          "step": 1,
-          "title": "Trigger Event",
-          "desc": "Business event captured via SAP Event Mesh.",
-          "sapAction": "Event Emitted"
-        },
-        {
-          "step": 2,
-          "title": "Automated Processing",
-          "desc": "Clean Core rules engine evaluates business context.",
-          "sapAction": "Rules Executed"
-        },
-        {
-          "step": 3,
-          "title": "Ledger Settlement",
-          "desc": "Validated updates committed back to S/4HANA.",
-          "sapAction": "S/4HANA Commit"
-        }
-      ],
-      "botPose": "explain"
+        {"step": 1, "title": "Data Intake & OData Sync", "desc": "Ingest vendor invoices via OCR/EDI and sync live S/4HANA PO and GRN line items.", "sapAction": "S/4HANA OData Sync"},
+        {"step": 2, "title": "Autonomous 3-Way Match", "desc": "Evaluate pricing tolerances, received quantities, and delivery milestones.", "sapAction": "BTP Rules Engine"},
+        {"step": 3, "title": "Variance Routing & MIRO Settlement", "desc": "Route exceptions to AP reviewers; auto-post verified records into SAP MIRO.", "sapAction": "SAP MIRO Auto-Posting"}
+      ]
     },
     {
       "index": 5,
       "type": "tech-stack",
-      "title": "Technology Stack & Integrations",
-      "botDialogue": "Leveraging standard SAP BTP runtime artifacts and cloud native development standards.",
+      "title": "SAP BTP & Clean Core Topology",
+      "botPose": "laptop",
+      "botDialogue": "Built natively on SAP BTP Cloud Foundry runtime with Node.js 20, integrating with S/4HANA via Cloud Connector and secure OAuth 2.0 JWTs.",
       "chips": [
-        {
-          "layer": "Platform",
-          "tech": "SAP BTP"
-        },
-        {
-          "layer": "Integration",
-          "tech": "Cloud Connector"
-        },
-        {
-          "layer": "Runtime",
-          "tech": "Cloud Foundry / Kyma"
-        },
-        {
-          "layer": "Core",
-          "tech": "SAP S/4HANA"
-        }
-      ],
-      "botPose": "laptop"
+        {"layer": "Runtime", "tech": "SAP BTP Cloud Foundry"},
+        {"layer": "ERP Core", "tech": "SAP S/4HANA Cloud / ECC 6.0"},
+        {"layer": "Protocol", "tech": "OData v2/v4 & RFC"},
+        {"layer": "Database", "tech": "SAP HANA Cloud"},
+        {"layer": "Security", "tech": "XSUAA OAuth 2.0"}
+      ]
     },
     {
       "index": 6,
       "type": "impact",
-      "title": "Measurable Business Value",
-      "botDialogue": "Measurable operational gains achieved with zero custom core modifications.",
+      "title": "Quantified Business ROI",
+      "botPose": "present",
+      "botDialogue": "Delivering measurable financial agility: faster month-end close, eliminated duplicate payments, and verified carrier relationships.",
       "metrics": [
-        {
-          "value": "3 Days Saved / Month",
-          "label": "Primary Benefit",
-          "delta": "Verified"
-        },
-        {
-          "value": "100%",
-          "label": "Clean Core Compliant",
-          "delta": "Zero Mod"
-        },
-        {
-          "value": "24/7",
-          "label": "Availability",
-          "delta": "SLA 99.9%"
-        }
-      ],
-      "botPose": "celebrate"
+        {"value": "80.9%", "label": "First-Pass Match", "delta": "+55%"},
+        {"value": "90%", "label": "Faster AP Close", "delta": "-12 days"},
+        {"value": "100%", "label": "Audit Traceability", "delta": "0 lost docs"}
+      ]
     },
     {
       "index": 7,
       "type": "cta",
-      "title": "Explore Architecture & Deployment",
-      "botDialogue": "Review the technical prerequisites or schedule a live architecture deep dive with our engineering leads.",
+      "title": "Deployment Readiness & Next Steps",
+      "botPose": "beckon",
+      "botDialogue": "Ready to test RECONLY with your enterprise vendor invoices? Schedule an architecture workshop or test drive in our sandbox.",
       "actions": [
-        {
-          "label": "View Prerequisites",
-          "type": "prereq"
-        },
-        {
-          "label": "Architecture View",
-          "type": "architecture"
-        },
-        {
-          "label": "Export Solution Spec",
-          "type": "pdf"
-        }
-      ],
-      "botPose": "present"
+        {"label": "Interactive Architecture Demo", "type": "demo"},
+        {"label": "Landscape Prerequisites", "type": "prereq"},
+        {"label": "Clean Core Architecture Review", "type": "architecture"}
+      ]
     }
   ],
-  "basicIntro": "Autonomous intercompany balance clearing across multi-ledger S/4HANA entities.",
-  "intro": "Autonomous intercompany balance clearing across multi-ledger S/4HANA entities.",
   "contact": {
     "name": "Varad Rane",
     "role": "Chief SAP Solutions Architect",
@@ -210,7 +134,8 @@
     "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=contact@abhiyantaindia.com"
   },
   "closing": {
-    "liveDemoInfo": "Accessible on SAP BTP Cloud Foundry tenant with pre-configured single sign-on.",
+    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant (EU30) accessible for authenticated enterprise reviewers. Single Sign-On enabled.",
+    "feedbackUrl": "https://forms.office.com/r/abhiyanta-reconly",
     "contact": {
       "name": "Varad Rane",
       "role": "Chief SAP Solutions Architect",

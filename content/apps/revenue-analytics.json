@@ -1,0 +1,233 @@
+{
+  "slug": "revenue-analytics",
+  "pillarId": "p4",
+  "title": "Revenue & Profitability Intelligence",
+  "heroHeadline": "Multi-Dimensional Revenue Waterfalls, Margin Drill-Downs & Product Profitability",
+  "basicIntro": "Welcome to Revenue & Profitability Intelligence! I am Aayam. Let me show you how our executive SAC dashboards unify sales and financial margin drivers across business units.",
+  "sapComponents": [
+    "SAP Analytics Cloud (SAC)",
+    "SAP Datasphere",
+    "SAP S/4HANA Sales & Distribution (SD)",
+    "SAP S/4HANA Profitability Analysis (CO-PA)"
+  ],
+  "hasContent": true,
+  "cards": [
+    {
+      "index": 0,
+      "type": "hook",
+      "title": "Strategic Opportunity & Executive Visibility",
+      "botPose": "present",
+      "botDialogue": "Welcome! I am Aayam. Let's inspect Revenue & Profitability Intelligence. Here is how we transform enterprise steering velocity.",
+      "stat": {
+        "number": "+3.1%",
+        "label": "Top-Line Revenue Lift"
+      },
+      "bullets": [
+        "Dispersed financial and sales datasets obscure customer and product profitability.",
+        "Manual revenue reporting delays executive margin optimization decisions.",
+        "Lack of real-time variance analysis between booked revenue and gross margin contribution."
+      ]
+    },
+    {
+      "index": 1,
+      "type": "challenge",
+      "title": "Operational Process Friction",
+      "botPose": "explain",
+      "botDialogue": "Notice the process friction points: fragmented data silos, delayed analytics, and lack of real-time drill-down capabilities.",
+      "visual": "pain-matrix",
+      "bullets": [
+        "Dispersed financial and sales datasets obscure customer and product profitability.",
+        "Manual revenue reporting delays executive margin optimization decisions.",
+        "Lack of real-time variance analysis between booked revenue and gross margin contribution."
+      ]
+    },
+    {
+      "index": 2,
+      "type": "solution",
+      "title": "Data Fabric & Analytics Architecture",
+      "botPose": "tablet",
+      "botDialogue": "Here is our analytics architecture: SAP Datasphere provides a unified business semantic layer directly consumed by SAP Analytics Cloud.",
+      "diagram": {
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "SAP S/4HANA Core Ledgers"
+          },
+          {
+            "id": "n2",
+            "label": "SAP Datasphere Data Fabric"
+          },
+          {
+            "id": "n3",
+            "label": "SAC Semantic Modeling"
+          },
+          {
+            "id": "n4",
+            "label": "Boardroom Executive Story"
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2"
+          },
+          {
+            "from": "n2",
+            "to": "n3"
+          },
+          {
+            "from": "n3",
+            "to": "n4"
+          }
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "type": "live-ui",
+      "title": "Interactive Executive Dashboard",
+      "botPose": "point",
+      "botDialogue": "Let us inspect the live production dashboard. Every KPI connects to live S/4HANA enterprise master data.",
+      "screenshot": "/assets/apps/revenue-analytics/screen-1.png",
+      "hotspots": [
+        {
+          "x": 25,
+          "y": 30,
+          "label": "Net Revenue Telemetry",
+          "tooltip": "Consolidated global net revenue with real-time currency conversion."
+        },
+        {
+          "x": 65,
+          "y": 48,
+          "label": "Gross Margin Waterfall",
+          "tooltip": "Multi-tier variance breakdown from gross sales to EBITDA."
+        },
+        {
+          "x": 80,
+          "y": 70,
+          "label": "Customer Segment Matrix",
+          "tooltip": "Drill-down into top 20% revenue-generating enterprise accounts."
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "type": "workflow",
+      "title": "End-to-End Governance Flow",
+      "botPose": "tablet",
+      "botDialogue": "From data ingestion to C-suite decision steering, the analytical pipeline runs with sub-second responsiveness.",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Data Harmonization in Datasphere",
+          "desc": "Unify SD billing lines with CO-PA actuals into curated Data Products.",
+          "sapAction": "Datasphere Semantic Model"
+        },
+        {
+          "step": 2,
+          "title": "Real-Time Margin Calculation",
+          "desc": "Compute net revenue, direct cost allocations, and contribution margin variance.",
+          "sapAction": "SAC Analytical Engine"
+        },
+        {
+          "step": 3,
+          "title": "Executive Decision Steering",
+          "desc": "Enable boardroom drill-downs by region, product category, and customer tier.",
+          "sapAction": "SAC Executive Story"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "type": "tech-stack",
+      "title": "SAP Architecture Topology",
+      "botPose": "laptop",
+      "botDialogue": "Built on SAP Analytics Cloud and SAP Datasphere, fully compliant with Clean Core principles and zero modifications.",
+      "chips": [
+        {
+          "layer": "Presentation",
+          "tech": "SAP Analytics Cloud (SAC)"
+        },
+        {
+          "layer": "Data Fabric",
+          "tech": "SAP Datasphere"
+        },
+        {
+          "layer": "Source ERP",
+          "tech": "SAP S/4HANA SD / CO-PA"
+        },
+        {
+          "layer": "Data Modeling",
+          "tech": "SAC Calculated Dimensions"
+        },
+        {
+          "layer": "Security",
+          "tech": "SAP Cloud Identity Services"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "type": "impact",
+      "title": "Quantified Business ROI",
+      "botPose": "present",
+      "botDialogue": "Measurable impact delivered across executive operations, working capital, and governance agility.",
+      "metrics": [
+        {
+          "value": "+3.1%",
+          "label": "Revenue Lift",
+          "delta": "+2.8%"
+        },
+        {
+          "value": "-40%",
+          "label": "Reporting Effort",
+          "delta": "-15 hrs/wk"
+        },
+        {
+          "value": "100%",
+          "label": "Audit Traceability",
+          "delta": "Sub-second"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "type": "cta",
+      "title": "Deployment Readiness & Next Steps",
+      "botPose": "beckon",
+      "botDialogue": "Ready to deploy Revenue & Profitability Intelligence on your SAP landscape? Schedule an executive briefing with our architecture team.",
+      "actions": [
+        {
+          "label": "Interactive Architecture Demo",
+          "type": "demo"
+        },
+        {
+          "label": "Landscape Prerequisites",
+          "type": "prereq"
+        },
+        {
+          "label": "Clean Core Architecture Review",
+          "type": "architecture"
+        }
+      ]
+    }
+  ],
+  "contact": {
+    "name": "Varad Rane",
+    "role": "Chief SAP Solutions Architect",
+    "email": "contact@abhiyantaindia.com",
+    "phone": "+91 (022) 6982-1000",
+    "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=contact@abhiyantaindia.com"
+  },
+  "closing": {
+    "liveDemoInfo": "Live SAP Analytics Cloud tenant accessible for authenticated enterprise reviewers. Single Sign-On enabled.",
+    "feedbackUrl": "https://forms.office.com/r/abhiyanta-revenue-analytics",
+    "contact": {
+      "name": "Varad Rane",
+      "role": "Chief SAP Solutions Architect",
+      "email": "contact@abhiyantaindia.com",
+      "phone": "+91 (022) 6982-1000",
+      "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=contact@abhiyantaindia.com"
+    }
+  }
+}

@@ -10,3 +10,5 @@ All scratch and transient files generated during development cycles are recorded
 | `scripts/optimize-assets.ts` | Sharp pipeline for trimming and webp conversion of bot poses | CR v2 Phase 3 | Permanent utility (`npm run assets:optimize`) |
 | `scripts/enrich-apps.ts` | Content enrichment script synchronizing 28 apps with basicIntro, contact, and closing | CR v2 Phase 5 | Utility retained for catalog maintenance |
 | `scripts/extract_and_enrich.py` | Automated docx screenshot and content extraction pipeline for ais exp data.zip | v4.0 | Utility retained for catalog updates |
+| `scripts/make_sac_apps.py` | Generator for SAC dashboard applications from ais exp data sub-zips | v5.0 | Utility retained for catalog updates |
+| `scripts/snap.js` | Automated Playwright multi-viewport visual regression and snapshot script | v5.0 | Permanent UI testing utility (`node scripts/snap.js`) |

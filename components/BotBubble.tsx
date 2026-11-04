@@ -163,8 +163,8 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
     if (resolvedPlacement === 'top') {
       posStyle = {
         position: 'fixed',
-        left: `clamp(16px, ${headPos.x - 140}px, calc(100vw - 340px))`,
-        bottom: `calc(100vh - ${headPos.y}px + 28px)`,
+        left: `clamp(16px, ${headPos.x - 160}px, calc(100vw - 380px))`,
+        bottom: `calc(100vh - ${headPos.y}px + 72px)`,
         zIndex: 50,
       };
     } else if (resolvedPlacement === 'left') {
