@@ -1,14 +1,15 @@
 {
   "slug": "product-cost-simulator",
-  "pillarId": "p2",
-  "title": "Product Cost Simulator",
-  "heroHeadline": "Real-time BOM explosion and volatile raw material price hedging simulation.",
+  "pillarId": "p1",
+  "title": "Product Cost Simulator — S/4HANA Tender & Margin Intelligence",
+  "heroHeadline": "76.4% quote turnaround acceleration & ₹12.80 Cr annual margin leakage prevented.",
+  "basicIntro": "Greetings! I am your AIS Experience Bot. Let me show you how our Product Cost Simulator empowers engineering and bidding teams to simulate S/4HANA cost rollups and win tenders with precision.",
   "sapComponents": [
     "SAP S/4HANA Core",
     "SAP BTP Services",
     "Cloud Connector"
   ],
-  "hasContent": false,
+  "hasContent": true,
   "cards": [
     {
       "index": 0,
@@ -24,7 +25,7 @@
         "Decoupled extension architecture on SAP BTP",
         "Production-tested across Tier-1 enterprise landscapes"
       ],
-      "botPose": "wave"
+      "botPose": "present"
     },
     {
       "index": 1,
@@ -37,7 +38,7 @@
         "High latency and asynchronous data synchronization errors",
         "Excessive operational overhead for support engineering"
       ],
-      "botPose": "alert"
+      "botPose": "point"
     },
     {
       "index": 2,
@@ -78,7 +79,7 @@
           }
         ]
       },
-      "botPose": "present"
+      "botPose": "tablet"
     },
     {
       "index": 3,
@@ -127,7 +128,7 @@
           "sapAction": "S/4HANA Commit"
         }
       ],
-      "botPose": "explain"
+      "botPose": "tablet"
     },
     {
       "index": 5,
@@ -176,7 +177,7 @@
           "delta": "SLA 99.9%"
         }
       ],
-      "botPose": "celebrate"
+      "botPose": "present"
     },
     {
       "index": 7,
@@ -197,26 +198,25 @@
           "type": "pdf"
         }
       ],
-      "botPose": "present"
+      "botPose": "beckon"
     }
   ],
-  "basicIntro": "Real-time BOM explosion and volatile raw material price hedging simulation.",
-  "intro": "Real-time BOM explosion and volatile raw material price hedging simulation.",
   "contact": {
-    "name": "Varad Rane",
-    "role": "Chief SAP Solutions Architect",
-    "email": "contact@abhiyantaindia.com",
-    "phone": "+91 (022) 6982-1000",
-    "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=contact@abhiyantaindia.com"
+    "name": "Varad B.",
+    "role": "Lead Enterprise Architect & BTP Practice Head",
+    "email": "varad@abhiyantaindia.com",
+    "phone": "+91 98200 00000",
+    "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=varad@abhiyantaindia.com"
   },
   "closing": {
-    "liveDemoInfo": "Accessible on SAP BTP Cloud Foundry tenant with pre-configured single sign-on.",
+    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation for Product Cost Simulator — S/4HANA Tender & Margin Intelligence.",
+    "feedbackUrl": "https://forms.office.com/r/abhiyanta-product-cost-simulator",
     "contact": {
-      "name": "Varad Rane",
-      "role": "Chief SAP Solutions Architect",
-      "email": "contact@abhiyantaindia.com",
-      "phone": "+91 (022) 6982-1000",
-      "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=contact@abhiyantaindia.com"
+      "name": "Varad B.",
+      "role": "Lead Enterprise Architect & BTP Practice Head",
+      "email": "varad@abhiyantaindia.com",
+      "phone": "+91 98200 00000",
+      "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=varad@abhiyantaindia.com"
     }
   }
 }

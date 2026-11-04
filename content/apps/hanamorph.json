@@ -1,14 +1,15 @@
 {
   "slug": "hanamorph",
-  "pillarId": "p4",
-  "title": "HanaMorph Migration Suite",
-  "heroHeadline": "Automated migration of legacy calculation views to modern SAP Datasphere graphical models.",
+  "pillarId": "p2",
+  "title": "HanaMorph – Automated SAP HANA to SAP Datasphere Modernization Studio",
+  "heroHeadline": "95% reduction in modernization cycle time (from 4 days to 5 minutes)",
+  "basicIntro": "Welcome to HanaMorph! I automate the 1:1 modernization of your complex SAP HANA Calculation Views into SAP Datasphere with zero dependency errors and 100% visual lineage parity.",
   "sapComponents": [
     "SAP S/4HANA Core",
     "SAP BTP Services",
     "Cloud Connector"
   ],
-  "hasContent": false,
+  "hasContent": true,
   "cards": [
     {
       "index": 0,
@@ -24,7 +25,7 @@
         "Decoupled extension architecture on SAP BTP",
         "Production-tested across Tier-1 enterprise landscapes"
       ],
-      "botPose": "wave"
+      "botPose": "present"
     },
     {
       "index": 1,
@@ -37,7 +38,7 @@
         "High latency and asynchronous data synchronization errors",
         "Excessive operational overhead for support engineering"
       ],
-      "botPose": "alert"
+      "botPose": "point"
     },
     {
       "index": 2,
@@ -78,7 +79,7 @@
           }
         ]
       },
-      "botPose": "present"
+      "botPose": "tablet"
     },
     {
       "index": 3,
@@ -127,7 +128,7 @@
           "sapAction": "S/4HANA Commit"
         }
       ],
-      "botPose": "explain"
+      "botPose": "tablet"
     },
     {
       "index": 5,
@@ -176,7 +177,7 @@
           "delta": "SLA 99.9%"
         }
       ],
-      "botPose": "celebrate"
+      "botPose": "present"
     },
     {
       "index": 7,
@@ -197,26 +198,25 @@
           "type": "pdf"
         }
       ],
-      "botPose": "present"
+      "botPose": "beckon"
     }
   ],
-  "basicIntro": "Automated migration of legacy calculation views to modern SAP Datasphere graphical models.",
-  "intro": "Automated migration of legacy calculation views to modern SAP Datasphere graphical models.",
   "contact": {
-    "name": "Varad Rane",
-    "role": "Chief SAP Solutions Architect",
-    "email": "contact@abhiyantaindia.com",
-    "phone": "+91 (022) 6982-1000",
-    "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=contact@abhiyantaindia.com"
+    "name": "Varad Patankar",
+    "role": "Lead Enterprise Architect & BTP Practice Head",
+    "email": "varad@abhiyantatech.com",
+    "phone": "+91 98200 00000",
+    "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=varad@abhiyantaindia.com"
   },
   "closing": {
-    "liveDemoInfo": "Accessible on SAP BTP Cloud Foundry tenant with pre-configured single sign-on.",
+    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation for HanaMorph – Automated SAP HANA to SAP Datasphere Modernization Studio.",
+    "feedbackUrl": "https://forms.office.com/r/abhiyanta-hanamorph",
     "contact": {
-      "name": "Varad Rane",
-      "role": "Chief SAP Solutions Architect",
-      "email": "contact@abhiyantaindia.com",
-      "phone": "+91 (022) 6982-1000",
-      "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=contact@abhiyantaindia.com"
+      "name": "Varad Patankar",
+      "role": "Lead Enterprise Architect & BTP Practice Head",
+      "email": "varad@abhiyantatech.com",
+      "phone": "+91 98200 00000",
+      "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=varad@abhiyantaindia.com"
     }
   }
 }

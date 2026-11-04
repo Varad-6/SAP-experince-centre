@@ -1,41 +1,22 @@
 {
   "slug": "podzo",
   "pillarId": "p2",
-  "title": "PODZO — AI-Powered Enterprise Logistics Execution & Siding Dispatch",
-  "heroHeadline": "Autonomous siding dispatch, weighbridge tare/gross match, and Proof-of-Delivery across Order-to-Cash.",
-  "intro": "Autonomous siding dispatch, weighbridge tare/gross match, and Proof-of-Delivery across Order-to-Cash.",
-  "basicIntro": "PODZO synchronizes rail siding dispatches with SAP S/4HANA Order-to-Cash in sub-second cycles.",
+  "title": "PODZO — Transporter Proof-of-Delivery & Automated Invoicing Intelligence",
+  "heroHeadline": "98% Touchless Invoice Clearance • 14 Days to 4 Hours Cycle Time",
+  "basicIntro": "Welcome to PODZO! I’ll show you how we automate mining and freight logistics from siding weighment to SAP MIRO invoice posting.",
   "sapComponents": [
     "SAP S/4HANA Sales & Distribution (VA03)",
     "Outbound Deliveries (VL03N)",
     "Billing (VF01)",
     "Invoice Settlement (MIRO)"
   ],
-  "contact": {
-    "name": "Varad Rane",
-    "role": "Chief SAP Solutions Architect",
-    "email": "contact@abhiyantaindia.com",
-    "phone": "+91 (022) 6982-1000",
-    "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=contact@abhiyantaindia.com"
-  },
-  "closing": {
-    "liveDemoInfo": "SAP BTP Cloud Foundry tenant (EU30-HANA). Access via single sign-on with role 'Logistics_Reviewer'. Active test data pre-loaded for Sales Orders #2318 and #2322.",
-    "feedbackUrl": "https://forms.office.com/r/podzo-feedback",
-    "contact": {
-      "name": "Varad Rane",
-      "role": "Chief SAP Solutions Architect",
-      "email": "contact@abhiyantaindia.com",
-      "phone": "+91 (022) 6982-1000",
-      "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=contact@abhiyantaindia.com"
-    }
-  },
   "hasContent": true,
   "cards": [
     {
       "index": 0,
       "type": "hook",
       "title": "Welcome to PODZO: Autonomous Logistics Execution",
-      "botPose": "wave",
+      "botPose": "present",
       "botDialogue": "Welcome! I'm your Lead Architect. In high-volume heavy industries, logistics bottlenecks kill cash flow. PODZO eliminates manual railcar and weighbridge reconciliation in real time.",
       "stat": {
         "number": "99.2%",
@@ -51,7 +32,7 @@
       "index": 1,
       "type": "challenge",
       "title": "The Operational Bottleneck: Manual Siding & Paper PODs",
-      "botPose": "alert",
+      "botPose": "point",
       "botDialogue": "Before PODZO, plants faced rail congestion, days of manual slip verification, and costly billing disputes with transporters.",
       "visual": "before-after",
       "bullets": [
@@ -64,19 +45,40 @@
       "index": 2,
       "type": "solution",
       "title": "End-to-End Architectural Solution Flow",
-      "botPose": "present",
+      "botPose": "tablet",
       "botDialogue": "Here is how PODZO closes the loop cleanly: the Sales Order in S/4HANA triggers siding reservation, automated vision checks the tare and gross weights, and tolerance logic posts directly to MIRO.",
       "diagram": {
         "nodes": [
-          { "id": "n1", "label": "VA03 Sales Order" },
-          { "id": "n2", "label": "Vision OCR Weighbridge" },
-          { "id": "n3", "label": "MIRO Auto-Settlement" },
-          { "id": "n4", "label": "Customer Clearing" }
+          {
+            "id": "n1",
+            "label": "VA03 Sales Order"
+          },
+          {
+            "id": "n2",
+            "label": "Vision OCR Weighbridge"
+          },
+          {
+            "id": "n3",
+            "label": "MIRO Auto-Settlement"
+          },
+          {
+            "id": "n4",
+            "label": "Customer Clearing"
+          }
         ],
         "edges": [
-          { "from": "n1", "to": "n2" },
-          { "from": "n2", "to": "n3" },
-          { "from": "n3", "to": "n4" }
+          {
+            "from": "n1",
+            "to": "n2"
+          },
+          {
+            "from": "n2",
+            "to": "n3"
+          },
+          {
+            "from": "n3",
+            "to": "n4"
+          }
         ]
       }
     },
@@ -118,7 +120,7 @@
       "index": 4,
       "type": "workflow",
       "title": "Automated 3-Step Execution Pipeline",
-      "botPose": "explain",
+      "botPose": "tablet",
       "botDialogue": "Notice how every step is clean core compliant. No custom tables are injected into the ERP core.",
       "steps": [
         {
@@ -148,36 +150,90 @@
       "botPose": "laptop",
       "botDialogue": "PODZO runs on SAP BTP Cloud Foundry using Node.js CAP, connected to S/4HANA through Destination Service and Cloud Connector.",
       "chips": [
-        { "layer": "Runtime", "tech": "SAP BTP Cloud Foundry" },
-        { "layer": "Backend", "tech": "Node.js CAP Framework" },
-        { "layer": "AI & Vision", "tech": "Vision OCR AI Service" },
-        { "layer": "Enterprise Portal", "tech": "SAP Build Work Zone" },
-        { "layer": "Core ERP", "tech": "SAP S/4HANA 2023 (Clean Core)" }
+        {
+          "layer": "Runtime",
+          "tech": "SAP BTP Cloud Foundry"
+        },
+        {
+          "layer": "Backend",
+          "tech": "Node.js CAP Framework"
+        },
+        {
+          "layer": "AI & Vision",
+          "tech": "Vision OCR AI Service"
+        },
+        {
+          "layer": "Enterprise Portal",
+          "tech": "SAP Build Work Zone"
+        },
+        {
+          "layer": "Core ERP",
+          "tech": "SAP S/4HANA 2023 (Clean Core)"
+        }
       ]
     },
     {
       "index": 6,
       "type": "impact",
       "title": "Quantified Business ROI",
-      "botPose": "celebrate",
+      "botPose": "present",
       "botDialogue": "The financial impact is immediate: cycle time drops from 4 days to 30 seconds, and rail demurrage penalties are completely eliminated.",
       "metrics": [
-        { "value": "<30s", "label": "Cycle Time Compression", "delta": "-99% Time" },
-        { "value": "$0", "label": "Demurrage Penalties", "delta": "100% Eliminated" },
-        { "value": "100%", "label": "Clean Core Compliance", "delta": "Upgrade Safe" }
+        {
+          "value": "<30s",
+          "label": "Cycle Time Compression",
+          "delta": "-99% Time"
+        },
+        {
+          "value": "$0",
+          "label": "Demurrage Penalties",
+          "delta": "100% Eliminated"
+        },
+        {
+          "value": "100%",
+          "label": "Clean Core Compliance",
+          "delta": "Upgrade Safe"
+        }
       ]
     },
     {
       "index": 7,
       "type": "cta",
       "title": "Ready to Deploy PODZO?",
-      "botPose": "present",
+      "botPose": "beckon",
       "botDialogue": "You can launch the live simulation right now, inspect the BTP deployment prerequisites, or export the executive solution brief.",
       "actions": [
-        { "label": "Launch Live System", "type": "demo" },
-        { "label": "Architecture Blueprints", "type": "prereq" },
-        { "label": "Download Solution Brief", "type": "pdf" }
+        {
+          "label": "Launch Live System",
+          "type": "demo"
+        },
+        {
+          "label": "Architecture Blueprints",
+          "type": "prereq"
+        },
+        {
+          "label": "Download Solution Brief",
+          "type": "pdf"
+        }
       ]
     }
-  ]
+  ],
+  "contact": {
+    "name": "Varad Kadam",
+    "role": "Lead Enterprise Architect & BTP Practice Head",
+    "email": "varad.k@abhiyantatech.com",
+    "phone": "+91 98200 00000",
+    "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=varad@abhiyantaindia.com"
+  },
+  "closing": {
+    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant (EU30-HANA) accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation for PODZO — Transporter Proof-of-Delivery & Automated Invoicing Intelligence.",
+    "feedbackUrl": "https://forms.office.com/r/abhiyanta-podzo",
+    "contact": {
+      "name": "Varad Kadam",
+      "role": "Lead Enterprise Architect & BTP Practice Head",
+      "email": "varad.k@abhiyantatech.com",
+      "phone": "+91 98200 00000",
+      "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=varad@abhiyantaindia.com"
+    }
+  }
 }

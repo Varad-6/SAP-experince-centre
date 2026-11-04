@@ -389,3 +389,18 @@ Standard: Clean Fiori Horizon Professional Stack, 2D GSAP Bot, Zero 3D / Zero Au
   - `npm run content:check` -> Code 0
   - `npm test` -> Code 0 (9/9 passed)
   - `npm run build` -> Code 0 (80/80 static pages generated)
+
+---
+
+## Phase 5 (Master Prompt v3): Content Schema, docx Importer & Team Data Ingestion
+- **Date**: 2026-11-04
+- **Status**: Completed. Verified with `npm run content:check`, `npm test` (9/9 pass), and `npm run build` (0 errors, 80/80 static pages generated).
+- **Files Created/Touched**:
+  - `scripts/import-template.py`: Python automation using `python-docx` to parse structured tables from production Word documents in `ais exp data` and ingest application basics, pillar assignment, 8 cards, and closing tenant info.
+  - `content/apps/*.json`: Ingested real production team demo scripts (PODZO, SAP BTP Vibe Coding, HanaMorph, ABAP CDS AI Debug Studio, Invoice Decision Intelligence, Asset Reliability MRO, Manufacturing Yield Scrap, Receivables, Autonomous Procurement Agent, Product Cost Simulator).
+  - `tests/content.test.ts`: Preserved strict assertions on schema compliance, EU30-HANA tenant data, and card dialogue.
+- **Commands Run**:
+  - `python scripts/import-template.py` -> Code 0 (10 team documents ingested)
+  - `npm run content:check` -> Code 0 (All 28 apps validated)
+  - `npm test` -> Code 0 (9/9 passed)
+  - `npm run build` -> Code 0 (80/80 static pages generated)

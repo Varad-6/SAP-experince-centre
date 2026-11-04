@@ -2,7 +2,8 @@
   "slug": "sap-btp-vibe-coding",
   "pillarId": "p1",
   "title": "SAP BTP Vibe Coding & Enterprise AI Foundation",
-  "heroHeadline": "Enterprise AI cloud runtime, autonomous agent toolchains, and zero-prompt SAP CAP acceleration.",
+  "heroHeadline": "10x Velocity (92% Setup Cycle Time Reduction: 5 Days → 25 Mins)",
+  "basicIntro": "Welcome to the foundation layer! I'm your Lead Architect. Before writing custom code, we provision governed multi-region BTP runtimes, SAP AI Core with Claude Sonnet 4.5, and autonomous developer agents.",
   "sapComponents": [
     "SAP AI Core (Plan: extended)",
     "SAP Generative AI Hub (Anthropic Claude 4.5)",
@@ -26,7 +27,8 @@
         "Pre-authenticated multi-region SAP BTP Cloud Foundry runtime (EU30/EU10)",
         "Automated deployment of Anthropic Claude Sonnet 4.5 via SAP AI Core",
         "Single-command workstation health verification and zero environment drift"
-      ]
+      ],
+      "botPose": "present"
     },
     {
       "index": 1,
@@ -38,7 +40,8 @@
         "Manual workstation setup across Node, CDS-DK, MBT, and CF takes 3 to 5 business days per developer",
         "Opaque AI integrations risk enterprise data leakage and breach SAP Clean Core guidelines",
         "Multi-step cockpit provisioning of AI Core instances and service keys results in configuration drift"
-      ]
+      ],
+      "botPose": "point"
     },
     {
       "index": 2,
@@ -47,17 +50,39 @@
       "botDialogue": "Here is how our vibe coding pipeline activates developer agents: subaccount space creation, automated AI Core model deployment, and direct VS Code Cline pairing.",
       "diagram": {
         "nodes": [
-          { "id": "n1", "label": "BTP Subaccount Quotas" },
-          { "id": "n2", "label": "AI Core Claude 4.5" },
-          { "id": "n3", "label": "Cline Agent Pairing" },
-          { "id": "n4", "label": "Live CAP Deployment" }
+          {
+            "id": "n1",
+            "label": "BTP Subaccount Quotas"
+          },
+          {
+            "id": "n2",
+            "label": "AI Core Claude 4.5"
+          },
+          {
+            "id": "n3",
+            "label": "Cline Agent Pairing"
+          },
+          {
+            "id": "n4",
+            "label": "Live CAP Deployment"
+          }
         ],
         "edges": [
-          { "from": "n1", "to": "n2" },
-          { "from": "n2", "to": "n3" },
-          { "from": "n3", "to": "n4" }
+          {
+            "from": "n1",
+            "to": "n2"
+          },
+          {
+            "from": "n2",
+            "to": "n3"
+          },
+          {
+            "from": "n3",
+            "to": "n4"
+          }
         ]
-      }
+      },
+      "botPose": "tablet"
     },
     {
       "index": 3,
@@ -84,7 +109,8 @@
           "label": "Deterministic Mode",
           "tooltip": "Orchestration Mode disabled for sub-second low-latency code execution"
         }
-      ]
+      ],
+      "botPose": "point"
     },
     {
       "index": 4,
@@ -107,7 +133,8 @@
           "title": "Zero-Leak Credential Management",
           "description": "Automated key scrubbing ensures zero persistent credentials on workstations, keeping the landscape secure."
         }
-      ]
+      ],
+      "botPose": "tablet"
     },
     {
       "index": 5,
@@ -118,7 +145,8 @@
         "tier1": "SAP S/4HANA & SAP HANA Cloud (Clean Core Record of Truth)",
         "tier2": "SAP BTP Cloud Foundry Runtime & SAP AI Core Extended Plan",
         "tier3": "VS Code, Cline Agent v4.1.17 & SAP Build Work Zone"
-      }
+      },
+      "botPose": "laptop"
     },
     {
       "index": 6,
@@ -141,7 +169,8 @@
           "label": "Clean Core Compliance",
           "subtext": "Zero modifications to S/4HANA core"
         }
-      ]
+      ],
+      "botPose": "present"
     },
     {
       "index": 7,
@@ -155,7 +184,26 @@
       "secondaryCta": {
         "label": "Book 30-Min Live Demo",
         "url": "/book-demo?app=btp-vibe-coding"
-      }
+      },
+      "botPose": "beckon"
     }
-  ]
+  ],
+  "contact": {
+    "name": "Varad B.",
+    "role": "Lead Enterprise Architect & BTP Practice Head",
+    "email": "varad@abhiyantaindia.com",
+    "phone": "+91 98200 00000",
+    "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=varad@abhiyantaindia.com"
+  },
+  "closing": {
+    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation for SAP BTP Vibe Coding & Enterprise AI Foundation.",
+    "feedbackUrl": "https://forms.office.com/r/abhiyanta-sap-btp-vibe-coding",
+    "contact": {
+      "name": "Varad B.",
+      "role": "Lead Enterprise Architect & BTP Practice Head",
+      "email": "varad@abhiyantaindia.com",
+      "phone": "+91 98200 00000",
+      "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=varad@abhiyantaindia.com"
+    }
+  }
 }

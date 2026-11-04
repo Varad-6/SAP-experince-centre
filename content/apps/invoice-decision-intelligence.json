@@ -1,14 +1,15 @@
 {
   "slug": "invoice-decision-intelligence",
   "pillarId": "p2",
-  "title": "Invoice Decision Intelligence",
-  "heroHeadline": "Cognitive S/4HANA intake, 3-way matching and tolerance exception resolution.",
+  "title": "Invoice Decision Intelligence — Cognitive S/4HANA Intake",
+  "heroHeadline": "89.7% cycle time reduction & ₹10.46 Cr annual enterprise value.",
+  "basicIntro": "Greetings! I am your AIS Experience Bot. Let me show you how we transform SAP invoice processing with Clean Core decision intelligence.",
   "sapComponents": [
     "SAP S/4HANA Core",
     "SAP BTP Services",
     "Cloud Connector"
   ],
-  "hasContent": false,
+  "hasContent": true,
   "cards": [
     {
       "index": 0,
@@ -24,7 +25,7 @@
         "Decoupled extension architecture on SAP BTP",
         "Production-tested across Tier-1 enterprise landscapes"
       ],
-      "botPose": "wave"
+      "botPose": "present"
     },
     {
       "index": 1,
@@ -37,7 +38,7 @@
         "High latency and asynchronous data synchronization errors",
         "Excessive operational overhead for support engineering"
       ],
-      "botPose": "alert"
+      "botPose": "point"
     },
     {
       "index": 2,
@@ -78,7 +79,7 @@
           }
         ]
       },
-      "botPose": "present"
+      "botPose": "tablet"
     },
     {
       "index": 3,
@@ -127,7 +128,7 @@
           "sapAction": "S/4HANA Commit"
         }
       ],
-      "botPose": "explain"
+      "botPose": "tablet"
     },
     {
       "index": 5,
@@ -176,7 +177,7 @@
           "delta": "SLA 99.9%"
         }
       ],
-      "botPose": "celebrate"
+      "botPose": "present"
     },
     {
       "index": 7,
@@ -197,26 +198,25 @@
           "type": "pdf"
         }
       ],
-      "botPose": "present"
+      "botPose": "beckon"
     }
   ],
-  "basicIntro": "Cognitive S/4HANA intake, 3-way matching and tolerance exception resolution.",
-  "intro": "Cognitive S/4HANA intake, 3-way matching and tolerance exception resolution.",
   "contact": {
-    "name": "Varad Rane",
-    "role": "Chief SAP Solutions Architect",
-    "email": "contact@abhiyantaindia.com",
-    "phone": "+91 (022) 6982-1000",
-    "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=contact@abhiyantaindia.com"
+    "name": "Ali Faiz",
+    "role": "Lead Enterprise Architect & BTP Practice Head",
+    "email": "ali.faiz@abhiyanta.com",
+    "phone": "+91 98200 00000",
+    "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=varad@abhiyantaindia.com"
   },
   "closing": {
-    "liveDemoInfo": "Accessible on SAP BTP Cloud Foundry tenant with pre-configured single sign-on.",
+    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation for Invoice Decision Intelligence — Cognitive S/4HANA Intake.",
+    "feedbackUrl": "https://forms.office.com/r/abhiyanta-invoice-decision-intelligence",
     "contact": {
-      "name": "Varad Rane",
-      "role": "Chief SAP Solutions Architect",
-      "email": "contact@abhiyantaindia.com",
-      "phone": "+91 (022) 6982-1000",
-      "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=contact@abhiyantaindia.com"
+      "name": "Ali Faiz",
+      "role": "Lead Enterprise Architect & BTP Practice Head",
+      "email": "ali.faiz@abhiyanta.com",
+      "phone": "+91 98200 00000",
+      "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=varad@abhiyantaindia.com"
     }
   }
 }
