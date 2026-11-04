@@ -4,8 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { CardSchema } from '@/lib/schema';
 import { z } from 'zod';
-import { Button } from '@/components/ui/Button';
-import { Play, FileText, CheckCircle2, ExternalLink } from 'lucide-react';
+import { Play, FileText, CheckCircle2 } from 'lucide-react';
 
 type CardData = z.infer<typeof CardSchema>;
 
@@ -14,16 +13,16 @@ export const CtaCard: React.FC<{ card: CardData; slug: string }> = ({ card, slug
 
   return (
     <div className="space-y-6 text-center py-4">
-      <div className="w-14 h-14 rounded-full bg-[#3DDC97]/20 border border-[#3DDC97]/40 flex items-center justify-center mx-auto text-[#3DDC97]">
+      <div className="w-14 h-14 rounded-full bg-[#E6F7ED] border border-[#A6E9BD] flex items-center justify-center mx-auto text-[var(--ok)]">
         <CheckCircle2 className="w-7 h-7" />
       </div>
 
       <div>
-        <h3 className="text-xl font-bold text-white mb-2">
-          Walkthrough Complete!
+        <h3 className="text-xl font-bold text-[var(--navy)] mb-2">
+          Architecture Walkthrough Complete
         </h3>
-        <p className="text-xs text-[#9FB3D1] max-w-md mx-auto leading-relaxed">
-          You have completed the architectural tour for this solution. Select an action below to engage with the live system or review deployment specs.
+        <p className="text-xs sm:text-sm text-[var(--text-dim)] max-w-md mx-auto leading-relaxed">
+          You have reviewed the key functional stages, Clean Core pipeline, and SAP BTP components. Advance to the closing slide to access live demo credentials and enterprise contact.
         </p>
       </div>
 
@@ -37,27 +36,27 @@ export const CtaCard: React.FC<{ card: CardData; slug: string }> = ({ card, slug
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant="primary" className="gap-2">
+                <button className="btn btn-primary inline-flex items-center gap-2">
                   <Play className="w-4 h-4 fill-current" />
                   <span>{act.label}</span>
-                </Button>
+                </button>
               </a>
             );
           } else if (act.type === 'prereq') {
             return (
               <Link key={i} href="/prerequisites">
-                <Button variant="secondary" className="gap-2">
-                  <FileText className="w-4 h-4 text-[#00B8F5]" />
+                <button className="btn btn-secondary inline-flex items-center gap-2">
+                  <FileText className="w-4 h-4" />
                   <span>{act.label}</span>
-                </Button>
+                </button>
               </Link>
             );
           } else {
             return (
               <Link key={i} href="/architecture">
-                <Button variant="glass" className="gap-2">
+                <button className="btn btn-secondary inline-flex items-center gap-2">
                   <span>{act.label}</span>
-                </Button>
+                </button>
               </Link>
             );
           }

@@ -262,3 +262,29 @@ Standard: Clean Fiori Horizon Professional Stack, 2D GSAP Bot, Zero 3D / Zero Au
   - `npm run build` -> Code 0 (All 79 static pages generated)
 - **Known Issues / Risks**:
   - None. Zero 3D dependencies, clean GSAP 2D canvas, fully accessible.
+
+---
+
+## Phase 4: SlideDeck & Card Restyle
+- **Date**: 2026-11-04
+- **Status**: Completed. Verified with `npm run content:check` (0 errors), `npm test` (5/5 tests passed), and `npm run build` (0 errors across 79 static routes).
+- **Files Created/Modified**:
+  - `components/demo/SlideDeck.tsx`: Built 8-slide interactive walkthrough + Slide 9 Closing stage. Max 1040px wide `.card`, white surface, 1px border `#D9E0EA`. Includes header with back link, title, slide indicator (`Slide N / 8` or `Closing Slide`), linear progress bar, keyboard navigation (`ArrowRight` / `Space` next, `ArrowLeft` previous), bottom bot strip (120px sprite swapping pose based on `cards[N].botPose`, speech bubble with typewriter text).
+  - Slide 9 (Closing Slide): "Thank You" screen, bot in `thanks` pose, `closing.liveDemoInfo` credentials note, "Share feedback" link (`closing.feedbackUrl`), "Demo contact" button opening `ContactDialog`, and "Restart Walkthrough" control.
+  - `components/demo/CardTypes/*`: Restyled all card components to strict Fiori Horizon tokens (removed all neon glow, blur, gradient text):
+    - `HookCard.tsx`: Big stat number in `#0070F2`, bold navy label, green checkmark value bullets.
+    - `ChallengeCard.tsx`: Clean comparison table (Legacy Friction in light rose `#FFF5F5` vs AIS Modern Flow in light mint `#E6F7ED`).
+    - `SolutionCard.tsx`: Decoupled Clean Core DAG flow with numbered stages and directional arrows.
+    - `LiveUiCard.tsx`: 16:9 screenshot canvas with numbered circle callouts (24px, `#0070F2`, white text) and active hotspot inspector.
+    - `WorkflowCard.tsx`: 3 operational steps with transaction codes (VA03, VL01N, MIRO).
+    - `TechStackCard.tsx`: Enterprise cloud chips mapped by architectural layer with production status chips.
+    - `ImpactCard.tsx`: 3 metric benchmark tiles with deltas.
+    - `CtaCard.tsx`: Clean architectural summary with action buttons.
+  - `app/solution/[slug]/demo/page.tsx`: Mounted `SlideDeck.tsx`.
+  - Deleted legacy `DemoStage.tsx` and `ProgressDots.tsx`.
+- **Commands Run**:
+  - `npm run content:check` -> Code 0 (5 pillars, 28 solutions, 28 apps validated)
+  - `npm test` -> Code 0 (5/5 unit tests passed)
+  - `npm run build` -> Code 0 (All 79 static pages generated)
+- **Known Issues / Risks**:
+  - None. Clean Core architecture, strict TypeScript compliance, zero dead code.

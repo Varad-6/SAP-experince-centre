@@ -1,7 +1,6 @@
 import React from 'react';
 import { CardSchema } from '@/lib/schema';
 import { z } from 'zod';
-import { TrendingUp, Award, Zap } from 'lucide-react';
 
 type CardData = z.infer<typeof CardSchema>;
 
@@ -14,16 +13,16 @@ export const ImpactCard: React.FC<{ card: CardData }> = ({ card }) => {
         {metrics.map((m, i) => (
           <div
             key={i}
-            className="p-6 rounded-2xl bg-[#0A1F44]/80 border border-[#00B8F5]/30 text-center shadow-lg hover:scale-105 transition-all"
+            className="p-5 sm:p-6 rounded-xl bg-[var(--surface-2)] border border-[var(--border)] text-center shadow-xs transition-all hover:-translate-y-0.5"
           >
-            <div className="text-3xl sm:text-4xl font-black text-[#3DDC97] mb-2">
+            <div className="text-3xl sm:text-4xl font-black text-[var(--ok)] mb-2 tracking-tight">
               {m.value}
             </div>
-            <h4 className="text-xs font-bold text-white mb-2 uppercase tracking-wider">
+            <h4 className="text-xs sm:text-sm font-bold text-[var(--navy)] mb-2 uppercase tracking-wide">
               {m.label}
             </h4>
             {m.delta && (
-              <span className="inline-block px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-[#0070F2]/20 text-[#00B8F5] border border-[#00B8F5]/30">
+              <span className="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#E6F7ED] text-[var(--ok)]">
                 {m.delta}
               </span>
             )}
@@ -31,7 +30,7 @@ export const ImpactCard: React.FC<{ card: CardData }> = ({ card }) => {
         ))}
       </div>
 
-      <div className="p-4 rounded-xl bg-white/5 border border-white/10 text-center text-xs text-[#9FB3D1]">
+      <div className="p-3.5 rounded-lg bg-[var(--surface-2)] border border-[var(--border)] text-center text-xs text-[var(--text-dim)]">
         Production baseline benchmarked across enterprise heavy-industry SAP S/4HANA landscapes.
       </div>
     </div>

@@ -1,10 +1,10 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
 import * as fs from 'fs';
-import * as path from 'path';
+import path from 'path';
 import solutionsData from '@/content/solutions.json';
 import { AppContentSchema } from '@/lib/schema';
-import { DemoStage } from '@/components/demo/DemoStage';
+import { SlideDeck } from '@/components/demo/SlideDeck';
 
 export function generateStaticParams() {
   return solutionsData.map((s) => ({ slug: s.slug }));
@@ -25,5 +25,5 @@ export default async function DemoPage({
   const raw = fs.readFileSync(appFilePath, 'utf8');
   const appData = AppContentSchema.parse(JSON.parse(raw));
 
-  return <DemoStage appData={appData} />;
+  return <SlideDeck appData={appData} slug={slug} />;
 }

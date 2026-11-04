@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { CardSchema } from '@/lib/schema';
 import { z } from 'zod';
-import { Info, Sparkles, MapPin } from 'lucide-react';
+import { Info } from 'lucide-react';
 
 type CardData = z.infer<typeof CardSchema>;
 
@@ -15,53 +15,53 @@ export const LiveUiCard: React.FC<{ card: CardData }> = ({ card }) => {
 
   return (
     <div className="space-y-4">
-      {/* UI Screenshot Canvas with Hotspots */}
-      <div className="relative rounded-2xl overflow-hidden border border-[#00B8F5]/30 bg-[#050E22] group shadow-2xl">
-        <img
-          src={screenshot}
-          alt={card.title}
-          className="w-full h-auto object-cover max-h-[380px]"
-          onError={(e) => {
-            // Graceful fallback to procedural placeholder if missing
-            (e.target as HTMLImageElement).src = '/assets/apps/podzo/screen-1.png';
-          }}
-        />
+      {/* UI Screenshot Canvas with Hotspots in 16:9 Card */}
+      <div className="relative rounded-xl overflow-hidden border border-[var(--border)] bg-[var(--surface-2)] shadow-sm">
+        <div className="aspect-video w-full relative flex items-center justify-center overflow-hidden">
+          <img
+            src={screenshot}
+            alt={card.title}
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              (e.target as HTMLImageElement).src = '/assets/bot/_placeholder.svg';
+            }}
+          />
 
-        {/* Hotspot Markers */}
-        {hotspots.map((hs, i) => (
-          <div
-            key={i}
-            style={{ left: `${hs.x}%`, top: `${hs.y}%` }}
-            className="absolute -translate-x-1/2 -translate-y-1/2 z-20"
-          >
-            <button
-              onClick={() => {
-                setActiveHotspot(i);
-              }}
-              className={`relative flex items-center justify-center w-7 h-7 rounded-full cursor-pointer transition-all duration-200 ${
-                activeHotspot === i
-                  ? 'bg-[#00B8F5] text-white scale-125 shadow-[0_0_16px_#00B8F5]'
-                  : 'bg-[#0A1F44]/90 border border-white/40 text-white hover:scale-110 hover:border-[#00B8F5]'
-              }`}
+          {/* Numbered Circle Hotspot Callouts (24px, #0070F2, white text) */}
+          {hotspots.map((hs, i) => (
+            <div
+              key={i}
+              style={{ left: `${hs.x}%`, top: `${hs.y}%` }}
+              className="absolute -translate-x-1/2 -translate-y-1/2 z-20"
             >
-              <span className="text-[10px] font-bold">{i + 1}</span>
-              <span className="absolute -inset-1 rounded-full border border-[#00B8F5] animate-ping opacity-60" />
-            </button>
-          </div>
-        ))}
+              <button
+                type="button"
+                onClick={() => setActiveHotspot(i)}
+                aria-label={`View callout ${i + 1}: ${hs.label}`}
+                className={`flex items-center justify-center w-6 h-6 rounded-full cursor-pointer font-bold text-xs transition-all duration-150 ${
+                  activeHotspot === i
+                    ? 'bg-[var(--navy)] text-white shadow-md scale-110 ring-2 ring-[var(--brand)]'
+                    : 'bg-[var(--brand)] text-white hover:bg-[var(--brand-600)] hover:scale-105'
+                }`}
+              >
+                <span>{i + 1}</span>
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Active Hotspot Inspector Card */}
       {activeHotspot !== null && hotspots[activeHotspot] && (
-        <div className="p-4 rounded-xl bg-[#0A1F44]/90 border border-[#00B8F5]/40 backdrop-blur-md flex items-start gap-3 animate-in fade-in">
-          <div className="w-6 h-6 rounded-lg bg-[#0070F2] text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
+        <div className="p-4 rounded-xl bg-[var(--surface-2)] border border-[var(--border)] flex items-start gap-3">
+          <div className="w-6 h-6 rounded-full bg-[var(--brand)] text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
             {activeHotspot + 1}
           </div>
           <div>
-            <h5 className="text-xs font-bold text-white mb-0.5">
+            <h5 className="text-xs sm:text-sm font-bold text-[var(--navy)] mb-0.5">
               {hotspots[activeHotspot].label}
             </h5>
-            <p className="text-xs text-[#9FB3D1] leading-relaxed">
+            <p className="text-xs text-[var(--text-dim)] leading-relaxed">
               {hotspots[activeHotspot].tooltip}
             </p>
           </div>
