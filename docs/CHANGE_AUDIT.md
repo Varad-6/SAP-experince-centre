@@ -1,127 +1,105 @@
-# AIS EXPERIENCE CENTRE — CHANGE AUDIT v2
-Standard: Change Request v2 (Antigravity Working Protocol)
+# PHASE 0 — REPO & ASSET AUDIT (Master Prompt v3)
+**Repository**: `SAP-experince-centre`  
+**Standard**: Master Prompt v3 Single Source of Truth  
+**Delivered Assets**: `C:\Users\Varad\Downloads\ais exp data\AIS_Assets_Pack.zip` + Team Word Documents
 
 ---
 
-## 1. Overview & Objective
-This audit defines the complete scope of deletions, additions, and rewrites required to transition the AIS Experience Centre from a heavy 3D/audio experimental stack to an **immaculate, enterprise-grade, lightweight, SAP Fiori Horizon-inspired platform**.
+## 1. Audit Summary & Deletions Map
+
+### 1.1 Audio & 3D Items Completely Removed / Blocked
+- **Audio Stack**: Zero audio anywhere. No Howler (`howler`, `@types/howler`), no `lib/audio.ts`, no sound files, no volume toggles, no sound shortcuts (`M`, `C`). All `<video>` elements strictly `muted playsInline`.
+- **Heavy 3D Stack**: No Three.js (`three`, `@types/three`), `@react-three/fiber`, `@react-three/drei`, `@react-three/postprocessing`, `@react-three/xr`, `three-stdlib`, `lenis`.
+- **Visual Gimmicks**: No neon glows, no backdrop-filter blur, no gradient text, no particle storms, no 3D tilt.
+
+### 1.2 Deprecated / Transient Files to Clean
+- Legacy test files or scratch scripts replaced by Master Prompt v3 tests.
+- Vector fallback SVGs (`drone.svg`, `parachute.svg`) replaced by real VP9 alpha videos (`intro_drop.webm`, `analytics_laptop.webm`, `explain_close.webm`).
+- Unused bot poses (`hang`, `jump`, `chute`, `land`) moved to `/public/assets/bot/unused/` and never referenced.
+
+### 1.3 Kept & Reused Infrastructure
+- **Next.js 15 App Router & React 19** with TypeScript strict mode.
+- **Self-hosted / Google Font**: Inter only (400, 500, 600, 700).
+- **Core Preserved Routes**: `/architecture`, `/prerequisites`, `/present`, `/solution/[slug]`, `/solutions/[slug]`.
+- **Design Tokens**: `styles/tokens.css` (Fiori Horizon tokens: `--bg: #F5F7FA`, `--surface: #FFFFFF`, `--surface-2: #EEF2F7`, `--border: #D9E0EA`, `--brand: #0070F2`, `--navy: #0A1F44`).
+- **Core Content Base**: `content/pillars.json`, `content/solutions.json` (28 enterprise SAP solutions).
 
 ---
 
-## 2. Dependencies to Delete from `package.json`
+## 2. Real Assets Inventory (`AIS_Assets_Pack.zip`)
 
-| Dependency | Category | Reason for Deletion |
-| :--- | :--- | :--- |
-| `three` | 3D Engine | Removal of 3D WebGL scenes |
-| `@react-three/fiber` | 3D Renderer | Removal of R3F canvas root |
-| `@react-three/drei` | 3D Helpers | Removal of 3D helpers/loaders |
-| `@react-three/postprocessing` | Visual Effects | Removal of bloom/vignette/chromatic aberration |
-| `@react-three/xr` | WebXR / VR | Removal of WebXR store and VR button |
-| `three-stdlib` | 3D Utilities | No longer required |
-| `@types/three` | TypeScript types | No longer required |
-| `howler` | Audio Engine | Removal of all sound/audio systems |
-| `@types/howler` | Audio types | No longer required |
-| `lenis` | Smooth Scroll | Removal of heavy scroll interventions |
+### 2.1 8 Active Sprites (`/public/assets/bot/`)
+All sprites are transparent WebP/PNG, calibrated to a shared scale (`standingHeightPx = 620`), anchored by **FEET** (`anchorX`, `anchorY`), never by image centre.
 
-*Retained Core Dependencies*: `next@15.1.0`, `react@19.0.0`, `react-dom@19.0.0`, `gsap@3.12.5`, `@gsap/react@2.1.1`, `zustand@5.0.16`, `zod@4.6.7`, `lucide-react@0.468.0`, `clsx`, `tailwind-merge`, `vite@8.3.5`, `vitest@5.1.0`, `@xyflow/react@12.3.6`.
-*Added Dev Dependency*: `sharp` (for `assets:optimize` script converting PNG sprites to WebP).
+| Pose | Image Dimensions (w × h) | Feet Anchor (`anchorX`, `anchorY`) | Head Center (`headCx`, `hairTop`) | Primary Screen Usage |
+| :--- | :--- | :--- | :--- | :--- |
+| `idle` | 333 × 660 px | (160, 648) | (0.509, 0.018) | Docked idle on `/pillars`, demo rest states |
+| `wave` | 342 × 636 px | (174, 621) | (0.530, 0.027) | Landing final frame greeting |
+| `point` | 384 × 641 px | (164, 626) | (0.423, 0.023) | `/pillar/[id]`, Slide 2 (Challenge), Slide 4 (Live UI) |
+| `tablet` | 378 × 640 px | (205, 626) | (0.565, 0.022) | Slide 3 (Solution DAG), Slide 5 (Workflow) |
+| `laptop` | 362 × 643 px | (202, 628) | (0.578, 0.026) | Slide 6 (Tech Stack Architecture) |
+| `present` | 381 × 655 px | (161, 640) | (0.428, 0.024) | `/solution/[slug]`, Slide 1 (Hook), Slide 7 (Impact) |
+| `beckon` | 361 × 657 px | (198, 643) | (0.552, 0.023) | `/solution/[slug]` hover on Demo, Slide 8 (Walkthrough CTA) |
+| `thanks` | 326 × 660 px | (170, 645) | (0.504, 0.027) | Slide 9 (Closing Slide) |
 
----
+*4 Unused Poses*: `hang`, `jump`, `chute`, `land` moved to `/public/assets/bot/unused/`.
 
-## 3. Files to Delete
+### 2.2 3 Real Video Acts (`/public/assets/video/`)
+Transparent VP9 `.webm` with alpha for Chrome/Edge/Firefox, matching `_nokey.mp4` for Safari WebGL chroma-key shader, and `_last.png` for posters/reduced-motion stills.
 
-### 3.1 Audio Subsystem
-- `lib/audio.ts`: Howler manager and Web Audio API synthesizer.
-- `components/hud/CaptionBar.tsx`: Redundant bottom caption bar (replaced by SlideDeck and IntroDrop speech bubbles).
-- Audio manifest entries in `public/assets/manifest.json`.
-
-### 3.2 3D / WebGL / WebXR Subsystem
-- `components/three/CanvasRoot.tsx`: Root R3F WebGL Canvas.
-- `components/three/SceneManager.tsx`: 3D composite scene.
-- `components/three/Backdrop.tsx`: 3D lighting and environment.
-- `components/three/Stage.tsx`: Rotating cylinder platform and rings.
-- `components/three/Particles.tsx`: Ambient 3D motes.
-- `components/three/PillarTile.tsx`: Floating 3D crystal pedestals.
-- `components/three/PillarsRing.tsx`: 3D pedestal circular arc.
-- `components/three/CameraRig.tsx`: 3D camera controller and parallax.
-- `components/three/Bot.tsx`: 3D billboard mesh.
-- `components/three/Drone.tsx`: 3D quadcopter mesh.
-- `components/three/QualityProvider.tsx`: 3D quality tier provider.
-- `lib/quality.ts`: FPS probe and 3D tier definitions (`HIGH`, `MED`, `LOW`).
-- `lib/device.ts`: WebGL GPU renderer sniffing.
-- `lib/xr.ts`: WebXR session store.
-- `components/hud/VRButton.tsx`: WebXR launcher button.
-- `types/three-jsx.d.ts`: R3F JSX element declarations.
-
-### 3.3 Obsolete Mascot / Floating Overlays
-- `components/mascot/ChibiMascot.tsx`: Deprecated floating mascot.
-- `components/mascot/Director.tsx`: Deprecated floating overlay director.
-- `components/demo/HoveringBotGuide.tsx`: Deprecated floating guide (replaced by inline `BotSprite` + `useTypewriter` inside `SlideDeck`).
-- `components/hud/PillarRail.tsx`: Floating side rail (navigation now flows cleanly via pages).
-
-### 3.4 Fonts to Remove
-- `public/fonts/SpaceGrotesk-Bold.ttf`: Removed (Single font standard: Inter).
-- `public/fonts/JetBrainsMono-Regular.ttf`: Removed.
+| Act | Name | Resolution | Duration | Key Color | Bubble Start | Spoken/Typed Content |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Act 1: Arrival** | `intro_drop` | 1280 × 720 | 10.0 s | `#E95DCF` | **8.6 s** (touchdown on mound) | `introScript` act:1 ("Hi, I'm Lead Architect...") |
+| **Act 2: What we do** | `analytics_laptop` | 1920 × 1080 | 10.0 s | `#F445AE` | **4.5 s** (hologram appears) | `introScript` act:2 ("We build enterprise AI & SAP BTP...") |
+| **Act 3: Invitation**| `explain_close` | 1920 × 1080 | 10.0 s | `#F647BC` | **1.0 s** | `introScript` act:3 ("Explore solutions...") → CTA |
 
 ---
 
-## 4. Store Fields & Input Shortcuts to Delete
+## 3. Team Word Documents Inventory (`C:\Users\Varad\Downloads\ais exp data`)
 
-### In `lib/store.ts`:
-- **Deleted Fields**: `muted`, `volume`, `isXR`, `quality`, `droneState`, `captions`.
-- **Deleted Actions**: `setMuted`, `setVolume`, `setXR`, `setQuality`, `setDroneState`, `setCaptions`.
-
-### In `lib/input.ts`:
-- **Deleted Key Handlers**: `M` / `m` (toggle audio), `C` / `c` (toggle captions).
-
-### In `docs/LICENSES.md`:
-- Removed lines referencing Three.js, Howler, and removed fonts.
-
----
-
-## 5. Files to Add (New Modules)
-
-| File | Purpose |
-| :--- | :--- |
-| `lib/poses.ts` | 12 pose definitions (`idle`, `wave`, `point`, `tablet`, `laptop`, `present`, `beckon`, `thanks`, `hang`, `jump`, `chute`, `land`) and `POSE_FIT` scale/offset registry. |
-| `lib/useTypewriter.ts` | Reusable typewriter animation hook with character pacing and immediate `finish()` capability. |
-| `components/BotSprite.tsx` | Universal 2D sprite container swapping transparent WebP poses with automatic fallback to `/assets/bot/_placeholder.svg`. |
-| `components/IntroDrop.tsx` | Landing page cinematic GSAP sequence: drone carries bot, release, parachute deploy, sway descent, land settle, and speech bubble introduction with skip button. |
-| `components/ContactDialog.tsx` | Enterprise modal dialog displaying contact name, email, phone, and Microsoft Teams link. |
-| `components/demo/SlideDeck.tsx` | Clean 8-slide presentation deck + slide 9 closing screen with bottom docked `BotSprite`, typewriter chat, and slide progress bar. |
-| `public/assets/bot/_placeholder.svg` | Neutral vector figure SVG ensuring zero missing asset rendering errors. |
-| `scripts/optimize-assets.ts` | Asset conversion utility using `sharp` to trim transparent padding, resize, and output optimized `.webp` sprites. |
+The following real production project documents will be imported into `/content/apps/{slug}.json` via `scripts/import-template.py`:
+1. `AIS Experience Centre - PODZO Demo Content.docx` → `podzo.json` (Flagship Logistics)
+2. `AIS Experience Centre - SAP BTP Vibe Coding Demo Content.docx` → `sap-btp-vibe-coding.json`
+3. `AIS Experience Centre - HanaMorph Demo Content.docx` → `hanamorph.json`
+4. `ABAP_CDS_AI_Debug_Studio_AIS_Experience_Centre1.docx` → `ais-debug-studio.json`
+5. `Invoice_Decision_Intelligence_AIS_Experience_Centre.docx` → `invoice-decision-intelligence.json`
+6. `Asset_Reliability_MRO_Dashboard_Documentation.docx` → `asset-reliability-mro.json`
+7. `Manufacturing_Yield_Scrap_Quality_Cockpit_Client_Documentation-10.docx` → `manufacturing-yield-scrap.json`
+8. `O2C_Receivables_Intelligence_Dashboard_Documentation (2).docx` → `sales-margin-analytics.json` / receivables
+9. `Procure_to_Pay_Documentation.docx` → `autonomous-procurement-agent.json`
+10. `Product_Cost_Simulator_AIS_Experience_Centre1.docx` → `product-cost-simulator.json`
 
 ---
 
-## 6. Files to Rewrite / Restyle
+## 4. Master 8-Phase Execution Plan
 
-| File | Changes Required |
-| :--- | :--- |
-| `styles/tokens.css` / `app/globals.css` | Complete reset to clean SAP-Fiori tokens (`--bg: #F5F7FA`, `--surface: #FFFFFF`, `--border: #D9E0EA`, `--brand: #0070F2`). Single font: Inter. Zero blur, zero glow, zero gradient text. |
-| `app/layout.tsx` | Remove `AppProvider` and 3D canvas wrappers; configure single `next/font/google` Inter font. |
-| `app/page.tsx` | Full-height sky stage (`linear-gradient(var(--sky-top), var(--sky-bottom))`), ground strip, drifting clouds, `IntroDrop` component with `sessionStorage` guard, static bot + "Explore solutions" CTA. |
-| `app/pillars/page.tsx` | 5 clean cards in a 6-column grid (cards 1–2 span 3 columns, cards 3–5 span 2 columns; 2 on tablet, 1 on phone); docked idle bot with 5s auto-hide bubble. |
-| `app/pillar/[id]/page.tsx` | Title, description, back link, responsive auto-fill grid of project cards with 16:9 thumbnail, 2-line tagline, status chip, ROI chip. |
-| `app/solution/[slug]/page.tsx` | Project briefing page: breadcrumb, H1, intro line, center thumbnail card, bottom row with "Contact for details" (opens `ContactDialog`) and "Demo" button, bot in `present` pose with `basicIntro` bubble. |
-| `app/solution/[slug]/demo/page.tsx` | Mounts the clean `SlideDeck` component with 8 slides and slide 9 closing screen. |
-| `components/demo/CardTypes/*` | Restyle `HookCard`, `ChallengeCard`, `SolutionCard`, `LiveUiCard`, `WorkflowCard`, `TechStackCard`, `ImpactCard`, `CtaCard` to clean white surface with 1px border. Replace cursor glow with clean 20px arrow. |
-| `lib/schema.ts` | Add Zod schemas for `Contact`, `Closing`, `intro`, `basicIntro`, `contact`, `closing`, and `introLines`. |
-| `content/site.json` | Update with `botName`, `tagline`, `sub`, and `introLines` array (`text` + `pose`). |
-| `content/apps/podzo.json` | Populate realistic production fields (`intro`, `basicIntro`, `contact`, `closing`, and callouts for KPI strip, live table, S/4 adapter). |
-| `scripts/validate-content.ts` | Update validation runner to verify `intro`, `basicIntro`, `contact`, and `closing` across all apps. |
-
----
-
-## 7. Files Kept (Preserved Architecture)
-- All 28 solution app records in `content/apps/*.json`
-- `content/pillars.json` and `content/solutions.json`
-- Static route layout: `/`, `/pillars`, `/pillar/[id]`, `/solution/[slug]`, `/solution/[slug]/demo`, `/architecture`, `/prerequisites`, `/present`
-- Next.js 15 App Router configuration and Tailwind utilities
-
----
-
-## 8. Definition of Done for Phase 0
-- [x] Complete audit recorded in `docs/CHANGE_AUDIT.md`.
-- [x] Clear inventory of deleted dependencies, files, store fields, and new modules established.
-- [ ] Awaiting user written **"APPROVED"** before executing Phase 1 cleanup.
+- **PHASE 1 — Asset Unpack & Foundation**:
+  - Extract `AIS_Assets_Pack.zip` into `/public/assets/`.
+  - Isolate unused poses into `/public/assets/bot/unused/`.
+  - Verify `assets.json` and `_meta.json`.
+  - Generate `docs/ASSETS.md`.
+- **PHASE 2 — Feet-Anchored Sprites & Thinking BotBubble**:
+  - `components/BotSprite.tsx`: Position strictly by `(anchorX, anchorY)` feet coordinates, scale `k = H / 620`.
+  - `components/BotBubble.tsx`: 3 thinking circles (6px, 9px, 12px with 90ms stagger), scaling from head anchor, 22ms/char typing, translucent background (`rgba(255,255,255,0.86)`), hide toggle (`C`).
+  - Wire `/pillars`, `/pillar/[id]`, and `/solution/[slug]` (with hover `beckon` pose).
+- **PHASE 3 — ActorVideo & 3-Act Landing Sequence**:
+  - `components/ActorVideo.tsx`: Bottom-anchored 16:9 `.actor`, `muted playsInline`, `requestVideoFrameCallback` tracking.
+  - Safari/iOS WebGL chroma-key shader fallback using CbCr distance math.
+  - Interactive tuning route `/debug/key?video=intro_drop` with `sim` and `blend` sliders.
+  - 3-Act orchestration on `/` with crossfading and "Explore solutions" open-palm hand alignment.
+- **PHASE 4 — SlideDeck (8 Slides + Slide 9 Closing)**:
+  - SlideDeck with exact pose sequences (`app` variant vs `dashboard` variant).
+  - Restyled card subcomponents with moving 20px arrow cursor on screenshot callouts and animated ROI delta bars.
+  - Slide 9 Closing slide with feedback link, demo contact, and live demo info.
+- **PHASE 5 — Content Schema, docx Importer & Data**:
+  - Updated Zod schema in `lib/schema.ts` (`IntroLine`, `Contact`, `Closing`, `AppContent`).
+  - `scripts/import-template.py` parsing `.docx` from `/content/inbox/`.
+  - Strict validator `npm run content:check` enforcing word counts, card counts, and image presence.
+- **PHASE 6 — Responsive Pass & No-Clip Verification**:
+  - Calibrate all 8 viewports: 390×844, 430×932, 820×1180, 1180×820, 1440×900, 1728×1117, 1920×1080, 3840×2160 (scale ×1.25 on 4K).
+  - Strict no-clip check: sprite and bubble inside viewport boundaries.
+- **PHASE 7 — Playwright E2E Test Suite & Documentation**:
+  - End-to-end journey tests with screenshot captures in `/tests/shots/`.
+  - Comprehensive `README.md` guide for adding apps, swapping videos, and importing docs.
+- **PHASE 8 — Final Review & Sign-Off**:
+  - Verification against Definition of Done checklist.

@@ -39,16 +39,26 @@ describe('Route & Component Smoke Testing (Clean Fiori Stack)', () => {
     }
   });
 
-  it('verifies all 12 bot sprite poses exist in public/assets/bot', () => {
+  it('verifies 8 active bot sprite poses and 4 unused poses', () => {
     const botDir = path.join(process.cwd(), 'public', 'assets', 'bot');
-    const poses = [
-      'idle', 'wave', 'present', 'explain', 'think', 'point',
-      'alert', 'celebrate', 'thanks', 'laptop', 'fly', 'fall'
+    const activePoses = [
+      'idle', 'wave', 'point', 'tablet', 'laptop', 'present', 'beckon', 'thanks'
     ];
 
-    for (const pose of poses) {
-      const p = path.join(botDir, `${pose}.webp`);
-      expect(fs.existsSync(p), `Pose must exist: ${pose}.webp`).toBe(true);
+    for (const pose of activePoses) {
+      const pWebp = path.join(botDir, `${pose}.webp`);
+      const pPng = path.join(botDir, `${pose}.png`);
+      expect(fs.existsSync(pWebp), `Active pose must exist: ${pose}.webp`).toBe(true);
+      expect(fs.existsSync(pPng), `Active pose must exist: ${pose}.png`).toBe(true);
+    }
+
+    const unusedDir = path.join(botDir, 'unused');
+    const unusedPoses = ['hang', 'jump', 'chute', 'land'];
+    for (const pose of unusedPoses) {
+      const pWebp = path.join(unusedDir, `${pose}.webp`);
+      const pPng = path.join(unusedDir, `${pose}.png`);
+      expect(fs.existsSync(pWebp), `Unused pose must exist: ${pose}.webp`).toBe(true);
+      expect(fs.existsSync(pPng), `Unused pose must exist: ${pose}.png`).toBe(true);
     }
   });
 

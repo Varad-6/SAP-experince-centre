@@ -1,0 +1,158 @@
+{
+ "wave": {
+  "w": 342,
+  "h": 636,
+  "anchorX": 174,
+  "anchorY": 621,
+  "head": {
+   "hairTop": 0.027,
+   "hairLeft": 0.094,
+   "hairRight": 0.956,
+   "headCx": 0.53,
+   "headCy": 0.249
+  }
+ },
+ "point": {
+  "w": 384,
+  "h": 641,
+  "anchorX": 164,
+  "anchorY": 626,
+  "head": {
+   "hairTop": 0.023,
+   "hairLeft": 0.036,
+   "hairRight": 0.802,
+   "headCx": 0.423,
+   "headCy": 0.244
+  }
+ },
+ "tablet": {
+  "w": 378,
+  "h": 640,
+  "anchorX": 205,
+  "anchorY": 626,
+  "head": {
+   "hairTop": 0.022,
+   "hairLeft": 0.175,
+   "hairRight": 0.95,
+   "headCx": 0.565,
+   "headCy": 0.243
+  }
+ },
+ "laptop": {
+  "w": 362,
+  "h": 643,
+  "anchorX": 202,
+  "anchorY": 628,
+  "head": {
+   "hairTop": 0.026,
+   "hairLeft": 0.166,
+   "hairRight": 0.981,
+   "headCx": 0.578,
+   "headCy": 0.247
+  }
+ },
+ "present": {
+  "w": 381,
+  "h": 655,
+  "anchorX": 161,
+  "anchorY": 640,
+  "head": {
+   "hairTop": 0.024,
+   "hairLeft": 0.039,
+   "hairRight": 0.808,
+   "headCx": 0.428,
+   "headCy": 0.24
+  }
+ },
+ "beckon": {
+  "w": 361,
+  "h": 657,
+  "anchorX": 198,
+  "anchorY": 643,
+  "head": {
+   "hairTop": 0.023,
+   "hairLeft": 0.136,
+   "hairRight": 0.958,
+   "headCx": 0.552,
+   "headCy": 0.238
+  }
+ },
+ "thanks": {
+  "w": 326,
+  "h": 660,
+  "anchorX": 170,
+  "anchorY": 645,
+  "head": {
+   "hairTop": 0.027,
+   "hairLeft": 0.043,
+   "hairRight": 0.96,
+   "headCx": 0.504,
+   "headCy": 0.242
+  }
+ },
+ "hang": {
+  "w": 321,
+  "h": 769,
+  "anchorX": 179,
+  "anchorY": 756,
+  "head": {
+   "hairTop": 0.021,
+   "hairLeft": 0.044,
+   "hairRight": 0.953,
+   "headCx": 0.498,
+   "headCy": 0.327
+  }
+ },
+ "jump": {
+  "w": 462,
+  "h": 605,
+  "anchorX": 238,
+  "anchorY": 591,
+  "head": {
+   "hairTop": 0.023,
+   "hairLeft": 0.171,
+   "hairRight": 0.742,
+   "headCx": 0.459,
+   "headCy": 0.231
+  }
+ },
+ "chute": {
+  "w": 388,
+  "h": 671,
+  "anchorX": 229,
+  "anchorY": 658,
+  "head": {
+   "hairTop": 0.03,
+   "hairLeft": 0.036,
+   "hairRight": 0.959,
+   "headCx": 0.519,
+   "headCy": 0.274
+  }
+ },
+ "land": {
+  "w": 410,
+  "h": 548,
+  "anchorX": 241,
+  "anchorY": 534,
+  "head": {
+   "hairTop": 0.026,
+   "hairLeft": 0.159,
+   "hairRight": 0.768,
+   "headCx": 0.463,
+   "headCy": 0.246
+  }
+ },
+ "idle": {
+  "w": 333,
+  "h": 660,
+  "anchorX": 160,
+  "anchorY": 648,
+  "head": {
+   "hairTop": 0.018,
+   "hairLeft": 0.033,
+   "hairRight": 0.967,
+   "headCx": 0.509,
+   "headCy": 0.245
+  }
+ }
+}

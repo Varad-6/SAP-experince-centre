@@ -324,3 +324,20 @@ Standard: Clean Fiori Horizon Professional Stack, 2D GSAP Bot, Zero 3D / Zero Au
   - `npm run build` -> Code 0 (All 79 static pages generated)
 - **Known Issues / Risks**:
   - None. Clean build, zero warnings, zero dead code, production ready.
+
+---
+
+## Phase 1 (Master Prompt v3): Asset Unpack & Foundation Setup
+- **Date**: 2026-11-04
+- **Status**: Completed. Verified with `npm run content:check`, `npm test` (9/9 pass), and `npm run build` (0 errors, 79/79 static pages generated).
+- **Files Created/Touched**:
+  - `public/assets/assets.json`: Delivered metadata with sprite dimensions, feet anchors, and video act definitions.
+  - `public/assets/bot/_meta.json`: Feet anchor `(anchorX, anchorY)` and head center coordinates for all poses.
+  - `public/assets/bot/*.{webp,png}`: 8 active poses (`idle`, `wave`, `point`, `tablet`, `laptop`, `present`, `beckon`, `thanks`).
+  - `public/assets/bot/unused/*.{webp,png}`: 4 unused poses isolated (`hang`, `jump`, `chute`, `land`).
+  - `public/assets/video/*`: 3 video acts (`intro_drop`, `analytics_laptop`, `explain_close`) with `.webm`, `_nokey.mp4`, and `_last.png`.
+  - `docs/ASSETS.md`: Complete asset documentation covering sprite feet scaling mathematics ($k = H / 620$) and video chroma keys.
+  - `tests/routes.test.ts`: Updated test assertions to verify the 8 active poses and 4 unused poses.
+- **Verification**:
+  - Zero audio files or audio code in public/assets.
+  - TypeScript build passes cleanly.
