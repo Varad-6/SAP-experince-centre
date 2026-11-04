@@ -9,3 +9,4 @@ All scratch and transient files generated during development cycles are recorded
 | `scripts/validate-content.ts` | Prebuild content validation utility | Phase 1 | Permanent utility (`npm run content:check`) |
 | `scripts/optimize-assets.ts` | Sharp pipeline for trimming and webp conversion of bot poses | CR v2 Phase 3 | Permanent utility (`npm run assets:optimize`) |
 | `scripts/enrich-apps.ts` | Content enrichment script synchronizing 28 apps with basicIntro, contact, and closing | CR v2 Phase 5 | Utility retained for catalog maintenance |
+| `scripts/extract_and_enrich.py` | Automated docx screenshot and content extraction pipeline for ais exp data.zip | v4.0 | Utility retained for catalog updates |

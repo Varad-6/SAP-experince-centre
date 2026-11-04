@@ -5,6 +5,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [4.0.0] — 2026-11-04 — Aayam Rebrand, Procreate Blue Palette, 4-Pillar Architecture & Ingestion
+
+### Summary
+Rebranded the platform to **Aayam — AIS Experience Centre** (*"Exploring new dimensions of technology"*). Introduced the lead guide character **Aayam**, updated the styling tokens to the **Procreate Blue Palette** (mid-layer royal sapphire, electric blue accents, deep executive navy), consolidated to **4 Architectural Pillars**, and built automated extraction pipeline pulling real high-resolution screenshots and rich tables from `ais exp data.zip`.
+
+### Added & Updated
+- **Master Specification v4**: Delivered `AAYAM_AIS_EXPERIENCE_CENTRE_MASTER_PROMPT_v4.md` artifact with complete Big Four presentation standard.
+- **Hero & Landing**: Hero title upgraded with bold "Aayam" and "AIS Experience Centre", "Exploring new dimensions of technology" tagline, prominent floating SoundToggle and architecture contact trigger.
+- **Bot Persona**: Guide bot renamed to **Aayam** across all components (`BotBubble`, `BotSprite`, `LandingActorSequence`, `SlideDeck`, `PillarBotDock`, `site.json`).
+- **Design Tokens**: Standardized on Procreate Blue Palette in `styles/tokens.css` (`--bg: #F0F6FD`, `--surface-2: #E8F2FC`, `--brand-vivid: #0084FF`, `--brand-electric: #00A6FF`, `--navy: #0A1D37`).
+- **4 Architectural Pillars**:
+  1. `p1`: Foundation & Clean Core (7 solutions)
+  2. `p2`: Custom BTP Applications (7 solutions)
+  3. `p3`: HanaMorph & Modernization (7 solutions)
+  4. `p4`: SAC Executive Dashboards (7 solutions)
+  (Removed deprecated 5th Joule standalone pillar; replaced with `sap-btp-vibe-coding`).
+- **Screenshot & Content Extraction Pipeline**: Created `scripts/extract_and_enrich.py` extracting 80+ high-resolution screenshots from `.docx` files directly into `/public/assets/apps/{slug}/screen-{1..N}.png` and enriching each application's 8-slide deck with verified business challenges, architecture nodes, workflow steps, and quantitative ROI metrics.
+- **Verification**: `npm run content:check` (100% valid), `npm test` (13/13 passing), `npm run build` (79/79 static pages generated).
+
+---
+
 ## [2.0.0] — 2026-11-04 — Change Request v2: Enterprise Fiori Horizon & 2D Sprite Stack
 
 ### Summary
