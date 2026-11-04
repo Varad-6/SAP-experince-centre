@@ -1,52 +1,23 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import siteData from '@/content/site.json';
-import { BotSprite } from '@/components/BotSprite';
-import { ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
+import { IntroDrop } from '@/components/IntroDrop';
+import { ArrowRight, ShieldCheck } from 'lucide-react';
 
 export default function LandingPage() {
-  const [bubbleText, setBubbleText] = useState<string>('');
-  const [lineIndex, setLineIndex] = useState<number>(0);
-
-  const introLines = siteData.introLines || [
-    'Welcome to Abhiyanta India Solutions.',
-    "I'm your Lead Architect bot.",
-    'Explore 28 production SAP & AI solutions across 5 pillars.',
-  ];
-
-  // Rotate through speech bubble intro lines smoothly
-  useEffect(() => {
-    let currentText = '';
-    const targetLine = introLines[lineIndex] || introLines[0];
-    let charIdx = 0;
-
-    const timer = setInterval(() => {
-      if (charIdx < targetLine.length) {
-        currentText += targetLine[charIdx];
-        setBubbleText(currentText);
-        charIdx++;
-      } else {
-        clearInterval(timer);
-        const switchTimeout = setTimeout(() => {
-          setLineIndex((prev) => (prev + 1) % introLines.length);
-        }, 3200);
-        return () => clearTimeout(switchTimeout);
-      }
-    }, 28);
-
-    return () => clearInterval(timer);
-  }, [lineIndex, introLines]);
-
   return (
     <div className="relative w-full min-h-[calc(100vh-56px)] overflow-hidden flex flex-col justify-between bg-gradient-to-b from-[var(--sky-top)] to-[var(--sky-bottom)]">
       {/* Drifting Clouds */}
       <div className="cloud cloud-1" aria-hidden="true" />
       <div className="cloud cloud-2" aria-hidden="true" />
 
+      {/* GSAP Drone Drop & Bot Guide Layer */}
+      <IntroDrop />
+
       {/* Main Content Area */}
-      <div className="relative z-10 max-w-[1200px] w-full mx-auto px-6 sm:px-8 pt-12 sm:pt-20 pb-20 flex-1 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div className="relative z-10 max-w-[1200px] w-full mx-auto px-6 sm:px-8 pt-12 sm:pt-20 pb-20 flex-1 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pointer-events-auto">
         {/* Left Title Block */}
         <div className="lg:col-span-7 space-y-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--surface)] border border-[var(--border)] text-xs font-semibold text-[var(--brand)] shadow-sm">
@@ -89,25 +60,8 @@ export default function LandingPage() {
           </div>
         </div>
 
-        {/* Right Bot Stage */}
-        <div className="lg:col-span-5 relative flex flex-col items-center justify-end min-h-[280px] sm:min-h-[360px]">
-          {/* Speech Bubble */}
-          <div className="relative mb-4 w-full max-w-[340px] p-4 rounded-2xl bg-[var(--surface)] border border-[var(--border)] shadow-[var(--shadow)] text-sm text-[var(--text)] transition-all">
-            <div className="text-xs font-bold text-[var(--brand)] mb-1 flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>{siteData.botName || 'The Lead Architect'}</span>
-            </div>
-            <p className="leading-snug min-h-[42px]">{bubbleText}</p>
-            {/* Bubble Tail */}
-            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-[var(--surface)] border-b border-r border-[var(--border)] rotate-45" />
-          </div>
-
-          {/* Bot Sprite with Ground Shadow */}
-          <div className="relative flex flex-col items-center">
-            <BotSprite pose="wave" width={180} height={180} alt="Lead Architect Bot" />
-            <div className="w-28 h-3.5 bg-black/10 rounded-full blur-[2px] mt-[-8px]" />
-          </div>
-        </div>
+        {/* Right Stage Spacer (IntroDrop renders bot into this screen area) */}
+        <div className="hidden lg:block lg:col-span-5 min-h-[380px]" aria-hidden="true" />
       </div>
 
       {/* Ground Strip (14% height, #E3E9F2) */}

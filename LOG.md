@@ -241,3 +241,24 @@ Standard: Clean Fiori Horizon Professional Stack, 2D GSAP Bot, Zero 3D / Zero Au
   - `npm run build` -> Code 0 (All 79 static pages generated)
 - **Known Issues / Risks**:
   - None. Full type safety, zero lint/build errors.
+
+---
+
+## Phase 3: Sprites & Drone Drop Animation
+- **Date**: 2026-11-04
+- **Status**: Completed. Verified with `npm run content:check` (0 errors), `npm test` (5/5 tests passed), and `npm run build` (0 errors across 79 static routes).
+- **Files Created/Modified**:
+  - `lib/useTypewriter.ts`: Custom hook managing typewriter text reveal with configurable speed, delay, and instant completion.
+  - `scripts/optimize-assets.ts`: Sharp automation script trimming padding, resizing to max 1200px height, and generating 85-quality `.webp` images.
+  - `public/assets/bot/*.webp`: 12 optimized production webp sprite poses (`idle`, `wave`, `present`, `explain`, `think`, `point`, `alert`, `celebrate`, `thanks`, `laptop`, `fly`, `fall`).
+  - `public/assets/drone.svg`: Stylized cartoon quadcopter drone with glowing cyan sensor visor and mechanical claw.
+  - `public/assets/parachute.svg`: Open striped dome parachute canopy with suspension lines and harness ring.
+  - `components/IntroDrop.tsx`: 2D GSAP cinematic timeline orchestrating drone flight-in, claw drop, parachute deployment, gentle swaying float, ground touchdown, parachute collapse, pose transitions (`fly` -> `fall` -> `wave` -> `idle`), and typewriter speech bubble typing `site.json.introLines`. Includes skip button, `Esc` keyboard shortcut, `sessionStorage` caching (`ais.intro=1`), and `prefers-reduced-motion` compliance.
+  - `app/page.tsx`: Mounted `IntroDrop` over the sky stage.
+- **Commands Run**:
+  - `npm run assets:optimize` -> Code 0 (Generated 12 `.webp` sprites from source)
+  - `npm run content:check` -> Code 0 (5 pillars, 28 solutions, 28 apps validated)
+  - `npm test` -> Code 0 (5/5 unit tests passed)
+  - `npm run build` -> Code 0 (All 79 static pages generated)
+- **Known Issues / Risks**:
+  - None. Zero 3D dependencies, clean GSAP 2D canvas, fully accessible.

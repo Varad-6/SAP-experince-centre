@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="200" height="120" fill="none">
+  <!-- Rotors Spinning Discs -->
+  <ellipse cx="40" cy="24" rx="36" ry="6" fill="#0070F2" opacity="0.35"/>
+  <ellipse cx="160" cy="24" rx="36" ry="6" fill="#0070F2" opacity="0.35"/>
+  <ellipse cx="65" cy="18" rx="28" ry="4" fill="#00C8F8" opacity="0.4"/>
+  <ellipse cx="135" cy="18" rx="28" ry="4" fill="#00C8F8" opacity="0.4"/>
+
+  <!-- Rotor Stems -->
+  <line x1="40" y1="24" x2="40" y2="42" stroke="#0A1F44" stroke-width="4" stroke-linecap="round"/>
+  <line x1="160" y1="24" x2="160" y2="42" stroke="#0A1F44" stroke-width="4" stroke-linecap="round"/>
+  <line x1="65" y1="18" x2="70" y2="44" stroke="#0A1F44" stroke-width="3" stroke-linecap="round"/>
+  <line x1="135" y1="18" x2="130" y2="44" stroke="#0A1F44" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Drone Arms -->
+  <path d="M40 42 Q 70 52 100 50 Q 130 52 160 42" stroke="#0A1F44" stroke-width="8" stroke-linecap="round"/>
+  <path d="M65 44 Q 85 54 100 50 Q 115 54 135 44" stroke="#1E293B" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Drone Main Body -->
+  <rect x="72" y="38" width="56" height="28" rx="14" fill="#0A1F44"/>
+  <rect x="76" y="42" width="48" height="20" rx="10" fill="#0070F2"/>
+
+  <!-- Glowing Cyan Visor / Sensor -->
+  <rect x="84" y="46" width="32" height="10" rx="5" fill="#00C8F8"/>
+  <circle cx="100" cy="51" r="3" fill="#FFFFFF"/>
+
+  <!-- Status LED -->
+  <circle cx="82" cy="51" r="2" fill="#107E3E"/>
+  <circle cx="118" cy="51" r="2" fill="#107E3E"/>
+
+  <!-- Undercarriage Landing Skids -->
+  <path d="M82 66 L 78 78 L 72 78" stroke="#0A1F44" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M118 66 L 122 78 L 128 78" stroke="#0A1F44" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Retractable Claw -->
+  <path d="M96 66 L 96 74 Q 96 82 92 86" stroke="#0070F2" stroke-width="3" stroke-linecap="round"/>
+  <path d="M104 66 L 104 74 Q 104 82 108 86" stroke="#0070F2" stroke-width="3" stroke-linecap="round"/>
+</svg>
