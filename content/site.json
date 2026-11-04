@@ -1,8 +1,23 @@
 {
   "brand": "Abhiyanta India Solutions",
   "subBrand": "AIS Experience Centre",
-  "heroTitle": "Architecting the Intelligent SAP Enterprise",
-  "heroSubtitle": "Real-time 3D showcase of 28 production solutions across 5 architectural pillars. Clean Core compliance, Autonomous AI agents, and enterprise BTP engineering.",
+  "botName": "The Lead Architect",
+  "tagline": "Next-Gen SAP Enterprise Solutions",
+  "sub": "Explore 28 production solutions built across SAP BTP, Clean Core extensibility, and Agentic AI.",
+  "heroTitle": "Next-Gen SAP Enterprise Solutions",
+  "heroSubtitle": "Explore 28 production solutions built across SAP BTP, Clean Core extensibility, and Agentic AI.",
+  "introLines": [
+    "Welcome to Abhiyanta India Solutions.",
+    "I'm your Lead Architect bot.",
+    "Explore 28 production SAP & AI solutions across 5 pillars."
+  ],
+  "defaultContact": {
+    "name": "Varad Rane",
+    "role": "Chief SAP Solutions Architect",
+    "email": "contact@abhiyantaindia.com",
+    "phone": "+91 (022) 6982-1000",
+    "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=contact@abhiyantaindia.com"
+  },
   "stats": [
     { "value": "28", "label": "Enterprise Solutions" },
     { "value": "5", "label": "Architectural Pillars" },

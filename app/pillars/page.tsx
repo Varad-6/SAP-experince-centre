@@ -1,101 +1,116 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import pillarsData from '@/content/pillars.json';
 import solutionsData from '@/content/solutions.json';
-import { GlassPanel } from '@/components/ui/GlassPanel';
-import { ArrowRight, Layers, Box, Cpu, Zap, BarChart3, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { BotSprite } from '@/components/BotSprite';
+import { ArrowRight, Layers, Box, Cpu, Zap, BarChart3, ShieldCheck } from 'lucide-react';
 
 const iconMap: Record<string, React.ReactNode> = {
-  Layers: <Layers className="w-7 h-7 text-[#0070F2]" />,
-  Box: <Box className="w-7 h-7 text-[#00B8F5]" />,
-  Cpu: <Cpu className="w-7 h-7 text-[#8B5CF6]" />,
-  Zap: <Zap className="w-7 h-7 text-[#F0AB00]" />,
-  BarChart3: <BarChart3 className="w-7 h-7 text-[#19C3A6]" />,
+  Layers: <Layers className="w-6 h-6" />,
+  Box: <Box className="w-6 h-6" />,
+  Cpu: <Cpu className="w-6 h-6" />,
+  Zap: <Zap className="w-6 h-6" />,
+  BarChart3: <BarChart3 className="w-6 h-6" />,
 };
 
 export default function PillarsHubPage() {
+  const [showBubble, setShowBubble] = useState<boolean>(true);
+
+  // Auto-hide bubble after 5s
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowBubble(false);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      {/* Executive Header */}
-      <div className="text-center max-w-3xl mx-auto mb-14">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-[#0070F2]/15 text-[#00B8F5] border border-[#00B8F5]/30 mb-4">
+    <div className="min-h-[calc(100vh-56px)] bg-[var(--bg)] text-[var(--text)] px-6 sm:px-8 py-10 sm:py-14 max-w-[1200px] mx-auto relative pb-32">
+      {/* Header */}
+      <div className="max-w-2xl mb-10 sm:mb-12">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--brand-50)] text-[var(--brand)] text-xs font-semibold mb-3">
           <ShieldCheck className="w-3.5 h-3.5" />
-          <span>CLEAN CORE ARCHITECTURAL HUBS</span>
+          <span>ENTERPRISE ARCHITECTURE HUBS</span>
         </div>
-        <h1 className="text-h1 font-bold text-white mb-4">
+        <h1 className="text-h1 font-bold text-[var(--navy)] tracking-tight mb-3">
           The 5 Pillars of Enterprise SAP Excellence
         </h1>
-        <p className="text-body text-[#9FB3D1]">
-          Select any architectural pillar below to explore our 28 production solutions, custom BTP applications, agentic AI copilots, and real-time executive cockpits.
+        <p className="text-base text-[var(--text-dim)] leading-relaxed">
+          Select an architectural pillar to inspect our 28 production solutions, custom BTP applications, agentic AI copilots, and real-time executive steering.
         </p>
       </div>
 
-      {/* 5 Prominent Pillar Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {pillarsData.map((pillar) => {
-          const count = solutionsData.filter((s) => s.pillarId === pillar.id).length;
+      {/* 5 Cards in a 6-Column Responsive Grid */}
+      {/* Cards 1-2 span 3 cols each, Cards 3-5 span 2 cols each */}
+      <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
+        {pillarsData.map((pillar, idx) => {
+          const solutionCount = solutionsData.filter((s) => s.pillarId === pillar.id).length;
+          const colSpan = idx < 2 ? 'md:col-span-3' : 'md:col-span-2';
+
           return (
             <Link
               key={pillar.id}
               href={`/pillar/${pillar.id}`}
-              className="group block"
+              className={`group card block p-6 sm:p-7 relative transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[var(--shadow)] ${colSpan}`}
+              style={{
+                borderTop: `3px solid ${pillar.accent}`,
+              }}
             >
-              <GlassPanel
-                glowColor={pillar.accent}
-                className="p-8 h-full flex flex-col justify-between hover:scale-[1.02] transition-all cursor-pointer border border-white/10 hover:border-white/25"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <div
-                      className="w-14 h-14 rounded-2xl flex items-center justify-center border shadow-lg"
-                      style={{
-                        backgroundColor: `${pillar.accent}20`,
-                        borderColor: `${pillar.accent}40`,
-                      }}
-                    >
-                      {iconMap[pillar.icon] || <Layers className="w-7 h-7 text-white" />}
-                    </div>
-                    <span
-                      className="px-3 py-1 rounded-full text-xs font-mono font-bold border"
-                      style={{
-                        color: pillar.accent,
-                        borderColor: `${pillar.accent}40`,
-                        backgroundColor: `${pillar.accent}15`,
-                      }}
-                    >
-                      {count} Solutions
-                    </span>
-                  </div>
-
-                  <span className="text-[11px] font-mono font-bold text-[#9FB3D1] uppercase tracking-wider block mb-1">
-                    Pillar 0{pillar.order}
-                  </span>
-
-                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[#00B8F5] transition-colors">
-                    {pillar.title}
-                  </h3>
-
-                  <p className="text-xs text-[#9FB3D1] leading-relaxed mb-6">
-                    {pillar.tagline}
-                  </p>
+              <div className="flex items-start justify-between gap-4 mb-4">
+                <div
+                  className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
+                  style={{
+                    backgroundColor: `${pillar.accent}15`,
+                    color: pillar.accent,
+                  }}
+                >
+                  {iconMap[pillar.icon] || <Layers className="w-6 h-6" />}
                 </div>
 
-                <div className="flex items-center justify-between pt-5 border-t border-white/10 text-xs font-mono">
-                  <span className="text-[#3DDC97] flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5" /> Clean Core Certified
-                  </span>
-                  <span className="text-white group-hover:translate-x-1 transition-transform inline-flex items-center gap-1.5 font-bold">
-                    <span>Explore Pillar</span>
-                    <ArrowRight className="w-4 h-4 text-[#00B8F5]" />
-                  </span>
-                </div>
-              </GlassPanel>
+                <span className="chip">
+                  {solutionCount} solutions
+                </span>
+              </div>
+
+              <h2 className="text-lg sm:text-xl font-bold text-[var(--navy)] mb-2 group-hover:text-[var(--brand)] transition-colors">
+                {pillar.title}
+              </h2>
+
+              <p className="text-xs sm:text-sm text-[var(--text-dim)] leading-relaxed mb-6 line-clamp-2">
+                {pillar.tagline}
+              </p>
+
+              <div className="flex items-center text-xs font-semibold text-[var(--brand)] group-hover:translate-x-1 transition-transform">
+                <span>Inspect solutions</span>
+                <ArrowRight className="w-3.5 h-3.5 ml-1" />
+              </div>
             </Link>
           );
         })}
       </div>
+
+      {/* Docked Bot in bottom right with speech bubble */}
+      <aside
+        className="fixed bottom-6 right-6 z-30 flex items-end gap-3 pointer-events-auto"
+        onMouseEnter={() => setShowBubble(true)}
+      >
+        {/* Speech Bubble */}
+        {showBubble && (
+          <div className="relative mb-2 px-4 py-2.5 rounded-xl bg-[var(--surface)] border border-[var(--border)] shadow-[var(--shadow)] text-xs text-[var(--text)] max-w-[200px] animate-fadeIn">
+            <span className="font-semibold text-[var(--navy)]">Pick a pillar to explore.</span>
+            {/* Bubble Tail pointing to the right */}
+            <div className="absolute top-1/2 -right-1.5 -translate-y-1/2 w-3 h-3 bg-[var(--surface)] border-t border-r border-[var(--border)] rotate-45" />
+          </div>
+        )}
+
+        {/* Bot Avatar */}
+        <div className="relative cursor-pointer group">
+          <BotSprite pose="idle" width={110} height={110} alt="Docked Lead Architect Bot" />
+          <div className="w-20 h-2.5 bg-black/10 rounded-full blur-[2px] mx-auto mt-[-4px]" />
+        </div>
+      </aside>
     </div>
   );
 }

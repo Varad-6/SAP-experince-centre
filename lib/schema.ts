@@ -48,6 +48,7 @@ export const CardSchema = z.object({
   type: CardTypeSchema,
   title: z.string(),
   botDialogue: z.string(),
+  botPose: z.string().optional(),
   stat: z.object({ number: z.string(), label: z.string() }).optional(),
   bullets: z.array(z.string()).optional(),
   visual: z.enum(['pain-matrix', 'before-after']).optional(),
@@ -65,14 +66,32 @@ export const CardSchema = z.object({
   actions: z.array(CtaActionSchema).optional(),
 });
 
+export const ContactSchema = z.object({
+  name: z.string(),
+  role: z.string(),
+  email: z.string(),
+  phone: z.string().optional(),
+  teamsUrl: z.string().optional(),
+});
+
+export const ClosingSchema = z.object({
+  liveDemoInfo: z.string().optional(),
+  feedbackUrl: z.string().optional(),
+  contact: ContactSchema.optional(),
+});
+
 export const AppContentSchema = z.object({
   slug: z.string(),
   pillarId: PillarIdSchema,
   title: z.string(),
   heroHeadline: z.string(),
+  intro: z.string().optional(),
+  basicIntro: z.string().optional(),
   sapComponents: z.array(z.string()),
   hasContent: z.boolean().default(true),
   cards: z.array(CardSchema).length(8),
+  contact: ContactSchema.optional(),
+  closing: ClosingSchema.optional(),
 });
 
 export const PillarSchema = z.object({
@@ -99,8 +118,13 @@ export const SolutionSummarySchema = z.object({
 export const SiteSchema = z.object({
   brand: z.string(),
   subBrand: z.string(),
-  heroTitle: z.string(),
-  heroSubtitle: z.string(),
+  heroTitle: z.string().optional(),
+  heroSubtitle: z.string().optional(),
+  tagline: z.string().optional(),
+  sub: z.string().optional(),
+  botName: z.string().optional(),
+  introLines: z.array(z.string()).optional(),
+  defaultContact: ContactSchema.optional(),
   stats: z.array(z.object({ value: z.string(), label: z.string() })),
   footer: z.object({
     copyright: z.string(),

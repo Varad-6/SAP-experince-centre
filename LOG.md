@@ -219,3 +219,25 @@ Standard: Clean Fiori Horizon Professional Stack, 2D GSAP Bot, Zero 3D / Zero Au
   - `npm run build` -> Code 0 (All 79 static pages generated)
 - **Known Issues / Risks**:
   - None. Clean build with zero errors.
+
+---
+
+## Phase 2: Pages & Navigation Flow
+- **Date**: 2026-11-04
+- **Status**: Completed. Verified with `npm run content:check` (0 errors), `npm test` (5/5 tests passed), and `npm run build` (0 errors across 79 static routes).
+- **Files Created/Modified**:
+  - `app/page.tsx`: Landing page with sky gradient stage (`linear-gradient(var(--sky-top), var(--sky-bottom))`), ground strip (`#E3E9F2`), drifting clouds, title block (eyebrow, H1 from `site.json.tagline`, sub, "Explore solutions" CTA), rotating typewriter intro bubble with Lead Architect bot.
+  - `app/pillars/page.tsx`: 5 clean cards in a 6-col responsive grid (cards 1-2 span 3 cols, cards 3-5 span 2 cols), 3px pillar accent top borders, project counts, docked idle bot with 5s auto-hide speech bubble ("Pick a pillar to explore.").
+  - `app/pillar/[id]/page.tsx`: Top bar with `< All pillars` link, pillar title and description, clean grid (`repeat(auto-fill, minmax(240px, 1fr))`) of solution cards with 16:9 thumbnails, 2-line taglines, status chips (Production / Preview), and ROI chips.
+  - `components/ThumbnailImage.tsx`: Client-safe image component handling automatic fallback to `_placeholder.svg` without hydration or server-render serialization issues.
+  - `app/solution/[slug]/page.tsx` & `app/solution/[slug]/SolutionDetailClient.tsx`: Breadcrumb (`Pillars > [Pillar Title] > [Solution Title]`), H1, 1-line intro, status chips, center 16:9 `.card` hero thumbnail, bottom action row with TWO buttons ("Contact for details" opening `ContactDialog` and "Demo" navigating to walkthrough), docked bot in `present` pose with `basicIntro` teaser bubble.
+  - `components/ContactDialog.tsx`: Professional contact dialog with contact person details, email, phone, and Microsoft Teams integration.
+  - `lib/poses.ts`: 12 sprite poses map (`BOT_POSES`) and vertical fit offsets (`POSE_FIT`).
+  - `components/BotSprite.tsx`: 2D sprite rendering component with automatic pose swapping and zero-break `_placeholder.svg` fallback.
+  - `lib/schema.ts` & `content/site.json`: Extended schema for `Contact`, `Closing`, `introLines`, `defaultContact`, and populated production copy.
+- **Commands Run**:
+  - `npm run content:check` -> Code 0 (5 pillars, 28 solutions, 28 apps validated)
+  - `npm test` -> Code 0 (5/5 unit tests passed)
+  - `npm run build` -> Code 0 (All 79 static pages generated)
+- **Known Issues / Risks**:
+  - None. Full type safety, zero lint/build errors.
