@@ -20,7 +20,6 @@ import {
   Mail,
   Zap,
 } from 'lucide-react';
-import { audio } from '@/lib/audio';
 
 export default function HomePage() {
   return (
@@ -48,9 +47,8 @@ export default function HomePage() {
             <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
               <Link
                 href="/pillars"
-                onClick={() => audio.play('ui_click')}
               >
-                <Button size="lg" variant="primary" glow className="gap-2.5 px-8 py-4 text-base font-bold">
+                <Button size="lg" variant="primary" className="gap-2.5 px-8 py-4 text-base font-bold">
                   <span>Explore the 5 Pillars</span>
                   <ArrowRight className="w-5 h-5" />
                 </Button>
@@ -58,7 +56,6 @@ export default function HomePage() {
 
               <Link
                 href="/solution/podzo"
-                onClick={() => audio.play('ui_click')}
               >
                 <Button size="lg" variant="secondary" className="gap-2.5 px-6 py-4">
                   <Play className="w-4 h-4 fill-current text-[#00B8F5]" />
@@ -169,7 +166,7 @@ export default function HomePage() {
             </p>
             <div className="pt-2">
               <Link href="/pillars">
-                <Button size="lg" variant="primary" glow className="gap-2.5 px-8 py-3.5">
+                <Button size="lg" variant="primary" className="gap-2.5 px-8 py-3.5">
                   <span>Enter the 5 Pillars Hub</span>
                   <ArrowRight className="w-4 h-4" />
                 </Button>

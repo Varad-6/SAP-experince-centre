@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { CardSchema } from '@/lib/schema';
 import { z } from 'zod';
 import { Info, Sparkles, MapPin } from 'lucide-react';
-import { audio } from '@/lib/audio';
 
 type CardData = z.infer<typeof CardSchema>;
 
@@ -37,11 +36,7 @@ export const LiveUiCard: React.FC<{ card: CardData }> = ({ card }) => {
           >
             <button
               onClick={() => {
-                audio.play('ui_click');
                 setActiveHotspot(i);
-              }}
-              onMouseEnter={() => {
-                audio.play('ui_hover');
               }}
               className={`relative flex items-center justify-center w-7 h-7 rounded-full cursor-pointer transition-all duration-200 ${
                 activeHotspot === i

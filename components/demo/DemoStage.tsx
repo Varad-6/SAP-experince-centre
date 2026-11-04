@@ -17,7 +17,6 @@ import { WorkflowCard } from './CardTypes/WorkflowCard';
 import { TechStackCard } from './CardTypes/TechStackCard';
 import { ImpactCard } from './CardTypes/ImpactCard';
 import { CtaCard } from './CardTypes/CtaCard';
-import { HoveringBotGuide } from './HoveringBotGuide';
 
 type AppData = z.infer<typeof AppContentSchema>;
 
@@ -28,13 +27,11 @@ export const DemoStage: React.FC<{ appData: AppData }> = ({ appData }) => {
     nextCard,
     prevCard,
     setScene,
-    setBotState,
   } = useStore();
 
   useEffect(() => {
     setScene('DEMO');
-    setBotState('explain');
-  }, [setScene, setBotState]);
+  }, [setScene]);
 
   const currentCard = appData.cards[cardIndex] || appData.cards[0];
 
@@ -130,7 +127,6 @@ export const DemoStage: React.FC<{ appData: AppData }> = ({ appData }) => {
             <Button
               size="sm"
               variant="primary"
-              glow
               onClick={() => nextCard(8)}
               className="gap-1.5 font-bold"
             >
@@ -140,15 +136,6 @@ export const DemoStage: React.FC<{ appData: AppData }> = ({ appData }) => {
           </div>
         </div>
       </GlassPanel>
-
-      {/* Hovering Lead Architect Mascot with Brain Chat Box */}
-      <HoveringBotGuide
-        dialogue={currentCard.botDialogue}
-        cardIndex={cardIndex}
-        totalCards={8}
-        onNext={() => nextCard(8)}
-        onPrev={prevCard}
-      />
     </div>
   );
 };

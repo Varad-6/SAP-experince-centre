@@ -173,3 +173,49 @@ Standard: Master Build Prompt v1.0 (Strict Antigravity Protocol)
   - `npm run build` -> Code 0 (All 79 static pages generated)
 - **Known Issues / Risks**:
   - None. Clean Core architecture, strict TypeScript compliance, zero dead code.
+
+---
+
+# CHANGE REQUEST v2 — RE-ARCHITECTURE LEDGER
+Standard: Clean Fiori Horizon Professional Stack, 2D GSAP Bot, Zero 3D / Zero Audio
+
+## Phase 0: Audit & Deprecation Map
+- **Date**: 2026-11-04
+- **Status**: Completed & Approved by User.
+- **Files Created**:
+  - `docs/CHANGE_AUDIT.md`: Complete audit of 3D/audio removal, replaced and kept components, tokens mapping.
+- **Known Issues / Risks**:
+  - None.
+
+---
+
+## Phase 1: Cleanup & Base Tokens
+- **Date**: 2026-11-04
+- **Status**: Completed. Verified with `npm test` (5/5 tests passed) and `npm run build` (0 errors across 79 static routes).
+- **Files Deleted**:
+  - `lib/audio.ts` (Removed Web Audio API synthesizer)
+  - `components/three/*` (`Stage.tsx`, `PillarTile.tsx`, `PillarsRing.tsx`, `CameraRig.tsx`, `SceneManager.tsx`, `CanvasRoot.tsx`, `Backdrop.tsx`, `Drone.tsx`, `Particles.tsx`, `Bot.tsx`, `QualityProvider.tsx`)
+  - `components/hud/*` (`CaptionBar.tsx`, `VRButton.tsx`, `PillarRail.tsx`, `TopBar.tsx`, `FullscreenButton.tsx`)
+  - `components/mascot/*` (`ChibiMascot.tsx`, `Director.tsx`)
+  - `components/demo/HoveringBotGuide.tsx`
+  - `lib/quality.ts`, `lib/device.ts`, `lib/xr.ts`
+  - `types/three-jsx.d.ts`
+  - Non-Inter fonts: `public/fonts/SpaceGrotesk-Bold.ttf`, `public/fonts/JetBrainsMono-Regular.ttf`
+- **Files Created/Modified**:
+  - `package.json`: Removed `three`, `@react-three/fiber`, `@react-three/drei`, `@react-three/postprocessing`, `@react-three/xr`, `three-stdlib`, `@types/three`, `howler`, `@types/howler`, `lenis`. Added `sharp@0.33.5`.
+  - `styles/tokens.css`: Core Fiori Horizon design tokens (`--bg`, `--surface`, `--surface-2`, `--border`, `--text`, `--text-dim`, `--brand`, `--brand-600`, `--brand-50`, `--navy`, `--gold`, `--ok`, `--warn`, `--danger`, button & card classes).
+  - `app/globals.css`: Imported tokens.
+  - `app/layout.tsx`: Configured single font Inter (`next/font/google`), stripped WebGL canvas and Director, minimal top bar ("Abhiyanta" 600).
+  - `lib/store.ts`: Removed audio/3D fields (`muted`, `volume`, `isXR`, `quality`, `droneState`, `captions`, `botState`).
+  - `lib/input.ts`: Removed `M` and `C` shortcuts.
+  - `public/assets/bot/_placeholder.svg`: Neutral figure SVG fallback (200x200, `#0A1F44` stroke, `#EEF2F7` fill).
+  - Cleaned UI components: `Button.tsx`, `IconButton.tsx`, `GlassPanel.tsx`, `Chip.tsx`, `BackButton.tsx`, `AppProvider.tsx`.
+- **Versions Installed**:
+  - `sharp`: `0.33.5`
+- **Commands Run**:
+  - `npm install --legacy-peer-deps` -> 102 packages removed, sharp installed
+  - `npm run content:check` -> Code 0
+  - `npm test` -> Code 0 (5/5 tests passed)
+  - `npm run build` -> Code 0 (All 79 static pages generated)
+- **Known Issues / Risks**:
+  - None. Clean build with zero errors.

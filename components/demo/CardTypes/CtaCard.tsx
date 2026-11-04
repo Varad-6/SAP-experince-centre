@@ -6,7 +6,6 @@ import { CardSchema } from '@/lib/schema';
 import { z } from 'zod';
 import { Button } from '@/components/ui/Button';
 import { Play, FileText, CheckCircle2, ExternalLink } from 'lucide-react';
-import { audio } from '@/lib/audio';
 
 type CardData = z.infer<typeof CardSchema>;
 
@@ -38,7 +37,7 @@ export const CtaCard: React.FC<{ card: CardData; slug: string }> = ({ card, slug
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant="primary" glow className="gap-2">
+                <Button variant="primary" className="gap-2">
                   <Play className="w-4 h-4 fill-current" />
                   <span>{act.label}</span>
                 </Button>

@@ -1,7 +1,7 @@
 export interface AssetRecord {
   id: string;
   url: string;
-  type: 'glb' | 'texture' | 'image' | 'audio';
+  type: 'image';
   fallbackColor?: string;
 }
 

@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { useStore } from '@/lib/store';
-import { audio } from '@/lib/audio';
 
 const CARD_LABELS = [
   'Hook',
@@ -30,7 +29,6 @@ export const ProgressDots: React.FC<{ current: number; total?: number }> = ({
           <button
             key={i}
             onClick={() => {
-              audio.play('stat_tick');
               setCardIndex(i);
             }}
             title={`Jump to Card ${i + 1}: ${CARD_LABELS[i] || ''}`}

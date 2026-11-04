@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { GlassPanel } from '@/components/ui/GlassPanel';
 import { Button } from '@/components/ui/Button';
 import { Mail, CheckCircle2, Copy, X, Calendar, Building, User, Sparkles } from 'lucide-react';
-import { audio } from '@/lib/audio';
 
 export interface BookDemoModalProps {
   isOpen: boolean;
@@ -31,7 +30,6 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    audio.play('celebrate');
 
     const recipient = 'sales@abhiyanta.com';
     const subject = encodeURIComponent(`[Enterprise Demo Request] ${solutionTitle} — ${company || 'Client'}`);
@@ -162,7 +160,7 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({
                 <Button variant="glass" size="md" type="button" onClick={onClose}>
                   Cancel
                 </Button>
-                <Button variant="primary" size="md" glow type="submit" className="gap-2">
+                <Button variant="primary" size="md" type="submit" className="gap-2">
                   <Mail className="w-4 h-4" />
                   <span>Send Demo Request to Sales</span>
                 </Button>

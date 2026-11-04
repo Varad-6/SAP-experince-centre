@@ -97,7 +97,7 @@ export const SolutionDetailClient: React.FC<SolutionDetailProps> = ({
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             {/* Option 1: Demo Walkthrough */}
             <Link href={`/solution/${solution.slug}/demo`}>
-              <Button size="lg" variant="primary" glow className="gap-2.5">
+              <Button size="lg" variant="primary" className="gap-2.5">
                 <Play className="w-4 h-4 fill-current text-white" />
                 <span>Launch Interactive Demo</span>
               </Button>

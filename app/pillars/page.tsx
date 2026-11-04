@@ -6,7 +6,6 @@ import pillarsData from '@/content/pillars.json';
 import solutionsData from '@/content/solutions.json';
 import { GlassPanel } from '@/components/ui/GlassPanel';
 import { ArrowRight, Layers, Box, Cpu, Zap, BarChart3, CheckCircle2, ShieldCheck } from 'lucide-react';
-import { audio } from '@/lib/audio';
 
 const iconMap: Record<string, React.ReactNode> = {
   Layers: <Layers className="w-7 h-7 text-[#0070F2]" />,
@@ -41,9 +40,6 @@ export default function PillarsHubPage() {
             <Link
               key={pillar.id}
               href={`/pillar/${pillar.id}`}
-              onClick={() => {
-                audio.play('pillar_select');
-              }}
               className="group block"
             >
               <GlassPanel
