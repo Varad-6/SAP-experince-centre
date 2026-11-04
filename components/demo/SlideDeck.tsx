@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { AppContentSchema } from '@/lib/schema';
 import { z } from 'zod';
 import { BotSprite } from '@/components/BotSprite';
-import { PoseName } from '@/lib/poses';
+import { ActivePoseName, resolvePose } from '@/lib/poses';
 import { ContactDialog } from '@/components/ContactDialog';
 import { useTypewriter } from '@/lib/useTypewriter';
 import {
@@ -47,11 +47,27 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
   const isClosing = slideIndex >= totalCards;
   const currentCard = isClosing ? null : appData.cards[slideIndex] || appData.cards[0];
 
-  const currentDialogue = currentCard?.botDialogue || '';
-  const currentPose: PoseName = (currentCard?.botPose as PoseName) || (isClosing ? 'thanks' : 'explain');
+  const currentDialogue = isClosing
+    ? 'Thank you for reviewing our enterprise solution architecture! Reach out to schedule an executive demonstration or test-drive live in our SAP BTP tenant.'
+    : currentCard?.botDialogue || '';
+
+  const DEFAULT_CARD_POSES: ActivePoseName[] = [
+    'present', // Card 1: Hook
+    'point',   // Card 2: Challenge
+    'tablet',  // Card 3: Solution DAG
+    'point',   // Card 4: Live UI
+    'tablet',  // Card 5: Workflow
+    'laptop',  // Card 6: Tech Stack
+    'present', // Card 7: Impact
+    'beckon',  // Card 8: CTA
+  ];
+
+  const currentPose: ActivePoseName = resolvePose(
+    isClosing ? 'thanks' : currentCard?.botPose || DEFAULT_CARD_POSES[slideIndex] || 'present'
+  );
 
   const { shown: typedDialogue, finish: finishTyping } = useTypewriter(currentDialogue, {
-    speed: 24,
+    speed: 22,
   });
 
   const goNext = useCallback(() => {
@@ -300,8 +316,7 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
         <div className="shrink-0 flex flex-col items-center">
           <BotSprite
             pose={currentPose}
-            width={120}
-            height={120}
+            heightPx={140}
             alt="Lead Architect Walkthrough Guide"
           />
           <div className="w-20 h-2 bg-black/10 rounded-full blur-[1px] mt-[-4px]" />

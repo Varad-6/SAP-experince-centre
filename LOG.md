@@ -375,3 +375,17 @@ Standard: Clean Fiori Horizon Professional Stack, 2D GSAP Bot, Zero 3D / Zero Au
   - `npm run content:check` -> Code 0
   - `npm test` -> Code 0 (9/9 passed)
   - `npm run build` -> Code 0 (80/80 static pages generated including `/debug/key`)
+
+---
+
+## Phase 4 (Master Prompt v3): SlideDeck, Moving Hotspot Cursor & Animated ROI Delta Bars
+- **Date**: 2026-11-04
+- **Status**: Completed. Verified with `npm run content:check`, `npm test` (9/9 pass), and `npm run build` (0 errors, 80/80 static pages generated).
+- **Files Created/Touched**:
+  - `components/demo/CardTypes/LiveUiCard.tsx`: Implemented animated 20px SVG arrow pointer dynamically tracking the active numbered hotspot callout.
+  - `components/demo/CardTypes/ImpactCard.tsx`: Implemented animated ROI delta bars comparing baseline versus Clean Core improvements.
+  - `components/demo/SlideDeck.tsx`: Calibrated exact 8-card mascot pose progression (`present` -> `point` -> `tablet` -> `point` -> `tablet` -> `laptop` -> `present` -> `beckon`) and Slide 9 closing slide (`thanks` pose, feedback URL, demo contact modal trigger, and live tenant info).
+- **Commands Run**:
+  - `npm run content:check` -> Code 0
+  - `npm test` -> Code 0 (9/9 passed)
+  - `npm run build` -> Code 0 (80/80 static pages generated)

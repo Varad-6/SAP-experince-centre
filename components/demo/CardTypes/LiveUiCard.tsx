@@ -3,15 +3,17 @@
 import React, { useState } from 'react';
 import { CardSchema } from '@/lib/schema';
 import { z } from 'zod';
-import { Info } from 'lucide-react';
+import { MousePointer } from 'lucide-react';
 
 type CardData = z.infer<typeof CardSchema>;
 
 export const LiveUiCard: React.FC<{ card: CardData }> = ({ card }) => {
-  const [activeHotspot, setActiveHotspot] = useState<number | null>(0);
+  const [activeHotspot, setActiveHotspot] = useState<number>(0);
 
   const hotspots = card.hotspots || [];
   const screenshot = card.screenshot || '/assets/apps/podzo/screen-1.png';
+
+  const currentHs = hotspots[activeHotspot] || hotspots[0];
 
   return (
     <div className="space-y-4">
@@ -26,6 +28,30 @@ export const LiveUiCard: React.FC<{ card: CardData }> = ({ card }) => {
               (e.target as HTMLImageElement).src = '/assets/bot/_placeholder.svg';
             }}
           />
+
+          {/* Moving 20px Arrow Cursor targeting the active callout */}
+          {currentHs && (
+            <div
+              className="absolute z-30 pointer-events-none transition-all duration-300 ease-out"
+              style={{
+                left: `${currentHs.x}%`,
+                top: `${currentHs.y}%`,
+                transform: 'translate(8px, 8px)',
+              }}
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="#0070F2"
+                stroke="#FFFFFF"
+                strokeWidth="1.5"
+                className="drop-shadow-md animate-bounce"
+              >
+                <path d="M3 3l7 18 3-7 7-3L3 3z" />
+              </svg>
+            </div>
+          )}
 
           {/* Numbered Circle Hotspot Callouts (24px, #0070F2, white text) */}
           {hotspots.map((hs, i) => (
@@ -52,17 +78,22 @@ export const LiveUiCard: React.FC<{ card: CardData }> = ({ card }) => {
       </div>
 
       {/* Active Hotspot Inspector Card */}
-      {activeHotspot !== null && hotspots[activeHotspot] && (
+      {currentHs && (
         <div className="p-4 rounded-xl bg-[var(--surface-2)] border border-[var(--border)] flex items-start gap-3">
-          <div className="w-6 h-6 rounded-full bg-[var(--brand)] text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
+          <div className="w-6 h-6 rounded-full bg-[var(--brand)] text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
             {activeHotspot + 1}
           </div>
-          <div>
-            <h5 className="text-xs sm:text-sm font-bold text-[var(--navy)] mb-0.5">
-              {hotspots[activeHotspot].label}
-            </h5>
+          <div className="flex-1">
+            <div className="flex items-center justify-between gap-2 mb-0.5">
+              <h5 className="text-xs sm:text-sm font-bold text-[var(--navy)]">
+                {currentHs.label}
+              </h5>
+              <span className="text-[10px] text-[var(--text-dim)] font-mono">
+                Callout {activeHotspot + 1} of {hotspots.length}
+              </span>
+            </div>
             <p className="text-xs text-[var(--text-dim)] leading-relaxed">
-              {hotspots[activeHotspot].tooltip}
+              {currentHs.tooltip}
             </p>
           </div>
         </div>
