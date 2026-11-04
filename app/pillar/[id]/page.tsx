@@ -6,6 +6,7 @@ import solutionsData from '@/content/solutions.json';
 import { ArrowLeft, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { ThumbnailImage } from '@/components/ThumbnailImage';
 import { PillarBotDock } from '@/components/PillarBotDock';
+import { SoundToggle } from '@/components/SoundToggle';
 
 export function generateStaticParams() {
   return pillarsData.map((p) => ({ id: p.id }));
@@ -28,37 +29,41 @@ export default async function PillarDetailPage({
   return (
     <div className="min-h-[calc(100vh-56px)] bg-[var(--bg)] text-[var(--text)] px-6 sm:px-8 py-8 sm:py-12 max-w-[1200px] mx-auto">
       {/* Top Bar / Header */}
-      <div className="mb-8 pb-6 border-b border-[var(--border)]">
-        <Link
-          href="/pillars"
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--text-dim)] hover:text-[var(--brand)] transition-colors mb-4"
-        >
-          <ArrowLeft className="w-3.5 h-3.5" />
-          <span>All pillars</span>
-        </Link>
-
-        <div className="flex flex-wrap items-center gap-3 mb-2">
-          <span
-            className="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold"
-            style={{
-              backgroundColor: `${pillar.accent}15`,
-              color: pillar.accent,
-            }}
+      <div className="mb-8 pb-6 border-b border-[var(--border)] flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+        <div>
+          <Link
+            href="/pillars"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--text-dim)] hover:text-[var(--brand)] transition-colors mb-4"
           >
-            PILLAR {pillar.order}
-          </span>
-          <span className="text-xs text-[var(--text-dim)]">•</span>
-          <span className="inline-flex items-center gap-1 text-xs font-medium text-[var(--ok)]">
-            <ShieldCheck className="w-3.5 h-3.5" /> Clean Core Certified
-          </span>
+            <ArrowLeft className="w-3.5 h-3.5" />
+            <span>All pillars</span>
+          </Link>
+
+          <div className="flex flex-wrap items-center gap-3 mb-2">
+            <span
+              className="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold"
+              style={{
+                backgroundColor: `${pillar.accent}15`,
+                color: pillar.accent,
+              }}
+            >
+              PILLAR {pillar.order}
+            </span>
+            <span className="text-xs text-[var(--text-dim)]">•</span>
+            <span className="inline-flex items-center gap-1 text-xs font-medium text-[var(--ok)]">
+              <ShieldCheck className="w-3.5 h-3.5" /> Clean Core Certified
+            </span>
+          </div>
+
+          <h1 className="text-h1 font-bold text-[var(--navy)] tracking-tight mb-2">
+            {pillar.title}
+          </h1>
+          <p className="text-sm sm:text-base text-[var(--text-dim)] max-w-3xl leading-relaxed">
+            {pillar.tagline}
+          </p>
         </div>
 
-        <h1 className="text-h1 font-bold text-[var(--navy)] tracking-tight mb-2">
-          {pillar.title}
-        </h1>
-        <p className="text-sm sm:text-base text-[var(--text-dim)] max-w-3xl leading-relaxed">
-          {pillar.tagline}
-        </p>
+        <SoundToggle />
       </div>
 
       {/* Grid of Project Cards (repeat(auto-fill, minmax(240px, 1fr))) */}

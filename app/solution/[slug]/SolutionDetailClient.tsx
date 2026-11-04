@@ -6,6 +6,9 @@ import { ArrowRight, ChevronRight, ShieldCheck, Mail, Play, Network } from 'luci
 import { BotSprite } from '@/components/BotSprite';
 import { BotBubble } from '@/components/BotBubble';
 import { ContactDialog } from '@/components/ContactDialog';
+import { ArchitectureDialog } from '@/components/ArchitectureDialog';
+import { SoundToggle } from '@/components/SoundToggle';
+import { sound } from '@/lib/sound';
 
 interface SolutionDetailProps {
   solution: {
@@ -27,6 +30,7 @@ interface SolutionDetailProps {
     heroHeadline?: string;
     intro?: string;
     basicIntro?: string;
+    sapComponents?: string[];
     contact?: {
       name: string;
       role: string;
@@ -43,6 +47,7 @@ export const SolutionDetailClient: React.FC<SolutionDetailProps> = ({
   appData,
 }) => {
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isArchOpen, setIsArchOpen] = useState(false);
   const [botPose, setBotPose] = useState<'present' | 'beckon'>('present');
 
   const introText = appData?.intro || appData?.heroHeadline || solution.oneLiner;
@@ -53,33 +58,35 @@ export const SolutionDetailClient: React.FC<SolutionDetailProps> = ({
       ? '/assets/apps/sap-btp-vibe-coding/01_Entitlements_Entity_Assignments.png'
       : `/assets/apps/${solution.slug}/screen-1.png`;
 
-  const scrollToArchitecture = () => {
-    const el = document.getElementById('solution-visual-card');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  const openArchitecture = () => {
+    sound.click();
+    setIsArchOpen(true);
   };
 
   return (
     <div className="min-h-[calc(100vh-56px)] bg-[var(--bg)] text-[var(--text)] px-6 sm:px-8 py-8 sm:py-12 max-w-[1200px] mx-auto pb-24">
       {/* 1. Breadcrumb: Pillars > [Pillar Title] > [Solution Title] */}
-      <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-[var(--text-dim)] mb-6 flex-wrap">
-        <Link href="/pillars" className="hover:text-[var(--brand)] transition-colors">
-          Pillars
-        </Link>
-        <ChevronRight className="w-3 h-3 text-[var(--text-dim)]" />
-        {pillar ? (
-          <Link href={`/pillar/${pillar.id}`} className="hover:text-[var(--brand)] transition-colors">
-            {pillar.title}
+      <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
+        <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-[var(--text-dim)] flex-wrap">
+          <Link href="/pillars" onClick={() => sound.click()} className="hover:text-[var(--brand)] transition-colors">
+            Pillars
           </Link>
-        ) : (
-          <span>Pillar</span>
-        )}
-        <ChevronRight className="w-3 h-3 text-[var(--text-dim)]" />
-        <span className="font-semibold text-[var(--navy)] truncate max-w-[280px] sm:max-w-md">
-          {solution.title}
-        </span>
-      </nav>
+          <ChevronRight className="w-3 h-3 text-[var(--text-dim)]" />
+          {pillar ? (
+            <Link href={`/pillar/${pillar.id}`} onClick={() => sound.click()} className="hover:text-[var(--brand)] transition-colors">
+              {pillar.title}
+            </Link>
+          ) : (
+            <span>Pillar</span>
+          )}
+          <ChevronRight className="w-3 h-3 text-[var(--text-dim)]" />
+          <span className="font-semibold text-[var(--navy)] truncate max-w-[280px] sm:max-w-md">
+            {solution.title}
+          </span>
+        </nav>
+
+        <SoundToggle />
+      </div>
 
       {/* 2. Title Block + Two Top Buttons */}
       <div className="mb-8 flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
@@ -114,6 +121,7 @@ export const SolutionDetailClient: React.FC<SolutionDetailProps> = ({
         <div className="flex flex-wrap sm:flex-nowrap items-center gap-3 shrink-0">
           <Link
             href={`/solution/${solution.slug}/demo`}
+            onClick={() => sound.click()}
             onMouseEnter={() => setBotPose('beckon')}
             onMouseLeave={() => setBotPose('present')}
             className="w-full sm:w-auto"
@@ -127,7 +135,7 @@ export const SolutionDetailClient: React.FC<SolutionDetailProps> = ({
 
           <button
             type="button"
-            onClick={scrollToArchitecture}
+            onClick={openArchitecture}
             className="btn btn-secondary w-full sm:w-auto inline-flex items-center justify-center gap-2"
           >
             <Network className="w-4 h-4" />
@@ -159,7 +167,10 @@ export const SolutionDetailClient: React.FC<SolutionDetailProps> = ({
         <div className="flex flex-wrap items-center gap-4 w-full md:w-auto">
           <button
             type="button"
-            onClick={() => setIsContactOpen(true)}
+            onClick={() => {
+              sound.click();
+              setIsContactOpen(true);
+            }}
             className="btn btn-secondary flex-1 sm:flex-initial inline-flex items-center justify-center gap-2"
           >
             <Mail className="w-4 h-4" />
@@ -168,6 +179,7 @@ export const SolutionDetailClient: React.FC<SolutionDetailProps> = ({
 
           <Link
             href={`/solution/${solution.slug}/demo`}
+            onClick={() => sound.click()}
             onMouseEnter={() => setBotPose('beckon')}
             onMouseLeave={() => setBotPose('present')}
             className="flex-1 sm:flex-initial"
@@ -199,6 +211,14 @@ export const SolutionDetailClient: React.FC<SolutionDetailProps> = ({
           </div>
         </div>
       </div>
+
+      {/* Architecture Blueprint Modal */}
+      <ArchitectureDialog
+        isOpen={isArchOpen}
+        onClose={() => setIsArchOpen(false)}
+        solutionTitle={solution.title}
+        sapComponents={appData?.sapComponents}
+      />
 
       {/* Contact Dialog Modal */}
       <ContactDialog

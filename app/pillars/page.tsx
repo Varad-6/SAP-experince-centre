@@ -6,6 +6,8 @@ import pillarsData from '@/content/pillars.json';
 import solutionsData from '@/content/solutions.json';
 import { BotSprite } from '@/components/BotSprite';
 import { BotBubble } from '@/components/BotBubble';
+import { SoundToggle } from '@/components/SoundToggle';
+import { sound } from '@/lib/sound';
 import { ArrowRight, Layers, Box, Cpu, Zap, BarChart3, ShieldCheck } from 'lucide-react';
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -22,17 +24,20 @@ export default function PillarsHubPage() {
   return (
     <div className="min-h-[calc(100vh-56px)] bg-[var(--bg)] text-[var(--text)] px-6 sm:px-8 py-10 sm:py-14 max-w-[1200px] mx-auto relative pb-32">
       {/* Header */}
-      <div className="max-w-2xl mb-10 sm:mb-12">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--brand-50)] text-[var(--brand)] text-xs font-semibold mb-3">
-          <ShieldCheck className="w-3.5 h-3.5" />
-          <span>ENTERPRISE ARCHITECTURE HUBS</span>
+      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 mb-10 sm:mb-12">
+        <div className="max-w-2xl">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--brand-50)] text-[var(--brand)] text-xs font-semibold mb-3">
+            <ShieldCheck className="w-3.5 h-3.5" />
+            <span>ENTERPRISE ARCHITECTURE HUBS</span>
+          </div>
+          <h1 className="text-h1 font-bold text-[var(--navy)] tracking-tight mb-3">
+            The 5 Pillars of Enterprise SAP Excellence
+          </h1>
+          <p className="text-base text-[var(--text-dim)] leading-relaxed">
+            Select an architectural pillar to inspect our 28 production solutions, custom BTP applications, agentic AI copilots, and real-time executive steering.
+          </p>
         </div>
-        <h1 className="text-h1 font-bold text-[var(--navy)] tracking-tight mb-3">
-          The 5 Pillars of Enterprise SAP Excellence
-        </h1>
-        <p className="text-base text-[var(--text-dim)] leading-relaxed">
-          Select an architectural pillar to inspect our 28 production solutions, custom BTP applications, agentic AI copilots, and real-time executive steering.
-        </p>
+        <SoundToggle />
       </div>
 
       {/* 5 Cards in a 6-Column Responsive Grid */}

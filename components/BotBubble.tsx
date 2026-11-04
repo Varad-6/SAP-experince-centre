@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { X } from 'lucide-react';
+import { sound } from '@/lib/sound';
 
 export interface BotBubbleProps {
   text: string;
@@ -82,6 +83,7 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
     const msPerChar = 22;
     const totalChars = text.length;
 
+    let lastSoundChar = 0;
     const step = (timestamp: number) => {
       if (startTimeRef.current === null) {
         startTimeRef.current = timestamp;
@@ -89,6 +91,11 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
       const elapsed = timestamp - startTimeRef.current;
       const count = Math.min(totalChars, Math.floor(elapsed / msPerChar));
       setDisplayedText(text.slice(0, count));
+
+      if (count > lastSoundChar && count % 2 === 0) {
+        lastSoundChar = count;
+        sound.typeChirp();
+      }
 
       if (count < totalChars) {
         animRef.current = requestAnimationFrame(step);

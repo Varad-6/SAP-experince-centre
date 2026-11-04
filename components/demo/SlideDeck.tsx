@@ -5,12 +5,12 @@ import Link from 'next/link';
 import { AppContentSchema } from '@/lib/schema';
 import { z } from 'zod';
 import { BotSprite } from '@/components/BotSprite';
+import { BotBubble } from '@/components/BotBubble';
 import { ActivePoseName, resolvePose } from '@/lib/poses';
 import { ContactDialog } from '@/components/ContactDialog';
-import { useTypewriter } from '@/lib/useTypewriter';
+import { SoundToggle } from '@/components/SoundToggle';
+import { sound } from '@/lib/sound';
 import {
-  ArrowLeft,
-  ArrowRight,
   ChevronLeft,
   ChevronRight,
   Mail,
@@ -66,30 +66,40 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
     isClosing ? 'thanks' : currentCard?.botPose || DEFAULT_CARD_POSES[slideIndex] || 'present'
   );
 
-  const { shown: typedDialogue, finish: finishTyping } = useTypewriter(currentDialogue, {
-    speed: 22,
-  });
-
   const goNext = useCallback(() => {
     if (slideIndex < totalCards) {
-      setSlideIndex((prev) => prev + 1);
+      sound.slideNext();
+      const nextIdx = slideIndex + 1;
+      setSlideIndex(nextIdx);
+      if (nextIdx >= totalCards) {
+        sound.celebrate();
+      }
     }
   }, [slideIndex, totalCards]);
 
   const goPrev = useCallback(() => {
     if (slideIndex > 0) {
+      sound.slidePrev();
       setSlideIndex((prev) => prev - 1);
     }
   }, [slideIndex]);
 
+  const goToSlide = (idx: number) => {
+    sound.click();
+    setSlideIndex(idx);
+    if (idx >= totalCards) {
+      sound.celebrate();
+    }
+  };
+
   const restart = useCallback(() => {
+    sound.click();
     setSlideIndex(0);
   }, []);
 
   // Keyboard navigation: ArrowRight / Space advances, ArrowLeft goes back
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Don't intercept if an input/textarea is focused or modal is open
       if (isContactOpen) return;
       if (['INPUT', 'TEXTAREA'].includes((e.target as HTMLElement)?.tagName)) return;
 
@@ -110,17 +120,17 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
   const renderCardContent = () => {
     if (isClosing) {
       return (
-        <div className="py-6 sm:py-8 text-center space-y-6">
-          <div className="w-16 h-16 rounded-full bg-[#E6F7ED] border border-[#A6E9BD] flex items-center justify-center mx-auto text-[var(--ok)] shadow-sm">
-            <CheckCircle2 className="w-8 h-8" />
+        <div className="py-4 sm:py-6 text-center space-y-4">
+          <div className="w-14 h-14 rounded-full bg-[#E6F7ED] border border-[#A6E9BD] flex items-center justify-center mx-auto text-[var(--ok)] shadow-sm">
+            <CheckCircle2 className="w-7 h-7" />
           </div>
 
-          <div className="max-w-xl mx-auto space-y-2">
+          <div className="max-w-lg mx-auto space-y-2">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--brand-50)] text-[var(--brand-600)] text-xs font-semibold">
               <ShieldCheck className="w-3.5 h-3.5" />
               <span>Clean Core Walkthrough Complete</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--navy)] tracking-tight">
+            <h2 className="text-xl sm:text-2xl font-bold text-[var(--navy)] tracking-tight">
               Thank You for Exploring {appData.title.split('—')[0]}
             </h2>
             <p className="text-xs sm:text-sm text-[var(--text-dim)] leading-relaxed">
@@ -130,10 +140,13 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
           </div>
 
           {/* Action Row */}
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
             <button
               type="button"
-              onClick={() => setIsContactOpen(true)}
+              onClick={() => {
+                sound.click();
+                setIsContactOpen(true);
+              }}
               className="btn btn-primary inline-flex items-center gap-2"
             >
               <Mail className="w-4 h-4" />
@@ -145,6 +158,7 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
                 href={appData.closing.feedbackUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => sound.click()}
                 className="btn btn-secondary inline-flex items-center gap-2"
               >
                 <span>Share feedback</span>
@@ -155,6 +169,7 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
                 href={`mailto:contact@abhiyantaindia.com?subject=${encodeURIComponent(
                   `[Feedback] ${appData.title}`
                 )}`}
+                onClick={() => sound.click()}
                 className="btn btn-secondary inline-flex items-center gap-2"
               >
                 <span>Share feedback</span>
@@ -168,7 +183,7 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
               className="btn btn-secondary inline-flex items-center gap-2"
             >
               <RotateCcw className="w-3.5 h-3.5" />
-              <span>Restart Walkthrough</span>
+              <span>Restart</span>
             </button>
           </div>
         </div>
@@ -202,21 +217,26 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
   const progressPercent = isClosing ? 100 : Math.round(((slideIndex + 1) / totalCards) * 100);
 
   return (
-    <div className="min-h-[calc(100vh-56px)] bg-[var(--bg)] text-[var(--text)] px-4 sm:px-6 py-6 sm:py-8 max-w-[1040px] mx-auto flex flex-col justify-between">
-      {/* 1. Header Bar */}
-      <div className="mb-6">
-        <div className="flex items-center justify-between gap-4 mb-3">
+    <div className="h-[calc(100vh-56px)] bg-[var(--bg)] text-[var(--text)] px-4 sm:px-6 py-4 max-w-[1400px] mx-auto flex flex-col justify-between overflow-hidden">
+      {/* 1. Top Header Bar */}
+      <div className="shrink-0 mb-3">
+        <div className="flex items-center justify-between gap-4 mb-2">
           <Link
             href={`/solution/${slug}`}
+            onClick={() => sound.click()}
             className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--text-dim)] hover:text-[var(--brand)] transition-colors truncate max-w-[260px] sm:max-w-md"
           >
             <ChevronLeft className="w-4 h-4 shrink-0" />
             <span className="truncate">{appData.title}</span>
           </Link>
 
-          {/* Slide Indicator */}
-          <div className="shrink-0 text-xs font-semibold text-[var(--navy)]">
-            {isClosing ? 'Closing Slide' : `Slide ${slideIndex + 1} / ${totalCards}`}
+          <div className="flex items-center gap-3">
+            <SoundToggle />
+
+            {/* Slide Indicator Badge */}
+            <div className="shrink-0 px-2.5 py-1 rounded-md bg-[var(--surface)] border border-[var(--border)] text-xs font-semibold text-[var(--navy)] shadow-xs">
+              {isClosing ? 'Closing Summary' : `Slide ${slideIndex + 1} of ${totalCards}`}
+            </div>
           </div>
         </div>
 
@@ -229,113 +249,110 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
         </div>
       </div>
 
-      {/* 2. Main 16:9 Stage Card (Max 1040px wide, white surface, 1px border) */}
-      <div className="card w-full p-6 sm:p-10 min-h-[420px] sm:min-h-[480px] flex flex-col justify-between relative bg-[var(--surface)] border border-[var(--border)] shadow-[var(--shadow)] mb-6">
-        {/* Card Title Header */}
-        {!isClosing && currentCard && (
-          <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-[var(--border)]">
-            <div>
-              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--brand)] block mb-0.5">
-                {currentCard.type.toUpperCase()}
-              </span>
-              <h3 className="text-lg sm:text-xl font-bold text-[var(--navy)] leading-tight">
-                {currentCard.title}
-              </h3>
+      {/* 2. Main Presentation Cockpit (2 Columns: Left Slide, Right Bot Presenter) */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 flex-1 min-h-0 items-stretch">
+        {/* Left Column (8 cols): Slide Card with Integrated Navigation */}
+        <div className="lg:col-span-8 flex flex-col justify-between card p-5 sm:p-6 bg-[var(--surface)] border border-[var(--border)] shadow-[var(--shadow)] overflow-hidden">
+          {/* Card Title Header */}
+          {!isClosing && currentCard && (
+            <div className="shrink-0 flex items-center justify-between gap-4 mb-3 pb-2.5 border-b border-[var(--border)]">
+              <div>
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--brand)] block">
+                  {currentCard.type.toUpperCase()}
+                </span>
+                <h3 className="text-base sm:text-lg font-bold text-[var(--navy)] leading-tight">
+                  {currentCard.title}
+                </h3>
+              </div>
+              <span className="chip">Clean Core</span>
             </div>
-            <span className="chip">
-              Clean Core
-            </span>
+          )}
+
+          {/* Dynamic Card Content (Scrollable internally if screen is very short) */}
+          <div className="flex-1 flex flex-col justify-center overflow-y-auto pr-1 my-1">
+            {renderCardContent()}
           </div>
-        )}
 
-        {/* Card Content Shell */}
-        <div className="flex-1 flex flex-col justify-center">{renderCardContent()}</div>
-
-        {/* Footer Navigation Controls */}
-        <div className="mt-8 pt-4 border-t border-[var(--border)] flex items-center justify-between gap-4">
-          <button
-            type="button"
-            onClick={goPrev}
-            disabled={slideIndex === 0}
-            className={`btn btn-secondary inline-flex items-center gap-1.5 text-xs ${
-              slideIndex === 0 ? 'opacity-40 cursor-not-allowed' : ''
-            }`}
-          >
-            <ChevronLeft className="w-4 h-4" />
-            <span>Previous</span>
-          </button>
-
-          {/* Quick Dots Jump Indicator */}
-          <div className="hidden sm:flex items-center gap-1.5">
-            {Array.from({ length: totalCards }).map((_, i) => (
-              <button
-                key={i}
-                type="button"
-                onClick={() => setSlideIndex(i)}
-                className={`h-2 rounded-full transition-all cursor-pointer ${
-                  slideIndex === i
-                    ? 'w-6 bg-[var(--brand)]'
-                    : slideIndex > i
-                    ? 'w-2 bg-[var(--navy)] opacity-40 hover:opacity-80'
-                    : 'w-2 bg-[var(--border)] hover:bg-[var(--text-dim)]'
-                }`}
-                title={`Jump to Slide ${i + 1}`}
-                aria-label={`Jump to Slide ${i + 1}`}
-              />
-            ))}
-            {/* Closing dot */}
+          {/* Bottom Integrated Navigation Row */}
+          <div className="shrink-0 flex items-center justify-between pt-3 border-t border-[var(--border)] mt-2">
             <button
               type="button"
-              onClick={() => setSlideIndex(totalCards)}
-              className={`h-2 rounded-full transition-all cursor-pointer ${
-                isClosing
-                  ? 'w-6 bg-[var(--ok)]'
-                  : 'w-2 bg-[var(--border)] hover:bg-[var(--text-dim)]'
+              onClick={goPrev}
+              disabled={slideIndex === 0}
+              className={`btn btn-secondary h-9 px-3.5 text-xs inline-flex items-center gap-1.5 ${
+                slideIndex === 0 ? 'opacity-40 cursor-not-allowed' : ''
               }`}
-              title="Jump to Closing Slide"
-              aria-label="Jump to Closing Slide"
+            >
+              <ChevronLeft className="w-3.5 h-3.5" />
+              <span>Previous</span>
+            </button>
+
+            {/* Slide Navigation Dots / Pills */}
+            <div className="hidden sm:flex items-center gap-1.5">
+              {Array.from({ length: totalCards }).map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => goToSlide(i)}
+                  aria-label={`Jump to slide ${i + 1}`}
+                  className={`w-7 h-6 rounded-md text-[11px] font-bold font-mono transition-all ${
+                    slideIndex === i
+                      ? 'bg-[var(--brand)] text-white shadow-xs'
+                      : 'bg-[var(--surface-2)] text-[var(--text-dim)] hover:bg-[var(--brand-50)] hover:text-[var(--brand)]'
+                  }`}
+                >
+                  {i + 1}
+                </button>
+              ))}
+              <button
+                type="button"
+                onClick={() => goToSlide(totalCards)}
+                aria-label="Jump to closing slide"
+                className={`px-2 h-6 rounded-md text-[10px] font-bold transition-all ${
+                  isClosing
+                    ? 'bg-[var(--brand)] text-white shadow-xs'
+                    : 'bg-[var(--surface-2)] text-[var(--text-dim)] hover:bg-[var(--brand-50)] hover:text-[var(--brand)]'
+                }`}
+              >
+                End
+              </button>
+            </div>
+
+            <button
+              type="button"
+              onClick={goNext}
+              className="btn btn-primary h-9 px-4 text-xs inline-flex items-center gap-1.5"
+            >
+              <span>{slideIndex === totalCards - 1 ? 'Finish & Summary' : isClosing ? 'Done' : 'Next'}</span>
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        </div>
+
+        {/* Right Column (4 cols): Lead Architect Presenter Column */}
+        <div className="lg:col-span-4 flex flex-col justify-between items-center p-5 card bg-gradient-to-b from-[var(--surface)] to-[var(--surface-2)] border border-[var(--border)] shadow-[var(--shadow)] overflow-hidden">
+          {/* Top: Thinking Speech Bubble */}
+          <div className="w-full flex-1 flex flex-col justify-center items-center">
+            <BotBubble
+              text={currentDialogue}
+              speakerName="The Lead Architect"
+              placement="top"
+              showTail={true}
+              className="w-full max-w-sm mb-2"
             />
           </div>
 
-          <button
-            type="button"
-            onClick={goNext}
-            disabled={isClosing}
-            className={`btn btn-primary inline-flex items-center gap-1.5 text-xs ${
-              isClosing ? 'opacity-40 cursor-not-allowed' : ''
-            }`}
-          >
-            <span>{slideIndex === totalCards - 1 ? 'Finish & Summary' : 'Next'}</span>
-            <ChevronRight className="w-4 h-4" />
-          </button>
-        </div>
-      </div>
-
-      {/* 3. Bot Strip Below Stage (140px bot sprite + typewriter speech bubble) */}
-      <div className="p-4 sm:p-5 rounded-2xl bg-[var(--surface)] border border-[var(--border)] shadow-[var(--shadow)] flex items-center gap-4 sm:gap-6">
-        <div className="shrink-0 flex flex-col items-center">
-          <BotSprite
-            pose={currentPose}
-            heightPx={140}
-            alt="Lead Architect Walkthrough Guide"
-          />
-          <div className="w-20 h-2 bg-black/10 rounded-full blur-[1px] mt-[-4px]" />
-        </div>
-
-        <div
-          className="flex-1 cursor-pointer select-none"
-          onClick={finishTyping}
-          title="Click to reveal full text"
-        >
-          <div className="text-xs font-bold text-[var(--brand)] mb-1 flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>The Lead Architect</span>
+          {/* Bottom: Mascot Sprite Standing on Pedestal */}
+          <div className="shrink-0 flex flex-col items-center justify-end relative">
+            <BotSprite
+              pose={currentPose}
+              heightPx={280}
+              alt="Lead Architect Explaining"
+              priority={true}
+            />
+            {/* Soft Pedestal Shadow */}
+            <div className="w-28 h-3 bg-black/10 rounded-full blur-[2px] mt-[-6px]" />
           </div>
-          <p className="text-xs sm:text-sm text-[var(--text)] leading-relaxed min-h-[40px]">
-            {isClosing
-              ? 'Thank you for reviewing our enterprise solution architecture! Reach out to schedule an executive demonstration or test-drive live in our SAP BTP tenant.'
-              : typedDialogue || currentDialogue}
-          </p>
         </div>
       </div>
 
