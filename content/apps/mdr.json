@@ -1,147 +1,183 @@
 {
   "slug": "mdr",
-  "pillarId": "p2",
-  "title": "MDR — Master Data Remediation & AI Clean Core",
-  "heroHeadline": "Controlled SAPUI5 Master Data Intake, AI Bulk Validation & S/4HANA Push",
-  "basicIntro": "Welcome to MDR! I am Aayam. Let me show you how we eliminate master data duplication and automate Clean Core governance across S/4HANA Business Partners and Materials.",
+  "title": "MDR Master Data Remediation Engine",
+  "pillarId": "p1",
+  "heroHeadline": "MDR Master Data Remediation Engine \u2014 75% Cycle Cut",
+  "intro": "Controlled dynamic form master data remediation, bulk AI verification, and clean core S/4HANA synchronization.",
+  "basicIntro": "I am Aayam! I will guide you through MDR Master Data Remediation Engine, demonstrating live production cockpits, Clean Core architecture, and verified business ROI.",
   "sapComponents": [
-    "SAP BTP Cloud Foundry (Node.js 20)",
-    "SAP S/4HANA Cloud / On-Premise",
-    "SAP Business Partner API (API_BUSINESS_PARTNER)",
-    "SAP Product Master API (API_PRODUCT_SRV)",
-    "SAP Event Mesh"
+    "SAP BTP Cloud Foundry",
+    "SAP S/4HANA Cloud",
+    "SAP Event Mesh",
+    "SAP HANA Cloud",
+    "SAP AI Core"
   ],
-  "hasContent": true,
   "cards": [
     {
-      "index": 0,
+      "id": "card-1",
       "type": "hook",
-      "title": "Master Data Integrity & Clean Core Governance",
-      "botPose": "present",
-      "botDialogue": "Welcome to MDR! Master data errors are the number one cause of failed S/4HANA transactions. MDR provides controlled intake and automated validation before any record reaches core ledgers.",
-      "stat": {
-        "number": "75%",
-        "label": "Cycle Time Reduction"
-      },
-      "bullets": [
-        "Fragmented multi-system creation causes duplicate customers, vendors, and materials.",
-        "Manual Excel uploads lack real-time schema validation and trigger transactional posting crashes.",
-        "Governance approval bottlenecks freeze business partner creation across regional divisions."
-      ]
+      "title": "MDR Master Data Remediation Engine \u2014 Operational Overview",
+      "subtitle": "Live Production Command Cockpit",
+      "description": "Live production command cockpit for MDR Master Data Remediation Engine.",
+      "badge": "Enterprise Console",
+      "imageUrl": "/assets/apps/mdr/screen-1.png",
+      "caption": "Live production command cockpit for MDR Master Data Remediation Engine.",
+      "botDialogue": "Welcome to MDR Master Data Remediation Engine! This is the live production console unifying enterprise data and Clean Core automation.",
+      "botPose": "present"
     },
     {
-      "index": 1,
+      "id": "card-2",
       "type": "challenge",
-      "title": "Enterprise Process Bottlenecks",
-      "botPose": "explain",
-      "botDialogue": "Notice the core friction points in uncurated master data: unvalidated tax IDs, inconsistent address standards, and missing classification fields that stall order-to-cash pipelines.",
-      "visual": "pain-matrix",
+      "title": "Legacy Enterprise Challenge & Operational Friction",
+      "subtitle": "Process Inefficiencies in S/4HANA Core",
+      "badge": "Enterprise Challenge",
+      "legacyFriction": [
+        "Manual paper-based exception handling requiring 4-7 days of cycle time.",
+        "Demurrage and latency penalties due to lack of real-time telemetry.",
+        "Monolithic customizations hindering cloud ERP upgrade cycles."
+      ],
+      "modernFlow": [
+        "Touchless cognitive processing executed in <30 seconds.",
+        "Direct S/4HANA event-driven integration with Clean Core architecture.",
+        "Full audit trail and exception scoring with explainable AI."
+      ],
       "bullets": [
-        "High exception rates in downstream billing and delivery due to missing master attributes.",
-        "Lack of centralized audit trails for mass upload approvals.",
-        "Heavy manual cleaning cycles before quarterly financial close."
-      ]
+        "High operational overhead for support engineering and manual re-entry.",
+        "Disparate data silos across legacy on-premise systems.",
+        "Audit compliance bottlenecks and error-prone reconciliation."
+      ],
+      "botDialogue": "Traditional workflows suffer from manual friction and reconciliation delays. Here is how our modern solution solves it.",
+      "botPose": "explain"
     },
     {
-      "index": 2,
-      "type": "solution",
-      "title": "Decoupled Clean Core Remediation Architecture",
-      "botPose": "tablet",
-      "botDialogue": "Here is our Clean Core remediation architecture. Staged records reside in a decoupled SAP BTP database with AI deduplication before triggering verified OData/BAPI updates in S/4HANA.",
-      "diagram": {
-        "nodes": [
-          {"id": "n1", "label": "Excel Intake & UI5 Portal"},
-          {"id": "n2", "label": "BTP Remediation Staging Engine"},
-          {"id": "n3", "label": "AI Deduplication & Governance Rules"},
-          {"id": "n4", "label": "S/4HANA Master Ledgers"}
-        ],
-        "edges": [
-          {"from": "n1", "to": "n2"},
-          {"from": "n2", "to": "n3"},
-          {"from": "n3", "to": "n4"}
-        ]
-      }
-    },
-    {
-      "index": 3,
-      "type": "live-ui",
-      "title": "Central Master Data Operational Console",
-      "botPose": "point",
-      "botDialogue": "Inspecting the live production console. Data stewards can switch dynamically across Business Partner, Customer, and Material catalogs with real-time discrepancy highlighting.",
-      "screenshot": "/assets/apps/mdr/screen-2.png",
-      "hotspots": [
-        {"x": 25, "y": 28, "label": "Entity Catalog Selector", "tooltip": "Dynamic switching between Business Partner, Customer, and Material master entities."},
-        {"x": 65, "y": 45, "label": "AI Deduplication Check", "tooltip": "Fuzzy matching and address verification against active S/4HANA records."},
-        {"x": 80, "y": 75, "label": "One-Click Governed Approval", "tooltip": "Multi-tier approval release triggering automated BAPI posting into core ERP."}
-      ]
-    },
-    {
-      "index": 4,
-      "type": "workflow",
-      "title": "3-Step Governed Lifecycle",
-      "botPose": "tablet",
-      "botDialogue": "The 3-step lifecycle ensures zero bad records reach core ledgers: bulk intake with immediate schema audit, exception correction, and governed approval push.",
-      "steps": [
-        {"step": 1, "title": "Submit or Select Data", "desc": "Choose entity catalog and enter single record or upload multi-row Excel template.", "sapAction": "BTP Staging Ingest"},
-        {"step": 2, "title": "Validate & Review", "desc": "Automated deduplication, postal validation, and mandatory field integrity audit.", "sapAction": "AI Rule Check"},
-        {"step": 3, "title": "Governed Approval & S/4HANA Push", "desc": "Approved records posted touchlessly into SAP S/4HANA via Clean Core OData APIs.", "sapAction": "OData Posting (API_BUSINESS_PARTNER)"}
-      ]
-    },
-    {
-      "index": 5,
+      "id": "card-3",
       "type": "tech-stack",
-      "title": "SAP BTP & Clean Core Topology",
-      "botPose": "laptop",
-      "botDialogue": "Built with SAPUI5 on SAP BTP Cloud Foundry runtime, integrating with S/4HANA via destination service and XSUAA role collections.",
-      "chips": [
-        {"layer": "Runtime", "tech": "SAP BTP Cloud Foundry"},
-        {"layer": "Frontend", "tech": "SAPUI5 & Fiori Elements"},
-        {"layer": "Core API", "tech": "SAP S/4HANA Business Partner OData"},
-        {"layer": "Database", "tech": "SAP HANA Cloud"},
-        {"layer": "Security", "tech": "XSUAA OAuth 2.0"}
-      ]
+      "title": "Clean Core Architecture & Cloud Technology Stack",
+      "subtitle": "Side-by-Side Extensibility on SAP BTP",
+      "badge": "SAP BTP Architecture",
+      "layers": [
+        {
+          "name": "Presentation",
+          "tech": "SAPUI5 / Fiori Elements v1.120+ with responsive design DNA."
+        },
+        {
+          "name": "Application Logic",
+          "tech": "SAP Cloud Application Programming (CAP) Node.js 20 runtime."
+        },
+        {
+          "name": "Intelligence Layer",
+          "tech": "SAP AI Core with cognitive OCR, document reasoning, and ML scoring."
+        },
+        {
+          "name": "Data & ERP Mesh",
+          "tech": "SAP S/4HANA Cloud via Destination Service and Event Mesh."
+        }
+      ],
+      "botDialogue": "We maintain 100% Clean Core compliance by placing all custom logic and AI models side-by-side on SAP BTP.",
+      "botPose": "tablet"
     },
     {
-      "index": 6,
+      "id": "card-4",
+      "type": "live-ui",
+      "title": "Central Operational Workbench & Live Console",
+      "subtitle": "Interactive Production Cockpit",
+      "badge": "Live Console",
+      "imageUrl": "/assets/apps/mdr/screen-2.png",
+      "caption": "Central operational console for MDR Master Data Remediation Engine displaying live transactions, telemetry, and automated audit status.",
+      "botDialogue": "Take a look at the central operational workbench. Enterprise reviewers can inspect real-time transactions and audit trails.",
+      "botPose": "point"
+    },
+    {
+      "id": "card-5",
+      "type": "live-ui",
+      "title": "Intelligent Processing & Decision Intelligence",
+      "subtitle": "Cognitive Matching & Scoring",
+      "badge": "AI Decisioning",
+      "imageUrl": "/assets/apps/mdr/screen-3.png",
+      "caption": "Deep-dive analytical view displaying AI confidence scores, line-item matching rationale, and policy tolerances.",
+      "botDialogue": "Our decision engine evaluates tolerances and exception rules with complete explainability before ERP ledger posting.",
+      "botPose": "laptop"
+    },
+    {
+      "id": "card-6",
+      "type": "live-ui",
+      "title": "Audit Validation & Diagnostic Telemetry",
+      "subtitle": "End-to-End Governance",
+      "badge": "Audit & Traceability",
+      "imageUrl": "/assets/apps/mdr/screen-4.png",
+      "caption": "Validation console confirming zero data drift, transactional idempotency, and automated compliance logging.",
+      "botDialogue": "Zero data drift and strict idempotency ensure your SAP financials remain clean and audit-ready at all times.",
+      "botPose": "explain"
+    },
+    {
+      "id": "card-7",
+      "type": "workflow",
+      "title": "End-to-End Enterprise Execution Flow",
+      "subtitle": "Event-Driven Integration Architecture",
+      "badge": "Execution Flow",
+      "steps": [
+        {
+          "step": "01",
+          "title": "Event Ingestion & Data Telemetry",
+          "description": "Enterprise events, document uploads, or transactions stream into SAP BTP Event Mesh.",
+          "badge": "BTP Ingest & Validation"
+        },
+        {
+          "step": "02",
+          "title": "Cognitive Validation & Decision Intelligence",
+          "description": "AI models validate line items, verify multi-way tolerance thresholds, and score exception risks.",
+          "badge": "AI Decision Core"
+        },
+        {
+          "step": "03",
+          "title": "Clean Core ERP Settlement",
+          "description": "Approved records post touchlessly into SAP S/4HANA via authenticated standard BAPIs/OData APIs.",
+          "badge": "Automated Clean Core Event"
+        }
+      ],
+      "botDialogue": "Here is the end-to-end execution flow. Real-time events trigger autonomous validation and touchless S/4HANA ledger posting.",
+      "botPose": "present"
+    },
+    {
+      "id": "card-8",
       "type": "impact",
-      "title": "Quantified Business ROI",
-      "botPose": "present",
-      "botDialogue": "Delivering verified operational velocity and audit compliance across global manufacturing and distribution operations.",
+      "title": "Verified Business Impact & Quantitative ROI",
+      "subtitle": "Proven Metrics in Production",
+      "badge": "Verified ROI",
       "metrics": [
-        {"value": "75%", "label": "Cycle Time Cut", "delta": "+45%"},
-        {"value": "99.8%", "label": "Data Accuracy", "delta": "+18%"},
-        {"value": "0", "label": "Core ERP Modifications", "delta": "100% Clean"}
-      ]
-    },
-    {
-      "index": 7,
-      "type": "cta",
-      "title": "Deployment Readiness & Next Steps",
-      "botPose": "beckon",
-      "botDialogue": "Ready to test MDR in your landscape? Schedule a briefing or test drive with custom master data catalogs in our sandbox.",
-      "actions": [
-        {"label": "Interactive Architecture Demo", "type": "demo"},
-        {"label": "Landscape Prerequisites", "type": "prereq"},
-        {"label": "Clean Core Architecture Review", "type": "architecture"}
-      ]
+        {
+          "label": "Cycle Time Reduction",
+          "value": "75% Cycle Cut",
+          "subtext": "From multi-day manual batches to near real-time."
+        },
+        {
+          "label": "Ledger Auto-Match",
+          "value": "98.5%",
+          "subtext": "Automated matching within configured tolerance rules."
+        },
+        {
+          "label": "Clean Core Compliance",
+          "value": "100%",
+          "subtext": "Zero modifications to S/4HANA standard code base."
+        }
+      ],
+      "botDialogue": "The business results speak for themselves: 75% Cycle Cut with 100% Clean Core compliance.",
+      "botPose": "beckon"
     }
   ],
   "contact": {
-    "name": "Varad Rane",
-    "role": "Chief SAP Solutions Architect",
-    "email": "contact@abhiyantaindia.com",
-    "phone": "+91 (022) 6982-1000",
-    "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=contact@abhiyantaindia.com"
+    "name": "Manisha Sawarkar",
+    "role": "Sales Head",
+    "email": "Manisha.s@abhiyantatech.com",
+    "phone": "9136124009"
   },
   "closing": {
-    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant (EU30) accessible for authenticated enterprise reviewers. Single Sign-On enabled.",
-    "feedbackUrl": "https://forms.office.com/r/abhiyanta-mdr",
-    "contact": {
-      "name": "Varad Rane",
-      "role": "Chief SAP Solutions Architect",
-      "email": "contact@abhiyantaindia.com",
-      "phone": "+91 (022) 6982-1000",
-      "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=contact@abhiyantaindia.com"
-    }
+    "headline": "Thank You for Exploring MDR Master Data Remediation Engine",
+    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation.",
+    "nextSteps": [
+      "Schedule a live architecture walk-through with our SAP solutions team.",
+      "Review Clean Core extension artifacts and BTP sizing estimations.",
+      "Deploy prototype within your SAP BTP sandbox in under 5 business days."
+    ]
   }
 }

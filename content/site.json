@@ -1,11 +1,11 @@
 {
   "brand": "Abhiyanta India Solutions",
-  "subBrand": "Aayam — AIS Experience Centre",
+  "subBrand": "Aayam \u2014 AIS Experience Centre",
   "botName": "Aayam",
   "tagline": "Exploring new dimensions of technology",
   "sub": "Explore production solutions built across SAP BTP, Clean Core extensibility, and modern enterprise intelligence with analytics.",
   "heroTitle": "Aayam",
-  "heroSubtitle": "AIS Experience Centre — Exploring new dimensions of technology",
+  "heroSubtitle": "AIS Experience Centre \u2014 Exploring new dimensions of technology",
   "introLines": [
     "Hello! Welcome to Abhiyanta India Solutions. I am Aayam, your Enterprise Architect. We build high-impact enterprise applications that modernize mission-critical operations.",
     "Here is how we leverage enterprise AI and SAP BTP: autonomous agents and decision engines integrated seamlessly with SAP S/4HANA Clean Core architecture.",
@@ -18,18 +18,42 @@
     "phone": "9136124009"
   },
   "stats": [
-    { "value": "28", "label": "Enterprise Solutions" },
-    { "value": "3", "label": "Architectural Pillars" },
-    { "value": "100%", "label": "Clean Core Compliant" },
-    { "value": "<30s", "label": "Reconciliation Cycle" }
+    {
+      "value": "13",
+      "label": "Enterprise Solutions"
+    },
+    {
+      "value": "3",
+      "label": "Architectural Pillars"
+    },
+    {
+      "value": "100%",
+      "label": "Clean Core Compliant"
+    },
+    {
+      "value": "<30s",
+      "label": "Reconciliation Cycle"
+    }
   ],
   "footer": {
-    "copyright": "© 2026 Abhiyanta India Solutions (AIS). Confidential. All rights reserved.",
+    "copyright": "\u00a9 2026 Abhiyanta India Solutions (AIS). Confidential. All rights reserved.",
     "links": [
-      { "label": "Architecture", "href": "/architecture" },
-      { "label": "Prerequisites", "href": "/prerequisites" },
-      { "label": "Present Mode", "href": "/present" },
-      { "label": "Clean Core Standard", "href": "https://sap.com" }
+      {
+        "label": "Architecture",
+        "href": "/architecture"
+      },
+      {
+        "label": "Prerequisites",
+        "href": "/prerequisites"
+      },
+      {
+        "label": "Present Mode",
+        "href": "/present"
+      },
+      {
+        "label": "Clean Core Standard",
+        "href": "https://sap.com"
+      }
     ]
   }
 }

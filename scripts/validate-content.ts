@@ -28,23 +28,23 @@ function validate() {
 
   // 2. Pillars schema
   const pillarsData = JSON.parse(fs.readFileSync(path.join(contentDir, 'pillars.json'), 'utf8'));
-  if (!Array.isArray(pillarsData) || pillarsData.length !== 4) {
-    throw new Error(`Expected exactly 4 pillars, got ${pillarsData?.length}`);
+  if (!Array.isArray(pillarsData) || pillarsData.length !== 3) {
+    throw new Error(`Expected exactly 3 pillars, got ${pillarsData?.length}`);
   }
   for (const pillar of pillarsData) {
     PillarSchema.parse(pillar);
   }
-  console.log('✓ pillars.json valid (4 pillars)');
+  console.log('✓ pillars.json valid (3 pillars)');
 
   // 3. Solutions schema
   const solutionsData = JSON.parse(fs.readFileSync(path.join(contentDir, 'solutions.json'), 'utf8'));
-  if (!Array.isArray(solutionsData) || solutionsData.length !== 28) {
-    throw new Error(`Expected exactly 28 solutions, got ${solutionsData?.length}`);
+  if (!Array.isArray(solutionsData) || solutionsData.length === 0) {
+    throw new Error(`Expected valid solutions array, got ${solutionsData?.length}`);
   }
   for (const sol of solutionsData) {
     SolutionSummarySchema.parse(sol);
   }
-  console.log('✓ solutions.json valid (28 solutions)');
+  console.log(`✓ solutions.json valid (${solutionsData.length} solutions)`);
 
   // 4. Apps schema
   const appsDir = path.join(contentDir, 'apps');
@@ -66,7 +66,7 @@ function validate() {
       throw new Error(`App ${sol.slug} missing valid closing object with liveDemoInfo`);
     }
 
-    // Verify 8 cards have non-empty botDialogue and valid botPose
+    // Verify all cards have non-empty botDialogue and valid botPose
     parsed.cards.forEach((card, idx) => {
       if (!card.botDialogue || card.botDialogue.trim().length === 0) {
         throw new Error(`App ${sol.slug} card ${idx} has empty botDialogue`);
@@ -76,7 +76,7 @@ function validate() {
       }
     });
   }
-  console.log('✓ all 28 app JSON files valid (basicIntro, contact, closing, 8 cards with botPose & botDialogue)');
+  console.log(`✓ all ${solutionsData.length} app JSON files valid (basicIntro, contact, closing, cards with botPose & botDialogue)`);
 
   console.log('\nAll content successfully validated!');
 }

@@ -2,37 +2,28 @@
   {
     "id": "p1",
     "accent": "#0070F2",
-    "title": "Foundation & BTP Infrastructure",
-    "tagline": "SAP BTP vibe coding, connectivity reverse-proxy mesh and hybrid integration suites.",
-    "icon": "Layers",
-    "order": 1,
-    "solutionCount": 3
-  },
-  {
-    "id": "p2",
-    "accent": "#0084FF",
-    "title": "Custom BTP Applications",
-    "tagline": "Tailored cloud applications extending S/4HANA Order-to-Cash, logistics, and master data.",
+    "title": "SAP BTP Applications & Vibe Coding",
+    "tagline": "Clean Core Cloud Foundry solutions, autonomous agents, and rapid enterprise AI vibe coding.",
     "icon": "Box",
-    "order": 2,
+    "order": 1,
     "solutionCount": 7
   },
   {
-    "id": "p3",
-    "accent": "#00A6FF",
-    "title": "HanaMorph & Modernization",
-    "tagline": "1:1 visual lineage parity, calculation view modernization and automated data fabrics.",
+    "id": "p2",
+    "accent": "#8B5CF6",
+    "title": "Accelerators & Migration Modernization",
+    "tagline": "Automated SAP HANA Cloud and Datasphere calculation view transformation suite.",
     "icon": "Zap",
-    "order": 3,
-    "solutionCount": 6
+    "order": 2,
+    "solutionCount": 1
   },
   {
-    "id": "p4",
-    "accent": "#107E3E",
+    "id": "p3",
+    "accent": "#00C8F8",
     "title": "SAC Executive Dashboards",
-    "tagline": "Real-time boardroom decision steering, OEE manufacturing analytics and MRO reliability.",
+    "tagline": "Real-time boardroom decision steering, manufacturing yield cockpits, and MRO asset reliability.",
     "icon": "BarChart3",
-    "order": 4,
-    "solutionCount": 12
+    "order": 3,
+    "solutionCount": 5
   }
 ]

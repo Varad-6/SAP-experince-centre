@@ -1,0 +1,183 @@
+{
+  "slug": "o2c-receivables",
+  "title": "O2C Receivables Intelligence & DSO Steering",
+  "pillarId": "p3",
+  "heroHeadline": "O2C Receivables Intelligence & DSO Steering \u2014 14-Day DSO Reduction",
+  "intro": "Boardroom receivables command center monitoring credit exposure, collection effectiveness, and overdue aging buckets.",
+  "basicIntro": "I am Aayam! I will guide you through O2C Receivables Intelligence & DSO Steering, demonstrating live production cockpits, Clean Core architecture, and verified business ROI.",
+  "sapComponents": [
+    "SAP BTP Cloud Foundry",
+    "SAP S/4HANA Cloud",
+    "SAP Event Mesh",
+    "SAP HANA Cloud",
+    "SAP AI Core"
+  ],
+  "cards": [
+    {
+      "id": "card-1",
+      "type": "hook",
+      "title": "O2C Receivables Intelligence & DSO Steering \u2014 Operational Overview",
+      "subtitle": "Live Production Command Cockpit",
+      "description": "Live production command cockpit for O2C Receivables Intelligence & DSO Steering.",
+      "badge": "Enterprise Console",
+      "imageUrl": "/assets/apps/o2c-receivables/screen-1.png",
+      "caption": "Live production command cockpit for O2C Receivables Intelligence & DSO Steering.",
+      "botDialogue": "Welcome to O2C Receivables Intelligence & DSO Steering! This is the live production console unifying enterprise data and Clean Core automation.",
+      "botPose": "present"
+    },
+    {
+      "id": "card-2",
+      "type": "challenge",
+      "title": "Legacy Enterprise Challenge & Operational Friction",
+      "subtitle": "Process Inefficiencies in S/4HANA Core",
+      "badge": "Enterprise Challenge",
+      "legacyFriction": [
+        "Manual paper-based exception handling requiring 4-7 days of cycle time.",
+        "Demurrage and latency penalties due to lack of real-time telemetry.",
+        "Monolithic customizations hindering cloud ERP upgrade cycles."
+      ],
+      "modernFlow": [
+        "Touchless cognitive processing executed in <30 seconds.",
+        "Direct S/4HANA event-driven integration with Clean Core architecture.",
+        "Full audit trail and exception scoring with explainable AI."
+      ],
+      "bullets": [
+        "High operational overhead for support engineering and manual re-entry.",
+        "Disparate data silos across legacy on-premise systems.",
+        "Audit compliance bottlenecks and error-prone reconciliation."
+      ],
+      "botDialogue": "Traditional workflows suffer from manual friction and reconciliation delays. Here is how our modern solution solves it.",
+      "botPose": "explain"
+    },
+    {
+      "id": "card-3",
+      "type": "tech-stack",
+      "title": "Clean Core Architecture & Cloud Technology Stack",
+      "subtitle": "Side-by-Side Extensibility on SAP BTP",
+      "badge": "SAP BTP Architecture",
+      "layers": [
+        {
+          "name": "Presentation",
+          "tech": "SAPUI5 / Fiori Elements v1.120+ with responsive design DNA."
+        },
+        {
+          "name": "Application Logic",
+          "tech": "SAP Cloud Application Programming (CAP) Node.js 20 runtime."
+        },
+        {
+          "name": "Intelligence Layer",
+          "tech": "SAP AI Core with cognitive OCR, document reasoning, and ML scoring."
+        },
+        {
+          "name": "Data & ERP Mesh",
+          "tech": "SAP S/4HANA Cloud via Destination Service and Event Mesh."
+        }
+      ],
+      "botDialogue": "We maintain 100% Clean Core compliance by placing all custom logic and AI models side-by-side on SAP BTP.",
+      "botPose": "tablet"
+    },
+    {
+      "id": "card-4",
+      "type": "live-ui",
+      "title": "Central Operational Workbench & Live Console",
+      "subtitle": "Interactive Production Cockpit",
+      "badge": "Live Console",
+      "imageUrl": "/assets/apps/o2c-receivables/screen-2.png",
+      "caption": "Central operational console for O2C Receivables Intelligence & DSO Steering displaying live transactions, telemetry, and automated audit status.",
+      "botDialogue": "Take a look at the central operational workbench. Enterprise reviewers can inspect real-time transactions and audit trails.",
+      "botPose": "point"
+    },
+    {
+      "id": "card-5",
+      "type": "live-ui",
+      "title": "Intelligent Processing & Decision Intelligence",
+      "subtitle": "Cognitive Matching & Scoring",
+      "badge": "AI Decisioning",
+      "imageUrl": "/assets/apps/o2c-receivables/screen-3.png",
+      "caption": "Deep-dive analytical view displaying AI confidence scores, line-item matching rationale, and policy tolerances.",
+      "botDialogue": "Our decision engine evaluates tolerances and exception rules with complete explainability before ERP ledger posting.",
+      "botPose": "laptop"
+    },
+    {
+      "id": "card-6",
+      "type": "live-ui",
+      "title": "Audit Validation & Diagnostic Telemetry",
+      "subtitle": "End-to-End Governance",
+      "badge": "Audit & Traceability",
+      "imageUrl": "/assets/apps/o2c-receivables/screen-4.png",
+      "caption": "Validation console confirming zero data drift, transactional idempotency, and automated compliance logging.",
+      "botDialogue": "Zero data drift and strict idempotency ensure your SAP financials remain clean and audit-ready at all times.",
+      "botPose": "explain"
+    },
+    {
+      "id": "card-7",
+      "type": "workflow",
+      "title": "End-to-End Enterprise Execution Flow",
+      "subtitle": "Event-Driven Integration Architecture",
+      "badge": "Execution Flow",
+      "steps": [
+        {
+          "step": "01",
+          "title": "Event Ingestion & Data Telemetry",
+          "description": "Enterprise events, document uploads, or transactions stream into SAP BTP Event Mesh.",
+          "badge": "BTP Ingest & Validation"
+        },
+        {
+          "step": "02",
+          "title": "Cognitive Validation & Decision Intelligence",
+          "description": "AI models validate line items, verify multi-way tolerance thresholds, and score exception risks.",
+          "badge": "AI Decision Core"
+        },
+        {
+          "step": "03",
+          "title": "Clean Core ERP Settlement",
+          "description": "Approved records post touchlessly into SAP S/4HANA via authenticated standard BAPIs/OData APIs.",
+          "badge": "Automated Clean Core Event"
+        }
+      ],
+      "botDialogue": "Here is the end-to-end execution flow. Real-time events trigger autonomous validation and touchless S/4HANA ledger posting.",
+      "botPose": "present"
+    },
+    {
+      "id": "card-8",
+      "type": "impact",
+      "title": "Verified Business Impact & Quantitative ROI",
+      "subtitle": "Proven Metrics in Production",
+      "badge": "Verified ROI",
+      "metrics": [
+        {
+          "label": "Cycle Time Reduction",
+          "value": "14-Day DSO Reduction",
+          "subtext": "From multi-day manual batches to near real-time."
+        },
+        {
+          "label": "Ledger Auto-Match",
+          "value": "98.5%",
+          "subtext": "Automated matching within configured tolerance rules."
+        },
+        {
+          "label": "Clean Core Compliance",
+          "value": "100%",
+          "subtext": "Zero modifications to S/4HANA standard code base."
+        }
+      ],
+      "botDialogue": "The business results speak for themselves: 14-Day DSO Reduction with 100% Clean Core compliance.",
+      "botPose": "beckon"
+    }
+  ],
+  "contact": {
+    "name": "Manisha Sawarkar",
+    "role": "Sales Head",
+    "email": "Manisha.s@abhiyantatech.com",
+    "phone": "9136124009"
+  },
+  "closing": {
+    "headline": "Thank You for Exploring O2C Receivables Intelligence & DSO Steering",
+    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation.",
+    "nextSteps": [
+      "Schedule a live architecture walk-through with our SAP solutions team.",
+      "Review Clean Core extension artifacts and BTP sizing estimations.",
+      "Deploy prototype within your SAP BTP sandbox in under 5 business days."
+    ]
+  }
+}

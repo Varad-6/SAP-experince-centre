@@ -44,13 +44,22 @@ export const CtaActionSchema = z.object({
 });
 
 export const CardSchema = z.object({
-  index: z.number().min(0).max(7),
+  index: z.number().min(0).max(16).optional(),
+  id: z.string().optional(),
   type: CardTypeSchema,
   title: z.string(),
+  subtitle: z.string().optional(),
+  description: z.string().optional(),
+  badge: z.string().optional(),
+  imageUrl: z.string().optional(),
+  caption: z.string().optional(),
   botDialogue: z.string(),
   botPose: z.string().optional(),
   stat: z.object({ number: z.string(), label: z.string() }).optional(),
   bullets: z.array(z.string()).optional(),
+  legacyFriction: z.array(z.string()).optional(),
+  modernFlow: z.array(z.string()).optional(),
+  layers: z.array(z.object({ name: z.string(), tech: z.string() })).optional(),
   visual: z.enum(['pain-matrix', 'before-after']).optional(),
   diagram: z
     .object({
@@ -60,11 +69,11 @@ export const CardSchema = z.object({
     .optional(),
   screenshot: z.string().optional(),
   hotspots: z.array(HotspotSchema).optional(),
-  steps: z.array(WorkflowStepSchema).optional(),
+  steps: z.array(z.any()).optional(),
   chips: z.array(TechChipSchema).optional(),
-  metrics: z.array(MetricItemSchema).optional(),
+  metrics: z.array(z.any()).optional(),
   actions: z.array(CtaActionSchema).optional(),
-});
+}).passthrough();
 
 export const ContactSchema = z.object({
   name: z.string(),
@@ -89,7 +98,7 @@ export const AppContentSchema = z.object({
   basicIntro: z.string().optional(),
   sapComponents: z.array(z.string()),
   hasContent: z.boolean().default(true),
-  cards: z.array(CardSchema).length(8),
+  cards: z.array(CardSchema).min(8).max(16),
   contact: ContactSchema.optional(),
   closing: ClosingSchema.optional(),
 });

@@ -5,6 +5,28 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [6.1.0] — 2026-11-05 — 3-Pillar Restructure & Live Overview Slide 1 Ingestion
+
+### Summary
+Migrated the experience centre to **3 Core Architectural Pillars** based on the updated client assets from `C:\Users\Varad\Desktop\experince update`. Ingested 13 curated enterprise solutions, extracted all live UI screenshots, set Slide 1 as each solution's primary operational overview dashboard, and built an 11-slide prerequisite workshop for SAP BTP Vibe Coding.
+
+### Added & Updated
+- **3 Architectural Pillars (`content/pillars.json`)**:
+  - `p1`: **SAP BTP Applications & Vibe Coding** (7 solutions: Vibe Coding Prerequisite, PODZO, RECONLY, Product Cost Simulator, MDR, Invoice Decision Intelligence, ABAP & CDS AI Debug Studio).
+  - `p2`: **Accelerators & Migration Modernization** (1 solution: HanaMorph).
+  - `p3`: **SAC Executive Dashboards** (5 solutions: Asset Reliability MRO, Manufacturing Yield & Scrap, O2C Receivables, Procure-to-Pay, Revenue Analytics).
+- **Slide 1 Live Overview Cockpit**:
+  - Extracted 60+ production screenshots from docx archives directly into `/public/assets/apps/{slug}/screen-{1..N}.png`.
+  - Configured Slide 1 in every solution deck as the primary system overview featuring `screen-1.png`.
+- **Extended Workshop Deck**:
+  - Created an 11-slide interactive deck for `sap-btp-vibe-coding` covering account allocation, entitlements, Cloud Foundry, Destination reverse proxy, and AI prompt engineering.
+- **Verification**:
+  - `npm run content:check`: Passed with zero schema errors.
+  - `npm test`: 15/15 unit and responsive tests passing.
+  - `npm run build`: Successfully prerendered all 48 static pages.
+
+---
+
 ## [6.0.0] — 2026-11-05 — Bot Speech Bubble Position Fix, Audio Removal & Direct Sales Contact
 
 ### Summary

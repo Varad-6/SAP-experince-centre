@@ -1,239 +1,183 @@
 {
   "slug": "podzo",
-  "pillarId": "p2",
-  "title": "PODZO - Transporter Proof-of-Delivery & Automated Invoicing Intelligence",
-  "heroHeadline": "98% Touchless Invoice Clearance - 14 Days to 4 Hours Cycle Time",
-  "basicIntro": "Welcome to PODZO! I'll show you how we automate mining and freight logistics from siding weighment to SAP MIRO invoice posting.",
+  "title": "PODZO Logistics Execution & Touchless Settlement",
+  "pillarId": "p1",
+  "heroHeadline": "PODZO Logistics Execution & Touchless Settlement \u2014 98% Touchless",
+  "intro": "Autonomous siding dispatch, dual weighbridge OCR, and touchless SAP MIRO invoice posting in <30 seconds.",
+  "basicIntro": "I am Aayam! I will guide you through PODZO Logistics Execution & Touchless Settlement, demonstrating live production cockpits, Clean Core architecture, and verified business ROI.",
   "sapComponents": [
-    "SAP S/4HANA Sales & Distribution (VA03)",
-    "Outbound Deliveries (VL03N)",
-    "Billing (VF01)",
-    "Invoice Settlement (MIRO)"
+    "SAP BTP Cloud Foundry",
+    "SAP S/4HANA Cloud",
+    "SAP Event Mesh",
+    "SAP HANA Cloud",
+    "SAP AI Core"
   ],
-  "hasContent": true,
   "cards": [
     {
-      "index": 0,
+      "id": "card-1",
       "type": "hook",
-      "title": "Strategic Opportunity & Market Impact",
-      "botPose": "present",
-      "botDialogue": "Welcome! I am Aayam. Let's look at the strategic business opportunity for PODZO - Transporter Proof-of-Delivery & Automated Invoicing Intelligence. Here is how we transform operational velocity.",
-      "stat": {
-        "number": "99.2%",
-        "label": "Touchless Clearance"
-      },
-      "bullets": [
-        "Paper Proof-of-Delivery Bottleneck: Physical bilties take 10-14 days to courier from remote siding gates to headquarters, delaying billing cycles and freezing carrier cash flow.",
-        "Weighbridge Variance & Transit Leakage: Discrepancies between origin siding tare/gross and destination customer weighments cause unrecovered transit shrinkage.",
-        "Manual Data Entry & Invoice Discrepancies: Accounts Payable re-keys paper bilties into SAP MIRO, producing data entry errors, GST mismatches, and carrier disputes."
-      ]
+      "title": "PODZO Logistics Execution & Touchless Settlement \u2014 Operational Overview",
+      "subtitle": "Live Production Command Cockpit",
+      "description": "Live production command cockpit for PODZO Logistics Execution & Touchless Settlement.",
+      "badge": "Enterprise Console",
+      "imageUrl": "/assets/apps/podzo/screen-1.png",
+      "caption": "Live production command cockpit for PODZO Logistics Execution & Touchless Settlement.",
+      "botDialogue": "Welcome to PODZO Logistics Execution & Touchless Settlement! This is the live production console unifying enterprise data and Clean Core automation.",
+      "botPose": "present"
     },
     {
-      "index": 1,
+      "id": "card-2",
       "type": "challenge",
-      "title": "Enterprise Process Bottlenecks",
-      "botPose": "explain",
-      "botDialogue": "Examining the core friction points in current operations. Notice the process bottlenecks that create revenue leakage.",
-      "visual": "pain-matrix",
+      "title": "Legacy Enterprise Challenge & Operational Friction",
+      "subtitle": "Process Inefficiencies in S/4HANA Core",
+      "badge": "Enterprise Challenge",
+      "legacyFriction": [
+        "Manual paper-based exception handling requiring 4-7 days of cycle time.",
+        "Demurrage and latency penalties due to lack of real-time telemetry.",
+        "Monolithic customizations hindering cloud ERP upgrade cycles."
+      ],
+      "modernFlow": [
+        "Touchless cognitive processing executed in <30 seconds.",
+        "Direct S/4HANA event-driven integration with Clean Core architecture.",
+        "Full audit trail and exception scoring with explainable AI."
+      ],
       "bullets": [
-        "Disconnected data silos across regional plants and commercial entities.",
-        "High variance between physical operations and digital ledger postings.",
-        "Heavy developer dependency on proprietary legacy custom code."
-      ]
+        "High operational overhead for support engineering and manual re-entry.",
+        "Disparate data silos across legacy on-premise systems.",
+        "Audit compliance bottlenecks and error-prone reconciliation."
+      ],
+      "botDialogue": "Traditional workflows suffer from manual friction and reconciliation delays. Here is how our modern solution solves it.",
+      "botPose": "explain"
     },
     {
-      "index": 2,
-      "type": "solution",
-      "title": "Clean Core Solution Architecture",
-      "botPose": "tablet",
-      "botDialogue": "Here is our decoupled Clean Core architecture. Notice how SAP BTP handles high-velocity transactions while keeping S/4HANA untouched.",
-      "diagram": {
-        "nodes": [
-          {
-            "id": "n1",
-            "label": "Enterprise Edge Telemetry"
-          },
-          {
-            "id": "n2",
-            "label": "SAP BTP Cloud Foundry"
-          },
-          {
-            "id": "n3",
-            "label": "Autonomous Rules Engine"
-          },
-          {
-            "id": "n4",
-            "label": "S/4HANA Clean Core"
-          }
-        ],
-        "edges": [
-          {
-            "from": "n1",
-            "to": "n2"
-          },
-          {
-            "from": "n2",
-            "to": "n3"
-          },
-          {
-            "from": "n3",
-            "to": "n4"
-          }
-        ]
-      }
-    },
-    {
-      "index": 3,
-      "type": "live-ui",
-      "title": "Interactive Production Cockpit",
-      "botPose": "point",
-      "botDialogue": "Let's inspect the live production dashboard. Every metric here connects to real-time S/4HANA master data.",
-      "screenshot": "/assets/apps/podzo/screen-1.png",
-      "hotspots": [
+      "id": "card-3",
+      "type": "tech-stack",
+      "title": "Clean Core Architecture & Cloud Technology Stack",
+      "subtitle": "Side-by-Side Extensibility on SAP BTP",
+      "badge": "SAP BTP Architecture",
+      "layers": [
         {
-          "x": 28,
-          "y": 32,
-          "label": "Transporter Fleet Matrix",
-          "tooltip": "Live siding fleet tracking and vehicle assignment."
+          "name": "Presentation",
+          "tech": "SAPUI5 / Fiori Elements v1.120+ with responsive design DNA."
         },
         {
-          "x": 68,
-          "y": 48,
-          "label": "Dual Weighbridge Telemetry",
-          "tooltip": "Gross and tare weight discrepancy checks."
+          "name": "Application Logic",
+          "tech": "SAP Cloud Application Programming (CAP) Node.js 20 runtime."
         },
         {
-          "x": 50,
-          "y": 62,
-          "label": "AI Decision OCR",
-          "tooltip": "Multi-language bilty text extraction and stamp detection."
+          "name": "Intelligence Layer",
+          "tech": "SAP AI Core with cognitive OCR, document reasoning, and ML scoring."
         },
         {
-          "x": 42,
-          "y": 80,
-          "label": "Automated MIRO Settlement",
-          "tooltip": "Automated ledger entry in SAP S/4HANA (EU30-HANA)."
+          "name": "Data & ERP Mesh",
+          "tech": "SAP S/4HANA Cloud via Destination Service and Event Mesh."
         }
-      ]
+      ],
+      "botDialogue": "We maintain 100% Clean Core compliance by placing all custom logic and AI models side-by-side on SAP BTP.",
+      "botPose": "tablet"
     },
     {
-      "index": 4,
+      "id": "card-4",
+      "type": "live-ui",
+      "title": "Central Operational Workbench & Live Console",
+      "subtitle": "Interactive Production Cockpit",
+      "badge": "Live Console",
+      "imageUrl": "/assets/apps/podzo/screen-2.png",
+      "caption": "Central operational console for PODZO Logistics Execution & Touchless Settlement displaying live transactions, telemetry, and automated audit status.",
+      "botDialogue": "Take a look at the central operational workbench. Enterprise reviewers can inspect real-time transactions and audit trails.",
+      "botPose": "point"
+    },
+    {
+      "id": "card-5",
+      "type": "live-ui",
+      "title": "Intelligent Processing & Decision Intelligence",
+      "subtitle": "Cognitive Matching & Scoring",
+      "badge": "AI Decisioning",
+      "imageUrl": "/assets/apps/podzo/screen-3.png",
+      "caption": "Deep-dive analytical view displaying AI confidence scores, line-item matching rationale, and policy tolerances.",
+      "botDialogue": "Our decision engine evaluates tolerances and exception rules with complete explainability before ERP ledger posting.",
+      "botPose": "laptop"
+    },
+    {
+      "id": "card-6",
+      "type": "live-ui",
+      "title": "Audit Validation & Diagnostic Telemetry",
+      "subtitle": "End-to-End Governance",
+      "badge": "Audit & Traceability",
+      "imageUrl": "/assets/apps/podzo/screen-4.png",
+      "caption": "Validation console confirming zero data drift, transactional idempotency, and automated compliance logging.",
+      "botDialogue": "Zero data drift and strict idempotency ensure your SAP financials remain clean and audit-ready at all times.",
+      "botPose": "explain"
+    },
+    {
+      "id": "card-7",
       "type": "workflow",
-      "title": "End-to-End Execution Flow",
-      "botPose": "tablet",
-      "botDialogue": "Notice our 3-step automated flow. From transaction intake to verified settlement, the process is fast and auditable.",
+      "title": "End-to-End Enterprise Execution Flow",
+      "subtitle": "Event-Driven Integration Architecture",
+      "badge": "Execution Flow",
       "steps": [
         {
-          "step": 1,
-          "title": "Step 1: S/4HANA Order Distribution & Fleet Dispatch - Commercial Auditor distributes SAP Sales Orders to transporters; drivers receive digital dispatch passes with origin gross/tare weighment.",
-          "desc": "Step 1: S/4HANA Order Distribution & Fleet Dispatch - Commercial Auditor distributes SAP Sales Orders to transporters; drivers receive digital dispatch passes with origin gross/tare weighment.",
-          "sapAction": "BTP Ingest & Validation"
+          "step": "01",
+          "title": "Event Ingestion & Data Telemetry",
+          "description": "Enterprise events, document uploads, or transactions stream into SAP BTP Event Mesh.",
+          "badge": "BTP Ingest & Validation"
         },
         {
-          "step": 2,
-          "title": "Step 2: Dual Weighbridge Telemetry & Yard Offload - Trucks offload at customer siding; destination weighbridge captures net payload and verifies tolerance threshold automatically.",
-          "desc": "Step 2: Dual Weighbridge Telemetry & Yard Offload - Trucks offload at customer siding; destination weighbridge captures net payload and verifies tolerance threshold automatically.",
-          "sapAction": "BTP Ingest & Validation"
+          "step": "02",
+          "title": "Cognitive Validation & Decision Intelligence",
+          "description": "AI models validate line items, verify multi-way tolerance thresholds, and score exception risks.",
+          "badge": "AI Decision Core"
         },
         {
-          "step": 3,
-          "title": "Step 3: AI Decision OCR & Automated MIRO Settlement - Driver uploads stamped bilty; AI validates receiver stamp and matches weights, triggering automated SAP MIRO invoice posting.",
-          "desc": "Step 3: AI Decision OCR & Automated MIRO Settlement - Driver uploads stamped bilty; AI validates receiver stamp and matches weights, triggering automated SAP MIRO invoice posting.",
-          "sapAction": "Automated S/4HANA Clean Core Event"
+          "step": "03",
+          "title": "Clean Core ERP Settlement",
+          "description": "Approved records post touchlessly into SAP S/4HANA via authenticated standard BAPIs/OData APIs.",
+          "badge": "Automated Clean Core Event"
         }
-      ]
+      ],
+      "botDialogue": "Here is the end-to-end execution flow. Real-time events trigger autonomous validation and touchless S/4HANA ledger posting.",
+      "botPose": "present"
     },
     {
-      "index": 5,
-      "type": "tech-stack",
-      "title": "SAP BTP & Clean Core Topology",
-      "botPose": "laptop",
-      "botDialogue": "From an engineering standpoint, this is built 100% on SAP BTP Cloud Foundry with XSUAA role collections and Cloud Connector security.",
-      "chips": [
-        {
-          "layer": "Runtime",
-          "tech": "SAP BTP Cloud Foundry"
-        },
-        {
-          "layer": "Core ERP",
-          "tech": "SAP S/4HANA Cloud / On-Prem"
-        },
-        {
-          "layer": "Messaging",
-          "tech": "SAP Event Mesh"
-        },
-        {
-          "layer": "Database",
-          "tech": "SAP HANA Cloud"
-        },
-        {
-          "layer": "Security",
-          "tech": "XSUAA OAuth 2.0"
-        }
-      ]
-    },
-    {
-      "index": 6,
+      "id": "card-8",
       "type": "impact",
-      "title": "Quantified Business ROI",
-      "botPose": "present",
-      "botDialogue": "Here are the real business outcomes achieved in production. We deliver measurable speed and verified ROI.",
+      "title": "Verified Business Impact & Quantitative ROI",
+      "subtitle": "Proven Metrics in Production",
+      "badge": "Verified ROI",
       "metrics": [
         {
-          "value": "95%",
-          "label": "Touchless Automation",
-          "delta": "+40%"
+          "label": "Cycle Time Reduction",
+          "value": "98% Touchless",
+          "subtext": "From multi-day manual batches to near real-time."
         },
         {
-          "value": "<30s",
-          "label": "Processing Cycle",
-          "delta": "-85%"
+          "label": "Ledger Auto-Match",
+          "value": "98.5%",
+          "subtext": "Automated matching within configured tolerance rules."
         },
         {
+          "label": "Clean Core Compliance",
           "value": "100%",
-          "label": "Clean Core Compliant",
-          "delta": "0 mod"
+          "subtext": "Zero modifications to S/4HANA standard code base."
         }
-      ]
-    },
-    {
-      "index": 7,
-      "type": "cta",
-      "title": "Deployment Readiness & Next Steps",
-      "botPose": "beckon",
-      "botDialogue": "Ready to see PODZO - Transporter Proof-of-Delivery & Automated Invoicing Intelligence running on your SAP landscape? Schedule an architecture workshop or test drive in our sandbox.",
-      "actions": [
-        {
-          "label": "Interactive Architecture Demo",
-          "type": "demo"
-        },
-        {
-          "label": "Landscape Prerequisites",
-          "type": "prereq"
-        },
-        {
-          "label": "Clean Core Architecture Review",
-          "type": "architecture"
-        }
-      ]
+      ],
+      "botDialogue": "The business results speak for themselves: 98% Touchless with 100% Clean Core compliance.",
+      "botPose": "beckon"
     }
   ],
   "contact": {
-    "name": "Varad Kadam",
-    "role": "Lead Enterprise Architect & BTP Practice Head",
-    "email": "varad.k@abhiyantatech.com",
-    "phone": "+91 98200 00000",
-    "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=varad@abhiyantaindia.com"
+    "name": "Manisha Sawarkar",
+    "role": "Sales Head",
+    "email": "Manisha.s@abhiyantatech.com",
+    "phone": "9136124009"
   },
   "closing": {
-    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant (EU30-HANA) accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation.",
-    "feedbackUrl": "https://forms.office.com/r/abhiyanta-podzo",
-    "contact": {
-      "name": "Varad Kadam",
-      "role": "Lead Enterprise Architect & BTP Practice Head",
-      "email": "varad.k@abhiyantatech.com",
-      "phone": "+91 98200 00000",
-      "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=varad@abhiyantaindia.com"
-    }
+    "headline": "Thank You for Exploring PODZO Logistics Execution & Touchless Settlement",
+    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation.",
+    "nextSteps": [
+      "Schedule a live architecture walk-through with our SAP solutions team.",
+      "Review Clean Core extension artifacts and BTP sizing estimations.",
+      "Deploy prototype within your SAP BTP sandbox in under 5 business days."
+    ]
   }
 }
