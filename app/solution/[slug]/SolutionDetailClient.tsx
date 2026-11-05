@@ -7,8 +7,6 @@ import { BotSprite } from '@/components/BotSprite';
 import { BotBubble } from '@/components/BotBubble';
 import { ContactDialog } from '@/components/ContactDialog';
 import { ArchitectureDialog } from '@/components/ArchitectureDialog';
-import { SoundToggle } from '@/components/SoundToggle';
-import { sound } from '@/lib/sound';
 
 interface SolutionDetailProps {
   solution: {
@@ -59,7 +57,6 @@ export const SolutionDetailClient: React.FC<SolutionDetailProps> = ({
       : `/assets/apps/${solution.slug}/screen-1.png`;
 
   const openArchitecture = () => {
-    sound.click();
     setIsArchOpen(true);
   };
 
@@ -68,12 +65,12 @@ export const SolutionDetailClient: React.FC<SolutionDetailProps> = ({
       {/* 1. Breadcrumb: Pillars > [Pillar Title] > [Solution Title] */}
       <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
         <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-[var(--text-dim)] flex-wrap">
-          <Link href="/pillars" onClick={() => sound.click()} className="hover:text-[var(--brand)] transition-colors">
+          <Link href="/pillars" className="hover:text-[var(--brand)] transition-colors">
             Pillars
           </Link>
           <ChevronRight className="w-3 h-3 text-[var(--text-dim)]" />
           {pillar ? (
-            <Link href={`/pillar/${pillar.id}`} onClick={() => sound.click()} className="hover:text-[var(--brand)] transition-colors">
+            <Link href={`/pillar/${pillar.id}`} className="hover:text-[var(--brand)] transition-colors">
               {pillar.title}
             </Link>
           ) : (
@@ -84,8 +81,6 @@ export const SolutionDetailClient: React.FC<SolutionDetailProps> = ({
             {solution.title}
           </span>
         </nav>
-
-        <SoundToggle />
       </div>
 
       {/* 2. Title Block + Two Top Buttons */}
@@ -94,9 +89,6 @@ export const SolutionDetailClient: React.FC<SolutionDetailProps> = ({
           <div className="flex flex-wrap items-center gap-2.5 mb-3">
             <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#E6F7ED] text-[var(--ok)]">
               <ShieldCheck className="w-3.5 h-3.5" /> Clean Core Certified
-            </span>
-            <span className="chip">
-              {solution.roiMetric}
             </span>
             {solution.tags.slice(0, 3).map((tag, i) => (
               <span
@@ -121,7 +113,6 @@ export const SolutionDetailClient: React.FC<SolutionDetailProps> = ({
         <div className="flex flex-wrap sm:flex-nowrap items-center gap-3 shrink-0">
           <Link
             href={`/solution/${solution.slug}/demo`}
-            onClick={() => sound.click()}
             onMouseEnter={() => setBotPose('beckon')}
             onMouseLeave={() => setBotPose('present')}
             className="w-full sm:w-auto"
@@ -167,10 +158,7 @@ export const SolutionDetailClient: React.FC<SolutionDetailProps> = ({
         <div className="flex flex-wrap items-center gap-4 w-full md:w-auto">
           <button
             type="button"
-            onClick={() => {
-              sound.click();
-              setIsContactOpen(true);
-            }}
+            onClick={() => setIsContactOpen(true)}
             className="btn btn-secondary flex-1 sm:flex-initial inline-flex items-center justify-center gap-2"
           >
             <Mail className="w-4 h-4" />
@@ -179,7 +167,6 @@ export const SolutionDetailClient: React.FC<SolutionDetailProps> = ({
 
           <Link
             href={`/solution/${solution.slug}/demo`}
-            onClick={() => sound.click()}
             onMouseEnter={() => setBotPose('beckon')}
             onMouseLeave={() => setBotPose('present')}
             className="flex-1 sm:flex-initial"

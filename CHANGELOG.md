@@ -5,6 +5,37 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [6.0.0] — 2026-11-05 — Bot Speech Bubble Position Fix, Audio Removal & Direct Sales Contact
+
+### Summary
+Fixed bot speech bubble position across all screens and all 3 landing videos strictly per mathematical specification. Eliminated all audio engines, toggles, and Web Audio API calls, resolving the dev error badge. Updated contact dialogs across the platform directly to Sales Head Manisha Sawarkar. Cleaned catalog cards by removing top status chips (`Production`, `FLAGSHIP`, `<30s`).
+
+### Added & Updated
+- **Mathematical Speech Bubble Engine (`lib/placeBubble.ts`)**:
+  - Implemented exact rules: Bubble bottom edge >= 52px above hair top (>= 40px on < 640px).
+  - 3 thought dots (sizes 6px, 9px, 12px spaced 6px) with 90ms staggered reveal.
+  - Horizontal clamping with tail triangle pointing to head center (`tailX = clamp(headX - bubbleLeft, 20, bubbleWidth - 20)`).
+  - Dynamic fallback to side placement (`right` then `left`) when vertical headroom is constrained.
+  - Pre-measurement with hidden clone to lock dimensions and ghost text to eliminate resizing while typing.
+- **Video Head Tracking (`scripts/measure-head-track.py`)**:
+  - Tracked frame-by-frame hair cluster positions across `intro_drop.webm`, `analytics_laptop.webm`, and `explain_close.webm` (40 keyframes each saved into `assets.json`).
+  - Implemented runtime linear interpolation and 0.25 exponential smoothing bound to `requestVideoFrameCallback`.
+- **Zero Audio & Error Clean-up**:
+  - Completely removed `<SoundToggle />` and audio triggers from all pages.
+  - Removed Web Audio `AudioContext` usage, fixing browser autoplay block exceptions and eliminating dev overlay errors.
+- **Direct Sales Contact**:
+  - Updated all contact points to Sales Head: Manisha Sawarkar (`Manisha.s@abhiyantatech.com`, `9136124009`).
+  - Removed Teams links and feedback forms; retained direct contact information.
+- **UI Simplification**:
+  - Removed `Production`, `FLAGSHIP`, and ROI chips from project catalog cards.
+  - Enlarged presentation bot mascot to 330px with dynamic head position tracking.
+  - Cleaned hero landing page to focus on single "Explore solutions" CTA.
+- **Verification**:
+  - Unit tests: `npm test` -> 15/15 passed.
+  - Playwright: Captured verification screenshots across 5 viewports into `tests/shots/`.
+
+---
+
 ## [5.0.0] — 2026-11-04 — Master Plan v5: Real Software Dashboard Curation, Thought-Wave Bubble Engine & Exact 4-Pillar Redistribution
 
 ### Summary

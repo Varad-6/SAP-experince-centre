@@ -3,24 +3,23 @@
   "subBrand": "Aayam — AIS Experience Centre",
   "botName": "Aayam",
   "tagline": "Exploring new dimensions of technology",
-  "sub": "Explore 28 production solutions built across SAP BTP, Clean Core extensibility, and modern enterprise intelligence.",
+  "sub": "Explore production solutions built across SAP BTP, Clean Core extensibility, and modern enterprise intelligence with analytics.",
   "heroTitle": "Aayam",
   "heroSubtitle": "AIS Experience Centre — Exploring new dimensions of technology",
   "introLines": [
-    "Welcome to Abhiyanta India Solutions! I am Aayam, your enterprise architect. We build high-impact enterprise applications that modernize mission-critical operations.",
+    "Hello! Welcome to Abhiyanta India Solutions. I am Aayam, your Enterprise Architect. We build high-impact enterprise applications that modernize mission-critical operations.",
     "Here is how we leverage enterprise AI and SAP BTP: autonomous agents and decision engines integrated seamlessly with SAP S/4HANA Clean Core architecture.",
-    "Ready to explore? Step inside our 4 core architectural pillars below to inspect live production cockpits, workflows, and verified business ROI."
+    "Explore production solutions built across SAP BTP, Clean Core extensibility, and modern enterprise intelligence with boardroom analytics. Step inside our 3 core architectural pillars below to inspect live production cockpits, workflows, and verified business ROI."
   ],
   "defaultContact": {
-    "name": "Varad Rane",
-    "role": "Chief SAP Solutions Architect",
-    "email": "contact@abhiyantaindia.com",
-    "phone": "+91 (022) 6982-1000",
-    "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=contact@abhiyantaindia.com"
+    "name": "Manisha Sawarkar",
+    "role": "Sales Head",
+    "email": "Manisha.s@abhiyantatech.com",
+    "phone": "9136124009"
   },
   "stats": [
     { "value": "28", "label": "Enterprise Solutions" },
-    { "value": "4", "label": "Architectural Pillars" },
+    { "value": "3", "label": "Architectural Pillars" },
     { "value": "100%", "label": "Clean Core Compliant" },
     { "value": "<30s", "label": "Reconciliation Cycle" }
   ],

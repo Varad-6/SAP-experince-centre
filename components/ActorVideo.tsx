@@ -3,8 +3,16 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { ChromaKeyCanvas } from './ChromaKeyCanvas';
 import { BotBubble } from './BotBubble';
+import assetsData from '@/public/assets/assets.json';
 
 export type ActorVideoName = 'intro_drop' | 'analytics_laptop' | 'explain_close';
+
+export interface HeadTrackKeyframe {
+  t: number;
+  cx: number;
+  top: number;
+  w: number;
+}
 
 export interface ActorVideoMeta {
   src: string;
@@ -20,7 +28,9 @@ export interface ActorVideoMeta {
   headAtEnd: {
     cx: number;
     top: number;
+    w?: number;
   };
+  headTrack?: HeadTrackKeyframe[];
 }
 
 export const ACTOR_VIDEOS: Record<ActorVideoName, ActorVideoMeta> = {
@@ -35,7 +45,8 @@ export const ACTOR_VIDEOS: Record<ActorVideoName, ActorVideoMeta> = {
     similarity: 0.38,
     smoothness: 0.10,
     defaultBubbleStartSec: 8.6,
-    headAtEnd: { cx: 0.447, top: 0.262 },
+    headAtEnd: { cx: 0.447, top: 0.262, w: 0.17 },
+    headTrack: (assetsData.videos as any)?.intro_drop?.headTrack,
   },
   analytics_laptop: {
     src: '/assets/video/analytics_laptop.webm',
@@ -48,7 +59,8 @@ export const ACTOR_VIDEOS: Record<ActorVideoName, ActorVideoMeta> = {
     similarity: 0.36,
     smoothness: 0.10,
     defaultBubbleStartSec: 4.5,
-    headAtEnd: { cx: 0.557, top: 0.053 },
+    headAtEnd: { cx: 0.557, top: 0.053, w: 0.29 },
+    headTrack: (assetsData.videos as any)?.analytics_laptop?.headTrack,
   },
   explain_close: {
     src: '/assets/video/explain_close.webm',
@@ -61,7 +73,8 @@ export const ACTOR_VIDEOS: Record<ActorVideoName, ActorVideoMeta> = {
     similarity: 0.36,
     smoothness: 0.10,
     defaultBubbleStartSec: 1.0,
-    headAtEnd: { cx: 0.497, top: 0.043 },
+    headAtEnd: { cx: 0.497, top: 0.043, w: 0.35 },
+    headTrack: (assetsData.videos as any)?.explain_close?.headTrack,
   },
 };
 
@@ -92,47 +105,114 @@ export const ActorVideo: React.FC<ActorVideoProps> = ({
   const [useWebM, setUseWebM] = useState<boolean>(true);
   const [reducedMotion, setReducedMotion] = useState<boolean>(false);
   const [showBubble, setShowBubble] = useState<boolean>(false);
-  const [headPos, setHeadPos] = useState<{ x: number; y: number } | undefined>(undefined);
-  const [hasEnded, setHasEnded] = useState<boolean>(false);
+  const [headScreen, setHeadScreen] = useState<{ headX: number; hairTopY: number; headW: number } | undefined>(undefined);
+
+  const smoothedRef = useRef<{ cx: number; top: number; w: number } | null>(null);
 
   const meta = ACTOR_VIDEOS[name];
   const triggerSec = bubbleStartSec ?? meta.defaultBubbleStartSec;
 
   // 1. Detect platform & WebM alpha support + reduced-motion
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (typeof window !== 'undefined') {
+      const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+      setUseWebM(!isSafari && !isIOS);
 
-    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-    setUseWebM(!isSafari && !isIOS);
-
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setReducedMotion(mq.matches);
+      const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+      setReducedMotion(mq.matches);
+    }
   }, []);
 
-  // Compute head screen coordinates from container bounding box
-  const updateHeadPosition = useCallback(() => {
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    const x = rect.left + rect.width * meta.headAtEnd.cx;
-    const y = rect.top + rect.height * meta.headAtEnd.top;
-    setHeadPos({ x, y });
-  }, [meta.headAtEnd]);
+  // Compute interpolated head coordinate at time t
+  const getInterpolatedTrack = useCallback(
+    (currentTime: number): { cx: number; top: number; w: number } => {
+      const track = meta.headTrack;
+      if (!track || track.length === 0) {
+        return {
+          cx: meta.headAtEnd.cx,
+          top: meta.headAtEnd.top,
+          w: meta.headAtEnd.w ?? 0.25,
+        };
+      }
+
+      if (currentTime <= track[0].t) {
+        return { cx: track[0].cx, top: track[0].top, w: track[0].w };
+      }
+      if (currentTime >= track[track.length - 1].t) {
+        const last = track[track.length - 1];
+        return { cx: last.cx, top: last.top, w: last.w };
+      }
+
+      // Linear search or binary search
+      let i = 0;
+      while (i < track.length - 1 && track[i + 1].t < currentTime) {
+        i++;
+      }
+      const k0 = track[i];
+      const k1 = track[i + 1];
+      const span = k1.t - k0.t;
+      const ratio = span > 0 ? (currentTime - k0.t) / span : 0;
+
+      return {
+        cx: k0.cx + ratio * (k1.cx - k0.cx),
+        top: k0.top + ratio * (k1.top - k0.top),
+        w: k0.w + ratio * (k1.w - k0.w),
+      };
+    },
+    [meta.headTrack, meta.headAtEnd]
+  );
+
+  // Update screen coordinates using smoothed keyframes
+  const updateScreenPosition = useCallback(
+    (currentTime: number) => {
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      const raw = getInterpolatedTrack(currentTime);
+
+      let target = raw;
+      if (smoothedRef.current === null) {
+        smoothedRef.current = { ...raw };
+      } else {
+        const alpha = 0.25;
+        smoothedRef.current = {
+          cx: smoothedRef.current.cx + alpha * (raw.cx - smoothedRef.current.cx),
+          top: smoothedRef.current.top + alpha * (raw.top - smoothedRef.current.top),
+          w: smoothedRef.current.w + alpha * (raw.w - smoothedRef.current.w),
+        };
+        target = smoothedRef.current;
+      }
+
+      setHeadScreen({
+        headX: rect.left + target.cx * rect.width,
+        hairTopY: rect.top + target.top * rect.height,
+        headW: target.w * rect.width,
+      });
+    },
+    [getInterpolatedTrack]
+  );
 
   useEffect(() => {
-    updateHeadPosition();
-    window.addEventListener('resize', updateHeadPosition);
-    return () => window.removeEventListener('resize', updateHeadPosition);
-  }, [updateHeadPosition]);
+    const handleResize = () => {
+      const curTime = videoRef.current?.currentTime ?? meta.durationSec;
+      updateScreenPosition(curTime);
+    };
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
+    };
+  }, [updateScreenPosition, meta.durationSec]);
 
   // If reduced motion is requested, show poster & bubble immediately
   useEffect(() => {
     if (reducedMotion && active) {
       setShowBubble(true);
-      updateHeadPosition();
+      updateScreenPosition(meta.durationSec);
       onEnded?.();
     }
-  }, [reducedMotion, active, onEnded, updateHeadPosition]);
+  }, [reducedMotion, active, onEnded, updateScreenPosition, meta.durationSec]);
 
   // Video playback & time tracking loop
   useEffect(() => {
@@ -145,25 +225,23 @@ export const ActorVideo: React.FC<ActorVideoProps> = ({
     let endedFired = false;
 
     setShowBubble(false);
-    setHasEnded(false);
+    smoothedRef.current = null;
     video.currentTime = 0;
 
     if (autoPlay) {
-      video.play().catch(() => {
-        // Autoplay may be deferred by browser policy; muted helps avoid it
-      });
+      video.play().catch(() => {});
     }
 
     const checkTime = (currentTime: number) => {
+      updateScreenPosition(currentTime);
+
       if (currentTime >= triggerSec && !showBubble) {
         setShowBubble(true);
-        updateHeadPosition();
       }
 
       const endThreshold = meta.durationSec - 0.08;
       if (currentTime >= endThreshold && !endedFired) {
         endedFired = true;
-        setHasEnded(true);
         if (holdLastFrame) {
           video.pause();
         }
@@ -171,11 +249,10 @@ export const ActorVideo: React.FC<ActorVideoProps> = ({
       }
     };
 
-    // Use requestVideoFrameCallback if available, fallback to timeupdate
     if ('requestVideoFrameCallback' in HTMLVideoElement.prototype) {
-      const onFrame: VideoFrameRequestCallback = (now, metadata) => {
+      const onFrame: VideoFrameRequestCallback = (_now, metadata) => {
         checkTime(metadata.mediaTime);
-        if (!endedFired) {
+        if (!endedFired || video.currentTime < meta.durationSec - 0.08) {
           frameCallbackId = (video as any).requestVideoFrameCallback(onFrame);
         }
       };
@@ -193,7 +270,18 @@ export const ActorVideo: React.FC<ActorVideoProps> = ({
         (video as any).cancelVideoFrameCallback(frameCallbackId);
       }
     };
-  }, [name, active, autoPlay, reducedMotion, triggerSec, meta.durationSec, holdLastFrame, onEnded, updateHeadPosition]);
+  }, [
+    name,
+    active,
+    autoPlay,
+    reducedMotion,
+    triggerSec,
+    meta.durationSec,
+    holdLastFrame,
+    onEnded,
+    updateScreenPosition,
+    showBubble,
+  ]);
 
   return (
     <div
@@ -202,14 +290,12 @@ export const ActorVideo: React.FC<ActorVideoProps> = ({
       style={{ overflow: 'visible' }}
     >
       {reducedMotion ? (
-        /* Reduced motion: poster still */
         <img
           src={meta.poster}
           alt={`Lead Architect Bot - ${name}`}
           className="w-full h-full object-contain pointer-events-none"
         />
       ) : useWebM ? (
-        /* Native transparent WebM VP9 */
         <video
           ref={videoRef}
           src={meta.src}
@@ -220,7 +306,6 @@ export const ActorVideo: React.FC<ActorVideoProps> = ({
           className="w-full h-full object-contain pointer-events-none"
         />
       ) : (
-        /* Safari / iOS WebGL chroma-key shader fallback */
         <>
           <video
             ref={videoRef}
@@ -242,12 +327,12 @@ export const ActorVideo: React.FC<ActorVideoProps> = ({
         </>
       )}
 
-      {/* Floating Thinking Bubble anchored to headAtEnd */}
-      {showBubble && bubbleText && (
+      {/* Floating Thinking Bubble anchored dynamically to moving head */}
+      {showBubble && bubbleText && headScreen && (
         <BotBubble
           text={bubbleText}
-          headPos={headPos}
-          placement="top"
+          head={headScreen}
+          topSafe={76}
           onDismiss={() => setShowBubble(false)}
         />
       )}

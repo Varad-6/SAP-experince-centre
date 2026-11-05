@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { X, Layers, Cpu, Database, ShieldCheck, CheckCircle2 } from 'lucide-react';
-import { sound } from '@/lib/sound';
 
 export interface ArchitectureDialogProps {
   isOpen: boolean;
@@ -26,7 +25,6 @@ export const ArchitectureDialog: React.FC<ArchitectureDialogProps> = ({
   if (!isOpen) return null;
 
   const handleClose = () => {
-    sound.click();
     onClose();
   };
 

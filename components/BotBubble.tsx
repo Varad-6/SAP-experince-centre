@@ -1,14 +1,20 @@
 'use client';
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useLayoutEffect } from 'react';
 import { X } from 'lucide-react';
-import { sound } from '@/lib/sound';
+import { placeBubble, BubblePlacement } from '@/lib/placeBubble';
 
 export interface BotBubbleProps {
   text: string;
   speakerName?: string;
   headPos?: { x: number; y: number };
+  head?: {
+    headX: number;
+    hairTopY: number;
+    headW?: number;
+  };
   placement?: 'top' | 'left' | 'right' | 'auto';
+  topSafe?: number;
   onDismiss?: () => void;
   className?: string;
   durationMs?: number;
@@ -19,18 +25,61 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
   text,
   speakerName = 'Aayam',
   headPos,
-  placement = 'auto',
+  head,
+  placement: placementOverride,
+  topSafe = 64,
   onDismiss,
   className = '',
   durationMs,
   showTail = true,
 }) => {
-  const [displayedText, setDisplayedText] = useState('');
-  const [isTyping, setIsTyping] = useState(true);
-  const [captionsEnabled, setCaptionsEnabled] = useState(true);
-  const [visible, setVisible] = useState(true);
+  const [displayedCount, setDisplayedCount] = useState<number>(0);
+  const [isTyping, setIsTyping] = useState<boolean>(true);
+  const [captionsEnabled, setCaptionsEnabled] = useState<boolean>(true);
+  const [visible, setVisible] = useState<boolean>(true);
+
+  // Thought dots stagger phase: 0=none, 1=dot1, 2=dot2, 3=dot3, 4=bubble popped
+  const [stagePhase, setStagePhase] = useState<number>(0);
+
+  // Bubble measured dimensions
+  const [bubbleDim, setBubbleDim] = useState<{ w: number; h: number }>({ w: 340, h: 120 });
+  const measureRef = useRef<HTMLDivElement>(null);
   const animRef = useRef<number | null>(null);
   const startTimeRef = useRef<number | null>(null);
+
+  // Resolved head coordinates
+  const resolvedHeadX = head?.headX ?? headPos?.x ?? 0;
+  const resolvedHairTopY = head?.hairTopY ?? headPos?.y ?? 0;
+  const resolvedHeadW = head?.headW ?? 120;
+  const hasHead = resolvedHeadX > 0 && resolvedHairTopY > 0;
+
+  // Viewport tracking
+  const [viewport, setViewport] = useState<{ w: number; h: number }>({
+    w: typeof window !== 'undefined' ? window.innerWidth : 1280,
+    h: typeof window !== 'undefined' ? window.innerHeight : 800,
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setViewport({ w: window.innerWidth, h: window.innerHeight });
+    };
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
+    };
+  }, []);
+
+  // Pre-measure the hidden clone to reserve full dimensions
+  useLayoutEffect(() => {
+    if (measureRef.current) {
+      const rect = measureRef.current.getBoundingClientRect();
+      if (rect.width > 0 && rect.height > 0) {
+        setBubbleDim({ w: Math.ceil(rect.width), h: Math.ceil(rect.height) });
+      }
+    }
+  }, [text]);
 
   // Global 'C' shortcut to toggle captions / speech bubbles
   useEffect(() => {
@@ -40,7 +89,6 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
     }
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Avoid triggering when focused in an input/textarea
       const tag = (e.target as HTMLElement)?.tagName?.toLowerCase();
       if (tag === 'input' || tag === 'textarea') return;
 
@@ -62,40 +110,55 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
     typeof window !== 'undefined' &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Typing animation via requestAnimationFrame (22ms per char)
+  // 90ms staggered reveal for thought dots, then bubble pop
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      setStagePhase(4);
+      return;
+    }
+
+    setStagePhase(1);
+    const t1 = setTimeout(() => setStagePhase(2), 90);
+    const t2 = setTimeout(() => setStagePhase(3), 180);
+    const t3 = setTimeout(() => setStagePhase(4), 270);
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+    };
+  }, [text, prefersReducedMotion]);
+
+  // Typing animation (22ms per char) after bubble pops
   useEffect(() => {
     if (!text) {
-      setDisplayedText('');
+      setDisplayedCount(0);
       setIsTyping(false);
       return;
     }
 
-    if (prefersReducedMotion) {
-      setDisplayedText(text);
-      setIsTyping(false);
+    if (prefersReducedMotion || stagePhase < 4) {
+      if (prefersReducedMotion) {
+        setDisplayedCount(text.length);
+        setIsTyping(false);
+      }
       return;
     }
 
-    setDisplayedText('');
+    setDisplayedCount(0);
     setIsTyping(true);
     startTimeRef.current = null;
 
     const msPerChar = 22;
     const totalChars = text.length;
 
-    let lastSoundChar = 0;
     const step = (timestamp: number) => {
       if (startTimeRef.current === null) {
         startTimeRef.current = timestamp;
       }
       const elapsed = timestamp - startTimeRef.current;
       const count = Math.min(totalChars, Math.floor(elapsed / msPerChar));
-      setDisplayedText(text.slice(0, count));
-
-      if (count > lastSoundChar && count % 2 === 0) {
-        lastSoundChar = count;
-        sound.typeChirp();
-      }
+      setDisplayedCount(count);
 
       if (count < totalChars) {
         animRef.current = requestAnimationFrame(step);
@@ -111,11 +174,11 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
         cancelAnimationFrame(animRef.current);
       }
     };
-  }, [text, prefersReducedMotion]);
+  }, [text, stagePhase, prefersReducedMotion]);
 
-  // Handle dismiss after readingDuration = max(3500ms, text.length * 45ms)
+  // Auto dismiss after readingDuration
   useEffect(() => {
-    if (isTyping || !visible) return;
+    if (isTyping || !visible || stagePhase < 4) return;
 
     const autoDuration = durationMs ?? Math.max(3500, text.length * 45);
     const timer = setTimeout(() => {
@@ -124,18 +187,16 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
     }, autoDuration);
 
     return () => clearTimeout(timer);
-  }, [isTyping, visible, text.length, durationMs, onDismiss]);
+  }, [isTyping, visible, stagePhase, text.length, durationMs, onDismiss]);
 
   const handleBubbleClick = useCallback(() => {
     if (isTyping) {
-      // Fast forward typing
       if (animRef.current !== null) {
         cancelAnimationFrame(animRef.current);
       }
-      setDisplayedText(text);
+      setDisplayedCount(text.length);
       setIsTyping(false);
     } else {
-      // Dismiss
       setVisible(false);
       onDismiss?.();
     }
@@ -151,116 +212,204 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
     return null;
   }
 
-  // Determine computed placement relative to head position if headPos is supplied
-  let posStyle: React.CSSProperties = {};
-  let resolvedPlacement = placement;
+  // Calculate bubble placement
+  let placement: BubblePlacement = {
+    mode: 'above',
+    left: Math.max(16, (viewport.w - bubbleDim.w) / 2),
+    top: Math.max(topSafe + 8, viewport.h - bubbleDim.h - 100),
+  };
 
-  if (headPos) {
-    if (placement === 'auto') {
-      resolvedPlacement = headPos.y > 200 ? 'top' : 'left';
-    }
+  if (placementOverride === 'left' && !hasHead) {
+    placement = {
+      mode: 'left',
+      left: Math.max(16, viewport.w - bubbleDim.w - 180),
+      top: Math.max(topSafe + 8, viewport.h - bubbleDim.h - 80),
+    };
+  }
 
-    if (resolvedPlacement === 'top') {
-      posStyle = {
-        position: 'fixed',
-        left: `clamp(16px, ${headPos.x - 160}px, calc(100vw - 380px))`,
-        bottom: `calc(100vh - ${headPos.y}px + 72px)`,
-        zIndex: 50,
-      };
-    } else if (resolvedPlacement === 'left') {
-      posStyle = {
-        position: 'fixed',
-        right: `calc(100vw - ${headPos.x}px + 24px)`,
-        top: `clamp(16px, ${headPos.y - 40}px, calc(100vh - 160px))`,
-        zIndex: 50,
-      };
+  if (hasHead) {
+    placement = placeBubble({
+      headX: resolvedHeadX,
+      hairTopY: resolvedHairTopY,
+      headW: resolvedHeadW,
+      bw: bubbleDim.w,
+      bh: bubbleDim.h,
+      vw: viewport.w,
+      vh: viewport.h,
+      topSafe,
+    });
+  }
+
+  const { mode, left, top, tailX, maxH } = placement;
+
+  // Thought dots geometry:
+  // sizes 6px, 9px, 12px (smallest nearest head), 6px spacing
+  // R2: first dot 8px above hair top for 'above' mode
+  const dots = [];
+  if (hasHead && showTail) {
+    if (mode === 'above') {
+      const cx = resolvedHeadX;
+      // Dot 1 (6px, r=3): center 8 + 3 = 11px above hairTopY
+      const cy1 = resolvedHairTopY - 11;
+      // Dot 2 (9px, r=4.5): 6px spacing -> 11 + 3 + 6 + 4.5 = 24.5px
+      const cy2 = resolvedHairTopY - 24.5;
+      // Dot 3 (12px, r=6): 6px spacing -> 24.5 + 4.5 + 6 + 6 = 41px
+      const cy3 = resolvedHairTopY - 41;
+      dots.push(
+        { size: 6, cx, cy: cy1, step: 1 },
+        { size: 9, cx, cy: cy2, step: 2 },
+        { size: 12, cx, cy: cy3, step: 3 }
+      );
+    } else if (mode === 'right') {
+      const startX = resolvedHeadX + resolvedHeadW / 2;
+      const cy = resolvedHairTopY + 12;
+      dots.push(
+        { size: 6, cx: startX + 6, cy, step: 1 },
+        { size: 9, cx: startX + 16, cy, step: 2 },
+        { size: 12, cx: startX + 27, cy, step: 3 }
+      );
     } else {
-      posStyle = {
-        position: 'fixed',
-        left: `${headPos.x + 24}px`,
-        top: `clamp(16px, ${headPos.y - 40}px, calc(100vh - 160px))`,
-        zIndex: 50,
-      };
+      const startX = resolvedHeadX - resolvedHeadW / 2;
+      const cy = resolvedHairTopY + 12;
+      dots.push(
+        { size: 6, cx: startX - 6, cy, step: 1 },
+        { size: 9, cx: startX - 16, cy, step: 2 },
+        { size: 12, cx: startX - 27, cy, step: 3 }
+      );
     }
   }
 
   return (
-    <div
-      style={posStyle}
-      className={`relative select-none pointer-events-auto ${className}`}
-      onClick={handleBubbleClick}
-      role="status"
-      aria-live="polite"
-    >
-      {/* 3-Circle Thinking Tail */}
-      {showTail && (
-        <div
-          className={`absolute pointer-events-none flex flex-col items-center ${
-            resolvedPlacement === 'top'
-              ? '-bottom-6 left-8 flex-col space-y-1'
-              : resolvedPlacement === 'left'
-              ? '-right-6 top-6 flex-row space-x-1'
-              : '-left-6 top-6 flex-row-reverse space-x-1'
-          }`}
-          aria-hidden="true"
-        >
-          <div
-            className="rounded-full bg-white border border-[var(--border)] shadow-sm"
-            style={{ width: 12, height: 12, opacity: 0.95 }}
-          />
-          <div
-            className="rounded-full bg-white border border-[var(--border)] shadow-sm"
-            style={{ width: 9, height: 9, opacity: 0.85 }}
-          />
-          <div
-            className="rounded-full bg-white border border-[var(--border)] shadow-sm"
-            style={{ width: 6, height: 6, opacity: 0.7 }}
-          />
-        </div>
-      )}
-
-      {/* Main Bubble Body */}
+    <>
+      {/* Hidden pre-measure clone to compute true bw and bh */}
       <div
-        className="card px-3.5 py-2.5 max-w-[min(360px,calc(100vw-32px))] min-w-[220px] transition-all duration-200 cursor-pointer hover:border-[var(--brand)]"
+        ref={measureRef}
+        aria-hidden="true"
+        className="fixed pointer-events-none opacity-0 z-[-1]"
         style={{
-          background: 'var(--bubble-bg, rgba(255, 255, 255, 0.92))',
-          borderRadius: 14,
-          border: '1px solid var(--border)',
-          boxShadow: 'var(--shadow)',
+          top: -9999,
+          left: -9999,
+          width: 'max-content',
+          maxWidth: 'min(380px, calc(100vw - 32px))',
+          minWidth: 240,
         }}
       >
-        <div className="flex items-center justify-between gap-2 mb-1">
-          <div className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-[var(--brand)] animate-pulse" />
-            <span className="text-[11px] font-semibold tracking-wide text-[var(--brand)] uppercase">
-              {speakerName}
+        <div className="px-4 py-3">
+          <div className="flex items-center justify-between gap-2 mb-1.5">
+            <span className="text-[11px] font-bold uppercase tracking-wider">{speakerName}</span>
+          </div>
+          <p className="text-[13.5px] leading-relaxed m-0 font-normal">{text}</p>
+          <div className="mt-2 text-[10px] opacity-70">Press [C] for captions</div>
+        </div>
+      </div>
+
+      {/* Thought Dots */}
+      {dots.map((dot, idx) => (
+        <div
+          key={idx}
+          className="fixed rounded-full transition-opacity duration-150 pointer-events-none z-50"
+          style={{
+            width: dot.size,
+            height: dot.size,
+            left: dot.cx - dot.size / 2,
+            top: dot.cy - dot.size / 2,
+            backgroundColor: 'rgba(255, 255, 255, 0.86)',
+            border: '1px solid rgba(10, 31, 68, 0.12)',
+            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.06)',
+            opacity: stagePhase >= dot.step ? 1 : 0,
+          }}
+          aria-hidden="true"
+        />
+      ))}
+
+      {/* Main Bubble Container */}
+      <div
+        style={{
+          position: 'fixed',
+          left: `${left}px`,
+          top: `${top}px`,
+          maxWidth: 'min(380px, calc(100vw - 32px))',
+          minWidth: 240,
+          maxHeight: maxH ? `${maxH}px` : undefined,
+          zIndex: 50,
+          opacity: stagePhase >= 4 ? 1 : 0,
+          transform: stagePhase >= 4 ? 'scale(1)' : 'scale(0.96)',
+          transition: 'opacity 140ms ease-out, transform 140ms ease-out',
+        }}
+        className={`select-none pointer-events-auto ${className}`}
+        onClick={handleBubbleClick}
+        role="status"
+        aria-live="polite"
+      >
+        <div
+          className="relative px-4 py-3 cursor-pointer rounded-2xl shadow-lg border hover:border-[var(--brand)] transition-colors overflow-y-auto"
+          style={{
+            backgroundColor: 'rgba(255, 255, 255, 0.86)',
+            borderColor: 'rgba(10, 31, 68, 0.12)',
+            boxShadow: '0 8px 24px -4px rgba(10, 31, 68, 0.12)',
+          }}
+        >
+          {/* Header */}
+          <div className="flex items-center justify-between gap-2 mb-1.5">
+            <div className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-[var(--brand)] animate-pulse" />
+              <span className="text-[11px] font-bold tracking-wider text-[var(--brand)] uppercase">
+                {speakerName}
+              </span>
+            </div>
+            <button
+              type="button"
+              onClick={handleCloseClick}
+              aria-label="Close message"
+              className="text-[var(--text-dim)] hover:text-[var(--text)] p-0.5 rounded transition-colors"
+            >
+              <X size={13} />
+            </button>
+          </div>
+
+          {/* Reserved full-height text block */}
+          <div className="relative text-[13.5px] leading-relaxed text-[var(--navy)] m-0 font-normal">
+            {/* Ghost invisible text to lock height from frame 1 */}
+            <span className="invisible select-none block" aria-hidden="true">
+              {text}
+            </span>
+            {/* Revealed text over ghost */}
+            <span className="absolute inset-0">
+              {text.slice(0, displayedCount)}
+              {isTyping && (
+                <span
+                  className="inline-block w-1.5 h-3.5 ml-0.5 bg-[var(--brand)] align-middle animate-pulse"
+                  aria-hidden="true"
+                />
+              )}
             </span>
           </div>
-          <button
-            type="button"
-            onClick={handleCloseClick}
-            aria-label="Close message"
-            className="text-[var(--text-dim)] hover:text-[var(--text)] p-0.5 rounded transition-colors"
-          >
-            <X size={13} />
-          </button>
-        </div>
 
-        <p className="text-[13.5px] leading-snug text-[var(--text)] m-0">
-          {displayedText}
-          {isTyping && (
-            <span
-              className="inline-block w-1.5 h-3 ml-0.5 bg-[var(--brand)] align-middle animate-pulse"
+          {/* Footer Controls */}
+          <div className="mt-2 flex items-center justify-between text-[10px] text-[var(--text-dim)]">
+            <span>{isTyping ? 'Typing...' : 'Click to dismiss'}</span>
+            <span className="text-[9px] font-mono opacity-60">Press [C] for captions</span>
+          </div>
+
+          {/* Small Tail Triangle if above mode */}
+          {showTail && mode === 'above' && tailX !== undefined && (
+            <div
+              className="absolute pointer-events-none -bottom-2"
+              style={{
+                left: `${tailX}px`,
+                transform: 'translateX(-50%)',
+                width: 0,
+                height: 0,
+                borderLeft: '7px solid transparent',
+                borderRight: '7px solid transparent',
+                borderTop: '8px solid rgba(255, 255, 255, 0.86)',
+                filter: 'drop-shadow(0 1px 1px rgba(10, 31, 68, 0.08))',
+              }}
               aria-hidden="true"
             />
           )}
-        </p>
-
-        <div className="mt-1.5 flex items-center justify-between text-[10px] text-[var(--text-dim)]">
-          <span>{isTyping ? 'Typing...' : 'Click to dismiss'}</span>
-          <span className="text-[9px] font-mono opacity-60">Press [C] for captions</span>
         </div>
       </div>
-    </div>
+    </>
   );
 };

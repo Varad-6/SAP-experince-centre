@@ -6,7 +6,6 @@ import solutionsData from '@/content/solutions.json';
 import { ArrowLeft, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { ThumbnailImage } from '@/components/ThumbnailImage';
 import { PillarBotDock } from '@/components/PillarBotDock';
-import { SoundToggle } from '@/components/SoundToggle';
 
 export function generateStaticParams() {
   return pillarsData.map((p) => ({ id: p.id }));
@@ -62,15 +61,11 @@ export default async function PillarDetailPage({
             {pillar.tagline}
           </p>
         </div>
-
-        <SoundToggle />
       </div>
 
-      {/* Grid of Clean Enterprise Project Cards (No Photos) */}
+      {/* Grid of Clean Enterprise Project Cards (No Photos, No Top Chips) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 items-stretch">
         {solutions.map((sol) => {
-          const isProd = sol.featured || sol.hasFullDemo;
-
           return (
             <Link
               key={sol.slug}
@@ -81,30 +76,6 @@ export default async function PillarDetailPage({
               }}
             >
               <div>
-                {/* Status & ROI Chips */}
-                <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                  <div className="flex items-center gap-1.5">
-                    <span
-                      className={`inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold ${
-                        isProd
-                          ? 'bg-[#E6F7ED] text-[var(--ok)]'
-                          : 'bg-[var(--surface-2)] text-[var(--text-dim)]'
-                      }`}
-                    >
-                      {isProd ? 'Production' : 'Preview'}
-                    </span>
-                    {sol.featured && (
-                      <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-[var(--brand)] text-white">
-                        FLAGSHIP
-                      </span>
-                    )}
-                  </div>
-
-                  <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-[var(--surface-2)] text-[var(--navy)] border border-[var(--border)]">
-                    {sol.roiMetric}
-                  </span>
-                </div>
-
                 {/* Title */}
                 <h2 className="text-base font-bold text-[var(--navy)] group-hover:text-[var(--brand)] transition-colors mb-2 leading-snug">
                   {sol.title}

@@ -12,3 +12,5 @@ All scratch and transient files generated during development cycles are recorded
 | `scripts/extract_and_enrich.py` | Automated docx screenshot and content extraction pipeline for ais exp data.zip | v4.0 | Utility retained for catalog updates |
 | `scripts/make_sac_apps.py` | Generator for SAC dashboard applications from ais exp data sub-zips | v5.0 | Utility retained for catalog updates |
 | `scripts/snap.js` | Automated Playwright multi-viewport visual regression and snapshot script | v5.0 | Permanent UI testing utility (`node scripts/snap.js`) |
+| `scripts/measure-head-track.py` | Python 4fps ffmpeg + scipy.ndimage hair cluster tracker for videoHeadTracks | v6.0 | Permanent utility (`python scripts/measure-head-track.py`) |
+| `scripts/test-bubble-viewports.js` | Automated Playwright multi-viewport verification for speech bubble placement | v6.0 | Permanent test utility (`node scripts/test-bubble-viewports.js`) |

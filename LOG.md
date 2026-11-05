@@ -455,3 +455,50 @@ Standard: Clean Fiori Horizon Professional Stack, 2D GSAP Bot, Zero 3D / Zero Au
   - `npm test` -> Code 0 (13/13 passed)
   - `npm run build` -> Code 0 (80/80 static pages prerendered)
 
+---
+
+## Phase 9: Bot Speech Bubble Placement Fix & Complete Audio Elimination
+- **Date**: 2026-11-05
+- **Status**: Completed & Verified. Passed vitest unit tests (15/15) and Playwright multi-viewport calibration (5 viewports).
+- **Core Rules Implemented**:
+  - **R1**: Bubble bottom edge is strictly >= 52px above the highest hair spike in viewport pixels (>= 40px on screens < 640px).
+  - **R2**: 3 thought dots drawn on line through head center: sizes 6px, 9px, 12px (smallest nearest head), 6px spacing, first dot 8px above hair top. White at 86% opacity (`rgba(255,255,255,0.86)`) with `1px rgba(10,31,68,0.12)` border. Staggered reveal: 0ms, 90ms, 180ms, bubble pops at 270ms.
+  - **R3**: Bubble never overlaps hair, face, or glasses.
+  - **R4**: Bubble clamped horizontally to `[16px, viewportWidth - 16px]`. Small tail triangle dynamically positioned at `tailX = clamp(headX - bubbleLeft, 20, bubbleWidth - 20)` pointing down to thought dots.
+  - **R5**: When vertical headroom is constrained (`bubbleTop < topSafe + 8`), placement automatically transitions to side mode (`right` then `left`) starting at hair-top level. If portrait phone space is constrained, height is capped with internal scroll, never dropping over face.
+  - **Pre-measurement**: Pre-measured with a hidden DOM clone so dimensions are locked from frame 1; text area uses ghost invisible text so typing causes zero layout resize. Bubble background translucent `rgba(255,255,255,0.86)`, no blur.
+- **Measured Hair Top Values (Sprites `_meta.json`)**:
+  - `wave`: `hairTop: 0.027`, `headCx: 0.53`
+  - `point`: `hairTop: 0.023`, `headCx: 0.423`
+  - `tablet`: `hairTop: 0.022`, `headCx: 0.565`
+  - `laptop`: `hairTop: 0.026`, `headCx: 0.578`
+  - `present`: `hairTop: 0.021`, `headCx: 0.473`
+  - `explain`: `hairTop: 0.025`, `headCx: 0.527`
+  - `thanks`: `hairTop: 0.024`, `headCx: 0.518`
+  - `beckon`: `hairTop: 0.018`, `headCx: 0.509`
+- **Video Head Tracks (`scripts/measure-head-track.py`)**:
+  - `intro_drop.webm` (1280x720): 40 tracked keyframes; t=0s (cx=0.9887, top=0.1444) -> landing t=9.75s (cx=0.4483, top=0.2347, w=0.1711).
+  - `analytics_laptop.webm` (1920x1080): 40 tracked keyframes; bust shot t=0s (cx=0.5444, top=0.062) -> t=9.75s (cx=0.5574, top=0.0519, w=0.2885).
+  - `explain_close.webm` (1920x1080): 40 tracked keyframes; zoom t=0s (cx=0.4979, top=0.1444, w=0.2193) -> close-up t=9.75s (cx=0.4950, top=0.0398, w=0.3557).
+  - Keyframe linear interpolation + exponential smoothing (alpha 0.25) bound to `requestVideoFrameCallback` in `ActorVideo.tsx`.
+- **Zero Audio & Dev Error Clean-up**:
+  - Removed `<SoundToggle />` and all sound triggers from landing, pillars hub, pillar detail, solution detail, and presentation slide deck.
+  - Removed all `AudioContext` / Web Audio API usage, completely eliminating the browser autoplay block exception and dev error badge.
+  - Removed top catalog card chips (`Production`, `FLAGSHIP`, `<30s`) per user specification.
+  - Enlarged bot presenter in `SlideDeck.tsx` to 330px with dynamic head position tracking.
+  - Updated contact details across all dialogs to Sales Head: Manisha Sawarkar (`Manisha.s@abhiyantatech.com`, `9136124009`).
+- **Screenshots Generated**:
+  - `tests/shots/bubble-390x844-landing.png`
+  - `tests/shots/bubble-390x844-demo-slide1.png`
+  - `tests/shots/bubble-820x1180-landing.png`
+  - `tests/shots/bubble-820x1180-demo-slide1.png`
+  - `tests/shots/bubble-1440x900-landing.png`
+  - `tests/shots/bubble-1440x900-demo-slide1.png`
+  - `tests/shots/bubble-1920x1080-landing.png`
+  - `tests/shots/bubble-1920x1080-demo-slide1.png`
+  - `tests/shots/bubble-3840x2160-landing.png`
+  - `tests/shots/bubble-3840x2160-demo-slide1.png`
+- **Verification**:
+  - `npm test` -> 15/15 passed (including `tests/bubble.test.ts`).
+
+

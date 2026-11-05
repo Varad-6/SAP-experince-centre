@@ -6,8 +6,6 @@ import pillarsData from '@/content/pillars.json';
 import solutionsData from '@/content/solutions.json';
 import { BotSprite } from '@/components/BotSprite';
 import { BotBubble } from '@/components/BotBubble';
-import { SoundToggle } from '@/components/SoundToggle';
-import { sound } from '@/lib/sound';
 import { ArrowRight, Layers, Box, Cpu, Zap, BarChart3, ShieldCheck } from 'lucide-react';
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -31,13 +29,12 @@ export default function PillarsHubPage() {
             <span>ENTERPRISE ARCHITECTURE HUBS</span>
           </div>
           <h1 className="text-h1 font-bold text-[var(--navy)] tracking-tight mb-3">
-            The 4 Pillars of Enterprise SAP Excellence
+            The 3 Pillars of Enterprise SAP Excellence
           </h1>
           <p className="text-base text-[var(--text-dim)] leading-relaxed">
-            Select an architectural pillar to inspect our 28 production solutions, custom BTP applications, data modernization pipelines, and real-time executive steering.
+            Select an architectural pillar to inspect our production solutions, custom BTP applications, data modernization pipelines, and real-time executive steering.
           </p>
         </div>
-        <SoundToggle />
       </div>
 
       {/* Symmetrical 4-Card Responsive Grid */}

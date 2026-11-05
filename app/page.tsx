@@ -4,9 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import siteData from '@/content/site.json';
 import { LandingActorSequence } from '@/components/LandingActorSequence';
-import { SoundToggle } from '@/components/SoundToggle';
 import { ContactDialog } from '@/components/ContactDialog';
-import { sound } from '@/lib/sound';
 import { ArrowRight, ShieldCheck, Sparkles, Mail } from 'lucide-react';
 
 export default function LandingPage() {
@@ -25,7 +23,7 @@ export default function LandingPage() {
       {/* Top Floating Baseline Bar (Moved Upside) */}
       <div className="relative z-40 max-w-[1200px] w-full mx-auto px-6 sm:px-8 pt-4 flex items-center justify-between pointer-events-auto">
         <div className="flex items-center gap-2.5">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--surface)]/90 backdrop-blur border border-[var(--border)] text-xs font-semibold text-[var(--ok)] shadow-xs">
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[var(--surface)]/90 border border-[var(--border)] text-xs font-semibold text-[var(--ok)] shadow-xs">
             <ShieldCheck size={14} />
             <span>Clean Core Certified • SAP BTP Architecture</span>
           </span>
@@ -34,16 +32,12 @@ export default function LandingPage() {
         <div className="flex items-center gap-2.5">
           <button
             type="button"
-            onClick={() => {
-              sound.click();
-              setIsContactOpen(true);
-            }}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[var(--surface)]/90 backdrop-blur border border-[var(--border)] text-xs font-semibold text-[var(--text-dim)] hover:text-[var(--brand)] transition-colors shadow-xs"
+            onClick={() => setIsContactOpen(true)}
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[var(--surface)]/90 border border-[var(--border)] text-xs font-semibold text-[var(--text-dim)] hover:text-[var(--brand)] transition-colors shadow-xs cursor-pointer"
           >
             <Mail size={13} />
-            <span className="hidden sm:inline">Contact Architecture Team</span>
+            <span>Contact Architecture Team</span>
           </button>
-          <SoundToggle />
         </div>
       </div>
 
@@ -71,33 +65,17 @@ export default function LandingPage() {
 
           <p className="text-[var(--text-dim)] text-base sm:text-lg max-w-xl leading-relaxed">
             {siteData.sub ||
-              'Explore 28 production solutions built across SAP BTP, Clean Core extensibility, and modern enterprise intelligence.'}
+              'Explore production solutions built across SAP BTP, Clean Core extensibility, and modern enterprise intelligence with analytics.'}
           </p>
 
           <div className="pt-2 flex flex-wrap items-center gap-4">
-            <Link href="/pillars" onClick={() => sound.click()}>
-              <button className="btn btn-primary h-12 px-7 text-base inline-flex items-center gap-2.5 shadow-md hover:scale-[1.02] transition-transform">
+            <Link href="/pillars">
+              <button className="btn btn-primary h-12 px-8 text-base inline-flex items-center gap-2.5 shadow-md hover:scale-[1.02] transition-transform">
                 <Sparkles className="w-4 h-4" />
                 <span>Explore solutions</span>
                 <ArrowRight className="w-4 h-4 ml-1" />
               </button>
             </Link>
-
-            <Link href="/solution/podzo" onClick={() => sound.click()}>
-              <button className="btn btn-secondary h-12 px-6 text-base inline-flex items-center gap-2">
-                <span>View Flagship (PODZO)</span>
-              </button>
-            </Link>
-          </div>
-
-          {/* Quick Metrics Strip */}
-          <div className="pt-6 border-t border-[var(--border)] grid grid-cols-3 gap-4 max-w-lg">
-            {siteData.stats.slice(0, 3).map((st, i) => (
-              <div key={i}>
-                <div className="text-xl sm:text-2xl font-bold text-[var(--navy)]">{st.value}</div>
-                <div className="text-xs text-[var(--text-dim)] font-medium">{st.label}</div>
-              </div>
-            ))}
           </div>
         </div>
 
@@ -106,17 +84,16 @@ export default function LandingPage() {
       </div>
 
       {/* Clean Subtle Footer */}
-      <div className="relative w-full py-3 border-t border-[var(--border)]/60 bg-[var(--surface)]/30 backdrop-blur-xs z-10 flex items-center justify-between px-6 sm:px-8 text-[11px] text-[var(--text-dim)]">
+      <div className="relative w-full py-3 border-t border-[var(--border)]/60 bg-[var(--surface)]/30 z-10 flex items-center justify-between px-6 sm:px-8 text-[11px] text-[var(--text-dim)]">
         <div>Enterprise Horizon • AIS Experience Centre</div>
-        <div>Continuous Clean Core Delivery</div>
+        <div className="text-[var(--text-dim)] font-mono">Clean Core Standard</div>
       </div>
 
-      {/* Contact Dialog Modal */}
+      {/* Contact Dialog */}
       <ContactDialog
         isOpen={isContactOpen}
         onClose={() => setIsContactOpen(false)}
-        contact={siteData.defaultContact}
-        solutionTitle="Abhiyanta Experience Centre"
+        solutionTitle="AIS Experience Centre Enterprise Review"
       />
     </div>
   );

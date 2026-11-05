@@ -8,8 +8,6 @@ import { BotSprite } from '@/components/BotSprite';
 import { BotBubble } from '@/components/BotBubble';
 import { ActivePoseName, resolvePose } from '@/lib/poses';
 import { ContactDialog } from '@/components/ContactDialog';
-import { SoundToggle } from '@/components/SoundToggle';
-import { sound } from '@/lib/sound';
 import {
   ChevronLeft,
   ChevronRight,
@@ -66,34 +64,26 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
     isClosing ? 'thanks' : currentCard?.botPose || DEFAULT_CARD_POSES[slideIndex] || 'present'
   );
 
+  const [botHead, setBotHead] = useState<{ headX: number; hairTopY: number; headW: number } | undefined>(undefined);
+
   const goNext = useCallback(() => {
     if (slideIndex < totalCards) {
-      sound.slideNext();
       const nextIdx = slideIndex + 1;
       setSlideIndex(nextIdx);
-      if (nextIdx >= totalCards) {
-        sound.celebrate();
-      }
     }
   }, [slideIndex, totalCards]);
 
   const goPrev = useCallback(() => {
     if (slideIndex > 0) {
-      sound.slidePrev();
       setSlideIndex((prev) => prev - 1);
     }
   }, [slideIndex]);
 
   const goToSlide = (idx: number) => {
-    sound.click();
     setSlideIndex(idx);
-    if (idx >= totalCards) {
-      sound.celebrate();
-    }
   };
 
   const restart = useCallback(() => {
-    sound.click();
     setSlideIndex(0);
   }, []);
 
@@ -143,47 +133,20 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
           <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
             <button
               type="button"
-              onClick={() => {
-                sound.click();
-                setIsContactOpen(true);
-              }}
+              onClick={() => setIsContactOpen(true)}
               className="btn btn-primary inline-flex items-center gap-2"
             >
               <Mail className="w-4 h-4" />
-              <span>Demo Contact</span>
+              <span>Contact Sales Head</span>
             </button>
-
-            {appData.closing?.feedbackUrl ? (
-              <a
-                href={appData.closing.feedbackUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => sound.click()}
-                className="btn btn-secondary inline-flex items-center gap-2"
-              >
-                <span>Share feedback</span>
-                <ExternalLink className="w-3.5 h-3.5 text-[var(--text-dim)]" />
-              </a>
-            ) : (
-              <a
-                href={`mailto:contact@abhiyantaindia.com?subject=${encodeURIComponent(
-                  `[Feedback] ${appData.title}`
-                )}`}
-                onClick={() => sound.click()}
-                className="btn btn-secondary inline-flex items-center gap-2"
-              >
-                <span>Share feedback</span>
-                <ExternalLink className="w-3.5 h-3.5 text-[var(--text-dim)]" />
-              </a>
-            )}
 
             <button
               type="button"
               onClick={restart}
-              className="btn btn-secondary inline-flex items-center gap-2"
+              className="btn btn-secondary inline-flex items-center gap-1.5"
             >
               <RotateCcw className="w-3.5 h-3.5" />
-              <span>Restart</span>
+              <span>Restart deck</span>
             </button>
           </div>
         </div>
@@ -223,7 +186,6 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
         <div className="flex items-center justify-between gap-4 mb-2">
           <Link
             href={`/solution/${slug}`}
-            onClick={() => sound.click()}
             className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--text-dim)] hover:text-[var(--brand)] transition-colors truncate max-w-[260px] sm:max-w-md"
           >
             <ChevronLeft className="w-4 h-4 shrink-0" />
@@ -231,8 +193,6 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
           </Link>
 
           <div className="flex items-center gap-3">
-            <SoundToggle />
-
             {/* Slide Indicator Badge */}
             <div className="shrink-0 px-2.5 py-1 rounded-md bg-[var(--surface)] border border-[var(--border)] text-xs font-semibold text-[var(--navy)] shadow-xs">
               {isClosing ? 'Closing Summary' : `Slide ${slideIndex + 1} of ${totalCards}`}
@@ -336,22 +296,24 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
             <BotBubble
               text={currentDialogue}
               speakerName="Aayam"
-              placement="top"
+              head={botHead}
+              topSafe={64}
               showTail={true}
               className="w-full max-w-sm mb-2"
             />
           </div>
 
-          {/* Bottom: Mascot Sprite Standing on Pedestal */}
+          {/* Bottom: Mascot Sprite Standing on Pedestal (Enlarged) */}
           <div className="shrink-0 flex flex-col items-center justify-end relative">
             <BotSprite
               pose={currentPose}
-              heightPx={280}
+              heightPx={330}
               alt="Aayam Explaining"
               priority={true}
+              onHeadPosition={(pos) => setBotHead({ headX: pos.headX, hairTopY: pos.headY, headW: 160 })}
             />
             {/* Soft Pedestal Shadow */}
-            <div className="w-28 h-3 bg-black/10 rounded-full blur-[2px] mt-[-6px]" />
+            <div className="w-32 h-3.5 bg-black/10 rounded-full blur-[2px] mt-[-6px]" />
           </div>
         </div>
       </div>

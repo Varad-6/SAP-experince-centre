@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { Mail, Phone, ExternalLink, X, UserCheck, MessageSquare } from 'lucide-react';
+import { Mail, Phone, X, UserCheck } from 'lucide-react';
 import siteData from '@/content/site.json';
 
 export interface ContactData {
@@ -9,7 +9,6 @@ export interface ContactData {
   role: string;
   email: string;
   phone?: string;
-  teamsUrl?: string;
 }
 
 export interface ContactDialogProps {
@@ -49,12 +48,12 @@ export const ContactDialog: React.FC<ContactDialogProps> = ({
     <div
       role="dialog"
       aria-modal="true"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[rgba(10,31,68,0.45)] backdrop-blur-none animate-fadeIn"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[rgba(10,31,68,0.45)] animate-fadeIn"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="card w-full max-w-md p-6 sm:p-8 relative bg-[var(--surface)] text-[var(--text)] border border-[var(--border)] shadow-[var(--shadow)]">
+      <div className="card w-full max-w-md p-6 sm:p-8 relative bg-[var(--surface)] text-[var(--text)] border border-[var(--border)] shadow-[var(--shadow)] rounded-2xl">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -71,7 +70,7 @@ export const ContactDialog: React.FC<ContactDialogProps> = ({
           </div>
           <div>
             <h3 className="text-lg font-bold text-[var(--navy)] leading-tight">
-              Enterprise Architecture Contact
+              Direct Sales & Enterprise Contact
             </h3>
             {solutionTitle && (
               <p className="text-xs text-[var(--text-dim)] mt-0.5">
@@ -92,12 +91,12 @@ export const ContactDialog: React.FC<ContactDialogProps> = ({
             </p>
           </div>
 
-          <div className="pt-2 border-t border-[var(--border)] space-y-2 text-sm">
+          <div className="pt-2 border-t border-[var(--border)] space-y-2.5 text-sm">
             <a
               href={`mailto:${activeContact.email}?subject=${encodeURIComponent(
                 solutionTitle ? `[AIS Architecture] Inquiry: ${solutionTitle}` : '[AIS Architecture] Enterprise Inquiry'
               )}`}
-              className="flex items-center gap-2.5 text-[var(--brand)] hover:underline font-medium break-all"
+              className="flex items-center gap-2.5 text-[var(--brand)] hover:underline font-semibold break-all"
             >
               <Mail className="w-4 h-4 shrink-0 text-[var(--brand)]" />
               <span>{activeContact.email}</span>
@@ -106,48 +105,24 @@ export const ContactDialog: React.FC<ContactDialogProps> = ({
             {activeContact.phone && (
               <a
                 href={`tel:${activeContact.phone}`}
-                className="flex items-center gap-2.5 text-[var(--text)] hover:text-[var(--brand)] font-medium"
+                className="flex items-center gap-2.5 text-[var(--text)] hover:text-[var(--brand)] font-semibold"
               >
                 <Phone className="w-4 h-4 shrink-0 text-[var(--text-dim)]" />
                 <span>{activeContact.phone}</span>
               </a>
             )}
-
-            {activeContact.teamsUrl && (
-              <a
-                href={activeContact.teamsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2.5 text-[var(--text)] hover:text-[var(--brand)] font-medium"
-              >
-                <MessageSquare className="w-4 h-4 shrink-0 text-[var(--text-dim)]" />
-                <span className="inline-flex items-center gap-1">
-                  Connect on Microsoft Teams
-                  <ExternalLink className="w-3 h-3 text-[var(--text-dim)]" />
-                </span>
-              </a>
-            )}
           </div>
         </div>
 
-        {/* Actions */}
-        <div className="flex items-center justify-end gap-3">
+        {/* Direct Action */}
+        <div className="flex items-center justify-end">
           <button
             type="button"
             onClick={onClose}
-            className="btn btn-secondary text-sm"
+            className="btn btn-secondary text-sm px-6"
           >
             Close
           </button>
-          <a
-            href={`mailto:${activeContact.email}?subject=${encodeURIComponent(
-              solutionTitle ? `[AIS Architecture] Inquiry: ${solutionTitle}` : '[AIS Architecture] Enterprise Inquiry'
-            )}`}
-            className="btn btn-primary text-sm inline-flex items-center gap-2"
-          >
-            <Mail className="w-4 h-4" />
-            <span>Send Email</span>
-          </a>
         </div>
       </div>
     </div>
