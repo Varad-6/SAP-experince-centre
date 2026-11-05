@@ -2,182 +2,134 @@
   "slug": "ais-debug-studio",
   "title": "AIS ABAP & CDS AI Debug Studio",
   "pillarId": "p1",
-  "heroHeadline": "AIS ABAP & CDS AI Debug Studio \u2014 60% Faster Bug Fixes",
-  "intro": "Intelligent SAP ADT debugging workbench with ST22 dump root-cause diagnosis and automated Clean Core refactoring.",
+  "heroHeadline": "AIS ABAP & CDS AI Debug Studio \u2014 Enterprise Architecture",
+  "intro": "Enterprise solution overview for AIS ABAP & CDS AI Debug Studio.",
   "basicIntro": "I am Aayam! I will guide you through AIS ABAP & CDS AI Debug Studio, demonstrating live production cockpits, Clean Core architecture, and verified business ROI.",
   "sapComponents": [
     "SAP BTP Cloud Foundry",
     "SAP S/4HANA Cloud",
     "SAP Event Mesh",
-    "SAP HANA Cloud",
-    "SAP AI Core"
+    "SAP HANA Cloud"
   ],
+  "hasContent": true,
   "cards": [
     {
       "id": "card-1",
-      "type": "hook",
-      "title": "AIS ABAP & CDS AI Debug Studio \u2014 Operational Overview",
-      "subtitle": "Live Production Command Cockpit",
-      "description": "ST22 workbench listing system crash dumps with exception, program and timestamp.",
-      "badge": "Enterprise Console",
-      "imageUrl": "/assets/apps/ais-debug-studio/screen-1.png",
-      "caption": "ST22 workbench listing system crash dumps with exception, program and timestamp.",
-      "botDialogue": "Welcome to AIS ABAP & CDS AI Debug Studio! This is the live production console unifying enterprise data and Clean Core automation.",
-      "botPose": "present"
+      "type": "live-ui",
+      "title": "Clean Core Architecture \u2014 Phase 1",
+      "subtitle": "AIS ABAP & CDS AI Debug Studio",
+      "description": "Enterprise production workflow stage 1 for AIS ABAP & CDS AI Debug Studio.",
+      "badge": "Slide 1 of 8",
+      "caption": "Enterprise production workflow stage 1 for AIS ABAP & CDS AI Debug Studio.",
+      "botDialogue": "Enterprise production workflow stage 1 for AIS ABAP & CDS AI Debug Studio.",
+      "botPose": "present",
+      "imageUrl": "/assets/apps/ais-debug-studio/c1_1.webp",
+      "screenshot": "/assets/apps/ais-debug-studio/c1_1.webp",
+      "imageWidth": 1429,
+      "imageHeight": 804
     },
     {
       "id": "card-2",
       "type": "challenge",
-      "title": "Legacy Enterprise Challenge & Operational Friction",
-      "subtitle": "Process Inefficiencies in S/4HANA Core",
-      "badge": "Enterprise Challenge",
-      "legacyFriction": [
-        "Manual paper-based exception handling requiring 4-7 days of cycle time.",
-        "Demurrage and latency penalties due to lack of real-time telemetry.",
-        "Monolithic customizations hindering cloud ERP upgrade cycles."
-      ],
-      "modernFlow": [
-        "Touchless cognitive processing executed in <30 seconds.",
-        "Direct S/4HANA event-driven integration with Clean Core architecture.",
-        "Full audit trail and exception scoring with explainable AI."
-      ],
-      "bullets": [
-        "High operational overhead for support engineering and manual re-entry.",
-        "Disparate data silos across legacy on-premise systems.",
-        "Audit compliance bottlenecks and error-prone reconciliation."
-      ],
-      "botDialogue": "Traditional workflows suffer from manual friction and reconciliation delays. Here is how our modern solution solves it.",
-      "botPose": "explain"
+      "title": "Card 1 \u2014 Use case & problem",
+      "subtitle": "AIS ABAP & CDS AI Debug Studio",
+      "description": "Card 1 \u2014 Use case & problem",
+      "badge": "Slide 2 of 8",
+      "caption": "Card 1 \u2014 Use case & problem",
+      "botDialogue": "Card 1 \u2014 Use case & problem",
+      "botPose": "point"
     },
     {
       "id": "card-3",
-      "type": "tech-stack",
-      "title": "Clean Core Architecture & Cloud Technology Stack",
-      "subtitle": "Side-by-Side Extensibility on SAP BTP",
-      "badge": "SAP BTP Architecture",
-      "layers": [
-        {
-          "name": "Presentation",
-          "tech": "SAPUI5 / Fiori Elements v1.120+ with responsive design DNA."
-        },
-        {
-          "name": "Application Logic",
-          "tech": "SAP Cloud Application Programming (CAP) Node.js 20 runtime."
-        },
-        {
-          "name": "Intelligence Layer",
-          "tech": "SAP AI Core with cognitive OCR, document reasoning, and ML scoring."
-        },
-        {
-          "name": "Data & ERP Mesh",
-          "tech": "SAP S/4HANA Cloud via Destination Service and Event Mesh."
-        }
-      ],
-      "botDialogue": "We maintain 100% Clean Core compliance by placing all custom logic and AI models side-by-side on SAP BTP.",
+      "type": "workflow",
+      "title": "Clean Core Architecture \u2014 Phase 3",
+      "subtitle": "AIS ABAP & CDS AI Debug Studio",
+      "description": "Enterprise production workflow stage 3 for AIS ABAP & CDS AI Debug Studio.",
+      "badge": "Slide 3 of 8",
+      "caption": "Enterprise production workflow stage 3 for AIS ABAP & CDS AI Debug Studio.",
+      "botDialogue": "Enterprise production workflow stage 3 for AIS ABAP & CDS AI Debug Studio.",
       "botPose": "tablet"
     },
     {
       "id": "card-4",
       "type": "live-ui",
-      "title": "Central Operational Workbench & Live Console",
-      "subtitle": "Interactive Production Cockpit",
-      "badge": "Live Console",
-      "imageUrl": "/assets/apps/ais-debug-studio/screen-2.png",
-      "caption": "Central operational console for AIS ABAP & CDS AI Debug Studio displaying live transactions, telemetry, and automated audit status.",
-      "botDialogue": "Take a look at the central operational workbench. Enterprise reviewers can inspect real-time transactions and audit trails.",
-      "botPose": "point"
+      "title": "ST22 Short Dumps Workbench",
+      "subtitle": "AIS ABAP & CDS AI Debug Studio",
+      "description": "Caption: ST22 workbench listing system crash dumps with exception, program and timestamp.",
+      "badge": "Slide 4 of 8",
+      "caption": "Caption: ST22 workbench listing system crash dumps with exception, program and timestamp.",
+      "botDialogue": "Caption: ST22 workbench listing system crash dumps with exception, program and timestamp.",
+      "botPose": "laptop",
+      "imageUrl": "/assets/apps/ais-debug-studio/c4_1.webp",
+      "screenshot": "/assets/apps/ais-debug-studio/c4_1.webp",
+      "imageWidth": 1920,
+      "imageHeight": 1080
     },
     {
       "id": "card-5",
       "type": "live-ui",
-      "title": "Intelligent Processing & Decision Intelligence",
-      "subtitle": "Cognitive Matching & Scoring",
-      "badge": "AI Decisioning",
-      "imageUrl": "/assets/apps/ais-debug-studio/screen-3.png",
-      "caption": "Deep-dive analytical view displaying AI confidence scores, line-item matching rationale, and policy tolerances.",
-      "botDialogue": "Our decision engine evaluates tolerances and exception rules with complete explainability before ERP ledger posting.",
-      "botPose": "laptop"
+      "title": "AI Dump Diagnosis",
+      "subtitle": "AIS ABAP & CDS AI Debug Studio",
+      "description": "Caption: AI diagnosis cards explain what happened, root cause and how to fix.",
+      "badge": "Slide 5 of 8",
+      "caption": "Caption: AI diagnosis cards explain what happened, root cause and how to fix.",
+      "botDialogue": "Caption: AI diagnosis cards explain what happened, root cause and how to fix.",
+      "botPose": "explain",
+      "imageUrl": "/assets/apps/ais-debug-studio/c5_1.webp",
+      "screenshot": "/assets/apps/ais-debug-studio/c5_1.webp",
+      "imageWidth": 1920,
+      "imageHeight": 1080
     },
     {
       "id": "card-6",
       "type": "live-ui",
-      "title": "Audit Validation & Diagnostic Telemetry",
-      "subtitle": "End-to-End Governance",
-      "badge": "Audit & Traceability",
-      "imageUrl": "/assets/apps/ais-debug-studio/screen-4.png",
-      "caption": "Validation console confirming zero data drift, transactional idempotency, and automated compliance logging.",
-      "botDialogue": "Zero data drift and strict idempotency ensure your SAP financials remain clean and audit-ready at all times.",
-      "botPose": "explain"
+      "title": "Confirm SAP Code Push",
+      "subtitle": "AIS ABAP & CDS AI Debug Studio",
+      "description": "Caption: Confirm SAP Code Push dialog capturing target package and transport request.",
+      "badge": "Slide 6 of 8",
+      "caption": "Caption: Confirm SAP Code Push dialog capturing target package and transport request.",
+      "botDialogue": "Caption: Confirm SAP Code Push dialog capturing target package and transport request.",
+      "botPose": "beckon",
+      "imageUrl": "/assets/apps/ais-debug-studio/c6_1.webp",
+      "screenshot": "/assets/apps/ais-debug-studio/c6_1.webp",
+      "imageWidth": 1920,
+      "imageHeight": 1080
     },
     {
       "id": "card-7",
-      "type": "workflow",
-      "title": "End-to-End Enterprise Execution Flow",
-      "subtitle": "Event-Driven Integration Architecture",
-      "badge": "Execution Flow",
-      "steps": [
-        {
-          "step": "01",
-          "title": "Event Ingestion & Data Telemetry",
-          "description": "Enterprise events, document uploads, or transactions stream into SAP BTP Event Mesh.",
-          "badge": "BTP Ingest & Validation"
-        },
-        {
-          "step": "02",
-          "title": "Cognitive Validation & Decision Intelligence",
-          "description": "AI models validate line items, verify multi-way tolerance thresholds, and score exception risks.",
-          "badge": "AI Decision Core"
-        },
-        {
-          "step": "03",
-          "title": "Clean Core ERP Settlement",
-          "description": "Approved records post touchlessly into SAP S/4HANA via authenticated standard BAPIs/OData APIs.",
-          "badge": "Automated Clean Core Event"
-        }
-      ],
-      "botDialogue": "Here is the end-to-end execution flow. Real-time events trigger autonomous validation and touchless S/4HANA ledger posting.",
-      "botPose": "present"
+      "type": "live-ui",
+      "title": "CDS Diagnostics & Auto-Repair",
+      "subtitle": "AIS ABAP & CDS AI Debug Studio",
+      "description": "Caption: CDS Diagnostics detecting activation errors and returning a repaired DDL definition.",
+      "badge": "Slide 7 of 8",
+      "caption": "Caption: CDS Diagnostics detecting activation errors and returning a repaired DDL definition.",
+      "botDialogue": "Caption: CDS Diagnostics detecting activation errors and returning a repaired DDL definition.",
+      "botPose": "present",
+      "imageUrl": "/assets/apps/ais-debug-studio/c7_1.webp",
+      "screenshot": "/assets/apps/ais-debug-studio/c7_1.webp",
+      "imageWidth": 1920,
+      "imageHeight": 1080
     },
     {
       "id": "card-8",
-      "type": "impact",
-      "title": "Verified Business Impact & Quantitative ROI",
-      "subtitle": "Proven Metrics in Production",
-      "badge": "Verified ROI",
-      "metrics": [
-        {
-          "label": "Cycle Time Reduction",
-          "value": "60% Faster Bug Fixes",
-          "subtext": "From multi-day manual batches to near real-time."
-        },
-        {
-          "label": "Ledger Auto-Match",
-          "value": "98.5%",
-          "subtext": "Automated matching within configured tolerance rules."
-        },
-        {
-          "label": "Clean Core Compliance",
-          "value": "100%",
-          "subtext": "Zero modifications to S/4HANA standard code base."
-        }
-      ],
-      "botDialogue": "The business results speak for themselves: 60% Faster Bug Fixes with 100% Clean Core compliance.",
-      "botPose": "beckon"
+      "type": "workflow",
+      "title": "Key features",
+      "subtitle": "AIS ABAP & CDS AI Debug Studio",
+      "description": "Key features",
+      "badge": "Slide 8 of 8",
+      "caption": "Key features",
+      "botDialogue": "Key features",
+      "botPose": "point"
     }
   ],
+  "closing": {
+    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation.",
+    "feedbackUrl": "https://abhiyantaindia.com"
+  },
   "contact": {
     "name": "Manisha Sawarkar",
-    "role": "Sales Head",
+    "role": "Sales Head, Abhiyanta India Solutions",
     "email": "Manisha.s@abhiyantatech.com",
-    "phone": "9136124009"
-  },
-  "closing": {
-    "headline": "Thank You for Exploring AIS ABAP & CDS AI Debug Studio",
-    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation.",
-    "nextSteps": [
-      "Schedule a live architecture walk-through with our SAP solutions team.",
-      "Review Clean Core extension artifacts and BTP sizing estimations.",
-      "Deploy prototype within your SAP BTP sandbox in under 5 business days."
-    ]
+    "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=Manisha.s@abhiyantatech.com"
   }
 }

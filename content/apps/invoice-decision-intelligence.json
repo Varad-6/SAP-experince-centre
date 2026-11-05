@@ -2,182 +2,130 @@
   "slug": "invoice-decision-intelligence",
   "title": "Invoice Decision Intelligence & Autonomous Approval",
   "pillarId": "p1",
-  "heroHeadline": "Invoice Decision Intelligence & Autonomous Approval \u2014 92% Touchless AP",
-  "intro": "Cognitive intake, line-item matching, and 4-tier explainable AI risk scoring for AP invoice exceptions.",
+  "heroHeadline": "Invoice Decision Intelligence & Autonomous Approval \u2014 Enterprise Architecture",
+  "intro": "Enterprise solution overview for Invoice Decision Intelligence & Autonomous Approval.",
   "basicIntro": "I am Aayam! I will guide you through Invoice Decision Intelligence & Autonomous Approval, demonstrating live production cockpits, Clean Core architecture, and verified business ROI.",
   "sapComponents": [
     "SAP BTP Cloud Foundry",
     "SAP S/4HANA Cloud",
     "SAP Event Mesh",
-    "SAP HANA Cloud",
-    "SAP AI Core"
+    "SAP HANA Cloud"
   ],
+  "hasContent": true,
   "cards": [
     {
       "id": "card-1",
-      "type": "hook",
-      "title": "Invoice Decision Intelligence & Autonomous Approval \u2014 Operational Overview",
-      "subtitle": "Live Production Command Cockpit",
-      "description": "Enterprise landing page uniting multi-channel intake, SAP context, and explainable invoice decisioning.",
-      "badge": "Enterprise Console",
-      "imageUrl": "/assets/apps/invoice-decision-intelligence/screen-1.png",
-      "caption": "Enterprise landing page uniting multi-channel intake, SAP context, and explainable invoice decisioning.",
-      "botDialogue": "Welcome to Invoice Decision Intelligence & Autonomous Approval! This is the live production console unifying enterprise data and Clean Core automation.",
-      "botPose": "present"
+      "type": "live-ui",
+      "title": "Product Landing & Clean Core Overview",
+      "subtitle": "Invoice Decision Intelligence & Autonomous Approval",
+      "description": "Caption: Enterprise landing page uniting multi-channel intake, SAP context, and explainable invoice decisioning.",
+      "badge": "Slide 1 of 8",
+      "caption": "Caption: Enterprise landing page uniting multi-channel intake, SAP context, and explainable invoice decisioning.",
+      "botDialogue": "Caption: Enterprise landing page uniting multi-channel intake, SAP context, and explainable invoice decisioning.",
+      "botPose": "present",
+      "imageUrl": "/assets/apps/invoice-decision-intelligence/c1_1.webp",
+      "screenshot": "/assets/apps/invoice-decision-intelligence/c1_1.webp",
+      "imageWidth": 835,
+      "imageHeight": 386
     },
     {
       "id": "card-2",
       "type": "challenge",
-      "title": "Legacy Enterprise Challenge & Operational Friction",
-      "subtitle": "Process Inefficiencies in S/4HANA Core",
-      "badge": "Enterprise Challenge",
-      "legacyFriction": [
-        "Manual paper-based exception handling requiring 4-7 days of cycle time.",
-        "Demurrage and latency penalties due to lack of real-time telemetry.",
-        "Monolithic customizations hindering cloud ERP upgrade cycles."
-      ],
-      "modernFlow": [
-        "Touchless cognitive processing executed in <30 seconds.",
-        "Direct S/4HANA event-driven integration with Clean Core architecture.",
-        "Full audit trail and exception scoring with explainable AI."
-      ],
-      "bullets": [
-        "High operational overhead for support engineering and manual re-entry.",
-        "Disparate data silos across legacy on-premise systems.",
-        "Audit compliance bottlenecks and error-prone reconciliation."
-      ],
-      "botDialogue": "Traditional workflows suffer from manual friction and reconciliation delays. Here is how our modern solution solves it.",
-      "botPose": "explain"
+      "title": "Use case & problem",
+      "subtitle": "Invoice Decision Intelligence & Autonomous Approval",
+      "description": "Use case & problem",
+      "badge": "Slide 2 of 8",
+      "caption": "Use case & problem",
+      "botDialogue": "Use case & problem",
+      "botPose": "point"
     },
     {
       "id": "card-3",
-      "type": "tech-stack",
-      "title": "Clean Core Architecture & Cloud Technology Stack",
-      "subtitle": "Side-by-Side Extensibility on SAP BTP",
-      "badge": "SAP BTP Architecture",
-      "layers": [
-        {
-          "name": "Presentation",
-          "tech": "SAPUI5 / Fiori Elements v1.120+ with responsive design DNA."
-        },
-        {
-          "name": "Application Logic",
-          "tech": "SAP Cloud Application Programming (CAP) Node.js 20 runtime."
-        },
-        {
-          "name": "Intelligence Layer",
-          "tech": "SAP AI Core with cognitive OCR, document reasoning, and ML scoring."
-        },
-        {
-          "name": "Data & ERP Mesh",
-          "tech": "SAP S/4HANA Cloud via Destination Service and Event Mesh."
-        }
-      ],
-      "botDialogue": "We maintain 100% Clean Core compliance by placing all custom logic and AI models side-by-side on SAP BTP.",
+      "type": "workflow",
+      "title": "Clean Core Architecture \u2014 Phase 3",
+      "subtitle": "Invoice Decision Intelligence & Autonomous Approval",
+      "description": "Enterprise production workflow stage 3 for Invoice Decision Intelligence & Autonomous Approval.",
+      "badge": "Slide 3 of 8",
+      "caption": "Enterprise production workflow stage 3 for Invoice Decision Intelligence & Autonomous Approval.",
+      "botDialogue": "Enterprise production workflow stage 3 for Invoice Decision Intelligence & Autonomous Approval.",
       "botPose": "tablet"
     },
     {
       "id": "card-4",
       "type": "live-ui",
-      "title": "Central Operational Workbench & Live Console",
-      "subtitle": "Interactive Production Cockpit",
-      "badge": "Live Console",
-      "imageUrl": "/assets/apps/invoice-decision-intelligence/screen-2.png",
-      "caption": "Central operational console for Invoice Decision Intelligence & Autonomous Approval displaying live transactions, telemetry, and automated audit status.",
-      "botDialogue": "Take a look at the central operational workbench. Enterprise reviewers can inspect real-time transactions and audit trails.",
-      "botPose": "point"
+      "title": "Executive Command Center Dashboard",
+      "subtitle": "Invoice Decision Intelligence & Autonomous Approval",
+      "description": "Caption: Executive command center displaying real-time AP intake metrics, auto-match rates, and risk alerts.",
+      "badge": "Slide 4 of 8",
+      "caption": "Caption: Executive command center displaying real-time AP intake metrics, auto-match rates, and risk alerts.",
+      "botDialogue": "Caption: Executive command center displaying real-time AP intake metrics, auto-match rates, and risk alerts.",
+      "botPose": "laptop",
+      "imageUrl": "/assets/apps/invoice-decision-intelligence/c4_1.webp",
+      "screenshot": "/assets/apps/invoice-decision-intelligence/c4_1.webp",
+      "imageWidth": 1920,
+      "imageHeight": 1080
     },
     {
       "id": "card-5",
       "type": "live-ui",
-      "title": "Intelligent Processing & Decision Intelligence",
-      "subtitle": "Cognitive Matching & Scoring",
-      "badge": "AI Decisioning",
-      "imageUrl": "/assets/apps/invoice-decision-intelligence/screen-3.png",
-      "caption": "Deep-dive analytical view displaying AI confidence scores, line-item matching rationale, and policy tolerances.",
-      "botDialogue": "Our decision engine evaluates tolerances and exception rules with complete explainability before ERP ledger posting.",
-      "botPose": "laptop"
+      "title": "Inbound Ingestion Pipeline & Channel Normalization",
+      "subtitle": "Invoice Decision Intelligence & Autonomous Approval",
+      "description": "Caption: Multi-channel intake inbox standardizing gate scans, vendor emails, and government IRN payloads.",
+      "badge": "Slide 5 of 8",
+      "caption": "Caption: Multi-channel intake inbox standardizing gate scans, vendor emails, and government IRN payloads.",
+      "botDialogue": "Caption: Multi-channel intake inbox standardizing gate scans, vendor emails, and government IRN payloads.",
+      "botPose": "explain",
+      "imageUrl": "/assets/apps/invoice-decision-intelligence/c5_1.webp",
+      "screenshot": "/assets/apps/invoice-decision-intelligence/c5_1.webp",
+      "imageWidth": 1363,
+      "imageHeight": 766
     },
     {
       "id": "card-6",
       "type": "live-ui",
-      "title": "Audit Validation & Diagnostic Telemetry",
-      "subtitle": "End-to-End Governance",
-      "badge": "Audit & Traceability",
-      "imageUrl": "/assets/apps/invoice-decision-intelligence/screen-4.png",
-      "caption": "Validation console confirming zero data drift, transactional idempotency, and automated compliance logging.",
-      "botDialogue": "Zero data drift and strict idempotency ensure your SAP financials remain clean and audit-ready at all times.",
-      "botPose": "explain"
+      "title": "Explainable AI Decision Center",
+      "subtitle": "Invoice Decision Intelligence & Autonomous Approval",
+      "description": "Caption: Hero Decision Center displaying 4-part explainable AI rationale, confidence score, and document lineage.",
+      "badge": "Slide 6 of 8",
+      "caption": "Caption: Hero Decision Center displaying 4-part explainable AI rationale, confidence score, and document lineage.",
+      "botDialogue": "Caption: Hero Decision Center displaying 4-part explainable AI rationale, confidence score, and document lineage.",
+      "botPose": "beckon",
+      "imageUrl": "/assets/apps/invoice-decision-intelligence/c6_1.webp",
+      "screenshot": "/assets/apps/invoice-decision-intelligence/c6_1.webp",
+      "imageWidth": 1920,
+      "imageHeight": 1080
     },
     {
       "id": "card-7",
       "type": "workflow",
-      "title": "End-to-End Enterprise Execution Flow",
-      "subtitle": "Event-Driven Integration Architecture",
-      "badge": "Execution Flow",
-      "steps": [
-        {
-          "step": "01",
-          "title": "Event Ingestion & Data Telemetry",
-          "description": "Enterprise events, document uploads, or transactions stream into SAP BTP Event Mesh.",
-          "badge": "BTP Ingest & Validation"
-        },
-        {
-          "step": "02",
-          "title": "Cognitive Validation & Decision Intelligence",
-          "description": "AI models validate line items, verify multi-way tolerance thresholds, and score exception risks.",
-          "badge": "AI Decision Core"
-        },
-        {
-          "step": "03",
-          "title": "Clean Core ERP Settlement",
-          "description": "Approved records post touchlessly into SAP S/4HANA via authenticated standard BAPIs/OData APIs.",
-          "badge": "Automated Clean Core Event"
-        }
-      ],
-      "botDialogue": "Here is the end-to-end execution flow. Real-time events trigger autonomous validation and touchless S/4HANA ledger posting.",
+      "title": "Prerequisites & next step",
+      "subtitle": "Invoice Decision Intelligence & Autonomous Approval",
+      "description": "Prerequisites & next step",
+      "badge": "Slide 7 of 8",
+      "caption": "Prerequisites & next step",
+      "botDialogue": "Prerequisites & next step",
       "botPose": "present"
     },
     {
       "id": "card-8",
-      "type": "impact",
-      "title": "Verified Business Impact & Quantitative ROI",
-      "subtitle": "Proven Metrics in Production",
-      "badge": "Verified ROI",
-      "metrics": [
-        {
-          "label": "Cycle Time Reduction",
-          "value": "92% Touchless AP",
-          "subtext": "From multi-day manual batches to near real-time."
-        },
-        {
-          "label": "Ledger Auto-Match",
-          "value": "98.5%",
-          "subtext": "Automated matching within configured tolerance rules."
-        },
-        {
-          "label": "Clean Core Compliance",
-          "value": "100%",
-          "subtext": "Zero modifications to S/4HANA standard code base."
-        }
-      ],
-      "botDialogue": "The business results speak for themselves: 92% Touchless AP with 100% Clean Core compliance.",
-      "botPose": "beckon"
+      "type": "workflow",
+      "title": "ROI",
+      "subtitle": "Invoice Decision Intelligence & Autonomous Approval",
+      "description": "Enterprise production workflow stage 8 for Invoice Decision Intelligence & Autonomous Approval.",
+      "badge": "Slide 8 of 8",
+      "caption": "Enterprise production workflow stage 8 for Invoice Decision Intelligence & Autonomous Approval.",
+      "botDialogue": "Enterprise production workflow stage 8 for Invoice Decision Intelligence & Autonomous Approval.",
+      "botPose": "point"
     }
   ],
+  "closing": {
+    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation.",
+    "feedbackUrl": "https://abhiyantaindia.com"
+  },
   "contact": {
     "name": "Manisha Sawarkar",
-    "role": "Sales Head",
+    "role": "Sales Head, Abhiyanta India Solutions",
     "email": "Manisha.s@abhiyantatech.com",
-    "phone": "9136124009"
-  },
-  "closing": {
-    "headline": "Thank You for Exploring Invoice Decision Intelligence & Autonomous Approval",
-    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation.",
-    "nextSteps": [
-      "Schedule a live architecture walk-through with our SAP solutions team.",
-      "Review Clean Core extension artifacts and BTP sizing estimations.",
-      "Deploy prototype within your SAP BTP sandbox in under 5 business days."
-    ]
+    "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=Manisha.s@abhiyantatech.com"
   }
 }

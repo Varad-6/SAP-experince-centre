@@ -1,0 +1,119 @@
+[
+  {
+    "slug": "sap-btp-vibe-coding",
+    "title": "SAP BTP Vibe Coding Workshop Prerequisites",
+    "pillarId": "p1",
+    "inbox_file": "SAP BTP PREREQUISTE\\SAP_BTP_Vibe_Coding_Workshop_Prerequisites_2.docx",
+    "match_confidence": "exact",
+    "confidence_score": 1.0,
+    "reason": "Filename contains 'vibe_coding' corresponding to sap-btp-vibe-coding"
+  },
+  {
+    "slug": "podzo",
+    "title": "PODZO Logistics Execution & Touchless Settlement",
+    "pillarId": "p1",
+    "inbox_file": "btp\\AIS Experience Centre \u2014 PODZO Demo Content-1.docx",
+    "match_confidence": "exact",
+    "confidence_score": 1.0,
+    "reason": "Filename contains 'podzo'"
+  },
+  {
+    "slug": "reconly",
+    "title": "RECONLY Automated 3-Way Vendor Reconciliation",
+    "pillarId": "p1",
+    "inbox_file": "btp\\RECONLY-1.docx",
+    "match_confidence": "exact",
+    "confidence_score": 1.0,
+    "reason": "Filename contains 'reconly'"
+  },
+  {
+    "slug": "product-cost-simulator",
+    "title": "Product Cost Simulator & Multi-Tier BOM Explosion",
+    "pillarId": "p1",
+    "inbox_file": "btp\\Product_Cost_Simulator_AIS_Experience_Centre1-1.docx",
+    "match_confidence": "exact",
+    "confidence_score": 1.0,
+    "reason": "Filename contains 'product_cost_simulator'"
+  },
+  {
+    "slug": "mdr",
+    "title": "MDR Master Data Remediation Engine",
+    "pillarId": "p1",
+    "inbox_file": "btp\\MDR-1.docx",
+    "match_confidence": "exact",
+    "confidence_score": 1.0,
+    "reason": "Filename contains 'mdr'"
+  },
+  {
+    "slug": "invoice-decision-intelligence",
+    "title": "Invoice Decision Intelligence & Autonomous Approval",
+    "pillarId": "p1",
+    "inbox_file": "btp\\Invoice_Decision_Intelligence_AIS_Experience_Centre.docx",
+    "match_confidence": "exact",
+    "confidence_score": 1.0,
+    "reason": "Filename contains 'invoice_decision_intelligence'"
+  },
+  {
+    "slug": "ais-debug-studio",
+    "title": "AIS ABAP & CDS AI Debug Studio",
+    "pillarId": "p1",
+    "inbox_file": "btp\\ABAP_CDS_AI_Debug_Studio_AIS_Experience_Centre1 (1)-1.docx",
+    "match_confidence": "exact",
+    "confidence_score": 1.0,
+    "reason": "Filename contains 'abap_cds' and 'debug_studio'"
+  },
+  {
+    "slug": "hanamorph",
+    "title": "HanaMorph Modernization & Migration Suite",
+    "pillarId": "p2",
+    "inbox_file": "ACCELERATOR\\AIS Experience Centre \u2014 HanaMorph Demo Content.docx",
+    "match_confidence": "exact",
+    "confidence_score": 1.0,
+    "reason": "Filename contains 'hanamorph'"
+  },
+  {
+    "slug": "asset-reliability-mro",
+    "title": "Asset Reliability, Maintenance & MRO Inventory",
+    "pillarId": "p3",
+    "inbox_file": "sac\\Asset_Reliability_MRO_Dashboard_Documentation-1.docx",
+    "match_confidence": "exact",
+    "confidence_score": 1.0,
+    "reason": "Filename contains 'asset_reliability_mro'"
+  },
+  {
+    "slug": "manufacturing-yield-scrap",
+    "title": "Manufacturing Yield, Scrap & Quality Cockpit",
+    "pillarId": "p3",
+    "inbox_file": "sac\\Manufacturing_Yield_Scrap_Quality_Cockpit_Client_Documentation-10.docx",
+    "match_confidence": "exact",
+    "confidence_score": 1.0,
+    "reason": "Filename contains 'manufacturing_yield_scrap'"
+  },
+  {
+    "slug": "o2c-receivables",
+    "title": "O2C Receivables Intelligence & DSO Steering",
+    "pillarId": "p3",
+    "inbox_file": "sac\\O2C_Receivables_Intelligence_Documentation_FINAL-1.docx",
+    "match_confidence": "exact",
+    "confidence_score": 1.0,
+    "reason": "Filename contains 'o2c_receivables'"
+  },
+  {
+    "slug": "procure-to-pay",
+    "title": "Procure-to-Pay Performance & Accounts Payable Cockpit",
+    "pillarId": "p3",
+    "inbox_file": "sac\\Procure_to_Pay_Dashboard_Documentation_Same_Format-1.docx",
+    "match_confidence": "exact",
+    "confidence_score": 1.0,
+    "reason": "Filename contains 'procure_to_pay'"
+  },
+  {
+    "slug": "revenue-analytics",
+    "title": "Revenue Analytics & Profitability Intelligence",
+    "pillarId": "p3",
+    "inbox_file": "sac\\Revenue_Analytics_Documentation-1.docx",
+    "match_confidence": "exact",
+    "confidence_score": 1.0,
+    "reason": "Filename contains 'revenue_analytics'"
+  }
+]

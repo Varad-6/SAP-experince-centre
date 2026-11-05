@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { AppContentSchema } from '@/lib/schema';
 import { z } from 'zod';
-import { BotSprite } from '@/components/BotSprite';
+import { BotSprite, HeadPosition } from '@/components/BotSprite';
 import { BotBubble } from '@/components/BotBubble';
 import { ActivePoseName, resolvePose } from '@/lib/poses';
 import { ContactDialog } from '@/components/ContactDialog';
@@ -37,11 +37,11 @@ export interface SlideDeckProps {
 }
 
 export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
-  // Slide index 0..7 = cards 1..8; slide index 8 = Slide 9 (Closing)
+  // Slide index 0..totalCards-1; slide index totalCards = Closing
   const [slideIndex, setSlideIndex] = useState<number>(0);
   const [isContactOpen, setIsContactOpen] = useState<boolean>(false);
 
-  const totalCards = 8;
+  const totalCards = appData.cards?.length || 8;
   const isClosing = slideIndex >= totalCards;
   const currentCard = isClosing ? null : appData.cards[slideIndex] || appData.cards[0];
 
@@ -61,10 +61,23 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
   ];
 
   const currentPose: ActivePoseName = resolvePose(
-    isClosing ? 'thanks' : currentCard?.botPose || DEFAULT_CARD_POSES[slideIndex] || 'present'
+    isClosing ? 'thanks' : currentCard?.botPose || DEFAULT_CARD_POSES[slideIndex % DEFAULT_CARD_POSES.length] || 'present'
   );
 
   const [botHead, setBotHead] = useState<{ headX: number; hairTopY: number; headW: number } | undefined>(undefined);
+
+  const handleHeadPosition = useCallback((pos: HeadPosition) => {
+    setBotHead((prev) => {
+      if (
+        prev &&
+        Math.abs(prev.headX - pos.headX) < 1 &&
+        Math.abs(prev.hairTopY - pos.headY) < 1
+      ) {
+        return prev;
+      }
+      return { headX: pos.headX, hairTopY: pos.headY, headW: 160 };
+    });
+  }, []);
 
   const goNext = useCallback(() => {
     if (slideIndex < totalCards) {
@@ -228,8 +241,8 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
             </div>
           )}
 
-          {/* Dynamic Card Content (Scrollable internally if screen is very short) */}
-          <div className="flex-1 flex flex-col justify-center overflow-y-auto pr-1 my-1">
+          {/* Dynamic Card Content (Fits cleanly inside slide without scrollbars) */}
+          <div className="flex-1 flex flex-col justify-center min-h-0 overflow-hidden pr-1 my-1">
             {renderCardContent()}
           </div>
 
@@ -310,7 +323,7 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
               heightPx={330}
               alt="Aayam Explaining"
               priority={true}
-              onHeadPosition={(pos) => setBotHead({ headX: pos.headX, hairTopY: pos.headY, headW: 160 })}
+              onHeadPosition={handleHeadPosition}
             />
             {/* Soft Pedestal Shadow */}
             <div className="w-32 h-3.5 bg-black/10 rounded-full blur-[2px] mt-[-6px]" />

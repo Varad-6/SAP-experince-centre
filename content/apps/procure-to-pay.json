@@ -2,182 +2,126 @@
   "slug": "procure-to-pay",
   "title": "Procure-to-Pay Performance & Accounts Payable Cockpit",
   "pillarId": "p3",
-  "heroHeadline": "Procure-to-Pay Performance & Accounts Payable Cockpit \u2014 35% Faster Cycle",
-  "intro": "Executive dashboard tracking spend under management, PR-to-PO conversion velocity, and vendor compliance.",
+  "heroHeadline": "Procure-to-Pay Performance & Accounts Payable Cockpit \u2014 Enterprise Architecture",
+  "intro": "Enterprise solution overview for Procure-to-Pay Performance & Accounts Payable Cockpit.",
   "basicIntro": "I am Aayam! I will guide you through Procure-to-Pay Performance & Accounts Payable Cockpit, demonstrating live production cockpits, Clean Core architecture, and verified business ROI.",
   "sapComponents": [
     "SAP BTP Cloud Foundry",
     "SAP S/4HANA Cloud",
     "SAP Event Mesh",
-    "SAP HANA Cloud",
-    "SAP AI Core"
+    "SAP HANA Cloud"
   ],
+  "hasContent": true,
   "cards": [
     {
       "id": "card-1",
-      "type": "hook",
-      "title": "Procure-to-Pay Performance & Accounts Payable Cockpit \u2014 Operational Overview",
-      "subtitle": "Live Production Command Cockpit",
-      "description": "Live production command cockpit for Procure-to-Pay Performance & Accounts Payable Cockpit.",
-      "badge": "Enterprise Console",
-      "imageUrl": "/assets/apps/procure-to-pay/screen-1.png",
-      "caption": "Live production command cockpit for Procure-to-Pay Performance & Accounts Payable Cockpit.",
-      "botDialogue": "Welcome to Procure-to-Pay Performance & Accounts Payable Cockpit! This is the live production console unifying enterprise data and Clean Core automation.",
-      "botPose": "present"
+      "type": "live-ui",
+      "title": "Clean Core Architecture \u2014 Phase 1",
+      "subtitle": "Procure-to-Pay Performance & Accounts Payable Cockpit",
+      "description": "Enterprise production workflow stage 1 for Procure-to-Pay Performance & Accounts Payable Cockpit.",
+      "badge": "Slide 1 of 8",
+      "caption": "Enterprise production workflow stage 1 for Procure-to-Pay Performance & Accounts Payable Cockpit.",
+      "botDialogue": "Enterprise production workflow stage 1 for Procure-to-Pay Performance & Accounts Payable Cockpit.",
+      "botPose": "present",
+      "imageUrl": "/assets/apps/procure-to-pay/c1_1.webp",
+      "screenshot": "/assets/apps/procure-to-pay/c1_1.webp",
+      "imageWidth": 1800,
+      "imageHeight": 723
     },
     {
       "id": "card-2",
       "type": "challenge",
-      "title": "Legacy Enterprise Challenge & Operational Friction",
-      "subtitle": "Process Inefficiencies in S/4HANA Core",
-      "badge": "Enterprise Challenge",
-      "legacyFriction": [
-        "Manual paper-based exception handling requiring 4-7 days of cycle time.",
-        "Demurrage and latency penalties due to lack of real-time telemetry.",
-        "Monolithic customizations hindering cloud ERP upgrade cycles."
-      ],
-      "modernFlow": [
-        "Touchless cognitive processing executed in <30 seconds.",
-        "Direct S/4HANA event-driven integration with Clean Core architecture.",
-        "Full audit trail and exception scoring with explainable AI."
-      ],
-      "bullets": [
-        "High operational overhead for support engineering and manual re-entry.",
-        "Disparate data silos across legacy on-premise systems.",
-        "Audit compliance bottlenecks and error-prone reconciliation."
-      ],
-      "botDialogue": "Traditional workflows suffer from manual friction and reconciliation delays. Here is how our modern solution solves it.",
-      "botPose": "explain"
+      "title": "Business Problem",
+      "subtitle": "Procure-to-Pay Performance & Accounts Payable Cockpit",
+      "description": "Procurement, goods receipt, supplier delivery and accounts payable information can be difficult to assess when each process is reviewed separately. Decision-makers need a consistent view of purchasing value, receipt progress, invoice status and outstanding payables to identify areas requiring follow-up.",
+      "badge": "Slide 2 of 8",
+      "caption": "Procurement, goods receipt, supplier delivery and accounts payable information can be difficult to assess when each process is reviewed separately. Decision-makers need a consisten...",
+      "botDialogue": "Procurement, goods receipt, supplier delivery and accounts payable information can be difficult to assess when each process is reviewed separately. Decision-makers need a consistent view of purchasing value, receipt progress, invoice status and outstanding payables to identify areas requiring follow-up.",
+      "botPose": "point"
     },
     {
       "id": "card-3",
-      "type": "tech-stack",
-      "title": "Clean Core Architecture & Cloud Technology Stack",
-      "subtitle": "Side-by-Side Extensibility on SAP BTP",
-      "badge": "SAP BTP Architecture",
-      "layers": [
-        {
-          "name": "Presentation",
-          "tech": "SAPUI5 / Fiori Elements v1.120+ with responsive design DNA."
-        },
-        {
-          "name": "Application Logic",
-          "tech": "SAP Cloud Application Programming (CAP) Node.js 20 runtime."
-        },
-        {
-          "name": "Intelligence Layer",
-          "tech": "SAP AI Core with cognitive OCR, document reasoning, and ML scoring."
-        },
-        {
-          "name": "Data & ERP Mesh",
-          "tech": "SAP S/4HANA Cloud via Destination Service and Event Mesh."
-        }
-      ],
-      "botDialogue": "We maintain 100% Clean Core compliance by placing all custom logic and AI models side-by-side on SAP BTP.",
+      "type": "workflow",
+      "title": "Three Key Business Questions",
+      "subtitle": "Procure-to-Pay Performance & Accounts Payable Cockpit",
+      "description": "How are purchase order value, goods receipt value and invoice amount performing across fiscal periods and material groups? Which suppliers contribute most to procurement value, and where are delivery quantities or delivery statuses requiring attention? What is the current invoice and accounts payable position by supplier and payment status?",
+      "badge": "Slide 3 of 8",
+      "caption": "How are purchase order value, goods receipt value and invoice amount performing across fiscal periods and material groups? Which suppliers contribute most to procurement value, and...",
+      "botDialogue": "How are purchase order value, goods receipt value and invoice amount performing across fiscal periods and material groups? Which suppliers contribute most to procurement value, and where are delivery quantities or delivery statuses requiring attention?",
       "botPose": "tablet"
     },
     {
       "id": "card-4",
-      "type": "live-ui",
-      "title": "Central Operational Workbench & Live Console",
-      "subtitle": "Interactive Production Cockpit",
-      "badge": "Live Console",
-      "imageUrl": "/assets/apps/procure-to-pay/screen-2.png",
-      "caption": "Central operational console for Procure-to-Pay Performance & Accounts Payable Cockpit displaying live transactions, telemetry, and automated audit status.",
-      "botDialogue": "Take a look at the central operational workbench. Enterprise reviewers can inspect real-time transactions and audit trails.",
-      "botPose": "point"
+      "type": "workflow",
+      "title": "Clean Core Architecture \u2014 Phase 4",
+      "subtitle": "Procure-to-Pay Performance & Accounts Payable Cockpit",
+      "description": "Enterprise production workflow stage 4 for Procure-to-Pay Performance & Accounts Payable Cockpit.",
+      "badge": "Slide 4 of 8",
+      "caption": "Enterprise production workflow stage 4 for Procure-to-Pay Performance & Accounts Payable Cockpit.",
+      "botDialogue": "Enterprise production workflow stage 4 for Procure-to-Pay Performance & Accounts Payable Cockpit.",
+      "botPose": "laptop"
     },
     {
       "id": "card-5",
-      "type": "live-ui",
-      "title": "Intelligent Processing & Decision Intelligence",
-      "subtitle": "Cognitive Matching & Scoring",
-      "badge": "AI Decisioning",
-      "imageUrl": "/assets/apps/procure-to-pay/screen-3.png",
-      "caption": "Deep-dive analytical view displaying AI confidence scores, line-item matching rationale, and policy tolerances.",
-      "botDialogue": "Our decision engine evaluates tolerances and exception rules with complete explainability before ERP ledger posting.",
-      "botPose": "laptop"
+      "type": "workflow",
+      "title": "Data Architecture",
+      "subtitle": "Procure-to-Pay Performance & Accounts Payable Cockpit",
+      "description": "Data Architecture",
+      "badge": "Slide 5 of 8",
+      "caption": "Data Architecture",
+      "botDialogue": "Data Architecture",
+      "botPose": "explain"
     },
     {
       "id": "card-6",
       "type": "live-ui",
-      "title": "Audit Validation & Diagnostic Telemetry",
-      "subtitle": "End-to-End Governance",
-      "badge": "Audit & Traceability",
-      "imageUrl": "/assets/apps/procure-to-pay/screen-4.png",
-      "caption": "Validation console confirming zero data drift, transactional idempotency, and automated compliance logging.",
-      "botDialogue": "Zero data drift and strict idempotency ensure your SAP financials remain clean and audit-ready at all times.",
-      "botPose": "explain"
+      "title": "This dashboard pages provide a progression from executive procurement visibility to supplier delivery performance and invoice/accounts payable analysis. No Joule scenarios are shown in the supplied P2P story.",
+      "subtitle": "Procure-to-Pay Performance & Accounts Payable Cockpit",
+      "description": "This dashboard pages provide a progression from executive procurement visibility to supplier delivery performance and invoice/accounts payable analysis. No Joule scenarios are shown in the supplied P2P story.",
+      "badge": "Slide 6 of 8",
+      "caption": "This dashboard pages provide a progression from executive procurement visibility to supplier delivery performance and invoice/accounts payable analysis. No Joule scenarios are show...",
+      "botDialogue": "This dashboard pages provide a progression from executive procurement visibility to supplier delivery performance and invoice/accounts payable analysis. No Joule scenarios are shown in the supplied P2P story.",
+      "botPose": "beckon",
+      "imageUrl": "/assets/apps/procure-to-pay/c6_1.webp",
+      "screenshot": "/assets/apps/procure-to-pay/c6_1.webp",
+      "imageWidth": 1099,
+      "imageHeight": 504
     },
     {
       "id": "card-7",
-      "type": "workflow",
-      "title": "End-to-End Enterprise Execution Flow",
-      "subtitle": "Event-Driven Integration Architecture",
-      "badge": "Execution Flow",
-      "steps": [
-        {
-          "step": "01",
-          "title": "Event Ingestion & Data Telemetry",
-          "description": "Enterprise events, document uploads, or transactions stream into SAP BTP Event Mesh.",
-          "badge": "BTP Ingest & Validation"
-        },
-        {
-          "step": "02",
-          "title": "Cognitive Validation & Decision Intelligence",
-          "description": "AI models validate line items, verify multi-way tolerance thresholds, and score exception risks.",
-          "badge": "AI Decision Core"
-        },
-        {
-          "step": "03",
-          "title": "Clean Core ERP Settlement",
-          "description": "Approved records post touchlessly into SAP S/4HANA via authenticated standard BAPIs/OData APIs.",
-          "badge": "Automated Clean Core Event"
-        }
-      ],
-      "botDialogue": "Here is the end-to-end execution flow. Real-time events trigger autonomous validation and touchless S/4HANA ledger posting.",
-      "botPose": "present"
+      "type": "live-ui",
+      "title": "The values below reproduce the executive dashboard display in the supplied story. Approved calculation formulas, KPI targets, filter context and reconciliation evidence are not included; descriptions are business interpretations and should not be treated as certified calculation specifications",
+      "subtitle": "Procure-to-Pay Performance & Accounts Payable Cockpit",
+      "description": "The values below reproduce the executive dashboard display in the supplied story. Approved calculation formulas, KPI targets, filter context and reconciliation evidence are not included; descriptions are business interpretations and should not be treated as certified calculation specifications",
+      "badge": "Slide 7 of 8",
+      "caption": "The values below reproduce the executive dashboard display in the supplied story. Approved calculation formulas, KPI targets, filter context and reconciliation evidence are not inc...",
+      "botDialogue": "The values below reproduce the executive dashboard display in the supplied story. Approved calculation formulas, KPI targets, filter context and reconciliation evidence are not included; descriptions are business interpretations and should not be treated as certified calculation specifications",
+      "botPose": "present",
+      "imageUrl": "/assets/apps/procure-to-pay/c7_1.webp",
+      "screenshot": "/assets/apps/procure-to-pay/c7_1.webp",
+      "imageWidth": 1917,
+      "imageHeight": 562
     },
     {
       "id": "card-8",
-      "type": "impact",
-      "title": "Verified Business Impact & Quantitative ROI",
-      "subtitle": "Proven Metrics in Production",
-      "badge": "Verified ROI",
-      "metrics": [
-        {
-          "label": "Cycle Time Reduction",
-          "value": "35% Faster Cycle",
-          "subtext": "From multi-day manual batches to near real-time."
-        },
-        {
-          "label": "Ledger Auto-Match",
-          "value": "98.5%",
-          "subtext": "Automated matching within configured tolerance rules."
-        },
-        {
-          "label": "Clean Core Compliance",
-          "value": "100%",
-          "subtext": "Zero modifications to S/4HANA standard code base."
-        }
-      ],
-      "botDialogue": "The business results speak for themselves: 35% Faster Cycle with 100% Clean Core compliance.",
-      "botPose": "beckon"
+      "type": "workflow",
+      "title": "Clean Core Architecture \u2014 Phase 8",
+      "subtitle": "Procure-to-Pay Performance & Accounts Payable Cockpit",
+      "description": "Enterprise production workflow stage 8 for Procure-to-Pay Performance & Accounts Payable Cockpit.",
+      "badge": "Slide 8 of 8",
+      "caption": "Enterprise production workflow stage 8 for Procure-to-Pay Performance & Accounts Payable Cockpit.",
+      "botDialogue": "Enterprise production workflow stage 8 for Procure-to-Pay Performance & Accounts Payable Cockpit.",
+      "botPose": "point"
     }
   ],
+  "closing": {
+    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation.",
+    "feedbackUrl": "https://abhiyantaindia.com"
+  },
   "contact": {
     "name": "Manisha Sawarkar",
-    "role": "Sales Head",
+    "role": "Sales Head, Abhiyanta India Solutions",
     "email": "Manisha.s@abhiyantatech.com",
-    "phone": "9136124009"
-  },
-  "closing": {
-    "headline": "Thank You for Exploring Procure-to-Pay Performance & Accounts Payable Cockpit",
-    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation.",
-    "nextSteps": [
-      "Schedule a live architecture walk-through with our SAP solutions team.",
-      "Review Clean Core extension artifacts and BTP sizing estimations.",
-      "Deploy prototype within your SAP BTP sandbox in under 5 business days."
-    ]
+    "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=Manisha.s@abhiyantatech.com"
   }
 }

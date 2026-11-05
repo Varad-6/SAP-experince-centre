@@ -29,6 +29,10 @@ interface SolutionDetailProps {
     intro?: string;
     basicIntro?: string;
     sapComponents?: string[];
+    cards?: Array<{
+      imageUrl?: string;
+      screenshot?: string;
+    }>;
     contact?: {
       name: string;
       role: string;
@@ -52,9 +56,8 @@ export const SolutionDetailClient: React.FC<SolutionDetailProps> = ({
   const teaserText = appData?.basicIntro || solution.oneLiner;
 
   const thumbnailPath =
-    solution.slug === 'sap-btp-vibe-coding'
-      ? '/assets/apps/sap-btp-vibe-coding/01_Entitlements_Entity_Assignments.png'
-      : `/assets/apps/${solution.slug}/screen-1.png`;
+    appData?.cards?.[0]?.imageUrl ||
+    `/assets/apps/${solution.slug}/c1_1.webp`;
 
   const openArchitecture = () => {
     setIsArchOpen(true);
@@ -135,19 +138,16 @@ export const SolutionDetailClient: React.FC<SolutionDetailProps> = ({
         </div>
       </div>
 
-      {/* 3. Center: Large 16:9 .card with solution visual */}
+      {/* 3. Center: Clean 16:9 .card with solution visual */}
       <div
         id="solution-visual-card"
         className="card overflow-hidden mb-10 border border-[var(--border)] shadow-[var(--shadow)] bg-[var(--surface)]"
       >
-        <div className="relative aspect-video w-full bg-[var(--surface-2)] flex items-center justify-center overflow-hidden">
+        <div className="relative w-full max-h-[520px] bg-[var(--surface-2)] flex items-center justify-center overflow-hidden p-2">
           <img
             src={thumbnailPath}
             alt={solution.title}
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src = '/assets/bot/_placeholder.svg';
-            }}
+            className="w-full h-auto max-h-[500px] object-contain rounded-lg"
           />
         </div>
       </div>

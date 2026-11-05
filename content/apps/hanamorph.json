@@ -2,182 +2,134 @@
   "slug": "hanamorph",
   "title": "HanaMorph Modernization & Migration Suite",
   "pillarId": "p2",
-  "heroHeadline": "HanaMorph Modernization & Migration Suite \u2014 85% Migration Cut",
-  "intro": "Automated calculation view conversion, 1:1 CSN 2.0 schema translation, and Datasphere lineage verification.",
+  "heroHeadline": "HanaMorph Modernization & Migration Suite \u2014 Enterprise Architecture",
+  "intro": "Enterprise solution overview for HanaMorph Modernization & Migration Suite.",
   "basicIntro": "I am Aayam! I will guide you through HanaMorph Modernization & Migration Suite, demonstrating live production cockpits, Clean Core architecture, and verified business ROI.",
   "sapComponents": [
     "SAP BTP Cloud Foundry",
     "SAP S/4HANA Cloud",
     "SAP Event Mesh",
-    "SAP HANA Cloud",
-    "SAP AI Core"
+    "SAP HANA Cloud"
   ],
+  "hasContent": true,
   "cards": [
     {
       "id": "card-1",
-      "type": "hook",
-      "title": "HanaMorph Modernization & Migration Suite \u2014 Operational Overview",
-      "subtitle": "Live Production Command Cockpit",
-      "description": "Live production command cockpit for HanaMorph Modernization & Migration Suite.",
-      "badge": "Enterprise Console",
-      "imageUrl": "/assets/apps/hanamorph/screen-1.png",
-      "caption": "Live production command cockpit for HanaMorph Modernization & Migration Suite.",
-      "botDialogue": "Welcome to HanaMorph Modernization & Migration Suite! This is the live production console unifying enterprise data and Clean Core automation.",
-      "botPose": "present"
+      "type": "live-ui",
+      "title": "Clean Core Architecture \u2014 Phase 1",
+      "subtitle": "HanaMorph Modernization & Migration Suite",
+      "description": "Enterprise production workflow stage 1 for HanaMorph Modernization & Migration Suite.",
+      "badge": "Slide 1 of 8",
+      "caption": "Enterprise production workflow stage 1 for HanaMorph Modernization & Migration Suite.",
+      "botDialogue": "Enterprise production workflow stage 1 for HanaMorph Modernization & Migration Suite.",
+      "botPose": "present",
+      "imageUrl": "/assets/apps/hanamorph/c1_1.webp",
+      "screenshot": "/assets/apps/hanamorph/c1_1.webp",
+      "imageWidth": 1919,
+      "imageHeight": 849
     },
     {
       "id": "card-2",
       "type": "challenge",
-      "title": "Legacy Enterprise Challenge & Operational Friction",
-      "subtitle": "Process Inefficiencies in S/4HANA Core",
-      "badge": "Enterprise Challenge",
-      "legacyFriction": [
-        "Manual paper-based exception handling requiring 4-7 days of cycle time.",
-        "Demurrage and latency penalties due to lack of real-time telemetry.",
-        "Monolithic customizations hindering cloud ERP upgrade cycles."
-      ],
-      "modernFlow": [
-        "Touchless cognitive processing executed in <30 seconds.",
-        "Direct S/4HANA event-driven integration with Clean Core architecture.",
-        "Full audit trail and exception scoring with explainable AI."
-      ],
-      "bullets": [
-        "High operational overhead for support engineering and manual re-entry.",
-        "Disparate data silos across legacy on-premise systems.",
-        "Audit compliance bottlenecks and error-prone reconciliation."
-      ],
-      "botDialogue": "Traditional workflows suffer from manual friction and reconciliation delays. Here is how our modern solution solves it.",
-      "botPose": "explain"
+      "title": "Use case & problem",
+      "subtitle": "HanaMorph Modernization & Migration Suite",
+      "description": "Use case & problem",
+      "badge": "Slide 2 of 8",
+      "caption": "Use case & problem",
+      "botDialogue": "Use case & problem",
+      "botPose": "point"
     },
     {
       "id": "card-3",
-      "type": "tech-stack",
-      "title": "Clean Core Architecture & Cloud Technology Stack",
-      "subtitle": "Side-by-Side Extensibility on SAP BTP",
-      "badge": "SAP BTP Architecture",
-      "layers": [
-        {
-          "name": "Presentation",
-          "tech": "SAPUI5 / Fiori Elements v1.120+ with responsive design DNA."
-        },
-        {
-          "name": "Application Logic",
-          "tech": "SAP Cloud Application Programming (CAP) Node.js 20 runtime."
-        },
-        {
-          "name": "Intelligence Layer",
-          "tech": "SAP AI Core with cognitive OCR, document reasoning, and ML scoring."
-        },
-        {
-          "name": "Data & ERP Mesh",
-          "tech": "SAP S/4HANA Cloud via Destination Service and Event Mesh."
-        }
-      ],
-      "botDialogue": "We maintain 100% Clean Core compliance by placing all custom logic and AI models side-by-side on SAP BTP.",
+      "type": "workflow",
+      "title": "techstack",
+      "subtitle": "HanaMorph Modernization & Migration Suite",
+      "description": "SAP BTP Cloud Foundry, Node.js 20+, SAP Datasphere CSN 2.0, @sap/hana-client, SAP Fiori Horizon, Pure ANSI SQL-2016 Compiler, Kyma, REST APIs",
+      "badge": "Slide 3 of 8",
+      "caption": "SAP BTP Cloud Foundry, Node.js 20+, SAP Datasphere CSN 2.0, @sap/hana-client, SAP Fiori Horizon, Pure ANSI SQL-2016 Compiler, Kyma, REST APIs",
+      "botDialogue": "SAP BTP Cloud Foundry, Node.js 20+, SAP Datasphere CSN 2.0, @sap/hana-client, SAP Fiori Horizon, Pure ANSI SQL-2016 Compiler, Kyma, REST APIs",
       "botPose": "tablet"
     },
     {
       "id": "card-4",
       "type": "live-ui",
-      "title": "Central Operational Workbench & Live Console",
-      "subtitle": "Interactive Production Cockpit",
-      "badge": "Live Console",
-      "imageUrl": "/assets/apps/hanamorph/screen-2.png",
-      "caption": "Central operational console for HanaMorph Modernization & Migration Suite displaying live transactions, telemetry, and automated audit status.",
-      "botDialogue": "Take a look at the central operational workbench. Enterprise reviewers can inspect real-time transactions and audit trails.",
-      "botPose": "point"
+      "title": "Figure: Card 4 (Feature 1): Scenario Artifact Discovery & Classification (hanamorph_c4_1.png)",
+      "subtitle": "HanaMorph Modernization & Migration Suite",
+      "description": "Figure: Card 4 (Feature 1): Scenario Artifact Discovery & Classification (hanamorph_c4_1.png)",
+      "badge": "Slide 4 of 8",
+      "caption": "Figure: Card 4 (Feature 1): Scenario Artifact Discovery & Classification (hanamorph_c4_1.png)",
+      "botDialogue": "Figure: Card 4 (Feature 1): Scenario Artifact Discovery & Classification (hanamorph_c4_1.png)",
+      "botPose": "laptop",
+      "imageUrl": "/assets/apps/hanamorph/c4_1.webp",
+      "screenshot": "/assets/apps/hanamorph/c4_1.webp",
+      "imageWidth": 1920,
+      "imageHeight": 1024
     },
     {
       "id": "card-5",
       "type": "live-ui",
-      "title": "Intelligent Processing & Decision Intelligence",
-      "subtitle": "Cognitive Matching & Scoring",
-      "badge": "AI Decisioning",
-      "imageUrl": "/assets/apps/hanamorph/screen-3.png",
-      "caption": "Deep-dive analytical view displaying AI confidence scores, line-item matching rationale, and policy tolerances.",
-      "botDialogue": "Our decision engine evaluates tolerances and exception rules with complete explainability before ERP ledger posting.",
-      "botPose": "laptop"
+      "title": "Figure: Card 4 (Feature 1): Scenario Artifact Discovery & Classification (hanamorph_c4_1.png)",
+      "subtitle": "HanaMorph Modernization & Migration Suite",
+      "description": "Figure: Card 4 (Feature 1): Scenario Artifact Discovery & Classification (hanamorph_c4_1.png)",
+      "badge": "Slide 5 of 8",
+      "caption": "Figure: Card 4 (Feature 1): Scenario Artifact Discovery & Classification (hanamorph_c4_1.png)",
+      "botDialogue": "Figure: Card 4 (Feature 1): Scenario Artifact Discovery & Classification (hanamorph_c4_1.png)",
+      "botPose": "explain",
+      "imageUrl": "/assets/apps/hanamorph/c5_1.webp",
+      "screenshot": "/assets/apps/hanamorph/c5_1.webp",
+      "imageWidth": 1920,
+      "imageHeight": 1024
     },
     {
       "id": "card-6",
       "type": "live-ui",
-      "title": "Audit Validation & Diagnostic Telemetry",
-      "subtitle": "End-to-End Governance",
-      "badge": "Audit & Traceability",
-      "imageUrl": "/assets/apps/hanamorph/screen-4.png",
-      "caption": "Validation console confirming zero data drift, transactional idempotency, and automated compliance logging.",
-      "botDialogue": "Zero data drift and strict idempotency ensure your SAP financials remain clean and audit-ready at all times.",
-      "botPose": "explain"
+      "title": "Figure: Card 6: Datasphere Pre-Import Validation (All 9 Entities Ready to Import) (hanamorph_c6_1.png)",
+      "subtitle": "HanaMorph Modernization & Migration Suite",
+      "description": "Figure: Card 6: Datasphere Pre-Import Validation (All 9 Entities Ready to Import) (hanamorph_c6_1.png)",
+      "badge": "Slide 6 of 8",
+      "caption": "Figure: Card 6: Datasphere Pre-Import Validation (All 9 Entities Ready to Import) (hanamorph_c6_1.png)",
+      "botDialogue": "Figure: Card 6: Datasphere Pre-Import Validation (All 9 Entities Ready to Import) (hanamorph_c6_1.png)",
+      "botPose": "beckon",
+      "imageUrl": "/assets/apps/hanamorph/c6_1.webp",
+      "screenshot": "/assets/apps/hanamorph/c6_1.webp",
+      "imageWidth": 1920,
+      "imageHeight": 1024
     },
     {
       "id": "card-7",
-      "type": "workflow",
-      "title": "End-to-End Enterprise Execution Flow",
-      "subtitle": "Event-Driven Integration Architecture",
-      "badge": "Execution Flow",
-      "steps": [
-        {
-          "step": "01",
-          "title": "Event Ingestion & Data Telemetry",
-          "description": "Enterprise events, document uploads, or transactions stream into SAP BTP Event Mesh.",
-          "badge": "BTP Ingest & Validation"
-        },
-        {
-          "step": "02",
-          "title": "Cognitive Validation & Decision Intelligence",
-          "description": "AI models validate line items, verify multi-way tolerance thresholds, and score exception risks.",
-          "badge": "AI Decision Core"
-        },
-        {
-          "step": "03",
-          "title": "Clean Core ERP Settlement",
-          "description": "Approved records post touchlessly into SAP S/4HANA via authenticated standard BAPIs/OData APIs.",
-          "badge": "Automated Clean Core Event"
-        }
-      ],
-      "botDialogue": "Here is the end-to-end execution flow. Real-time events trigger autonomous validation and touchless S/4HANA ledger posting.",
-      "botPose": "present"
+      "type": "live-ui",
+      "title": "Fullscreen SAP Datasphere Impact & Lineage Graph",
+      "subtitle": "HanaMorph Modernization & Migration Suite",
+      "description": "Fullscreen SAP Datasphere Impact & Lineage Graph",
+      "badge": "Slide 7 of 8",
+      "caption": "Fullscreen SAP Datasphere Impact & Lineage Graph",
+      "botDialogue": "Fullscreen SAP Datasphere Impact & Lineage Graph",
+      "botPose": "present",
+      "imageUrl": "/assets/apps/hanamorph/c7_1.webp",
+      "screenshot": "/assets/apps/hanamorph/c7_1.webp",
+      "imageWidth": 1920,
+      "imageHeight": 1024
     },
     {
       "id": "card-8",
-      "type": "impact",
-      "title": "Verified Business Impact & Quantitative ROI",
-      "subtitle": "Proven Metrics in Production",
-      "badge": "Verified ROI",
-      "metrics": [
-        {
-          "label": "Cycle Time Reduction",
-          "value": "85% Migration Cut",
-          "subtext": "From multi-day manual batches to near real-time."
-        },
-        {
-          "label": "Ledger Auto-Match",
-          "value": "98.5%",
-          "subtext": "Automated matching within configured tolerance rules."
-        },
-        {
-          "label": "Clean Core Compliance",
-          "value": "100%",
-          "subtext": "Zero modifications to S/4HANA standard code base."
-        }
-      ],
-      "botDialogue": "The business results speak for themselves: 85% Migration Cut with 100% Clean Core compliance.",
-      "botPose": "beckon"
+      "type": "workflow",
+      "title": "Clean Core Architecture \u2014 Phase 8",
+      "subtitle": "HanaMorph Modernization & Migration Suite",
+      "description": "Enterprise production workflow stage 8 for HanaMorph Modernization & Migration Suite.",
+      "badge": "Slide 8 of 8",
+      "caption": "Enterprise production workflow stage 8 for HanaMorph Modernization & Migration Suite.",
+      "botDialogue": "Enterprise production workflow stage 8 for HanaMorph Modernization & Migration Suite.",
+      "botPose": "point"
     }
   ],
+  "closing": {
+    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation.",
+    "feedbackUrl": "https://abhiyantaindia.com"
+  },
   "contact": {
     "name": "Manisha Sawarkar",
-    "role": "Sales Head",
+    "role": "Sales Head, Abhiyanta India Solutions",
     "email": "Manisha.s@abhiyantatech.com",
-    "phone": "9136124009"
-  },
-  "closing": {
-    "headline": "Thank You for Exploring HanaMorph Modernization & Migration Suite",
-    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation.",
-    "nextSteps": [
-      "Schedule a live architecture walk-through with our SAP solutions team.",
-      "Review Clean Core extension artifacts and BTP sizing estimations.",
-      "Deploy prototype within your SAP BTP sandbox in under 5 business days."
-    ]
+    "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=Manisha.s@abhiyantatech.com"
   }
 }

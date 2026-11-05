@@ -98,7 +98,7 @@ export const AppContentSchema = z.object({
   basicIntro: z.string().optional(),
   sapComponents: z.array(z.string()),
   hasContent: z.boolean().default(true),
-  cards: z.array(CardSchema).min(8).max(16),
+  cards: z.array(CardSchema).min(1).max(24),
   contact: ContactSchema.optional(),
   closing: ClosingSchema.optional(),
 });

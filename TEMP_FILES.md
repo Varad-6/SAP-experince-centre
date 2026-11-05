@@ -13,4 +13,6 @@ All scratch and transient files generated during development cycles are recorded
 | `scripts/make_sac_apps.py` | Generator for SAC dashboard applications from ais exp data sub-zips | v5.0 | Utility retained for catalog updates |
 | `scripts/snap.js` | Automated Playwright multi-viewport visual regression and snapshot script | v5.0 | Permanent UI testing utility (`node scripts/snap.js`) |
 | `scripts/measure-head-track.py` | Python 4fps ffmpeg + scipy.ndimage hair cluster tracker for videoHeadTracks | v6.0 | Permanent utility (`python scripts/measure-head-track.py`) |
-| `scripts/test-bubble-viewports.js` | Automated Playwright multi-viewport verification for speech bubble placement | v6.0 | Permanent test utility (`node scripts/test-bubble-viewports.js`) |
+| `scripts/step1_inventory_and_map.py` | Inventory generator and project matcher for content inbox | v6.2 | Utility retained (`docs/INBOX_TREE.md`, `content/inbox-map.json`) |
+| `scripts/build_pipeline.py` | WebP conversion, SHA-1 collision-free extractor and schema builder | v6.2 | Permanent pipeline utility |
+| `scripts/verify_audit.ts` | Multi-viewport Playwright visual and console error audit script | v6.2 | Permanent verification utility (`npx tsx scripts/verify_audit.ts`) |

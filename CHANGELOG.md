@@ -5,6 +5,35 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [6.2.0] — 2026-11-05 — Per-Project Screenshots & Isolated Image Pipeline (Zero Shared Assets)
+
+### Summary
+Resolved all cross-project screenshot leaks and console errors. Ingested all 13 project documents from `/content/inbox/`, converted screenshots directly to project-isolated WebP format (`/public/assets/apps/{slug}/c{N}_{i}.webp` and `thumb.webp`), eliminated all fallback images, removed image inner scrollbars with lightbox zoom modal, and fixed the React render-loop error in `SlideDeck.tsx:313` and `BotSprite.tsx`.
+
+### Added & Updated
+- **Zero Shared Asset Pipeline (`scripts/build_pipeline.py`)**:
+  - Ingested 13 projects from `content/inbox/` with 100% exact match confidence (`content/inbox-map.json`).
+  - Extracted images into WebP format (`max-w: 1920, q: 82`) and `thumb.webp` (`640w`).
+  - Strict SHA-1 hash collision verification: verified 0 cross-project image duplicates.
+  - Excluded shared generic architecture diagram from multi-project leakage (`docs/IMPORT_REPORT.md`).
+- **Eliminated Hardcoded Fallbacks (`LiveUiCard.tsx` & `SolutionDetailClient.tsx`)**:
+  - Removed PODZO fallback `/assets/apps/podzo/screen-1.png`.
+  - Replaced with dynamic project-isolated `card.screenshot || card.imageUrl || null`.
+  - Missing images now cleanly expand text full-width; displays neutral "Screenshot pending" only when `?debug=1`.
+- **Slide Image Layout & Lightbox (`LiveUiCard.tsx`)**:
+  - Fit slide image container within available area using `object-contain`.
+  - Removed internal vertical scrollbars (`overflow: hidden`).
+  - Added full-screen Lightbox zoom modal with `Maximize2` expand button.
+- **Fixed React Infinite Re-Render Loop (`SlideDeck.tsx` & `BotSprite.tsx`)**:
+  - Memoized `handleHeadPosition` with stable coordinate threshold check.
+  - Wrapped `onHeadPosition` in ref in `BotSprite` to decouple callback changes from the measurement effect.
+- **Verification (`tests/shots/content-audit/`)**:
+  - Playwright visual audit across Desktop (1440x900), Laptop (1280x800), Tablet (768x1024), and Mobile (390x844).
+  - Verified 0 console errors, 0 hydration errors across all routes.
+  - Saved 68 audit screenshots verifying Slide 1 and Slide 5 for all active projects.
+
+---
+
 ## [6.1.0] — 2026-11-05 — 3-Pillar Restructure & Live Overview Slide 1 Ingestion
 
 ### Summary

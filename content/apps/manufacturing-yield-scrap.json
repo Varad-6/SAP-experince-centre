@@ -2,182 +2,100 @@
   "slug": "manufacturing-yield-scrap",
   "title": "Manufacturing Yield, Scrap & Quality Cockpit",
   "pillarId": "p3",
-  "heroHeadline": "Manufacturing Yield, Scrap & Quality Cockpit \u2014 18% Scrap Reduction",
-  "intro": "Real-time production plant monitoring balancing line throughput, yield percentages, and defect root causes.",
+  "heroHeadline": "Manufacturing Yield, Scrap & Quality Cockpit \u2014 Enterprise Architecture",
+  "intro": "Enterprise solution overview for Manufacturing Yield, Scrap & Quality Cockpit.",
   "basicIntro": "I am Aayam! I will guide you through Manufacturing Yield, Scrap & Quality Cockpit, demonstrating live production cockpits, Clean Core architecture, and verified business ROI.",
   "sapComponents": [
     "SAP BTP Cloud Foundry",
     "SAP S/4HANA Cloud",
     "SAP Event Mesh",
-    "SAP HANA Cloud",
-    "SAP AI Core"
+    "SAP HANA Cloud"
   ],
+  "hasContent": true,
   "cards": [
     {
       "id": "card-1",
-      "type": "hook",
-      "title": "Manufacturing Yield, Scrap & Quality Cockpit \u2014 Operational Overview",
-      "subtitle": "Live Production Command Cockpit",
-      "description": "Live production command cockpit for Manufacturing Yield, Scrap & Quality Cockpit.",
-      "badge": "Enterprise Console",
-      "imageUrl": "/assets/apps/manufacturing-yield-scrap/screen-1.png",
-      "caption": "Live production command cockpit for Manufacturing Yield, Scrap & Quality Cockpit.",
-      "botDialogue": "Welcome to Manufacturing Yield, Scrap & Quality Cockpit! This is the live production console unifying enterprise data and Clean Core automation.",
-      "botPose": "present"
+      "type": "live-ui",
+      "title": "Clean Core Architecture \u2014 Phase 1",
+      "subtitle": "Manufacturing Yield, Scrap & Quality Cockpit",
+      "description": "Enterprise production workflow stage 1 for Manufacturing Yield, Scrap & Quality Cockpit.",
+      "badge": "Slide 1 of 6",
+      "caption": "Enterprise production workflow stage 1 for Manufacturing Yield, Scrap & Quality Cockpit.",
+      "botDialogue": "Enterprise production workflow stage 1 for Manufacturing Yield, Scrap & Quality Cockpit.",
+      "botPose": "present",
+      "imageUrl": "/assets/apps/manufacturing-yield-scrap/c1_1.webp",
+      "screenshot": "/assets/apps/manufacturing-yield-scrap/c1_1.webp",
+      "imageWidth": 1453,
+      "imageHeight": 822
     },
     {
       "id": "card-2",
       "type": "challenge",
-      "title": "Legacy Enterprise Challenge & Operational Friction",
-      "subtitle": "Process Inefficiencies in S/4HANA Core",
-      "badge": "Enterprise Challenge",
-      "legacyFriction": [
-        "Manual paper-based exception handling requiring 4-7 days of cycle time.",
-        "Demurrage and latency penalties due to lack of real-time telemetry.",
-        "Monolithic customizations hindering cloud ERP upgrade cycles."
-      ],
-      "modernFlow": [
-        "Touchless cognitive processing executed in <30 seconds.",
-        "Direct S/4HANA event-driven integration with Clean Core architecture.",
-        "Full audit trail and exception scoring with explainable AI."
-      ],
-      "bullets": [
-        "High operational overhead for support engineering and manual re-entry.",
-        "Disparate data silos across legacy on-premise systems.",
-        "Audit compliance bottlenecks and error-prone reconciliation."
-      ],
-      "botDialogue": "Traditional workflows suffer from manual friction and reconciliation delays. Here is how our modern solution solves it.",
-      "botPose": "explain"
+      "title": "Business problem",
+      "subtitle": "Manufacturing Yield, Scrap & Quality Cockpit",
+      "description": "Manufacturing operations must balance production output, yield, scrap, rework and product quality. When production confirmations, goods movements, inspection results and quality notifications are analysed separately, managers may struggle to understand where losses occur and which plant, shift, work centre, supplier lot or batch requires attention.",
+      "badge": "Slide 2 of 6",
+      "caption": "Manufacturing operations must balance production output, yield, scrap, rework and product quality. When production confirmations, goods movements, inspection results and quality no...",
+      "botDialogue": "Manufacturing operations must balance production output, yield, scrap, rework and product quality. When production confirmations, goods movements, inspection results and quality notifications are analysed separately, managers may struggle to understand where losses occur and which plant, shift, work centre, supplier lot or batch requires attention.",
+      "botPose": "point"
     },
     {
       "id": "card-3",
-      "type": "tech-stack",
-      "title": "Clean Core Architecture & Cloud Technology Stack",
-      "subtitle": "Side-by-Side Extensibility on SAP BTP",
-      "badge": "SAP BTP Architecture",
-      "layers": [
-        {
-          "name": "Presentation",
-          "tech": "SAPUI5 / Fiori Elements v1.120+ with responsive design DNA."
-        },
-        {
-          "name": "Application Logic",
-          "tech": "SAP Cloud Application Programming (CAP) Node.js 20 runtime."
-        },
-        {
-          "name": "Intelligence Layer",
-          "tech": "SAP AI Core with cognitive OCR, document reasoning, and ML scoring."
-        },
-        {
-          "name": "Data & ERP Mesh",
-          "tech": "SAP S/4HANA Cloud via Destination Service and Event Mesh."
-        }
-      ],
-      "botDialogue": "We maintain 100% Clean Core compliance by placing all custom logic and AI models side-by-side on SAP BTP.",
+      "type": "workflow",
+      "title": "Three key business questions",
+      "subtitle": "Manufacturing Yield, Scrap & Quality Cockpit",
+      "description": "Which plants are performing well or poorly in terms of production yield and scrap? Which suppliers, batches, shifts and work centres contribute to quality defects and production losses? How can production quantities and material movements be reconciled to improve traceability?",
+      "badge": "Slide 3 of 6",
+      "caption": "Which plants are performing well or poorly in terms of production yield and scrap? Which suppliers, batches, shifts and work centres contribute to quality defects and production lo...",
+      "botDialogue": "Which plants are performing well or poorly in terms of production yield and scrap? Which suppliers, batches, shifts and work centres contribute to quality defects and production losses?",
       "botPose": "tablet"
     },
     {
       "id": "card-4",
       "type": "live-ui",
-      "title": "Central Operational Workbench & Live Console",
-      "subtitle": "Interactive Production Cockpit",
-      "badge": "Live Console",
-      "imageUrl": "/assets/apps/manufacturing-yield-scrap/screen-2.png",
-      "caption": "Central operational console for Manufacturing Yield, Scrap & Quality Cockpit displaying live transactions, telemetry, and automated audit status.",
-      "botDialogue": "Take a look at the central operational workbench. Enterprise reviewers can inspect real-time transactions and audit trails.",
-      "botPose": "point"
+      "title": "Story Page 1: Executive Overview \u2014 Production, Quality & Plant Performance",
+      "subtitle": "Manufacturing Yield, Scrap & Quality Cockpit",
+      "description": "Production Order Quantity: 48.7 lakh kg. Production Yield Performance: 93.2%. Production Scrap Performance: 4.59%. Total Quality Defect Impact shown: 2.14 lakh. Sldie 5: Work Center Yield Efficiency. Shift-Wise Scrap Performance. Supplier Quality Impact Analysis and Vendor Lot Quality & Production Impact. Defect Root Cause Prioritization and Shift & Work Center Scrap Hotspots. Sldie 6 : Production Quantity Reconciliation. Movement Quantity by movement type: 261, 101 and 551. Batch-Wise Quality Defect Traceability. Quality Disposition: Accepted vs Rejected.",
+      "badge": "Slide 4 of 6",
+      "caption": "Production Order Quantity: 48.7 lakh kg. Production Yield Performance: 93.2%. Production Scrap Performance: 4.59%. Total Quality Defect Impact shown: 2.14 lakh. Sldie 5: Work Cente...",
+      "botDialogue": "Production Order Quantity: 48.7 lakh kg. Production Yield Performance: 93.2%.",
+      "botPose": "laptop",
+      "imageUrl": "/assets/apps/manufacturing-yield-scrap/c4_1.webp",
+      "screenshot": "/assets/apps/manufacturing-yield-scrap/c4_1.webp",
+      "imageWidth": 1045,
+      "imageHeight": 422
     },
     {
       "id": "card-5",
-      "type": "live-ui",
-      "title": "Intelligent Processing & Decision Intelligence",
-      "subtitle": "Cognitive Matching & Scoring",
-      "badge": "AI Decisioning",
-      "imageUrl": "/assets/apps/manufacturing-yield-scrap/screen-3.png",
-      "caption": "Deep-dive analytical view displaying AI confidence scores, line-item matching rationale, and policy tolerances.",
-      "botDialogue": "Our decision engine evaluates tolerances and exception rules with complete explainability before ERP ledger posting.",
-      "botPose": "laptop"
-    },
-    {
-      "id": "card-6",
-      "type": "live-ui",
-      "title": "Audit Validation & Diagnostic Telemetry",
-      "subtitle": "End-to-End Governance",
-      "badge": "Audit & Traceability",
-      "imageUrl": "/assets/apps/manufacturing-yield-scrap/screen-4.png",
-      "caption": "Validation console confirming zero data drift, transactional idempotency, and automated compliance logging.",
-      "botDialogue": "Zero data drift and strict idempotency ensure your SAP financials remain clean and audit-ready at all times.",
+      "type": "workflow",
+      "title": "Clean Core Architecture \u2014 Phase 5",
+      "subtitle": "Manufacturing Yield, Scrap & Quality Cockpit",
+      "description": "Enterprise production workflow stage 5 for Manufacturing Yield, Scrap & Quality Cockpit.",
+      "badge": "Slide 5 of 6",
+      "caption": "Enterprise production workflow stage 5 for Manufacturing Yield, Scrap & Quality Cockpit.",
+      "botDialogue": "Enterprise production workflow stage 5 for Manufacturing Yield, Scrap & Quality Cockpit.",
       "botPose": "explain"
     },
     {
-      "id": "card-7",
+      "id": "card-6",
       "type": "workflow",
-      "title": "End-to-End Enterprise Execution Flow",
-      "subtitle": "Event-Driven Integration Architecture",
-      "badge": "Execution Flow",
-      "steps": [
-        {
-          "step": "01",
-          "title": "Event Ingestion & Data Telemetry",
-          "description": "Enterprise events, document uploads, or transactions stream into SAP BTP Event Mesh.",
-          "badge": "BTP Ingest & Validation"
-        },
-        {
-          "step": "02",
-          "title": "Cognitive Validation & Decision Intelligence",
-          "description": "AI models validate line items, verify multi-way tolerance thresholds, and score exception risks.",
-          "badge": "AI Decision Core"
-        },
-        {
-          "step": "03",
-          "title": "Clean Core ERP Settlement",
-          "description": "Approved records post touchlessly into SAP S/4HANA via authenticated standard BAPIs/OData APIs.",
-          "badge": "Automated Clean Core Event"
-        }
-      ],
-      "botDialogue": "Here is the end-to-end execution flow. Real-time events trigger autonomous validation and touchless S/4HANA ledger posting.",
-      "botPose": "present"
-    },
-    {
-      "id": "card-8",
-      "type": "impact",
-      "title": "Verified Business Impact & Quantitative ROI",
-      "subtitle": "Proven Metrics in Production",
-      "badge": "Verified ROI",
-      "metrics": [
-        {
-          "label": "Cycle Time Reduction",
-          "value": "18% Scrap Reduction",
-          "subtext": "From multi-day manual batches to near real-time."
-        },
-        {
-          "label": "Ledger Auto-Match",
-          "value": "98.5%",
-          "subtext": "Automated matching within configured tolerance rules."
-        },
-        {
-          "label": "Clean Core Compliance",
-          "value": "100%",
-          "subtext": "Zero modifications to S/4HANA standard code base."
-        }
-      ],
-      "botDialogue": "The business results speak for themselves: 18% Scrap Reduction with 100% Clean Core compliance.",
+      "title": "ROI measurement framework",
+      "subtitle": "Manufacturing Yield, Scrap & Quality Cockpit",
+      "description": "ROI measurement framework",
+      "badge": "Slide 6 of 6",
+      "caption": "ROI measurement framework",
+      "botDialogue": "ROI measurement framework",
       "botPose": "beckon"
     }
   ],
+  "closing": {
+    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation.",
+    "feedbackUrl": "https://abhiyantaindia.com"
+  },
   "contact": {
     "name": "Manisha Sawarkar",
-    "role": "Sales Head",
+    "role": "Sales Head, Abhiyanta India Solutions",
     "email": "Manisha.s@abhiyantatech.com",
-    "phone": "9136124009"
-  },
-  "closing": {
-    "headline": "Thank You for Exploring Manufacturing Yield, Scrap & Quality Cockpit",
-    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation.",
-    "nextSteps": [
-      "Schedule a live architecture walk-through with our SAP solutions team.",
-      "Review Clean Core extension artifacts and BTP sizing estimations.",
-      "Deploy prototype within your SAP BTP sandbox in under 5 business days."
-    ]
+    "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=Manisha.s@abhiyantatech.com"
   }
 }

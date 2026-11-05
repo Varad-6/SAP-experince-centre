@@ -70,23 +70,59 @@ export const BotSprite: React.FC<BotSpriteProps> = ({
     setHasError(false);
   }, [resolved]);
 
+  const onHeadPositionRef = useRef(onHeadPosition);
+  useEffect(() => {
+    onHeadPositionRef.current = onHeadPosition;
+  }, [onHeadPosition]);
+
+  const lastHeadRef = useRef<{ headX: number; headY: number } | null>(null);
+
   // Report head position whenever pose, scale or positioning updates
   useEffect(() => {
-    if (!onHeadPosition) return;
+    if (!onHeadPositionRef.current) return;
+
+    let headX = 0;
+    let headY = 0;
 
     if (dockX !== undefined && dockY !== undefined) {
       const left = dockX - meta.anchorX * k;
       const top = dockY - meta.anchorY * k;
-      const headX = left + (meta.w * meta.head.headCx) * k;
-      const headY = top + (meta.h * meta.head.hairTop) * k;
-      onHeadPosition({ headX, headY, k, anchorX: meta.anchorX, anchorY: meta.anchorY });
+      headX = left + meta.w * meta.head.headCx * k;
+      headY = top + meta.h * meta.head.hairTop * k;
     } else if (containerRef.current) {
       const rect = containerRef.current.getBoundingClientRect();
-      const headX = rect.left + (meta.w * meta.head.headCx) * k;
-      const headY = rect.top + (meta.h * meta.head.hairTop) * k;
-      onHeadPosition({ headX, headY, k, anchorX: meta.anchorX, anchorY: meta.anchorY });
+      headX = rect.left + meta.w * meta.head.headCx * k;
+      headY = rect.top + meta.h * meta.head.hairTop * k;
+    } else {
+      return;
     }
-  }, [resolved, k, dockX, dockY, onHeadPosition, meta]);
+
+    if (
+      !lastHeadRef.current ||
+      Math.abs(lastHeadRef.current.headX - headX) > 0.5 ||
+      Math.abs(lastHeadRef.current.headY - headY) > 0.5
+    ) {
+      lastHeadRef.current = { headX, headY };
+      onHeadPositionRef.current({
+        headX,
+        headY,
+        k,
+        anchorX: meta.anchorX,
+        anchorY: meta.anchorY,
+      });
+    }
+  }, [
+    resolved,
+    k,
+    dockX,
+    dockY,
+    meta.anchorX,
+    meta.anchorY,
+    meta.w,
+    meta.h,
+    meta.head.headCx,
+    meta.head.hairTop,
+  ]);
 
   const webpSrc = BOT_POSES[resolved] || `/assets/bot/${resolved}.webp`;
   const pngSrc = BOT_POSES_PNG[resolved] || `/assets/bot/${resolved}.png`;

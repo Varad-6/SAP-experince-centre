@@ -4,7 +4,6 @@ import { notFound } from 'next/navigation';
 import pillarsData from '@/content/pillars.json';
 import solutionsData from '@/content/solutions.json';
 import { ArrowLeft, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
-import { ThumbnailImage } from '@/components/ThumbnailImage';
 import { PillarBotDock } from '@/components/PillarBotDock';
 
 export function generateStaticParams() {

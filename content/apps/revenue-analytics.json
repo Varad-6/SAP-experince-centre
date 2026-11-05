@@ -2,182 +2,123 @@
   "slug": "revenue-analytics",
   "title": "Revenue Analytics & Profitability Intelligence",
   "pillarId": "p3",
-  "heroHeadline": "Revenue Analytics & Profitability Intelligence \u2014 99.4% Margin Accuracy",
-  "intro": "Multidimensional revenue, cost-of-goods-sold, and gross margin variance analytics across business units and geographies.",
+  "heroHeadline": "Revenue Analytics & Profitability Intelligence \u2014 Enterprise Architecture",
+  "intro": "Enterprise solution overview for Revenue Analytics & Profitability Intelligence.",
   "basicIntro": "I am Aayam! I will guide you through Revenue Analytics & Profitability Intelligence, demonstrating live production cockpits, Clean Core architecture, and verified business ROI.",
   "sapComponents": [
     "SAP BTP Cloud Foundry",
     "SAP S/4HANA Cloud",
     "SAP Event Mesh",
-    "SAP HANA Cloud",
-    "SAP AI Core"
+    "SAP HANA Cloud"
   ],
+  "hasContent": true,
   "cards": [
     {
       "id": "card-1",
-      "type": "hook",
-      "title": "Revenue Analytics & Profitability Intelligence \u2014 Operational Overview",
-      "subtitle": "Live Production Command Cockpit",
-      "description": "Live production command cockpit for Revenue Analytics & Profitability Intelligence.",
-      "badge": "Enterprise Console",
-      "imageUrl": "/assets/apps/revenue-analytics/screen-1.png",
-      "caption": "Live production command cockpit for Revenue Analytics & Profitability Intelligence.",
-      "botDialogue": "Welcome to Revenue Analytics & Profitability Intelligence! This is the live production console unifying enterprise data and Clean Core automation.",
-      "botPose": "present"
+      "type": "live-ui",
+      "title": "Clean Core Architecture \u2014 Phase 1",
+      "subtitle": "Revenue Analytics & Profitability Intelligence",
+      "description": "Enterprise production workflow stage 1 for Revenue Analytics & Profitability Intelligence.",
+      "badge": "Slide 1 of 7",
+      "caption": "Enterprise production workflow stage 1 for Revenue Analytics & Profitability Intelligence.",
+      "botDialogue": "Enterprise production workflow stage 1 for Revenue Analytics & Profitability Intelligence.",
+      "botPose": "present",
+      "imageUrl": "/assets/apps/revenue-analytics/c1_1.webp",
+      "screenshot": "/assets/apps/revenue-analytics/c1_1.webp",
+      "imageWidth": 1880,
+      "imageHeight": 732
     },
     {
       "id": "card-2",
       "type": "challenge",
-      "title": "Legacy Enterprise Challenge & Operational Friction",
-      "subtitle": "Process Inefficiencies in S/4HANA Core",
-      "badge": "Enterprise Challenge",
-      "legacyFriction": [
-        "Manual paper-based exception handling requiring 4-7 days of cycle time.",
-        "Demurrage and latency penalties due to lack of real-time telemetry.",
-        "Monolithic customizations hindering cloud ERP upgrade cycles."
-      ],
-      "modernFlow": [
-        "Touchless cognitive processing executed in <30 seconds.",
-        "Direct S/4HANA event-driven integration with Clean Core architecture.",
-        "Full audit trail and exception scoring with explainable AI."
-      ],
-      "bullets": [
-        "High operational overhead for support engineering and manual re-entry.",
-        "Disparate data silos across legacy on-premise systems.",
-        "Audit compliance bottlenecks and error-prone reconciliation."
-      ],
-      "botDialogue": "Traditional workflows suffer from manual friction and reconciliation delays. Here is how our modern solution solves it.",
-      "botPose": "explain"
+      "title": "Business Problem",
+      "subtitle": "Revenue Analytics & Profitability Intelligence",
+      "description": "Revenue, gross profit and margin information can be difficult to interpret when executive, customer and product views are reviewed separately. Decision-makers need a consistent way to monitor performance, identify customer and product contribution, and investigate margin movement.",
+      "badge": "Slide 2 of 7",
+      "caption": "Revenue, gross profit and margin information can be difficult to interpret when executive, customer and product views are reviewed separately. Decision-makers need a consistent way...",
+      "botDialogue": "Revenue, gross profit and margin information can be difficult to interpret when executive, customer and product views are reviewed separately. Decision-makers need a consistent way to monitor performance, identify customer and product contribution, and investigate margin movement.",
+      "botPose": "point"
     },
     {
       "id": "card-3",
-      "type": "tech-stack",
-      "title": "Clean Core Architecture & Cloud Technology Stack",
-      "subtitle": "Side-by-Side Extensibility on SAP BTP",
-      "badge": "SAP BTP Architecture",
-      "layers": [
-        {
-          "name": "Presentation",
-          "tech": "SAPUI5 / Fiori Elements v1.120+ with responsive design DNA."
-        },
-        {
-          "name": "Application Logic",
-          "tech": "SAP Cloud Application Programming (CAP) Node.js 20 runtime."
-        },
-        {
-          "name": "Intelligence Layer",
-          "tech": "SAP AI Core with cognitive OCR, document reasoning, and ML scoring."
-        },
-        {
-          "name": "Data & ERP Mesh",
-          "tech": "SAP S/4HANA Cloud via Destination Service and Event Mesh."
-        }
-      ],
-      "botDialogue": "We maintain 100% Clean Core compliance by placing all custom logic and AI models side-by-side on SAP BTP.",
-      "botPose": "tablet"
+      "type": "live-ui",
+      "title": "Three Key Business Questions",
+      "subtitle": "Revenue Analytics & Profitability Intelligence",
+      "description": "How are revenue, gross profit, gross margin and quantity performing over time, geography and sales groups? Which customer segments, customer groups and individual customers contribute most to revenue and gross profit? Which product groups and materials contribute most to gross profit, and how does profitability compare with sales quantity? Slid 4:",
+      "badge": "Slide 3 of 7",
+      "caption": "How are revenue, gross profit, gross margin and quantity performing over time, geography and sales groups? Which customer segments, customer groups and individual customers contrib...",
+      "botDialogue": "How are revenue, gross profit, gross margin and quantity performing over time, geography and sales groups? Which customer segments, customer groups and individual customers contribute most to revenue and gross profit?",
+      "botPose": "tablet",
+      "imageUrl": "/assets/apps/revenue-analytics/c3_1.webp",
+      "screenshot": "/assets/apps/revenue-analytics/c3_1.webp",
+      "imageWidth": 1672,
+      "imageHeight": 941
     },
     {
       "id": "card-4",
       "type": "live-ui",
-      "title": "Central Operational Workbench & Live Console",
-      "subtitle": "Interactive Production Cockpit",
-      "badge": "Live Console",
-      "imageUrl": "/assets/apps/revenue-analytics/screen-2.png",
-      "caption": "Central operational console for Revenue Analytics & Profitability Intelligence displaying live transactions, telemetry, and automated audit status.",
-      "botDialogue": "Take a look at the central operational workbench. Enterprise reviewers can inspect real-time transactions and audit trails.",
-      "botPose": "point"
+      "title": "1. Executive Performance / Start with revenue, gross profit, gross margin, quantity and customer count. Identify the period, geography or sales group where performance moves.",
+      "subtitle": "Revenue Analytics & Profitability Intelligence",
+      "description": "1. Executive Performance / Start with revenue, gross profit, gross margin, quantity and customer count. Identify the period, geography or sales group where performance moves.",
+      "badge": "Slide 4 of 7",
+      "caption": "1. Executive Performance / Start with revenue, gross profit, gross margin, quantity and customer count. Identify the period, geography or sales group where performance moves.",
+      "botDialogue": "Executive Performance / Start with revenue, gross profit, gross margin, quantity and customer count.",
+      "botPose": "laptop",
+      "imageUrl": "/assets/apps/revenue-analytics/c4_1.webp",
+      "screenshot": "/assets/apps/revenue-analytics/c4_1.webp",
+      "imageWidth": 945,
+      "imageHeight": 473
     },
     {
       "id": "card-5",
       "type": "live-ui",
-      "title": "Intelligent Processing & Decision Intelligence",
-      "subtitle": "Cognitive Matching & Scoring",
-      "badge": "AI Decisioning",
-      "imageUrl": "/assets/apps/revenue-analytics/screen-3.png",
-      "caption": "Deep-dive analytical view displaying AI confidence scores, line-item matching rationale, and policy tolerances.",
-      "botDialogue": "Our decision engine evaluates tolerances and exception rules with complete explainability before ERP ledger posting.",
-      "botPose": "laptop"
+      "title": "2. Customer Performance / Investigate customer-segment contribution, top customers and customer-group revenue and gross profit. Continue to customer/material detail where needed.",
+      "subtitle": "Revenue Analytics & Profitability Intelligence",
+      "description": "2. Customer Performance / Investigate customer-segment contribution, top customers and customer-group revenue and gross profit. Continue to customer/material detail where needed.",
+      "badge": "Slide 5 of 7",
+      "caption": "2. Customer Performance / Investigate customer-segment contribution, top customers and customer-group revenue and gross profit. Continue to customer/material detail where needed.",
+      "botDialogue": "Customer Performance / Investigate customer-segment contribution, top customers and customer-group revenue and gross profit.",
+      "botPose": "explain",
+      "imageUrl": "/assets/apps/revenue-analytics/c5_1.webp",
+      "screenshot": "/assets/apps/revenue-analytics/c5_1.webp",
+      "imageWidth": 947,
+      "imageHeight": 683
     },
     {
       "id": "card-6",
       "type": "live-ui",
-      "title": "Audit Validation & Diagnostic Telemetry",
-      "subtitle": "End-to-End Governance",
-      "badge": "Audit & Traceability",
-      "imageUrl": "/assets/apps/revenue-analytics/screen-4.png",
-      "caption": "Validation console confirming zero data drift, transactional idempotency, and automated compliance logging.",
-      "botDialogue": "Zero data drift and strict idempotency ensure your SAP financials remain clean and audit-ready at all times.",
-      "botPose": "explain"
+      "title": ".",
+      "subtitle": "Revenue Analytics & Profitability Intelligence",
+      "description": ".",
+      "badge": "Slide 6 of 7",
+      "caption": ".",
+      "botDialogue": "Reviewing . architecture and transactional performance.",
+      "botPose": "beckon",
+      "imageUrl": "/assets/apps/revenue-analytics/c6_1.webp",
+      "screenshot": "/assets/apps/revenue-analytics/c6_1.webp",
+      "imageWidth": 974,
+      "imageHeight": 525
     },
     {
       "id": "card-7",
       "type": "workflow",
-      "title": "End-to-End Enterprise Execution Flow",
-      "subtitle": "Event-Driven Integration Architecture",
-      "badge": "Execution Flow",
-      "steps": [
-        {
-          "step": "01",
-          "title": "Event Ingestion & Data Telemetry",
-          "description": "Enterprise events, document uploads, or transactions stream into SAP BTP Event Mesh.",
-          "badge": "BTP Ingest & Validation"
-        },
-        {
-          "step": "02",
-          "title": "Cognitive Validation & Decision Intelligence",
-          "description": "AI models validate line items, verify multi-way tolerance thresholds, and score exception risks.",
-          "badge": "AI Decision Core"
-        },
-        {
-          "step": "03",
-          "title": "Clean Core ERP Settlement",
-          "description": "Approved records post touchlessly into SAP S/4HANA via authenticated standard BAPIs/OData APIs.",
-          "badge": "Automated Clean Core Event"
-        }
-      ],
-      "botDialogue": "Here is the end-to-end execution flow. Real-time events trigger autonomous validation and touchless S/4HANA ledger posting.",
+      "title": "Key Dashboard Insights",
+      "subtitle": "Revenue Analytics & Profitability Intelligence",
+      "description": "Key Dashboard Insights",
+      "badge": "Slide 7 of 7",
+      "caption": "Key Dashboard Insights",
+      "botDialogue": "Key Dashboard Insights",
       "botPose": "present"
-    },
-    {
-      "id": "card-8",
-      "type": "impact",
-      "title": "Verified Business Impact & Quantitative ROI",
-      "subtitle": "Proven Metrics in Production",
-      "badge": "Verified ROI",
-      "metrics": [
-        {
-          "label": "Cycle Time Reduction",
-          "value": "99.4% Margin Accuracy",
-          "subtext": "From multi-day manual batches to near real-time."
-        },
-        {
-          "label": "Ledger Auto-Match",
-          "value": "98.5%",
-          "subtext": "Automated matching within configured tolerance rules."
-        },
-        {
-          "label": "Clean Core Compliance",
-          "value": "100%",
-          "subtext": "Zero modifications to S/4HANA standard code base."
-        }
-      ],
-      "botDialogue": "The business results speak for themselves: 99.4% Margin Accuracy with 100% Clean Core compliance.",
-      "botPose": "beckon"
     }
   ],
+  "closing": {
+    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation.",
+    "feedbackUrl": "https://abhiyantaindia.com"
+  },
   "contact": {
     "name": "Manisha Sawarkar",
-    "role": "Sales Head",
+    "role": "Sales Head, Abhiyanta India Solutions",
     "email": "Manisha.s@abhiyantatech.com",
-    "phone": "9136124009"
-  },
-  "closing": {
-    "headline": "Thank You for Exploring Revenue Analytics & Profitability Intelligence",
-    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation.",
-    "nextSteps": [
-      "Schedule a live architecture walk-through with our SAP solutions team.",
-      "Review Clean Core extension artifacts and BTP sizing estimations.",
-      "Deploy prototype within your SAP BTP sandbox in under 5 business days."
-    ]
+    "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=Manisha.s@abhiyantatech.com"
   }
 }

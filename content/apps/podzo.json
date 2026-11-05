@@ -2,182 +2,138 @@
   "slug": "podzo",
   "title": "PODZO Logistics Execution & Touchless Settlement",
   "pillarId": "p1",
-  "heroHeadline": "PODZO Logistics Execution & Touchless Settlement \u2014 98% Touchless",
-  "intro": "Autonomous siding dispatch, dual weighbridge OCR, and touchless SAP MIRO invoice posting in <30 seconds.",
+  "heroHeadline": "PODZO Logistics Execution & Touchless Settlement \u2014 Enterprise Architecture",
+  "intro": "Enterprise solution overview for PODZO Logistics Execution & Touchless Settlement.",
   "basicIntro": "I am Aayam! I will guide you through PODZO Logistics Execution & Touchless Settlement, demonstrating live production cockpits, Clean Core architecture, and verified business ROI.",
   "sapComponents": [
     "SAP BTP Cloud Foundry",
     "SAP S/4HANA Cloud",
     "SAP Event Mesh",
-    "SAP HANA Cloud",
-    "SAP AI Core"
+    "SAP HANA Cloud"
   ],
+  "hasContent": true,
   "cards": [
     {
       "id": "card-1",
-      "type": "hook",
-      "title": "PODZO Logistics Execution & Touchless Settlement \u2014 Operational Overview",
-      "subtitle": "Live Production Command Cockpit",
-      "description": "Live production command cockpit for PODZO Logistics Execution & Touchless Settlement.",
-      "badge": "Enterprise Console",
-      "imageUrl": "/assets/apps/podzo/screen-1.png",
-      "caption": "Live production command cockpit for PODZO Logistics Execution & Touchless Settlement.",
-      "botDialogue": "Welcome to PODZO Logistics Execution & Touchless Settlement! This is the live production console unifying enterprise data and Clean Core automation.",
-      "botPose": "present"
+      "type": "live-ui",
+      "title": "Clean Core Architecture \u2014 Phase 1",
+      "subtitle": "PODZO Logistics Execution & Touchless Settlement",
+      "description": "Enterprise production workflow stage 1 for PODZO Logistics Execution & Touchless Settlement.",
+      "badge": "Slide 1 of 8",
+      "caption": "Enterprise production workflow stage 1 for PODZO Logistics Execution & Touchless Settlement.",
+      "botDialogue": "Enterprise production workflow stage 1 for PODZO Logistics Execution & Touchless Settlement.",
+      "botPose": "present",
+      "imageUrl": "/assets/apps/podzo/c1_1.webp",
+      "screenshot": "/assets/apps/podzo/c1_1.webp",
+      "imageWidth": 1908,
+      "imageHeight": 830
     },
     {
       "id": "card-2",
       "type": "challenge",
-      "title": "Legacy Enterprise Challenge & Operational Friction",
-      "subtitle": "Process Inefficiencies in S/4HANA Core",
-      "badge": "Enterprise Challenge",
-      "legacyFriction": [
-        "Manual paper-based exception handling requiring 4-7 days of cycle time.",
-        "Demurrage and latency penalties due to lack of real-time telemetry.",
-        "Monolithic customizations hindering cloud ERP upgrade cycles."
-      ],
-      "modernFlow": [
-        "Touchless cognitive processing executed in <30 seconds.",
-        "Direct S/4HANA event-driven integration with Clean Core architecture.",
-        "Full audit trail and exception scoring with explainable AI."
-      ],
-      "bullets": [
-        "High operational overhead for support engineering and manual re-entry.",
-        "Disparate data silos across legacy on-premise systems.",
-        "Audit compliance bottlenecks and error-prone reconciliation."
-      ],
-      "botDialogue": "Traditional workflows suffer from manual friction and reconciliation delays. Here is how our modern solution solves it.",
-      "botPose": "explain"
+      "title": "Use case & problem",
+      "subtitle": "PODZO Logistics Execution & Touchless Settlement",
+      "description": "Use case & problem",
+      "badge": "Slide 2 of 8",
+      "caption": "Use case & problem",
+      "botDialogue": "Use case & problem",
+      "botPose": "point"
     },
     {
       "id": "card-3",
-      "type": "tech-stack",
-      "title": "Clean Core Architecture & Cloud Technology Stack",
-      "subtitle": "Side-by-Side Extensibility on SAP BTP",
-      "badge": "SAP BTP Architecture",
-      "layers": [
-        {
-          "name": "Presentation",
-          "tech": "SAPUI5 / Fiori Elements v1.120+ with responsive design DNA."
-        },
-        {
-          "name": "Application Logic",
-          "tech": "SAP Cloud Application Programming (CAP) Node.js 20 runtime."
-        },
-        {
-          "name": "Intelligence Layer",
-          "tech": "SAP AI Core with cognitive OCR, document reasoning, and ML scoring."
-        },
-        {
-          "name": "Data & ERP Mesh",
-          "tech": "SAP S/4HANA Cloud via Destination Service and Event Mesh."
-        }
-      ],
-      "botDialogue": "We maintain 100% Clean Core compliance by placing all custom logic and AI models side-by-side on SAP BTP.",
-      "botPose": "tablet"
+      "type": "live-ui",
+      "title": "Clean Core Architecture \u2014 Phase 3",
+      "subtitle": "PODZO Logistics Execution & Touchless Settlement",
+      "description": "Enterprise production workflow stage 3 for PODZO Logistics Execution & Touchless Settlement.",
+      "badge": "Slide 3 of 8",
+      "caption": "Enterprise production workflow stage 3 for PODZO Logistics Execution & Touchless Settlement.",
+      "botDialogue": "Enterprise production workflow stage 3 for PODZO Logistics Execution & Touchless Settlement.",
+      "botPose": "tablet",
+      "imageUrl": "/assets/apps/podzo/c3_1.webp",
+      "screenshot": "/assets/apps/podzo/c3_1.webp",
+      "imageWidth": 1920,
+      "imageHeight": 1080
     },
     {
       "id": "card-4",
       "type": "live-ui",
-      "title": "Central Operational Workbench & Live Console",
-      "subtitle": "Interactive Production Cockpit",
-      "badge": "Live Console",
-      "imageUrl": "/assets/apps/podzo/screen-2.png",
-      "caption": "Central operational console for PODZO Logistics Execution & Touchless Settlement displaying live transactions, telemetry, and automated audit status.",
-      "botDialogue": "Take a look at the central operational workbench. Enterprise reviewers can inspect real-time transactions and audit trails.",
-      "botPose": "point"
+      "title": "Clean Core Architecture \u2014 Phase 4",
+      "subtitle": "PODZO Logistics Execution & Touchless Settlement",
+      "description": "Enterprise production workflow stage 4 for PODZO Logistics Execution & Touchless Settlement.",
+      "badge": "Slide 4 of 8",
+      "caption": "Enterprise production workflow stage 4 for PODZO Logistics Execution & Touchless Settlement.",
+      "botDialogue": "Enterprise production workflow stage 4 for PODZO Logistics Execution & Touchless Settlement.",
+      "botPose": "laptop",
+      "imageUrl": "/assets/apps/podzo/c4_1.webp",
+      "screenshot": "/assets/apps/podzo/c4_1.webp",
+      "imageWidth": 1901,
+      "imageHeight": 824
     },
     {
       "id": "card-5",
       "type": "live-ui",
-      "title": "Intelligent Processing & Decision Intelligence",
-      "subtitle": "Cognitive Matching & Scoring",
-      "badge": "AI Decisioning",
-      "imageUrl": "/assets/apps/podzo/screen-3.png",
-      "caption": "Deep-dive analytical view displaying AI confidence scores, line-item matching rationale, and policy tolerances.",
-      "botDialogue": "Our decision engine evaluates tolerances and exception rules with complete explainability before ERP ledger posting.",
-      "botPose": "laptop"
+      "title": "Clean Core Architecture \u2014 Phase 5",
+      "subtitle": "PODZO Logistics Execution & Touchless Settlement",
+      "description": "Enterprise production workflow stage 5 for PODZO Logistics Execution & Touchless Settlement.",
+      "badge": "Slide 5 of 8",
+      "caption": "Enterprise production workflow stage 5 for PODZO Logistics Execution & Touchless Settlement.",
+      "botDialogue": "Enterprise production workflow stage 5 for PODZO Logistics Execution & Touchless Settlement.",
+      "botPose": "explain",
+      "imageUrl": "/assets/apps/podzo/c5_1.webp",
+      "screenshot": "/assets/apps/podzo/c5_1.webp",
+      "imageWidth": 595,
+      "imageHeight": 629
     },
     {
       "id": "card-6",
       "type": "live-ui",
-      "title": "Audit Validation & Diagnostic Telemetry",
-      "subtitle": "End-to-End Governance",
-      "badge": "Audit & Traceability",
-      "imageUrl": "/assets/apps/podzo/screen-4.png",
-      "caption": "Validation console confirming zero data drift, transactional idempotency, and automated compliance logging.",
-      "botDialogue": "Zero data drift and strict idempotency ensure your SAP financials remain clean and audit-ready at all times.",
-      "botPose": "explain"
+      "title": "Clean Core Architecture \u2014 Phase 6",
+      "subtitle": "PODZO Logistics Execution & Touchless Settlement",
+      "description": "Enterprise production workflow stage 6 for PODZO Logistics Execution & Touchless Settlement.",
+      "badge": "Slide 6 of 8",
+      "caption": "Enterprise production workflow stage 6 for PODZO Logistics Execution & Touchless Settlement.",
+      "botDialogue": "Enterprise production workflow stage 6 for PODZO Logistics Execution & Touchless Settlement.",
+      "botPose": "beckon",
+      "imageUrl": "/assets/apps/podzo/c6_1.webp",
+      "screenshot": "/assets/apps/podzo/c6_1.webp",
+      "imageWidth": 1915,
+      "imageHeight": 558
     },
     {
       "id": "card-7",
-      "type": "workflow",
-      "title": "End-to-End Enterprise Execution Flow",
-      "subtitle": "Event-Driven Integration Architecture",
-      "badge": "Execution Flow",
-      "steps": [
-        {
-          "step": "01",
-          "title": "Event Ingestion & Data Telemetry",
-          "description": "Enterprise events, document uploads, or transactions stream into SAP BTP Event Mesh.",
-          "badge": "BTP Ingest & Validation"
-        },
-        {
-          "step": "02",
-          "title": "Cognitive Validation & Decision Intelligence",
-          "description": "AI models validate line items, verify multi-way tolerance thresholds, and score exception risks.",
-          "badge": "AI Decision Core"
-        },
-        {
-          "step": "03",
-          "title": "Clean Core ERP Settlement",
-          "description": "Approved records post touchlessly into SAP S/4HANA via authenticated standard BAPIs/OData APIs.",
-          "badge": "Automated Clean Core Event"
-        }
-      ],
-      "botDialogue": "Here is the end-to-end execution flow. Real-time events trigger autonomous validation and touchless S/4HANA ledger posting.",
-      "botPose": "present"
+      "type": "live-ui",
+      "title": "Clean Core Architecture \u2014 Phase 7",
+      "subtitle": "PODZO Logistics Execution & Touchless Settlement",
+      "description": "Enterprise production workflow stage 7 for PODZO Logistics Execution & Touchless Settlement.",
+      "badge": "Slide 7 of 8",
+      "caption": "Enterprise production workflow stage 7 for PODZO Logistics Execution & Touchless Settlement.",
+      "botDialogue": "Enterprise production workflow stage 7 for PODZO Logistics Execution & Touchless Settlement.",
+      "botPose": "present",
+      "imageUrl": "/assets/apps/podzo/c7_1.webp",
+      "screenshot": "/assets/apps/podzo/c7_1.webp",
+      "imageWidth": 1910,
+      "imageHeight": 762
     },
     {
       "id": "card-8",
-      "type": "impact",
-      "title": "Verified Business Impact & Quantitative ROI",
-      "subtitle": "Proven Metrics in Production",
-      "badge": "Verified ROI",
-      "metrics": [
-        {
-          "label": "Cycle Time Reduction",
-          "value": "98% Touchless",
-          "subtext": "From multi-day manual batches to near real-time."
-        },
-        {
-          "label": "Ledger Auto-Match",
-          "value": "98.5%",
-          "subtext": "Automated matching within configured tolerance rules."
-        },
-        {
-          "label": "Clean Core Compliance",
-          "value": "100%",
-          "subtext": "Zero modifications to S/4HANA standard code base."
-        }
-      ],
-      "botDialogue": "The business results speak for themselves: 98% Touchless with 100% Clean Core compliance.",
-      "botPose": "beckon"
+      "type": "workflow",
+      "title": "Results & ROI",
+      "subtitle": "PODZO Logistics Execution & Touchless Settlement",
+      "description": "Results & ROI",
+      "badge": "Slide 8 of 8",
+      "caption": "Results & ROI",
+      "botDialogue": "Results & ROI",
+      "botPose": "point"
     }
   ],
+  "closing": {
+    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation.",
+    "feedbackUrl": "https://abhiyantaindia.com"
+  },
   "contact": {
     "name": "Manisha Sawarkar",
-    "role": "Sales Head",
+    "role": "Sales Head, Abhiyanta India Solutions",
     "email": "Manisha.s@abhiyantatech.com",
-    "phone": "9136124009"
-  },
-  "closing": {
-    "headline": "Thank You for Exploring PODZO Logistics Execution & Touchless Settlement",
-    "liveDemoInfo": "Live SAP BTP Cloud Foundry tenant accessible for authenticated enterprise reviewers. Single Sign-On enabled with automated role segregation.",
-    "nextSteps": [
-      "Schedule a live architecture walk-through with our SAP solutions team.",
-      "Review Clean Core extension artifacts and BTP sizing estimations.",
-      "Deploy prototype within your SAP BTP sandbox in under 5 business days."
-    ]
+    "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=Manisha.s@abhiyantatech.com"
   }
 }

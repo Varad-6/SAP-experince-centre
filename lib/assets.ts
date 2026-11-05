@@ -28,7 +28,7 @@ export const ASSET_MANIFEST: Record<string, AssetRecord> = {
   // Flagship Podzo screenshot
   'podzo-screenshot': {
     id: 'podzo-screenshot',
-    url: '/assets/apps/podzo/screen-1.png',
+    url: '/assets/apps/podzo/c1_1.webp',
     type: 'image',
     fallbackColor: '#0070F2',
   },

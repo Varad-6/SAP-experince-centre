@@ -37,8 +37,8 @@ export default function PillarsHubPage() {
         </div>
       </div>
 
-      {/* Symmetrical 4-Card Responsive Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch">
+      {/* Symmetrical 3-Pillar Responsive Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
         {pillarsData.map((pillar) => {
           const solutionCount = solutionsData.filter((s) => s.pillarId === pillar.id).length;
 

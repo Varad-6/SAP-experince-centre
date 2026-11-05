@@ -1,35 +1,86 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CardSchema } from '@/lib/schema';
 import { z } from 'zod';
-import { MousePointer } from 'lucide-react';
+import { Maximize2, X, ImageOff } from 'lucide-react';
 
 type CardData = z.infer<typeof CardSchema>;
 
 export const LiveUiCard: React.FC<{ card: CardData }> = ({ card }) => {
   const [activeHotspot, setActiveHotspot] = useState<number>(0);
+  const [isZoomOpen, setIsZoomOpen] = useState<boolean>(false);
+  const [isDebug, setIsDebug] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      setIsDebug(params.get('debug') === '1' || process.env.NEXT_PUBLIC_DEBUG === '1');
+    }
+  }, []);
+
+  // Close zoom modal on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsZoomOpen(false);
+    };
+    if (isZoomOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+      return () => window.removeEventListener('keydown', handleKeyDown);
+    }
+  }, [isZoomOpen]);
 
   const hotspots = card.hotspots || [];
-  const screenshot = card.screenshot || '/assets/apps/podzo/screen-1.png';
-
+  const screenshot = card.screenshot || card.imageUrl || null;
   const currentHs = hotspots[activeHotspot] || hotspots[0];
 
+  // If no screenshot exists
+  if (!screenshot) {
+    if (isDebug) {
+      return (
+        <div className="p-8 rounded-xl border border-dashed border-[var(--border)] bg-[var(--surface-2)] text-center flex flex-col items-center justify-center gap-2">
+          <ImageOff className="w-8 h-8 text-[var(--text-dim)]" />
+          <span className="text-xs font-mono text-[var(--text-dim)]">
+            Screenshot pending: {card.title} / {card.badge || 'Slide'}
+          </span>
+        </div>
+      );
+    }
+    // Full width description when no image
+    return (
+      <div className="space-y-4 py-4">
+        {card.description && (
+          <p className="text-sm sm:text-base text-[var(--text)] leading-relaxed">
+            {card.description}
+          </p>
+        )}
+      </div>
+    );
+  }
+
   return (
-    <div className="space-y-4">
-      {/* UI Screenshot Canvas with Hotspots in 16:9 Card */}
-      <div className="relative rounded-xl overflow-hidden border border-[var(--border)] bg-[var(--surface-2)] shadow-sm">
-        <div className="aspect-video w-full relative flex items-center justify-center overflow-hidden">
+    <div className="space-y-3 w-full">
+      {/* UI Screenshot Canvas with Hotspots and Zoom Action */}
+      <div className="relative rounded-xl overflow-hidden border border-[var(--border)] bg-slate-950/5 shadow-sm group">
+        <div className="relative w-full flex items-center justify-center max-h-[380px] sm:max-h-[440px] overflow-hidden bg-black/5">
           <img
             src={screenshot}
             alt={card.title}
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src = '/assets/bot/_placeholder.svg';
-            }}
+            className="w-full h-auto max-h-[380px] sm:max-h-[440px] object-contain block mx-auto select-none"
+            loading="eager"
           />
 
-          {/* Moving 20px Arrow Cursor targeting the active callout */}
+          {/* Expand Lightbox Button */}
+          <button
+            type="button"
+            onClick={() => setIsZoomOpen(true)}
+            aria-label="Expand screenshot fullscreen"
+            className="absolute top-2.5 right-2.5 z-30 p-1.5 rounded-lg bg-black/60 text-white hover:bg-black/80 backdrop-blur-xs transition-opacity shadow-sm cursor-pointer"
+          >
+            <Maximize2 className="w-4 h-4" />
+          </button>
+
+          {/* Interactive Arrow Cursor targeting active callout */}
           {currentHs && (
             <div
               className="absolute z-30 pointer-events-none transition-all duration-300 ease-out"
@@ -53,7 +104,7 @@ export const LiveUiCard: React.FC<{ card: CardData }> = ({ card }) => {
             </div>
           )}
 
-          {/* Numbered Circle Hotspot Callouts (24px, #0070F2, white text) */}
+          {/* Numbered Circle Hotspot Callouts */}
           {hotspots.map((hs, i) => (
             <div
               key={i}
@@ -77,24 +128,55 @@ export const LiveUiCard: React.FC<{ card: CardData }> = ({ card }) => {
         </div>
       </div>
 
-      {/* Active Hotspot Inspector Card */}
-      {currentHs && (
-        <div className="p-4 rounded-xl bg-[var(--surface-2)] border border-[var(--border)] flex items-start gap-3">
+      {/* Description / Caption / Hotspot Inspector */}
+      {currentHs ? (
+        <div className="p-3.5 rounded-xl bg-[var(--surface-2)] border border-[var(--border)] flex items-start gap-3">
           <div className="w-6 h-6 rounded-full bg-[var(--brand)] text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
             {activeHotspot + 1}
           </div>
-          <div className="flex-1">
+          <div className="flex-1 min-w-0">
             <div className="flex items-center justify-between gap-2 mb-0.5">
-              <h5 className="text-xs sm:text-sm font-bold text-[var(--navy)]">
+              <h5 className="text-xs sm:text-sm font-bold text-[var(--navy)] truncate">
                 {currentHs.label}
               </h5>
-              <span className="text-[10px] text-[var(--text-dim)] font-mono">
+              <span className="text-[10px] text-[var(--text-dim)] font-mono shrink-0">
                 Callout {activeHotspot + 1} of {hotspots.length}
               </span>
             </div>
             <p className="text-xs text-[var(--text-dim)] leading-relaxed">
               {currentHs.tooltip}
             </p>
+          </div>
+        </div>
+      ) : card.description ? (
+        <p className="text-xs text-[var(--text-dim)] leading-relaxed line-clamp-2 px-1">
+          {card.description}
+        </p>
+      ) : null}
+
+      {/* Fullscreen Lightbox Modal */}
+      {isZoomOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex flex-col items-center justify-center p-4 sm:p-6"
+          onClick={() => setIsZoomOpen(false)}
+        >
+          <button
+            type="button"
+            onClick={() => setIsZoomOpen(false)}
+            aria-label="Close fullscreen view"
+            className="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors cursor-pointer"
+          >
+            <X className="w-6 h-6" />
+          </button>
+          <div
+            className="relative max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={screenshot}
+              alt={card.title}
+              className="max-w-full max-h-[88vh] object-contain rounded-lg shadow-2xl"
+            />
           </div>
         </div>
       )}
