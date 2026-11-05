@@ -66,9 +66,9 @@ function validate() {
       throw new Error(`App ${sol.slug} missing valid closing object with liveDemoInfo`);
     }
 
-    // Verify all cards have non-empty botDialogue and valid botPose
+    // Verify all cards have valid botPose, and cards with description have botDialogue
     parsed.cards.forEach((card, idx) => {
-      if (!card.botDialogue || card.botDialogue.trim().length === 0) {
+      if (card.description && (!card.botDialogue || card.botDialogue.trim().length === 0)) {
         throw new Error(`App ${sol.slug} card ${idx} has empty botDialogue`);
       }
       if (!card.botPose) {

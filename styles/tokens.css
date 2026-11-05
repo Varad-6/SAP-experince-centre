@@ -201,3 +201,41 @@ p {
   cursor: pointer;
   font-size: 13px;
 }
+
+/* Slide description thin scrollbar & layout */
+.desc::-webkit-scrollbar {
+  width: 4px;
+}
+.desc::-webkit-scrollbar-track {
+  background: transparent;
+}
+.desc::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+.desc::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+@keyframes descFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.desc-fade-in {
+  animation: descFadeIn 250ms ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .desc-fade-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

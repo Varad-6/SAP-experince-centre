@@ -18,112 +18,353 @@
       "type": "live-ui",
       "title": "Clean Core Architecture \u2014 Phase 1",
       "subtitle": "PODZO Logistics Execution & Touchless Settlement",
-      "description": "Enterprise production workflow stage 1 for PODZO Logistics Execution & Touchless Settlement.",
+      "description": {
+        "plain": "Card 1 \u2014 Use case & problem\n\nIndustry / user persona \u2014 Bulk Freight, Mining Logistics & Industrial Manufacturing \u00b7 Commercial Auditors, Transporters, Fleet Drivers, Yard Receivers.\n\nProblem (3 bullets) \u2014 \u2022 Paper Proof-of-Delivery Bottleneck: Physical bilties take 10\u201314 days to courier from remote siding gates to headquarters, delaying billing cycles and freezing carrier cash flow.\n\u2022 Weighbridge Variance & Transit Leakage: Discrepancies between origin siding tare/gross and destination customer weighments cause unrecovered transit shrinkage.\n\u2022 Manual Data Entry & Invoice Discrepancies: Accounts Payable re-keys paper bilties into SAP MIRO, producing data entry errors, GST mismatches, and carrier disputes.\n\nWhat we solve (max 2 lines) \u2014 PODZO eliminates paper courier lag by combining automated weighbridge scale telemetry, driver mobile AI OCR stamp verification, and automated SAP S/4HANA MIRO invoice settlement.\n\nTech stack tags (comma list) \u2014 SAP BTP Cloud Foundry, Node.js / TypeScript, React 19, SQLite / SAP HANA Cloud, OpenAI Vision API / SAP GenAI Hub, Tesseract OCR, Tailwind CSS, SAP S/4HANA OData & BAPIs\n\nSAP touchpoints (modules, tables, APIs) \u2014 SAP MM, SD, FI-AP \u00b7 Tables: VBAK, VBAP, LIKP, LIPS, EKKO, EKPO, RBKP, RSEG \u00b7 APIs: BAPI_INCOMINGINVOICE_CREATE1 (MIRO), BAPI_GOODSMVT_CREATE (MIGO), Sales Order & Delivery OData Services\n\nImage (optional) + caption \u2014 podzo_c1_1.png \u2014 End-to-end logistics friction vs. AI-driven touchless automated settlement.\n\nBot lines \u2014 Line 1: Traditional bulk logistics suffers from 14-day courier delays and frequent weighbridge weight disputes.\nLine 2: PODZO digitizes the entire chain, matching origin weights to destination offload in real time.\nLine 3: Clean, verified deliveries flow directly into automated SAP S/4HANA financial settlement.\n\nFigure [podzo_c1_1.png]: Traditional bulk logistics friction vs. AI-driven touchless automated settlement.\n\n\ud83e\udd16 Bot Explains: Traditional bulk freight logistics relies on paper bilties that delay billing by two weeks. PODZO digitizes the process end-to-end with automated weighing and AI verification.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Card 1 \u2014 Use case & problem"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Industry / user persona \u2014 Bulk Freight, Mining Logistics & Industrial Manufacturing \u00b7 Commercial Auditors, Transporters, Fleet Drivers, Yard Receivers.",
+              "Problem (3 bullets) \u2014 \u2022 Paper Proof-of-Delivery Bottleneck: Physical bilties take 10\u201314 days to courier from remote siding gates to headquarters, delaying billing cycles and freezing carrier cash flow.\n\u2022 Weighbridge Variance & Transit Leakage: Discrepancies between origin siding tare/gross and destination customer weighments cause unrecovered transit shrinkage.\n\u2022 Manual Data Entry & Invoice Discrepancies: Accounts Payable re-keys paper bilties into SAP MIRO, producing data entry errors, GST mismatches, and carrier disputes.",
+              "What we solve (max 2 lines) \u2014 PODZO eliminates paper courier lag by combining automated weighbridge scale telemetry, driver mobile AI OCR stamp verification, and automated SAP S/4HANA MIRO invoice settlement.",
+              "Tech stack tags (comma list) \u2014 SAP BTP Cloud Foundry, Node.js / TypeScript, React 19, SQLite / SAP HANA Cloud, OpenAI Vision API / SAP GenAI Hub, Tesseract OCR, Tailwind CSS, SAP S/4HANA OData & BAPIs",
+              "SAP touchpoints (modules, tables, APIs) \u2014 SAP MM, SD, FI-AP \u00b7 Tables: VBAK, VBAP, LIKP, LIPS, EKKO, EKPO, RBKP, RSEG \u00b7 APIs: BAPI_INCOMINGINVOICE_CREATE1 (MIRO), BAPI_GOODSMVT_CREATE (MIGO), Sales Order & Delivery OData Services",
+              "Image (optional) + caption \u2014 podzo_c1_1.png \u2014 End-to-end logistics friction vs. AI-driven touchless automated settlement.",
+              "Bot lines \u2014 Line 1: Traditional bulk logistics suffers from 14-day courier delays and frequent weighbridge weight disputes.\nLine 2: PODZO digitizes the entire chain, matching origin weights to destination offload in real time.\nLine 3: Clean, verified deliveries flow directly into automated SAP S/4HANA financial settlement."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Figure [podzo_c1_1.png]: Traditional bulk logistics friction vs. AI-driven touchless automated settlement."
+          },
+          {
+            "type": "p",
+            "text": "\ud83e\udd16 Bot Explains: Traditional bulk freight logistics relies on paper bilties that delay billing by two weeks. PODZO digitizes the process end-to-end with automated weighing and AI verification."
+          }
+        ],
+        "source": "reference_docs/AIS Experience Centre \u2014 PODZO Demo Content.docx",
+        "words": 299
+      },
       "badge": "Slide 1 of 8",
       "caption": "Enterprise production workflow stage 1 for PODZO Logistics Execution & Touchless Settlement.",
-      "botDialogue": "Enterprise production workflow stage 1 for PODZO Logistics Execution & Touchless Settlement.",
+      "botDialogue": "Card 1 \u2014 Use case & problem Industry / user persona \u2014 Bulk Freight, Mining Logistics & Industrial. Problem (3 bullets) \u2014 \u2022 Paper Proof-of-Delivery Bottleneck: Physical bilties take 10\u201314 days to courier from remote siding.",
       "botPose": "present",
       "imageUrl": "/assets/apps/podzo/c1_1.webp",
       "screenshot": "/assets/apps/podzo/c1_1.webp",
       "imageWidth": 1908,
-      "imageHeight": 830
+      "imageHeight": 830,
+      "botChat": [
+        "Card 1 \u2014 Use case & problem Industry / user persona \u2014 Bulk Freight, Mining Logistics & Industrial.",
+        "Problem (3 bullets) \u2014 \u2022 Paper Proof-of-Delivery Bottleneck: Physical bilties take 10\u201314 days to courier from remote siding."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-2",
       "type": "challenge",
       "title": "Use case & problem",
       "subtitle": "PODZO Logistics Execution & Touchless Settlement",
-      "description": "Use case & problem",
+      "description": {
+        "plain": "Use case & problem\n\nIndustry / user persona \u2014 Bulk Freight, Mining Logistics & Industrial Manufacturing \u00b7 Commercial Auditors, Transporters, Fleet Drivers, Yard Receivers.\n\nProblem (3 bullets) \u2014 \u2022 Paper Proof-of-Delivery Bottleneck: Physical bilties take 10\u201314 days to courier from remote siding gates to headquarters, delaying billing cycles and freezing carrier cash flow.\n\u2022 Weighbridge Variance & Transit Leakage: Discrepancies between origin siding tare/gross and destination customer weighments cause unrecovered transit shrinkage.\n\u2022 Manual Data Entry & Invoice Discrepancies: Accounts Payable re-keys paper bilties into SAP MIRO, producing data entry errors, GST mismatches, and carrier disputes.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Use case & problem"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Industry / user persona \u2014 Bulk Freight, Mining Logistics & Industrial Manufacturing \u00b7 Commercial Auditors, Transporters, Fleet Drivers, Yard Receivers.",
+              "Problem (3 bullets) \u2014 \u2022 Paper Proof-of-Delivery Bottleneck: Physical bilties take 10\u201314 days to courier from remote siding gates to headquarters, delaying billing cycles and freezing carrier cash flow.\n\u2022 Weighbridge Variance & Transit Leakage: Discrepancies between origin siding tare/gross and destination customer weighments cause unrecovered transit shrinkage.\n\u2022 Manual Data Entry & Invoice Discrepancies: Accounts Payable re-keys paper bilties into SAP MIRO, producing data entry errors, GST mismatches, and carrier disputes."
+            ]
+          }
+        ],
+        "source": "btp\\AIS Experience Centre \u2014 PODZO Demo Content-1.docx",
+        "words": 96
+      },
       "badge": "Slide 2 of 8",
       "caption": "Use case & problem",
-      "botDialogue": "Use case & problem",
-      "botPose": "point"
+      "botDialogue": "Use case & problem Industry / user persona \u2014 Bulk Freight, Mining Logistics & Industrial Manufacturing \u00b7 Commercial. Problem (3 bullets) \u2014 \u2022 Paper Proof-of-Delivery Bottleneck: Physical bilties take 10\u201314 days to courier from remote siding.",
+      "botPose": "point",
+      "botChat": [
+        "Use case & problem Industry / user persona \u2014 Bulk Freight, Mining Logistics & Industrial Manufacturing \u00b7 Commercial.",
+        "Problem (3 bullets) \u2014 \u2022 Paper Proof-of-Delivery Bottleneck: Physical bilties take 10\u201314 days to courier from remote siding."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-3",
       "type": "live-ui",
       "title": "Clean Core Architecture \u2014 Phase 3",
       "subtitle": "PODZO Logistics Execution & Touchless Settlement",
-      "description": "Enterprise production workflow stage 3 for PODZO Logistics Execution & Touchless Settlement.",
+      "description": {
+        "plain": "Card 3 \u2014 How it works (3-step flow)\n\nStep 1 title + 1 line \u2014 Step 1: S/4HANA Order Distribution & Fleet Dispatch \u2014 Commercial Auditor distributes SAP Sales Orders to transporters; drivers receive digital dispatch passes with origin gross/tare weighment.\n\nStep 2 title + 1 line \u2014 Step 2: Dual Weighbridge Telemetry & Yard Offload \u2014 Trucks offload at customer siding; destination weighbridge captures net payload and verifies tolerance threshold automatically.\n\nStep 3 title + 1 line \u2014 Step 3: AI Decision OCR & Automated MIRO Settlement \u2014 Driver uploads stamped bilty; AI validates receiver stamp and matches weights, triggering automated SAP MIRO invoice posting.\n\nFlow image file + caption \u2014 podzo_c3_1.png \u2014 3-step operational workflow from SAP Sales Order allocation to automated MIRO invoice posting.\n\nBot chat \u2014 Msg 1: First, sales orders sync from SAP S/4HANA, enabling instant fleet and driver scheduling.\nMsg 2: Next, dual weighbridge scales at origin and destination capture weight telemetry without manual entry.\nMsg 3: Finally, AI extracts the stamped bilty, performs a 3-way match, and parks/posts the MIRO invoice in SAP.\n\nFigure [podzo_c3_1.png]: 3-step operational workflow from SAP Sales Order allocation to automated MIRO invoice posting.\n\n\ud83e\udd16 Bot Explains: The workflow seamlessly connects SAP S/4HANA sales orders, weighbridge scale telemetry, and automated finance settlement.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Card 3 \u2014 How it works (3-step flow)"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Step 1 title + 1 line \u2014 Step 1: S/4HANA Order Distribution & Fleet Dispatch \u2014 Commercial Auditor distributes SAP Sales Orders to transporters; drivers receive digital dispatch passes with origin gross/tare weighment.",
+              "Step 2 title + 1 line \u2014 Step 2: Dual Weighbridge Telemetry & Yard Offload \u2014 Trucks offload at customer siding; destination weighbridge captures net payload and verifies tolerance threshold automatically.",
+              "Step 3 title + 1 line \u2014 Step 3: AI Decision OCR & Automated MIRO Settlement \u2014 Driver uploads stamped bilty; AI validates receiver stamp and matches weights, triggering automated SAP MIRO invoice posting.",
+              "Flow image file + caption \u2014 podzo_c3_1.png \u2014 3-step operational workflow from SAP Sales Order allocation to automated MIRO invoice posting.",
+              "Bot chat \u2014 Msg 1: First, sales orders sync from SAP S/4HANA, enabling instant fleet and driver scheduling.\nMsg 2: Next, dual weighbridge scales at origin and destination capture weight telemetry without manual entry.\nMsg 3: Finally, AI extracts the stamped bilty, performs a 3-way match, and parks/posts the MIRO invoice in SAP."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Figure [podzo_c3_1.png]: 3-step operational workflow from SAP Sales Order allocation to automated MIRO invoice posting."
+          },
+          {
+            "type": "p",
+            "text": "\ud83e\udd16 Bot Explains: The workflow seamlessly connects SAP S/4HANA sales orders, weighbridge scale telemetry, and automated finance settlement."
+          }
+        ],
+        "source": "reference_docs/AIS Experience Centre \u2014 PODZO Demo Content.docx",
+        "words": 213
+      },
       "badge": "Slide 3 of 8",
       "caption": "Enterprise production workflow stage 3 for PODZO Logistics Execution & Touchless Settlement.",
-      "botDialogue": "Enterprise production workflow stage 3 for PODZO Logistics Execution & Touchless Settlement.",
+      "botDialogue": "Card 3 \u2014 How it works (3-step flow) Step 1 title + 1 line \u2014 Step 1: S/4HANA. Step 2 title + 1 line \u2014 Step 2: Dual Weighbridge Telemetry & Yard Offload \u2014 Trucks offload.",
       "botPose": "tablet",
       "imageUrl": "/assets/apps/podzo/c3_1.webp",
       "screenshot": "/assets/apps/podzo/c3_1.webp",
       "imageWidth": 1920,
-      "imageHeight": 1080
+      "imageHeight": 1080,
+      "botChat": [
+        "Card 3 \u2014 How it works (3-step flow) Step 1 title + 1 line \u2014 Step 1: S/4HANA.",
+        "Step 2 title + 1 line \u2014 Step 2: Dual Weighbridge Telemetry & Yard Offload \u2014 Trucks offload."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-4",
       "type": "live-ui",
       "title": "Clean Core Architecture \u2014 Phase 4",
       "subtitle": "PODZO Logistics Execution & Touchless Settlement",
-      "description": "Enterprise production workflow stage 4 for PODZO Logistics Execution & Touchless Settlement.",
+      "description": {
+        "plain": "Card 4 \u2014 Key features\n\nFeature 1: title, 1 line, image file \u2014 Feature 1: AI Decision Intelligence OCR Engine \u2014 Multimodal Vision extracts invoice header, line items, and verifies official customer receiver stamp with 99% accuracy. (podzo_c4_1.png)\n\nFeature 2: title, 1 line, image file \u2014 Feature 2: Dual Weighbridge Tolerance Reconciliation \u2014 Compares origin siding gross/tare against destination yard offload with configurable \u00b10.5% tolerance gates. (podzo_c4_2.png)\n\nFeature 3: title, 1 line, image file \u2014 Feature 3: Automated S/4HANA MIRO Invoicing \u2014 One-click automated AP clearance via BAPI_INCOMINGINVOICE_CREATE1, generating parked or posted SAP financial documents. (podzo_c4_3.png)\n\nBot chat \u2014 Msg 1: Our AI vision model extracts 14 invoice fields and confirms the physical stamped seal in seconds.\nMsg 2: Weight reconciliation flags moisture loss or shrinkage before transporter payment is approved.\nMsg 3: Approved deliveries post straight to SAP FI-AP as MIRO invoices with full audit trails.\n\nFigure [podzo_c4_1.png]: Driver mobile POD upload interface with AI OCR extraction and stamp recognition.\n\n\ud83e\udd16 Bot Explains: Drivers capture physical bilties on their phones. Our AI engine verifies receiver stamps and extracts delivery line items instantly.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Card 4 \u2014 Key features"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Feature 1: title, 1 line, image file \u2014 Feature 1: AI Decision Intelligence OCR Engine \u2014 Multimodal Vision extracts invoice header, line items, and verifies official customer receiver stamp with 99% accuracy. (podzo_c4_1.png)",
+              "Feature 2: title, 1 line, image file \u2014 Feature 2: Dual Weighbridge Tolerance Reconciliation \u2014 Compares origin siding gross/tare against destination yard offload with configurable \u00b10.5% tolerance gates. (podzo_c4_2.png)",
+              "Feature 3: title, 1 line, image file \u2014 Feature 3: Automated S/4HANA MIRO Invoicing \u2014 One-click automated AP clearance via BAPI_INCOMINGINVOICE_CREATE1, generating parked or posted SAP financial documents. (podzo_c4_3.png)",
+              "Bot chat \u2014 Msg 1: Our AI vision model extracts 14 invoice fields and confirms the physical stamped seal in seconds.\nMsg 2: Weight reconciliation flags moisture loss or shrinkage before transporter payment is approved.\nMsg 3: Approved deliveries post straight to SAP FI-AP as MIRO invoices with full audit trails."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Figure [podzo_c4_1.png]: Driver mobile POD upload interface with AI OCR extraction and stamp recognition."
+          },
+          {
+            "type": "p",
+            "text": "\ud83e\udd16 Bot Explains: Drivers capture physical bilties on their phones. Our AI engine verifies receiver stamps and extracts delivery line items instantly."
+          }
+        ],
+        "source": "reference_docs/AIS Experience Centre \u2014 PODZO Demo Content.docx",
+        "words": 183
+      },
       "badge": "Slide 4 of 8",
       "caption": "Enterprise production workflow stage 4 for PODZO Logistics Execution & Touchless Settlement.",
-      "botDialogue": "Enterprise production workflow stage 4 for PODZO Logistics Execution & Touchless Settlement.",
+      "botDialogue": "Card 4 \u2014 Key features Feature 1: title, 1 line, image file \u2014 Feature 1: AI Decision Intelligence. (podzo_c4_1.png) Feature 2: title, 1 line, image file \u2014 Feature 2: Dual Weighbridge Tolerance Reconciliation \u2014 Compares origin.",
       "botPose": "laptop",
       "imageUrl": "/assets/apps/podzo/c4_1.webp",
       "screenshot": "/assets/apps/podzo/c4_1.webp",
       "imageWidth": 1901,
-      "imageHeight": 824
+      "imageHeight": 824,
+      "botChat": [
+        "Card 4 \u2014 Key features Feature 1: title, 1 line, image file \u2014 Feature 1: AI Decision Intelligence.",
+        "(podzo_c4_1.png) Feature 2: title, 1 line, image file \u2014 Feature 2: Dual Weighbridge Tolerance Reconciliation \u2014 Compares origin."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-5",
       "type": "live-ui",
       "title": "Clean Core Architecture \u2014 Phase 5",
       "subtitle": "PODZO Logistics Execution & Touchless Settlement",
-      "description": "Enterprise production workflow stage 5 for PODZO Logistics Execution & Touchless Settlement.",
+      "description": {
+        "plain": "Card 5 \u2014 Architecture & integration\n\nArchitecture diagram file + caption \u2014 podzo_c5_1.png \u2014 High-availability cloud-to-on-premise architecture on SAP BTP Cloud Foundry and SAP S/4HANA.\n\nSystems connected \u2014 SAP S/4HANA on-premise (S21 System, Client 200 via Cloud Connector), SAP BTP Cloud Foundry Runtime, SAP GenAI Hub / OpenAI Vision API, Weighbridge IoT Scale REST Bridges, SQLite / SAP HANA Cloud.\n\nAuth / security (XSUAA, JWT, destinations\u2026) \u2014 SAP BTP XSUAA OAuth 2.0 / JWT Role-Based Access Control (CA, TA, DR, CR, SR, SA), TLS 1.3 encrypted REST destinations, AES-256 encrypted credential vault, Cloud Connector mutual TLS tunnel.\n\nBot chat \u2014 Msg 1: PODZO runs as a multi-tier microservice on SAP BTP Cloud Foundry with sub-second response times.\nMsg 2: It securely communicates with on-premise SAP S/4HANA via SAP Cloud Connector using OAuth JWT.\nMsg 3: Sensitive logistics and financial data remain completely encrypted in-transit and at-rest.\n\nFigure [podzo_c5_1.png]: Enterprise Solution Architecture connecting SAP S/4HANA to SAP BTP Cloud Foundry.\n\n\ud83e\udd16 Bot Explains: PODZO bridges on-premise SAP S/4HANA and cloud services through SAP Cloud Connector and secure OAuth JWT authentication.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Card 5 \u2014 Architecture & integration"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Architecture diagram file + caption \u2014 podzo_c5_1.png \u2014 High-availability cloud-to-on-premise architecture on SAP BTP Cloud Foundry and SAP S/4HANA.",
+              "Systems connected \u2014 SAP S/4HANA on-premise (S21 System, Client 200 via Cloud Connector), SAP BTP Cloud Foundry Runtime, SAP GenAI Hub / OpenAI Vision API, Weighbridge IoT Scale REST Bridges, SQLite / SAP HANA Cloud.",
+              "Auth / security (XSUAA, JWT, destinations\u2026) \u2014 SAP BTP XSUAA OAuth 2.0 / JWT Role-Based Access Control (CA, TA, DR, CR, SR, SA), TLS 1.3 encrypted REST destinations, AES-256 encrypted credential vault, Cloud Connector mutual TLS tunnel.",
+              "Bot chat \u2014 Msg 1: PODZO runs as a multi-tier microservice on SAP BTP Cloud Foundry with sub-second response times.\nMsg 2: It securely communicates with on-premise SAP S/4HANA via SAP Cloud Connector using OAuth JWT.\nMsg 3: Sensitive logistics and financial data remain completely encrypted in-transit and at-rest."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Figure [podzo_c5_1.png]: Enterprise Solution Architecture connecting SAP S/4HANA to SAP BTP Cloud Foundry."
+          },
+          {
+            "type": "p",
+            "text": "\ud83e\udd16 Bot Explains: PODZO bridges on-premise SAP S/4HANA and cloud services through SAP Cloud Connector and secure OAuth JWT authentication."
+          }
+        ],
+        "source": "reference_docs/AIS Experience Centre \u2014 PODZO Demo Content.docx",
+        "words": 179
+      },
       "badge": "Slide 5 of 8",
       "caption": "Enterprise production workflow stage 5 for PODZO Logistics Execution & Touchless Settlement.",
-      "botDialogue": "Enterprise production workflow stage 5 for PODZO Logistics Execution & Touchless Settlement.",
+      "botDialogue": "Card 5 \u2014 Architecture & integration Architecture diagram file + caption \u2014 podzo_c5_1.png \u2014 High-availability cloud-to-on-premise architecture on. Systems connected \u2014 SAP S/4HANA on-premise (S21 System, Client 200 via Cloud Connector), SAP BTP Cloud Foundry Runtime,.",
       "botPose": "explain",
       "imageUrl": "/assets/apps/podzo/c5_1.webp",
       "screenshot": "/assets/apps/podzo/c5_1.webp",
       "imageWidth": 595,
-      "imageHeight": 629
+      "imageHeight": 629,
+      "botChat": [
+        "Card 5 \u2014 Architecture & integration Architecture diagram file + caption \u2014 podzo_c5_1.png \u2014 High-availability cloud-to-on-premise architecture on.",
+        "Systems connected \u2014 SAP S/4HANA on-premise (S21 System, Client 200 via Cloud Connector), SAP BTP Cloud Foundry Runtime,."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-6",
       "type": "live-ui",
       "title": "Clean Core Architecture \u2014 Phase 6",
       "subtitle": "PODZO Logistics Execution & Touchless Settlement",
-      "description": "Enterprise production workflow stage 6 for PODZO Logistics Execution & Touchless Settlement.",
+      "description": {
+        "plain": "Card 6 \u2014 Results & ROI\n\nHeadline metric \u2014 98% Touchless Delivery-to-Invoice Clearance & 85% Reduction in Billing Lead Time\n\nBefore \u2192 after \u2014 Before: 12\u201314 days paper courier & manual 3-way match \u2192 After: 4 hours from truck offload to SAP MIRO invoice posting.\n\nSupporting metrics (up to 3) \u2014 Metric 1: Zero Unrecovered Weight Leakage \u2014 Automated dual weighbridge audit prevents $180K+ annual transit shrinkage losses.\nMetric 2: 70% Reduction in AP Processing Costs \u2014 Touchless OCR matching eliminates manual invoice data entry across thousands of monthly trips.\nMetric 3: 100% Audit Compliance & Dispute Elimination \u2014 Cryptographically verified stamps and weighbridge tickets resolve carrier disputes immediately.\n\nSource of numbers (client / pilot / estimate) \u2014 Verified customer pilot metrics across industrial mining logistics and bulk pharmaceutical distribution contracts.\n\nBot chat \u2014 Msg 1: Customers cut invoice processing time from two weeks down to under four hours.\nMsg 2: Real-time dual weighbridge checks immediately stop unrecovered transit loss and short deliveries.\nMsg 3: Accounting teams process thousands of monthly transport bilties with 98% touchless automation.\n\nFigure [podzo_c6_1.png]: Business Value and Executive KPI Scorecard for touchless transport invoice automation.\n\n\ud83e\udd16 Bot Explains: Automating the delivery reconciliation chain reduces invoice dispute cycle time by 85% and eliminates transit leakage.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Card 6 \u2014 Results & ROI"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Headline metric \u2014 98% Touchless Delivery-to-Invoice Clearance & 85% Reduction in Billing Lead Time",
+              "Before \u2192 after \u2014 Before: 12\u201314 days paper courier & manual 3-way match \u2192 After: 4 hours from truck offload to SAP MIRO invoice posting.",
+              "Supporting metrics (up to 3) \u2014 Metric 1: Zero Unrecovered Weight Leakage \u2014 Automated dual weighbridge audit prevents $180K+ annual transit shrinkage losses.\nMetric 2: 70% Reduction in AP Processing Costs \u2014 Touchless OCR matching eliminates manual invoice data entry across thousands of monthly trips.\nMetric 3: 100% Audit Compliance & Dispute Elimination \u2014 Cryptographically verified stamps and weighbridge tickets resolve carrier disputes immediately.",
+              "Source of numbers (client / pilot / estimate) \u2014 Verified customer pilot metrics across industrial mining logistics and bulk pharmaceutical distribution contracts.",
+              "Bot chat \u2014 Msg 1: Customers cut invoice processing time from two weeks down to under four hours.\nMsg 2: Real-time dual weighbridge checks immediately stop unrecovered transit loss and short deliveries.\nMsg 3: Accounting teams process thousands of monthly transport bilties with 98% touchless automation."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Figure [podzo_c6_1.png]: Business Value and Executive KPI Scorecard for touchless transport invoice automation."
+          },
+          {
+            "type": "p",
+            "text": "\ud83e\udd16 Bot Explains: Automating the delivery reconciliation chain reduces invoice dispute cycle time by 85% and eliminates transit leakage."
+          }
+        ],
+        "source": "reference_docs/AIS Experience Centre \u2014 PODZO Demo Content.docx",
+        "words": 209
+      },
       "badge": "Slide 6 of 8",
       "caption": "Enterprise production workflow stage 6 for PODZO Logistics Execution & Touchless Settlement.",
-      "botDialogue": "Enterprise production workflow stage 6 for PODZO Logistics Execution & Touchless Settlement.",
+      "botDialogue": "Card 6 \u2014 Results & ROI Headline metric \u2014 98% Touchless Delivery-to-Invoice Clearance & 85% Reduction in Billing. Supporting metrics (up to 3) \u2014 Metric 1: Zero Unrecovered Weight Leakage \u2014 Automated dual weighbridge audit prevents.",
       "botPose": "beckon",
       "imageUrl": "/assets/apps/podzo/c6_1.webp",
       "screenshot": "/assets/apps/podzo/c6_1.webp",
       "imageWidth": 1915,
-      "imageHeight": 558
+      "imageHeight": 558,
+      "botChat": [
+        "Card 6 \u2014 Results & ROI Headline metric \u2014 98% Touchless Delivery-to-Invoice Clearance & 85% Reduction in Billing.",
+        "Supporting metrics (up to 3) \u2014 Metric 1: Zero Unrecovered Weight Leakage \u2014 Automated dual weighbridge audit prevents."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-7",
       "type": "live-ui",
       "title": "Clean Core Architecture \u2014 Phase 7",
       "subtitle": "PODZO Logistics Execution & Touchless Settlement",
-      "description": "Enterprise production workflow stage 7 for PODZO Logistics Execution & Touchless Settlement.",
+      "description": {
+        "plain": "Card 7 \u2014 Prerequisites & next step\n\nBTP services + entitlements \u2014 SAP BTP Cloud Foundry Runtime (1 GB Memory / 2 GB Disk), SAP Authorization & Trust Management (XSUAA standard), SAP Destination Service (lite), SAP Cloud Connector (connectivity standard), SAP AI Core / GenAI Hub (optional for on-tenant LLM).\n\nS/4HANA config / authorizations \u2014 SAP S/4HANA 1909+ or ECC 6.0 EHP7+; Technical User with RFC authorizations for BAPI_INCOMINGINVOICE_CREATE1, BAPI_GOODSMVT_CREATE, OData services for Sales Orders (SD) & Deliveries (LE).\n\nTime to deploy \u2014 2 to 3 weeks for complete pilot integration with live S/4HANA system and weighbridge scales.\n\nCTA button label + link \u2014 Launch Live Demo Portal (https://podzone-forgiving-cheetah-ja.cfapps.eu30.hana.ondemand.com)\n\nBot closing line \u2014 Ready to eliminate logistics invoice delays? Let\u2019s schedule a personalized 14-day proof-of-value for your enterprise!\n\nFigure [podzo_c7_1.png]: Prerequisites and SAP BTP deployment topology blueprint.\n\n\ud83e\udd16 Bot Explains: Deploying PODZO requires standard SAP BTP Cloud Foundry runtime and Cloud Connector access to your SAP S/4HANA instance.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Card 7 \u2014 Prerequisites & next step"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "BTP services + entitlements \u2014 SAP BTP Cloud Foundry Runtime (1 GB Memory / 2 GB Disk), SAP Authorization & Trust Management (XSUAA standard), SAP Destination Service (lite), SAP Cloud Connector (connectivity standard), SAP AI Core / GenAI Hub (optional for on-tenant LLM).",
+              "S/4HANA config / authorizations \u2014 SAP S/4HANA 1909+ or ECC 6.0 EHP7+; Technical User with RFC authorizations for BAPI_INCOMINGINVOICE_CREATE1, BAPI_GOODSMVT_CREATE, OData services for Sales Orders (SD) & Deliveries (LE).",
+              "Time to deploy \u2014 2 to 3 weeks for complete pilot integration with live S/4HANA system and weighbridge scales.",
+              "CTA button label + link \u2014 Launch Live Demo Portal (https://podzone-forgiving-cheetah-ja.cfapps.eu30.hana.ondemand.com)",
+              "Bot closing line \u2014 Ready to eliminate logistics invoice delays? Let\u2019s schedule a personalized 14-day proof-of-value for your enterprise!"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Figure [podzo_c7_1.png]: Prerequisites and SAP BTP deployment topology blueprint."
+          },
+          {
+            "type": "p",
+            "text": "\ud83e\udd16 Bot Explains: Deploying PODZO requires standard SAP BTP Cloud Foundry runtime and Cloud Connector access to your SAP S/4HANA instance."
+          }
+        ],
+        "source": "reference_docs/AIS Experience Centre \u2014 PODZO Demo Content.docx",
+        "words": 158
+      },
       "badge": "Slide 7 of 8",
       "caption": "Enterprise production workflow stage 7 for PODZO Logistics Execution & Touchless Settlement.",
-      "botDialogue": "Enterprise production workflow stage 7 for PODZO Logistics Execution & Touchless Settlement.",
+      "botDialogue": "Card 7 \u2014 Prerequisites & next step BTP services + entitlements \u2014 SAP BTP Cloud Foundry Runtime (1. S/4HANA config / authorizations \u2014 SAP S/4HANA 1909+ or ECC 6.0 EHP7+; Technical User with RFC authorizations for.",
       "botPose": "present",
       "imageUrl": "/assets/apps/podzo/c7_1.webp",
       "screenshot": "/assets/apps/podzo/c7_1.webp",
       "imageWidth": 1910,
-      "imageHeight": 762
+      "imageHeight": 762,
+      "botChat": [
+        "Card 7 \u2014 Prerequisites & next step BTP services + entitlements \u2014 SAP BTP Cloud Foundry Runtime (1.",
+        "S/4HANA config / authorizations \u2014 SAP S/4HANA 1909+ or ECC 6.0 EHP7+; Technical User with RFC authorizations for."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-8",
       "type": "workflow",
       "title": "Results & ROI",
       "subtitle": "PODZO Logistics Execution & Touchless Settlement",
-      "description": "Results & ROI",
+      "description": {
+        "plain": "Results & ROI\n\nHeadline metric \u2014 98% Touchless Delivery-to-Invoice Clearance & 85% Reduction in Billing Lead Time\n\nBefore \u2192 after \u2014 Before: 12\u201314 days paper courier & manual 3-way match \u2192 After: 4 hours from truck offload to SAP MIRO invoice posting.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Results & ROI"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Headline metric \u2014 98% Touchless Delivery-to-Invoice Clearance & 85% Reduction in Billing Lead Time",
+              "Before \u2192 after \u2014 Before: 12\u201314 days paper courier & manual 3-way match \u2192 After: 4 hours from truck offload to SAP MIRO invoice posting."
+            ]
+          }
+        ],
+        "source": "btp\\AIS Experience Centre \u2014 PODZO Demo Content-1.docx",
+        "words": 42
+      },
       "badge": "Slide 8 of 8",
       "caption": "Results & ROI",
-      "botDialogue": "Results & ROI",
-      "botPose": "point"
+      "botDialogue": "Results & ROI Headline metric \u2014 98% Touchless Delivery-to-Invoice Clearance & 85% Reduction in Billing Lead Time Before.",
+      "botPose": "point",
+      "botChat": [
+        "Results & ROI Headline metric \u2014 98% Touchless Delivery-to-Invoice Clearance & 85% Reduction in Billing Lead Time Before."
+      ],
+      "botChatMode": "condensed"
     }
   ],
   "closing": {

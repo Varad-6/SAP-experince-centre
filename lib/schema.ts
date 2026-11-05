@@ -43,13 +43,28 @@ export const CtaActionSchema = z.object({
   type: z.enum(['demo', 'prereq', 'pdf', 'architecture']),
 });
 
+export const DescriptionBlockSchema = z.object({
+  type: z.enum(['p', 'ul', 'ol']),
+  text: z.string().optional(),
+  items: z.array(z.string()).optional(),
+});
+
+export const CardDescriptionSchema = z.object({
+  plain: z.string(),
+  blocks: z.array(DescriptionBlockSchema),
+  source: z.string(),
+  words: z.number(),
+});
+
 export const CardSchema = z.object({
   index: z.number().min(0).max(16).optional(),
   id: z.string().optional(),
   type: CardTypeSchema,
   title: z.string(),
   subtitle: z.string().optional(),
-  description: z.string().optional(),
+  description: z.union([z.string(), CardDescriptionSchema]).nullable().optional(),
+  botChat: z.array(z.string()).nullable().optional(),
+  botChatMode: z.enum(['verbatim', 'split', 'condensed', 'none']).nullable().optional(),
   badge: z.string().optional(),
   imageUrl: z.string().optional(),
   caption: z.string().optional(),

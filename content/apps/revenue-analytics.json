@@ -18,97 +18,315 @@
       "type": "live-ui",
       "title": "Clean Core Architecture \u2014 Phase 1",
       "subtitle": "Revenue Analytics & Profitability Intelligence",
-      "description": "Enterprise production workflow stage 1 for Revenue Analytics & Profitability Intelligence.",
+      "description": {
+        "plain": "CARD 1\n\nBusiness Questions & Audience\n\nDashboard overview and business context\n\nDashboard Overview\n\nDashboard Name: Revenue Analytics & Profitability Intelligence\n\nPurpose: Bring executive revenue performance, customer contribution and product/material profitability into one connected SAP Analytics Cloud experience, supported by the demonstrated Joule conversational scenarios.\n\nBusiness Problem\n\nRevenue, gross profit and margin information can be difficult to interpret when executive, customer and product views are reviewed separately. Decision-makers need a consistent way to monitor performance, identify customer and product contribution, and investigate margin movement.\n\nTarget Audience\n\nPersona \u2014 Purpose\n\nExecutive Leadership / CFO \u2014 Review revenue, gross profit, gross margin and overall commercial performance.\n\nSales Leadership \u2014 Monitor revenue movement across geography and sales groups and identify areas requiring follow-up.\n\nCustomer / Account Managers \u2014 Compare customer-segment contribution, customer-group performance and top customers by revenue.\n\nProduct / Portfolio Managers \u2014 Review product-group revenue and gross profit, category margin and material contribution.\n\nFinance / Commercial Analysts \u2014 Investigate margin performance and explain variance using the demonstrated analytical views.\n\nBusiness Users \u2014 Use the demonstrated Joule scenarios to ask margin questions and explore a what-if margin change.\n\nThree Key Business Questions\n\nHow are revenue, gross profit, gross margin and quantity performing over time, geography and sales groups?\n\nWhich customer segments, customer groups and individual customers contribute most to revenue and gross profit?\n\nWhich product groups and materials contribute most to gross profit, and how does profitability compare with sales quantity?\n\nProblem Today\n\nThe solution organises the analysis into three SAC perspectives\u2014Executive Performance, Customer Performance, and Product & Material Profitability\u2014with Joule examples for margin-rate lookup, variance explanation and scenario exploration.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "CARD 1"
+          },
+          {
+            "type": "p",
+            "text": "Business Questions & Audience"
+          },
+          {
+            "type": "p",
+            "text": "Dashboard overview and business context"
+          },
+          {
+            "type": "p",
+            "text": "Dashboard Overview"
+          },
+          {
+            "type": "p",
+            "text": "Dashboard Name: Revenue Analytics & Profitability Intelligence"
+          },
+          {
+            "type": "p",
+            "text": "Purpose: Bring executive revenue performance, customer contribution and product/material profitability into one connected SAP Analytics Cloud experience, supported by the demonstrated Joule conversational scenarios."
+          },
+          {
+            "type": "p",
+            "text": "Business Problem"
+          },
+          {
+            "type": "p",
+            "text": "Revenue, gross profit and margin information can be difficult to interpret when executive, customer and product views are reviewed separately. Decision-makers need a consistent way to monitor performance, identify customer and product contribution, and investigate margin movement."
+          },
+          {
+            "type": "p",
+            "text": "Target Audience"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Persona \u2014 Purpose",
+              "Executive Leadership / CFO \u2014 Review revenue, gross profit, gross margin and overall commercial performance.",
+              "Sales Leadership \u2014 Monitor revenue movement across geography and sales groups and identify areas requiring follow-up.",
+              "Customer / Account Managers \u2014 Compare customer-segment contribution, customer-group performance and top customers by revenue.",
+              "Product / Portfolio Managers \u2014 Review product-group revenue and gross profit, category margin and material contribution.",
+              "Finance / Commercial Analysts \u2014 Investigate margin performance and explain variance using the demonstrated analytical views.",
+              "Business Users \u2014 Use the demonstrated Joule scenarios to ask margin questions and explore a what-if margin change."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Three Key Business Questions"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "How are revenue, gross profit, gross margin and quantity performing over time, geography and sales groups?",
+              "Which customer segments, customer groups and individual customers contribute most to revenue and gross profit?",
+              "Which product groups and materials contribute most to gross profit, and how does profitability compare with sales quantity?"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Problem Today"
+          },
+          {
+            "type": "p",
+            "text": "The solution organises the analysis into three SAC perspectives\u2014Executive Performance, Customer Performance, and Product & Material Profitability\u2014with Joule examples for margin-rate lookup, variance explanation and scenario exploration."
+          }
+        ],
+        "source": "reference_docs/Revenue_Analytics_Documentation.docx",
+        "words": 266
+      },
       "badge": "Slide 1 of 7",
       "caption": "Enterprise production workflow stage 1 for Revenue Analytics & Profitability Intelligence.",
-      "botDialogue": "Enterprise production workflow stage 1 for Revenue Analytics & Profitability Intelligence.",
+      "botDialogue": "CARD 1 Business Questions & Audience Dashboard overview and business context Dashboard Overview Dashboard Name: Revenue Analytics &. Business Problem Revenue, gross profit and margin information can be difficult to interpret when executive, customer and product.",
       "botPose": "present",
       "imageUrl": "/assets/apps/revenue-analytics/c1_1.webp",
       "screenshot": "/assets/apps/revenue-analytics/c1_1.webp",
       "imageWidth": 1880,
-      "imageHeight": 732
+      "imageHeight": 732,
+      "botChat": [
+        "CARD 1 Business Questions & Audience Dashboard overview and business context Dashboard Overview Dashboard Name: Revenue Analytics &.",
+        "Business Problem Revenue, gross profit and margin information can be difficult to interpret when executive, customer and product."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-2",
       "type": "challenge",
       "title": "Business Problem",
       "subtitle": "Revenue Analytics & Profitability Intelligence",
-      "description": "Revenue, gross profit and margin information can be difficult to interpret when executive, customer and product views are reviewed separately. Decision-makers need a consistent way to monitor performance, identify customer and product contribution, and investigate margin movement.",
+      "description": {
+        "plain": "Business Problem\n\nRevenue, gross profit and margin information can be difficult to interpret when executive, customer and product views are reviewed separately. Decision-makers need a consistent way to monitor performance, identify customer and product contribution, and investigate margin movement.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Business Problem"
+          },
+          {
+            "type": "p",
+            "text": "Revenue, gross profit and margin information can be difficult to interpret when executive, customer and product views are reviewed separately. Decision-makers need a consistent way to monitor performance, identify customer and product contribution, and investigate margin movement."
+          }
+        ],
+        "source": "sac\\Revenue_Analytics_Documentation-1.docx",
+        "words": 39
+      },
       "badge": "Slide 2 of 7",
       "caption": "Revenue, gross profit and margin information can be difficult to interpret when executive, customer and product views are reviewed separately. Decision-makers need a consistent way...",
-      "botDialogue": "Revenue, gross profit and margin information can be difficult to interpret when executive, customer and product views are reviewed separately. Decision-makers need a consistent way to monitor performance, identify customer and product contribution, and investigate margin movement.",
-      "botPose": "point"
+      "botDialogue": "Business Problem Revenue, gross profit and margin information can be difficult to interpret when executive, customer and product. Decision-makers need a consistent way to monitor performance, identify customer and product contribution, and investigate margin movement.",
+      "botPose": "point",
+      "botChat": [
+        "Business Problem Revenue, gross profit and margin information can be difficult to interpret when executive, customer and product.",
+        "Decision-makers need a consistent way to monitor performance, identify customer and product contribution, and investigate margin movement."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-3",
       "type": "live-ui",
       "title": "Three Key Business Questions",
       "subtitle": "Revenue Analytics & Profitability Intelligence",
-      "description": "How are revenue, gross profit, gross margin and quantity performing over time, geography and sales groups? Which customer segments, customer groups and individual customers contribute most to revenue and gross profit? Which product groups and materials contribute most to gross profit, and how does profitability compare with sales quantity? Slid 4:",
+      "description": {
+        "plain": "Three Key Business Questions\n\nHow are revenue, gross profit, gross margin and quantity performing over time, geography and sales groups?\n\nWhich customer segments, customer groups and individual customers contribute most to revenue and gross profit?\n\nWhich product groups and materials contribute most to gross profit, and how does profitability compare with sales quantity?",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Three Key Business Questions"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "How are revenue, gross profit, gross margin and quantity performing over time, geography and sales groups?",
+              "Which customer segments, customer groups and individual customers contribute most to revenue and gross profit?",
+              "Which product groups and materials contribute most to gross profit, and how does profitability compare with sales quantity?"
+            ]
+          }
+        ],
+        "source": "sac\\Revenue_Analytics_Documentation-1.docx",
+        "words": 53
+      },
       "badge": "Slide 3 of 7",
       "caption": "How are revenue, gross profit, gross margin and quantity performing over time, geography and sales groups? Which customer segments, customer groups and individual customers contrib...",
-      "botDialogue": "How are revenue, gross profit, gross margin and quantity performing over time, geography and sales groups? Which customer segments, customer groups and individual customers contribute most to revenue and gross profit?",
+      "botDialogue": "Three Key Business Questions  How are revenue, gross profit, gross margin and quantity performing over time, geography and sales groups?. Which customer segments, customer groups and individual customers contribute most to revenue and gross profit?.",
       "botPose": "tablet",
       "imageUrl": "/assets/apps/revenue-analytics/c3_1.webp",
       "screenshot": "/assets/apps/revenue-analytics/c3_1.webp",
       "imageWidth": 1672,
-      "imageHeight": 941
+      "imageHeight": 941,
+      "botChat": [
+        "Three Key Business Questions  How are revenue, gross profit, gross margin and quantity performing over time, geography and sales groups?.",
+        "Which customer segments, customer groups and individual customers contribute most to revenue and gross profit?."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-4",
       "type": "live-ui",
       "title": "1. Executive Performance / Start with revenue, gross profit, gross margin, quantity and customer count. Identify the period, geography or sales group where performance moves.",
       "subtitle": "Revenue Analytics & Profitability Intelligence",
-      "description": "1. Executive Performance / Start with revenue, gross profit, gross margin, quantity and customer count. Identify the period, geography or sales group where performance moves.",
+      "description": {
+        "plain": "CARD 4\n\nData Sources\n\nLogical source architecture, analytical layers and documented technical boundaries\n\nData Architecture\n\nLogical Source-to-Insight Flow\n\nThe deck confirms the logical source-to-insight flow only. Exact deployed technical object names and field-level lineage were not included.\n\nBusiness Domain \u2014 Dashboard Evidence / Analysis \u2014 Technical Evidence Status\n\nExecutive \u2014 Revenue, gross profit, margin, quantity, customer count, quarterly trend, geography and sales-group analysis. \u2014 Dashboard capability confirmed; formulas and field lineage not supplied.\n\nCustomer \u2014 Segment contribution, top customers, customer-group revenue/profit and customer/material detail. \u2014 Dashboard capability confirmed; customer keys/ranking logic not supplied.\n\nProduct / Material \u2014 Product-group revenue/profit, profitability vs quantity, category margin and top materials by gross profit. \u2014 Dashboard capability confirmed; hierarchy, unit and cost basis not supplied.\n\nJoule \u2013 Margin \u2014 Margin-rate lookup and month-to-month variance explanation. \u2014 Demonstrated scenario; data caveat applies.\n\nJoule \u2013 Scenario \u2014 5-point margin reduction vs stated sales target; margin by horsepower category. \u2014 Calculation detail and production validation not supplied.\n\nTechnical Inventory \u2014 CDS views, Datasphere objects, analytical model, SAC model and refresh schedule. \u2014 Open: confirm deployed names and lineage.\n\nBusiness Definitions \u2014 KPI formulas, currency/unit rules, date filters, targets and calculation logic. \u2014 Open: obtain business-owner sign-off.\n\nData Governance \u2014 Data quality, reconciliation, access control and refresh monitoring. \u2014 Open: not specified in the supplied deck.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "CARD 4"
+          },
+          {
+            "type": "p",
+            "text": "Data Sources"
+          },
+          {
+            "type": "p",
+            "text": "Logical source architecture, analytical layers and documented technical boundaries"
+          },
+          {
+            "type": "p",
+            "text": "Data Architecture"
+          },
+          {
+            "type": "p",
+            "text": "Logical Source-to-Insight Flow"
+          },
+          {
+            "type": "p",
+            "text": "The deck confirms the logical source-to-insight flow only. Exact deployed technical object names and field-level lineage were not included."
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Business Domain \u2014 Dashboard Evidence / Analysis \u2014 Technical Evidence Status",
+              "Executive \u2014 Revenue, gross profit, margin, quantity, customer count, quarterly trend, geography and sales-group analysis. \u2014 Dashboard capability confirmed; formulas and field lineage not supplied.",
+              "Customer \u2014 Segment contribution, top customers, customer-group revenue/profit and customer/material detail. \u2014 Dashboard capability confirmed; customer keys/ranking logic not supplied.",
+              "Product / Material \u2014 Product-group revenue/profit, profitability vs quantity, category margin and top materials by gross profit. \u2014 Dashboard capability confirmed; hierarchy, unit and cost basis not supplied.",
+              "Joule \u2013 Margin \u2014 Margin-rate lookup and month-to-month variance explanation. \u2014 Demonstrated scenario; data caveat applies.",
+              "Joule \u2013 Scenario \u2014 5-point margin reduction vs stated sales target; margin by horsepower category. \u2014 Calculation detail and production validation not supplied.",
+              "Technical Inventory \u2014 CDS views, Datasphere objects, analytical model, SAC model and refresh schedule. \u2014 Open: confirm deployed names and lineage.",
+              "Business Definitions \u2014 KPI formulas, currency/unit rules, date filters, targets and calculation logic. \u2014 Open: obtain business-owner sign-off.",
+              "Data Governance \u2014 Data quality, reconciliation, access control and refresh monitoring. \u2014 Open: not specified in the supplied deck."
+            ]
+          }
+        ],
+        "source": "reference_docs/Revenue_Analytics_Documentation.docx",
+        "words": 218
+      },
       "badge": "Slide 4 of 7",
       "caption": "1. Executive Performance / Start with revenue, gross profit, gross margin, quantity and customer count. Identify the period, geography or sales group where performance moves.",
-      "botDialogue": "Executive Performance / Start with revenue, gross profit, gross margin, quantity and customer count.",
+      "botDialogue": "CARD 4 Data Sources Logical source architecture, analytical layers and documented technical boundaries Data Architecture Logical Source-to-Insight Flow. Joule \u2013 Scenario \u2014 5-point margin reduction vs stated sales target; margin by horsepower category.",
       "botPose": "laptop",
       "imageUrl": "/assets/apps/revenue-analytics/c4_1.webp",
       "screenshot": "/assets/apps/revenue-analytics/c4_1.webp",
       "imageWidth": 945,
-      "imageHeight": 473
+      "imageHeight": 473,
+      "botChat": [
+        "CARD 4 Data Sources Logical source architecture, analytical layers and documented technical boundaries Data Architecture Logical Source-to-Insight Flow.",
+        "Joule \u2013 Scenario \u2014 5-point margin reduction vs stated sales target; margin by horsepower category."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-5",
       "type": "live-ui",
       "title": "2. Customer Performance / Investigate customer-segment contribution, top customers and customer-group revenue and gross profit. Continue to customer/material detail where needed.",
       "subtitle": "Revenue Analytics & Profitability Intelligence",
-      "description": "2. Customer Performance / Investigate customer-segment contribution, top customers and customer-group revenue and gross profit. Continue to customer/material detail where needed.",
+      "description": {
+        "plain": "1. Executive Performance / Start with revenue, gross profit, gross margin, quantity and customer count. Identify the period, geography or sales group where performance moves.",
+        "blocks": [
+          {
+            "type": "ul",
+            "items": [
+              "1. Executive Performance / Start with revenue, gross profit, gross margin, quantity and customer count. Identify the period, geography or sales group where performance moves."
+            ]
+          }
+        ],
+        "source": "sac\\Revenue_Analytics_Documentation-1.docx",
+        "words": 25
+      },
       "badge": "Slide 5 of 7",
       "caption": "2. Customer Performance / Investigate customer-segment contribution, top customers and customer-group revenue and gross profit. Continue to customer/material detail where needed.",
-      "botDialogue": "Customer Performance / Investigate customer-segment contribution, top customers and customer-group revenue and gross profit.",
+      "botDialogue": "Executive Performance / Start with revenue, gross profit, gross margin, quantity and customer count. Identify the period, geography or sales group where performance moves.",
       "botPose": "explain",
       "imageUrl": "/assets/apps/revenue-analytics/c5_1.webp",
       "screenshot": "/assets/apps/revenue-analytics/c5_1.webp",
       "imageWidth": 947,
-      "imageHeight": 683
+      "imageHeight": 683,
+      "botChat": [
+        "Executive Performance / Start with revenue, gross profit, gross margin, quantity and customer count.",
+        "Identify the period, geography or sales group where performance moves."
+      ],
+      "botChatMode": "split"
     },
     {
       "id": "card-6",
       "type": "live-ui",
       "title": ".",
       "subtitle": "Revenue Analytics & Profitability Intelligence",
-      "description": ".",
+      "description": {
+        "plain": "2. Customer Performance / Investigate customer-segment contribution, top customers and customer-group revenue and gross profit. Continue to customer/material detail where needed.",
+        "blocks": [
+          {
+            "type": "ul",
+            "items": [
+              "2. Customer Performance / Investigate customer-segment contribution, top customers and customer-group revenue and gross profit. Continue to customer/material detail where needed."
+            ]
+          }
+        ],
+        "source": "sac\\Revenue_Analytics_Documentation-1.docx",
+        "words": 21
+      },
       "badge": "Slide 6 of 7",
       "caption": ".",
-      "botDialogue": "Reviewing . architecture and transactional performance.",
+      "botDialogue": "Customer Performance / Investigate customer-segment contribution, top customers and customer-group revenue and gross profit. Continue to customer/material detail where needed.",
       "botPose": "beckon",
       "imageUrl": "/assets/apps/revenue-analytics/c6_1.webp",
       "screenshot": "/assets/apps/revenue-analytics/c6_1.webp",
       "imageWidth": 974,
-      "imageHeight": 525
+      "imageHeight": 525,
+      "botChat": [
+        "Customer Performance / Investigate customer-segment contribution, top customers and customer-group revenue and gross profit.",
+        "Continue to customer/material detail where needed."
+      ],
+      "botChatMode": "split"
     },
     {
       "id": "card-7",
       "type": "workflow",
       "title": "Key Dashboard Insights",
       "subtitle": "Revenue Analytics & Profitability Intelligence",
-      "description": "Key Dashboard Insights",
+      "description": {
+        "plain": ".",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "."
+          }
+        ],
+        "source": "sac\\Revenue_Analytics_Documentation-1.docx",
+        "words": 1
+      },
       "badge": "Slide 7 of 7",
       "caption": "Key Dashboard Insights",
-      "botDialogue": "Key Dashboard Insights",
-      "botPose": "present"
+      "botDialogue": ".",
+      "botPose": "present",
+      "botChat": [
+        "."
+      ],
+      "botChatMode": "verbatim"
     }
   ],
   "closing": {

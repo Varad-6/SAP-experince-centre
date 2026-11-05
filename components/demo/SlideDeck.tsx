@@ -44,10 +44,15 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
   const totalCards = appData.cards?.length || 8;
   const isClosing = slideIndex >= totalCards;
   const currentCard = isClosing ? null : appData.cards[slideIndex] || appData.cards[0];
+  const hasText = !isClosing && Boolean(currentCard?.description);
 
   const currentDialogue = isClosing
     ? 'Thank you for reviewing our enterprise solution architecture! Reach out to schedule an executive demonstration or test-drive live in our SAP BTP tenant.'
-    : currentCard?.botDialogue || '';
+    : !hasText
+      ? ''
+      : Array.isArray(currentCard?.botChat) && currentCard.botChat.length > 0
+        ? currentCard.botChat.join(' ')
+        : (currentCard?.botChat as unknown as string) || currentCard?.botDialogue || '';
 
   const DEFAULT_CARD_POSES: ActivePoseName[] = [
     'present', // Card 1: Hook
@@ -61,10 +66,40 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
   ];
 
   const currentPose: ActivePoseName = resolvePose(
-    isClosing ? 'thanks' : currentCard?.botPose || DEFAULT_CARD_POSES[slideIndex % DEFAULT_CARD_POSES.length] || 'present'
+    isClosing
+      ? 'thanks'
+      : !hasText
+        ? 'idle'
+        : currentCard?.botPose || DEFAULT_CARD_POSES[slideIndex % DEFAULT_CARD_POSES.length] || 'present'
   );
 
   const [botHead, setBotHead] = useState<{ headX: number; hairTopY: number; headW: number } | undefined>(undefined);
+  const stageRef = React.useRef<HTMLDivElement>(null);
+  const [stageHeight, setStageHeight] = useState<number>(360);
+  const [stageTop, setStageTop] = useState<number>(64);
+
+  useEffect(() => {
+    const updateStage = () => {
+      if (stageRef.current) {
+        const rect = stageRef.current.getBoundingClientRect();
+        if (rect.height > 0) {
+          setStageHeight(rect.height);
+          setStageTop(rect.top);
+        }
+      }
+    };
+    updateStage();
+    window.addEventListener('resize', updateStage);
+    return () => window.removeEventListener('resize', updateStage);
+  }, [slideIndex, hasText]);
+
+  // Dynamically compute available bot height:
+  // available = stageHeight - bubbleHeight - 52 - 8; botHeight = clamp(available, 150, 380)
+  const bubbleEstimatedH = currentDialogue ? (currentDialogue.length > 80 ? 150 : 110) : 0;
+  const hairClearance = 52;
+  const safePad = 8;
+  const available = stageHeight - bubbleEstimatedH - hairClearance - safePad;
+  const botHeight = Math.max(150, Math.min(380, Math.round(available)));
 
   const handleHeadPosition = useCallback((pos: HeadPosition) => {
     setBotHead((prev) => {
@@ -193,7 +228,7 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
   const progressPercent = isClosing ? 100 : Math.round(((slideIndex + 1) / totalCards) * 100);
 
   return (
-    <div className="h-[calc(100vh-56px)] bg-[var(--bg)] text-[var(--text)] px-4 sm:px-6 py-4 max-w-[1400px] mx-auto flex flex-col justify-between overflow-hidden">
+    <div className="h-auto min-h-[calc(100vh-56px)] lg:h-[calc(100vh-56px)] bg-[var(--bg)] text-[var(--text)] px-4 sm:px-6 py-4 max-w-[1400px] mx-auto flex flex-col justify-between overflow-y-auto lg:overflow-hidden">
       {/* 1. Top Header Bar */}
       <div className="shrink-0 mb-3">
         <div className="flex items-center justify-between gap-4 mb-2">
@@ -222,7 +257,7 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
         </div>
       </div>
 
-      {/* 2. Main Presentation Cockpit (2 Columns: Left Slide, Right Bot Presenter) */}
+      {/* 2. Main Presentation Cockpit (2 Columns: Left Slide, Right Bot Presenter & Descriptions) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 flex-1 min-h-0 items-stretch">
         {/* Left Column (8 cols): Slide Card with Integrated Navigation */}
         <div className="lg:col-span-8 flex flex-col justify-between card p-5 sm:p-6 bg-[var(--surface)] border border-[var(--border)] shadow-[var(--shadow)] overflow-hidden">
@@ -302,31 +337,98 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
           </div>
         </div>
 
-        {/* Right Column (4 cols): Aayam Presenter Column */}
-        <div className="lg:col-span-4 flex flex-col justify-between items-center p-5 card bg-gradient-to-b from-[var(--surface)] to-[var(--surface-2)] border border-[var(--border)] shadow-[var(--shadow)] overflow-hidden">
-          {/* Top: Thinking Speech Bubble */}
-          <div className="w-full flex-1 flex flex-col justify-center items-center">
-            <BotBubble
-              text={currentDialogue}
-              speakerName="Aayam"
-              head={botHead}
-              topSafe={64}
-              showTail={true}
-              className="w-full max-w-sm mb-2"
-            />
-          </div>
+        {/* Right Column (4 cols): Slide Description & Bot Presenter Column */}
+        <div className="lg:col-span-4 flex flex-col justify-between p-5 card bg-gradient-to-b from-[var(--surface)] to-[var(--surface-2)] border border-[var(--border)] shadow-[var(--shadow)] overflow-hidden min-h-[460px] lg:min-h-0">
+          {/* Top: Header & Full Slide Description */}
+          {hasText && currentCard?.description && (
+            <div key={`desc-${slideIndex}`} className="w-full flex-[0_1_auto] max-h-[36dvh] lg:max-h-[44%] flex flex-col mb-2 desc-fade-in">
+              {/* Small uppercase label */}
+              <div className="text-[12px] font-medium uppercase tracking-wider text-slate-500 mb-1.5 shrink-0">
+                SLIDE {slideIndex + 1} · {currentCard.title}
+              </div>
 
-          {/* Bottom: Mascot Sprite Standing on Pedestal (Enlarged) */}
-          <div className="shrink-0 flex flex-col items-center justify-end relative">
-            <BotSprite
-              pose={currentPose}
-              heightPx={330}
-              alt="Aayam Explaining"
-              priority={true}
-              onHeadPosition={handleHeadPosition}
-            />
-            {/* Soft Pedestal Shadow */}
-            <div className="w-32 h-3.5 bg-black/10 rounded-full blur-[2px] mt-[-6px]" />
+              {/* Full slide description (selectable, formatted) */}
+              <div className="desc flex-1 overflow-y-auto pr-2 space-y-2 text-[15px] sm:text-[16px] leading-[1.6] text-slate-800 select-text max-w-[60ch]">
+                {typeof currentCard.description === 'string' ? (
+                  <p className="m-0 whitespace-pre-line">{currentCard.description}</p>
+                ) : currentCard.description.blocks && currentCard.description.blocks.length > 0 ? (
+                  currentCard.description.blocks.map((block, idx) => {
+                    if (block.type === 'ul' && block.items) {
+                      return (
+                        <ul key={idx} className="list-disc pl-5 space-y-1 my-1">
+                          {block.items.map((item, i) => (
+                            <li key={i}>{item}</li>
+                          ))}
+                        </ul>
+                      );
+                    }
+                    if (block.type === 'ol' && block.items) {
+                      return (
+                        <ol key={idx} className="list-decimal pl-5 space-y-1 my-1">
+                          {block.items.map((item, i) => (
+                            <li key={i}>{item}</li>
+                          ))}
+                        </ol>
+                      );
+                    }
+                    return (
+                      <p key={idx} className="m-0">
+                        {block.text}
+                      </p>
+                    );
+                  })
+                ) : (
+                  <p className="m-0 whitespace-pre-line">{currentCard.description.plain}</p>
+                )}
+              </div>
+
+              {/* Hairline Divider */}
+              <div className="w-full mt-3 border-b border-slate-200 shrink-0" />
+            </div>
+          )}
+
+          {/* Closing summary on final slide */}
+          {isClosing && (
+            <div key="desc-closing" className="w-full flex-[0_1_auto] max-h-[36dvh] lg:max-h-[44%] flex flex-col mb-2 desc-fade-in">
+              <div className="text-[12px] font-medium uppercase tracking-wider text-slate-500 mb-1.5 shrink-0">
+                SUMMARY · Architecture Verification
+              </div>
+              <div className="desc flex-1 overflow-y-auto pr-2 space-y-2 text-[15px] sm:text-[16px] leading-[1.6] text-slate-800 select-text max-w-[60ch]">
+                <p className="m-0">
+                  Enterprise solution review complete. Connect directly with our enterprise architecture practice to provision a dedicated live SAP BTP tenant and evaluate Clean Core compliance.
+                </p>
+              </div>
+              <div className="w-full mt-3 border-b border-slate-200 shrink-0" />
+            </div>
+          )}
+
+          {/* Bottom: Bot Stage */}
+          <div ref={stageRef} className="w-full flex-1 min-h-[38%] flex flex-col justify-end items-center relative">
+            {/* Bot Speech Bubble (Above Hair) */}
+            {currentDialogue && (
+              <BotBubble
+                text={currentDialogue}
+                speakerName="Aayam"
+                head={botHead}
+                topSafe={stageTop}
+                placement="top"
+                showTail={true}
+                className="w-full max-w-sm mb-2"
+              />
+            )}
+
+            {/* Mascot Sprite Standing on Pedestal with dynamically fitted height */}
+            <div className="shrink-0 flex flex-col items-center justify-end relative">
+              <BotSprite
+                pose={currentPose}
+                heightPx={botHeight}
+                alt="Aayam Explaining"
+                priority={true}
+                onHeadPosition={handleHeadPosition}
+              />
+              {/* Soft Pedestal Shadow */}
+              <div className="w-32 h-3.5 bg-black/10 rounded-full blur-[2px] mt-[-6px]" />
+            </div>
           </div>
         </div>
       </div>

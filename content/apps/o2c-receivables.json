@@ -18,74 +18,353 @@
       "type": "live-ui",
       "title": "Clean Core Architecture \u2014 Phase 1",
       "subtitle": "O2C Receivables Intelligence & DSO Steering",
-      "description": "Enterprise production workflow stage 1 for O2C Receivables Intelligence & DSO Steering.",
+      "description": {
+        "plain": "CARD 1\n\nBusiness Questions & Audience\n\nDashboard overview and business context\n\nDashboard Overview\n\nDashboard Name: O2C Receivables Intelligence\n\nPurpose: Provide connected visibility across receivables, collections, credit exposure and Days Sales Outstanding (DSO), linking the sales order, delivery, billing and cash-collection lifecycle in one analytical experience.\n\nBusiness Problem\n\nThe scenario describes a manufacturing business where receivables and order-book reporting are reviewed in separate extracts. DSO, overdue ageing and dispute exposure are calculated manually, while open orders, blocked orders, deliveries and financial receivables remain disconnected. This delays dispute discovery, makes credit intervention reactive and limits end-to-end cycle-time visibility.\n\nTarget Audience\n\nPersona \u2014 Purpose\n\nExecutive Leadership / CFO \u2014 Monitor revenue, open receivables, DSO, credit utilisation, revenue at risk and regional risk concentration.\n\nCredit Control / FI-AR \u2014 Identify overdue customers, ageing exposure, credit-limit utilisation, blocked accounts and dunning priorities.\n\nSales Leadership \u2014 Understand customer exposure, order and billing status, customer-group risk and revenue potentially affected by credit blocks.\n\nCollections Team \u2014 Prioritise customers using overdue amount, expected collection date, payment behaviour and historical payment delay.\n\nFinance / O2C Analysts \u2014 Reconcile AR balances, investigate ageing and explain order-to-cash cycle-time leakage.\n\nPlant / Company-Code Controllers \u2014 Review entity-specific receivables and credit exposure within assigned company-code access.\n\nFive Key Business Questions\n\nWhat is my DSO trend by company code and customer group over the last 13 months, and which 10 customers move it most?\n\nWhat is my ageing waterfall today (current / 1\u201330 / 31\u201360 / 61\u201390 / 90+), and how did it shift versus last month?\n\nWhere is order-to-cash cycle time leaking \u2014 order-to-delivery, delivery-to-billing or billing-to-collection?\n\nWhich customers exceed 80% of credit limit including open orders and deliveries, and what revenue is at risk if blocked?\n\nWhat cash can I realistically expect to collect in the next 30 days based on due dates and historical payment behaviour?",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "CARD 1"
+          },
+          {
+            "type": "p",
+            "text": "Business Questions & Audience"
+          },
+          {
+            "type": "p",
+            "text": "Dashboard overview and business context"
+          },
+          {
+            "type": "p",
+            "text": "Dashboard Overview"
+          },
+          {
+            "type": "p",
+            "text": "Dashboard Name: O2C Receivables Intelligence"
+          },
+          {
+            "type": "p",
+            "text": "Purpose: Provide connected visibility across receivables, collections, credit exposure and Days Sales Outstanding (DSO), linking the sales order, delivery, billing and cash-collection lifecycle in one analytical experience."
+          },
+          {
+            "type": "p",
+            "text": "Business Problem"
+          },
+          {
+            "type": "p",
+            "text": "The scenario describes a manufacturing business where receivables and order-book reporting are reviewed in separate extracts. DSO, overdue ageing and dispute exposure are calculated manually, while open orders, blocked orders, deliveries and financial receivables remain disconnected. This delays dispute discovery, makes credit intervention reactive and limits end-to-end cycle-time visibility."
+          },
+          {
+            "type": "p",
+            "text": "Target Audience"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Persona \u2014 Purpose",
+              "Executive Leadership / CFO \u2014 Monitor revenue, open receivables, DSO, credit utilisation, revenue at risk and regional risk concentration.",
+              "Credit Control / FI-AR \u2014 Identify overdue customers, ageing exposure, credit-limit utilisation, blocked accounts and dunning priorities.",
+              "Sales Leadership \u2014 Understand customer exposure, order and billing status, customer-group risk and revenue potentially affected by credit blocks.",
+              "Collections Team \u2014 Prioritise customers using overdue amount, expected collection date, payment behaviour and historical payment delay.",
+              "Finance / O2C Analysts \u2014 Reconcile AR balances, investigate ageing and explain order-to-cash cycle-time leakage.",
+              "Plant / Company-Code Controllers \u2014 Review entity-specific receivables and credit exposure within assigned company-code access."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Five Key Business Questions"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "What is my DSO trend by company code and customer group over the last 13 months, and which 10 customers move it most?",
+              "What is my ageing waterfall today (current / 1\u201330 / 31\u201360 / 61\u201390 / 90+), and how did it shift versus last month?",
+              "Where is order-to-cash cycle time leaking \u2014 order-to-delivery, delivery-to-billing or billing-to-collection?",
+              "Which customers exceed 80% of credit limit including open orders and deliveries, and what revenue is at risk if blocked?",
+              "What cash can I realistically expect to collect in the next 30 days based on due dates and historical payment behaviour?"
+            ]
+          }
+        ],
+        "source": "reference_docs/O2C_Receivables_Intelligence_Documentation_FINAL.docx",
+        "words": 305
+      },
       "badge": "Slide 1 of 6",
       "caption": "Enterprise production workflow stage 1 for O2C Receivables Intelligence & DSO Steering.",
-      "botDialogue": "Enterprise production workflow stage 1 for O2C Receivables Intelligence & DSO Steering.",
+      "botDialogue": "CARD 1 Business Questions & Audience Dashboard overview and business context Dashboard Overview Dashboard Name: O2C Receivables Intelligence. Finance / O2C Analysts \u2014 Reconcile AR balances, investigate ageing and explain order-to-cash cycle-time leakage.",
       "botPose": "present",
       "imageUrl": "/assets/apps/o2c-receivables/c1_1.webp",
       "screenshot": "/assets/apps/o2c-receivables/c1_1.webp",
       "imageWidth": 1920,
-      "imageHeight": 1014
+      "imageHeight": 1014,
+      "botChat": [
+        "CARD 1 Business Questions & Audience Dashboard overview and business context Dashboard Overview Dashboard Name: O2C Receivables Intelligence.",
+        "Finance / O2C Analysts \u2014 Reconcile AR balances, investigate ageing and explain order-to-cash cycle-time leakage."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-2",
       "type": "challenge",
       "title": "Business Problem",
       "subtitle": "O2C Receivables Intelligence & DSO Steering",
-      "description": "The scenario describes a manufacturing business where receivables and order-book reporting are reviewed in separate extracts. DSO, overdue ageing and dispute exposure are calculated manually, while open orders, blocked orders, deliveries and financial receivables remain disconnected. This delays dispute discovery, makes credit intervention reactive and limits end-to-end cycle-time visibility.",
+      "description": {
+        "plain": "Business Problem\n\nThe scenario describes a manufacturing business where receivables and order-book reporting are reviewed in separate extracts. DSO, overdue ageing and dispute exposure are calculated manually, while open orders, blocked orders, deliveries and financial receivables remain disconnected. This delays dispute discovery, makes credit intervention reactive and limits end-to-end cycle-time visibility.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Business Problem"
+          },
+          {
+            "type": "p",
+            "text": "The scenario describes a manufacturing business where receivables and order-book reporting are reviewed in separate extracts. DSO, overdue ageing and dispute exposure are calculated manually, while open orders, blocked orders, deliveries and financial receivables remain disconnected. This delays dispute discovery, makes credit intervention reactive and limits end-to-end cycle-time visibility."
+          }
+        ],
+        "source": "sac\\O2C_Receivables_Intelligence_Documentation_FINAL-1.docx",
+        "words": 51
+      },
       "badge": "Slide 2 of 6",
       "caption": "The scenario describes a manufacturing business where receivables and order-book reporting are reviewed in separate extracts. DSO, overdue ageing and dispute exposure are calculate...",
-      "botDialogue": "The scenario describes a manufacturing business where receivables and order-book reporting are reviewed in separate extracts. DSO, overdue ageing and dispute exposure are calculated manually, while open orders, blocked orders, deliveries and financial receivables remain disconnected.",
-      "botPose": "point"
+      "botDialogue": "Business Problem  The scenario describes a manufacturing business where receivables and order-book reporting are reviewed in separate extracts. DSO, overdue ageing and dispute exposure are calculated manually, while open orders, blocked orders, deliveries and financial receivables.",
+      "botPose": "point",
+      "botChat": [
+        "Business Problem  The scenario describes a manufacturing business where receivables and order-book reporting are reviewed in separate extracts.",
+        "DSO, overdue ageing and dispute exposure are calculated manually, while open orders, blocked orders, deliveries and financial receivables."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-3",
       "type": "workflow",
       "title": "Five Key Business Questions",
       "subtitle": "O2C Receivables Intelligence & DSO Steering",
-      "description": "What is my DSO trend by company code and customer group over the last 13 months, and which 10 customers move it most? What is my ageing waterfall today (current / 1\u201330 / 31\u201360 / 61\u201390 / 90+), and how did it shift versus last month? Where is order-to-cash cycle time leaking \u2014 order-to-delivery, delivery-to-billing or billing-to-collection? Which customers exceed 80% of credit limit including open orders and deliveries, and what revenue is at risk if blocked? What cash can I realistically expect to collect in the next 30 days based on due dates and historical payment behaviour?",
+      "description": {
+        "plain": "Five Key Business Questions\n\nWhat is my DSO trend by company code and customer group over the last 13 months, and which 10 customers move it most?\n\nWhat is my ageing waterfall today (current / 1\u201330 / 31\u201360 / 61\u201390 / 90+), and how did it shift versus last month?\n\nWhere is order-to-cash cycle time leaking \u2014 order-to-delivery, delivery-to-billing or billing-to-collection?\n\nWhich customers exceed 80% of credit limit including open orders and deliveries, and what revenue is at risk if blocked?\n\nWhat cash can I realistically expect to collect in the next 30 days based on due dates and historical payment behaviour?",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Five Key Business Questions"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "What is my DSO trend by company code and customer group over the last 13 months, and which 10 customers move it most?",
+              "What is my ageing waterfall today (current / 1\u201330 / 31\u201360 / 61\u201390 / 90+), and how did it shift versus last month?",
+              "Where is order-to-cash cycle time leaking \u2014 order-to-delivery, delivery-to-billing or billing-to-collection?",
+              "Which customers exceed 80% of credit limit including open orders and deliveries, and what revenue is at risk if blocked?",
+              "What cash can I realistically expect to collect in the next 30 days based on due dates and historical payment behaviour?"
+            ]
+          }
+        ],
+        "source": "sac\\O2C_Receivables_Intelligence_Documentation_FINAL-1.docx",
+        "words": 102
+      },
       "badge": "Slide 3 of 6",
       "caption": "What is my DSO trend by company code and customer group over the last 13 months, and which 10 customers move it most? What is my ageing waterfall today (current / 1\u201330 / 31\u201360 / 61...",
-      "botDialogue": "What is my DSO trend by company code and customer group over the last 13 months, and which 10 customers move it most? What is my ageing waterfall today (current / 1\u201330 / 31\u201360 / 61\u201390 / 90+), and how did it shift versus last month?",
-      "botPose": "tablet"
+      "botDialogue": "Five Key Business Questions What is my DSO trend by company code and customer group over the last. What is my ageing waterfall today (current / 1\u201330 / 31\u201360 / 61\u201390 / 90+), and how did.",
+      "botPose": "tablet",
+      "botChat": [
+        "Five Key Business Questions What is my DSO trend by company code and customer group over the last.",
+        "What is my ageing waterfall today (current / 1\u201330 / 31\u201360 / 61\u201390 / 90+), and how did."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-4",
       "type": "live-ui",
       "title": "Sldie 5:",
       "subtitle": "O2C Receivables Intelligence & DSO Steering",
-      "description": "Figure 1. Executive Overview dashboard reproduced from the supplied O2C dashboard PDF. Callouts The headline cards show Total Revenue (\u20b975.40 crore), Total Open Receivables (\u20b99.19 crore), DSO (136 days), Credit Utilization (63.04%) and Revenue at Risk (\u20b9177.76 crore). The page combines regional receivables concentration, DSO trend by company code, ageing distribution, top high-risk customers and geographic receivables/credit analysis. Lower panels highlight customers with the highest amount due and receivables risk concentration by region and customer group. Sldie 6 : Callouts Headline cards show Total Credit Limit (\u20b9464.20 crore), Total Credit Exposure (\u20b9296.24 crore), Credit Utilization (63.82%), Revenue at Risk (\u20b9168.84 crore) and 4 blocked customers. The page compares credit exposure with credit limits, analyses product-division risk and surfaces product financial risk and customers requiring immediate credit-risk attention.",
+      "description": {
+        "plain": "Sldie 5:\n\nFigure 1. Executive Overview dashboard reproduced from the supplied O2C dashboard PDF.\n\nCallouts\n\nThe headline cards show Total Revenue (\u20b975.40 crore), Total Open Receivables (\u20b99.19 crore), DSO (136 days), Credit Utilization (63.04%) and Revenue at Risk (\u20b9177.76 crore).\n\nThe page combines regional receivables concentration, DSO trend by company code, ageing distribution, top high-risk customers and geographic receivables/credit analysis.\n\nLower panels highlight customers with the highest amount due and receivables risk concentration by region and customer group.\n\nSldie 6 :\n\nCallouts\n\nHeadline cards show Total Credit Limit (\u20b9464.20 crore), Total Credit Exposure (\u20b9296.24 crore), Credit Utilization (63.82%), Revenue at Risk (\u20b9168.84 crore) and 4 blocked customers.\n\nThe page compares credit exposure with credit limits, analyses product-division risk and surfaces product financial risk and customers requiring immediate credit-risk attention.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Sldie 5:"
+          },
+          {
+            "type": "p",
+            "text": "Figure 1. Executive Overview dashboard reproduced from the supplied O2C dashboard PDF."
+          },
+          {
+            "type": "p",
+            "text": "Callouts"
+          },
+          {
+            "type": "p",
+            "text": "The headline cards show Total Revenue (\u20b975.40 crore), Total Open Receivables (\u20b99.19 crore), DSO (136 days), Credit Utilization (63.04%) and Revenue at Risk (\u20b9177.76 crore)."
+          },
+          {
+            "type": "p",
+            "text": "The page combines regional receivables concentration, DSO trend by company code, ageing distribution, top high-risk customers and geographic receivables/credit analysis."
+          },
+          {
+            "type": "p",
+            "text": "Lower panels highlight customers with the highest amount due and receivables risk concentration by region and customer group."
+          },
+          {
+            "type": "p",
+            "text": "Sldie 6 :"
+          },
+          {
+            "type": "p",
+            "text": "Callouts"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Headline cards show Total Credit Limit (\u20b9464.20 crore), Total Credit Exposure (\u20b9296.24 crore), Credit Utilization (63.82%), Revenue at Risk (\u20b9168.84 crore) and 4 blocked customers.",
+              "The page compares credit exposure with credit limits, analyses product-division risk and surfaces product financial risk and customers requiring immediate credit-risk attention."
+            ]
+          }
+        ],
+        "source": "sac\\O2C_Receivables_Intelligence_Documentation_FINAL-1.docx",
+        "words": 129
+      },
       "badge": "Slide 4 of 6",
       "caption": "Figure 1. Executive Overview dashboard reproduced from the supplied O2C dashboard PDF. Callouts The headline cards show Total Revenue (\u20b975.40 crore), Total Open Receivables (\u20b99.19 ...",
-      "botDialogue": "Figure 1. Executive Overview dashboard reproduced from the supplied O2C dashboard PDF.",
+      "botDialogue": "Sldie 5:  Figure 1. Executive Overview dashboard reproduced from the supplied O2C dashboard PDF.",
       "botPose": "laptop",
       "imageUrl": "/assets/apps/o2c-receivables/c4_1.webp",
       "screenshot": "/assets/apps/o2c-receivables/c4_1.webp",
       "imageWidth": 713,
-      "imageHeight": 384
+      "imageHeight": 384,
+      "botChat": [
+        "Sldie 5:  Figure 1.",
+        "Executive Overview dashboard reproduced from the supplied O2C dashboard PDF."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-5",
       "type": "workflow",
       "title": "Clean Core Architecture \u2014 Phase 5",
       "subtitle": "O2C Receivables Intelligence & DSO Steering",
-      "description": "Enterprise production workflow stage 5 for O2C Receivables Intelligence & DSO Steering.",
+      "description": {
+        "plain": "CARD 5\n\nDrill-Down Story\n\nExecutive monitoring \u2192 credit investigation \u2192 collection and process action\n\nStart with the Executive Overview to locate movement in revenue, open receivables, DSO or regional risk. Move to Credit & Product Performance to identify customers approaching or exceeding their credit limits and the product divisions associated with exposure. Continue to O2C Cycle & Collection Intelligence to isolate cycle-time leakage and prioritise collection action.\n\nStep \u2014 Dashboard Perspective \u2014 Investigation / Expected Action\n\n1 \u2014 Executive Overview \u2014 Review Total Open Receivables, DSO, Credit Utilization and Revenue at Risk. Filter by company code, customer, city, AR status and customer group to locate concentration.\n\n2 \u2014 Credit & Product Performance \u2014 Compare customer credit exposure with credit limit; inspect customers above 80% utilisation, blocked customers, product-division exposure and overdue balances.\n\n3 \u2014 O2C Cycle & Collection Intelligence \u2014 Compare order-to-delivery, delivery-to-billing and billing-to-collection days. Review payment score, average payment delay and payment terms.\n\n4 \u2014 Follow-up / Control \u2014 Confirm FI open-item balances, customer credit master values, due dates, filter context and source refresh before taking action.\n\nExpected Business Action\n\nCollections: prioritise high-value overdue items and customers with weak payment behaviour or long historical delays.\n\nCredit control: review customers nearing or exceeding limits; coordinate blocked-customer decisions with Sales and Finance.\n\nProcess improvement: investigate whether cycle-time leakage is concentrated in delivery, billing or cash application.\n\nManagement: use company-code and regional views to align working-capital actions with the responsible operating entity.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "CARD 5"
+          },
+          {
+            "type": "p",
+            "text": "Drill-Down Story"
+          },
+          {
+            "type": "p",
+            "text": "Executive monitoring \u2192 credit investigation \u2192 collection and process action"
+          },
+          {
+            "type": "p",
+            "text": "Start with the Executive Overview to locate movement in revenue, open receivables, DSO or regional risk. Move to Credit & Product Performance to identify customers approaching or exceeding their credit limits and the product divisions associated with exposure. Continue to O2C Cycle & Collection Intelligence to isolate cycle-time leakage and prioritise collection action."
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Step \u2014 Dashboard Perspective \u2014 Investigation / Expected Action",
+              "1 \u2014 Executive Overview \u2014 Review Total Open Receivables, DSO, Credit Utilization and Revenue at Risk. Filter by company code, customer, city, AR status and customer group to locate concentration.",
+              "2 \u2014 Credit & Product Performance \u2014 Compare customer credit exposure with credit limit; inspect customers above 80% utilisation, blocked customers, product-division exposure and overdue balances.",
+              "3 \u2014 O2C Cycle & Collection Intelligence \u2014 Compare order-to-delivery, delivery-to-billing and billing-to-collection days. Review payment score, average payment delay and payment terms.",
+              "4 \u2014 Follow-up / Control \u2014 Confirm FI open-item balances, customer credit master values, due dates, filter context and source refresh before taking action."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Expected Business Action"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Collections: prioritise high-value overdue items and customers with weak payment behaviour or long historical delays.",
+              "Credit control: review customers nearing or exceeding limits; coordinate blocked-customer decisions with Sales and Finance.",
+              "Process improvement: investigate whether cycle-time leakage is concentrated in delivery, billing or cash application.",
+              "Management: use company-code and regional views to align working-capital actions with the responsible operating entity."
+            ]
+          }
+        ],
+        "source": "reference_docs/O2C_Receivables_Intelligence_Documentation_FINAL.docx",
+        "words": 241
+      },
       "badge": "Slide 5 of 6",
       "caption": "Enterprise production workflow stage 5 for O2C Receivables Intelligence & DSO Steering.",
-      "botDialogue": "Enterprise production workflow stage 5 for O2C Receivables Intelligence & DSO Steering.",
-      "botPose": "explain"
+      "botDialogue": "CARD 5 Drill-Down Story Executive monitoring \u2192 credit investigation \u2192 collection and process action Start with the Executive. Continue to O2C Cycle & Collection Intelligence to isolate cycle-time leakage and prioritise collection action.",
+      "botPose": "explain",
+      "botChat": [
+        "CARD 5 Drill-Down Story Executive monitoring \u2192 credit investigation \u2192 collection and process action Start with the Executive.",
+        "Continue to O2C Cycle & Collection Intelligence to isolate cycle-time leakage and prioritise collection action."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-6",
       "type": "workflow",
       "title": "Key Dashboard Insights",
       "subtitle": "O2C Receivables Intelligence & DSO Steering",
-      "description": "Key Dashboard Insights",
+      "description": {
+        "plain": "CARD 6\n\nInsights & ROI\n\nDashboard observations and a defensible business-value framework\n\nKey Dashboard Insights\n\nArea \u2014 Dashboard Observation \u2014 Evidence / Note\n\nReceivables position \u2014 Executive Overview displays \u20b99.19 crore Total Open Receivables and DSO of 136 days. \u2014 Displayed dashboard values; reconcile against FI open-item balances and trailing-12-month billed revenue.\n\nCredit position \u2014 Credit page displays \u20b9464.20 crore total credit limit and \u20b9296.24 crore total credit exposure. \u2014 Displayed values; customer-level exception aggregation required.\n\nCredit risk \u2014 Four blocked customers are displayed; top high-risk customers and customers above 80% utilisation are ranked. \u2014 Confirm blocked-customer distinct-count logic and credit exposure calculation.\n\nAgeing \u2014 Executive page shows 1\u201330, 31\u201360, 61\u201390 and 90+ ageing categories. \u2014 Dashboard displays ageing distribution; month-over-month comparison data is not supplied in the PDF.\n\nCycle-time leakage \u2014 Billing-to-collection is 108.03 days versus 14.97 days order-to-delivery and 4.06 days delivery-to-billing. \u2014 Displayed average intervals; validate timestamp definitions, exclusions and averaging method.\n\nGeographic risk \u2014 Map and regional panels show receivables / credit concentration across Americas, Europe and India operations. \u2014 Confirm geo mapping, currency normalisation and regional grouping rules.\n\nROI Documentation Format\n\nValue Area \u2014 Before Dashboard \u2014 After Dashboard / Measurement\n\nExecutive visibility \u2014 Static weekly extracts and separate SD/FI reporting; baseline effort not supplied. \u2014 Connected SAC overview; measure report preparation time and decision latency.\n\nReceivables & ageing \u2014 Manual Excel calculations with differing overdue definitions. \u2014 Centralised ageing buckets and open AR measure; measure reconciliation effort and ageing visibility.\n\nCredit intervention \u2014 Credit exposure not visible alongside open orders, deliveries and invoices at decision time. \u2014 Customer-level exposure and utilisation views; measure blocked-order incidents and overdue exposure.\n\nCollections \u2014 Follow-up relies on separate customer/payment information. \u2014 Customer-level payment delay, score and expected collection indicators; measure collection effectiveness and cash forecast accuracy.\n\nProcess efficiency \u2014 End-to-end order, delivery, billing and collection intervals not visible together. \u2014 Cycle-time stages are visible; measure stage-level delay reduction and billing-to-collection improvement.\n\nROI Statement\n\nThe delivered dashboard brings receivables, credit risk, customer collection behaviour and O2C cycle-time analysis into a connected SAC experience. The supplied sources do not quantify realised time savings, DSO reduction, cash acceleration, bad-debt reduction or financial ROI. These outcomes must be measured against an agreed baseline after production adoption.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "CARD 6"
+          },
+          {
+            "type": "p",
+            "text": "Insights & ROI"
+          },
+          {
+            "type": "p",
+            "text": "Dashboard observations and a defensible business-value framework"
+          },
+          {
+            "type": "p",
+            "text": "Key Dashboard Insights"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Area \u2014 Dashboard Observation \u2014 Evidence / Note",
+              "Receivables position \u2014 Executive Overview displays \u20b99.19 crore Total Open Receivables and DSO of 136 days. \u2014 Displayed dashboard values; reconcile against FI open-item balances and trailing-12-month billed revenue.",
+              "Credit position \u2014 Credit page displays \u20b9464.20 crore total credit limit and \u20b9296.24 crore total credit exposure. \u2014 Displayed values; customer-level exception aggregation required.",
+              "Credit risk \u2014 Four blocked customers are displayed; top high-risk customers and customers above 80% utilisation are ranked. \u2014 Confirm blocked-customer distinct-count logic and credit exposure calculation.",
+              "Ageing \u2014 Executive page shows 1\u201330, 31\u201360, 61\u201390 and 90+ ageing categories. \u2014 Dashboard displays ageing distribution; month-over-month comparison data is not supplied in the PDF.",
+              "Cycle-time leakage \u2014 Billing-to-collection is 108.03 days versus 14.97 days order-to-delivery and 4.06 days delivery-to-billing. \u2014 Displayed average intervals; validate timestamp definitions, exclusions and averaging method.",
+              "Geographic risk \u2014 Map and regional panels show receivables / credit concentration across Americas, Europe and India operations. \u2014 Confirm geo mapping, currency normalisation and regional grouping rules."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "ROI Documentation Format"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Value Area \u2014 Before Dashboard \u2014 After Dashboard / Measurement",
+              "Executive visibility \u2014 Static weekly extracts and separate SD/FI reporting; baseline effort not supplied. \u2014 Connected SAC overview; measure report preparation time and decision latency.",
+              "Receivables & ageing \u2014 Manual Excel calculations with differing overdue definitions. \u2014 Centralised ageing buckets and open AR measure; measure reconciliation effort and ageing visibility.",
+              "Credit intervention \u2014 Credit exposure not visible alongside open orders, deliveries and invoices at decision time. \u2014 Customer-level exposure and utilisation views; measure blocked-order incidents and overdue exposure.",
+              "Collections \u2014 Follow-up relies on separate customer/payment information. \u2014 Customer-level payment delay, score and expected collection indicators; measure collection effectiveness and cash forecast accuracy.",
+              "Process efficiency \u2014 End-to-end order, delivery, billing and collection intervals not visible together. \u2014 Cycle-time stages are visible; measure stage-level delay reduction and billing-to-collection improvement."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "ROI Statement"
+          },
+          {
+            "type": "p",
+            "text": "The delivered dashboard brings receivables, credit risk, customer collection behaviour and O2C cycle-time analysis into a connected SAC experience. The supplied sources do not quantify realised time savings, DSO reduction, cash acceleration, bad-debt reduction or financial ROI. These outcomes must be measured against an agreed baseline after production adoption."
+          }
+        ],
+        "source": "reference_docs/O2C_Receivables_Intelligence_Documentation_FINAL.docx",
+        "words": 374
+      },
       "badge": "Slide 6 of 6",
       "caption": "Key Dashboard Insights",
-      "botDialogue": "Key Dashboard Insights",
-      "botPose": "beckon"
+      "botDialogue": "CARD 6 Insights & ROI Dashboard observations and a defensible business-value framework Key Dashboard Insights Area \u2014 Dashboard. \u2014 Displayed dashboard values; reconcile against FI open-item balances and trailing-12-month billed revenue.",
+      "botPose": "beckon",
+      "botChat": [
+        "CARD 6 Insights & ROI Dashboard observations and a defensible business-value framework Key Dashboard Insights Area \u2014 Dashboard.",
+        "\u2014 Displayed dashboard values; reconcile against FI open-item balances and trailing-12-month billed revenue."
+      ],
+      "botChatMode": "condensed"
     }
   ],
   "closing": {

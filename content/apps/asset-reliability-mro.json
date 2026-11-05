@@ -18,119 +18,332 @@
       "type": "live-ui",
       "title": "Clean Core Architecture \u2014 Phase 1",
       "subtitle": "Asset Reliability, Maintenance & MRO Inventory",
-      "description": "Enterprise production workflow stage 1 for Asset Reliability, Maintenance & MRO Inventory.",
+      "description": {
+        "plain": "Business Problem\n\nCement plants depend on reliable equipment and timely availability of maintenance spares. Maintenance orders, breakdown notifications, cost postings, equipment attributes, preventive-maintenance plans and material/stock information may sit in separate operational domains. Without a consolidated view, teams can find it difficult to identify the plant or equipment driving downtime, understand maintenance-cost exposure, monitor PM-related breakdown patterns and check whether critical spares are available against reorder parameters.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Business Problem"
+          },
+          {
+            "type": "p",
+            "text": "Cement plants depend on reliable equipment and timely availability of maintenance spares. Maintenance orders, breakdown notifications, cost postings, equipment attributes, preventive-maintenance plans and material/stock information may sit in separate operational domains. Without a consolidated view, teams can find it difficult to identify the plant or equipment driving downtime, understand maintenance-cost exposure, monitor PM-related breakdown patterns and check whether critical spares are available against reorder parameters."
+          }
+        ],
+        "source": "sac\\Asset_Reliability_MRO_Dashboard_Documentation-1.docx",
+        "words": 67
+      },
       "badge": "Slide 1 of 9",
       "caption": "Enterprise production workflow stage 1 for Asset Reliability, Maintenance & MRO Inventory.",
-      "botDialogue": "Enterprise production workflow stage 1 for Asset Reliability, Maintenance & MRO Inventory.",
+      "botDialogue": "Business Problem  Cement plants depend on reliable equipment and timely availability of maintenance spares. Maintenance orders, breakdown notifications, cost postings, equipment attributes, preventive-maintenance plans and material/stock information may sit in separate operational domains.",
       "botPose": "present",
       "imageUrl": "/assets/apps/asset-reliability-mro/c1_1.webp",
       "screenshot": "/assets/apps/asset-reliability-mro/c1_1.webp",
       "imageWidth": 1400,
-      "imageHeight": 796
+      "imageHeight": 796,
+      "botChat": [
+        "Business Problem  Cement plants depend on reliable equipment and timely availability of maintenance spares.",
+        "Maintenance orders, breakdown notifications, cost postings, equipment attributes, preventive-maintenance plans and material/stock information may sit in separate operational domains."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-2",
       "type": "challenge",
       "title": "Business Problem",
       "subtitle": "Asset Reliability, Maintenance & MRO Inventory",
-      "description": "Cement plants depend on reliable equipment and timely availability of maintenance spares. Maintenance orders, breakdown notifications, cost postings, equipment attributes, preventive-maintenance plans and material/stock information may sit in separate operational domains. Without a consolidated view, teams can find it difficult to identify the plant or equipment driving downtime, understand maintenance-cost exposure, monitor PM-related breakdown patterns and check whether critical spares are available against reorder parameters.",
+      "description": {
+        "plain": "Three Key Business Questions\n\nWhich plants, equipment categories and assets are contributing most to breakdowns, downtime and production volume loss?\n\nAre equipment reliability and maintenance costs visible at plant and equipment level, and which areas require management attention?\n\nWhich MRO materials are close to or below reorder parameters, and how does the recorded PM compliance status relate to breakdown events?",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Three Key Business Questions"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Which plants, equipment categories and assets are contributing most to breakdowns, downtime and production volume loss?",
+              "Are equipment reliability and maintenance costs visible at plant and equipment level, and which areas require management attention?",
+              "Which MRO materials are close to or below reorder parameters, and how does the recorded PM compliance status relate to breakdown events?"
+            ]
+          }
+        ],
+        "source": "sac\\Asset_Reliability_MRO_Dashboard_Documentation-1.docx",
+        "words": 60
+      },
       "badge": "Slide 2 of 9",
       "caption": "Cement plants depend on reliable equipment and timely availability of maintenance spares. Maintenance orders, breakdown notifications, cost postings, equipment attributes, preventi...",
-      "botDialogue": "Cement plants depend on reliable equipment and timely availability of maintenance spares. Maintenance orders, breakdown notifications, cost postings, equipment attributes, preventive-maintenance plans and material/stock information may sit in separate operational domains.",
-      "botPose": "point"
+      "botDialogue": "Three Key Business Questions  Which plants, equipment categories and assets are contributing most to breakdowns, downtime and production volume loss?. Are equipment reliability and maintenance costs visible at plant and equipment level, and which areas require.",
+      "botPose": "point",
+      "botChat": [
+        "Three Key Business Questions  Which plants, equipment categories and assets are contributing most to breakdowns, downtime and production volume loss?.",
+        "Are equipment reliability and maintenance costs visible at plant and equipment level, and which areas require."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-3",
       "type": "workflow",
       "title": "Three Key Business Questions",
       "subtitle": "Asset Reliability, Maintenance & MRO Inventory",
-      "description": "Which plants, equipment categories and assets are contributing most to breakdowns, downtime and production volume loss? Are equipment reliability and maintenance costs visible at plant and equipment level, and which areas require management attention? Which MRO materials are close to or below reorder parameters, and how does the recorded PM compliance status relate to breakdown events?",
+      "description": {
+        "plain": "CARD 3\n\nKPIs & Definitions\n\nSix headline KPIs from the supplied dashboard, with formula and evidence notes\n\nThe values below reproduce the displayed dashboard and are cross-checked against FINAL_SAC_FACT where the workbook contains the required inputs. KPI targets are not specified in the supplied PDF or workbook and must be approved by the business owner.\n\nFigure 4. KPI-card strip from Maintenance Head\u2019s Cockpit (PDF page 2).\n\nFigure 5. KPI-card strip from Store Head\u2019s Cockpit (PDF page 3).\n\nKPI \u2014 Dashboard Value \u2014 Formula / Definition\n\nFleet Availability \u2014 99.28% \u2014 MTBF \u00f7 (MTBF + MTTR) \u00d7 100. Current model assumes 100 equipment \u00d7 8,760 scheduled hours less recorded downtime.\n\nMTBF (Hours) \u2014 822.79 h \u2014 (100 \u00d7 8,760 \u2212 6,311 downtime hours) \u00f7 1,057 breakdown events. Do not average row-level MTBF.\n\nMTTR (Hours) \u2014 5.97 h \u2014 Total Downtime Hours \u00f7 Breakdown Count = 6,311 \u00f7 1,057.\n\nProduction Volume Loss \u2014 859,142 tons \u2014 SUM(Downtime Hours \u00d7 Planned Hourly Output Tons), calculated at order/event row before aggregation.\n\nMaintenance Cost \u2014 \u20b91.38 crore on page 2; \u20b927.52 lakh on page 3 \u2014 SUM(Maintenance_Cost) from the maintenance-order fact. Page-level dashboard values conflict; confirm filters/calculation scope and formatting.\n\nTotal Inventory Value \u2014 \u20b997.18 crore displayed \u2014 Governed definition should sum one snapshot per distinct Material + Plant. Workbook stock snapshot = about \u20b911.72 crore; flat order-row sum overstates the value.\n\nSupporting Metrics & Interpretation\n\nAverage Cost per Breakdown Event = SUM(Maintenance_Cost) \u00f7 SUM(Breakdown Count) = \u20b913,072.47 in the workbook and Store Head\u2019s Cockpit. Breakdown Count totals 1,057 events. The PM-status chart attributes these breakdown events as 67.46% Completed On Time, 23.18% Completed Late and 9.37% Missed; this is a breakdown distribution by the attached PM status, not a standalone PM completion-rate KPI.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "CARD 3"
+          },
+          {
+            "type": "p",
+            "text": "KPIs & Definitions"
+          },
+          {
+            "type": "p",
+            "text": "Six headline KPIs from the supplied dashboard, with formula and evidence notes"
+          },
+          {
+            "type": "p",
+            "text": "The values below reproduce the displayed dashboard and are cross-checked against FINAL_SAC_FACT where the workbook contains the required inputs. KPI targets are not specified in the supplied PDF or workbook and must be approved by the business owner."
+          },
+          {
+            "type": "p",
+            "text": "Figure 4. KPI-card strip from Maintenance Head\u2019s Cockpit (PDF page 2)."
+          },
+          {
+            "type": "p",
+            "text": "Figure 5. KPI-card strip from Store Head\u2019s Cockpit (PDF page 3)."
+          },
+          {
+            "type": "ul",
+            "items": [
+              "KPI \u2014 Dashboard Value \u2014 Formula / Definition",
+              "Fleet Availability \u2014 99.28% \u2014 MTBF \u00f7 (MTBF + MTTR) \u00d7 100. Current model assumes 100 equipment \u00d7 8,760 scheduled hours less recorded downtime.",
+              "MTBF (Hours) \u2014 822.79 h \u2014 (100 \u00d7 8,760 \u2212 6,311 downtime hours) \u00f7 1,057 breakdown events. Do not average row-level MTBF.",
+              "MTTR (Hours) \u2014 5.97 h \u2014 Total Downtime Hours \u00f7 Breakdown Count = 6,311 \u00f7 1,057.",
+              "Production Volume Loss \u2014 859,142 tons \u2014 SUM(Downtime Hours \u00d7 Planned Hourly Output Tons), calculated at order/event row before aggregation.",
+              "Maintenance Cost \u2014 \u20b91.38 crore on page 2; \u20b927.52 lakh on page 3 \u2014 SUM(Maintenance_Cost) from the maintenance-order fact. Page-level dashboard values conflict; confirm filters/calculation scope and formatting.",
+              "Total Inventory Value \u2014 \u20b997.18 crore displayed \u2014 Governed definition should sum one snapshot per distinct Material + Plant. Workbook stock snapshot = about \u20b911.72 crore; flat order-row sum overstates the value."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Supporting Metrics & Interpretation"
+          },
+          {
+            "type": "p",
+            "text": "Average Cost per Breakdown Event = SUM(Maintenance_Cost) \u00f7 SUM(Breakdown Count) = \u20b913,072.47 in the workbook and Store Head\u2019s Cockpit. Breakdown Count totals 1,057 events. The PM-status chart attributes these breakdown events as 67.46% Completed On Time, 23.18% Completed Late and 9.37% Missed; this is a breakdown distribution by the attached PM status, not a standalone PM completion-rate KPI."
+          }
+        ],
+        "source": "reference_docs/Asset_Reliability_MRO_Dashboard_Documentation.docx",
+        "words": 289
+      },
       "badge": "Slide 3 of 9",
       "caption": "Which plants, equipment categories and assets are contributing most to breakdowns, downtime and production volume loss? Are equipment reliability and maintenance costs visible at p...",
-      "botDialogue": "Which plants, equipment categories and assets are contributing most to breakdowns, downtime and production volume loss? Are equipment reliability and maintenance costs visible at plant and equipment level, and which areas require management attention?",
-      "botPose": "tablet"
+      "botDialogue": "CARD 3 KPIs & Definitions Six headline KPIs from the supplied dashboard, with formula and evidence notes The. Figure 4.",
+      "botPose": "tablet",
+      "botChat": [
+        "CARD 3 KPIs & Definitions Six headline KPIs from the supplied dashboard, with formula and evidence notes The.",
+        "Figure 4."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-4",
       "type": "live-ui",
       "title": "Clean Core Architecture \u2014 Phase 4",
       "subtitle": "Asset Reliability, Maintenance & MRO Inventory",
-      "description": "Enterprise production workflow stage 4 for Asset Reliability, Maintenance & MRO Inventory.",
+      "description": {
+        "plain": "Data Architecture\n\nLayer \u2014 Role \u2014 Content\n\nSAP S/4HANA \u2013 Source System \u2014 Operational source \u2014 Orders, notifications, equipment, locations, materials, MRP/stock, PM plans, movements, costs and plant/cost-centre data.\n\nSAP Datasphere \u2013 Data Layer \u2014 Integration and modelling \u2014 Staging, key alignment, cost/movement pre-aggregation, inventory snapshot grain and governed views.\n\nSAP Analytics Cloud \u2014 Analytics and presentation \u2014 FINAL_SAC_FACT import model; three cockpit pages, calculations, filters and audit tables.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Data Architecture"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Layer \u2014 Role \u2014 Content",
+              "SAP S/4HANA \u2013 Source System \u2014 Operational source \u2014 Orders, notifications, equipment, locations, materials, MRP/stock, PM plans, movements, costs and plant/cost-centre data.",
+              "SAP Datasphere \u2013 Data Layer \u2014 Integration and modelling \u2014 Staging, key alignment, cost/movement pre-aggregation, inventory snapshot grain and governed views.",
+              "SAP Analytics Cloud \u2014 Analytics and presentation \u2014 FINAL_SAC_FACT import model; three cockpit pages, calculations, filters and audit tables."
+            ]
+          }
+        ],
+        "source": "sac\\Asset_Reliability_MRO_Dashboard_Documentation-1.docx",
+        "words": 69
+      },
       "badge": "Slide 4 of 9",
       "caption": "Enterprise production workflow stage 4 for Asset Reliability, Maintenance & MRO Inventory.",
-      "botDialogue": "Enterprise production workflow stage 4 for Asset Reliability, Maintenance & MRO Inventory.",
+      "botDialogue": "Data Architecture Layer \u2014 Role \u2014 Content SAP S/4HANA \u2013 Source System \u2014 Operational source \u2014 Orders, notifications,. SAP Datasphere \u2013 Data Layer \u2014 Integration and modelling \u2014 Staging, key alignment, cost/movement pre-aggregation, inventory snapshot grain.",
       "botPose": "laptop",
       "imageUrl": "/assets/apps/asset-reliability-mro/c4_1.webp",
       "screenshot": "/assets/apps/asset-reliability-mro/c4_1.webp",
       "imageWidth": 1774,
-      "imageHeight": 887
+      "imageHeight": 887,
+      "botChat": [
+        "Data Architecture Layer \u2014 Role \u2014 Content SAP S/4HANA \u2013 Source System \u2014 Operational source \u2014 Orders, notifications,.",
+        "SAP Datasphere \u2013 Data Layer \u2014 Integration and modelling \u2014 Staging, key alignment, cost/movement pre-aggregation, inventory snapshot grain."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-5",
       "type": "workflow",
       "title": "Data Architecture",
       "subtitle": "Asset Reliability, Maintenance & MRO Inventory",
-      "description": "Data Architecture",
+      "description": {
+        "plain": "1. Maintenance Head\u2019s Cockpit\n\nStart with fleet availability, MTBF, MTTR, maintenance cost and volume loss. Use month, plant city, equipment category and top equipment/plant views to locate where breakdowns and downtime concentrate.\n\nAction: Prioritise the plant/equipment for reliability review; inspect its breakdown history and maintenance-cost drivers.",
+        "blocks": [
+          {
+            "type": "ul",
+            "items": [
+              "1. Maintenance Head\u2019s Cockpit"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Start with fleet availability, MTBF, MTTR, maintenance cost and volume loss. Use month, plant city, equipment category and top equipment/plant views to locate where breakdowns and downtime concentrate."
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Action: Prioritise the plant/equipment for reliability review; inspect its breakdown history and maintenance-cost drivers."
+            ]
+          }
+        ],
+        "source": "sac\\Asset_Reliability_MRO_Dashboard_Documentation-1.docx",
+        "words": 46
+      },
       "badge": "Slide 5 of 9",
       "caption": "Data Architecture",
-      "botDialogue": "Data Architecture",
-      "botPose": "explain"
+      "botDialogue": "Maintenance Head\u2019s Cockpit  Start with fleet availability, MTBF, MTTR, maintenance cost and volume loss. Use month, plant city, equipment category and top equipment/plant views to locate where breakdowns and downtime concentrate.",
+      "botPose": "explain",
+      "botChat": [
+        "Maintenance Head\u2019s Cockpit  Start with fleet availability, MTBF, MTTR, maintenance cost and volume loss.",
+        "Use month, plant city, equipment category and top equipment/plant views to locate where breakdowns and downtime concentrate."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-6",
       "type": "live-ui",
       "title": "1. Maintenance Head\u2019s Cockpit",
       "subtitle": "Asset Reliability, Maintenance & MRO Inventory",
-      "description": "Start with fleet availability, MTBF, MTTR, maintenance cost and volume loss. Use month, plant city, equipment category and top equipment/plant views to locate where breakdowns and downtime concentrate. Action: Prioritise the plant/equipment for reliability review; inspect its breakdown history and maintenance-cost drivers.",
+      "description": {
+        "plain": "2. Store Head\u2019s Cockpit\nMove to stock on hand, reorder point, safety stock, top breakdown spares, PM-status distribution and inventory-by-material views. Compare the material/plant stock position with the reorder parameters.\nAction: Ask the MRO planner to validate material demand, lead time and reorder recommendation before replenishment. The PDF\u2019s Recommended Re-Order Point formula is not supplied.",
+        "blocks": [
+          {
+            "type": "ul",
+            "items": [
+              "2. Store Head\u2019s Cockpit\nMove to stock on hand, reorder point, safety stock, top breakdown spares, PM-status distribution and inventory-by-material views. Compare the material/plant stock position with the reorder parameters.\nAction: Ask the MRO planner to validate material demand, lead time and reorder recommendation before replenishment. The PDF\u2019s Recommended Re-Order Point formula is not supplied."
+            ]
+          }
+        ],
+        "source": "sac\\Asset_Reliability_MRO_Dashboard_Documentation-1.docx",
+        "words": 55
+      },
       "badge": "Slide 6 of 9",
       "caption": "Start with fleet availability, MTBF, MTTR, maintenance cost and volume loss. Use month, plant city, equipment category and top equipment/plant views to locate where breakdowns and ...",
-      "botDialogue": "Start with fleet availability, MTBF, MTTR, maintenance cost and volume loss. Use month, plant city, equipment category and top equipment/plant views to locate where breakdowns and downtime concentrate.",
+      "botDialogue": "Store Head\u2019s Cockpit Move to stock on hand, reorder point, safety stock, top breakdown spares, PM-status distribution and inventory-by-material views. Compare the material/plant stock position with the reorder parameters.",
       "botPose": "beckon",
       "imageUrl": "/assets/apps/asset-reliability-mro/c6_1.webp",
       "screenshot": "/assets/apps/asset-reliability-mro/c6_1.webp",
       "imageWidth": 1213,
-      "imageHeight": 462
+      "imageHeight": 462,
+      "botChat": [
+        "Store Head\u2019s Cockpit Move to stock on hand, reorder point, safety stock, top breakdown spares, PM-status distribution and inventory-by-material views.",
+        "Compare the material/plant stock position with the reorder parameters."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-7",
       "type": "live-ui",
       "title": "Clean Core Architecture \u2014 Phase 7",
       "subtitle": "Asset Reliability, Maintenance & MRO Inventory",
-      "description": "Enterprise production workflow stage 7 for Asset Reliability, Maintenance & MRO Inventory.",
+      "description": {
+        "plain": "3. Detail & Data Governance Audit\n\nOpen the maintenance-order/notification table to inspect malfunction dates, downtime and cost; then check operational status, breakdown flag, functional location and cost-centre manager.\n\nAction: Trace the selected event to its order/notification and raise the required maintenance follow-up or master-data correction.",
+        "blocks": [
+          {
+            "type": "ul",
+            "items": [
+              "3. Detail & Data Governance Audit",
+              "Open the maintenance-order/notification table to inspect malfunction dates, downtime and cost; then check operational status, breakdown flag, functional location and cost-centre manager.",
+              "Action: Trace the selected event to its order/notification and raise the required maintenance follow-up or master-data correction."
+            ]
+          }
+        ],
+        "source": "sac\\Asset_Reliability_MRO_Dashboard_Documentation-1.docx",
+        "words": 45
+      },
       "badge": "Slide 7 of 9",
       "caption": "Enterprise production workflow stage 7 for Asset Reliability, Maintenance & MRO Inventory.",
-      "botDialogue": "Enterprise production workflow stage 7 for Asset Reliability, Maintenance & MRO Inventory.",
+      "botDialogue": "Detail & Data Governance Audit Open the maintenance-order/notification table to inspect malfunction dates, downtime and cost; then check. Action: Trace the selected event to its order/notification and raise the required maintenance follow-up or master-data correction.",
       "botPose": "present",
       "imageUrl": "/assets/apps/asset-reliability-mro/c7_1.webp",
       "screenshot": "/assets/apps/asset-reliability-mro/c7_1.webp",
       "imageWidth": 1421,
-      "imageHeight": 534
+      "imageHeight": 534,
+      "botChat": [
+        "Detail & Data Governance Audit Open the maintenance-order/notification table to inspect malfunction dates, downtime and cost; then check.",
+        "Action: Trace the selected event to its order/notification and raise the required maintenance follow-up or master-data correction."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-8",
       "type": "live-ui",
       "title": "3. Detail & Data Governance Audit",
       "subtitle": "Asset Reliability, Maintenance & MRO Inventory",
-      "description": "Open the maintenance-order/notification table to inspect malfunction dates, downtime and cost; then check operational status, breakdown flag, functional location and cost-centre manager. Action: Trace the selected event to its order/notification and raise the required maintenance follow-up or master-data correction.",
+      "description": {
+        "plain": "Key Dashboard Insights\n\nArea \u2014 Dashboard Observation \u2014 Evidence / Note\n\nReliability \u2014 Fleet availability is displayed at 99.28%; MTBF is 822.79 hours and MTTR is 5.97 hours. \u2014 Maintenance Head\u2019s Cockpit, PDF p.2; FINAL_SAC_FACT calculations.\n\nBreakdown and downtime \u2014 The workbook contains 1,057 breakdown events and 6,311 downtime hours. Production Volume Loss is 859,142 tons. \u2014 FINAL_SAC_FACT; PDF pp.2\u20133.\n\nMaintenance spend \u2014 The workbook order-cost total is \u20b913,817,602.98 (about \u20b91.38 crore). The PDF shows \u20b91.38 crore on page 2 but \u20b927.52 lakh on page 3. \u2014 FINAL_SAC_FACT / COEP_Costs reconciliation; PDF pp.2\u20133. Reconcile page filters/logic.\n\nMRO inventory \u2014 The Store Cockpit displays \u20b997.18 crore. Distinct Material + Plant stock snapshot records (180 pairs) total about \u20b911.72 crore; the row-sum on the flattened order fact duplicates snapshots. \u2014 MARD_MBEW_Stock and FINAL_SAC_FACT. Correct the inventory grain before certifying the KPI.\n\nPM status association \u2014 Breakdown events by attached PM status: Completed On Time 67.46%; Completed Late 23.18%; Missed 9.37%. \u2014 FINAL_SAC_FACT. This is breakdown distribution by plan status, not the PM compliance rate.\n\nAverage event cost \u2014 Average Cost per Breakdown Event is \u20b913,072.47 (maintenance cost \u00f7 breakdown count). \u2014 FINAL_SAC_FACT; matches Store Head\u2019s Cockpit.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Key Dashboard Insights"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Area \u2014 Dashboard Observation \u2014 Evidence / Note",
+              "Reliability \u2014 Fleet availability is displayed at 99.28%; MTBF is 822.79 hours and MTTR is 5.97 hours. \u2014 Maintenance Head\u2019s Cockpit, PDF p.2; FINAL_SAC_FACT calculations.",
+              "Breakdown and downtime \u2014 The workbook contains 1,057 breakdown events and 6,311 downtime hours. Production Volume Loss is 859,142 tons. \u2014 FINAL_SAC_FACT; PDF pp.2\u20133.",
+              "Maintenance spend \u2014 The workbook order-cost total is \u20b913,817,602.98 (about \u20b91.38 crore). The PDF shows \u20b91.38 crore on page 2 but \u20b927.52 lakh on page 3. \u2014 FINAL_SAC_FACT / COEP_Costs reconciliation; PDF pp.2\u20133. Reconcile page filters/logic.",
+              "MRO inventory \u2014 The Store Cockpit displays \u20b997.18 crore. Distinct Material + Plant stock snapshot records (180 pairs) total about \u20b911.72 crore; the row-sum on the flattened order fact duplicates snapshots. \u2014 MARD_MBEW_Stock and FINAL_SAC_FACT. Correct the inventory grain before certifying the KPI.",
+              "PM status association \u2014 Breakdown events by attached PM status: Completed On Time 67.46%; Completed Late 23.18%; Missed 9.37%. \u2014 FINAL_SAC_FACT. This is breakdown distribution by plan status, not the PM compliance rate.",
+              "Average event cost \u2014 Average Cost per Breakdown Event is \u20b913,072.47 (maintenance cost \u00f7 breakdown count). \u2014 FINAL_SAC_FACT; matches Store Head\u2019s Cockpit."
+            ]
+          }
+        ],
+        "source": "sac\\Asset_Reliability_MRO_Dashboard_Documentation-1.docx",
+        "words": 194
+      },
       "badge": "Slide 8 of 9",
       "caption": "Open the maintenance-order/notification table to inspect malfunction dates, downtime and cost; then check operational status, breakdown flag, functional location and cost-centre ma...",
-      "botDialogue": "Open the maintenance-order/notification table to inspect malfunction dates, downtime and cost; then check operational status, breakdown flag, functional location and cost-centre manager. Action: Trace the selected event to its order/notification and raise the required maintenance follow-up or master-data correction.",
+      "botDialogue": "Key Dashboard Insights Area \u2014 Dashboard Observation \u2014 Evidence / Note Reliability \u2014 Fleet availability is displayed at. \u2014 Maintenance Head\u2019s Cockpit, PDF p.2; FINAL_SAC_FACT calculations.",
       "botPose": "point",
       "imageUrl": "/assets/apps/asset-reliability-mro/c8_1.webp",
       "screenshot": "/assets/apps/asset-reliability-mro/c8_1.webp",
       "imageWidth": 1427,
-      "imageHeight": 435
+      "imageHeight": 435,
+      "botChat": [
+        "Key Dashboard Insights Area \u2014 Dashboard Observation \u2014 Evidence / Note Reliability \u2014 Fleet availability is displayed at.",
+        "\u2014 Maintenance Head\u2019s Cockpit, PDF p.2; FINAL_SAC_FACT calculations."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-9",
       "type": "workflow",
       "title": "Key Dashboard Insights",
       "subtitle": "Asset Reliability, Maintenance & MRO Inventory",
-      "description": "Key Dashboard Insights",
+      "description": null,
       "badge": "Slide 9 of 9",
       "caption": "Key Dashboard Insights",
-      "botDialogue": "Key Dashboard Insights",
-      "botPose": "tablet"
+      "botDialogue": "",
+      "botPose": "tablet",
+      "botChat": [],
+      "botChatMode": "none"
     }
   ],
   "closing": {

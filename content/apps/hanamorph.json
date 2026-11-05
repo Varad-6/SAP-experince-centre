@@ -18,108 +18,248 @@
       "type": "live-ui",
       "title": "Clean Core Architecture \u2014 Phase 1",
       "subtitle": "HanaMorph Modernization & Migration Suite",
-      "description": "Enterprise production workflow stage 1 for HanaMorph Modernization & Migration Suite.",
+      "description": {
+        "plain": "Card 1 \u2014 Use case & problem\n\nIndustry / user persona \u2014 Enterprise Data Architects, SAP BI Directors, Chief Data Officers (CDOs), and Financial Data Engineers across Global Enterprises (Manufacturing, Banking, Retail).\n\nProblem (3 bullets) \u2014 \u2022 Monolithic CTE Lineage Collapse: Classical migration scripts collapse multi-tier calculation views into opaque, monolithic SQL WITH (CTE) statements, destroying intermediate node auditability and lineage in SAP Datasphere.\n\u2022 Dependency & Import Failure Loops: Attribute naming mismatches (e.g. PARTNER vs PARTNR) and uncompiled calculated attributes trigger missing-object deployment crashes in Datasphere CSN import services.\n\u2022 View Sprawl & Technical Debt: Legacy HANA environments carry 1,800+ calculation views with 80%+ duplicate pipelines on core tables (ACDOCA, BNKA), causing ballooning cloud compute costs.\n\nWhat we solve (max 2 lines) \u2014 HanaMorph automates the live introspection, multi-tier visual DAG decomposition, and atomic CSN 2.0 compilation of complex Calculation Views, delivering 1:1 visual lineage parity in SAP Datasphere in under 5 minutes.\n\nTech stack tags (comma list) \u2014 SAP BTP Cloud Foundry, Node.js 20+, SAP Datasphere CSN 2.0, @sap/hana-client, SAP Fiori Horizon, Pure ANSI SQL-2016 Compiler, Kyma, REST APIs\n\nSAP touchpoints (modules, tables, APIs) \u2014 SAP HANA Cloud, SAP HANA On-Premise (_SYS_BIC, BIMC_ALL_CUBES), SAP Datasphere Data Builder, Schema Import Services, ACDOCA, BKPF, BSEG, BNKA, BP001, BP1010\n\nImage (optional) + caption \u2014 hanamorph_c1_1.png | Caption: Legacy SAP HANA Studio / Eclipse Calculation View DAG (CV_BANK) with 3-tier join hierarchy\n\nBot lines \u2014 \u2022 \"Migrating multi-tier Calculation Views manually takes 3 to 5 days per view and usually destroys visual lineage.\"\n\u2022 \"Traditional tools combine all logic into an unreadable monolithic query that fails Datasphere's graphical editor.\"\n\u2022 \"HanaMorph parses the live calculation XML and reconstructs the full visual hierarchy automatically.\"",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Card 1 \u2014 Use case & problem"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Industry / user persona \u2014 Enterprise Data Architects, SAP BI Directors, Chief Data Officers (CDOs), and Financial Data Engineers across Global Enterprises (Manufacturing, Banking, Retail).",
+              "Problem (3 bullets) \u2014 \u2022 Monolithic CTE Lineage Collapse: Classical migration scripts collapse multi-tier calculation views into opaque, monolithic SQL WITH (CTE) statements, destroying intermediate node auditability and lineage in SAP Datasphere.\n\u2022 Dependency & Import Failure Loops: Attribute naming mismatches (e.g. PARTNER vs PARTNR) and uncompiled calculated attributes trigger missing-object deployment crashes in Datasphere CSN import services.\n\u2022 View Sprawl & Technical Debt: Legacy HANA environments carry 1,800+ calculation views with 80%+ duplicate pipelines on core tables (ACDOCA, BNKA), causing ballooning cloud compute costs.",
+              "What we solve (max 2 lines) \u2014 HanaMorph automates the live introspection, multi-tier visual DAG decomposition, and atomic CSN 2.0 compilation of complex Calculation Views, delivering 1:1 visual lineage parity in SAP Datasphere in under 5 minutes.",
+              "Tech stack tags (comma list) \u2014 SAP BTP Cloud Foundry, Node.js 20+, SAP Datasphere CSN 2.0, @sap/hana-client, SAP Fiori Horizon, Pure ANSI SQL-2016 Compiler, Kyma, REST APIs",
+              "SAP touchpoints (modules, tables, APIs) \u2014 SAP HANA Cloud, SAP HANA On-Premise (_SYS_BIC, BIMC_ALL_CUBES), SAP Datasphere Data Builder, Schema Import Services, ACDOCA, BKPF, BSEG, BNKA, BP001, BP1010",
+              "Image (optional) + caption \u2014 hanamorph_c1_1.png | Caption: Legacy SAP HANA Studio / Eclipse Calculation View DAG (CV_BANK) with 3-tier join hierarchy",
+              "Bot lines \u2014 \u2022 \"Migrating multi-tier Calculation Views manually takes 3 to 5 days per view and usually destroys visual lineage.\"\n\u2022 \"Traditional tools combine all logic into an unreadable monolithic query that fails Datasphere's graphical editor.\"\n\u2022 \"HanaMorph parses the live calculation XML and reconstructs the full visual hierarchy automatically.\""
+            ]
+          }
+        ],
+        "source": "reference_docs/AIS Experience Centre \u2014 HanaMorph Demo Content.docx",
+        "words": 281
+      },
       "badge": "Slide 1 of 8",
       "caption": "Enterprise production workflow stage 1 for HanaMorph Modernization & Migration Suite.",
-      "botDialogue": "Enterprise production workflow stage 1 for HanaMorph Modernization & Migration Suite.",
+      "botDialogue": "Card 1 \u2014 Use case & problem Industry / user persona \u2014 Enterprise Data Architects, SAP BI Directors,. Problem (3 bullets) \u2014 \u2022 Monolithic CTE Lineage Collapse: Classical migration scripts collapse multi-tier calculation views into opaque,.",
       "botPose": "present",
       "imageUrl": "/assets/apps/hanamorph/c1_1.webp",
       "screenshot": "/assets/apps/hanamorph/c1_1.webp",
       "imageWidth": 1919,
-      "imageHeight": 849
+      "imageHeight": 849,
+      "botChat": [
+        "Card 1 \u2014 Use case & problem Industry / user persona \u2014 Enterprise Data Architects, SAP BI Directors,.",
+        "Problem (3 bullets) \u2014 \u2022 Monolithic CTE Lineage Collapse: Classical migration scripts collapse multi-tier calculation views into opaque,."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-2",
       "type": "challenge",
       "title": "Use case & problem",
       "subtitle": "HanaMorph Modernization & Migration Suite",
-      "description": "Use case & problem",
+      "description": {
+        "plain": "Use case & problem\n\nIndustry / user persona \u2014 Industry / user persona \u2014 Enterprise Data Architects, SAP BI Directors, Chief Data Officers (CDOs), and Financial Data Engineers across Global Enterprises (Manufacturing, Banking, Retail).\n\nProblem (3 bullets) \u2014 Problem (3 bullets) \u2014 \u2022 Monolithic CTE Lineage Collapse: Classical migration scripts collapse multi-tier calculation views into opaque, monolithic SQL WITH (CTE) statements, destroying intermediate node auditability and lineage in SAP Datasphere.\n\u2022 Dependency & Import Failure Loops: Attribute naming mismatches (e.g. PARTNER vs PARTNR) and uncompiled calculated attributes trigger missing-object deployment crashes in Datasphere CSN import services.\n\u2022 View Sprawl & Technical Debt: Legacy HANA environments carry 1,800+ calculation views with 80%+ duplicate pipelines on core tables (ACDOCA, BNKA), causing ballooning cloud compute costs.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Use case & problem"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Industry / user persona \u2014 Industry / user persona \u2014 Enterprise Data Architects, SAP BI Directors, Chief Data Officers (CDOs), and Financial Data Engineers across Global Enterprises (Manufacturing, Banking, Retail).",
+              "Problem (3 bullets) \u2014 Problem (3 bullets) \u2014 \u2022 Monolithic CTE Lineage Collapse: Classical migration scripts collapse multi-tier calculation views into opaque, monolithic SQL WITH (CTE) statements, destroying intermediate node auditability and lineage in SAP Datasphere.\n\u2022 Dependency & Import Failure Loops: Attribute naming mismatches (e.g. PARTNER vs PARTNR) and uncompiled calculated attributes trigger missing-object deployment crashes in Datasphere CSN import services.\n\u2022 View Sprawl & Technical Debt: Legacy HANA environments carry 1,800+ calculation views with 80%+ duplicate pipelines on core tables (ACDOCA, BNKA), causing ballooning cloud compute costs."
+            ]
+          }
+        ],
+        "source": "ACCELERATOR\\AIS Experience Centre \u2014 HanaMorph Demo Content.docx",
+        "words": 123
+      },
       "badge": "Slide 2 of 8",
       "caption": "Use case & problem",
-      "botDialogue": "Use case & problem",
-      "botPose": "point"
+      "botDialogue": "Use case & problem Industry / user persona \u2014 Industry / user persona \u2014 Enterprise Data Architects, SAP. Problem (3 bullets) \u2014 Problem (3 bullets) \u2014 \u2022 Monolithic CTE Lineage Collapse: Classical migration scripts collapse multi-tier.",
+      "botPose": "point",
+      "botChat": [
+        "Use case & problem Industry / user persona \u2014 Industry / user persona \u2014 Enterprise Data Architects, SAP.",
+        "Problem (3 bullets) \u2014 Problem (3 bullets) \u2014 \u2022 Monolithic CTE Lineage Collapse: Classical migration scripts collapse multi-tier."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-3",
       "type": "workflow",
       "title": "techstack",
       "subtitle": "HanaMorph Modernization & Migration Suite",
-      "description": "SAP BTP Cloud Foundry, Node.js 20+, SAP Datasphere CSN 2.0, @sap/hana-client, SAP Fiori Horizon, Pure ANSI SQL-2016 Compiler, Kyma, REST APIs",
+      "description": {
+        "plain": "techstack\n\nSAP BTP Cloud Foundry, Node.js 20+, SAP Datasphere CSN 2.0, @sap/hana-client, SAP Fiori Horizon, Pure ANSI SQL-2016 Compiler, Kyma, REST APIs",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "techstack"
+          },
+          {
+            "type": "p",
+            "text": "SAP BTP Cloud Foundry, Node.js 20+, SAP Datasphere CSN 2.0, @sap/hana-client, SAP Fiori Horizon, Pure ANSI SQL-2016 Compiler, Kyma, REST APIs"
+          }
+        ],
+        "source": "ACCELERATOR\\AIS Experience Centre \u2014 HanaMorph Demo Content.docx",
+        "words": 22
+      },
       "badge": "Slide 3 of 8",
       "caption": "SAP BTP Cloud Foundry, Node.js 20+, SAP Datasphere CSN 2.0, @sap/hana-client, SAP Fiori Horizon, Pure ANSI SQL-2016 Compiler, Kyma, REST APIs",
-      "botDialogue": "SAP BTP Cloud Foundry, Node.js 20+, SAP Datasphere CSN 2.0, @sap/hana-client, SAP Fiori Horizon, Pure ANSI SQL-2016 Compiler, Kyma, REST APIs",
-      "botPose": "tablet"
+      "botDialogue": "techstack SAP BTP Cloud Foundry, Node.js 20+, SAP Datasphere CSN 2.0, @sap/hana-client, SAP Fiori Horizon, Pure ANSI SQL-2016.",
+      "botPose": "tablet",
+      "botChat": [
+        "techstack SAP BTP Cloud Foundry, Node.js 20+, SAP Datasphere CSN 2.0, @sap/hana-client, SAP Fiori Horizon, Pure ANSI SQL-2016."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-4",
       "type": "live-ui",
       "title": "Figure: Card 4 (Feature 1): Scenario Artifact Discovery & Classification (hanamorph_c4_1.png)",
       "subtitle": "HanaMorph Modernization & Migration Suite",
-      "description": "Figure: Card 4 (Feature 1): Scenario Artifact Discovery & Classification (hanamorph_c4_1.png)",
+      "description": {
+        "plain": "Figure: Card 4 (Feature 1): Scenario Artifact Discovery & Classification (hanamorph_c4_1.png)",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Figure: Card 4 (Feature 1): Scenario Artifact Discovery & Classification (hanamorph_c4_1.png)"
+          }
+        ],
+        "source": "ACCELERATOR\\AIS Experience Centre \u2014 HanaMorph Demo Content.docx",
+        "words": 11
+      },
       "badge": "Slide 4 of 8",
       "caption": "Figure: Card 4 (Feature 1): Scenario Artifact Discovery & Classification (hanamorph_c4_1.png)",
-      "botDialogue": "Figure: Card 4 (Feature 1): Scenario Artifact Discovery & Classification (hanamorph_c4_1.png)",
+      "botDialogue": "Figure: Card 4 (Feature 1): Scenario Artifact Discovery & Classification (hanamorph_c4_1.png).",
       "botPose": "laptop",
       "imageUrl": "/assets/apps/hanamorph/c4_1.webp",
       "screenshot": "/assets/apps/hanamorph/c4_1.webp",
       "imageWidth": 1920,
-      "imageHeight": 1024
+      "imageHeight": 1024,
+      "botChat": [
+        "Figure: Card 4 (Feature 1): Scenario Artifact Discovery & Classification (hanamorph_c4_1.png)."
+      ],
+      "botChatMode": "verbatim"
     },
     {
       "id": "card-5",
       "type": "live-ui",
       "title": "Figure: Card 4 (Feature 1): Scenario Artifact Discovery & Classification (hanamorph_c4_1.png)",
       "subtitle": "HanaMorph Modernization & Migration Suite",
-      "description": "Figure: Card 4 (Feature 1): Scenario Artifact Discovery & Classification (hanamorph_c4_1.png)",
+      "description": {
+        "plain": "Figure: Card 4 (Feature 1): Scenario Artifact Discovery & Classification (hanamorph_c4_1.png)",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Figure: Card 4 (Feature 1): Scenario Artifact Discovery & Classification (hanamorph_c4_1.png)"
+          }
+        ],
+        "source": "ACCELERATOR\\AIS Experience Centre \u2014 HanaMorph Demo Content.docx",
+        "words": 11
+      },
       "badge": "Slide 5 of 8",
       "caption": "Figure: Card 4 (Feature 1): Scenario Artifact Discovery & Classification (hanamorph_c4_1.png)",
-      "botDialogue": "Figure: Card 4 (Feature 1): Scenario Artifact Discovery & Classification (hanamorph_c4_1.png)",
+      "botDialogue": "Figure: Card 4 (Feature 1): Scenario Artifact Discovery & Classification (hanamorph_c4_1.png).",
       "botPose": "explain",
       "imageUrl": "/assets/apps/hanamorph/c5_1.webp",
       "screenshot": "/assets/apps/hanamorph/c5_1.webp",
       "imageWidth": 1920,
-      "imageHeight": 1024
+      "imageHeight": 1024,
+      "botChat": [
+        "Figure: Card 4 (Feature 1): Scenario Artifact Discovery & Classification (hanamorph_c4_1.png)."
+      ],
+      "botChatMode": "verbatim"
     },
     {
       "id": "card-6",
       "type": "live-ui",
       "title": "Figure: Card 6: Datasphere Pre-Import Validation (All 9 Entities Ready to Import) (hanamorph_c6_1.png)",
       "subtitle": "HanaMorph Modernization & Migration Suite",
-      "description": "Figure: Card 6: Datasphere Pre-Import Validation (All 9 Entities Ready to Import) (hanamorph_c6_1.png)",
+      "description": {
+        "plain": "Figure: Card 6: Datasphere Pre-Import Validation (All 9 Entities Ready to Import) (hanamorph_c6_1.png)",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Figure: Card 6: Datasphere Pre-Import Validation (All 9 Entities Ready to Import) (hanamorph_c6_1.png)"
+          }
+        ],
+        "source": "ACCELERATOR\\AIS Experience Centre \u2014 HanaMorph Demo Content.docx",
+        "words": 13
+      },
       "badge": "Slide 6 of 8",
       "caption": "Figure: Card 6: Datasphere Pre-Import Validation (All 9 Entities Ready to Import) (hanamorph_c6_1.png)",
-      "botDialogue": "Figure: Card 6: Datasphere Pre-Import Validation (All 9 Entities Ready to Import) (hanamorph_c6_1.png)",
+      "botDialogue": "Figure: Card 6: Datasphere Pre-Import Validation (All 9 Entities Ready to Import) (hanamorph_c6_1.png).",
       "botPose": "beckon",
       "imageUrl": "/assets/apps/hanamorph/c6_1.webp",
       "screenshot": "/assets/apps/hanamorph/c6_1.webp",
       "imageWidth": 1920,
-      "imageHeight": 1024
+      "imageHeight": 1024,
+      "botChat": [
+        "Figure: Card 6: Datasphere Pre-Import Validation (All 9 Entities Ready to Import) (hanamorph_c6_1.png)."
+      ],
+      "botChatMode": "verbatim"
     },
     {
       "id": "card-7",
       "type": "live-ui",
       "title": "Fullscreen SAP Datasphere Impact & Lineage Graph",
       "subtitle": "HanaMorph Modernization & Migration Suite",
-      "description": "Fullscreen SAP Datasphere Impact & Lineage Graph",
+      "description": {
+        "plain": "Fullscreen SAP Datasphere Impact & Lineage Graph",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Fullscreen SAP Datasphere Impact & Lineage Graph"
+          }
+        ],
+        "source": "ACCELERATOR\\AIS Experience Centre \u2014 HanaMorph Demo Content.docx",
+        "words": 7
+      },
       "badge": "Slide 7 of 8",
       "caption": "Fullscreen SAP Datasphere Impact & Lineage Graph",
-      "botDialogue": "Fullscreen SAP Datasphere Impact & Lineage Graph",
+      "botDialogue": "Fullscreen SAP Datasphere Impact & Lineage Graph.",
       "botPose": "present",
       "imageUrl": "/assets/apps/hanamorph/c7_1.webp",
       "screenshot": "/assets/apps/hanamorph/c7_1.webp",
       "imageWidth": 1920,
-      "imageHeight": 1024
+      "imageHeight": 1024,
+      "botChat": [
+        "Fullscreen SAP Datasphere Impact & Lineage Graph."
+      ],
+      "botChatMode": "verbatim"
     },
     {
       "id": "card-8",
       "type": "workflow",
       "title": "Clean Core Architecture \u2014 Phase 8",
       "subtitle": "HanaMorph Modernization & Migration Suite",
-      "description": "Enterprise production workflow stage 8 for HanaMorph Modernization & Migration Suite.",
+      "description": {
+        "plain": "Insights & ROI \u2014 Headline Metric: 95% acceleration in view delivery.\nBefore -> After: 4 days of manual modeling per view -> 5 minutes of automated compilation.\nSource: Enterprise migration benchmark on SAP financial models.",
+        "blocks": [
+          {
+            "type": "ul",
+            "items": [
+              "Insights & ROI \u2014 Headline Metric: 95% acceleration in view delivery.\nBefore -> After: 4 days of manual modeling per view -> 5 minutes of automated compilation.\nSource: Enterprise migration benchmark on SAP financial models."
+            ]
+          }
+        ],
+        "source": "ACCELERATOR\\AIS Experience Centre \u2014 HanaMorph Demo Content.docx",
+        "words": 35
+      },
       "badge": "Slide 8 of 8",
       "caption": "Enterprise production workflow stage 8 for HanaMorph Modernization & Migration Suite.",
-      "botDialogue": "Enterprise production workflow stage 8 for HanaMorph Modernization & Migration Suite.",
-      "botPose": "point"
+      "botDialogue": "Insights & ROI \u2014 Headline Metric: 95% acceleration in view delivery. Before -> After: 4 days of manual modeling per view -> 5 minutes of automated compilation.",
+      "botPose": "point",
+      "botChat": [
+        "Insights & ROI \u2014 Headline Metric: 95% acceleration in view delivery.",
+        "Before -> After: 4 days of manual modeling per view -> 5 minutes of automated compilation."
+      ],
+      "botChatMode": "condensed"
     }
   ],
   "closing": {

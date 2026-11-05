@@ -18,66 +18,270 @@
       "type": "live-ui",
       "title": "Clean Core Architecture \u2014 Phase 1",
       "subtitle": "Procure-to-Pay Performance & Accounts Payable Cockpit",
-      "description": "Enterprise production workflow stage 1 for Procure-to-Pay Performance & Accounts Payable Cockpit.",
+      "description": {
+        "plain": "CARD 1\n\nBusiness Questions & Audience\n\nDashboard overview and business context\n\nDashboard Overview\n\nDashboard Name: Procure-to-Pay Performance & Accounts Payable Intelligence\n\nPurpose: Provide a connected view of purchase order value, goods receipt performance, supplier delivery, invoice status and accounts payable exposure in SAP Analytics Cloud.\n\nBusiness Problem\n\nProcurement, goods receipt, supplier delivery and accounts payable information can be difficult to assess when each process is reviewed separately. Decision-makers need a consistent view of purchasing value, receipt progress, invoice status and outstanding payables to identify areas requiring follow-up.\n\nTarget Audience\n\nPersona \u2014 Purpose\n\nProcurement Leadership \u2014 Review purchase order value, goods receipt value, invoice amount and contract compliance.\n\nFinance Leadership / CFO \u2014 Monitor invoice value, open payables and cleared versus outstanding AP exposure.\n\nProcurement Buyers \u2014 Compare supplier purchasing value, material-group contribution and price variance.\n\nSupplier / Vendor Managers \u2014 Review supplier-wise order value, goods receipt quantity and delivery status.\n\nAccounts Payable Team \u2014 Investigate invoice and payment status and identify suppliers with open payable amounts.\n\nBusiness Analysts \u2014 Review trends, compare procurement and receipt quantities, and validate process exceptions.\n\nThree Key Business Questions\n\nHow are purchase order value, goods receipt value and invoice amount performing across fiscal periods and material groups?\n\nWhich suppliers contribute most to procurement value, and where are delivery quantities or delivery statuses requiring attention?\n\nWhat is the current invoice and accounts payable position by supplier and payment status?\n\nProblem Today\n\nThe solution organises the analysis into three SAC perspectives\u2014Executive Overview, Procurement & Delivery Performance, and Invoice & Accounts Payable Overview\u2014so users can move from overall procurement performance to supplier and payable details.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "CARD 1"
+          },
+          {
+            "type": "p",
+            "text": "Business Questions & Audience"
+          },
+          {
+            "type": "p",
+            "text": "Dashboard overview and business context"
+          },
+          {
+            "type": "p",
+            "text": "Dashboard Overview"
+          },
+          {
+            "type": "p",
+            "text": "Dashboard Name: Procure-to-Pay Performance & Accounts Payable Intelligence"
+          },
+          {
+            "type": "p",
+            "text": "Purpose: Provide a connected view of purchase order value, goods receipt performance, supplier delivery, invoice status and accounts payable exposure in SAP Analytics Cloud."
+          },
+          {
+            "type": "p",
+            "text": "Business Problem"
+          },
+          {
+            "type": "p",
+            "text": "Procurement, goods receipt, supplier delivery and accounts payable information can be difficult to assess when each process is reviewed separately. Decision-makers need a consistent view of purchasing value, receipt progress, invoice status and outstanding payables to identify areas requiring follow-up."
+          },
+          {
+            "type": "p",
+            "text": "Target Audience"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Persona \u2014 Purpose",
+              "Procurement Leadership \u2014 Review purchase order value, goods receipt value, invoice amount and contract compliance.",
+              "Finance Leadership / CFO \u2014 Monitor invoice value, open payables and cleared versus outstanding AP exposure.",
+              "Procurement Buyers \u2014 Compare supplier purchasing value, material-group contribution and price variance.",
+              "Supplier / Vendor Managers \u2014 Review supplier-wise order value, goods receipt quantity and delivery status.",
+              "Accounts Payable Team \u2014 Investigate invoice and payment status and identify suppliers with open payable amounts.",
+              "Business Analysts \u2014 Review trends, compare procurement and receipt quantities, and validate process exceptions."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Three Key Business Questions"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "How are purchase order value, goods receipt value and invoice amount performing across fiscal periods and material groups?",
+              "Which suppliers contribute most to procurement value, and where are delivery quantities or delivery statuses requiring attention?",
+              "What is the current invoice and accounts payable position by supplier and payment status?"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Problem Today"
+          },
+          {
+            "type": "p",
+            "text": "The solution organises the analysis into three SAC perspectives\u2014Executive Overview, Procurement & Delivery Performance, and Invoice & Accounts Payable Overview\u2014so users can move from overall procurement performance to supplier and payable details."
+          }
+        ],
+        "source": "reference_docs/Procure_to_Pay_Dashboard_Documentation_Same_Format.docx",
+        "words": 267
+      },
       "badge": "Slide 1 of 8",
       "caption": "Enterprise production workflow stage 1 for Procure-to-Pay Performance & Accounts Payable Cockpit.",
-      "botDialogue": "Enterprise production workflow stage 1 for Procure-to-Pay Performance & Accounts Payable Cockpit.",
+      "botDialogue": "CARD 1 Business Questions & Audience Dashboard overview and business context Dashboard Overview Dashboard Name: Procure-to-Pay Performance &. Business Problem Procurement, goods receipt, supplier delivery and accounts payable information can be difficult to assess when each.",
       "botPose": "present",
       "imageUrl": "/assets/apps/procure-to-pay/c1_1.webp",
       "screenshot": "/assets/apps/procure-to-pay/c1_1.webp",
       "imageWidth": 1800,
-      "imageHeight": 723
+      "imageHeight": 723,
+      "botChat": [
+        "CARD 1 Business Questions & Audience Dashboard overview and business context Dashboard Overview Dashboard Name: Procure-to-Pay Performance &.",
+        "Business Problem Procurement, goods receipt, supplier delivery and accounts payable information can be difficult to assess when each."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-2",
       "type": "challenge",
       "title": "Business Problem",
       "subtitle": "Procure-to-Pay Performance & Accounts Payable Cockpit",
-      "description": "Procurement, goods receipt, supplier delivery and accounts payable information can be difficult to assess when each process is reviewed separately. Decision-makers need a consistent view of purchasing value, receipt progress, invoice status and outstanding payables to identify areas requiring follow-up.",
+      "description": {
+        "plain": "Business Problem\n\nProcurement, goods receipt, supplier delivery and accounts payable information can be difficult to assess when each process is reviewed separately. Decision-makers need a consistent view of purchasing value, receipt progress, invoice status and outstanding payables to identify areas requiring follow-up.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Business Problem"
+          },
+          {
+            "type": "p",
+            "text": "Procurement, goods receipt, supplier delivery and accounts payable information can be difficult to assess when each process is reviewed separately. Decision-makers need a consistent view of purchasing value, receipt progress, invoice status and outstanding payables to identify areas requiring follow-up."
+          }
+        ],
+        "source": "sac\\Procure_to_Pay_Dashboard_Documentation_Same_Format-1.docx",
+        "words": 42
+      },
       "badge": "Slide 2 of 8",
       "caption": "Procurement, goods receipt, supplier delivery and accounts payable information can be difficult to assess when each process is reviewed separately. Decision-makers need a consisten...",
-      "botDialogue": "Procurement, goods receipt, supplier delivery and accounts payable information can be difficult to assess when each process is reviewed separately. Decision-makers need a consistent view of purchasing value, receipt progress, invoice status and outstanding payables to identify areas requiring follow-up.",
-      "botPose": "point"
+      "botDialogue": "Business Problem Procurement, goods receipt, supplier delivery and accounts payable information can be difficult to assess when each. Decision-makers need a consistent view of purchasing value, receipt progress, invoice status and outstanding payables to identify areas.",
+      "botPose": "point",
+      "botChat": [
+        "Business Problem Procurement, goods receipt, supplier delivery and accounts payable information can be difficult to assess when each.",
+        "Decision-makers need a consistent view of purchasing value, receipt progress, invoice status and outstanding payables to identify areas."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-3",
       "type": "workflow",
       "title": "Three Key Business Questions",
       "subtitle": "Procure-to-Pay Performance & Accounts Payable Cockpit",
-      "description": "How are purchase order value, goods receipt value and invoice amount performing across fiscal periods and material groups? Which suppliers contribute most to procurement value, and where are delivery quantities or delivery statuses requiring attention? What is the current invoice and accounts payable position by supplier and payment status?",
+      "description": {
+        "plain": "Three Key Business Questions\n\nHow are purchase order value, goods receipt value and invoice amount performing across fiscal periods and material groups?\n\nWhich suppliers contribute most to procurement value, and where are delivery quantities or delivery statuses requiring attention?\n\nWhat is the current invoice and accounts payable position by supplier and payment status?",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Three Key Business Questions"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "How are purchase order value, goods receipt value and invoice amount performing across fiscal periods and material groups?",
+              "Which suppliers contribute most to procurement value, and where are delivery quantities or delivery statuses requiring attention?",
+              "What is the current invoice and accounts payable position by supplier and payment status?"
+            ]
+          }
+        ],
+        "source": "sac\\Procure_to_Pay_Dashboard_Documentation_Same_Format-1.docx",
+        "words": 53
+      },
       "badge": "Slide 3 of 8",
       "caption": "How are purchase order value, goods receipt value and invoice amount performing across fiscal periods and material groups? Which suppliers contribute most to procurement value, and...",
-      "botDialogue": "How are purchase order value, goods receipt value and invoice amount performing across fiscal periods and material groups? Which suppliers contribute most to procurement value, and where are delivery quantities or delivery statuses requiring attention?",
-      "botPose": "tablet"
+      "botDialogue": "Three Key Business Questions How are purchase order value, goods receipt value and invoice amount performing across fiscal. Which suppliers contribute most to procurement value, and where are delivery quantities or delivery statuses requiring attention?.",
+      "botPose": "tablet",
+      "botChat": [
+        "Three Key Business Questions How are purchase order value, goods receipt value and invoice amount performing across fiscal.",
+        "Which suppliers contribute most to procurement value, and where are delivery quantities or delivery statuses requiring attention?."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-4",
       "type": "workflow",
       "title": "Clean Core Architecture \u2014 Phase 4",
       "subtitle": "Procure-to-Pay Performance & Accounts Payable Cockpit",
-      "description": "Enterprise production workflow stage 4 for Procure-to-Pay Performance & Accounts Payable Cockpit.",
+      "description": {
+        "plain": "CARD 4\n\nData Sources\n\nLogical source architecture, analytical layers and documented technical boundaries\n\nData Architecture\n\nLogical Source-to-Insight Flow\n\nThe supplied story confirms the analytical views and displayed measures only. Exact CDS views, source APIs, Datasphere objects, SAC model lineage and refresh configuration were not provided and must be confirmed in the tenant.\n\nBusiness Domain \u2014 Dashboard Evidence / Analysis \u2014 Technical Evidence Status\n\nExecutive Procurement \u2014 Total PO, goods receipt value, invoice amount, AP open amount, contract compliance, fiscal trends, price variance and material-group analysis. \u2014 Dashboard capability confirmed; formulas, source fields and filter context not supplied.\n\nSupplier & Delivery \u2014 Supplier-wise net order value, delivery-status item counts, supplier goods receipt quantity and ordered versus received quantity. \u2014 Dashboard capability confirmed; supplier keys, delivery-status logic and document-item grain not supplied.\n\nInvoice & AP \u2014 AP open amount by supplier, invoice amount by payment status and supplier, cleared versus open AP amount, supplier invoice/AP detail. \u2014 Dashboard capability confirmed; AP snapshot date, ageing and payment-term logic not supplied.\n\nTechnical Inventory \u2014 CDS views, APIs, Datasphere objects, replication flow, SAC model and refresh schedule. \u2014 Open: confirm deployed names and lineage in the tenant.\n\nBusiness Definitions \u2014 KPI formulas, currency/unit rules, fiscal calendar, contract compliance and delivery-status definitions. \u2014 Open: obtain business-owner sign-off.\n\nData Governance \u2014 Data quality, reconciliation, access control, reversal handling and refresh monitoring. \u2014 Open: not specified in the supplied story.\n\nModel / Grain Validation \u2014 PO item, goods receipt item, invoice item and AP open-item grain; one-to-many relationships. \u2014 Open: verify keys and prevent duplicate aggregation across process facts.\n\nData Governance \u2014 Data quality, reconciliation, access control and refresh monitoring. \u2014 Open: not specified in the supplied deck.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "CARD 4"
+          },
+          {
+            "type": "p",
+            "text": "Data Sources"
+          },
+          {
+            "type": "p",
+            "text": "Logical source architecture, analytical layers and documented technical boundaries"
+          },
+          {
+            "type": "p",
+            "text": "Data Architecture"
+          },
+          {
+            "type": "p",
+            "text": "Logical Source-to-Insight Flow"
+          },
+          {
+            "type": "p",
+            "text": "The supplied story confirms the analytical views and displayed measures only. Exact CDS views, source APIs, Datasphere objects, SAC model lineage and refresh configuration were not provided and must be confirmed in the tenant."
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Business Domain \u2014 Dashboard Evidence / Analysis \u2014 Technical Evidence Status",
+              "Executive Procurement \u2014 Total PO, goods receipt value, invoice amount, AP open amount, contract compliance, fiscal trends, price variance and material-group analysis. \u2014 Dashboard capability confirmed; formulas, source fields and filter context not supplied.",
+              "Supplier & Delivery \u2014 Supplier-wise net order value, delivery-status item counts, supplier goods receipt quantity and ordered versus received quantity. \u2014 Dashboard capability confirmed; supplier keys, delivery-status logic and document-item grain not supplied.",
+              "Invoice & AP \u2014 AP open amount by supplier, invoice amount by payment status and supplier, cleared versus open AP amount, supplier invoice/AP detail. \u2014 Dashboard capability confirmed; AP snapshot date, ageing and payment-term logic not supplied.",
+              "Technical Inventory \u2014 CDS views, APIs, Datasphere objects, replication flow, SAC model and refresh schedule. \u2014 Open: confirm deployed names and lineage in the tenant.",
+              "Business Definitions \u2014 KPI formulas, currency/unit rules, fiscal calendar, contract compliance and delivery-status definitions. \u2014 Open: obtain business-owner sign-off.",
+              "Data Governance \u2014 Data quality, reconciliation, access control, reversal handling and refresh monitoring. \u2014 Open: not specified in the supplied story.",
+              "Model / Grain Validation \u2014 PO item, goods receipt item, invoice item and AP open-item grain; one-to-many relationships. \u2014 Open: verify keys and prevent duplicate aggregation across process facts.",
+              "Data Governance \u2014 Data quality, reconciliation, access control and refresh monitoring. \u2014 Open: not specified in the supplied deck."
+            ]
+          }
+        ],
+        "source": "reference_docs/Procure_to_Pay_Dashboard_Documentation_Same_Format.docx",
+        "words": 280
+      },
       "badge": "Slide 4 of 8",
       "caption": "Enterprise production workflow stage 4 for Procure-to-Pay Performance & Accounts Payable Cockpit.",
-      "botDialogue": "Enterprise production workflow stage 4 for Procure-to-Pay Performance & Accounts Payable Cockpit.",
-      "botPose": "laptop"
+      "botDialogue": "CARD 4 Data Sources Logical source architecture, analytical layers and documented technical boundaries Data Architecture Logical Source-to-Insight Flow. Exact CDS views, source APIs, Datasphere objects, SAC model lineage and refresh configuration were not provided and must.",
+      "botPose": "laptop",
+      "botChat": [
+        "CARD 4 Data Sources Logical source architecture, analytical layers and documented technical boundaries Data Architecture Logical Source-to-Insight Flow.",
+        "Exact CDS views, source APIs, Datasphere objects, SAC model lineage and refresh configuration were not provided and must."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-5",
       "type": "workflow",
       "title": "Data Architecture",
       "subtitle": "Procure-to-Pay Performance & Accounts Payable Cockpit",
-      "description": "Data Architecture",
+      "description": {
+        "plain": "Data Architecture\n\nLayer \u2014 Role \u2014 Content\n\nSAP S/4HANA \u2013 Source System \u2014 Operational source \u2014 Orders, notifications, equipment, locations, materials, MRP/stock, PM plans, movements, costs and plant/cost-centre data.\n\nSAP Datasphere \u2013 Data Layer \u2014 Integration and modelling \u2014 Staging, key alignment, cost/movement pre-aggregation, inventory snapshot grain and governed views.\n\nSAP Analytics Cloud \u2014 Analytics and presentation \u2014 FINAL_SAC_FACT import model; three cockpit pages, calculations, filters and audit tables.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Data Architecture"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Layer \u2014 Role \u2014 Content",
+              "SAP S/4HANA \u2013 Source System \u2014 Operational source \u2014 Orders, notifications, equipment, locations, materials, MRP/stock, PM plans, movements, costs and plant/cost-centre data.",
+              "SAP Datasphere \u2013 Data Layer \u2014 Integration and modelling \u2014 Staging, key alignment, cost/movement pre-aggregation, inventory snapshot grain and governed views.",
+              "SAP Analytics Cloud \u2014 Analytics and presentation \u2014 FINAL_SAC_FACT import model; three cockpit pages, calculations, filters and audit tables."
+            ]
+          }
+        ],
+        "source": "sac\\Procure_to_Pay_Dashboard_Documentation_Same_Format-1.docx",
+        "words": 69
+      },
       "badge": "Slide 5 of 8",
       "caption": "Data Architecture",
-      "botDialogue": "Data Architecture",
-      "botPose": "explain"
+      "botDialogue": "Data Architecture Layer \u2014 Role \u2014 Content SAP S/4HANA \u2013 Source System \u2014 Operational source \u2014 Orders, notifications,. SAP Datasphere \u2013 Data Layer \u2014 Integration and modelling \u2014 Staging, key alignment, cost/movement pre-aggregation, inventory snapshot grain.",
+      "botPose": "explain",
+      "botChat": [
+        "Data Architecture Layer \u2014 Role \u2014 Content SAP S/4HANA \u2013 Source System \u2014 Operational source \u2014 Orders, notifications,.",
+        "SAP Datasphere \u2013 Data Layer \u2014 Integration and modelling \u2014 Staging, key alignment, cost/movement pre-aggregation, inventory snapshot grain."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-6",
       "type": "live-ui",
       "title": "This dashboard pages provide a progression from executive procurement visibility to supplier delivery performance and invoice/accounts payable analysis. No Joule scenarios are shown in the supplied P2P story.",
       "subtitle": "Procure-to-Pay Performance & Accounts Payable Cockpit",
-      "description": "This dashboard pages provide a progression from executive procurement visibility to supplier delivery performance and invoice/accounts payable analysis. No Joule scenarios are shown in the supplied P2P story.",
+      "description": {
+        "plain": "This dashboard pages provide a progression from executive procurement visibility to supplier delivery performance and invoice/accounts payable analysis. No Joule scenarios are shown in the supplied P2P story.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "This dashboard pages provide a progression from executive procurement visibility to supplier delivery performance and invoice/accounts payable analysis. No Joule scenarios are shown in the supplied P2P story."
+          }
+        ],
+        "source": "sac\\Procure_to_Pay_Dashboard_Documentation_Same_Format-1.docx",
+        "words": 28
+      },
       "badge": "Slide 6 of 8",
       "caption": "This dashboard pages provide a progression from executive procurement visibility to supplier delivery performance and invoice/accounts payable analysis. No Joule scenarios are show...",
       "botDialogue": "This dashboard pages provide a progression from executive procurement visibility to supplier delivery performance and invoice/accounts payable analysis. No Joule scenarios are shown in the supplied P2P story.",
@@ -85,33 +289,72 @@
       "imageUrl": "/assets/apps/procure-to-pay/c6_1.webp",
       "screenshot": "/assets/apps/procure-to-pay/c6_1.webp",
       "imageWidth": 1099,
-      "imageHeight": 504
+      "imageHeight": 504,
+      "botChat": [
+        "This dashboard pages provide a progression from executive procurement visibility to supplier delivery performance and invoice/accounts payable analysis.",
+        "No Joule scenarios are shown in the supplied P2P story."
+      ],
+      "botChatMode": "split"
     },
     {
       "id": "card-7",
       "type": "live-ui",
       "title": "The values below reproduce the executive dashboard display in the supplied story. Approved calculation formulas, KPI targets, filter context and reconciliation evidence are not included; descriptions are business interpretations and should not be treated as certified calculation specifications",
       "subtitle": "Procure-to-Pay Performance & Accounts Payable Cockpit",
-      "description": "The values below reproduce the executive dashboard display in the supplied story. Approved calculation formulas, KPI targets, filter context and reconciliation evidence are not included; descriptions are business interpretations and should not be treated as certified calculation specifications",
+      "description": {
+        "plain": "The values below reproduce the executive dashboard display in the supplied story. Approved calculation formulas, KPI targets, filter context and reconciliation evidence are not included; descriptions are business interpretations and should not be treated as certified calculation specifications",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "The values below reproduce the executive dashboard display in the supplied story. Approved calculation formulas, KPI targets, filter context and reconciliation evidence are not included; descriptions are business interpretations and should not be treated as certified calculation specifications"
+          }
+        ],
+        "source": "sac\\Procure_to_Pay_Dashboard_Documentation_Same_Format-1.docx",
+        "words": 38
+      },
       "badge": "Slide 7 of 8",
       "caption": "The values below reproduce the executive dashboard display in the supplied story. Approved calculation formulas, KPI targets, filter context and reconciliation evidence are not inc...",
-      "botDialogue": "The values below reproduce the executive dashboard display in the supplied story. Approved calculation formulas, KPI targets, filter context and reconciliation evidence are not included; descriptions are business interpretations and should not be treated as certified calculation specifications",
+      "botDialogue": "The values below reproduce the executive dashboard display in the supplied story. Approved calculation formulas, KPI targets, filter context and reconciliation evidence are not included; descriptions are business interpretations and.",
       "botPose": "present",
       "imageUrl": "/assets/apps/procure-to-pay/c7_1.webp",
       "screenshot": "/assets/apps/procure-to-pay/c7_1.webp",
       "imageWidth": 1917,
-      "imageHeight": 562
+      "imageHeight": 562,
+      "botChat": [
+        "The values below reproduce the executive dashboard display in the supplied story.",
+        "Approved calculation formulas, KPI targets, filter context and reconciliation evidence are not included; descriptions are business interpretations and."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-8",
       "type": "workflow",
       "title": "Clean Core Architecture \u2014 Phase 8",
       "subtitle": "Procure-to-Pay Performance & Accounts Payable Cockpit",
-      "description": "Enterprise production workflow stage 8 for Procure-to-Pay Performance & Accounts Payable Cockpit.",
+      "description": {
+        "plain": "Executive Procurement \u2014 Total PO, goods receipt value, invoice amount, AP open amount, contract compliance, fiscal trends, price variance and material-group analysis. \u2014 Dashboard capability confirmed; formulas, source fields and filter context not supplied.\n\nSupplier & Delivery \u2014 Supplier-wise net order value, delivery-status item counts, supplier goods receipt quantity and ordered versus received quantity. \u2014 Dashboard capability confirmed; supplier keys, delivery-status logic and document-item grain not supplied.\n\nInvoice & AP \u2014 AP open amount by supplier, invoice amount by payment status and supplier, cleared versus open AP amount, supplier invoice/AP detail. \u2014 Dashboard capability confirmed; AP snapshot date, ageing and payment-term logic not supplied.",
+        "blocks": [
+          {
+            "type": "ul",
+            "items": [
+              "Executive Procurement \u2014 Total PO, goods receipt value, invoice amount, AP open amount, contract compliance, fiscal trends, price variance and material-group analysis. \u2014 Dashboard capability confirmed; formulas, source fields and filter context not supplied.",
+              "Supplier & Delivery \u2014 Supplier-wise net order value, delivery-status item counts, supplier goods receipt quantity and ordered versus received quantity. \u2014 Dashboard capability confirmed; supplier keys, delivery-status logic and document-item grain not supplied.",
+              "Invoice & AP \u2014 AP open amount by supplier, invoice amount by payment status and supplier, cleared versus open AP amount, supplier invoice/AP detail. \u2014 Dashboard capability confirmed; AP snapshot date, ageing and payment-term logic not supplied."
+            ]
+          }
+        ],
+        "source": "sac\\Procure_to_Pay_Dashboard_Documentation_Same_Format-1.docx",
+        "words": 104
+      },
       "badge": "Slide 8 of 8",
       "caption": "Enterprise production workflow stage 8 for Procure-to-Pay Performance & Accounts Payable Cockpit.",
-      "botDialogue": "Enterprise production workflow stage 8 for Procure-to-Pay Performance & Accounts Payable Cockpit.",
-      "botPose": "point"
+      "botDialogue": "Executive Procurement \u2014 Total PO, goods receipt value, invoice amount, AP open amount, contract compliance, fiscal trends, price. \u2014 Dashboard capability confirmed; formulas, source fields and filter context not supplied.",
+      "botPose": "point",
+      "botChat": [
+        "Executive Procurement \u2014 Total PO, goods receipt value, invoice amount, AP open amount, contract compliance, fiscal trends, price.",
+        "\u2014 Dashboard capability confirmed; formulas, source fields and filter context not supplied."
+      ],
+      "botChatMode": "condensed"
     }
   ],
   "closing": {

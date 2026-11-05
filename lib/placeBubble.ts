@@ -14,6 +14,7 @@ export interface PlaceBubbleOptions {
   vw: number;
   vh: number;
   topSafe: number;
+  forceAbove?: boolean;
 }
 
 export interface BubblePlacement {
@@ -34,12 +35,12 @@ export function placeBubble(o: PlaceBubbleOptions): BubblePlacement {
   const top = bottom - o.bh;
 
   // Mode 1: Above head with standard clearance
-  if (top >= o.topSafe + 8) {
+  if (top >= o.topSafe + 8 || o.forceAbove) {
     const left = clamp(o.headX - o.bw / 2, M, o.vw - o.bw - M);
     return {
       mode: 'above' as const,
       left,
-      top,
+      top: Math.max(o.topSafe + 4, top),
       tailX: clamp(o.headX - left, 20, o.bw - 20),
       dotsX: o.headX,
       dotsFromY: o.hairTopY - 8,

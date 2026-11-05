@@ -53,13 +53,18 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
   const resolvedHeadW = head?.headW ?? 120;
   const hasHead = resolvedHeadX > 0 && resolvedHairTopY > 0;
 
+  // Mount tracking to avoid SSR hydration mismatches
+  const [isMounted, setIsMounted] = useState(false);
+
   // Viewport tracking
   const [viewport, setViewport] = useState<{ w: number; h: number }>({
-    w: typeof window !== 'undefined' ? window.innerWidth : 1280,
-    h: typeof window !== 'undefined' ? window.innerHeight : 800,
+    w: 1280,
+    h: 800,
   });
 
   useEffect(() => {
+    setIsMounted(true);
+    setViewport({ w: window.innerWidth, h: window.innerHeight });
     const handleResize = () => {
       setViewport({ w: window.innerWidth, h: window.innerHeight });
     };
@@ -81,7 +86,7 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
     }
   }, [text]);
 
-  // Global 'C' shortcut to toggle captions / speech bubbles
+  // Global 'C' shortcut to toggle captions / speech bubbles, Space to complete typing
   useEffect(() => {
     const saved = typeof window !== 'undefined' ? sessionStorage.getItem('ais.captions') : null;
     if (saved === '0') {
@@ -92,6 +97,17 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
       const tag = (e.target as HTMLElement)?.tagName?.toLowerCase();
       if (tag === 'input' || tag === 'textarea') return;
 
+      if (e.key === ' ' && isTyping) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (animRef.current !== null) {
+          cancelAnimationFrame(animRef.current);
+        }
+        setDisplayedCount(text.length);
+        setIsTyping(false);
+        return;
+      }
+
       if (e.key === 'c' || e.key === 'C') {
         setCaptionsEnabled((prev) => {
           const next = !prev;
@@ -101,35 +117,47 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+    window.addEventListener('keydown', handleKeyDown, true);
+    return () => window.removeEventListener('keydown', handleKeyDown, true);
+  }, [isTyping, text.length]);
+
+  // Reset visibility on text change
+  useEffect(() => {
+    setVisible(true);
+  }, [text]);
 
   // Check prefers-reduced-motion
   const prefersReducedMotion =
     typeof window !== 'undefined' &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // 90ms staggered reveal for thought dots, then bubble pop
+  // Thought dots stagger (80ms, 170ms, 260ms), then bubble pops at 350ms
   useEffect(() => {
+    if (!text) {
+      setStagePhase(0);
+      return;
+    }
+
     if (prefersReducedMotion) {
       setStagePhase(4);
       return;
     }
 
-    setStagePhase(1);
-    const t1 = setTimeout(() => setStagePhase(2), 90);
-    const t2 = setTimeout(() => setStagePhase(3), 180);
-    const t3 = setTimeout(() => setStagePhase(4), 270);
+    setStagePhase(0);
+    const t1 = setTimeout(() => setStagePhase(1), 80);
+    const t2 = setTimeout(() => setStagePhase(2), 170);
+    const t3 = setTimeout(() => setStagePhase(3), 260);
+    const t4 = setTimeout(() => setStagePhase(4), 350);
 
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
       clearTimeout(t3);
+      clearTimeout(t4);
     };
   }, [text, prefersReducedMotion]);
 
-  // Typing animation (22ms per char) after bubble pops
+  // Typing animation (22ms per char, capped at 2.4s per line) after bubble pops
   useEffect(() => {
     if (!text) {
       setDisplayedCount(0);
@@ -151,18 +179,23 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
 
     const msPerChar = 22;
     const totalChars = text.length;
+    // Estimate line count (max 2 lines per bot chat rules)
+    const lineCount = Math.max(1, text.split('\n').filter(Boolean).length, Math.ceil(totalChars / 85));
+    const maxDuration = Math.min(totalChars * msPerChar, lineCount * 2400);
 
     const step = (timestamp: number) => {
       if (startTimeRef.current === null) {
         startTimeRef.current = timestamp;
       }
       const elapsed = timestamp - startTimeRef.current;
-      const count = Math.min(totalChars, Math.floor(elapsed / msPerChar));
+      const progress = maxDuration > 0 ? Math.min(1, elapsed / maxDuration) : 1;
+      const count = Math.min(totalChars, Math.floor(progress * totalChars));
       setDisplayedCount(count);
 
-      if (count < totalChars) {
+      if (count < totalChars && progress < 1) {
         animRef.current = requestAnimationFrame(step);
       } else {
+        setDisplayedCount(totalChars);
         setIsTyping(false);
       }
     };
@@ -208,7 +241,7 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
     onDismiss?.();
   };
 
-  if (!captionsEnabled || !visible || !text) {
+  if (!isMounted || !captionsEnabled || !visible || !text) {
     return null;
   }
 
@@ -237,6 +270,7 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
       vw: viewport.w,
       vh: viewport.h,
       topSafe,
+      forceAbove: placementOverride === 'top',
     });
   }
 

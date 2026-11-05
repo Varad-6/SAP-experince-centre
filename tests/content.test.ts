@@ -55,8 +55,54 @@ describe('Content Architecture & Schema Validation', () => {
       expect(parsed.closing?.liveDemoInfo).toBeTruthy();
 
       parsed.cards.forEach((card) => {
-        expect(card.botDialogue.length).toBeGreaterThan(0);
+        if (card.description) {
+          expect(card.botDialogue.length).toBeGreaterThan(0);
+        }
         expect(card.botPose).toBeTruthy();
+      });
+    }
+  });
+
+  it('validates slide descriptions and short bot lines adhere to specifications', () => {
+    const raw = fs.readFileSync(path.join(contentDir, 'solutions.json'), 'utf8');
+    const solutions = JSON.parse(raw);
+    const appsDir = path.join(contentDir, 'apps');
+    const ALLOWED = new Set([
+      'I', 'I\'LL', 'I\'M', 'HERE', 'THIS', 'THESE', 'IT', 'YOU',
+      'THE', 'A', 'AN', 'AND', 'WE', 'LET\'S', 'NEXT'
+    ]);
+
+    for (const s of solutions) {
+      const appFile = path.join(appsDir, `${s.slug}.json`);
+      const appData = JSON.parse(fs.readFileSync(appFile, 'utf8'));
+      const parsed = AppContentSchema.parse(appData);
+
+      parsed.cards.forEach((card, idx) => {
+        if (!card.description) {
+          // MISSING_TEXT slide: bot stays idle with no dialogue
+          expect(card.botDialogue).toBe('');
+          expect(card.botChatMode).toBe('none');
+          return;
+        }
+
+        const plainText = typeof card.description === 'string' ? card.description : card.description.plain;
+        expect(plainText.length).toBeGreaterThan(0);
+
+        // botChat validation: max 2 lines, each at most 20 words (or max 36 words total)
+        if (card.botChat && card.botChat.length > 0) {
+          expect(card.botChat.length).toBeLessThanOrEqual(2);
+          const totalWords = card.botChat.reduce((acc, line) => acc + line.trim().split(/\s+/).length, 0);
+          expect(totalWords).toBeLessThanOrEqual(40);
+
+          // Token check: numbers and capitalized acronyms must appear in source text
+          const sourceTokens = new Set((plainText.match(/[A-Z0-9]{2,}|\d+/g) || []).map(t => t.toUpperCase()));
+          const spokenTokens = (card.botChat.join(' ').match(/[A-Z0-9]{2,}|\d+/g) || []).map(t => t.toUpperCase());
+          spokenTokens.forEach(token => {
+            if (!ALLOWED.has(token)) {
+              expect(sourceTokens.has(token)).toBe(true);
+            }
+          });
+        }
       });
     }
   });

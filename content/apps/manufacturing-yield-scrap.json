@@ -18,74 +18,375 @@
       "type": "live-ui",
       "title": "Clean Core Architecture \u2014 Phase 1",
       "subtitle": "Manufacturing Yield, Scrap & Quality Cockpit",
-      "description": "Enterprise production workflow stage 1 for Manufacturing Yield, Scrap & Quality Cockpit.",
+      "description": {
+        "plain": "Card 1 \u2013 Business Questions & Audience\n\nBusiness problem\n\nManufacturing operations must balance production output, yield, scrap, rework and product quality. When production confirmations, goods movements, inspection results and quality notifications are analysed separately, managers may struggle to understand where losses occur and which plant, shift, work centre, supplier lot or batch requires attention.\n\nBusiness objectives\n\nMonitor production quantity and confirmed yield performance across plants.\n\nMeasure confirmed scrap and rework to highlight potential production losses.\n\nRelate quality defect information to suppliers, vendor lots, batches and production context where source linkage is available.\n\nReconcile confirmation-based quantities with material movement quantities without double counting.\n\nProvide drill-down analysis to support investigation and operational follow-up.\n\nTarget audience and decisions\n\nPersona \u2014 Questions they need answered \u2014 Decision supported\n\nCFO \u2014 Where are material losses and production inefficiencies concentrated? \u2014 Prioritize financial and operational review.\n\nPlant Head \u2014 Which plant is below its yield or scrap expectations? \u2014 Assign plant-level investigation and improvement actions.\n\nProduction Manager \u2014 Which work centre or shift is associated with lower yield or higher scrap? \u2014 Review process settings, schedules and execution.\n\nQuality Manager \u2014 Which defect causes, batches or inspection outcomes need attention? \u2014 Initiate quality investigation and disposition review.\n\nSupply Chain Manager \u2014 Which supplier or vendor lot shows a quality impact? \u2014 Review supplier performance and incoming material controls.\n\nThree key business questions\n\nWhich plants are performing well or poorly in terms of production yield and scrap?\n\nWhich suppliers, batches, shifts and work centres contribute to quality defects and production losses?\n\nHow can production quantities and material movements be reconciled to improve traceability?\n\nCurrent-state challenge\n\nInformation can be distributed across PP, MM and QM processes. Different transaction grains and quantity definitions can lead to inconsistent comparisons if the data is combined without controlled relationships and agreed KPI definitions.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Card 1 \u2013 Business Questions & Audience"
+          },
+          {
+            "type": "p",
+            "text": "Business problem"
+          },
+          {
+            "type": "p",
+            "text": "Manufacturing operations must balance production output, yield, scrap, rework and product quality. When production confirmations, goods movements, inspection results and quality notifications are analysed separately, managers may struggle to understand where losses occur and which plant, shift, work centre, supplier lot or batch requires attention."
+          },
+          {
+            "type": "p",
+            "text": "Business objectives"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Monitor production quantity and confirmed yield performance across plants.",
+              "Measure confirmed scrap and rework to highlight potential production losses.",
+              "Relate quality defect information to suppliers, vendor lots, batches and production context where source linkage is available.",
+              "Reconcile confirmation-based quantities with material movement quantities without double counting.",
+              "Provide drill-down analysis to support investigation and operational follow-up."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Target audience and decisions"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Persona \u2014 Questions they need answered \u2014 Decision supported",
+              "CFO \u2014 Where are material losses and production inefficiencies concentrated? \u2014 Prioritize financial and operational review.",
+              "Plant Head \u2014 Which plant is below its yield or scrap expectations? \u2014 Assign plant-level investigation and improvement actions.",
+              "Production Manager \u2014 Which work centre or shift is associated with lower yield or higher scrap? \u2014 Review process settings, schedules and execution.",
+              "Quality Manager \u2014 Which defect causes, batches or inspection outcomes need attention? \u2014 Initiate quality investigation and disposition review.",
+              "Supply Chain Manager \u2014 Which supplier or vendor lot shows a quality impact? \u2014 Review supplier performance and incoming material controls."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Three key business questions"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Which plants are performing well or poorly in terms of production yield and scrap?",
+              "Which suppliers, batches, shifts and work centres contribute to quality defects and production losses?",
+              "How can production quantities and material movements be reconciled to improve traceability?"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Current-state challenge"
+          },
+          {
+            "type": "p",
+            "text": "Information can be distributed across PP, MM and QM processes. Different transaction grains and quantity definitions can lead to inconsistent comparisons if the data is combined without controlled relationships and agreed KPI definitions."
+          }
+        ],
+        "source": "reference_docs/Manufacturing_Yield_Scrap_Quality_Cockpit_Client_Documentation-10.docx",
+        "words": 301
+      },
       "badge": "Slide 1 of 6",
       "caption": "Enterprise production workflow stage 1 for Manufacturing Yield, Scrap & Quality Cockpit.",
-      "botDialogue": "Enterprise production workflow stage 1 for Manufacturing Yield, Scrap & Quality Cockpit.",
+      "botDialogue": "Card 1 \u2013 Business Questions & Audience Business problem Manufacturing operations must balance production output, yield, scrap, rework. When production confirmations, goods movements, inspection results and quality notifications are analysed separately, managers may struggle to understand.",
       "botPose": "present",
       "imageUrl": "/assets/apps/manufacturing-yield-scrap/c1_1.webp",
       "screenshot": "/assets/apps/manufacturing-yield-scrap/c1_1.webp",
       "imageWidth": 1453,
-      "imageHeight": 822
+      "imageHeight": 822,
+      "botChat": [
+        "Card 1 \u2013 Business Questions & Audience Business problem Manufacturing operations must balance production output, yield, scrap, rework.",
+        "When production confirmations, goods movements, inspection results and quality notifications are analysed separately, managers may struggle to understand."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-2",
       "type": "challenge",
       "title": "Business problem",
       "subtitle": "Manufacturing Yield, Scrap & Quality Cockpit",
-      "description": "Manufacturing operations must balance production output, yield, scrap, rework and product quality. When production confirmations, goods movements, inspection results and quality notifications are analysed separately, managers may struggle to understand where losses occur and which plant, shift, work centre, supplier lot or batch requires attention.",
+      "description": {
+        "plain": "Business problem\n\nManufacturing operations must balance production output, yield, scrap, rework and product quality. When production confirmations, goods movements, inspection results and quality notifications are analysed separately, managers may struggle to understand where losses occur and which plant, shift, work centre, supplier lot or batch requires attention.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Business problem"
+          },
+          {
+            "type": "p",
+            "text": "Manufacturing operations must balance production output, yield, scrap, rework and product quality. When production confirmations, goods movements, inspection results and quality notifications are analysed separately, managers may struggle to understand where losses occur and which plant, shift, work centre, supplier lot or batch requires attention."
+          }
+        ],
+        "source": "sac\\Manufacturing_Yield_Scrap_Quality_Cockpit_Client_Documentation-10.docx",
+        "words": 47
+      },
       "badge": "Slide 2 of 6",
       "caption": "Manufacturing operations must balance production output, yield, scrap, rework and product quality. When production confirmations, goods movements, inspection results and quality no...",
-      "botDialogue": "Manufacturing operations must balance production output, yield, scrap, rework and product quality. When production confirmations, goods movements, inspection results and quality notifications are analysed separately, managers may struggle to understand where losses occur and which plant, shift, work centre, supplier lot or batch requires attention.",
-      "botPose": "point"
+      "botDialogue": "Business problem  Manufacturing operations must balance production output, yield, scrap, rework and product quality. When production confirmations, goods movements, inspection results and quality notifications are analysed separately, managers may struggle to understand.",
+      "botPose": "point",
+      "botChat": [
+        "Business problem  Manufacturing operations must balance production output, yield, scrap, rework and product quality.",
+        "When production confirmations, goods movements, inspection results and quality notifications are analysed separately, managers may struggle to understand."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-3",
       "type": "workflow",
       "title": "Three key business questions",
       "subtitle": "Manufacturing Yield, Scrap & Quality Cockpit",
-      "description": "Which plants are performing well or poorly in terms of production yield and scrap? Which suppliers, batches, shifts and work centres contribute to quality defects and production losses? How can production quantities and material movements be reconciled to improve traceability?",
+      "description": {
+        "plain": "Three key business questions\n\nWhich plants are performing well or poorly in terms of production yield and scrap?\n\nWhich suppliers, batches, shifts and work centres contribute to quality defects and production losses?\n\nHow can production quantities and material movements be reconciled to improve traceability?",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Three key business questions"
+          },
+          {
+            "type": "p",
+            "text": "Which plants are performing well or poorly in terms of production yield and scrap?"
+          },
+          {
+            "type": "p",
+            "text": "Which suppliers, batches, shifts and work centres contribute to quality defects and production losses?"
+          },
+          {
+            "type": "p",
+            "text": "How can production quantities and material movements be reconciled to improve traceability?"
+          }
+        ],
+        "source": "sac\\Manufacturing_Yield_Scrap_Quality_Cockpit_Client_Documentation-10.docx",
+        "words": 44
+      },
       "badge": "Slide 3 of 6",
       "caption": "Which plants are performing well or poorly in terms of production yield and scrap? Which suppliers, batches, shifts and work centres contribute to quality defects and production lo...",
-      "botDialogue": "Which plants are performing well or poorly in terms of production yield and scrap? Which suppliers, batches, shifts and work centres contribute to quality defects and production losses?",
-      "botPose": "tablet"
+      "botDialogue": "Three key business questions  Which plants are performing well or poorly in terms of production yield and scrap?. Which suppliers, batches, shifts and work centres contribute to quality defects and production losses?.",
+      "botPose": "tablet",
+      "botChat": [
+        "Three key business questions  Which plants are performing well or poorly in terms of production yield and scrap?.",
+        "Which suppliers, batches, shifts and work centres contribute to quality defects and production losses?."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-4",
       "type": "live-ui",
       "title": "Story Page 1: Executive Overview \u2014 Production, Quality & Plant Performance",
       "subtitle": "Manufacturing Yield, Scrap & Quality Cockpit",
-      "description": "Production Order Quantity: 48.7 lakh kg. Production Yield Performance: 93.2%. Production Scrap Performance: 4.59%. Total Quality Defect Impact shown: 2.14 lakh. Sldie 5: Work Center Yield Efficiency. Shift-Wise Scrap Performance. Supplier Quality Impact Analysis and Vendor Lot Quality & Production Impact. Defect Root Cause Prioritization and Shift & Work Center Scrap Hotspots. Sldie 6 : Production Quantity Reconciliation. Movement Quantity by movement type: 261, 101 and 551. Batch-Wise Quality Defect Traceability. Quality Disposition: Accepted vs Rejected.",
+      "description": {
+        "plain": "Story Page 1: Executive Overview \u2014 Production, Quality & Plant Performance\n\nProduction Order Quantity: 48.7 lakh kg.\n\nProduction Yield Performance: 93.2%.\n\nProduction Scrap Performance: 4.59%.\n\nTotal Quality Defect Impact shown: 2.14 lakh.\n\nSldie 5:\n\nWork Center Yield Efficiency.\n\nShift-Wise Scrap Performance.\n\nSupplier Quality Impact Analysis and Vendor Lot Quality & Production Impact.\n\nDefect Root Cause Prioritization and Shift & Work Center Scrap Hotspots.\n\nSldie 6 :\n\nProduction Quantity Reconciliation.\n\nMovement Quantity by movement type: 261, 101 and 551.\n\nBatch-Wise Quality Defect Traceability.\n\nQuality Disposition: Accepted vs Rejected.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Story Page 1: Executive Overview \u2014 Production, Quality & Plant Performance"
+          },
+          {
+            "type": "p",
+            "text": "Production Order Quantity: 48.7 lakh kg."
+          },
+          {
+            "type": "p",
+            "text": "Production Yield Performance: 93.2%."
+          },
+          {
+            "type": "p",
+            "text": "Production Scrap Performance: 4.59%."
+          },
+          {
+            "type": "p",
+            "text": "Total Quality Defect Impact shown: 2.14 lakh."
+          },
+          {
+            "type": "p",
+            "text": "Sldie 5:"
+          },
+          {
+            "type": "p",
+            "text": "Work Center Yield Efficiency."
+          },
+          {
+            "type": "p",
+            "text": "Shift-Wise Scrap Performance."
+          },
+          {
+            "type": "p",
+            "text": "Supplier Quality Impact Analysis and Vendor Lot Quality & Production Impact."
+          },
+          {
+            "type": "p",
+            "text": "Defect Root Cause Prioritization and Shift & Work Center Scrap Hotspots."
+          },
+          {
+            "type": "p",
+            "text": "Sldie 6 :"
+          },
+          {
+            "type": "p",
+            "text": "Production Quantity Reconciliation."
+          },
+          {
+            "type": "p",
+            "text": "Movement Quantity by movement type: 261, 101 and 551."
+          },
+          {
+            "type": "p",
+            "text": "Batch-Wise Quality Defect Traceability."
+          },
+          {
+            "type": "p",
+            "text": "Quality Disposition: Accepted vs Rejected."
+          }
+        ],
+        "source": "sac\\Manufacturing_Yield_Scrap_Quality_Cockpit_Client_Documentation-10.docx",
+        "words": 87
+      },
       "badge": "Slide 4 of 6",
       "caption": "Production Order Quantity: 48.7 lakh kg. Production Yield Performance: 93.2%. Production Scrap Performance: 4.59%. Total Quality Defect Impact shown: 2.14 lakh. Sldie 5: Work Cente...",
-      "botDialogue": "Production Order Quantity: 48.7 lakh kg. Production Yield Performance: 93.2%.",
+      "botDialogue": "Story Page 1: Executive Overview \u2014 Production, Quality & Plant Performance  Production Order Quantity: 48.7 lakh kg. Production Yield Performance: 93.2%.",
       "botPose": "laptop",
       "imageUrl": "/assets/apps/manufacturing-yield-scrap/c4_1.webp",
       "screenshot": "/assets/apps/manufacturing-yield-scrap/c4_1.webp",
       "imageWidth": 1045,
-      "imageHeight": 422
+      "imageHeight": 422,
+      "botChat": [
+        "Story Page 1: Executive Overview \u2014 Production, Quality & Plant Performance  Production Order Quantity: 48.7 lakh kg.",
+        "Production Yield Performance: 93.2%."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-5",
       "type": "workflow",
       "title": "Clean Core Architecture \u2014 Phase 5",
       "subtitle": "Manufacturing Yield, Scrap & Quality Cockpit",
-      "description": "Enterprise production workflow stage 5 for Manufacturing Yield, Scrap & Quality Cockpit.",
+      "description": {
+        "plain": "Card 5 \u2013 Drill-Down Story & User Journey\n\nStep \u2014 Dashboard page \u2014 User action / analysis \u2014 Expected outcome\n\n1 \u2013 Detect \u2014 Executive Overview \u2014 Filter by time and plant; compare yield, scrap, rework and defect impact. \u2014 Identify where performance needs attention.\n\n2 \u2013 Diagnose \u2014 Root Cause & Traceability \u2014 Inspect work centre, shift, supplier, vendor lot and defect cause analysis. \u2014 Narrow the issue to a likely operational contributor.\n\n3 \u2013 Trace \u2014 Production Traceability \u2014 Review order, batch, movement and inspection/quality disposition details. \u2014 Gather evidence for a focused investigation.\n\nOperational action register (optional)\n\nFinding \u2014 Investigation owner \u2014 Action / due date \u2014 Status / evidence\n\n[Plant / KPI exception] \u2014 [Owner] \u2014 [Action and due date] \u2014 [Open / In progress / Closed]\n\n[Supplier / batch issue] \u2014 [Owner] \u2014 [Action and due date] \u2014 [Open / In progress / Closed]",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Card 5 \u2013 Drill-Down Story & User Journey"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Step \u2014 Dashboard page \u2014 User action / analysis \u2014 Expected outcome",
+              "1 \u2013 Detect \u2014 Executive Overview \u2014 Filter by time and plant; compare yield, scrap, rework and defect impact. \u2014 Identify where performance needs attention.",
+              "2 \u2013 Diagnose \u2014 Root Cause & Traceability \u2014 Inspect work centre, shift, supplier, vendor lot and defect cause analysis. \u2014 Narrow the issue to a likely operational contributor.",
+              "3 \u2013 Trace \u2014 Production Traceability \u2014 Review order, batch, movement and inspection/quality disposition details. \u2014 Gather evidence for a focused investigation."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Operational action register (optional)"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Finding \u2014 Investigation owner \u2014 Action / due date \u2014 Status / evidence",
+              "[Plant / KPI exception] \u2014 [Owner] \u2014 [Action and due date] \u2014 [Open / In progress / Closed]",
+              "[Supplier / batch issue] \u2014 [Owner] \u2014 [Action and due date] \u2014 [Open / In progress / Closed]"
+            ]
+          }
+        ],
+        "source": "reference_docs/Manufacturing_Yield_Scrap_Quality_Cockpit_Client_Documentation-10.docx",
+        "words": 149
+      },
       "badge": "Slide 5 of 6",
       "caption": "Enterprise production workflow stage 5 for Manufacturing Yield, Scrap & Quality Cockpit.",
-      "botDialogue": "Enterprise production workflow stage 5 for Manufacturing Yield, Scrap & Quality Cockpit.",
-      "botPose": "explain"
+      "botDialogue": "Card 5 \u2013 Drill-Down Story & User Journey Step \u2014 Dashboard page \u2014 User action / analysis \u2014. 2 \u2013 Diagnose \u2014 Root Cause & Traceability \u2014 Inspect work centre, shift, supplier, vendor lot and defect.",
+      "botPose": "explain",
+      "botChat": [
+        "Card 5 \u2013 Drill-Down Story & User Journey Step \u2014 Dashboard page \u2014 User action / analysis \u2014.",
+        "2 \u2013 Diagnose \u2014 Root Cause & Traceability \u2014 Inspect work centre, shift, supplier, vendor lot and defect."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-6",
       "type": "workflow",
       "title": "ROI measurement framework",
       "subtitle": "Manufacturing Yield, Scrap & Quality Cockpit",
-      "description": "ROI measurement framework",
+      "description": {
+        "plain": "Card 6 \u2013 Insights & ROI\n\nDashboard observations\n\nArea \u2014 Value shown in dashboard \u2014 Interpretation\n\nProduction \u2014 48.7 lakh kg production order quantity. \u2014 Overall order quantity in the current dashboard context.\n\nYield \u2014 93.2% confirmed yield performance. \u2014 A measure of confirmed output relative to the stated production quantity, subject to formula validation.\n\nScrap \u2014 4.59% confirmed scrap performance. \u2014 Highlights the share of confirmed scrap in the defined production denominator.\n\nRework \u2014 2.25% confirmed rework performance. \u2014 Shows the level of confirmed rework requiring monitoring.\n\nQuality \u2014 2.14 lakh total quality defect impact. \u2014 Signals quality-related impact; calculation and unit should be confirmed.\n\nROI measurement framework\n\nValue driver \u2014 Baseline to capture \u2014 After implementation measure\n\nReporting productivity \u2014 Time spent preparing manual reports and consolidating data. \u2014 Time to access standard dashboard views; hours saved per reporting cycle.\n\nInvestigation speed \u2014 Average time from identifying an issue to locating relevant plant/order/batch details. \u2014 Time to isolate relevant records using filters and drill-down.\n\nYield improvement \u2014 Baseline yield by plant/material/product over an agreed period. \u2014 Change in yield using the same definition and comparable production mix.\n\nScrap reduction \u2014 Baseline scrap quantity and scrap cost for a comparable period. \u2014 Change in scrap quantity/cost after corrective actions.\n\nRework reduction \u2014 Baseline rework quantity and associated cost. \u2014 Change in rework quantity/cost after process improvements.\n\nSupplier quality \u2014 Baseline supplier / vendor-lot defect trend. \u2014 Change in incoming quality issues and repeat supplier occurrences.\n\nROI calculation approach\n\nAnnual measurable benefit = reporting hours saved \u00d7 loaded hourly cost + verified scrap cost reduction + verified rework cost reduction + other approved measurable benefits.\n\nROI (%) = (Annual measurable benefit \u2212 annual solution operating cost) \u00f7 annual solution operating cost \u00d7 100.\n\nImplementation Considerations & Acceptance Criteria\n\nArea \u2014 Acceptance check\n\nKPI correctness \u2014 Business owner signs off formula, unit, denominator, aggregation and target.\n\nReconciliation \u2014 Production confirmation and goods movement totals are separately reconciled to agreed SAP reports.\n\nTraceability \u2014 Sample orders and batches can be followed through the approved source relationships.\n\nNo double counting \u2014 Fact totals remain stable when dimensions or related facts are added to analysis.\n\nFilters \u2014 Plant, date, material, batch and other controls return expected results.\n\nPerformance \u2014 Story loads within the agreed performance expectation for representative data volumes.\n\nAccess \u2014 Users see only the data authorized by their roles and organizational scope.\n\nRefresh \u2014 Refresh schedule, monitoring and failure notification are agreed and tested.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Card 6 \u2013 Insights & ROI"
+          },
+          {
+            "type": "p",
+            "text": "Dashboard observations"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Area \u2014 Value shown in dashboard \u2014 Interpretation",
+              "Production \u2014 48.7 lakh kg production order quantity. \u2014 Overall order quantity in the current dashboard context.",
+              "Yield \u2014 93.2% confirmed yield performance. \u2014 A measure of confirmed output relative to the stated production quantity, subject to formula validation.",
+              "Scrap \u2014 4.59% confirmed scrap performance. \u2014 Highlights the share of confirmed scrap in the defined production denominator.",
+              "Rework \u2014 2.25% confirmed rework performance. \u2014 Shows the level of confirmed rework requiring monitoring.",
+              "Quality \u2014 2.14 lakh total quality defect impact. \u2014 Signals quality-related impact; calculation and unit should be confirmed."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "ROI measurement framework"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Value driver \u2014 Baseline to capture \u2014 After implementation measure",
+              "Reporting productivity \u2014 Time spent preparing manual reports and consolidating data. \u2014 Time to access standard dashboard views; hours saved per reporting cycle.",
+              "Investigation speed \u2014 Average time from identifying an issue to locating relevant plant/order/batch details. \u2014 Time to isolate relevant records using filters and drill-down.",
+              "Yield improvement \u2014 Baseline yield by plant/material/product over an agreed period. \u2014 Change in yield using the same definition and comparable production mix.",
+              "Scrap reduction \u2014 Baseline scrap quantity and scrap cost for a comparable period. \u2014 Change in scrap quantity/cost after corrective actions.",
+              "Rework reduction \u2014 Baseline rework quantity and associated cost. \u2014 Change in rework quantity/cost after process improvements.",
+              "Supplier quality \u2014 Baseline supplier / vendor-lot defect trend. \u2014 Change in incoming quality issues and repeat supplier occurrences."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "ROI calculation approach"
+          },
+          {
+            "type": "p",
+            "text": "Annual measurable benefit = reporting hours saved \u00d7 loaded hourly cost + verified scrap cost reduction + verified rework cost reduction + other approved measurable benefits."
+          },
+          {
+            "type": "p",
+            "text": "ROI (%) = (Annual measurable benefit \u2212 annual solution operating cost) \u00f7 annual solution operating cost \u00d7 100."
+          },
+          {
+            "type": "p",
+            "text": "Implementation Considerations & Acceptance Criteria"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Area \u2014 Acceptance check",
+              "KPI correctness \u2014 Business owner signs off formula, unit, denominator, aggregation and target.",
+              "Reconciliation \u2014 Production confirmation and goods movement totals are separately reconciled to agreed SAP reports.",
+              "Traceability \u2014 Sample orders and batches can be followed through the approved source relationships.",
+              "No double counting \u2014 Fact totals remain stable when dimensions or related facts are added to analysis.",
+              "Filters \u2014 Plant, date, material, batch and other controls return expected results.",
+              "Performance \u2014 Story loads within the agreed performance expectation for representative data volumes.",
+              "Access \u2014 Users see only the data authorized by their roles and organizational scope.",
+              "Refresh \u2014 Refresh schedule, monitoring and failure notification are agreed and tested."
+            ]
+          }
+        ],
+        "source": "reference_docs/Manufacturing_Yield_Scrap_Quality_Cockpit_Client_Documentation-10.docx",
+        "words": 412
+      },
       "badge": "Slide 6 of 6",
       "caption": "ROI measurement framework",
-      "botDialogue": "ROI measurement framework",
-      "botPose": "beckon"
+      "botDialogue": "Card 6 \u2013 Insights & ROI Dashboard observations Area \u2014 Value shown in dashboard \u2014 Interpretation Production \u2014. Yield \u2014 93.2% confirmed yield performance.",
+      "botPose": "beckon",
+      "botChat": [
+        "Card 6 \u2013 Insights & ROI Dashboard observations Area \u2014 Value shown in dashboard \u2014 Interpretation Production \u2014.",
+        "Yield \u2014 93.2% confirmed yield performance."
+      ],
+      "botChatMode": "condensed"
     }
   ],
   "closing": {

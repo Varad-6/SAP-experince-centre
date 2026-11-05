@@ -51,7 +51,7 @@ export const LiveUiCard: React.FC<{ card: CardData }> = ({ card }) => {
       <div className="space-y-4 py-4">
         {card.description && (
           <p className="text-sm sm:text-base text-[var(--text)] leading-relaxed">
-            {card.description}
+            {typeof card.description === 'string' ? card.description : card.description.plain}
           </p>
         )}
       </div>
@@ -150,7 +150,7 @@ export const LiveUiCard: React.FC<{ card: CardData }> = ({ card }) => {
         </div>
       ) : card.description ? (
         <p className="text-xs text-[var(--text-dim)] leading-relaxed line-clamp-2 px-1">
-          {card.description}
+          {typeof card.description === 'string' ? card.description : card.description.plain}
         </p>
       ) : null}
 

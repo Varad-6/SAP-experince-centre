@@ -18,123 +18,237 @@
       "type": "live-ui",
       "title": "Landing Page",
       "subtitle": "MDR Master Data Remediation Engine",
-      "description": "Ppt:",
+      "description": null,
       "badge": "Slide 1 of 9",
       "caption": "Ppt:",
-      "botDialogue": "Reviewing Landing Page architecture and transactional performance.",
+      "botDialogue": "",
       "botPose": "present",
       "imageUrl": "/assets/apps/mdr/c1_1.webp",
       "screenshot": "/assets/apps/mdr/c1_1.webp",
       "imageWidth": 1406,
-      "imageHeight": 426
+      "imageHeight": 426,
+      "botChat": [],
+      "botChatMode": "none"
     },
     {
       "id": "card-2",
       "type": "live-ui",
       "title": "Clean Core Architecture \u2014 Phase 2",
       "subtitle": "MDR Master Data Remediation Engine",
-      "description": "Enterprise production workflow stage 2 for MDR Master Data Remediation Engine.",
+      "description": {
+        "plain": "Use Case & Business Problem\tEnterprise Intake & Problem Space\n\nIndustry / User Persona \u2014 Target Industries: Discrete & Process Manufacturing, Consumer Packaged Goods (CPG), Wholesale Distribution, Utilities & Enterprise Services.\nUser Personas: Enterprise Master Data Requester, Data Steward / Governance Specialist,\nFinancial Controller, and SAP System Administrator.\n\nProblem (3 bullets) \u2014 Fragmented Intake Across Channels: Master-data change requests arrive via unstandardized spreadsheets, emails, and tickets with zero schema governance.\nHigh ERP Error Rates & Rework: Manual Excel uploads frequently contain invalid lookup codes, malformed tax/bank fields, and duplicate business keys, directly corrupting S/4HANA core transactions.\nGovernance & Audit Deficits: Legacy ABAP workflows lack temporal versioning, dynamic approver determination, mandatory remarks enforcement, and transparent audit trails.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Use Case & Business Problem\tEnterprise Intake & Problem Space"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Industry / User Persona \u2014 Target Industries: Discrete & Process Manufacturing, Consumer Packaged Goods (CPG), Wholesale Distribution, Utilities & Enterprise Services.\nUser Personas: Enterprise Master Data Requester, Data Steward / Governance Specialist,\nFinancial Controller, and SAP System Administrator.",
+              "Problem (3 bullets) \u2014 Fragmented Intake Across Channels: Master-data change requests arrive via unstandardized spreadsheets, emails, and tickets with zero schema governance.\nHigh ERP Error Rates & Rework: Manual Excel uploads frequently contain invalid lookup codes, malformed tax/bank fields, and duplicate business keys, directly corrupting S/4HANA core transactions.\nGovernance & Audit Deficits: Legacy ABAP workflows lack temporal versioning, dynamic approver determination, mandatory remarks enforcement, and transparent audit trails."
+            ]
+          }
+        ],
+        "source": "btp\\MDR-1.docx",
+        "words": 116
+      },
       "badge": "Slide 2 of 9",
       "caption": "Enterprise production workflow stage 2 for MDR Master Data Remediation Engine.",
-      "botDialogue": "Enterprise production workflow stage 2 for MDR Master Data Remediation Engine.",
+      "botDialogue": "Use Case & Business Problem Enterprise Intake & Problem Space Industry / User Persona \u2014 Target Industries: Discrete. Problem (3 bullets) \u2014 Fragmented Intake Across Channels: Master-data change requests arrive via unstandardized spreadsheets, emails, and tickets.",
       "botPose": "point",
       "imageUrl": "/assets/apps/mdr/c2_1.webp",
       "screenshot": "/assets/apps/mdr/c2_1.webp",
       "imageWidth": 1642,
-      "imageHeight": 924
+      "imageHeight": 924,
+      "botChat": [
+        "Use Case & Business Problem Enterprise Intake & Problem Space Industry / User Persona \u2014 Target Industries: Discrete.",
+        "Problem (3 bullets) \u2014 Fragmented Intake Across Channels: Master-data change requests arrive via unstandardized spreadsheets, emails, and tickets."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-3",
       "type": "workflow",
       "title": "Use Case & Business Problem\tEnterprise Intake & Problem Space",
       "subtitle": "MDR Master Data Remediation Engine",
-      "description": "Use Case & Business Problem\tEnterprise Intake & Problem Space",
+      "description": {
+        "plain": "Central Master Data Workspace\tOperational UI Console\n\nCaption \u2014 Master-data workspace for controlled record maintenance ( zmdr_cntrl_main ).\n\nCallouts (Up to 3) \u2014 Functional Area & Entity Navigation: Switch dynamically between Customer, Materials, and Services to load entity catalogs (e.g. Business Partner) with zero UI recoding.\nMulti-Filter Query & Result Set: Drill down by Business Partner ID, Type, Role, Category, Country, and Status, viewing live records with instant status indicators.\nRole-Based Action Ribbon: Contextual actions ( + Create , edit, mass upload, export)\nadjust dynamically based on XSUAA scopes ( MDR_Requestor , MDR_Approver ).",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Central Master Data Workspace\tOperational UI Console"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Caption \u2014 Master-data workspace for controlled record maintenance ( zmdr_cntrl_main ).",
+              "Callouts (Up to 3) \u2014 Functional Area & Entity Navigation: Switch dynamically between Customer, Materials, and Services to load entity catalogs (e.g. Business Partner) with zero UI recoding.\nMulti-Filter Query & Result Set: Drill down by Business Partner ID, Type, Role, Category, Country, and Status, viewing live records with instant status indicators.\nRole-Based Action Ribbon: Contextual actions ( + Create , edit, mass upload, export)\nadjust dynamically based on XSUAA scopes ( MDR_Requestor , MDR_Approver )."
+            ]
+          }
+        ],
+        "source": "btp\\MDR-1.docx",
+        "words": 94
+      },
       "badge": "Slide 3 of 9",
       "caption": "Use Case & Business Problem\tEnterprise Intake & Problem Space",
-      "botDialogue": "Use Case & Business Problem\tEnterprise Intake & Problem Space",
-      "botPose": "tablet"
+      "botDialogue": "Central Master Data Workspace\tOperational UI Console  Caption \u2014 Master-data workspace for controlled record maintenance ( zmdr_cntrl_main ). Callouts (Up to 3) \u2014 Functional Area & Entity Navigation: Switch dynamically between Customer, Materials, and Services to.",
+      "botPose": "tablet",
+      "botChat": [
+        "Central Master Data Workspace\tOperational UI Console  Caption \u2014 Master-data workspace for controlled record maintenance ( zmdr_cntrl_main ).",
+        "Callouts (Up to 3) \u2014 Functional Area & Entity Navigation: Switch dynamically between Customer, Materials, and Services to."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-4",
       "type": "workflow",
       "title": "Central Master Data Workspace\tOperational UI Console",
       "subtitle": "MDR Master Data Remediation Engine",
-      "description": "Central Master Data Workspace\tOperational UI Console",
+      "description": null,
       "badge": "Slide 4 of 9",
       "caption": "Central Master Data Workspace\tOperational UI Console",
-      "botDialogue": "Central Master Data Workspace\tOperational UI Console",
-      "botPose": "laptop"
+      "botDialogue": "",
+      "botPose": "laptop",
+      "botChat": [],
+      "botChatMode": "none"
     },
     {
       "id": "card-5",
       "type": "live-ui",
       "title": "Clean Core Architecture \u2014 Phase 5",
       "subtitle": "MDR Master Data Remediation Engine",
-      "description": "Enterprise production workflow stage 5 for MDR Master Data Remediation Engine.",
+      "description": {
+        "plain": "Figure 4.2: Live Bulk Data Load Screen (`zmdr_bulkload`) with automated validation counter: 100 invalid records caught and exportable for remediation via `[Download Invalid Records]`.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Figure 4.2: Live Bulk Data Load Screen (`zmdr_bulkload`) with automated validation counter: 100 invalid records caught and exportable for remediation via `[Download Invalid Records]`."
+          }
+        ],
+        "source": "btp\\MDR-1.docx",
+        "words": 24
+      },
       "badge": "Slide 5 of 9",
       "caption": "Enterprise production workflow stage 5 for MDR Master Data Remediation Engine.",
-      "botDialogue": "Enterprise production workflow stage 5 for MDR Master Data Remediation Engine.",
+      "botDialogue": "Figure 4.2: Live Bulk Data Load Screen (`zmdr_bulkload`) with automated validation counter: 100 invalid records caught and exportable.",
       "botPose": "explain",
       "imageUrl": "/assets/apps/mdr/c5_1.webp",
       "screenshot": "/assets/apps/mdr/c5_1.webp",
       "imageWidth": 1000,
-      "imageHeight": 520
+      "imageHeight": 520,
+      "botChat": [
+        "Figure 4.2: Live Bulk Data Load Screen (`zmdr_bulkload`) with automated validation counter: 100 invalid records caught and exportable."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-6",
       "type": "live-ui",
       "title": "Figure 4.2: Live Bulk Data Load Screen (`zmdr_bulkload`) with automated validation counter: 100 invalid records caught and exportable for remediation via `[Download Invalid Records]`.",
       "subtitle": "MDR Master Data Remediation Engine",
-      "description": "Figure 4.2: Live Bulk Data Load Screen (`zmdr_bulkload`) with automated validation counter: 100 invalid records caught and exportable for remediation via `[Download Invalid Records]`.",
+      "description": {
+        "plain": "Figure 2.1: Central Master Data Navigation (zmdr_cntrl_main) \u2014 Functional Area hierarchy (Customer, Materials, Services) and Entity List.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Figure 2.1: Central Master Data Navigation (zmdr_cntrl_main) \u2014 Functional Area hierarchy (Customer, Materials, Services) and Entity List."
+          }
+        ],
+        "source": "btp\\MDR-1.docx",
+        "words": 17
+      },
       "badge": "Slide 6 of 9",
       "caption": "Figure 4.2: Live Bulk Data Load Screen (`zmdr_bulkload`) with automated validation counter: 100 invalid records caught and exportable for remediation via `[Download Invalid Records...",
-      "botDialogue": "Figure 4.2: Live Bulk Data Load Screen (`zmdr_bulkload`) with automated validation counter: 100 invalid records caught and exportable for remediation via `[Download Invalid Records]`.",
+      "botDialogue": "Figure 2.1: Central Master Data Navigation (zmdr_cntrl_main) \u2014 Functional Area hierarchy (Customer, Materials, Services) and Entity List.",
       "botPose": "beckon",
       "imageUrl": "/assets/apps/mdr/c6_1.webp",
       "screenshot": "/assets/apps/mdr/c6_1.webp",
       "imageWidth": 496,
-      "imageHeight": 250
+      "imageHeight": 250,
+      "botChat": [
+        "Figure 2.1: Central Master Data Navigation (zmdr_cntrl_main) \u2014 Functional Area hierarchy (Customer, Materials, Services) and Entity List."
+      ],
+      "botChatMode": "verbatim"
     },
     {
       "id": "card-7",
       "type": "live-ui",
       "title": "Figure 2.1: Central Master Data Navigation (zmdr_cntrl_main) \u2014 Functional Area hierarchy (Customer, Materials, Services) and Entity List.",
       "subtitle": "MDR Master Data Remediation Engine",
-      "description": "Figure 2.1: Central Master Data Navigation (zmdr_cntrl_main) \u2014 Functional Area hierarchy (Customer, Materials, Services) and Entity List.",
+      "description": {
+        "plain": "Figure 4.1: Live Dynamic Form Engine (`zmdr_cntrl_cmn`) for Business Partner Create Record showing Basic Information and Address sections.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Figure 4.1: Live Dynamic Form Engine (`zmdr_cntrl_cmn`) for Business Partner Create Record showing Basic Information and Address sections."
+          }
+        ],
+        "source": "btp\\MDR-1.docx",
+        "words": 18
+      },
       "badge": "Slide 7 of 9",
       "caption": "Figure 2.1: Central Master Data Navigation (zmdr_cntrl_main) \u2014 Functional Area hierarchy (Customer, Materials, Services) and Entity List.",
-      "botDialogue": "Figure 2.1: Central Master Data Navigation (zmdr_cntrl_main) \u2014 Functional Area hierarchy (Customer, Materials, Services) and Entity List.",
+      "botDialogue": "Figure 4.1: Live Dynamic Form Engine (`zmdr_cntrl_cmn`) for Business Partner Create Record showing Basic Information and Address sections.",
       "botPose": "present",
       "imageUrl": "/assets/apps/mdr/c7_1.webp",
       "screenshot": "/assets/apps/mdr/c7_1.webp",
       "imageWidth": 532,
-      "imageHeight": 250
+      "imageHeight": 250,
+      "botChat": [
+        "Figure 4.1: Live Dynamic Form Engine (`zmdr_cntrl_cmn`) for Business Partner Create Record showing Basic Information and Address sections."
+      ],
+      "botChatMode": "verbatim"
     },
     {
       "id": "card-8",
       "type": "live-ui",
       "title": "Figure 4.1: Live Dynamic Form Engine (`zmdr_cntrl_cmn`) for Business Partner Create Record showing Basic Information and Address sections.",
       "subtitle": "MDR Master Data Remediation Engine",
-      "description": "Figure 4.1: Live Dynamic Form Engine (`zmdr_cntrl_cmn`) for Business Partner Create Record showing Basic Information and Address sections.",
+      "description": {
+        "plain": "Result\n\nHeadline Metric \u2014 75% Faster Request Turnaround (Cycle time reduced from 4.5 days to under 4 hours)\n\nBefore \u2192 After \u2014 Before: Master data requests arrived across uncoordinated emails and spreadsheets; manual validation caused high error rates; updates took 4\u20137 days with zero audit visibility.\nAfter: Unified self-service portal on SAP BTP; pre-commit automated schema and relational checking; multi-tier BPA approval routing with single-click promotion to S/4HANA.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Result"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Headline Metric \u2014 75% Faster Request Turnaround (Cycle time reduced from 4.5 days to under 4 hours)",
+              "Before \u2192 After \u2014 Before: Master data requests arrived across uncoordinated emails and spreadsheets; manual validation caused high error rates; updates took 4\u20137 days with zero audit visibility.\nAfter: Unified self-service portal on SAP BTP; pre-commit automated schema and relational checking; multi-tier BPA approval routing with single-click promotion to S/4HANA."
+            ]
+          }
+        ],
+        "source": "btp\\MDR-1.docx",
+        "words": 68
+      },
       "badge": "Slide 8 of 9",
       "caption": "Figure 4.1: Live Dynamic Form Engine (`zmdr_cntrl_cmn`) for Business Partner Create Record showing Basic Information and Address sections.",
-      "botDialogue": "Figure 4.1: Live Dynamic Form Engine (`zmdr_cntrl_cmn`) for Business Partner Create Record showing Basic Information and Address sections.",
+      "botDialogue": "Result Headline Metric \u2014 75% Faster Request Turnaround (Cycle time reduced from 4.5 days to under 4 hours). After: Unified self-service portal on SAP BTP; pre-commit automated schema and relational checking; multi-tier BPA approval routing with.",
       "botPose": "point",
       "imageUrl": "/assets/apps/mdr/c8_1.webp",
       "screenshot": "/assets/apps/mdr/c8_1.webp",
       "imageWidth": 536,
-      "imageHeight": 250
+      "imageHeight": 250,
+      "botChat": [
+        "Result Headline Metric \u2014 75% Faster Request Turnaround (Cycle time reduced from 4.5 days to under 4 hours).",
+        "After: Unified self-service portal on SAP BTP; pre-commit automated schema and relational checking; multi-tier BPA approval routing with."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-9",
       "type": "workflow",
       "title": "Result",
       "subtitle": "MDR Master Data Remediation Engine",
-      "description": "Enterprise production workflow stage 9 for MDR Master Data Remediation Engine.",
+      "description": null,
       "badge": "Slide 9 of 9",
       "caption": "Enterprise production workflow stage 9 for MDR Master Data Remediation Engine.",
-      "botDialogue": "Enterprise production workflow stage 9 for MDR Master Data Remediation Engine.",
-      "botPose": "tablet"
+      "botDialogue": "",
+      "botPose": "tablet",
+      "botChat": [],
+      "botChatMode": "none"
     }
   ],
   "closing": {
