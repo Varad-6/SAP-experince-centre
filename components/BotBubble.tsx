@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback, useLayoutEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 import { placeBubble, BubblePlacement } from '@/lib/placeBubble';
 
@@ -313,7 +314,7 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
     }
   }
 
-  return (
+  const bubbleNode = (
     <>
       {/* Hidden pre-measure clone to compute true bw and bh */}
       <div
@@ -446,4 +447,6 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
       </div>
     </>
   );
+
+  return typeof document !== 'undefined' ? createPortal(bubbleNode, document.body) : bubbleNode;
 };

@@ -44,8 +44,8 @@ export const ACTOR_VIDEOS: Record<ActorVideoName, ActorVideoMeta> = {
     keyColor: '#E95DCF',
     similarity: 0.38,
     smoothness: 0.10,
-    defaultBubbleStartSec: 8.6,
-    headAtEnd: { cx: 0.447, top: 0.262, w: 0.17 },
+    defaultBubbleStartSec: 1.8,
+    headAtEnd: { cx: 0.495, top: 0.04, w: 0.35 },
     headTrack: (assetsData.videos as any)?.intro_drop?.headTrack,
   },
   analytics_laptop: {
@@ -58,8 +58,8 @@ export const ACTOR_VIDEOS: Record<ActorVideoName, ActorVideoMeta> = {
     keyColor: '#F445AE',
     similarity: 0.36,
     smoothness: 0.10,
-    defaultBubbleStartSec: 4.5,
-    headAtEnd: { cx: 0.557, top: 0.053, w: 0.29 },
+    defaultBubbleStartSec: 1.2,
+    headAtEnd: { cx: 0.543, top: 0.06, w: 0.30 },
     headTrack: (assetsData.videos as any)?.analytics_laptop?.headTrack,
   },
   explain_close: {
@@ -72,8 +72,8 @@ export const ACTOR_VIDEOS: Record<ActorVideoName, ActorVideoMeta> = {
     keyColor: '#F647BC',
     similarity: 0.36,
     smoothness: 0.10,
-    defaultBubbleStartSec: 1.0,
-    headAtEnd: { cx: 0.497, top: 0.043, w: 0.35 },
+    defaultBubbleStartSec: 0.8,
+    headAtEnd: { cx: 0.495, top: 0.04, w: 0.35 },
     headTrack: (assetsData.videos as any)?.explain_close?.headTrack,
   },
 };
@@ -108,6 +108,11 @@ export const ActorVideo: React.FC<ActorVideoProps> = ({
   const [headScreen, setHeadScreen] = useState<{ headX: number; hairTopY: number; headW: number } | undefined>(undefined);
 
   const smoothedRef = useRef<{ cx: number; top: number; w: number } | null>(null);
+  const bubbleTriggeredRef = useRef<boolean>(false);
+  const onEndedRef = useRef(onEnded);
+  useEffect(() => {
+    onEndedRef.current = onEnded;
+  }, [onEnded]);
 
   const meta = ACTOR_VIDEOS[name];
   const triggerSec = bubbleStartSec ?? meta.defaultBubbleStartSec;
@@ -224,6 +229,7 @@ export const ActorVideo: React.FC<ActorVideoProps> = ({
     let frameCallbackId: number | null = null;
     let endedFired = false;
 
+    bubbleTriggeredRef.current = false;
     setShowBubble(false);
     smoothedRef.current = null;
     video.currentTime = 0;
@@ -235,7 +241,8 @@ export const ActorVideo: React.FC<ActorVideoProps> = ({
     const checkTime = (currentTime: number) => {
       updateScreenPosition(currentTime);
 
-      if (currentTime >= triggerSec && !showBubble) {
+      if (currentTime >= triggerSec && !bubbleTriggeredRef.current) {
+        bubbleTriggeredRef.current = true;
         setShowBubble(true);
       }
 
@@ -245,7 +252,7 @@ export const ActorVideo: React.FC<ActorVideoProps> = ({
         if (holdLastFrame) {
           video.pause();
         }
-        onEnded?.();
+        onEndedRef.current?.();
       }
     };
 
@@ -278,9 +285,7 @@ export const ActorVideo: React.FC<ActorVideoProps> = ({
     triggerSec,
     meta.durationSec,
     holdLastFrame,
-    onEnded,
     updateScreenPosition,
-    showBubble,
   ]);
 
   return (
@@ -333,6 +338,7 @@ export const ActorVideo: React.FC<ActorVideoProps> = ({
           text={bubbleText}
           head={headScreen}
           topSafe={76}
+          placement="top"
           onDismiss={() => setShowBubble(false)}
         />
       )}

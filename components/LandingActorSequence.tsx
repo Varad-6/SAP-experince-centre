@@ -15,23 +15,23 @@ interface LandingActorSequenceProps {
 export const LandingActorSequence: React.FC<LandingActorSequenceProps> = ({
   onSequenceComplete,
 }) => {
-  const [currentAct, setCurrentAct] = useState<1 | 2 | 3 | 'done'>(1);
+  const [currentAct, setCurrentAct] = useState<1 | 2 | 3>(1);
   const [isCrossfading, setIsCrossfading] = useState<boolean>(false);
-  const [hasVisited, setHasVisited] = useState<boolean>(false);
+  const [isFinished, setIsFinished] = useState<boolean>(false);
 
   const introLines = siteData.introLines || [
-    "Welcome to Abhiyanta India Solutions! I am Aayam, your enterprise architect. We build high-impact enterprise applications that modernize mission-critical operations.",
-    "Here is how we leverage enterprise AI and SAP BTP: autonomous agents and decision engines integrated seamlessly with SAP S/4HANA Clean Core architecture.",
-    "Ready to explore? Step inside our 4 core architectural pillars below to inspect live production cockpits, workflows, and verified business ROI.",
+    "Hello everyone! Parachuting is definitely my favorite adventure sport... but do you know what excites me even more?",
+    "Exploring frontier technology, Generative AI, and predictive analytics! Let me walk you through the game-changing innovations Abhiyanta has built.",
+    "Hi, I'm Aayam! We have engineered production-grade Clean Core solutions designed to modernize enterprise operations and shape the future of business.",
   ];
 
-  // Check sessionStorage on mount
+  // Check sessionStorage on mount (if user already watched intro, start on Act 3 hold frame)
   useEffect(() => {
     try {
       const visited = sessionStorage.getItem('ais.intro');
       if (visited === '1') {
-        setHasVisited(true);
-        setCurrentAct('done');
+        setCurrentAct(3);
+        setIsFinished(true);
         onSequenceComplete?.();
       }
     } catch {
@@ -61,7 +61,7 @@ export const LandingActorSequence: React.FC<LandingActorSequenceProps> = ({
     } catch {
       // ignore
     }
-    setCurrentAct('done');
+    setIsFinished(true);
     onSequenceComplete?.();
   }, [onSequenceComplete]);
 
@@ -71,11 +71,18 @@ export const LandingActorSequence: React.FC<LandingActorSequenceProps> = ({
     } catch {
       // ignore
     }
-    setCurrentAct('done');
+    setCurrentAct(3);
+    setIsFinished(true);
     onSequenceComplete?.();
   }, [onSequenceComplete]);
 
   const replayIntro = useCallback(() => {
+    try {
+      sessionStorage.removeItem('ais.intro');
+    } catch {
+      // ignore
+    }
+    setIsFinished(false);
     setCurrentAct(1);
     setIsCrossfading(false);
   }, []);
@@ -96,7 +103,7 @@ export const LandingActorSequence: React.FC<LandingActorSequenceProps> = ({
           <ActorVideo
             name="intro_drop"
             bubbleText={introLines[0]}
-            bubbleStartSec={8.6}
+            bubbleStartSec={1.8}
             onEnded={handleAct1End}
             className="w-full h-full"
           />
@@ -106,7 +113,7 @@ export const LandingActorSequence: React.FC<LandingActorSequenceProps> = ({
           <ActorVideo
             name="analytics_laptop"
             bubbleText={introLines[1]}
-            bubbleStartSec={4.5}
+            bubbleStartSec={1.2}
             onEnded={handleAct2End}
             className="w-full h-full"
           />
@@ -116,34 +123,17 @@ export const LandingActorSequence: React.FC<LandingActorSequenceProps> = ({
           <ActorVideo
             name="explain_close"
             bubbleText={introLines[2]}
-            bubbleStartSec={1.0}
+            bubbleStartSec={isFinished ? 0 : 0.8}
             onEnded={handleAct3End}
+            holdLastFrame={true}
             className="w-full h-full"
           />
-        )}
-
-        {currentAct === 'done' && (
-          /* Finished State: Act 3 hold frame or standing sprite greeting */
-          <div className="relative w-full h-full flex items-end justify-center">
-            <img
-              src="/assets/video/explain_close_last.png"
-              alt="Aayam Ready"
-              className="w-full h-full object-contain pointer-events-none"
-            />
-            <div className="absolute -top-16 left-1/2 -translate-x-1/2">
-              <BotBubble
-                text={introLines[2]}
-                durationMs={12000}
-                placement="top"
-              />
-            </div>
-          </div>
         )}
       </div>
 
       {/* Skip / Replay Controls */}
       <div className="absolute bottom-4 left-6 sm:left-8 z-30 pointer-events-auto flex items-center gap-3">
-        {currentAct !== 'done' ? (
+        {!isFinished ? (
           <button
             type="button"
             onClick={skipIntro}

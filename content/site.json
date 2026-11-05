@@ -1,15 +1,15 @@
 {
   "brand": "Abhiyanta India Solutions",
-  "subBrand": "Aayam \u2014 AIS Experience Centre",
+  "subBrand": "Aayam — AIS Experience Centre",
   "botName": "Aayam",
   "tagline": "Exploring new dimensions of technology",
   "sub": "Explore production solutions built across SAP BTP, Clean Core extensibility, and modern enterprise intelligence with analytics.",
   "heroTitle": "Aayam",
-  "heroSubtitle": "AIS Experience Centre \u2014 Exploring new dimensions of technology",
+  "heroSubtitle": "AIS Experience Centre — Exploring new dimensions of technology",
   "introLines": [
-    "Hello! Welcome to Abhiyanta India Solutions. I am Aayam, your Enterprise Architect. We build high-impact enterprise applications that modernize mission-critical operations.",
-    "Here is how we leverage enterprise AI and SAP BTP: autonomous agents and decision engines integrated seamlessly with SAP S/4HANA Clean Core architecture.",
-    "Explore production solutions built across SAP BTP, Clean Core extensibility, and modern enterprise intelligence with boardroom analytics. Step inside our 3 core architectural pillars below to inspect live production cockpits, workflows, and verified business ROI."
+    "Hello everyone! Parachuting is definitely my favorite adventure sport... but do you know what excites me even more?",
+    "Exploring frontier technology, Generative AI, and predictive analytics! Let me walk you through the game-changing innovations Abhiyanta has built.",
+    "Hi, I'm Aayam! We have engineered production-grade Clean Core solutions designed to modernize enterprise operations and shape the future of business."
   ],
   "defaultContact": {
     "name": "Manisha Sawarkar",
@@ -36,7 +36,7 @@
     }
   ],
   "footer": {
-    "copyright": "\u00a9 2026 Abhiyanta India Solutions (AIS). Confidential. All rights reserved.",
+    "copyright": "© 2026 Abhiyanta India Solutions (AIS). Confidential. All rights reserved.",
     "links": [
       {
         "label": "Architecture",
