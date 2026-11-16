@@ -41,11 +41,11 @@ export const ACTOR_VIDEOS: Record<ActorVideoName, ActorVideoMeta> = {
     w: 1280,
     h: 720,
     durationSec: 10,
-    keyColor: '#E95DCF',
-    similarity: 0.38,
-    smoothness: 0.10,
-    defaultBubbleStartSec: 1.8,
-    headAtEnd: { cx: 0.495, top: 0.04, w: 0.35 },
+    keyColor: '#E4779A',
+    similarity: 0.08,
+    smoothness: 0.02,
+    defaultBubbleStartSec: 1.0,
+    headAtEnd: { cx: 0.495, top: 0.15, w: 0.35 },
     headTrack: (assetsData.videos as any)?.intro_drop?.headTrack,
   },
   analytics_laptop: {
@@ -55,11 +55,11 @@ export const ACTOR_VIDEOS: Record<ActorVideoName, ActorVideoMeta> = {
     w: 1920,
     h: 1080,
     durationSec: 10,
-    keyColor: '#F445AE',
-    similarity: 0.36,
-    smoothness: 0.10,
-    defaultBubbleStartSec: 1.2,
-    headAtEnd: { cx: 0.543, top: 0.06, w: 0.30 },
+    keyColor: '#F448AE',
+    similarity: 0.32,
+    smoothness: 0.12,
+    defaultBubbleStartSec: 0.8,
+    headAtEnd: { cx: 0.543, top: 0.08, w: 0.30 },
     headTrack: (assetsData.videos as any)?.analytics_laptop?.headTrack,
   },
   explain_close: {
@@ -69,11 +69,11 @@ export const ACTOR_VIDEOS: Record<ActorVideoName, ActorVideoMeta> = {
     w: 1920,
     h: 1080,
     durationSec: 10,
-    keyColor: '#F647BC',
-    similarity: 0.36,
-    smoothness: 0.10,
-    defaultBubbleStartSec: 0.8,
-    headAtEnd: { cx: 0.495, top: 0.04, w: 0.35 },
+    keyColor: '#F84ABD',
+    similarity: 0.32,
+    smoothness: 0.12,
+    defaultBubbleStartSec: 0.6,
+    headAtEnd: { cx: 0.495, top: 0.08, w: 0.35 },
     headTrack: (assetsData.videos as any)?.explain_close?.headTrack,
   },
 };
@@ -87,6 +87,7 @@ export interface ActorVideoProps {
   className?: string;
   active?: boolean;
   autoPlay?: boolean;
+  muted?: boolean;
 }
 
 export const ActorVideo: React.FC<ActorVideoProps> = ({
@@ -98,6 +99,7 @@ export const ActorVideo: React.FC<ActorVideoProps> = ({
   className = '',
   active = true,
   autoPlay = true,
+  muted = true,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -113,6 +115,23 @@ export const ActorVideo: React.FC<ActorVideoProps> = ({
   useEffect(() => {
     onEndedRef.current = onEnded;
   }, [onEnded]);
+
+  // Immediately hide speech bubble when component becomes inactive
+  useEffect(() => {
+    if (!active) {
+      setShowBubble(false);
+      bubbleTriggeredRef.current = false;
+    }
+  }, [active]);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = muted;
+      if (!muted) {
+        videoRef.current.volume = 1.0;
+      }
+    }
+  }, [muted]);
 
   const meta = ACTOR_VIDEOS[name];
   const triggerSec = bubbleStartSec ?? meta.defaultBubbleStartSec;
@@ -232,6 +251,17 @@ export const ActorVideo: React.FC<ActorVideoProps> = ({
     bubbleTriggeredRef.current = false;
     setShowBubble(false);
     smoothedRef.current = null;
+
+    if (triggerSec === 0) {
+      video.currentTime = Math.max(0, meta.durationSec - 0.05);
+      video.pause();
+      bubbleTriggeredRef.current = true;
+      setShowBubble(true);
+      updateScreenPosition(meta.durationSec);
+      onEndedRef.current?.();
+      return;
+    }
+
     video.currentTime = 0;
 
     if (autoPlay) {
@@ -246,9 +276,13 @@ export const ActorVideo: React.FC<ActorVideoProps> = ({
         setShowBubble(true);
       }
 
-      const endThreshold = meta.durationSec - 0.08;
+      const endThreshold = meta.durationSec - 0.1;
       if (currentTime >= endThreshold && !endedFired) {
         endedFired = true;
+        // Video time is over: message gone immediately before next video starts
+        if (!holdLastFrame) {
+          setShowBubble(false);
+        }
         if (holdLastFrame) {
           video.pause();
         }
@@ -305,7 +339,7 @@ export const ActorVideo: React.FC<ActorVideoProps> = ({
           ref={videoRef}
           src={meta.src}
           poster={meta.poster}
-          muted
+          muted={muted}
           playsInline
           preload="auto"
           className="w-full h-full object-contain pointer-events-none"
@@ -316,7 +350,7 @@ export const ActorVideo: React.FC<ActorVideoProps> = ({
             ref={videoRef}
             src={meta.fallbackMp4}
             poster={meta.poster}
-            muted
+            muted={muted}
             playsInline
             preload="auto"
             className="hidden"
@@ -332,13 +366,14 @@ export const ActorVideo: React.FC<ActorVideoProps> = ({
         </>
       )}
 
-      {/* Floating Thinking Bubble anchored dynamically to moving head */}
-      {showBubble && bubbleText && headScreen && (
+      {/* Floating Thinking Bubble anchored dynamically to moving head - ONLY when active */}
+      {active && showBubble && bubbleText && headScreen && (
         <BotBubble
           text={bubbleText}
           head={headScreen}
           topSafe={76}
           placement="top"
+          durationMs={holdLastFrame ? undefined : (meta.durationSec - triggerSec + 1) * 1000}
           onDismiss={() => setShowBubble(false)}
         />
       )}

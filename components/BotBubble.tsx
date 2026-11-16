@@ -363,9 +363,8 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
           position: 'fixed',
           left: `${left}px`,
           top: `${top}px`,
-          maxWidth: 'min(380px, calc(100vw - 32px))',
-          minWidth: 240,
-          maxHeight: maxH ? `${maxH}px` : undefined,
+          maxWidth: 'min(400px, calc(100vw - 32px))',
+          minWidth: 260,
           zIndex: 50,
           opacity: stagePhase >= 4 ? 1 : 0,
           transform: stagePhase >= 4 ? 'scale(1)' : 'scale(0.96)',
@@ -377,9 +376,9 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
         aria-live="polite"
       >
         <div
-          className="relative px-4 py-3 cursor-pointer rounded-2xl shadow-lg border hover:border-[var(--brand)] transition-colors overflow-y-auto"
+          className="relative px-4 py-3 cursor-pointer rounded-2xl shadow-lg border hover:border-[var(--brand)] transition-colors overflow-hidden [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
           style={{
-            backgroundColor: 'rgba(255, 255, 255, 0.86)',
+            backgroundColor: 'rgba(255, 255, 255, 0.92)',
             borderColor: 'rgba(10, 31, 68, 0.12)',
             boxShadow: '0 8px 24px -4px rgba(10, 31, 68, 0.12)',
           }}

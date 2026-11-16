@@ -6,7 +6,7 @@ import pillarsData from '@/content/pillars.json';
 import solutionsData from '@/content/solutions.json';
 import { BotSprite } from '@/components/BotSprite';
 import { BotBubble } from '@/components/BotBubble';
-import { ArrowRight, Layers, Box, Cpu, Zap, BarChart3, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Layers, Box, Cpu, Zap, BarChart3, ShieldCheck } from 'lucide-react';
 
 const iconMap: Record<string, React.ReactNode> = {
   Layers: <Layers className="w-6 h-6" />,
@@ -20,7 +20,18 @@ export default function PillarsHubPage() {
   const [showBubble, setShowBubble] = useState<boolean>(true);
 
   return (
-    <div className="min-h-[calc(100vh-56px)] bg-[var(--bg)] text-[var(--text)] px-6 sm:px-8 py-10 sm:py-14 max-w-[1200px] mx-auto relative pb-32">
+    <div className="min-h-[calc(100vh-56px)] bg-transparent text-[var(--text)] px-6 sm:px-8 py-8 sm:py-10 max-w-[1200px] mx-auto relative pb-32">
+      {/* Back to Home Button */}
+      <div className="mb-6">
+        <Link
+          href="/"
+          prefetch={true}
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--surface)] hover:bg-[var(--surface-2)] text-xs font-semibold text-[var(--navy)] transition-colors shadow-xs"
+        >
+          <ArrowLeft className="w-3.5 h-3.5" />
+          <span>Back to Home</span>
+        </Link>
+      </div>
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 mb-10 sm:mb-12">
         <div className="max-w-2xl">
@@ -29,56 +40,66 @@ export default function PillarsHubPage() {
             <span>ENTERPRISE ARCHITECTURE HUBS</span>
           </div>
           <h1 className="text-h1 font-bold text-[var(--navy)] tracking-tight mb-3">
-            The 3 Pillars of Enterprise SAP Excellence
+            Enterprise Architecture &amp; Business AI Hubs
           </h1>
           <p className="text-base text-[var(--text-dim)] leading-relaxed">
-            Select an architectural pillar to inspect our production solutions, custom BTP applications, data modernization pipelines, and real-time executive steering.
+            Select an architectural pillar to inspect our production solutions, custom BTP applications, data modernization pipelines, real-time executive steering, and SAP Business AI agents.
           </p>
         </div>
       </div>
 
-      {/* Symmetrical 3-Pillar Responsive Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+      {/* Symmetrical 4-Pillar Responsive Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
         {pillarsData.map((pillar) => {
-          const solutionCount = solutionsData.filter((s) => s.pillarId === pillar.id).length;
+          const solutionCount =
+            pillar.id === 'p4'
+              ? 20
+              : solutionsData.filter((s) => s.pillarId === pillar.id).length;
 
           return (
             <Link
               key={pillar.id}
               href={`/pillar/${pillar.id}`}
-              className="group card flex flex-col justify-between p-6 sm:p-7 relative transition-all duration-200 hover:-translate-y-1 hover:border-[var(--brand)] hover:shadow-[var(--shadow-lg)] h-full"
+              prefetch={true}
+              className="group card flex flex-col justify-between p-6 relative transition-all duration-200 hover:-translate-y-1 hover:border-[var(--brand)] hover:shadow-[var(--shadow-lg)] h-full"
               style={{
                 borderTop: `3px solid ${pillar.accent}`,
               }}
             >
               <div>
-                <div className="flex items-start justify-between gap-4 mb-4">
+                <div className="flex items-start justify-between gap-3 mb-4">
                   <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
+                    className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
                     style={{
                       backgroundColor: `${pillar.accent}15`,
                       color: pillar.accent,
                     }}
                   >
-                    {iconMap[pillar.icon] || <Layers className="w-6 h-6" />}
+                    {iconMap[pillar.icon] || <Layers className="w-5 h-5" />}
                   </div>
 
-                  <span className="chip">
-                    {solutionCount} solutions
-                  </span>
+                  {pillar.comingSoon ? (
+                    <span className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-amber-50 text-amber-700 border border-amber-200/80">
+                      Coming Soon
+                    </span>
+                  ) : (
+                    <span className="chip text-xs">
+                      {solutionCount} solutions
+                    </span>
+                  )}
                 </div>
 
-                <h2 className="text-lg font-bold text-[var(--navy)] mb-2 group-hover:text-[var(--brand)] transition-colors leading-tight">
+                <h2 className="text-base font-bold text-[var(--navy)] mb-2 group-hover:text-[var(--brand)] transition-colors leading-snug">
                   {pillar.title}
                 </h2>
 
-                <p className="text-xs sm:text-sm text-[var(--text-dim)] leading-relaxed mb-6">
+                <p className="text-xs text-[var(--text-dim)] leading-relaxed mb-6">
                   {pillar.tagline}
                 </p>
               </div>
 
-              <div className="flex items-center text-xs font-semibold text-[var(--brand)] group-hover:translate-x-1 transition-transform mt-auto pt-3 border-t border-[var(--border)]/50">
-                <span>Inspect solutions</span>
+              <div className="flex items-center justify-between text-xs font-semibold text-[var(--brand)] group-hover:translate-x-0.5 transition-transform mt-auto pt-3 border-t border-[var(--border)]/50">
+                <span>{pillar.comingSoon ? 'Explore AI use cases' : 'Inspect solutions'}</span>
                 <ArrowRight className="w-3.5 h-3.5 ml-1" />
               </div>
             </Link>

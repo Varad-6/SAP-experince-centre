@@ -19,32 +19,31 @@
       "title": "Product Landing & Clean Core Overview",
       "subtitle": "Invoice Decision Intelligence & Autonomous Approval",
       "description": {
-        "plain": "Product Landing & Clean Core Overview\n\nCaption: Enterprise landing page uniting multi-channel intake, SAP context, and explainable invoice decisioning.",
+        "plain": "Caption: Enterprise landing page uniting multi-channel intake, SAP context, and explainable invoice decisioning.\n\nStandard Clean Core compliant interface ensuring zero ERP ledger drift.",
         "blocks": [
           {
-            "type": "p",
-            "text": "Product Landing & Clean Core Overview"
-          },
-          {
-            "type": "p",
-            "text": "Caption: Enterprise landing page uniting multi-channel intake, SAP context, and explainable invoice decisioning."
+            "type": "ul",
+            "items": [
+              "Caption: Enterprise landing page uniting multi-channel intake, SAP context, and explainable invoice decisioning.",
+              "Standard Clean Core compliant interface ensuring zero ERP ledger drift."
+            ]
           }
         ],
         "source": "btp\\Invoice_Decision_Intelligence_AIS_Experience_Centre.docx",
-        "words": 19
+        "words": 23
       },
       "badge": "Slide 1 of 8",
       "caption": "Caption: Enterprise landing page uniting multi-channel intake, SAP context, and explainable invoice decisioning.",
-      "botDialogue": "Product Landing & Clean Core Overview  Caption: Enterprise landing page uniting multi-channel intake, SAP context, and explainable invoice decisioning.",
+      "botDialogue": "Caption: Enterprise landing page uniting multi-channel intake, SAP context, and explainable invoice decisioning.",
       "botPose": "present",
       "imageUrl": "/assets/apps/invoice-decision-intelligence/c1_1.webp",
       "screenshot": "/assets/apps/invoice-decision-intelligence/c1_1.webp",
       "imageWidth": 835,
       "imageHeight": 386,
       "botChat": [
-        "Product Landing & Clean Core Overview  Caption: Enterprise landing page uniting multi-channel intake, SAP context, and explainable invoice decisioning."
+        "Caption: Enterprise landing page uniting multi-channel intake, SAP context, and explainable invoice decisioning."
       ],
-      "botChatMode": "verbatim"
+      "botChatMode": "condensed"
     },
     {
       "id": "card-2",
@@ -52,58 +51,54 @@
       "title": "Use case & problem",
       "subtitle": "Invoice Decision Intelligence & Autonomous Approval",
       "description": {
-        "plain": "Use case & problem\n\nIndustry / user persona \u2014 Manufacturing, Utilities & Enterprise Shared Services | AP Clerks, Procurement Heads, Controllers, Plant Requisitioners\n\nProblem (3 bullets) \u2014 \u2022 Multi-channel intake fragmentation across paper scans, vendor emails, and statutory IRN e-invoices.\n\u2022 70%+ AP clerk time wasted manually cross-referencing PO line items, goods receipts, and quality inspection lots.\n\u2022 Financial leakage from price creep, duplicate submissions, and forfeited GST Input Tax Credits under strict 48-hour SLAs.",
+        "plain": "Manufacturing, Utilities & Enterprise Shared Services | AP Clerks, Procurement Heads, Controllers, Plant Requisitioners.\n\nMulti-channel intake fragmentation across paper scans, vendor emails, and statutory IRN e-invoices.",
         "blocks": [
-          {
-            "type": "p",
-            "text": "Use case & problem"
-          },
           {
             "type": "ul",
             "items": [
-              "Industry / user persona \u2014 Manufacturing, Utilities & Enterprise Shared Services | AP Clerks, Procurement Heads, Controllers, Plant Requisitioners",
-              "Problem (3 bullets) \u2014 \u2022 Multi-channel intake fragmentation across paper scans, vendor emails, and statutory IRN e-invoices.\n\u2022 70%+ AP clerk time wasted manually cross-referencing PO line items, goods receipts, and quality inspection lots.\n\u2022 Financial leakage from price creep, duplicate submissions, and forfeited GST Input Tax Credits under strict 48-hour SLAs."
+              "Manufacturing, Utilities & Enterprise Shared Services | AP Clerks, Procurement Heads, Controllers, Plant Requisitioners.",
+              "Multi-channel intake fragmentation across paper scans, vendor emails, and statutory IRN e-invoices."
             ]
           }
         ],
         "source": "btp\\Invoice_Decision_Intelligence_AIS_Experience_Centre.docx",
-        "words": 75
+        "words": 26
       },
       "badge": "Slide 2 of 8",
       "caption": "Use case & problem",
-      "botDialogue": "Use case & problem Industry / user persona \u2014 Manufacturing, Utilities & Enterprise Shared Services | AP Clerks,. \u2022 70%+ AP clerk time wasted manually cross-referencing PO line items, goods receipts, and quality inspection lots.",
+      "botDialogue": "Manufacturing, Utilities & Enterprise Shared Services | AP Clerks, Procurement Heads, Controllers, Plant Requisitioners.",
       "botPose": "point",
       "botChat": [
-        "Use case & problem Industry / user persona \u2014 Manufacturing, Utilities & Enterprise Shared Services | AP Clerks,.",
-        "\u2022 70%+ AP clerk time wasted manually cross-referencing PO line items, goods receipts, and quality inspection lots."
+        "Manufacturing, Utilities & Enterprise Shared Services | AP Clerks, Procurement Heads, Controllers, Plant Requisitioners."
       ],
       "botChatMode": "condensed"
     },
     {
       "id": "card-3",
       "type": "workflow",
-      "title": "Clean Core Architecture \u2014 Phase 3",
+      "title": "Slide 3",
       "subtitle": "Invoice Decision Intelligence & Autonomous Approval",
       "description": {
-        "plain": "Callouts (up to 3: what to point at on screen) \u2014 1. Real-time KPI summary cards tracking total volume, 100% first-pass match rate, and exceptions.\n2. Active statutory SLA monitors flagging approaching 48-hour GST DRC compliance deadlines.\n3. Multi-channel intake breakdown and interactive enterprise scenario switcher.",
+        "plain": "Callouts (up to 3: what to point at on screen) \u2014 1. Real-time KPI summary cards tracking total volume, 100% first-pass match rate, and exceptions.\n\nActive statutory SLA monitors flagging approaching 48-hour GST DRC compliance deadlines.\n\nMulti-channel intake breakdown and interactive enterprise scenario switcher.",
         "blocks": [
           {
             "type": "ul",
             "items": [
-              "Callouts (up to 3: what to point at on screen) \u2014 1. Real-time KPI summary cards tracking total volume, 100% first-pass match rate, and exceptions.\n2. Active statutory SLA monitors flagging approaching 48-hour GST DRC compliance deadlines.\n3. Multi-channel intake breakdown and interactive enterprise scenario switcher."
+              "Callouts (up to 3: what to point at on screen) \u2014 1. Real-time KPI summary cards tracking total volume, 100% first-pass match rate, and exceptions.",
+              "Active statutory SLA monitors flagging approaching 48-hour GST DRC compliance deadlines.",
+              "Multi-channel intake breakdown and interactive enterprise scenario switcher."
             ]
           }
         ],
         "source": "btp\\Invoice_Decision_Intelligence_AIS_Experience_Centre.docx",
-        "words": 46
+        "words": 44
       },
       "badge": "Slide 3 of 8",
       "caption": "Enterprise production workflow stage 3 for Invoice Decision Intelligence & Autonomous Approval.",
-      "botDialogue": "Callouts (up to 3: what to point at on screen) \u2014 1. Real-time KPI summary cards tracking total volume, 100% first-pass match rate, and exceptions.",
+      "botDialogue": "Callouts (up to 3: what to point at on screen): 1.",
       "botPose": "tablet",
       "botChat": [
-        "Callouts (up to 3: what to point at on screen) \u2014 1.",
-        "Real-time KPI summary cards tracking total volume, 100% first-pass match rate, and exceptions."
+        "Callouts (up to 3: what to point at on screen): 1."
       ],
       "botChatMode": "condensed"
     },
@@ -113,32 +108,31 @@
       "title": "Executive Command Center Dashboard",
       "subtitle": "Invoice Decision Intelligence & Autonomous Approval",
       "description": {
-        "plain": "Executive Command Center Dashboard\n\nCaption: Executive command center displaying real-time AP intake metrics, auto-match rates, and risk alerts.",
+        "plain": "Caption: Executive command center displaying real-time AP intake metrics, auto-match rates, and risk alerts.\n\nStandard Clean Core compliant interface ensuring zero ERP ledger drift.",
         "blocks": [
           {
-            "type": "p",
-            "text": "Executive Command Center Dashboard"
-          },
-          {
-            "type": "p",
-            "text": "Caption: Executive command center displaying real-time AP intake metrics, auto-match rates, and risk alerts."
+            "type": "ul",
+            "items": [
+              "Caption: Executive command center displaying real-time AP intake metrics, auto-match rates, and risk alerts.",
+              "Standard Clean Core compliant interface ensuring zero ERP ledger drift."
+            ]
           }
         ],
         "source": "btp\\Invoice_Decision_Intelligence_AIS_Experience_Centre.docx",
-        "words": 18
+        "words": 24
       },
       "badge": "Slide 4 of 8",
       "caption": "Caption: Executive command center displaying real-time AP intake metrics, auto-match rates, and risk alerts.",
-      "botDialogue": "Executive Command Center Dashboard  Caption: Executive command center displaying real-time AP intake metrics, auto-match rates, and risk alerts.",
+      "botDialogue": "Caption: Executive command center displaying real-time AP intake metrics, auto-match rates, and risk alerts.",
       "botPose": "laptop",
       "imageUrl": "/assets/apps/invoice-decision-intelligence/c4_1.webp",
       "screenshot": "/assets/apps/invoice-decision-intelligence/c4_1.webp",
       "imageWidth": 1920,
       "imageHeight": 1080,
       "botChat": [
-        "Executive Command Center Dashboard  Caption: Executive command center displaying real-time AP intake metrics, auto-match rates, and risk alerts."
+        "Caption: Executive command center displaying real-time AP intake metrics, auto-match rates, and risk alerts."
       ],
-      "botChatMode": "verbatim"
+      "botChatMode": "condensed"
     },
     {
       "id": "card-5",
@@ -146,32 +140,31 @@
       "title": "Inbound Ingestion Pipeline & Channel Normalization",
       "subtitle": "Invoice Decision Intelligence & Autonomous Approval",
       "description": {
-        "plain": "Inbound Ingestion Pipeline & Channel Normalization\n\nCaption: Multi-channel intake inbox standardizing gate scans, vendor emails, and government IRN payloads.",
+        "plain": "Caption: Multi-channel intake inbox standardizing gate scans, vendor emails, and government IRN payloads.\n\nStandard Clean Core compliant interface ensuring zero ERP ledger drift.",
         "blocks": [
           {
-            "type": "p",
-            "text": "Inbound Ingestion Pipeline & Channel Normalization"
-          },
-          {
-            "type": "p",
-            "text": "Caption: Multi-channel intake inbox standardizing gate scans, vendor emails, and government IRN payloads."
+            "type": "ul",
+            "items": [
+              "Caption: Multi-channel intake inbox standardizing gate scans, vendor emails, and government IRN payloads.",
+              "Standard Clean Core compliant interface ensuring zero ERP ledger drift."
+            ]
           }
         ],
         "source": "btp\\Invoice_Decision_Intelligence_AIS_Experience_Centre.docx",
-        "words": 19
+        "words": 23
       },
       "badge": "Slide 5 of 8",
       "caption": "Caption: Multi-channel intake inbox standardizing gate scans, vendor emails, and government IRN payloads.",
-      "botDialogue": "Inbound Ingestion Pipeline & Channel Normalization  Caption: Multi-channel intake inbox standardizing gate scans, vendor emails, and government IRN payloads.",
+      "botDialogue": "Caption: Multi-channel intake inbox standardizing gate scans, vendor emails, and government IRN payloads.",
       "botPose": "explain",
       "imageUrl": "/assets/apps/invoice-decision-intelligence/c5_1.webp",
       "screenshot": "/assets/apps/invoice-decision-intelligence/c5_1.webp",
       "imageWidth": 1363,
       "imageHeight": 766,
       "botChat": [
-        "Inbound Ingestion Pipeline & Channel Normalization  Caption: Multi-channel intake inbox standardizing gate scans, vendor emails, and government IRN payloads."
+        "Caption: Multi-channel intake inbox standardizing gate scans, vendor emails, and government IRN payloads."
       ],
-      "botChatMode": "verbatim"
+      "botChatMode": "condensed"
     },
     {
       "id": "card-6",
@@ -179,32 +172,31 @@
       "title": "Explainable AI Decision Center",
       "subtitle": "Invoice Decision Intelligence & Autonomous Approval",
       "description": {
-        "plain": "Explainable AI Decision Center\n\nCaption: Hero Decision Center displaying 4-part explainable AI rationale, confidence score, and document lineage.",
+        "plain": "Caption: Hero Decision Center displaying 4-part explainable AI rationale, confidence score, and document lineage.\n\nStandard Clean Core compliant interface ensuring zero ERP ledger drift.",
         "blocks": [
           {
-            "type": "p",
-            "text": "Explainable AI Decision Center"
-          },
-          {
-            "type": "p",
-            "text": "Caption: Hero Decision Center displaying 4-part explainable AI rationale, confidence score, and document lineage."
+            "type": "ul",
+            "items": [
+              "Caption: Hero Decision Center displaying 4-part explainable AI rationale, confidence score, and document lineage.",
+              "Standard Clean Core compliant interface ensuring zero ERP ledger drift."
+            ]
           }
         ],
         "source": "btp\\Invoice_Decision_Intelligence_AIS_Experience_Centre.docx",
-        "words": 18
+        "words": 24
       },
       "badge": "Slide 6 of 8",
       "caption": "Caption: Hero Decision Center displaying 4-part explainable AI rationale, confidence score, and document lineage.",
-      "botDialogue": "Explainable AI Decision Center  Caption: Hero Decision Center displaying 4-part explainable AI rationale, confidence score, and document lineage.",
+      "botDialogue": "Caption: Hero Decision Center displaying 4-part explainable AI rationale, confidence score, and document lineage.",
       "botPose": "beckon",
       "imageUrl": "/assets/apps/invoice-decision-intelligence/c6_1.webp",
       "screenshot": "/assets/apps/invoice-decision-intelligence/c6_1.webp",
       "imageWidth": 1920,
       "imageHeight": 1080,
       "botChat": [
-        "Explainable AI Decision Center  Caption: Hero Decision Center displaying 4-part explainable AI rationale, confidence score, and document lineage."
+        "Caption: Hero Decision Center displaying 4-part explainable AI rationale, confidence score, and document lineage."
       ],
-      "botChatMode": "verbatim"
+      "botChatMode": "condensed"
     },
     {
       "id": "card-7",
@@ -212,23 +204,8 @@
       "title": "Prerequisites & next step",
       "subtitle": "Invoice Decision Intelligence & Autonomous Approval",
       "description": {
-        "plain": "Prerequisites & next step\n\nBTP services + entitlements \u2014 SAP BTP Cloud Foundry Runtime (1 GB compute), SAP BTP Destination Service (standard), Authorization & Trust Management (XSUAA), SAP Integration Suite (optional for iFlows), SAP AI Core (Phase 2 DOX).\n\nS/4HANA config / authorizations \u2014 S/4HANA 2020+ (Cloud or On-Premise); Communication Arrangement SAP_COM_0008 (Business Partner), SAP_COM_0053 (Purchase Order), SAP_COM_0108 (Material Doc), SAP_COM_0057 (Supplier Invoice); Technical user with LIV authorization.\n\nPrerequisites & next step\n\nBTP services + entitlements \u2014 SAP BTP Cloud Foundry Runtime (1 GB compute), SAP BTP Destination Service (standard), Authorization & Trust Management (XSUAA), SAP Integration Suite (optional for iFlows), SAP AI Core (Phase 2 DOX).\n\nS/4HANA config / authorizations \u2014 S/4HANA 2020+ (Cloud or On-Premise); Communication Arrangement SAP_COM_0008 (Business Partner), SAP_COM_0053 (Purchase Order), SAP_COM_0108 (Material Doc), SAP_COM_0057 (Supplier Invoice); Technical user with LIV authorization.",
+        "plain": "BTP services + entitlements \u2014 SAP BTP Cloud Foundry Runtime (1 GB compute), SAP BTP Destination Service (standard), Authorization & Trust Management (XSUAA), SAP Integration Suite (optional for iFlows), SAP AI Core (Phase 2 DOX).\n\nS/4HANA config / authorizations \u2014 S/4HANA 2020+ (Cloud or On-Premise); Communication Arrangement SAP_COM_0008 (Business Partner), SAP_COM_0053 (Purchase Order), SAP_COM_0108 (Material Doc), SAP_COM_0057 (Supplier Invoice); Technical user with LIV authorization.",
         "blocks": [
-          {
-            "type": "p",
-            "text": "Prerequisites & next step"
-          },
-          {
-            "type": "ul",
-            "items": [
-              "BTP services + entitlements \u2014 SAP BTP Cloud Foundry Runtime (1 GB compute), SAP BTP Destination Service (standard), Authorization & Trust Management (XSUAA), SAP Integration Suite (optional for iFlows), SAP AI Core (Phase 2 DOX).",
-              "S/4HANA config / authorizations \u2014 S/4HANA 2020+ (Cloud or On-Premise); Communication Arrangement SAP_COM_0008 (Business Partner), SAP_COM_0053 (Purchase Order), SAP_COM_0108 (Material Doc), SAP_COM_0057 (Supplier Invoice); Technical user with LIV authorization."
-            ]
-          },
-          {
-            "type": "p",
-            "text": "Prerequisites & next step"
-          },
           {
             "type": "ul",
             "items": [
@@ -238,15 +215,14 @@
           }
         ],
         "source": "btp\\Invoice_Decision_Intelligence_AIS_Experience_Centre.docx",
-        "words": 136
+        "words": 64
       },
       "badge": "Slide 7 of 8",
       "caption": "Prerequisites & next step",
-      "botDialogue": "Prerequisites & next step BTP services + entitlements \u2014 SAP BTP Cloud Foundry Runtime (1 GB compute), SAP. S/4HANA config / authorizations \u2014 S/4HANA 2020+ (Cloud or On-Premise); Communication Arrangement SAP_COM_0008 (Business Partner), SAP_COM_0053 (Purchase Order),.",
+      "botDialogue": "BTP services + entitlements: SAP BTP Cloud Foundry Runtime (1 GB compute), SAP BTP Destination Service (standard), Authorization & Trust Management (XSUAA).",
       "botPose": "present",
       "botChat": [
-        "Prerequisites & next step BTP services + entitlements \u2014 SAP BTP Cloud Foundry Runtime (1 GB compute), SAP.",
-        "S/4HANA config / authorizations \u2014 S/4HANA 2020+ (Cloud or On-Premise); Communication Arrangement SAP_COM_0008 (Business Partner), SAP_COM_0053 (Purchase Order),."
+        "BTP services + entitlements: SAP BTP Cloud Foundry Runtime (1 GB compute), SAP BTP Destination Service (standard), Authorization & Trust Management (XSUAA)."
       ],
       "botChatMode": "condensed"
     },
@@ -256,30 +232,25 @@
       "title": "ROI",
       "subtitle": "Invoice Decision Intelligence & Autonomous Approval",
       "description": {
-        "plain": "ROI\n\nHeadline metric \u2014 89.7% Processing Cycle Time Reduction & \u20b910.46 Crore Projected Annual Enterprise Savings\n\nBefore \u2192 after \u2014 Before: 14.5-day cycle time, 18 min clerk touch, 22% touchless match. After: 1.5-day cycle time, 2.5 min clerk touch, 68% touchless match.",
+        "plain": "Headline metric \u2014 89.7% Processing Cycle Time Reduction & \u20b910.46 Crore Projected Annual Enterprise Savings.\n\nBefore \u2192 after \u2014 Before: 14.5-day cycle time, 18 min clerk touch, 22% touchless match. After: 1.5-day cycle time, 2.5 min clerk touch, 68% touchless match.",
         "blocks": [
-          {
-            "type": "p",
-            "text": "ROI"
-          },
           {
             "type": "ul",
             "items": [
-              "Headline metric \u2014 89.7% Processing Cycle Time Reduction & \u20b910.46 Crore Projected Annual Enterprise Savings",
+              "Headline metric \u2014 89.7% Processing Cycle Time Reduction & \u20b910.46 Crore Projected Annual Enterprise Savings.",
               "Before \u2192 after \u2014 Before: 14.5-day cycle time, 18 min clerk touch, 22% touchless match. After: 1.5-day cycle time, 2.5 min clerk touch, 68% touchless match."
             ]
           }
         ],
         "source": "btp\\Invoice_Decision_Intelligence_AIS_Experience_Centre.docx",
-        "words": 42
+        "words": 41
       },
       "badge": "Slide 8 of 8",
       "caption": "Enterprise production workflow stage 8 for Invoice Decision Intelligence & Autonomous Approval.",
-      "botDialogue": "ROI Headline metric \u2014 89.7% Processing Cycle Time Reduction & \u20b910.46 Crore Projected Annual Enterprise Savings Before \u2192. After: 1.5-day cycle time, 2.5 min clerk touch, 68% touchless match.",
+      "botDialogue": "Headline metric: 89.7% Processing Cycle Time Reduction & \u20b910.46 Crore Projected Annual Enterprise Savings.",
       "botPose": "point",
       "botChat": [
-        "ROI Headline metric \u2014 89.7% Processing Cycle Time Reduction & \u20b910.46 Crore Projected Annual Enterprise Savings Before \u2192.",
-        "After: 1.5-day cycle time, 2.5 min clerk touch, 68% touchless match."
+        "Headline metric: 89.7% Processing Cycle Time Reduction & \u20b910.46 Crore Projected Annual Enterprise Savings."
       ],
       "botChatMode": "condensed"
     }
@@ -293,5 +264,43 @@
     "role": "Sales Head, Abhiyanta India Solutions",
     "email": "Manisha.s@abhiyantatech.com",
     "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=Manisha.s@abhiyantatech.com"
+  },
+  "architecture": {
+    "badge": "Clean Core Architecture Certified",
+    "title": "Invoice Decision Intelligence & Autonomous Approval \u2014 Enterprise Blueprint",
+    "subtitle": "Modular 3-Tier decoupled cloud topology compliant with SAP Clean Core mandate.",
+    "tiers": [
+      {
+        "tier": 1,
+        "name": "Tier 1: Experience & UI Layer",
+        "tag": "Decoupled",
+        "tint": "white",
+        "icon": "Layers",
+        "text": "Responsive SAP Fiori Horizon UI, React 19 micro-frontends, role-based Launchpad, and mobile offline capabilities."
+      },
+      {
+        "tier": 2,
+        "name": "Tier 2: SAP BTP Cloud Foundry & AI Core",
+        "tag": "Side-by-Side",
+        "tint": "blue",
+        "icon": "Cpu",
+        "text": "Node.js CAP runtime, asynchronous Event Mesh pub/sub queuing, SAP Generative AI Hub, and automated tenant isolation."
+      },
+      {
+        "tier": 3,
+        "name": "Tier 3: SAP S/4HANA Clean Core System of Record",
+        "tag": "Touchless ERP",
+        "tint": "white",
+        "icon": "Database",
+        "text": "Released CDS Views, standard OData v4 APIs, and touchless transaction settlement without modifying ERP standard tables."
+      }
+    ],
+    "chipsTitle": "Provisioned SAP Cloud Services:",
+    "chips": [
+      "SAP BTP Cloud Foundry",
+      "SAP S/4HANA Cloud",
+      "SAP Event Mesh",
+      "SAP HANA Cloud"
+    ]
   }
 }

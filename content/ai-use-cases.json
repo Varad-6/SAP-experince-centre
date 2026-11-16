@@ -1,0 +1,162 @@
+[
+  {
+    "id": "uc-1",
+    "code": "UC-1",
+    "title": "Digital Route Card AI Agent",
+    "description": "Digitises production routing and optimises shop-floor operations.",
+    "tag": "Manufacturing",
+    "comingSoon": true
+  },
+  {
+    "id": "uc-2",
+    "code": "UC-2",
+    "title": "Quality Disposition AI Agent",
+    "description": "Recommends quality-lot acceptance, rework, scrap, or returns.",
+    "tag": "Quality Management",
+    "comingSoon": true
+  },
+  {
+    "id": "uc-3",
+    "code": "UC-3",
+    "title": "Predictive Maintenance Recommendation Agent",
+    "description": "Predicts equipment failures and recommends timely maintenance actions.",
+    "tag": "Asset Management",
+    "comingSoon": true
+  },
+  {
+    "id": "uc-4",
+    "code": "UC-4",
+    "title": "Production Scheduling Optimization Agent",
+    "description": "Optimises production schedules, bottlenecks, and work-centre utilisation.",
+    "tag": "Supply Chain",
+    "comingSoon": true
+  },
+  {
+    "id": "uc-5",
+    "code": "UC-5",
+    "title": "Batch Yield Optimization Agent",
+    "description": "Predicts batch yields and recommends process improvements.",
+    "tag": "Process Optimization",
+    "comingSoon": true
+  },
+  {
+    "id": "uc-6",
+    "code": "UC-6",
+    "title": "Vision AI for Inline Quality Inspection",
+    "description": "Detects production defects using real-time computer vision.",
+    "tag": "Computer Vision",
+    "comingSoon": true
+  },
+  {
+    "id": "uc-7",
+    "code": "UC-7",
+    "title": "Credit Release Agent for Blocked Sales Orders",
+    "description": "Evaluates credit blocks and recommends eligible order releases.",
+    "tag": "Sales & Finance",
+    "comingSoon": true
+  },
+  {
+    "id": "uc-8",
+    "code": "UC-8",
+    "title": "ATP Intelligent Promise Date Agent",
+    "description": "Calculates reliable delivery dates using availability constraints.",
+    "tag": "Order Fulfillment",
+    "comingSoon": true
+  },
+  {
+    "id": "uc-9",
+    "code": "UC-9",
+    "title": "Pricing & Discount Anomaly Detection Agent",
+    "description": "Detects unusual pricing, discounts, and margin deviations.",
+    "tag": "Pricing Intelligence",
+    "comingSoon": true
+  },
+  {
+    "id": "uc-10",
+    "code": "UC-10",
+    "title": "Procurement Document Information Extraction Agent",
+    "description": "Extracts procurement document data and validates invoice details.",
+    "tag": "Procurement",
+    "comingSoon": true
+  },
+  {
+    "id": "uc-11",
+    "code": "UC-11",
+    "title": "Supplier Risk Scoring & Evaluation Agent",
+    "description": "Scores supplier risks using performance and external indicators.",
+    "tag": "Vendor Management",
+    "comingSoon": true
+  },
+  {
+    "id": "uc-12",
+    "code": "UC-12",
+    "title": "Material Description Parsing & Catalog Enrichment Agent",
+    "description": "Enriches material descriptions and identifies catalogue duplicates.",
+    "tag": "Master Data",
+    "comingSoon": true
+  },
+  {
+    "id": "uc-13",
+    "code": "UC-13",
+    "title": "Invoice Object Recommendation Agent",
+    "description": "Recommends accounting objects for accurate invoice-line posting.",
+    "tag": "Finance & AP",
+    "comingSoon": true
+  },
+  {
+    "id": "uc-14",
+    "code": "UC-14",
+    "title": "GL Anomaly Detection & Reconciliation Agent",
+    "description": "Detects unusual ledger postings and reconciliation exceptions.",
+    "tag": "General Ledger",
+    "comingSoon": true
+  },
+  {
+    "id": "uc-15",
+    "code": "UC-15",
+    "title": "GST & Tax Compliance Validation Agent",
+    "description": "Validates transactions against GST rules and requirements.",
+    "tag": "Tax & Compliance",
+    "comingSoon": true
+  },
+  {
+    "id": "uc-16",
+    "code": "UC-16",
+    "title": "Demand Sensing & Short-Cycle Forecasting Agent",
+    "description": "Forecasts short-term demand using current business signals.",
+    "tag": "Demand Planning",
+    "comingSoon": true
+  },
+  {
+    "id": "uc-17",
+    "code": "UC-17",
+    "title": "Warehouse Slotting & Putaway Optimization Agent",
+    "description": "Optimises warehouse storage locations and putaway decisions.",
+    "tag": "Warehouse Management",
+    "comingSoon": true
+  },
+  {
+    "id": "uc-18",
+    "code": "UC-18",
+    "title": "Resume Parsing & Interview Scheduling Agent",
+    "description": "Parses resumes, matches candidates, and schedules interviews.",
+    "tag": "Human Capital",
+    "comingSoon": true
+  },
+  {
+    "id": "uc-19",
+    "code": "UC-19",
+    "title": "Lead Scoring & Appointment Booking Agent",
+    "description": "Scores sales leads and coordinates discovery-call appointments.",
+    "tag": "Sales Acceleration",
+    "comingSoon": true
+  },
+  {
+    "id": "uc-20",
+    "code": "UC-20",
+    "title": "Intelligent Master Data Governance Agent",
+    "description": "Validates master data and detects duplicate records.",
+    "tag": "Data Governance",
+    "comingSoon": true
+  }
+]

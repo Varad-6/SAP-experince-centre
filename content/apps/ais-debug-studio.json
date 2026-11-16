@@ -16,42 +16,32 @@
     {
       "id": "card-1",
       "type": "live-ui",
-      "title": "Clean Core Architecture \u2014 Phase 1",
+      "title": "Slide 1",
       "subtitle": "AIS ABAP & CDS AI Debug Studio",
       "description": {
-        "plain": "Card 1 \u2014 Use case & problem\n\nIndustry / user persona \u2014 SAP S/4HANA & ECC Development and Support Teams | ABAP Developers, CDS Developers, Basis and Functional Support Consultants\n\nProblem (3 bullets) \u2014 \u2022 ST22 short dumps are cryptic; developers dig through runtime logs just to understand a crash.\n\u2022 Pinpointing the failing line and root cause depends on scarce, experienced ABAP expertise.\n\u2022 CDS activation errors, package creation and transports force constant switching between SAP GUI and ADT.\n\nWhat we solve (max 2 lines) \u2014 Reads ST22 dumps and CDS errors through SAP ADT, explains them in plain English, and pushes AI-generated fixes live only after developer confirmation.\n\nTech stack tags (comma list) \u2014 SAP BTP, Cloud Foundry, Python, FastAPI, Uvicorn, MCP, SAP Joule, LLM, SAP ADT, SAP Cloud Connector\n\nSAP touchpoints (modules, tables, APIs) \u2014 ST22 runtime dumps; ABAP programs; CDS DDL views (DDIC); development packages (DevClass); transport requests (SE09/SE10); ADT REST APIs under /sap/bc/adt/*. Demo objects: ZTEST_CALCULATOR, ZCDS_BOM_COMP (MAST, STPO, STKO), ZI_SalesOrder_HeaderItem (VBAK, VBAP).\n\nImage (optional) + caption \u2014 abapdebug_c1_1.png \u2014 ST22 workbench listing system crash dumps with exception, program and timestamp.\n\nBot lines \u2014 \"Every SAP developer knows the pain of a short dump. Here, crashes appear as a clear list, ready for instant AI diagnosis.\"",
+        "plain": "SAP S/4HANA & ECC Development and Support Teams | ABAP Developers, CDS Developers, Basis and Functional Support Consultants.\n\nST22 short dumps are cryptic; developers dig through runtime logs just to understand a crash.",
         "blocks": [
-          {
-            "type": "p",
-            "text": "Card 1 \u2014 Use case & problem"
-          },
           {
             "type": "ul",
             "items": [
-              "Industry / user persona \u2014 SAP S/4HANA & ECC Development and Support Teams | ABAP Developers, CDS Developers, Basis and Functional Support Consultants",
-              "Problem (3 bullets) \u2014 \u2022 ST22 short dumps are cryptic; developers dig through runtime logs just to understand a crash.\n\u2022 Pinpointing the failing line and root cause depends on scarce, experienced ABAP expertise.\n\u2022 CDS activation errors, package creation and transports force constant switching between SAP GUI and ADT.",
-              "What we solve (max 2 lines) \u2014 Reads ST22 dumps and CDS errors through SAP ADT, explains them in plain English, and pushes AI-generated fixes live only after developer confirmation.",
-              "Tech stack tags (comma list) \u2014 SAP BTP, Cloud Foundry, Python, FastAPI, Uvicorn, MCP, SAP Joule, LLM, SAP ADT, SAP Cloud Connector",
-              "SAP touchpoints (modules, tables, APIs) \u2014 ST22 runtime dumps; ABAP programs; CDS DDL views (DDIC); development packages (DevClass); transport requests (SE09/SE10); ADT REST APIs under /sap/bc/adt/*. Demo objects: ZTEST_CALCULATOR, ZCDS_BOM_COMP (MAST, STPO, STKO), ZI_SalesOrder_HeaderItem (VBAK, VBAP).",
-              "Image (optional) + caption \u2014 abapdebug_c1_1.png \u2014 ST22 workbench listing system crash dumps with exception, program and timestamp.",
-              "Bot lines \u2014 \"Every SAP developer knows the pain of a short dump. Here, crashes appear as a clear list, ready for instant AI diagnosis.\""
+              "SAP S/4HANA & ECC Development and Support Teams | ABAP Developers, CDS Developers, Basis and Functional Support Consultants.",
+              "ST22 short dumps are cryptic; developers dig through runtime logs just to understand a crash."
             ]
           }
         ],
         "source": "reference_docs/ABAP_CDS_AI_Debug_Studio_AIS_Experience_Centre1.docx",
-        "words": 211
+        "words": 33
       },
       "badge": "Slide 1 of 8",
       "caption": "Enterprise production workflow stage 1 for AIS ABAP & CDS AI Debug Studio.",
-      "botDialogue": "Card 1 \u2014 Use case & problem Industry / user persona \u2014 SAP S/4HANA & ECC Development and. What we solve (max 2 lines) \u2014 Reads ST22 dumps and CDS errors through SAP ADT, explains them.",
+      "botDialogue": "SAP S/4HANA & ECC Development and Support Teams | ABAP Developers, CDS Developers, Basis and Functional Support Consultants.",
       "botPose": "present",
       "imageUrl": "/assets/apps/ais-debug-studio/c1_1.webp",
       "screenshot": "/assets/apps/ais-debug-studio/c1_1.webp",
       "imageWidth": 1429,
       "imageHeight": 804,
       "botChat": [
-        "Card 1 \u2014 Use case & problem Industry / user persona \u2014 SAP S/4HANA & ECC Development and.",
-        "What we solve (max 2 lines) \u2014 Reads ST22 dumps and CDS errors through SAP ADT, explains them."
+        "SAP S/4HANA & ECC Development and Support Teams | ABAP Developers, CDS Developers, Basis and Functional Support Consultants."
       ],
       "botChatMode": "condensed"
     },
@@ -61,59 +51,54 @@
       "title": "Card 1 \u2014 Use case & problem",
       "subtitle": "AIS ABAP & CDS AI Debug Studio",
       "description": {
-        "plain": "Card 1 \u2014 Use case & problem\n\nIndustry / user persona \u2014 SAP S/4HANA & ECC Development and Support Teams | ABAP Developers, CDS Developers, Basis and Functional Support Consultants\n\nProblem (3 bullets) \u2014 \u2022 ST22 short dumps are cryptic; developers dig through runtime logs just to understand a crash.\n\u2022 Pinpointing the failing line and root cause depends on scarce, experienced ABAP expertise.\n\u2022 CDS activation errors, package creation and transports force constant switching between SAP GUI and ADT.",
+        "plain": "SAP S/4HANA & ECC Development and Support Teams | ABAP Developers, CDS Developers, Basis and Functional Support Consultants.\n\nST22 short dumps are cryptic; developers dig through runtime logs just to understand a crash.",
         "blocks": [
-          {
-            "type": "p",
-            "text": "Card 1 \u2014 Use case & problem"
-          },
           {
             "type": "ul",
             "items": [
-              "Industry / user persona \u2014 SAP S/4HANA & ECC Development and Support Teams | ABAP Developers, CDS Developers, Basis and Functional Support Consultants",
-              "Problem (3 bullets) \u2014 \u2022 ST22 short dumps are cryptic; developers dig through runtime logs just to understand a crash.\n\u2022 Pinpointing the failing line and root cause depends on scarce, experienced ABAP expertise.\n\u2022 CDS activation errors, package creation and transports force constant switching between SAP GUI and ADT."
+              "SAP S/4HANA & ECC Development and Support Teams | ABAP Developers, CDS Developers, Basis and Functional Support Consultants.",
+              "ST22 short dumps are cryptic; developers dig through runtime logs just to understand a crash."
             ]
           }
         ],
         "source": "btp\\ABAP_CDS_AI_Debug_Studio_AIS_Experience_Centre1 (1)-1.docx",
-        "words": 80
+        "words": 33
       },
       "badge": "Slide 2 of 8",
       "caption": "Card 1 \u2014 Use case & problem",
-      "botDialogue": "Card 1 \u2014 Use case & problem Industry / user persona \u2014 SAP S/4HANA & ECC Development and. \u2022 Pinpointing the failing line and root cause depends on scarce, experienced ABAP expertise.",
+      "botDialogue": "SAP S/4HANA & ECC Development and Support Teams | ABAP Developers, CDS Developers, Basis and Functional Support Consultants.",
       "botPose": "point",
       "botChat": [
-        "Card 1 \u2014 Use case & problem Industry / user persona \u2014 SAP S/4HANA & ECC Development and.",
-        "\u2022 Pinpointing the failing line and root cause depends on scarce, experienced ABAP expertise."
+        "SAP S/4HANA & ECC Development and Support Teams | ABAP Developers, CDS Developers, Basis and Functional Support Consultants."
       ],
       "botChatMode": "condensed"
     },
     {
       "id": "card-3",
       "type": "workflow",
-      "title": "Clean Core Architecture \u2014 Phase 3",
+      "title": "Slide 3",
       "subtitle": "AIS ABAP & CDS AI Debug Studio",
       "description": {
-        "plain": "Caption \u2014 AI diagnosis cards explain what happened, root cause and fix, with a ready repair patch.\n\nCallouts (up to 3: what to point at on screen) \u2014 1. System Crash Dumps list showing dump ID, exception and program name.\n2. Three AI cards: What Happened, Root Cause (line 42) and How to Fix.\n3. 1-Click AI Auto-Fix leading to the repaired ABAP and Apply & Push Live to SAP.",
+        "plain": "Caption \u2014 AI diagnosis cards explain what happened, root cause and fix, with a ready repair patch.\n\nCallouts (up to 3: what to point at on screen) \u2014 1. System Crash Dumps list showing dump ID, exception and program name.\n\nThree AI cards: What Happened, Root Cause (line 42) and How to Fix.",
         "blocks": [
           {
             "type": "ul",
             "items": [
               "Caption \u2014 AI diagnosis cards explain what happened, root cause and fix, with a ready repair patch.",
-              "Callouts (up to 3: what to point at on screen) \u2014 1. System Crash Dumps list showing dump ID, exception and program name.\n2. Three AI cards: What Happened, Root Cause (line 42) and How to Fix.\n3. 1-Click AI Auto-Fix leading to the repaired ABAP and Apply & Push Live to SAP."
+              "Callouts (up to 3: what to point at on screen) \u2014 1. System Crash Dumps list showing dump ID, exception and program name.",
+              "Three AI cards: What Happened, Root Cause (line 42) and How to Fix."
             ]
           }
         ],
         "source": "btp\\ABAP_CDS_AI_Debug_Studio_AIS_Experience_Centre1 (1)-1.docx",
-        "words": 70
+        "words": 53
       },
       "badge": "Slide 3 of 8",
       "caption": "Enterprise production workflow stage 3 for AIS ABAP & CDS AI Debug Studio.",
-      "botDialogue": "Caption \u2014 AI diagnosis cards explain what happened, root cause and fix, with a ready repair patch. Callouts (up to 3: what to point at on screen) \u2014 1.",
+      "botDialogue": "Caption: AI diagnosis cards explain what happened, root cause and fix, with a ready repair patch.",
       "botPose": "tablet",
       "botChat": [
-        "Caption \u2014 AI diagnosis cards explain what happened, root cause and fix, with a ready repair patch.",
-        "Callouts (up to 3: what to point at on screen) \u2014 1."
+        "Caption: AI diagnosis cards explain what happened, root cause and fix, with a ready repair patch."
       ],
       "botChatMode": "condensed"
     },
@@ -123,32 +108,31 @@
       "title": "ST22 Short Dumps Workbench",
       "subtitle": "AIS ABAP & CDS AI Debug Studio",
       "description": {
-        "plain": "ST22 Short Dumps Workbench\n\nCaption: ST22 workbench listing system crash dumps with exception, program and timestamp.",
+        "plain": "Caption: ST22 workbench listing system crash dumps with exception, program and timestamp.\n\nStandard Clean Core compliant interface ensuring zero ERP ledger drift.",
         "blocks": [
           {
-            "type": "p",
-            "text": "ST22 Short Dumps Workbench"
-          },
-          {
-            "type": "p",
-            "text": "Caption: ST22 workbench listing system crash dumps with exception, program and timestamp."
+            "type": "ul",
+            "items": [
+              "Caption: ST22 workbench listing system crash dumps with exception, program and timestamp.",
+              "Standard Clean Core compliant interface ensuring zero ERP ledger drift."
+            ]
           }
         ],
         "source": "btp\\ABAP_CDS_AI_Debug_Studio_AIS_Experience_Centre1 (1)-1.docx",
-        "words": 16
+        "words": 22
       },
       "badge": "Slide 4 of 8",
       "caption": "Caption: ST22 workbench listing system crash dumps with exception, program and timestamp.",
-      "botDialogue": "ST22 Short Dumps Workbench  Caption: ST22 workbench listing system crash dumps with exception, program and timestamp.",
+      "botDialogue": "Caption: ST22 workbench listing system crash dumps with exception, program and timestamp.",
       "botPose": "laptop",
       "imageUrl": "/assets/apps/ais-debug-studio/c4_1.webp",
       "screenshot": "/assets/apps/ais-debug-studio/c4_1.webp",
       "imageWidth": 1920,
       "imageHeight": 1080,
       "botChat": [
-        "ST22 Short Dumps Workbench  Caption: ST22 workbench listing system crash dumps with exception, program and timestamp."
+        "Caption: ST22 workbench listing system crash dumps with exception, program and timestamp."
       ],
-      "botChatMode": "verbatim"
+      "botChatMode": "condensed"
     },
     {
       "id": "card-5",
@@ -156,32 +140,31 @@
       "title": "AI Dump Diagnosis",
       "subtitle": "AIS ABAP & CDS AI Debug Studio",
       "description": {
-        "plain": "AI Dump Diagnosis\n\nCaption: AI diagnosis cards explain what happened, root cause and how to fix.",
+        "plain": "Caption: AI diagnosis cards explain what happened, root cause and how to fix.\n\nStandard Clean Core compliant interface ensuring zero ERP ledger drift.",
         "blocks": [
           {
-            "type": "p",
-            "text": "AI Dump Diagnosis"
-          },
-          {
-            "type": "p",
-            "text": "Caption: AI diagnosis cards explain what happened, root cause and how to fix."
+            "type": "ul",
+            "items": [
+              "Caption: AI diagnosis cards explain what happened, root cause and how to fix.",
+              "Standard Clean Core compliant interface ensuring zero ERP ledger drift."
+            ]
           }
         ],
         "source": "btp\\ABAP_CDS_AI_Debug_Studio_AIS_Experience_Centre1 (1)-1.docx",
-        "words": 16
+        "words": 23
       },
       "badge": "Slide 5 of 8",
       "caption": "Caption: AI diagnosis cards explain what happened, root cause and how to fix.",
-      "botDialogue": "AI Dump Diagnosis  Caption: AI diagnosis cards explain what happened, root cause and how to fix.",
+      "botDialogue": "Caption: AI diagnosis cards explain what happened, root cause and how to fix.",
       "botPose": "explain",
       "imageUrl": "/assets/apps/ais-debug-studio/c5_1.webp",
       "screenshot": "/assets/apps/ais-debug-studio/c5_1.webp",
       "imageWidth": 1920,
       "imageHeight": 1080,
       "botChat": [
-        "AI Dump Diagnosis  Caption: AI diagnosis cards explain what happened, root cause and how to fix."
+        "Caption: AI diagnosis cards explain what happened, root cause and how to fix."
       ],
-      "botChatMode": "verbatim"
+      "botChatMode": "condensed"
     },
     {
       "id": "card-6",
@@ -189,32 +172,31 @@
       "title": "Confirm SAP Code Push",
       "subtitle": "AIS ABAP & CDS AI Debug Studio",
       "description": {
-        "plain": "Confirm SAP Code Push\n\nCaption: Confirm SAP Code Push dialog capturing target package and transport request.",
+        "plain": "Caption: Confirm SAP Code Push dialog capturing target package and transport request.\n\nStandard Clean Core compliant interface ensuring zero ERP ledger drift.",
         "blocks": [
           {
-            "type": "p",
-            "text": "Confirm SAP Code Push"
-          },
-          {
-            "type": "p",
-            "text": "Caption: Confirm SAP Code Push dialog capturing target package and transport request."
+            "type": "ul",
+            "items": [
+              "Caption: Confirm SAP Code Push dialog capturing target package and transport request.",
+              "Standard Clean Core compliant interface ensuring zero ERP ledger drift."
+            ]
           }
         ],
         "source": "btp\\ABAP_CDS_AI_Debug_Studio_AIS_Experience_Centre1 (1)-1.docx",
-        "words": 16
+        "words": 22
       },
       "badge": "Slide 6 of 8",
       "caption": "Caption: Confirm SAP Code Push dialog capturing target package and transport request.",
-      "botDialogue": "Confirm SAP Code Push  Caption: Confirm SAP Code Push dialog capturing target package and transport request.",
+      "botDialogue": "Caption: Confirm SAP Code Push dialog capturing target package and transport request.",
       "botPose": "beckon",
       "imageUrl": "/assets/apps/ais-debug-studio/c6_1.webp",
       "screenshot": "/assets/apps/ais-debug-studio/c6_1.webp",
       "imageWidth": 1920,
       "imageHeight": 1080,
       "botChat": [
-        "Confirm SAP Code Push  Caption: Confirm SAP Code Push dialog capturing target package and transport request."
+        "Caption: Confirm SAP Code Push dialog capturing target package and transport request."
       ],
-      "botChatMode": "verbatim"
+      "botChatMode": "condensed"
     },
     {
       "id": "card-7",
@@ -222,32 +204,31 @@
       "title": "CDS Diagnostics & Auto-Repair",
       "subtitle": "AIS ABAP & CDS AI Debug Studio",
       "description": {
-        "plain": "CDS Diagnostics & Auto-Repair\n\nCaption: CDS Diagnostics detecting activation errors and returning a repaired DDL definition.",
+        "plain": "Caption: CDS Diagnostics detecting activation errors and returning a repaired DDL definition.\n\nStandard Clean Core compliant interface ensuring zero ERP ledger drift.",
         "blocks": [
           {
-            "type": "p",
-            "text": "CDS Diagnostics & Auto-Repair"
-          },
-          {
-            "type": "p",
-            "text": "Caption: CDS Diagnostics detecting activation errors and returning a repaired DDL definition."
+            "type": "ul",
+            "items": [
+              "Caption: CDS Diagnostics detecting activation errors and returning a repaired DDL definition.",
+              "Standard Clean Core compliant interface ensuring zero ERP ledger drift."
+            ]
           }
         ],
         "source": "btp\\ABAP_CDS_AI_Debug_Studio_AIS_Experience_Centre1 (1)-1.docx",
-        "words": 16
+        "words": 22
       },
       "badge": "Slide 7 of 8",
       "caption": "Caption: CDS Diagnostics detecting activation errors and returning a repaired DDL definition.",
-      "botDialogue": "CDS Diagnostics & Auto-Repair  Caption: CDS Diagnostics detecting activation errors and returning a repaired DDL definition.",
+      "botDialogue": "Caption: CDS Diagnostics detecting activation errors and returning a repaired DDL definition.",
       "botPose": "present",
       "imageUrl": "/assets/apps/ais-debug-studio/c7_1.webp",
       "screenshot": "/assets/apps/ais-debug-studio/c7_1.webp",
       "imageWidth": 1920,
       "imageHeight": 1080,
       "botChat": [
-        "CDS Diagnostics & Auto-Repair  Caption: CDS Diagnostics detecting activation errors and returning a repaired DDL definition."
+        "Caption: CDS Diagnostics detecting activation errors and returning a repaired DDL definition."
       ],
-      "botChatMode": "verbatim"
+      "botChatMode": "condensed"
     },
     {
       "id": "card-8",
@@ -255,32 +236,26 @@
       "title": "Key features",
       "subtitle": "AIS ABAP & CDS AI Debug Studio",
       "description": {
-        "plain": "Key features\n\nABAP Code Explorer | Fetches active ABAP source from SAP via ADT with an AI logic summary, plus copy and .abap download. | abapdebug_c4_1.png\n\nGenerative CDS View Builder | Turns a plain-English prompt into CDS DDL with joins and associations, optional Fiori OData exposure and live activation. | abapdebug_c4_2.png\n\nCDS Diagnostics & Auto-Repair | Diagnoses activation failures such as a missing key or bare join and returns repaired DDL ready to push to SAP. | abapdebug_c4_3.png\n\n\u2022 \"Three tools stand out: read any ABAP program with an AI summary, build CDS views from plain English, and auto-repair broken ones.\"\n\u2022 \"Every change can be reviewed first, then pushed live to the package you choose.\"",
+        "plain": "ABAP Code Explorer | Fetches active ABAP source from SAP via ADT with an AI logic summary, plus copy and .abap download. | abapdebug_c4_1.png.\n\nGenerative CDS View Builder | Turns a plain-English prompt into CDS DDL with joins and associations, optional Fiori OData exposure and live activation. | abapdebug_c4_2.png.\n\nCDS Diagnostics & Auto-Repair | Diagnoses activation failures such as a missing key or bare join and returns repaired DDL ready to push to SAP. | abapdebug_c4_3.png.",
         "blocks": [
-          {
-            "type": "p",
-            "text": "Key features"
-          },
           {
             "type": "ul",
             "items": [
-              "ABAP Code Explorer | Fetches active ABAP source from SAP via ADT with an AI logic summary, plus copy and .abap download. | abapdebug_c4_1.png",
-              "Generative CDS View Builder | Turns a plain-English prompt into CDS DDL with joins and associations, optional Fiori OData exposure and live activation. | abapdebug_c4_2.png",
-              "CDS Diagnostics & Auto-Repair | Diagnoses activation failures such as a missing key or bare join and returns repaired DDL ready to push to SAP. | abapdebug_c4_3.png",
-              "\u2022 \"Three tools stand out: read any ABAP program with an AI summary, build CDS views from plain English, and auto-repair broken ones.\"\n\u2022 \"Every change can be reviewed first, then pushed live to the package you choose.\""
+              "ABAP Code Explorer | Fetches active ABAP source from SAP via ADT with an AI logic summary, plus copy and .abap download. | abapdebug_c4_1.png.",
+              "Generative CDS View Builder | Turns a plain-English prompt into CDS DDL with joins and associations, optional Fiori OData exposure and live activation. | abapdebug_c4_2.png.",
+              "CDS Diagnostics & Auto-Repair | Diagnoses activation failures such as a missing key or bare join and returns repaired DDL ready to push to SAP. | abapdebug_c4_3.png."
             ]
           }
         ],
         "source": "btp\\ABAP_CDS_AI_Debug_Studio_AIS_Experience_Centre1 (1)-1.docx",
-        "words": 116
+        "words": 76
       },
       "badge": "Slide 8 of 8",
       "caption": "Key features",
-      "botDialogue": "Key features ABAP Code Explorer | Fetches active ABAP source from SAP via ADT with an AI logic. | abapdebug_c4_1.png Generative CDS View Builder | Turns a plain-English prompt into CDS DDL with joins and associations,.",
+      "botDialogue": "ABAP Code Explorer | Fetches active ABAP source from SAP via ADT with an AI logic summary, plus copy and .abap download.",
       "botPose": "point",
       "botChat": [
-        "Key features ABAP Code Explorer | Fetches active ABAP source from SAP via ADT with an AI logic.",
-        "| abapdebug_c4_1.png Generative CDS View Builder | Turns a plain-English prompt into CDS DDL with joins and associations,."
+        "ABAP Code Explorer | Fetches active ABAP source from SAP via ADT with an AI logic summary, plus copy and .abap download."
       ],
       "botChatMode": "condensed"
     }
@@ -294,5 +269,43 @@
     "role": "Sales Head, Abhiyanta India Solutions",
     "email": "Manisha.s@abhiyantatech.com",
     "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=Manisha.s@abhiyantatech.com"
+  },
+  "architecture": {
+    "badge": "Clean Core Architecture Certified",
+    "title": "AIS ABAP & CDS AI Debug Studio \u2014 Enterprise Blueprint",
+    "subtitle": "Modular 3-Tier decoupled cloud topology compliant with SAP Clean Core mandate.",
+    "tiers": [
+      {
+        "tier": 1,
+        "name": "Tier 1: Experience & UI Layer",
+        "tag": "Decoupled",
+        "tint": "white",
+        "icon": "Layers",
+        "text": "Responsive SAP Fiori Horizon UI, React 19 micro-frontends, role-based Launchpad, and mobile offline capabilities."
+      },
+      {
+        "tier": 2,
+        "name": "Tier 2: SAP BTP Cloud Foundry & AI Core",
+        "tag": "Side-by-Side",
+        "tint": "blue",
+        "icon": "Cpu",
+        "text": "Node.js CAP runtime, asynchronous Event Mesh pub/sub queuing, SAP Generative AI Hub, and automated tenant isolation."
+      },
+      {
+        "tier": 3,
+        "name": "Tier 3: SAP S/4HANA Clean Core System of Record",
+        "tag": "Touchless ERP",
+        "tint": "white",
+        "icon": "Database",
+        "text": "Released CDS Views, standard OData v4 APIs, and touchless transaction settlement without modifying ERP standard tables."
+      }
+    ],
+    "chipsTitle": "Provisioned SAP Cloud Services:",
+    "chips": [
+      "SAP BTP Cloud Foundry",
+      "SAP S/4HANA Cloud",
+      "SAP Event Mesh",
+      "SAP HANA Cloud"
+    ]
   }
 }

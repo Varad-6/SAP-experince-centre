@@ -19,60 +19,58 @@
       "title": "Card 1: Application Login & Persona Selector",
       "subtitle": "Product Cost Simulator & Multi-Tier BOM Explosion",
       "description": {
-        "plain": "\u2022 Card 1: Application Login & Persona Selector\n\nCaption: Sign-in portal with 1-click persona profiles for Presales, Delivery, Finance, and Enterprise Admin roles.",
+        "plain": "Application Login & Persona Selector.\n\nCaption: Sign-in portal with 1-click persona profiles for Presales, Delivery, Finance, and Enterprise Admin roles.",
         "blocks": [
           {
             "type": "ul",
             "items": [
-              "Card 1: Application Login & Persona Selector"
+              "Application Login & Persona Selector.",
+              "Caption: Sign-in portal with 1-click persona profiles for Presales, Delivery, Finance, and Enterprise Admin roles."
             ]
-          },
-          {
-            "type": "p",
-            "text": "Caption: Sign-in portal with 1-click persona profiles for Presales, Delivery, Finance, and Enterprise Admin roles."
           }
         ],
         "source": "btp\\Product_Cost_Simulator_AIS_Experience_Centre1-1.docx",
-        "words": 23
+        "words": 20
       },
       "badge": "Slide 1 of 8",
       "caption": "Caption: Sign-in portal with 1-click persona profiles for Presales, Delivery, Finance, and Enterprise Admin roles.",
-      "botDialogue": "\u2022 Card 1: Application Login & Persona Selector Caption: Sign-in portal with 1-click persona profiles for Presales, Delivery,.",
+      "botDialogue": "Application Login & Persona Selector.",
       "botPose": "present",
       "imageUrl": "/assets/apps/product-cost-simulator/c1_1.webp",
       "screenshot": "/assets/apps/product-cost-simulator/c1_1.webp",
       "imageWidth": 1920,
       "imageHeight": 1080,
       "botChat": [
-        "\u2022 Card 1: Application Login & Persona Selector Caption: Sign-in portal with 1-click persona profiles for Presales, Delivery,."
+        "Application Login & Persona Selector."
       ],
       "botChatMode": "condensed"
     },
     {
       "id": "card-2",
       "type": "challenge",
-      "title": "Clean Core Architecture \u2014 Phase 2",
+      "title": "Slide 2",
       "subtitle": "Product Cost Simulator & Multi-Tier BOM Explosion",
       "description": {
-        "plain": "Problem (3 bullets) \u2014 \u2022 Multi-week quotation latency: Cross-functional teams spend 10\u201318 days manually consolidating multi-level BOMs, outdated purchase info records, and work center rates.\n\u2022 Volatile commodity & FX risk blindness: Unanticipated price shifts in steel, copper, energy tariffs, and foreign exchange erode projected tender margins by 8\u201315% post-award.\n\u2022 Rigid ERP costing structures: Core SAP S/4HANA CK11N/CK40N costing runs are static, require released master data, and cannot run dynamic pre-deal \"what-if\" simulations without risking productive costing data integrity.",
+        "plain": "Multi-week quotation latency: Cross-functional teams spend 10\u201318 days manually consolidating multi-level BOMs, outdated purchase info records, and work center rates.\n\nVolatile commodity & FX risk blindness: Unanticipated price shifts in steel, copper, energy tariffs, and foreign exchange erode projected tender margins by 8\u201315% post-award.\n\nRigid ERP costing structures: Core SAP S/4HANA CK11N/CK40N costing runs are static, require released master data, and cannot run dynamic pre-deal \"what-if\" simulations without risking productive costing data integrity.",
         "blocks": [
           {
             "type": "ul",
             "items": [
-              "Problem (3 bullets) \u2014 \u2022 Multi-week quotation latency: Cross-functional teams spend 10\u201318 days manually consolidating multi-level BOMs, outdated purchase info records, and work center rates.\n\u2022 Volatile commodity & FX risk blindness: Unanticipated price shifts in steel, copper, energy tariffs, and foreign exchange erode projected tender margins by 8\u201315% post-award.\n\u2022 Rigid ERP costing structures: Core SAP S/4HANA CK11N/CK40N costing runs are static, require released master data, and cannot run dynamic pre-deal \"what-if\" simulations without risking productive costing data integrity."
+              "Multi-week quotation latency: Cross-functional teams spend 10\u201318 days manually consolidating multi-level BOMs, outdated purchase info records, and work center rates.",
+              "Volatile commodity & FX risk blindness: Unanticipated price shifts in steel, copper, energy tariffs, and foreign exchange erode projected tender margins by 8\u201315% post-award.",
+              "Rigid ERP costing structures: Core SAP S/4HANA CK11N/CK40N costing runs are static, require released master data, and cannot run dynamic pre-deal \"what-if\" simulations without risking productive costing data integrity."
             ]
           }
         ],
         "source": "btp\\Product_Cost_Simulator_AIS_Experience_Centre1-1.docx",
-        "words": 80
+        "words": 73
       },
       "badge": "Slide 2 of 8",
       "caption": "Enterprise production workflow stage 2 for Product Cost Simulator & Multi-Tier BOM Explosion.",
-      "botDialogue": "Problem (3 bullets) \u2014 \u2022 Multi-week quotation latency: Cross-functional teams spend 10\u201318 days manually consolidating multi-level BOMs, outdated. \u2022 Volatile commodity & FX risk blindness: Unanticipated price shifts in steel, copper, energy tariffs, and foreign exchange.",
+      "botDialogue": "Multi-week quotation latency: Cross-functional teams spend 10\u201318 days manually consolidating multi-level BOMs, outdated purchase info records, and work center rates.",
       "botPose": "point",
       "botChat": [
-        "Problem (3 bullets) \u2014 \u2022 Multi-week quotation latency: Cross-functional teams spend 10\u201318 days manually consolidating multi-level BOMs, outdated.",
-        "\u2022 Volatile commodity & FX risk blindness: Unanticipated price shifts in steel, copper, energy tariffs, and foreign exchange."
+        "Multi-week quotation latency: Cross-functional teams spend 10\u201318 days manually consolidating multi-level BOMs, outdated purchase info records, and work center rates."
       ],
       "botChatMode": "condensed"
     },
@@ -82,12 +80,8 @@
       "title": "Card 7 \u2014 Prerequisites & next step",
       "subtitle": "Product Cost Simulator & Multi-Tier BOM Explosion",
       "description": {
-        "plain": "Card 7 \u2014 Prerequisites & next step\n\nBTP services + entitlements \u2014 SAP BTP Cloud Foundry Runtime (1\u20132 GB memory), SAP BTP Destination Service (Standard), SAP Authorization & Trust Management (XSUAA), SAP Cloud Connector (for on-prem S/4HANA), SAP AI Core (Phase 2 predictive tender pricing).\n\nS/4HANA config / authorizations \u2014 SAP S/4HANA 1909+ (Cloud or On-Premise); Communication Arrangements for BOM (SAP_COM_0002), Routing (SAP_COM_0028), Product Master (SAP_COM_0008), PIR (SAP_COM_0053), Sales Quotation (SAP_COM_0079); Read access to CO-PC and MM valuation views.",
+        "plain": "BTP services + entitlements \u2014 SAP BTP Cloud Foundry Runtime (1\u20132 GB memory), SAP BTP Destination Service (Standard), SAP Authorization & Trust Management (XSUAA), SAP Cloud Connector (for on-prem S/4HANA), SAP AI Core (Phase 2 predictive tender pricing).\n\nS/4HANA config / authorizations \u2014 SAP S/4HANA 1909+ (Cloud or On-Premise); Communication Arrangements for BOM (SAP_COM_0002), Routing (SAP_COM_0028), Product Master (SAP_COM_0008), PIR (SAP_COM_0053), Sales Quotation (SAP_COM_0079); Read access to CO-PC and MM valuation views.",
         "blocks": [
-          {
-            "type": "p",
-            "text": "Card 7 \u2014 Prerequisites & next step"
-          },
           {
             "type": "ul",
             "items": [
@@ -97,15 +91,14 @@
           }
         ],
         "source": "btp\\Product_Cost_Simulator_AIS_Experience_Centre1-1.docx",
-        "words": 79
+        "words": 72
       },
       "badge": "Slide 3 of 8",
       "caption": "Card 7 \u2014 Prerequisites & next step",
-      "botDialogue": "Card 7 \u2014 Prerequisites & next step BTP services + entitlements \u2014 SAP BTP Cloud Foundry Runtime (1\u20132. S/4HANA config / authorizations \u2014 SAP S/4HANA 1909+ (Cloud or On-Premise); Communication Arrangements for BOM (SAP_COM_0002), Routing (SAP_COM_0028),.",
+      "botDialogue": "BTP services + entitlements: SAP BTP Cloud Foundry Runtime (1\u20132 GB memory), SAP BTP Destination Service (Standard), SAP Authorization & Trust Management.",
       "botPose": "tablet",
       "botChat": [
-        "Card 7 \u2014 Prerequisites & next step BTP services + entitlements \u2014 SAP BTP Cloud Foundry Runtime (1\u20132.",
-        "S/4HANA config / authorizations \u2014 SAP S/4HANA 1909+ (Cloud or On-Premise); Communication Arrangements for BOM (SAP_COM_0002), Routing (SAP_COM_0028),."
+        "BTP services + entitlements: SAP BTP Cloud Foundry Runtime (1\u20132 GB memory), SAP BTP Destination Service (Standard), SAP Authorization & Trust Management."
       ],
       "botChatMode": "condensed"
     },
@@ -115,32 +108,29 @@
       "title": "Card 2: Executive Tender Command Center",
       "subtitle": "Product Cost Simulator & Multi-Tier BOM Explosion",
       "description": {
-        "plain": "\u2022 Card 2: Executive Tender Command Center\n\nCaption: Executive command center displaying active tender proposals, cost sequences, and AI tool links.",
+        "plain": "Executive Tender Command Center.\n\nCaption: Executive command center displaying active tender proposals, cost sequences, and AI tool links.",
         "blocks": [
           {
             "type": "ul",
             "items": [
-              "Card 2: Executive Tender Command Center"
+              "Executive Tender Command Center.",
+              "Caption: Executive command center displaying active tender proposals, cost sequences, and AI tool links."
             ]
-          },
-          {
-            "type": "p",
-            "text": "Caption: Executive command center displaying active tender proposals, cost sequences, and AI tool links."
           }
         ],
         "source": "btp\\Product_Cost_Simulator_AIS_Experience_Centre1-1.docx",
-        "words": 21
+        "words": 18
       },
       "badge": "Slide 4 of 8",
       "caption": "Caption: Executive command center displaying active tender proposals, cost sequences, and AI tool links.",
-      "botDialogue": "\u2022 Card 2: Executive Tender Command Center Caption: Executive command center displaying active tender proposals, cost sequences, and.",
+      "botDialogue": "Executive Tender Command Center.",
       "botPose": "laptop",
       "imageUrl": "/assets/apps/product-cost-simulator/c4_1.webp",
       "screenshot": "/assets/apps/product-cost-simulator/c4_1.webp",
       "imageWidth": 1920,
       "imageHeight": 1080,
       "botChat": [
-        "\u2022 Card 2: Executive Tender Command Center Caption: Executive command center displaying active tender proposals, cost sequences, and."
+        "Executive Tender Command Center."
       ],
       "botChatMode": "condensed"
     },
@@ -150,30 +140,29 @@
       "title": "Card 4 (Feature 1): Bill of Materials (BOM) & Parts Explosion",
       "subtitle": "Product Cost Simulator & Multi-Tier BOM Explosion",
       "description": {
-        "plain": "Card 4 (Feature 1): Bill of Materials (BOM) & Parts Explosion\n\nCaption: Multi-level Bill of Materials explosion showing part numbers, quantities, unit prices, and extended costs.",
+        "plain": "Caption: Multi-level Bill of Materials explosion showing part numbers, quantities, unit prices, and extended costs.\n\nStandard Clean Core compliant interface ensuring zero ERP ledger drift.",
         "blocks": [
           {
-            "type": "p",
-            "text": "Card 4 (Feature 1): Bill of Materials (BOM) & Parts Explosion"
-          },
-          {
-            "type": "p",
-            "text": "Caption: Multi-level Bill of Materials explosion showing part numbers, quantities, unit prices, and extended costs."
+            "type": "ul",
+            "items": [
+              "Caption: Multi-level Bill of Materials explosion showing part numbers, quantities, unit prices, and extended costs.",
+              "Standard Clean Core compliant interface ensuring zero ERP ledger drift."
+            ]
           }
         ],
         "source": "btp\\Product_Cost_Simulator_AIS_Experience_Centre1-1.docx",
-        "words": 26
+        "words": 25
       },
       "badge": "Slide 5 of 8",
       "caption": "Caption: Multi-level Bill of Materials explosion showing part numbers, quantities, unit prices, and extended costs.",
-      "botDialogue": "Card 4 (Feature 1): Bill of Materials (BOM) & Parts Explosion Caption: Multi-level Bill of Materials explosion showing.",
+      "botDialogue": "Caption: Multi-level Bill of Materials explosion showing part numbers, quantities, unit prices, and extended costs.",
       "botPose": "explain",
       "imageUrl": "/assets/apps/product-cost-simulator/c5_1.webp",
       "screenshot": "/assets/apps/product-cost-simulator/c5_1.webp",
       "imageWidth": 1920,
       "imageHeight": 1080,
       "botChat": [
-        "Card 4 (Feature 1): Bill of Materials (BOM) & Parts Explosion Caption: Multi-level Bill of Materials explosion showing."
+        "Caption: Multi-level Bill of Materials explosion showing part numbers, quantities, unit prices, and extended costs."
       ],
       "botChatMode": "condensed"
     },
@@ -183,32 +172,29 @@
       "title": "Card 6: AI Market Cost Benchmark & Variance",
       "subtitle": "Product Cost Simulator & Multi-Tier BOM Explosion",
       "description": {
-        "plain": "\u2022 Card 6: AI Market Cost Benchmark & Variance\n\nCaption: AI-powered market pricing benchmark comparing internal cost estimates against global commodity indices.",
+        "plain": "AI Market Cost Benchmark & Variance.\n\nCaption: AI-powered market pricing benchmark comparing internal cost estimates against global commodity indices.",
         "blocks": [
           {
             "type": "ul",
             "items": [
-              "Card 6: AI Market Cost Benchmark & Variance"
+              "AI Market Cost Benchmark & Variance.",
+              "Caption: AI-powered market pricing benchmark comparing internal cost estimates against global commodity indices."
             ]
-          },
-          {
-            "type": "p",
-            "text": "Caption: AI-powered market pricing benchmark comparing internal cost estimates against global commodity indices."
           }
         ],
         "source": "btp\\Product_Cost_Simulator_AIS_Experience_Centre1-1.docx",
-        "words": 22
+        "words": 19
       },
       "badge": "Slide 6 of 8",
       "caption": "Caption: AI-powered market pricing benchmark comparing internal cost estimates against global commodity indices.",
-      "botDialogue": "\u2022 Card 6: AI Market Cost Benchmark & Variance Caption: AI-powered market pricing benchmark comparing internal cost estimates.",
+      "botDialogue": "AI Market Cost Benchmark & Variance.",
       "botPose": "beckon",
       "imageUrl": "/assets/apps/product-cost-simulator/c6_1.webp",
       "screenshot": "/assets/apps/product-cost-simulator/c6_1.webp",
       "imageWidth": 1920,
       "imageHeight": 1080,
       "botChat": [
-        "\u2022 Card 6: AI Market Cost Benchmark & Variance Caption: AI-powered market pricing benchmark comparing internal cost estimates."
+        "AI Market Cost Benchmark & Variance."
       ],
       "botChatMode": "condensed"
     },
@@ -218,62 +204,58 @@
       "title": "Card 8: Win/Loss Insights & Analytical Cockpit",
       "subtitle": "Product Cost Simulator & Multi-Tier BOM Explosion",
       "description": {
-        "plain": "\u2022 Card 8: Win/Loss Insights & Analytical Cockpit\n\nCaption: Post-bid analytics cockpit tracking win-probability distributions, discount sensitivities, and realized contract margins.",
+        "plain": "Win/Loss Insights & Analytical Cockpit.\n\nCaption: Post-bid analytics cockpit tracking win-probability distributions, discount sensitivities, and realized contract margins.",
         "blocks": [
           {
             "type": "ul",
             "items": [
-              "Card 8: Win/Loss Insights & Analytical Cockpit"
+              "Win/Loss Insights & Analytical Cockpit.",
+              "Caption: Post-bid analytics cockpit tracking win-probability distributions, discount sensitivities, and realized contract margins."
             ]
-          },
-          {
-            "type": "p",
-            "text": "Caption: Post-bid analytics cockpit tracking win-probability distributions, discount sensitivities, and realized contract margins."
           }
         ],
         "source": "btp\\Product_Cost_Simulator_AIS_Experience_Centre1-1.docx",
-        "words": 21
+        "words": 18
       },
       "badge": "Slide 7 of 8",
       "caption": "Caption: Post-bid analytics cockpit tracking win-probability distributions, discount sensitivities, and realized contract margins.",
-      "botDialogue": "\u2022 Card 8: Win/Loss Insights & Analytical Cockpit Caption: Post-bid analytics cockpit tracking win-probability distributions, discount sensitivities, and.",
+      "botDialogue": "Win/Loss Insights & Analytical Cockpit.",
       "botPose": "present",
       "imageUrl": "/assets/apps/product-cost-simulator/c7_1.webp",
       "screenshot": "/assets/apps/product-cost-simulator/c7_1.webp",
       "imageWidth": 1920,
       "imageHeight": 1080,
       "botChat": [
-        "\u2022 Card 8: Win/Loss Insights & Analytical Cockpit Caption: Post-bid analytics cockpit tracking win-probability distributions, discount sensitivities, and."
+        "Win/Loss Insights & Analytical Cockpit."
       ],
       "botChatMode": "condensed"
     },
     {
       "id": "card-8",
       "type": "workflow",
-      "title": "Clean Core Architecture \u2014 Phase 8",
+      "title": "Slide 8",
       "subtitle": "Product Cost Simulator & Multi-Tier BOM Explosion",
       "description": {
-        "plain": "Headline metric \u2014 76.4% Faster Quote Cycle Time & \u20b912.80 Crore Annual Margin Leakage Averted\n\nBefore \u2192 after \u2014 Before: 14-day average bid turnaround, manual Excel cost rollups, 4.2% unexpected margin drop post-delivery.\nAfter: 2.5-day rapid bid turnaround, 100% automated S/4HANA-grounded should-costing, 0.4% margin deviation.\n\nSupporting metrics (up to 3) \u2014 1. 23.5% Increase in Tender Win Rate: Competitive yet profitable bidding powered by price-to-win predictive boundary analysis.\n2. 91.2% Reduction in Costing Effort: Instant multi-tier BOM explosion replaces tedious manual cross-departmental coordination.\n3. 100% Hedging Visibility: Upfront exposure detection enables timely raw material advance contracts and currency hedging.",
+        "plain": "Headline metric \u2014 76.4% Faster Quote Cycle Time & \u20b912.80 Crore Annual Margin Leakage Averted.\n\nBefore \u2192 after \u2014 Before: 14-day average bid turnaround, manual Excel cost rollups, 4.2% unexpected margin drop post-delivery.\n\nAfter: 2.5-day rapid bid turnaround, 100% automated S/4HANA-grounded should-costing, 0.4% margin deviation.",
         "blocks": [
           {
             "type": "ul",
             "items": [
-              "Headline metric \u2014 76.4% Faster Quote Cycle Time & \u20b912.80 Crore Annual Margin Leakage Averted",
-              "Before \u2192 after \u2014 Before: 14-day average bid turnaround, manual Excel cost rollups, 4.2% unexpected margin drop post-delivery.\nAfter: 2.5-day rapid bid turnaround, 100% automated S/4HANA-grounded should-costing, 0.4% margin deviation.",
-              "Supporting metrics (up to 3) \u2014 1. 23.5% Increase in Tender Win Rate: Competitive yet profitable bidding powered by price-to-win predictive boundary analysis.\n2. 91.2% Reduction in Costing Effort: Instant multi-tier BOM explosion replaces tedious manual cross-departmental coordination.\n3. 100% Hedging Visibility: Upfront exposure detection enables timely raw material advance contracts and currency hedging."
+              "Headline metric \u2014 76.4% Faster Quote Cycle Time & \u20b912.80 Crore Annual Margin Leakage Averted.",
+              "Before \u2192 after \u2014 Before: 14-day average bid turnaround, manual Excel cost rollups, 4.2% unexpected margin drop post-delivery.",
+              "After: 2.5-day rapid bid turnaround, 100% automated S/4HANA-grounded should-costing, 0.4% margin deviation."
             ]
           }
         ],
         "source": "btp\\Product_Cost_Simulator_AIS_Experience_Centre1-1.docx",
-        "words": 99
+        "words": 45
       },
       "badge": "Slide 8 of 8",
       "caption": "Enterprise production workflow stage 8 for Product Cost Simulator & Multi-Tier BOM Explosion.",
-      "botDialogue": "Headline metric \u2014 76.4% Faster Quote Cycle Time & \u20b912.80 Crore Annual Margin Leakage Averted Before \u2192 after. After: 2.5-day rapid bid turnaround, 100% automated S/4HANA-grounded should-costing, 0.4% margin deviation.",
+      "botDialogue": "Headline metric: 76.4% Faster Quote Cycle Time & \u20b912.80 Crore Annual Margin Leakage Averted.",
       "botPose": "point",
       "botChat": [
-        "Headline metric \u2014 76.4% Faster Quote Cycle Time & \u20b912.80 Crore Annual Margin Leakage Averted Before \u2192 after.",
-        "After: 2.5-day rapid bid turnaround, 100% automated S/4HANA-grounded should-costing, 0.4% margin deviation."
+        "Headline metric: 76.4% Faster Quote Cycle Time & \u20b912.80 Crore Annual Margin Leakage Averted."
       ],
       "botChatMode": "condensed"
     }
@@ -287,5 +269,43 @@
     "role": "Sales Head, Abhiyanta India Solutions",
     "email": "Manisha.s@abhiyantatech.com",
     "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=Manisha.s@abhiyantatech.com"
+  },
+  "architecture": {
+    "badge": "Clean Core Architecture Certified",
+    "title": "Product Cost Simulator & Multi-Tier BOM Explosion \u2014 Enterprise Blueprint",
+    "subtitle": "Modular 3-Tier decoupled cloud topology compliant with SAP Clean Core mandate.",
+    "tiers": [
+      {
+        "tier": 1,
+        "name": "Tier 1: Experience & UI Layer",
+        "tag": "Decoupled",
+        "tint": "white",
+        "icon": "Layers",
+        "text": "Responsive SAP Fiori Horizon UI, React 19 micro-frontends, role-based Launchpad, and mobile offline capabilities."
+      },
+      {
+        "tier": 2,
+        "name": "Tier 2: SAP BTP Cloud Foundry & AI Core",
+        "tag": "Side-by-Side",
+        "tint": "blue",
+        "icon": "Cpu",
+        "text": "Node.js CAP runtime, asynchronous Event Mesh pub/sub queuing, SAP Generative AI Hub, and automated tenant isolation."
+      },
+      {
+        "tier": 3,
+        "name": "Tier 3: SAP S/4HANA Clean Core System of Record",
+        "tag": "Touchless ERP",
+        "tint": "white",
+        "icon": "Database",
+        "text": "Released CDS Views, standard OData v4 APIs, and touchless transaction settlement without modifying ERP standard tables."
+      }
+    ],
+    "chipsTitle": "Provisioned SAP Cloud Services:",
+    "chips": [
+      "SAP BTP Cloud Foundry",
+      "SAP S/4HANA Cloud",
+      "SAP Event Mesh",
+      "SAP HANA Cloud"
+    ]
   }
 }

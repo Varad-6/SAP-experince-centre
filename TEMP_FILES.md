@@ -16,3 +16,6 @@ All scratch and transient files generated during development cycles are recorded
 | `scripts/step1_inventory_and_map.py` | Inventory generator and project matcher for content inbox | v6.2 | Utility retained (`docs/INBOX_TREE.md`, `content/inbox-map.json`) |
 | `scripts/build_pipeline.py` | WebP conversion, SHA-1 collision-free extractor and schema builder | v6.2 | Permanent pipeline utility |
 | `scripts/verify_audit.ts` | Multi-viewport Playwright visual and console error audit script | v6.2 | Permanent verification utility (`npx tsx scripts/verify_audit.ts`) |
+| `scripts/curate_all_cards.py` | Automated card title, metric, and copy curation utility | v6.3 | Permanent utility |
+| `scripts/full_system_button_audit.py` | Full interactive CTA and link route audit utility | v6.3 | Permanent utility |
+| `scripts/generate_onboarding_documentation.py` | Onboarding documentation generation tool | v6.3 | Permanent utility |

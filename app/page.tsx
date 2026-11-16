@@ -12,34 +12,13 @@ export default function LandingPage() {
   const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
-    <div className="relative w-full min-h-[calc(100vh-56px)] overflow-hidden flex flex-col justify-between bg-gradient-to-b from-[var(--sky-top)] to-[var(--sky-bottom)]">
+    <div className="relative w-full min-h-[calc(100vh-56px)] overflow-hidden flex flex-col justify-between bg-transparent">
       {/* Drifting Clouds */}
       <div className="cloud cloud-1" aria-hidden="true" />
       <div className="cloud cloud-2" aria-hidden="true" />
 
       {/* 3-Act Video Intro Layer */}
       <LandingActorSequence onSequenceComplete={() => setIntroDone(true)} />
-
-      {/* Top Floating Baseline Bar (Moved Upside) */}
-      <div className="relative z-40 max-w-[1200px] w-full mx-auto px-6 sm:px-8 pt-4 flex items-center justify-between pointer-events-auto">
-        <div className="flex items-center gap-2.5">
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[var(--surface)]/90 border border-[var(--border)] text-xs font-semibold text-[var(--ok)] shadow-xs">
-            <ShieldCheck size={14} />
-            <span>Clean Core Certified • SAP BTP Architecture</span>
-          </span>
-        </div>
-
-        <div className="flex items-center gap-2.5">
-          <button
-            type="button"
-            onClick={() => setIsContactOpen(true)}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[var(--surface)]/90 border border-[var(--border)] text-xs font-semibold text-[var(--text-dim)] hover:text-[var(--brand)] transition-colors shadow-xs cursor-pointer"
-          >
-            <Mail size={13} />
-            <span>Contact Architecture Team</span>
-          </button>
-        </div>
-      </div>
 
       {/* Main Content Area */}
       <div className="relative z-10 max-w-[1200px] w-full mx-auto px-6 sm:px-8 pt-8 sm:pt-14 pb-16 flex-1 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pointer-events-auto">
@@ -64,18 +43,28 @@ export default function LandingPage() {
           </div>
 
           <p className="text-[var(--text-dim)] text-base sm:text-lg max-w-xl leading-relaxed">
-            {siteData.sub ||
-              'Explore production solutions built across SAP BTP, Clean Core extensibility, and modern enterprise intelligence with analytics.'}
+            Experience the next generation of enterprise intelligence with SAP BTP, AI, SAP Analytics Cloud, and SAP Business Data Cloud — engineered to transform business processes, data, and decision-making.
           </p>
 
           <div className="pt-2 flex flex-wrap items-center gap-4">
-            <Link href="/pillars">
-              <button className="btn btn-primary h-12 px-8 text-base inline-flex items-center gap-2.5 shadow-md hover:scale-[1.02] transition-transform">
-                <Sparkles className="w-4 h-4" />
-                <span>Explore solutions</span>
-                <ArrowRight className="w-4 h-4 ml-1" />
-              </button>
+            <Link
+              href="/pillars"
+              prefetch={true}
+              className="btn btn-primary h-12 px-8 text-base inline-flex items-center gap-2.5 shadow-md hover:scale-[1.02] transition-transform"
+            >
+              <Sparkles className="w-4 h-4" />
+              <span>Explore solutions</span>
+              <ArrowRight className="w-4 h-4 ml-1" />
             </Link>
+
+            <button
+              type="button"
+              onClick={() => setIsContactOpen(true)}
+              className="h-12 px-7 rounded-xl bg-white border border-[var(--border)] text-[var(--brand)] hover:text-[var(--brand-vivid)] font-semibold text-base shadow-sm hover:bg-slate-50 hover:border-[var(--brand)]/40 transition-all inline-flex items-center gap-2.5 cursor-pointer"
+            >
+              <Mail className="w-4 h-4 text-[var(--brand)]" />
+              <span>Contact details</span>
+            </button>
           </div>
         </div>
 
@@ -83,11 +72,7 @@ export default function LandingPage() {
         <div className="hidden lg:block lg:col-span-5 min-h-[420px]" aria-hidden="true" />
       </div>
 
-      {/* Clean Subtle Footer */}
-      <div className="relative w-full py-3 border-t border-[var(--border)]/60 bg-[var(--surface)]/30 z-10 flex items-center justify-between px-6 sm:px-8 text-[11px] text-[var(--text-dim)]">
-        <div>Enterprise Horizon • AIS Experience Centre</div>
-        <div className="text-[var(--text-dim)] font-mono">Clean Core Standard</div>
-      </div>
+
 
       {/* Contact Dialog */}
       <ContactDialog

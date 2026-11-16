@@ -1,0 +1,9 @@
+---
+applications:
+  - name: aamya
+    memory: 256M
+    disk_quota: 1024M
+    buildpacks:
+      - staticfile_buildpack
+    path: ./out
+    random-route: true

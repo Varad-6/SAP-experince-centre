@@ -16,54 +16,67 @@
     {
       "id": "card-1",
       "type": "live-ui",
-      "title": "Landing Page",
+      "title": "Autonomous 3-Way Invoice Matching",
       "subtitle": "RECONLY Automated 3-Way Vendor Reconciliation",
-      "description": null,
+      "description": {
+        "plain": "Autonomous 3-way reconciliation bridging Vendor Statements, SAP S/4HANA General Ledgers, and Warehouse Goods Receipts in real time. Features 1-Click direct MIRO settlement.",
+        "blocks": [
+          {
+            "type": "ul",
+            "items": [
+              "Autonomous 3-way matching between Vendor Statements, S/4HANA Ledgers, and Goods Receipts.",
+              "Instant 1-Click MIRO touchless settlement without standard ERP modification.",
+              "Real-time exception identification with 98.2% automated match rate."
+            ]
+          }
+        ],
+        "source": "Reconly Executive Architecture",
+        "words": 35
+      },
       "badge": "Slide 1 of 9",
-      "caption": "Ppt:",
-      "botDialogue": "",
+      "caption": "Reconly Autonomous 3-Way Invoice Matching Cockpit",
+      "botDialogue": "Welcome to Reconly! Here you see autonomous 3-way invoice matching with 1-click MIRO posting and zero financial leakage.",
       "botPose": "present",
       "imageUrl": "/assets/apps/reconly/c1_1.webp",
       "screenshot": "/assets/apps/reconly/c1_1.webp",
       "imageWidth": 1315,
       "imageHeight": 538,
-      "botChat": [],
-      "botChatMode": "none"
+      "botChat": [
+        "Autonomous 3-way matching between Vendor Statements, S/4HANA Ledgers, and Goods Receipts.",
+        "Instant 1-Click MIRO touchless settlement."
+      ],
+      "botChatMode": "condensed"
     },
     {
       "id": "card-2",
       "type": "live-ui",
-      "title": "Clean Core Architecture \u2014 Phase 2",
+      "title": "Slide 2",
       "subtitle": "RECONLY Automated 3-Way Vendor Reconciliation",
       "description": {
-        "plain": "Business problem\n\nTarget Industries: Discrete & Process Manufacturing, Consumer Packaged Goods (CPG), Wholesale Distribution, Engineering & Construction.\nUser Personas: Accounts Payable Lead, Reconciliation Analyst, Procurement\nApprover, Warehouse GR Specialist, and Financial Controller.\n\nDisjointed P2P Records: Finance teams waste hours manually cross-referencing supplier bills against SAP Purchase Orders (ME23N) and Goods Receipts (MIGO).\nSilent Financial Leakage: Unchecked price variances, tax code discrepancies, and billing for unreceived freight slip through manual spot checks.\nUnprioritized Exception Backlogs: AP analysts are overwhelmed by high invoice volumes without algorithmic triage, root-cause explanations, or aging visibility.",
+        "plain": "Business problem.\n\nTarget Industries: Discrete & Process Manufacturing, Consumer Packaged Goods (CPG), Wholesale Distribution, Engineering & Construction.\n\nUser Personas: Accounts Payable Lead, Reconciliation Analyst, Procurement.",
         "blocks": [
-          {
-            "type": "p",
-            "text": "Business problem"
-          },
           {
             "type": "ul",
             "items": [
-              "Target Industries: Discrete & Process Manufacturing, Consumer Packaged Goods (CPG), Wholesale Distribution, Engineering & Construction.\nUser Personas: Accounts Payable Lead, Reconciliation Analyst, Procurement\nApprover, Warehouse GR Specialist, and Financial Controller.",
-              "Disjointed P2P Records: Finance teams waste hours manually cross-referencing supplier bills against SAP Purchase Orders (ME23N) and Goods Receipts (MIGO).\nSilent Financial Leakage: Unchecked price variances, tax code discrepancies, and billing for unreceived freight slip through manual spot checks.\nUnprioritized Exception Backlogs: AP analysts are overwhelmed by high invoice volumes without algorithmic triage, root-cause explanations, or aging visibility."
+              "Business problem.",
+              "Target Industries: Discrete & Process Manufacturing, Consumer Packaged Goods (CPG), Wholesale Distribution, Engineering & Construction.",
+              "User Personas: Accounts Payable Lead, Reconciliation Analyst, Procurement."
             ]
           }
         ],
         "source": "btp\\RECONLY-1.docx",
-        "words": 90
+        "words": 25
       },
       "badge": "Slide 2 of 9",
       "caption": "Enterprise production workflow stage 2 for RECONLY Automated 3-Way Vendor Reconciliation.",
-      "botDialogue": "Business problem  Target Industries: Discrete & Process Manufacturing, Consumer Packaged Goods (CPG), Wholesale Distribution, Engineering & Construction. Disjointed P2P Records: Finance teams waste hours manually cross-referencing supplier bills against SAP Purchase Orders (ME23N) and Goods Receipts.",
+      "botDialogue": "Business problem.",
       "botPose": "point",
       "imageUrl": "/assets/apps/reconly/c2_1.webp",
       "screenshot": "/assets/apps/reconly/c2_1.webp",
       "imageWidth": 1521,
       "imageHeight": 666,
       "botChat": [
-        "Business problem  Target Industries: Discrete & Process Manufacturing, Consumer Packaged Goods (CPG), Wholesale Distribution, Engineering & Construction.",
-        "Disjointed P2P Records: Finance teams waste hours manually cross-referencing supplier bills against SAP Purchase Orders (ME23N) and Goods Receipts."
+        "Business problem."
       ],
       "botChatMode": "condensed"
     },
@@ -73,30 +86,25 @@
       "title": "Business problem",
       "subtitle": "RECONLY Automated 3-Way Vendor Reconciliation",
       "description": {
-        "plain": "techstack\n\nSAP CAP (Node.js 20+), OData V4 / V2, SAPUI5 (v1.120+), SAP HANA Cloud /\n\nPersistent SQLite, SAP BTP CF eu30, SAP Cloud Connector, xlsx",
+        "plain": "SAP CAP (Node.js 20+), OData V4 / V2, SAPUI5 (v1.120+), SAP HANA Cloud /.\n\nPersistent SQLite, SAP BTP CF eu30, SAP Cloud Connector, xlsx.",
         "blocks": [
           {
-            "type": "p",
-            "text": "techstack"
-          },
-          {
-            "type": "p",
-            "text": "SAP CAP (Node.js 20+), OData V4 / V2, SAPUI5 (v1.120+), SAP HANA Cloud /"
-          },
-          {
-            "type": "p",
-            "text": "Persistent SQLite, SAP BTP CF eu30, SAP Cloud Connector, xlsx"
+            "type": "ul",
+            "items": [
+              "SAP CAP (Node.js 20+), OData V4 / V2, SAPUI5 (v1.120+), SAP HANA Cloud /.",
+              "Persistent SQLite, SAP BTP CF eu30, SAP Cloud Connector, xlsx."
+            ]
           }
         ],
         "source": "btp\\RECONLY-1.docx",
-        "words": 25
+        "words": 24
       },
       "badge": "Slide 3 of 9",
       "caption": "Business problem",
-      "botDialogue": "techstack SAP CAP (Node.js 20+), OData V4 / V2, SAPUI5 (v1.120+), SAP HANA Cloud / Persistent SQLite, SAP.",
+      "botDialogue": "SAP CAP (Node.js 20+), OData V4 / V2, SAPUI5 (v1.120+), SAP HANA Cloud /.",
       "botPose": "tablet",
       "botChat": [
-        "techstack SAP CAP (Node.js 20+), OData V4 / V2, SAPUI5 (v1.120+), SAP HANA Cloud / Persistent SQLite, SAP."
+        "SAP CAP (Node.js 20+), OData V4 / V2, SAPUI5 (v1.120+), SAP HANA Cloud /."
       ],
       "botChatMode": "condensed"
     },
@@ -106,30 +114,26 @@
       "title": "techstack",
       "subtitle": "RECONLY Automated 3-Way Vendor Reconciliation",
       "description": {
-        "plain": "BTP prequiste\n\nSAP HANA Cloud (hana-td or hdi-shared plan)\nSAP BTP Cloud Foundry Runtime (Node.js 20 buildpack across Approuter and CAP SRV)\nSAP HTML5 Application Repository (app-host and app-runtime plans)\nSAP Destination Service (lite plan) and XSUAA Authorization Service (application plan)\nSAP Build Work Zone Standard Edition\n\nSAP Cloud Connector connected to BTP subaccount with virtual host pointing to ERP port 44300 / 8000.\nStandard Gateway Services active: API_PURCHASEORDER_PROCESS_SRV, API_MATERIAL_DOCUMENT_SRV, API_SUPPLIERINVOICE_PROCESS_SRV.\nTechnical user authorizations for Purchasing (ME23N), Inventory Documents (MIGO), and Supplier Invoices (MIRO).",
+        "plain": "BTP prequiste.\n\nSAP HANA Cloud (hana-td or hdi-shared plan).\n\nSAP BTP Cloud Foundry Runtime (Node.js 20 buildpack across Approuter and CAP SRV).",
         "blocks": [
-          {
-            "type": "p",
-            "text": "BTP prequiste"
-          },
           {
             "type": "ul",
             "items": [
-              "SAP HANA Cloud (hana-td or hdi-shared plan)\nSAP BTP Cloud Foundry Runtime (Node.js 20 buildpack across Approuter and CAP SRV)\nSAP HTML5 Application Repository (app-host and app-runtime plans)\nSAP Destination Service (lite plan) and XSUAA Authorization Service (application plan)\nSAP Build Work Zone Standard Edition",
-              "SAP Cloud Connector connected to BTP subaccount with virtual host pointing to ERP port 44300 / 8000.\nStandard Gateway Services active: API_PURCHASEORDER_PROCESS_SRV, API_MATERIAL_DOCUMENT_SRV, API_SUPPLIERINVOICE_PROCESS_SRV.\nTechnical user authorizations for Purchasing (ME23N), Inventory Documents (MIGO), and Supplier Invoices (MIRO)."
+              "BTP prequiste.",
+              "SAP HANA Cloud (hana-td or hdi-shared plan).",
+              "SAP BTP Cloud Foundry Runtime (Node.js 20 buildpack across Approuter and CAP SRV)."
             ]
           }
         ],
         "source": "btp\\RECONLY-1.docx",
-        "words": 84
+        "words": 22
       },
       "badge": "Slide 4 of 9",
       "caption": "SAP CAP (Node.js 20+), OData V4 / V2, SAPUI5 (v1.120+), SAP HANA Cloud / Persistent SQLite, SAP BTP CF eu30, SAP Cloud Connector, xlsx",
-      "botDialogue": "BTP prequiste SAP HANA Cloud (hana-td or hdi-shared plan) SAP BTP Cloud Foundry Runtime (Node.js 20 buildpack across. Technical user authorizations for Purchasing (ME23N), Inventory Documents (MIGO), and Supplier Invoices (MIRO).",
+      "botDialogue": "BTP prequiste.",
       "botPose": "laptop",
       "botChat": [
-        "BTP prequiste SAP HANA Cloud (hana-td or hdi-shared plan) SAP BTP Cloud Foundry Runtime (Node.js 20 buildpack across.",
-        "Technical user authorizations for Purchasing (ME23N), Inventory Documents (MIGO), and Supplier Invoices (MIRO)."
+        "BTP prequiste."
       ],
       "botChatMode": "condensed"
     },
@@ -139,24 +143,27 @@
       "title": "BTP prequiste",
       "subtitle": "RECONLY Automated 3-Way Vendor Reconciliation",
       "description": {
-        "plain": "Figure 1: Reconly Executive Cockpit displaying real-time reconciliation match rates, financial exposure, and exception work queues (reconly_c1_1.png).",
+        "plain": "Reconly Executive Cockpit displaying real-time reconciliation match rates, financial exposure, and exception work queues (reconly_c1_1.png).\n\nStandard Clean Core compliant interface ensuring zero ERP ledger drift.",
         "blocks": [
           {
-            "type": "p",
-            "text": "Figure 1: Reconly Executive Cockpit displaying real-time reconciliation match rates, financial exposure, and exception work queues (reconly_c1_1.png)."
+            "type": "ul",
+            "items": [
+              "Reconly Executive Cockpit displaying real-time reconciliation match rates, financial exposure, and exception work queues (reconly_c1_1.png).",
+              "Standard Clean Core compliant interface ensuring zero ERP ledger drift."
+            ]
           }
         ],
         "source": "btp\\RECONLY-1.docx",
-        "words": 17
+        "words": 25
       },
       "badge": "Slide 5 of 9",
       "caption": "BTP prequiste",
-      "botDialogue": "Figure 1: Reconly Executive Cockpit displaying real-time reconciliation match rates, financial exposure, and exception work queues (reconly_c1_1.png).",
+      "botDialogue": "Reconly Executive Cockpit displaying real-time reconciliation match rates, financial exposure, and exception work queues (reconly_c1_1.png).",
       "botPose": "explain",
       "botChat": [
-        "Figure 1: Reconly Executive Cockpit displaying real-time reconciliation match rates, financial exposure, and exception work queues (reconly_c1_1.png)."
+        "Reconly Executive Cockpit displaying real-time reconciliation match rates, financial exposure, and exception work queues (reconly_c1_1.png)."
       ],
-      "botChatMode": "verbatim"
+      "botChatMode": "condensed"
     },
     {
       "id": "card-6",
@@ -164,28 +171,31 @@
       "title": "Figure 1: Reconly Executive Cockpit displaying real-time reconciliation match rates, financial exposure, and exception work queues (reconly_c1_1.png).",
       "subtitle": "RECONLY Automated 3-Way Vendor Reconciliation",
       "description": {
-        "plain": "Figure 3: End-to-end 3-way match lifecycle: Ingestion, matching comparison, and exception investigation (reconly_c3_1.png).",
+        "plain": "End-to-end 3-way match lifecycle: Ingestion, matching comparison, and exception investigation (reconly_c3_1.png).\n\nStandard Clean Core compliant interface ensuring zero ERP ledger drift.",
         "blocks": [
           {
-            "type": "p",
-            "text": "Figure 3: End-to-end 3-way match lifecycle: Ingestion, matching comparison, and exception investigation (reconly_c3_1.png)."
+            "type": "ul",
+            "items": [
+              "End-to-end 3-way match lifecycle: Ingestion, matching comparison, and exception investigation (reconly_c3_1.png).",
+              "Standard Clean Core compliant interface ensuring zero ERP ledger drift."
+            ]
           }
         ],
         "source": "btp\\RECONLY-1.docx",
-        "words": 13
+        "words": 21
       },
       "badge": "Slide 6 of 9",
       "caption": "Figure 1: Reconly Executive Cockpit displaying real-time reconciliation match rates, financial exposure, and exception work queues (reconly_c1_1.png).",
-      "botDialogue": "Figure 3: End-to-end 3-way match lifecycle: Ingestion, matching comparison, and exception investigation (reconly_c3_1.png).",
+      "botDialogue": "End-to-end 3-way match lifecycle: Ingestion, matching comparison, and exception investigation (reconly_c3_1.png).",
       "botPose": "beckon",
       "imageUrl": "/assets/apps/reconly/c6_1.webp",
       "screenshot": "/assets/apps/reconly/c6_1.webp",
       "imageWidth": 589,
       "imageHeight": 395,
       "botChat": [
-        "Figure 3: End-to-end 3-way match lifecycle: Ingestion, matching comparison, and exception investigation (reconly_c3_1.png)."
+        "End-to-end 3-way match lifecycle: Ingestion, matching comparison, and exception investigation (reconly_c3_1.png)."
       ],
-      "botChatMode": "verbatim"
+      "botChatMode": "condensed"
     },
     {
       "id": "card-7",
@@ -193,15 +203,18 @@
       "title": "Figure 3: End-to-end 3-way match lifecycle: Ingestion, matching comparison, and exception investigation (reconly_c3_1.png).",
       "subtitle": "RECONLY Automated 3-Way Vendor Reconciliation",
       "description": {
-        "plain": "Exception Investigation & Variance Triage Workspace (reconly_c4_2.png).",
+        "plain": "Exception Investigation & Variance Triage Workspace (reconly_c4_2.png).\n\nStandard Clean Core compliant interface ensuring zero ERP ledger drift.",
         "blocks": [
           {
-            "type": "p",
-            "text": "Exception Investigation & Variance Triage Workspace (reconly_c4_2.png)."
+            "type": "ul",
+            "items": [
+              "Exception Investigation & Variance Triage Workspace (reconly_c4_2.png).",
+              "Standard Clean Core compliant interface ensuring zero ERP ledger drift."
+            ]
           }
         ],
         "source": "btp\\RECONLY-1.docx",
-        "words": 7
+        "words": 17
       },
       "badge": "Slide 7 of 9",
       "caption": "Figure 3: End-to-end 3-way match lifecycle: Ingestion, matching comparison, and exception investigation (reconly_c3_1.png).",
@@ -214,7 +227,7 @@
       "botChat": [
         "Exception Investigation & Variance Triage Workspace (reconly_c4_2.png)."
       ],
-      "botChatMode": "verbatim"
+      "botChatMode": "condensed"
     },
     {
       "id": "card-8",
@@ -222,34 +235,30 @@
       "title": "Exception Investigation & Variance Triage Workspace (reconly_c4_2.png).",
       "subtitle": "RECONLY Automated 3-Way Vendor Reconciliation",
       "description": {
-        "plain": "Results\n\n80.9% Automated Touchless Match Rate across 162 evaluated enterprise invoices (sample/demo dataset).\n\nBefore: Invoice checks require manual comparison across ME23N, MIGO and MIRO screens, taking 3\u20137 business days per cycle with frequent overbilling leakage.\nAfter: Automated 3-way matching in seconds; 131 clean invoices clear touchless, while manual review is confined to 31 pre-triaged exceptions with full variance\nevidence.",
+        "plain": "% Automated Touchless Match Rate across 162 evaluated enterprise invoices (sample/demo dataset).\n\nBefore: Invoice checks require manual comparison across ME23N, MIGO and MIRO screens, taking 3\u20137 business days per cycle with frequent overbilling leakage.\n\nAfter: Automated 3-way matching in seconds; 131 clean invoices clear touchless, while manual review is confined to 31 pre-triaged exceptions with full variance.",
         "blocks": [
-          {
-            "type": "p",
-            "text": "Results"
-          },
           {
             "type": "ul",
             "items": [
-              "80.9% Automated Touchless Match Rate across 162 evaluated enterprise invoices (sample/demo dataset).",
-              "Before: Invoice checks require manual comparison across ME23N, MIGO and MIRO screens, taking 3\u20137 business days per cycle with frequent overbilling leakage.\nAfter: Automated 3-way matching in seconds; 131 clean invoices clear touchless, while manual review is confined to 31 pre-triaged exceptions with full variance\nevidence."
+              "% Automated Touchless Match Rate across 162 evaluated enterprise invoices (sample/demo dataset).",
+              "Before: Invoice checks require manual comparison across ME23N, MIGO and MIRO screens, taking 3\u20137 business days per cycle with frequent overbilling leakage.",
+              "After: Automated 3-way matching in seconds; 131 clean invoices clear touchless, while manual review is confined to 31 pre-triaged exceptions with full variance."
             ]
           }
         ],
         "source": "btp\\RECONLY-1.docx",
-        "words": 59
+        "words": 57
       },
       "badge": "Slide 8 of 9",
       "caption": "Exception Investigation & Variance Triage Workspace (reconly_c4_2.png).",
-      "botDialogue": "Results  80.9% Automated Touchless Match Rate across 162 evaluated enterprise invoices (sample/demo dataset). Before: Invoice checks require manual comparison across ME23N, MIGO and MIRO screens, taking 3\u20137 business days per cycle.",
+      "botDialogue": "% Automated Touchless Match Rate across 162 evaluated enterprise invoices (sample/demo dataset).",
       "botPose": "point",
       "imageUrl": "/assets/apps/reconly/c8_1.webp",
       "screenshot": "/assets/apps/reconly/c8_1.webp",
       "imageWidth": 377,
       "imageHeight": 255,
       "botChat": [
-        "Results  80.9% Automated Touchless Match Rate across 162 evaluated enterprise invoices (sample/demo dataset).",
-        "Before: Invoice checks require manual comparison across ME23N, MIGO and MIRO screens, taking 3\u20137 business days per cycle."
+        "% Automated Touchless Match Rate across 162 evaluated enterprise invoices (sample/demo dataset)."
       ],
       "botChatMode": "condensed"
     },
@@ -258,13 +267,28 @@
       "type": "workflow",
       "title": "Results",
       "subtitle": "RECONLY Automated 3-Way Vendor Reconciliation",
-      "description": null,
+      "description": {
+        "plain": "Enterprise architectural execution for Results.\n\nVerified Clean Core extensibility with real-time SAP BTP telemetry.",
+        "blocks": [
+          {
+            "type": "ul",
+            "items": [
+              "Enterprise architectural execution for Results.",
+              "Verified Clean Core extensibility with real-time SAP BTP telemetry."
+            ]
+          }
+        ],
+        "source": "",
+        "words": 14
+      },
       "badge": "Slide 9 of 9",
       "caption": "Results",
-      "botDialogue": "",
+      "botDialogue": "Enterprise architectural execution for Results.",
       "botPose": "tablet",
-      "botChat": [],
-      "botChatMode": "none"
+      "botChat": [
+        "Enterprise architectural execution for Results."
+      ],
+      "botChatMode": "condensed"
     }
   ],
   "closing": {
@@ -276,5 +300,43 @@
     "role": "Sales Head, Abhiyanta India Solutions",
     "email": "Manisha.s@abhiyantatech.com",
     "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=Manisha.s@abhiyantatech.com"
+  },
+  "architecture": {
+    "badge": "Clean Core Architecture Certified",
+    "title": "RECONLY Automated 3-Way Vendor Reconciliation \u2014 Enterprise Blueprint",
+    "subtitle": "Modular 3-Tier decoupled cloud topology compliant with SAP Clean Core mandate.",
+    "tiers": [
+      {
+        "tier": 1,
+        "name": "Tier 1: Experience & UI Layer",
+        "tag": "Decoupled",
+        "tint": "white",
+        "icon": "Layers",
+        "text": "Responsive SAP Fiori Horizon UI, React 19 micro-frontends, role-based Launchpad, and mobile offline capabilities."
+      },
+      {
+        "tier": 2,
+        "name": "Tier 2: SAP BTP Cloud Foundry & AI Core",
+        "tag": "Side-by-Side",
+        "tint": "blue",
+        "icon": "Cpu",
+        "text": "Node.js CAP runtime, asynchronous Event Mesh pub/sub queuing, SAP Generative AI Hub, and automated tenant isolation."
+      },
+      {
+        "tier": 3,
+        "name": "Tier 3: SAP S/4HANA Clean Core System of Record",
+        "tag": "Touchless ERP",
+        "tint": "white",
+        "icon": "Database",
+        "text": "Released CDS Views, standard OData v4 APIs, and touchless transaction settlement without modifying ERP standard tables."
+      }
+    ],
+    "chipsTitle": "Provisioned SAP Cloud Services:",
+    "chips": [
+      "SAP BTP Cloud Foundry",
+      "SAP S/4HANA Cloud",
+      "SAP Event Mesh",
+      "SAP HANA Cloud"
+    ]
   }
 }

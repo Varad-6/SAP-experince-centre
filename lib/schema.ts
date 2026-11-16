@@ -104,6 +104,43 @@ export const ClosingSchema = z.object({
   contact: ContactSchema.optional(),
 });
 
+export const TierItemSchema = z.object({
+  name: z.string(),
+  text: z.string().optional(),
+});
+
+export const TierLifecycleStepSchema = z.object({
+  step: z.number(),
+  title: z.string(),
+  bullets: z.array(z.string()),
+});
+
+export const TierSchema = z.object({
+  tier: z.number(),
+  name: z.string(),
+  tag: z.string().optional(),
+  tint: z.enum(['blue', 'white']).optional(),
+  icon: z.string().optional(),
+  text: z.string().optional(),
+  items: z.array(TierItemSchema).optional(),
+  components: z.array(z.string()).optional(),
+  lifecycleTitle: z.string().optional(),
+  lifecycle: z.array(TierLifecycleStepSchema).optional(),
+});
+
+export const ArchitectureSchema = z.object({
+  badge: z.string(),
+  title: z.string(),
+  subtitle: z.string(),
+  summary: z.string().optional(),
+  tiers: z.array(TierSchema),
+  chipsTitle: z.string().optional(),
+  chips: z.array(z.string()).optional(),
+  diagram: z.string().optional(),
+  benefitsTitle: z.string().optional(),
+  benefits: z.array(z.string()).optional(),
+});
+
 export const AppContentSchema = z.object({
   slug: z.string(),
   pillarId: PillarIdSchema,
@@ -116,6 +153,7 @@ export const AppContentSchema = z.object({
   cards: z.array(CardSchema).min(1).max(24),
   contact: ContactSchema.optional(),
   closing: ClosingSchema.optional(),
+  architecture: ArchitectureSchema.optional(),
 });
 
 export const PillarSchema = z.object({
@@ -126,6 +164,7 @@ export const PillarSchema = z.object({
   icon: z.string(),
   order: z.number(),
   solutionCount: z.number(),
+  comingSoon: z.boolean().optional(),
 });
 
 export const SolutionSummarySchema = z.object({
@@ -155,3 +194,11 @@ export const SiteSchema = z.object({
     links: z.array(z.object({ label: z.string(), href: z.string() })),
   }),
 });
+
+export type ArchitectureData = z.infer<typeof ArchitectureSchema>;
+export type TierData = z.infer<typeof TierSchema>;
+export type TierItemData = z.infer<typeof TierItemSchema>;
+export type TierLifecycleStepData = z.infer<typeof TierLifecycleStepSchema>;
+export type AppContent = z.infer<typeof AppContentSchema>;
+export type Pillar = z.infer<typeof PillarSchema>;
+export type SolutionSummary = z.infer<typeof SolutionSummarySchema>;

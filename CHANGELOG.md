@@ -5,6 +5,33 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [6.3.0] — 2026-11-06 — Per-Project 3-Tier Blueprint, BDC Architecture & 20 AI Use Cases
+
+### Summary
+Migrated architecture blueprints to a strict data-driven schema (`app.architecture`), added the BDC flagship 3-tier blueprint, introduced Pillar 4 with 20 real-world SAP Business AI use cases, rebranded Pillar 3 to "BDC Data Fabric for analytics with AI", upgraded Reconly and MDR high-resolution dashboard visuals, and eliminated generic architecture card headers.
+
+### Added & Updated
+- **Strict Data-Driven Architecture Blueprint (`ArchitectureDialog.tsx`, `schema.ts`)**:
+  - Implemented `ArchitectureSchema` with tiers, items, components, data flow lifecycle stepper, and provisioned services chips.
+  - Architecture button is now strictly conditional: rendered only when `app.architecture` exists (`revenue-analytics` and `asset-reliability-mro`).
+  - Deprecated generic blueprint fallbacks; 11 projects without unique blueprints marked as "NEEDS OWN ARCHITECTURE" in `docs/ARCH_REPORT.md`.
+  - Added full-screen mobile sheet (`100dvh`), sticky header/footer, centered 24px up-arrow flow connectors, and "View full diagram" zoom modal.
+- **Flagship BDC 3-Tier Architecture (`revenue-analytics.json`)**:
+  - Added complete BDC architecture data covering SAC, Datasphere, S/4HANA Private Cloud, and 4-step Data Flow Lifecycle.
+  - Converted high-resolution diagram `End-to-End SAP Analytics Data Flow.png` to `/public/assets/apps/revenue-analytics/architecture.webp`.
+- **Pillar 4 ("SAP Business AI Use Cases") (`content/ai-use-cases.json`, `/pillars`, `/pillar/p4`)**:
+  - Added Pillar 4 card to `/pillars` with "Coming Soon" badge and 4-column responsive layout.
+  - Created `/pillar/p4` featuring 20 non-clickable AI Agent cards (UC-1 to UC-20) extracted from `SAP_AI_20_UC_Agent_Names.pdf`.
+- **Pillar 3 Rebranding (`content/pillars.json`)**:
+  - Renamed SAC pillar to `"BDC Data Fabric for analytics with AI"`.
+- **High-Res Visual Upgrades for Reconly & MDR**:
+  - Converted user-provided screenshots to `public/assets/apps/reconly/c1_1.webp` and `public/assets/apps/mdr/c1_1.webp`.
+  - Curated Slide 1 executive titles, Clean Core bullet points, and Aayam spoken dialogue.
+- **Slide Title Cleanliness**:
+  - Replaced repetitive "Clean Core Architecture — Phase X" titles across BDC slides with clean "Slide X" markers.
+
+---
+
 ## [6.2.0] — 2026-11-05 — Per-Project Screenshots & Isolated Image Pipeline (Zero Shared Assets)
 
 ### Summary

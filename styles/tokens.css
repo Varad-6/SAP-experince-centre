@@ -1,5 +1,5 @@
 :root {
-  --bg: #F0F6FD;
+  --bg: #43A0FB;
   --surface: #FFFFFF;
   --surface-2: #E8F2FC;
   --border: #C8DCF0;
@@ -21,8 +21,8 @@
   --radius-lg: 16px;
   --shadow: 0 1px 3px rgba(10, 28, 56, 0.05), 0 8px 24px rgba(10, 28, 56, 0.08);
   --focus: 0 0 0 3px rgba(0, 132, 255, 0.35);
-  --sky-top: #BBDEFB;
-  --sky-bottom: #F0F6FD;
+  --sky-top: #43A0FB;
+  --sky-bottom: #E6EFFC;
   --bubble-bg: rgba(255, 255, 255, 0.94);
 }
 
@@ -34,8 +34,14 @@ html,
 body {
   margin: 0;
   width: 100%;
+  min-height: 100vh;
   overflow-x: hidden;
-  background: var(--bg);
+  background-color: #43A0FB;
+  background-image: url('/assets/sky_clouds_bg.webp');
+  background-size: cover;
+  background-position: center bottom;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   color: var(--text);
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   line-height: 1.55;

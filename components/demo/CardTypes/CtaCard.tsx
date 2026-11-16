@@ -35,28 +35,31 @@ export const CtaCard: React.FC<{ card: CardData; slug: string }> = ({ card, slug
                 href="https://sap-btp-ais-d0a7p7v8.launchpad.cfapps.eu30.hana.ondemand.com/site?siteId=a70e83a1-241a-44ba-9f8e-5a760483a8d2#podzone-dispatch"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="btn btn-primary inline-flex items-center gap-2 cursor-pointer"
               >
-                <button className="btn btn-primary inline-flex items-center gap-2">
-                  <Play className="w-4 h-4 fill-current" />
-                  <span>{act.label}</span>
-                </button>
+                <Play className="w-4 h-4 fill-current" />
+                <span>{act.label}</span>
               </a>
             );
           } else if (act.type === 'prereq') {
             return (
-              <Link key={i} href="/prerequisites">
-                <button className="btn btn-secondary inline-flex items-center gap-2">
-                  <FileText className="w-4 h-4" />
-                  <span>{act.label}</span>
-                </button>
+              <Link
+                key={i}
+                href="/prerequisites"
+                className="btn btn-secondary inline-flex items-center gap-2 cursor-pointer"
+              >
+                <FileText className="w-4 h-4" />
+                <span>{act.label}</span>
               </Link>
             );
           } else {
             return (
-              <Link key={i} href="/architecture">
-                <button className="btn btn-secondary inline-flex items-center gap-2">
-                  <span>{act.label}</span>
-                </button>
+              <Link
+                key={i}
+                href="/architecture"
+                className="btn btn-secondary inline-flex items-center gap-2 cursor-pointer"
+              >
+                <span>{act.label}</span>
               </Link>
             );
           }

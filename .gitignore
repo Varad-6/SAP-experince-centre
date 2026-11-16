@@ -5,6 +5,33 @@
 
 # testing
 /coverage
+/test-results/
+/tests/shots/
+
+# transient scratch assets and scripts
+public/assets/video/test_*
+public/assets/video/parachute_*
+public/assets/video/chute_*
+public/assets/video/raw_frame_*
+public/assets/video/user_screen_*
+public/assets/video/vref_*
+public/assets/video/media_*
+public/assets/video/aayam_*
+public/test_videos.html
+scripts/scratch_*
+scripts/check_*
+scripts/test_*
+scripts/debug_*
+scripts/inspect_*
+scripts/compare_*
+scripts/crop_*
+scripts/encode_*
+scripts/reencode_*
+scripts/prepare_background.py
+scripts/extract_user_vid.py
+scripts/find_*
+scripts/verify_*.py
+scripts/audit_live_buttons.py
 
 # next.js
 /.next/

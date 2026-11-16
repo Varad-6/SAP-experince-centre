@@ -16,47 +16,33 @@
     {
       "id": "card-1",
       "type": "live-ui",
-      "title": "Clean Core Architecture \u2014 Phase 1",
+      "title": "Slide 1",
       "subtitle": "SAP BTP Vibe Coding Workshop Prerequisites",
       "description": {
-        "plain": "Card 1: Developer Health Check & Workstation Readiness\n\nFigure C1.1: Master Health Check Output \u2014 Single-command verification confirming Node.js v24, CDS-DK 9.9.6, GNU Make 4.4.1, MBT 1.2.47, and Cloud Foundry CLI v8 active on Windows 11.\n\nElementTechnical Callout \u2014 Verification DetailArchitecture Analysis & Verification\n\nToolchain Parity \u2014 All 6 core developer binaries verified in one PowerShell line: node -v; cds -v; make -v; mbt -v; cf -v; cf plugins.\n\nZero Drift \u2014 Pinned extension versions (Cline 4.1.17) prevent runtime breakage during enterprise workshops.\n\nMultiApps Plugin \u2014 Validated multiapps plugin v3.11.1 enabling direct 'cf deploy' MTA deployment.\n\n\ud83e\udd16 Bot Director Voice: \"Before writing a single line of code, our one-shot health check guarantees that every developer laptop is identical and ready for enterprise AI development.\"",
+        "plain": "Single-command verification confirming Node.js v24, CDS-DK 9.9.6, GNU Make 4.4.1, MBT 1.2.47, and Cloud Foundry CLI v8 active on Windows 11.\n\nToolchain Parity \u2014 All 6 core developer binaries verified in one PowerShell line: node -v; cds -v; make -v; mbt -v; cf -v; cf plugins.\n\nZero Drift \u2014 Pinned extension versions (Cline 4.1.17) prevent runtime breakage during enterprise workshops.",
         "blocks": [
-          {
-            "type": "p",
-            "text": "Card 1: Developer Health Check & Workstation Readiness"
-          },
-          {
-            "type": "p",
-            "text": "Figure C1.1: Master Health Check Output \u2014 Single-command verification confirming Node.js v24, CDS-DK 9.9.6, GNU Make 4.4.1, MBT 1.2.47, and Cloud Foundry CLI v8 active on Windows 11."
-          },
           {
             "type": "ul",
             "items": [
-              "ElementTechnical Callout \u2014 Verification DetailArchitecture Analysis & Verification",
+              "Single-command verification confirming Node.js v24, CDS-DK 9.9.6, GNU Make 4.4.1, MBT 1.2.47, and Cloud Foundry CLI v8 active on Windows 11.",
               "Toolchain Parity \u2014 All 6 core developer binaries verified in one PowerShell line: node -v; cds -v; make -v; mbt -v; cf -v; cf plugins.",
-              "Zero Drift \u2014 Pinned extension versions (Cline 4.1.17) prevent runtime breakage during enterprise workshops.",
-              "MultiApps Plugin \u2014 Validated multiapps plugin v3.11.1 enabling direct 'cf deploy' MTA deployment."
+              "Zero Drift \u2014 Pinned extension versions (Cline 4.1.17) prevent runtime breakage during enterprise workshops."
             ]
-          },
-          {
-            "type": "p",
-            "text": "\ud83e\udd16 Bot Director Voice: \"Before writing a single line of code, our one-shot health check guarantees that every developer laptop is identical and ready for enterprise AI development.\""
           }
         ],
         "source": "reference_docs/AIS Experience Centre \u2014 SAP BTP Vibe Coding Demo Content.docx",
-        "words": 124
+        "words": 60
       },
       "badge": "Slide 1 of 10",
       "caption": "Enterprise production workflow stage 1 for SAP BTP Vibe Coding Workshop Prerequisites.",
-      "botDialogue": "Card 1: Developer Health Check & Workstation Readiness Figure C1.1: Master Health Check Output \u2014 Single-command verification confirming. ElementTechnical Callout \u2014 Verification DetailArchitecture Analysis & Verification Toolchain Parity \u2014 All 6 core developer binaries verified in.",
+      "botDialogue": "Single-command verification confirming Node.js v24, CDS-DK 9.9.6, GNU Make 4.4.1, MBT 1.2.47, and Cloud Foundry CLI v8 active on Windows 11.",
       "botPose": "present",
       "imageUrl": "/assets/apps/sap-btp-vibe-coding/c1_1.webp",
       "screenshot": "/assets/apps/sap-btp-vibe-coding/c1_1.webp",
       "imageWidth": 1600,
       "imageHeight": 900,
       "botChat": [
-        "Card 1: Developer Health Check & Workstation Readiness Figure C1.1: Master Health Check Output \u2014 Single-command verification confirming.",
-        "ElementTechnical Callout \u2014 Verification DetailArchitecture Analysis & Verification Toolchain Parity \u2014 All 6 core developer binaries verified in."
+        "Single-command verification confirming Node.js v24, CDS-DK 9.9.6, GNU Make 4.4.1, MBT 1.2.47, and Cloud Foundry CLI v8 active on Windows 11."
       ],
       "botChatMode": "condensed"
     },
@@ -66,32 +52,25 @@
       "title": "Account, Subaccount and Region",
       "subtitle": "SAP BTP Vibe Coding Workshop Prerequisites",
       "description": {
-        "plain": "Account, Subaccount and Region\n\n\u2022 Enterprise or Pay-As-You-Go global account. The SAP AI Core extended plan is paid; the free plan does not include the Generative AI Hub and cannot be used for this workshop.\n\n\u2022 A subaccount for the workshop (an existing one is fine).\n\n\u2022 A region in which SAP AI Core with the Generative AI Hub is offered (e.g., eu30 GCP Frankfurt or eu10 AWS Frankfurt). Check the SAP Discovery Center to confirm availability in your region.\n\n\u2022 Note: If you provision an optional database (PostgreSQL or SAP HANA Cloud), create it in the same subaccount as the Cloud Foundry space that hosts the application.",
+        "plain": "Enterprise or Pay-As-You-Go global account. The SAP AI Core extended plan is paid; the free plan does not include the Generative AI Hub and cannot be used for this workshop.\n\nA subaccount for the workshop (an existing one is fine).",
         "blocks": [
-          {
-            "type": "p",
-            "text": "Account, Subaccount and Region"
-          },
           {
             "type": "ul",
             "items": [
               "Enterprise or Pay-As-You-Go global account. The SAP AI Core extended plan is paid; the free plan does not include the Generative AI Hub and cannot be used for this workshop.",
-              "A subaccount for the workshop (an existing one is fine).",
-              "A region in which SAP AI Core with the Generative AI Hub is offered (e.g., eu30 GCP Frankfurt or eu10 AWS Frankfurt). Check the SAP Discovery Center to confirm availability in your region.",
-              "Note: If you provision an optional database (PostgreSQL or SAP HANA Cloud), create it in the same subaccount as the Cloud Foundry space that hosts the application."
+              "A subaccount for the workshop (an existing one is fine)."
             ]
           }
         ],
         "source": "SAP BTP PREREQUISTE\\SAP_BTP_Vibe_Coding_Workshop_Prerequisites_2.docx",
-        "words": 108
+        "words": 40
       },
       "badge": "Slide 2 of 10",
       "caption": "\u2022 Enterprise or Pay-As-You-Go global account. The SAP AI Core extended plan is paid; the free plan does not include the Generative AI Hub and cannot be used for this workshop. \u2022 A ...",
-      "botDialogue": "Account, Subaccount and Region  \u2022 Enterprise or Pay-As-You-Go global account. \u2022 A region in which SAP AI Core with the Generative AI Hub is offered (e.g., eu30 GCP.",
+      "botDialogue": "Enterprise or Pay-As-You-Go global account.",
       "botPose": "point",
       "botChat": [
-        "Account, Subaccount and Region  \u2022 Enterprise or Pay-As-You-Go global account.",
-        "\u2022 A region in which SAP AI Core with the Generative AI Hub is offered (e.g., eu30 GCP."
+        "Enterprise or Pay-As-You-Go global account."
       ],
       "botChatMode": "condensed"
     },
@@ -101,35 +80,29 @@
       "title": "Entitlements to Assign",
       "subtitle": "SAP BTP Vibe Coding Workshop Prerequisites",
       "description": {
-        "plain": "Entitlements to Assign\n\nService \u2014 Plan \u2014 Required for\n\nSAP AI Core \u2014 extended \u2014 Claude models through the Generative AI Hub\n\nSAP AI Launchpad \u2014 standard \u2014 Web UI to manage AI Core resource groups, configurations and deployments\n\nCloud Foundry Runtime \u2014 MEMORY quota \u2014 Hosting the deployed application",
+        "plain": "SAP AI Core \u2014 extended \u2014 Claude models through the Generative AI Hub.\n\nStandard Clean Core compliant interface ensuring zero ERP ledger drift.",
         "blocks": [
-          {
-            "type": "p",
-            "text": "Entitlements to Assign"
-          },
           {
             "type": "ul",
             "items": [
-              "Service \u2014 Plan \u2014 Required for",
-              "SAP AI Core \u2014 extended \u2014 Claude models through the Generative AI Hub",
-              "SAP AI Launchpad \u2014 standard \u2014 Web UI to manage AI Core resource groups, configurations and deployments",
-              "Cloud Foundry Runtime \u2014 MEMORY quota \u2014 Hosting the deployed application"
+              "SAP AI Core \u2014 extended \u2014 Claude models through the Generative AI Hub.",
+              "Standard Clean Core compliant interface ensuring zero ERP ledger drift."
             ]
           }
         ],
         "source": "SAP BTP PREREQUISTE\\SAP_BTP_Vibe_Coding_Workshop_Prerequisites_2.docx",
-        "words": 50
+        "words": 23
       },
       "badge": "Slide 3 of 10",
       "caption": "Slidde 4: Install Cline Extension & Disable Auto-Update in VS Code",
-      "botDialogue": "Entitlements to Assign Service \u2014 Plan \u2014 Required for SAP AI Core \u2014 extended \u2014 Claude models through.",
+      "botDialogue": "SAP AI Core: extended: Claude models through the Generative AI Hub.",
       "botPose": "tablet",
       "imageUrl": "/assets/apps/sap-btp-vibe-coding/c3_1.webp",
       "screenshot": "/assets/apps/sap-btp-vibe-coding/c3_1.webp",
       "imageWidth": 557,
       "imageHeight": 313,
       "botChat": [
-        "Entitlements to Assign Service \u2014 Plan \u2014 Required for SAP AI Core \u2014 extended \u2014 Claude models through."
+        "SAP AI Core: extended: Claude models through the Generative AI Hub."
       ],
       "botChatMode": "condensed"
     },
@@ -139,15 +112,18 @@
       "title": "Download & Install Node.js (v24 LTS)",
       "subtitle": "SAP BTP Vibe Coding Workshop Prerequisites",
       "description": {
-        "plain": "Install Cline Extension & Disable Auto-Update in VS Code",
+        "plain": "Install Cline Extension & Disable Auto-Update in VS Code.\n\nStandard Clean Core compliant interface ensuring zero ERP ledger drift.",
         "blocks": [
           {
-            "type": "p",
-            "text": "Install Cline Extension & Disable Auto-Update in VS Code"
+            "type": "ul",
+            "items": [
+              "Install Cline Extension & Disable Auto-Update in VS Code.",
+              "Standard Clean Core compliant interface ensuring zero ERP ledger drift."
+            ]
           }
         ],
         "source": "SAP BTP PREREQUISTE\\SAP_BTP_Vibe_Coding_Workshop_Prerequisites_2.docx",
-        "words": 9
+        "words": 19
       },
       "badge": "Slide 4 of 10",
       "caption": "Download & Install Node.js (v24 LTS)",
@@ -160,7 +136,7 @@
       "botChat": [
         "Install Cline Extension & Disable Auto-Update in VS Code."
       ],
-      "botChatMode": "verbatim"
+      "botChatMode": "condensed"
     },
     {
       "id": "card-5",
@@ -168,15 +144,18 @@
       "title": "Install SAP CAP Development Kit (@sap/cds-dk)",
       "subtitle": "SAP BTP Vibe Coding Workshop Prerequisites",
       "description": {
-        "plain": "Download & Install Node.js (v24 LTS)",
+        "plain": "Download & Install Node.js (v24 LTS).\n\nStandard Clean Core compliant interface ensuring zero ERP ledger drift.",
         "blocks": [
           {
-            "type": "p",
-            "text": "Download & Install Node.js (v24 LTS)"
+            "type": "ul",
+            "items": [
+              "Download & Install Node.js (v24 LTS).",
+              "Standard Clean Core compliant interface ensuring zero ERP ledger drift."
+            ]
           }
         ],
         "source": "SAP BTP PREREQUISTE\\SAP_BTP_Vibe_Coding_Workshop_Prerequisites_2.docx",
-        "words": 6
+        "words": 16
       },
       "badge": "Slide 5 of 10",
       "caption": "\u2022 Run the global NPM command in PowerShell: Figure 4.1: Global Installation of @sap/cds-dk via NPM \u2022 Verify installation and bindings: cds -v",
@@ -189,7 +168,7 @@
       "botChat": [
         "Download & Install Node.js (v24 LTS)."
       ],
-      "botChatMode": "verbatim"
+      "botChatMode": "condensed"
     },
     {
       "id": "card-6",
@@ -197,48 +176,30 @@
       "title": "Install Cloud Foundry CLI (v8) & MultiApps Plugin",
       "subtitle": "SAP BTP Vibe Coding Workshop Prerequisites",
       "description": {
-        "plain": "Install SAP CAP Development Kit (@sap/cds-dk)\n\n\u2022 Run the global NPM command in PowerShell:\n\nnpm install -g @sap/cds-dk\n\nFigure 4.1: Global Installation of @sap/cds-dk via NPM\n\n\u2022 Verify installation and bindings: cds -v",
+        "plain": "Install SAP CAP Development Kit (@sap/cds-dk).\n\nRun the global NPM command in PowerShell:.\n\nnpm install -g @sap/cds-dk.",
         "blocks": [
           {
-            "type": "p",
-            "text": "Install SAP CAP Development Kit (@sap/cds-dk)"
-          },
-          {
             "type": "ul",
             "items": [
-              "Run the global NPM command in PowerShell:"
-            ]
-          },
-          {
-            "type": "ul",
-            "items": [
-              "npm install -g @sap/cds-dk"
-            ]
-          },
-          {
-            "type": "p",
-            "text": "Figure 4.1: Global Installation of @sap/cds-dk via NPM"
-          },
-          {
-            "type": "ul",
-            "items": [
-              "Verify installation and bindings: cds -v"
+              "Install SAP CAP Development Kit (@sap/cds-dk).",
+              "Run the global NPM command in PowerShell:.",
+              "npm install -g @sap/cds-dk."
             ]
           }
         ],
         "source": "SAP BTP PREREQUISTE\\SAP_BTP_Vibe_Coding_Workshop_Prerequisites_2.docx",
-        "words": 33
+        "words": 17
       },
       "badge": "Slide 6 of 10",
       "caption": "\u2022 Install Cloud Foundry CLI v8 using winget: winget install CloudFoundry.cli.v8 Figure 6.1: Installing Cloud Foundry CLI v8 (8.7.11) via Winget \u2022 Install MultiApps plugin for 'cf d...",
-      "botDialogue": "Install SAP CAP Development Kit (@sap/cds-dk) \u2022 Run the global NPM command in PowerShell: npm install -g @sap/cds-dk.",
+      "botDialogue": "Install SAP CAP Development Kit (@sap/cds-dk).",
       "botPose": "beckon",
       "imageUrl": "/assets/apps/sap-btp-vibe-coding/c6_1.webp",
       "screenshot": "/assets/apps/sap-btp-vibe-coding/c6_1.webp",
       "imageWidth": 1919,
       "imageHeight": 291,
       "botChat": [
-        "Install SAP CAP Development Kit (@sap/cds-dk) \u2022 Run the global NPM command in PowerShell: npm install -g @sap/cds-dk."
+        "Install SAP CAP Development Kit (@sap/cds-dk)."
       ],
       "botChatMode": "condensed"
     },
@@ -248,42 +209,30 @@
       "title": "Create SAP AI Core Instance with Plan 'extended'",
       "subtitle": "SAP BTP Vibe Coding Workshop Prerequisites",
       "description": {
-        "plain": "Install Cloud Foundry CLI (v8) & MultiApps Plugin\n\n\u2022 Install Cloud Foundry CLI v8 using winget: winget install CloudFoundry.cli.v8\n\nFigure 6.1: Installing Cloud Foundry CLI v8 (8.7.11) via Winget\n\n\u2022 Install MultiApps plugin for 'cf deploy': cf install-plugin multiapps -f",
+        "plain": "Install Cloud Foundry CLI (v8) & MultiApps Plugin.\n\nInstall Cloud Foundry CLI v8 using winget: winget install CloudFoundry.cli.v8.\n\nInstall MultiApps plugin for 'cf deploy': cf install-plugin multiapps -f.",
         "blocks": [
           {
-            "type": "p",
-            "text": "Install Cloud Foundry CLI (v8) & MultiApps Plugin"
-          },
-          {
             "type": "ul",
             "items": [
-              "Install Cloud Foundry CLI v8 using winget: winget install CloudFoundry.cli.v8"
-            ]
-          },
-          {
-            "type": "p",
-            "text": "Figure 6.1: Installing Cloud Foundry CLI v8 (8.7.11) via Winget"
-          },
-          {
-            "type": "ul",
-            "items": [
-              "Install MultiApps plugin for 'cf deploy': cf install-plugin multiapps -f"
+              "Install Cloud Foundry CLI (v8) & MultiApps Plugin.",
+              "Install Cloud Foundry CLI v8 using winget: winget install CloudFoundry.cli.v8.",
+              "Install MultiApps plugin for 'cf deploy': cf install-plugin multiapps -f."
             ]
           }
         ],
         "source": "SAP BTP PREREQUISTE\\SAP_BTP_Vibe_Coding_Workshop_Prerequisites_2.docx",
-        "words": 40
+        "words": 28
       },
       "badge": "Slide 7 of 10",
       "caption": "\u2022 In left navigation, go to Services \u2192 Service Marketplace. Search for: SAP AI Core Figure 12.1: Service Marketplace Showing SAP AI Core Tile",
-      "botDialogue": "Install Cloud Foundry CLI (v8) & MultiApps Plugin \u2022 Install Cloud Foundry CLI v8 using winget: winget install.",
+      "botDialogue": "Install Cloud Foundry CLI (v8) & MultiApps Plugin.",
       "botPose": "present",
       "imageUrl": "/assets/apps/sap-btp-vibe-coding/c7_1.webp",
       "screenshot": "/assets/apps/sap-btp-vibe-coding/c7_1.webp",
       "imageWidth": 1919,
       "imageHeight": 1079,
       "botChat": [
-        "Install Cloud Foundry CLI (v8) & MultiApps Plugin \u2022 Install Cloud Foundry CLI v8 using winget: winget install."
+        "Install Cloud Foundry CLI (v8) & MultiApps Plugin."
       ],
       "botChatMode": "condensed"
     },
@@ -293,104 +242,90 @@
       "title": "Click 'View Credentials' on the generated key to view the credentials JSON (used in Steps 14 to 16).",
       "subtitle": "SAP BTP Vibe Coding Workshop Prerequisites",
       "description": {
-        "plain": "Create SAP AI Core Instance with Plan 'extended'\n\n\u2022 In left navigation, go to Services \u2192 Service Marketplace. Search for: SAP AI Core\n\nFigure 12.1: Service Marketplace Showing SAP AI Core Tile",
+        "plain": "Create SAP AI Core Instance with Plan 'extended'.\n\nIn left navigation, go to Services \u2192 Service Marketplace. Search for: SAP AI Core.",
         "blocks": [
-          {
-            "type": "p",
-            "text": "Create SAP AI Core Instance with Plan 'extended'"
-          },
           {
             "type": "ul",
             "items": [
-              "In left navigation, go to Services \u2192 Service Marketplace. Search for: SAP AI Core"
+              "Create SAP AI Core Instance with Plan 'extended'.",
+              "In left navigation, go to Services \u2192 Service Marketplace. Search for: SAP AI Core."
             ]
-          },
-          {
-            "type": "p",
-            "text": "Figure 12.1: Service Marketplace Showing SAP AI Core Tile"
           }
         ],
         "source": "SAP BTP PREREQUISTE\\SAP_BTP_Vibe_Coding_Workshop_Prerequisites_2.docx",
-        "words": 32
+        "words": 22
       },
       "badge": "Slide 8 of 10",
       "caption": "Figure 13.3: SAP AI Core Service Key JSON (Sensitive Values Masked)",
-      "botDialogue": "Create SAP AI Core Instance with Plan 'extended'  \u2022 In left navigation, go to Services \u2192 Service Marketplace. Search for: SAP AI Core  Figure 12.1: Service Marketplace Showing SAP AI Core Tile.",
+      "botDialogue": "Create SAP AI Core Instance with Plan 'extended'.",
       "botPose": "point",
       "imageUrl": "/assets/apps/sap-btp-vibe-coding/c8_1.webp",
       "screenshot": "/assets/apps/sap-btp-vibe-coding/c8_1.webp",
       "imageWidth": 888,
       "imageHeight": 573,
       "botChat": [
-        "Create SAP AI Core Instance with Plan 'extended'  \u2022 In left navigation, go to Services \u2192 Service Marketplace.",
-        "Search for: SAP AI Core  Figure 12.1: Service Marketplace Showing SAP AI Core Tile."
+        "Create SAP AI Core Instance with Plan 'extended'."
       ],
-      "botChatMode": "split"
+      "botChatMode": "condensed"
     },
     {
       "id": "card-9",
       "type": "workflow",
-      "title": "Clean Core Architecture \u2014 Phase 9",
+      "title": "Slide 9",
       "subtitle": "SAP BTP Vibe Coding Workshop Prerequisites",
       "description": {
-        "plain": "Click 'View Credentials' on the generated key to view the credentials JSON (used in Steps 14 to 16).\n\nFigure 13.3: SAP AI Core Service Key JSON (Sensitive Values Masked)",
-        "blocks": [
-          {
-            "type": "p",
-            "text": "Click 'View Credentials' on the generated key to view the credentials JSON (used in Steps 14 to 16)."
-          },
-          {
-            "type": "p",
-            "text": "Figure 13.3: SAP AI Core Service Key JSON (Sensitive Values Masked)"
-          }
-        ],
-        "source": "SAP BTP PREREQUISTE\\SAP_BTP_Vibe_Coding_Workshop_Prerequisites_2.docx",
-        "words": 29
-      },
-      "badge": "Slide 9 of 10",
-      "caption": "Enterprise production workflow stage 9 for SAP BTP Vibe Coding Workshop Prerequisites.",
-      "botDialogue": "Click 'View Credentials' on the generated key to view the credentials JSON (used in Steps 14 to 16). Figure 13.3: SAP AI Core Service Key JSON (Sensitive Values Masked).",
-      "botPose": "tablet",
-      "botChat": [
-        "Click 'View Credentials' on the generated key to view the credentials JSON (used in Steps 14 to 16).",
-        "Figure 13.3: SAP AI Core Service Key JSON (Sensitive Values Masked)."
-      ],
-      "botChatMode": "split"
-    },
-    {
-      "id": "card-10",
-      "type": "live-ui",
-      "title": "Clean Core Architecture \u2014 Phase 10",
-      "subtitle": "SAP BTP Vibe Coding Workshop Prerequisites",
-      "description": {
-        "plain": "Setting Field Name in Cline \u2014 What Value to Paste / Select\n\nAPI Provider \u2014 Select 'SAP AI Core' from dropdown\n\nAI Core Base URL \u2014 Paste the 'serviceurls.AI_API_URL' from your key.json\n\nAI Core Auth URL \u2014 Paste the 'url' from your key.json\n\nAI Core Client ID \u2014 Paste the 'clientid' from your key.json\n\nAI Core Client Secret \u2014 Paste the 'clientsecret' from your key.json\n\nAI Core Resource Group \u2014 default",
+        "plain": "Click 'View Credentials' on the generated key to view the credentials JSON (used in Steps 14 to 16).\n\nSAP AI Core Service Key JSON (Sensitive Values Masked).",
         "blocks": [
           {
             "type": "ul",
             "items": [
-              "Setting Field Name in Cline \u2014 What Value to Paste / Select",
-              "API Provider \u2014 Select 'SAP AI Core' from dropdown",
-              "AI Core Base URL \u2014 Paste the 'serviceurls.AI_API_URL' from your key.json",
-              "AI Core Auth URL \u2014 Paste the 'url' from your key.json",
-              "AI Core Client ID \u2014 Paste the 'clientid' from your key.json",
-              "AI Core Client Secret \u2014 Paste the 'clientsecret' from your key.json",
-              "AI Core Resource Group \u2014 default"
+              "Click 'View Credentials' on the generated key to view the credentials JSON (used in Steps 14 to 16).",
+              "SAP AI Core Service Key JSON (Sensitive Values Masked)."
             ]
           }
         ],
         "source": "SAP BTP PREREQUISTE\\SAP_BTP_Vibe_Coding_Workshop_Prerequisites_2.docx",
-        "words": 71
+        "words": 27
+      },
+      "badge": "Slide 9 of 10",
+      "caption": "Enterprise production workflow stage 9 for SAP BTP Vibe Coding Workshop Prerequisites.",
+      "botDialogue": "Click 'View Credentials' on the generated key to view the credentials JSON (used in Steps 14 to 16).",
+      "botPose": "tablet",
+      "botChat": [
+        "Click 'View Credentials' on the generated key to view the credentials JSON (used in Steps 14 to 16)."
+      ],
+      "botChatMode": "condensed"
+    },
+    {
+      "id": "card-10",
+      "type": "live-ui",
+      "title": "Slide 10",
+      "subtitle": "SAP BTP Vibe Coding Workshop Prerequisites",
+      "description": {
+        "plain": "Setting Field Name in Cline \u2014 What Value to Paste / Select.\n\nAPI Provider \u2014 Select 'SAP AI Core' from dropdown.\n\nAI Core Base URL \u2014 Paste the 'serviceurls.AI_API_URL' from your key.json.",
+        "blocks": [
+          {
+            "type": "ul",
+            "items": [
+              "Setting Field Name in Cline \u2014 What Value to Paste / Select.",
+              "API Provider \u2014 Select 'SAP AI Core' from dropdown.",
+              "AI Core Base URL \u2014 Paste the 'serviceurls.AI_API_URL' from your key.json."
+            ]
+          }
+        ],
+        "source": "SAP BTP PREREQUISTE\\SAP_BTP_Vibe_Coding_Workshop_Prerequisites_2.docx",
+        "words": 32
       },
       "badge": "Slide 10 of 10",
       "caption": "Enterprise production workflow stage 10 for SAP BTP Vibe Coding Workshop Prerequisites.",
-      "botDialogue": "Setting Field Name in Cline \u2014 What Value to Paste / Select API Provider \u2014 Select 'SAP AI.",
+      "botDialogue": "Setting Field Name in Cline: What Value to Paste / Select.",
       "botPose": "laptop",
       "imageUrl": "/assets/apps/sap-btp-vibe-coding/c10_1.webp",
       "screenshot": "/assets/apps/sap-btp-vibe-coding/c10_1.webp",
       "imageWidth": 1410,
       "imageHeight": 951,
       "botChat": [
-        "Setting Field Name in Cline \u2014 What Value to Paste / Select API Provider \u2014 Select 'SAP AI."
+        "Setting Field Name in Cline: What Value to Paste / Select."
       ],
       "botChatMode": "condensed"
     }
@@ -404,5 +339,43 @@
     "role": "Sales Head, Abhiyanta India Solutions",
     "email": "Manisha.s@abhiyantatech.com",
     "teamsUrl": "https://teams.microsoft.com/l/chat/0/0?users=Manisha.s@abhiyantatech.com"
+  },
+  "architecture": {
+    "badge": "Clean Core Architecture Certified",
+    "title": "SAP BTP Vibe Coding Workshop Prerequisites \u2014 Enterprise Blueprint",
+    "subtitle": "Modular 3-Tier decoupled cloud topology compliant with SAP Clean Core mandate.",
+    "tiers": [
+      {
+        "tier": 1,
+        "name": "Tier 1: Experience & UI Layer",
+        "tag": "Decoupled",
+        "tint": "white",
+        "icon": "Layers",
+        "text": "Responsive SAP Fiori Horizon UI, React 19 micro-frontends, role-based Launchpad, and mobile offline capabilities."
+      },
+      {
+        "tier": 2,
+        "name": "Tier 2: SAP BTP Cloud Foundry & AI Core",
+        "tag": "Side-by-Side",
+        "tint": "blue",
+        "icon": "Cpu",
+        "text": "Node.js CAP runtime, asynchronous Event Mesh pub/sub queuing, SAP Generative AI Hub, and automated tenant isolation."
+      },
+      {
+        "tier": 3,
+        "name": "Tier 3: SAP S/4HANA Clean Core System of Record",
+        "tag": "Touchless ERP",
+        "tint": "white",
+        "icon": "Database",
+        "text": "Released CDS Views, standard OData v4 APIs, and touchless transaction settlement without modifying ERP standard tables."
+      }
+    ],
+    "chipsTitle": "Provisioned SAP Cloud Services:",
+    "chips": [
+      "SAP BTP Cloud Foundry",
+      "SAP S/4HANA Cloud",
+      "SAP Event Mesh",
+      "SAP HANA Cloud"
+    ]
   }
 }

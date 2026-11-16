@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { AppContentSchema } from '@/lib/schema';
 import { z } from 'zod';
 import { BotSprite, HeadPosition } from '@/components/BotSprite';
@@ -37,6 +38,7 @@ export interface SlideDeckProps {
 }
 
 export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
+  const router = useRouter();
   // Slide index 0..totalCards-1; slide index totalCards = Closing
   const [slideIndex, setSlideIndex] = useState<number>(0);
   const [isContactOpen, setIsContactOpen] = useState<boolean>(false);
@@ -118,8 +120,10 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
     if (slideIndex < totalCards) {
       const nextIdx = slideIndex + 1;
       setSlideIndex(nextIdx);
+    } else {
+      router.push(`/solution/${slug}`);
     }
-  }, [slideIndex, totalCards]);
+  }, [slideIndex, totalCards, router, slug]);
 
   const goPrev = useCallback(() => {
     if (slideIndex > 0) {
@@ -228,16 +232,18 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
   const progressPercent = isClosing ? 100 : Math.round(((slideIndex + 1) / totalCards) * 100);
 
   return (
-    <div className="h-auto min-h-[calc(100vh-56px)] lg:h-[calc(100vh-56px)] bg-[var(--bg)] text-[var(--text)] px-4 sm:px-6 py-4 max-w-[1400px] mx-auto flex flex-col justify-between overflow-y-auto lg:overflow-hidden">
+    <div className="h-screen max-h-screen bg-transparent text-[var(--text)] p-3 sm:p-4 max-w-[1440px] mx-auto flex flex-col justify-between overflow-hidden">
       {/* 1. Top Header Bar */}
-      <div className="shrink-0 mb-3">
+      <div className="shrink-0 mb-2">
         <div className="flex items-center justify-between gap-4 mb-2">
           <Link
             href={`/solution/${slug}`}
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--text-dim)] hover:text-[var(--brand)] transition-colors truncate max-w-[260px] sm:max-w-md"
+            prefetch={true}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--surface)] hover:bg-[var(--surface-2)] text-xs font-semibold text-[var(--navy)] transition-colors shadow-xs truncate max-w-[280px] sm:max-w-md"
           >
             <ChevronLeft className="w-4 h-4 shrink-0" />
-            <span className="truncate">{appData.title}</span>
+            <span>Back to Overview</span>
+            <span className="text-[var(--text-dim)] font-normal hidden sm:inline">• {appData.title.split('—')[0]}</span>
           </Link>
 
           <div className="flex items-center gap-3">
@@ -263,8 +269,8 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
         <div className="lg:col-span-8 flex flex-col justify-between card p-5 sm:p-6 bg-[var(--surface)] border border-[var(--border)] shadow-[var(--shadow)] overflow-hidden">
           {/* Card Title Header */}
           {!isClosing && currentCard && (
-            <div className="shrink-0 flex items-center justify-between gap-4 mb-3 pb-2.5 border-b border-[var(--border)]">
-              <div>
+            <div className="shrink-0 flex items-start sm:items-center justify-between gap-3 mb-3 pb-2.5 border-b border-[var(--border)]">
+              <div className="min-w-0 flex-1">
                 <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--brand)] block">
                   {currentCard.type.toUpperCase()}
                 </span>
@@ -272,7 +278,10 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
                   {currentCard.title}
                 </h3>
               </div>
-              <span className="chip">Clean Core</span>
+              <div className="shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[var(--surface-2)] border border-[var(--border)] text-xs font-semibold text-[var(--navy)] whitespace-nowrap shadow-2xs">
+                <ShieldCheck className="w-3.5 h-3.5 text-[var(--ok)] shrink-0" />
+                <span>Clean Core</span>
+              </div>
             </div>
           )}
 

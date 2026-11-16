@@ -2,11 +2,12 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, ChevronRight, ShieldCheck, Mail, Play, Network } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ChevronRight, ShieldCheck, Mail, Play, Network } from 'lucide-react';
 import { BotSprite } from '@/components/BotSprite';
 import { BotBubble } from '@/components/BotBubble';
 import { ContactDialog } from '@/components/ContactDialog';
 import { ArchitectureDialog } from '@/components/ArchitectureDialog';
+import type { ArchitectureData } from '@/lib/schema';
 
 interface SolutionDetailProps {
   solution: {
@@ -40,6 +41,7 @@ interface SolutionDetailProps {
       phone?: string;
       teamsUrl?: string;
     };
+    architecture?: ArchitectureData;
   } | null;
 }
 
@@ -64,9 +66,20 @@ export const SolutionDetailClient: React.FC<SolutionDetailProps> = ({
   };
 
   return (
-    <div className="min-h-[calc(100vh-56px)] bg-[var(--bg)] text-[var(--text)] px-6 sm:px-8 py-8 sm:py-12 max-w-[1200px] mx-auto pb-24">
-      {/* 1. Breadcrumb: Pillars > [Pillar Title] > [Solution Title] */}
+    <div className="min-h-[calc(100vh-56px)] bg-transparent text-[var(--text)] px-6 sm:px-8 py-8 sm:py-12 max-w-[1200px] mx-auto pb-24">
+      {/* 1. Navigation Row: Prominent Back Button & Breadcrumbs */}
       <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
+        <div className="flex items-center gap-3">
+          <Link
+            href={pillar ? `/pillar/${pillar.id}` : '/pillars'}
+            prefetch={true}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--surface)] hover:bg-[var(--surface-2)] text-xs font-semibold text-[var(--navy)] transition-colors shadow-xs"
+          >
+            <ArrowLeft className="w-3.5 h-3.5" />
+            <span>Back to {pillar ? pillar.title : 'All Pillars'}</span>
+          </Link>
+        </div>
+
         <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-[var(--text-dim)] flex-wrap">
           <Link href="/pillars" className="hover:text-[var(--brand)] transition-colors">
             Pillars
@@ -112,28 +125,41 @@ export const SolutionDetailClient: React.FC<SolutionDetailProps> = ({
           </p>
         </div>
 
-        {/* 2 Top Buttons */}
-        <div className="flex flex-wrap sm:flex-nowrap items-center gap-3 shrink-0">
-          <Link
-            href={`/solution/${solution.slug}/demo`}
-            onMouseEnter={() => setBotPose('beckon')}
-            onMouseLeave={() => setBotPose('present')}
-            className="w-full sm:w-auto"
-          >
-            <button className="btn btn-primary w-full sm:w-auto inline-flex items-center justify-center gap-2 shadow-sm">
+        {/* Top Action Buttons */}
+        <div className="flex flex-col sm:items-end gap-2.5 shrink-0">
+          <div className="flex flex-wrap sm:flex-nowrap items-center gap-3">
+            <Link
+              href={`/solution/${solution.slug}/demo`}
+              prefetch={true}
+              onMouseEnter={() => setBotPose('beckon')}
+              onMouseLeave={() => setBotPose('present')}
+              className="btn btn-primary w-full sm:w-auto inline-flex items-center justify-center gap-2 shadow-sm cursor-pointer"
+            >
               <Play className="w-4 h-4 fill-current" />
               <span>Interactive demo</span>
               <ArrowRight className="w-4 h-4 ml-0.5" />
-            </button>
-          </Link>
+            </Link>
 
+            {appData?.architecture && (
+              <button
+                type="button"
+                onClick={openArchitecture}
+                className="btn btn-secondary w-full sm:w-auto inline-flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <Network className="w-4 h-4" />
+                <span>Architecture</span>
+              </button>
+            )}
+          </div>
+
+          {/* Contact Details Button underneath */}
           <button
             type="button"
-            onClick={openArchitecture}
-            className="btn btn-secondary w-full sm:w-auto inline-flex items-center justify-center gap-2"
+            onClick={() => setIsContactOpen(true)}
+            className="btn btn-secondary w-full sm:w-auto bg-white border border-[var(--border)] text-[var(--brand)] hover:bg-slate-50 font-semibold inline-flex items-center justify-center gap-2 shadow-2xs"
           >
-            <Network className="w-4 h-4" />
-            <span>Architecture</span>
+            <Mail className="w-4 h-4 text-[var(--brand)]" />
+            <span>Contact details</span>
           </button>
         </div>
       </div>
@@ -152,50 +178,26 @@ export const SolutionDetailClient: React.FC<SolutionDetailProps> = ({
         </div>
       </div>
 
-      {/* 4. Action Row + Docked Bot in Present/Beckon Pose */}
-      <div className="p-6 sm:p-8 rounded-2xl bg-[var(--surface)] border border-[var(--border)] shadow-[var(--shadow)] flex flex-col md:flex-row items-center justify-between gap-6">
-        {/* Left Action Buttons */}
-        <div className="flex flex-wrap items-center gap-4 w-full md:w-auto">
-          <button
-            type="button"
-            onClick={() => setIsContactOpen(true)}
-            className="btn btn-secondary flex-1 sm:flex-initial inline-flex items-center justify-center gap-2"
-          >
-            <Mail className="w-4 h-4" />
-            <span>Contact for details</span>
-          </button>
+      {/* 5. Persistent Floating Aayam Companion Dock (Fixed to bottom right of viewport) */}
+      <div className="fixed bottom-4 right-6 z-40 pointer-events-auto flex items-end gap-3 select-none">
+        <BotBubble
+          text={teaserText}
+          placement="left"
+          durationMs={12000}
+          showTail={true}
+        />
 
-          <Link
-            href={`/solution/${solution.slug}/demo`}
-            onMouseEnter={() => setBotPose('beckon')}
-            onMouseLeave={() => setBotPose('present')}
-            className="flex-1 sm:flex-initial"
-          >
-            <button className="btn btn-primary w-full inline-flex items-center justify-center gap-2">
-              <Play className="w-4 h-4 fill-current" />
-              <span>Interactive demo</span>
-              <ArrowRight className="w-4 h-4 ml-0.5" />
-            </button>
-          </Link>
-        </div>
-
-        {/* Right: Bot Docked beside card in 'present'/'beckon' pose with speech bubble */}
-        <div className="flex items-center gap-3 max-w-md w-full md:w-auto">
-          <BotBubble
-            text={teaserText}
-            placement="left"
-            durationMs={9000}
-            showTail={true}
+        <div
+          className="flex flex-col items-center shrink-0 cursor-pointer group"
+          onClick={() => setBotPose((prev) => (prev === 'present' ? 'beckon' : 'present'))}
+          title="Lead Architect Aayam"
+        >
+          <BotSprite
+            pose={botPose}
+            heightPx={135}
+            alt={`Lead Architect Bot ${botPose}`}
           />
-
-          <div className="shrink-0 flex flex-col items-center">
-            <BotSprite
-              pose={botPose}
-              heightPx={130}
-              alt={`Lead Architect Bot ${botPose}`}
-            />
-            <div className="w-16 h-2 bg-black/10 rounded-full blur-[1px] mt-[-2px]" />
-          </div>
+          <div className="w-16 h-2 bg-black/10 rounded-full blur-[1px] mt-[-2px] group-hover:bg-black/20 transition-colors" />
         </div>
       </div>
 
@@ -204,7 +206,7 @@ export const SolutionDetailClient: React.FC<SolutionDetailProps> = ({
         isOpen={isArchOpen}
         onClose={() => setIsArchOpen(false)}
         solutionTitle={solution.title}
-        sapComponents={appData?.sapComponents}
+        architecture={appData?.architecture}
       />
 
       {/* Contact Dialog Modal */}

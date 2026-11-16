@@ -62,11 +62,11 @@ export const LiveUiCard: React.FC<{ card: CardData }> = ({ card }) => {
     <div className="space-y-3 w-full">
       {/* UI Screenshot Canvas with Hotspots and Zoom Action */}
       <div className="relative rounded-xl overflow-hidden border border-[var(--border)] bg-slate-950/5 shadow-sm group">
-        <div className="relative w-full flex items-center justify-center max-h-[380px] sm:max-h-[440px] overflow-hidden bg-black/5">
+        <div className="relative w-full flex items-center justify-center max-h-[min(48vh,420px)] overflow-hidden bg-black/5">
           <img
             src={screenshot}
             alt={card.title}
-            className="w-full h-auto max-h-[380px] sm:max-h-[440px] object-contain block mx-auto select-none"
+            className="w-full h-auto max-h-[min(48vh,420px)] object-contain block mx-auto select-none"
             loading="eager"
           />
 
@@ -157,14 +157,16 @@ export const LiveUiCard: React.FC<{ card: CardData }> = ({ card }) => {
       {/* Fullscreen Lightbox Modal */}
       {isZoomOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex flex-col items-center justify-center p-4 sm:p-6"
+          style={{ zIndex: 70 }}
+          className="fixed inset-0 z-[70] bg-black/90 backdrop-blur-sm flex flex-col items-center justify-center p-4 sm:p-6 animate-fadeIn"
           onClick={() => setIsZoomOpen(false)}
         >
           <button
             type="button"
             onClick={() => setIsZoomOpen(false)}
             aria-label="Close fullscreen view"
-            className="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors cursor-pointer"
+            style={{ zIndex: 71 }}
+            className="absolute top-4 right-4 z-[71] p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors cursor-pointer"
           >
             <X className="w-6 h-6" />
           </button>
