@@ -5,6 +5,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [6.62.0] - 2026-11-21 - Production Deployment to SAP BTP Cloud Foundry (aamya)
+
+### Summary
+Successfully deployed the antislop-refined AIS Experience Centre to SAP BTP Cloud Foundry:
+- **Build Verification**:
+  - Validated all content schemas with `npm run content:check`.
+  - Passed TypeScript compilation with 0 errors (`npx tsc --noEmit`).
+  - Exported 50/50 static routes into `./out` (`npm run build`).
+  - Confirmed persistent `pushstate: enabled` configuration in `out/Staticfile`.
+- **Deployment Details**:
+  - Endpoint: `https://api.cf.eu30.hana.ondemand.com`
+  - Org: `Abhiyanta_India Solutions Private Limited_sap-btp-ais-d0a7p7v8`
+  - Space: `dev`
+  - App: `aamya`
+  - Route: `https://aamya-resplendent-cheetah-am.cfapps.eu30.hana.ondemand.com`
+  - Instance Status: 1/1 running and healthy (`ready: true`).
+
+---
+
 ## [6.61.0] - 2026-11-21 - Antislop & Enterprise Refinement for Architect Inquiries
 
 ### Summary
