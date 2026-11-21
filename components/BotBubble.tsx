@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef, useCallback, useLayoutEffect } from
 import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 import { placeBubble, BubblePlacement } from '@/lib/placeBubble';
+import { QuickPrompt } from '@/lib/quickPrompts';
 
 export interface BotBubbleProps {
   text: string;
@@ -20,6 +21,11 @@ export interface BotBubbleProps {
   className?: string;
   durationMs?: number;
   showTail?: boolean;
+  quickPrompts?: QuickPrompt[];
+  onSelectPrompt?: (prompt: QuickPrompt) => void;
+  activePromptId?: string | null;
+  onResetPrompt?: () => void;
+  activeQuestion?: string | null;
 }
 
 export const BotBubble: React.FC<BotBubbleProps> = ({
@@ -33,6 +39,11 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
   className = '',
   durationMs,
   showTail = true,
+  quickPrompts,
+  onSelectPrompt,
+  activePromptId,
+  onResetPrompt,
+  activeQuestion,
 }) => {
   const [displayedCount, setDisplayedCount] = useState<number>(0);
   const [isTyping, setIsTyping] = useState<boolean>(true);
@@ -85,7 +96,7 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
         setBubbleDim({ w: Math.ceil(rect.width), h: Math.ceil(rect.height) });
       }
     }
-  }, [text]);
+  }, [text, activeQuestion, quickPrompts, activePromptId]);
 
   // Global 'C' shortcut to toggle captions / speech bubbles, Space to complete typing
   useEffect(() => {
@@ -210,11 +221,11 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
     };
   }, [text, stagePhase, prefersReducedMotion]);
 
-  // Auto dismiss after readingDuration
+  // Auto dismiss after readingDuration (generous wait time so users have ample time to read)
   useEffect(() => {
     if (isTyping || !visible || stagePhase < 4) return;
 
-    const autoDuration = durationMs ?? Math.max(3500, text.length * 45);
+    const autoDuration = durationMs ?? Math.max(25000, text.length * 80);
     const timer = setTimeout(() => {
       setVisible(false);
       onDismiss?.();
@@ -230,11 +241,8 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
       }
       setDisplayedCount(text.length);
       setIsTyping(false);
-    } else {
-      setVisible(false);
-      onDismiss?.();
     }
-  }, [isTyping, text, onDismiss]);
+  }, [isTyping, text]);
 
   const handleCloseClick = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -326,14 +334,29 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
           left: -9999,
           width: 'max-content',
           maxWidth: 'min(380px, calc(100vw - 32px))',
-          minWidth: 240,
+          minWidth: 260,
         }}
       >
         <div className="px-4 py-3">
           <div className="flex items-center justify-between gap-2 mb-1.5">
             <span className="text-[11px] font-bold uppercase tracking-wider">{speakerName}</span>
           </div>
+          {activeQuestion && (
+            <div className="mb-2 px-2.5 py-1 text-[11px] font-medium">
+              Q: {activeQuestion}
+            </div>
+          )}
           <p className="text-[13.5px] leading-relaxed m-0 font-normal">{text}</p>
+          {quickPrompts && quickPrompts.length > 0 && (
+            <div className="mt-2.5 pt-2 flex flex-wrap gap-1.5">
+              <span className="w-full text-[10px] font-bold uppercase tracking-wider">Ask Aayam:</span>
+              {quickPrompts.map((p) => (
+                <span key={p.id} className="text-[11px] font-medium px-2 py-0.5 rounded-full">
+                  {p.label}
+                </span>
+              ))}
+            </div>
+          )}
           <div className="mt-2 text-[10px] opacity-70">Press [C] for captions</div>
         </div>
       </div>
@@ -348,8 +371,8 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
             height: dot.size,
             left: dot.cx - dot.size / 2,
             top: dot.cy - dot.size / 2,
-            backgroundColor: 'rgba(255, 255, 255, 0.86)',
-            border: '1px solid rgba(10, 31, 68, 0.12)',
+            backgroundColor: 'var(--bubble-bg, rgba(255, 255, 255, 0.86))',
+            border: '1px solid var(--border, rgba(10, 31, 68, 0.12))',
             boxShadow: '0 1px 3px rgba(0, 0, 0, 0.06)',
             opacity: stagePhase >= dot.step ? 1 : 0,
           }}
@@ -378,15 +401,15 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
         <div
           className="relative px-4 py-3 cursor-pointer rounded-2xl shadow-lg border hover:border-[var(--brand)] transition-colors overflow-hidden [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
           style={{
-            backgroundColor: 'rgba(255, 255, 255, 0.92)',
-            borderColor: 'rgba(10, 31, 68, 0.12)',
+            backgroundColor: 'var(--bubble-bg, rgba(255, 255, 255, 0.92))',
+            borderColor: 'var(--border, rgba(10, 31, 68, 0.12))',
             boxShadow: '0 8px 24px -4px rgba(10, 31, 68, 0.12)',
           }}
         >
           {/* Header */}
           <div className="flex items-center justify-between gap-2 mb-1.5">
             <div className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-[var(--brand)] animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-[var(--brand)]" />
               <span className="text-[11px] font-bold tracking-wider text-[var(--brand)] uppercase">
                 {speakerName}
               </span>
@@ -400,6 +423,26 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
               <X size={13} />
             </button>
           </div>
+
+          {/* Active Question Badge */}
+          {activeQuestion && (
+            <div className="mb-2 px-2.5 py-1 rounded-lg bg-[var(--brand-50,rgba(0,112,242,0.08))] border border-[var(--brand-200,rgba(0,112,242,0.2))] flex items-center justify-between gap-1.5 text-[11px] text-[var(--brand)] font-medium">
+              <span className="truncate">Q: {activeQuestion}</span>
+              {onResetPrompt && (
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onResetPrompt();
+                  }}
+                  className="shrink-0 text-[10px] font-semibold underline hover:opacity-80 cursor-pointer"
+                  title="Return to slide narration"
+                >
+                  Reset
+                </button>
+              )}
+            </div>
+          )}
 
           {/* Reserved full-height text block */}
           <div className="relative text-[13.5px] leading-relaxed text-[var(--navy)] m-0 font-normal">
@@ -419,6 +462,39 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
             </span>
           </div>
 
+          {/* Ask Aayam Quick Prompt Chips */}
+          {quickPrompts && quickPrompts.length > 0 && (
+            <div className="mt-2.5 pt-2 border-t border-[var(--border)] flex flex-wrap gap-1.5">
+              <span className="w-full text-[10px] font-bold uppercase tracking-wider text-[var(--text-dim)]">
+                Ask Aayam:
+              </span>
+              {quickPrompts.map((p) => {
+                const isActive = activePromptId === p.id;
+                return (
+                  <button
+                    key={p.id}
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (isActive) {
+                        onResetPrompt?.();
+                      } else {
+                        onSelectPrompt?.(p);
+                      }
+                    }}
+                    className={`text-[11px] font-medium px-2 py-0.5 rounded-full border transition-all cursor-pointer ${
+                      isActive
+                        ? 'bg-[var(--brand)] text-white border-[var(--brand)] shadow-xs'
+                        : 'bg-[var(--surface-2,rgba(0,0,0,0.03))] text-[var(--text)] border-[var(--border)] hover:border-[var(--brand)] hover:text-[var(--brand)]'
+                    }`}
+                  >
+                    {p.label}
+                  </button>
+                );
+              })}
+            </div>
+          )}
+
           {/* Footer Controls */}
           <div className="mt-2 flex items-center justify-between text-[10px] text-[var(--text-dim)]">
             <span>{isTyping ? 'Typing...' : 'Click to dismiss'}</span>
@@ -436,7 +512,7 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
                 height: 0,
                 borderLeft: '7px solid transparent',
                 borderRight: '7px solid transparent',
-                borderTop: '8px solid rgba(255, 255, 255, 0.86)',
+                borderTop: '8px solid var(--bubble-bg, rgba(255, 255, 255, 0.86))',
                 filter: 'drop-shadow(0 1px 1px rgba(10, 31, 68, 0.08))',
               }}
               aria-hidden="true"
