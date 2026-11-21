@@ -242,7 +242,7 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
           </div>
 
           <div className="max-w-lg mx-auto space-y-2">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--brand-50)] text-[var(--brand-600)] text-xs font-semibold">
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[var(--brand-50)] text-[var(--brand-600)] text-xs font-semibold border border-[var(--brand-200,rgba(0,112,242,0.2))]">
               <ShieldCheck className="w-3.5 h-3.5" />
               <span>Clean Core Walkthrough Complete</span>
             </div>
@@ -451,25 +451,24 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
         </div>
 
         {/* Right Column (4 cols): Slide Description & Bot Presenter Column */}
-        <div className="lg:col-span-4 flex flex-col justify-between p-3 sm:p-4 lg:p-5 card bg-gradient-to-b from-[var(--surface)] to-[var(--surface-2)] border border-[var(--border)] shadow-[var(--shadow)] overflow-hidden h-full min-h-0 max-h-full">
+        <div className="lg:col-span-4 flex flex-col justify-between p-3 sm:p-4 lg:p-5 card bg-[var(--surface)] border border-[var(--border)] shadow-[var(--shadow)] overflow-hidden h-full min-h-0 max-h-full">
           {/* Header Row: Slide Label + Hide Guide Button */}
           <div className="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-[var(--border)] shrink-0">
-            <div className="text-[11px] sm:text-[12px] font-bold uppercase tracking-wider text-[var(--text-dim)] truncate">
+            <div className="text-xs font-semibold text-[var(--navy)] truncate">
               {isClosing
-                ? 'SUMMARY · Architecture Verification'
+                ? 'Summary · Architecture Verification'
                 : currentCard?.title?.toLowerCase().startsWith('slide')
-                ? `SLIDE ${slideIndex + 1} · ${currentCard?.type?.toUpperCase()}`
-                : `SLIDE ${slideIndex + 1} · ${currentCard?.title || ''}`}
+                ? `Slide ${slideIndex + 1} · ${currentCard?.type}`
+                : `Slide ${slideIndex + 1} · ${currentCard?.title || ''}`}
             </div>
 
             {/* Guide Toggle: Hide / Show */}
             <button
               type="button"
               onClick={() => setIsGuideHidden((prev) => !prev)}
-              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[var(--surface)] hover:bg-[var(--surface-2)] text-[10px] sm:text-[11px] font-bold text-slate-700 hover:text-[var(--brand)] border border-[var(--border)] shadow-2xs transition-all cursor-pointer shrink-0"
+              className="inline-flex items-center px-2.5 py-1 rounded-md bg-[var(--surface)] hover:bg-[var(--surface-2)] text-xs font-medium text-slate-700 hover:text-[var(--brand)] border border-[var(--border)] transition-colors cursor-pointer shrink-0"
               aria-label={isGuideHidden ? 'Show Guide Mascot' : 'Hide Guide Mascot'}
             >
-              <span className={`w-1.5 h-1.5 rounded-full ${isGuideHidden ? 'bg-slate-400' : 'bg-[var(--brand)]'}`} />
               <span>{isGuideHidden ? 'Show Guide' : 'Hide Guide'}</span>
             </button>
           </div>
@@ -539,16 +538,10 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
             <div ref={stageRef} className="w-full flex-1 min-h-0 lg:min-h-[38%] flex flex-col justify-end items-center relative mt-3 lg:mt-0 pt-2 border-t border-[var(--border)]">
               {/* Mobile In-Card Speech Bubble */}
               {isMobile && currentDialogue && (
-                <div className="w-full mb-3 p-3.5 rounded-xl bg-[var(--surface-2)] border border-[var(--border)] shadow-xs">
-                  <div className="flex items-center justify-between gap-1.5 mb-1.5">
-                    <div className="flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[var(--brand)]" />
-                      <span className="text-[11px] font-bold tracking-wider text-[var(--brand)] uppercase">
-                        Aayam • Architect Guide
-                      </span>
-                    </div>
-                    <span className="text-[10px] font-semibold text-[var(--brand-600)] bg-[var(--brand-50)] px-2 py-0.5 rounded-full border border-[var(--border)]">
-                      Clean Core
+                <div className="w-full mb-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200 shadow-xs">
+                  <div className="flex items-center justify-between gap-1.5 mb-1.5 pb-1 border-b border-slate-200/80">
+                    <span className="text-xs font-semibold text-slate-800">
+                      Aayam · Solution Guide
                     </span>
                   </div>
                   {selectedPrompt && (
@@ -651,10 +644,9 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
               <button
                 type="button"
                 onClick={() => setIsGuideHidden(false)}
-                className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[var(--brand)] hover:underline cursor-pointer"
+                className="text-xs font-semibold text-[var(--brand)] hover:underline cursor-pointer"
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-[var(--brand)]" />
-                <span>Show Guide Mascot</span>
+                Show Guide Mascot
               </button>
             </div>
           )}

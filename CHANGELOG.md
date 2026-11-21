@@ -5,6 +5,31 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [6.63.0] - 2026-11-21 - Complete Elimination of AI Slop Artifacts across Dialogue & Guidance Components
+
+### Summary
+Executed a comprehensive antislop visual and interaction audit in strict alignment with `/antislop:antislop-ui` guidelines:
+- **Removed Simulated Typewriter Lag & Blinking Cursor**:
+  - Eliminated the artificial character-by-character animation loop and pulsing blue cursor box.
+  - Architecture guidance renders immediately with full legibility and zero reader latency.
+- **Removed Cartoon Thought Dots**:
+  - Removed comic-book thought circles and artificial multi-stage stagger delays.
+  - Replaced with a smooth, professional 150ms ease-out card transition.
+- **Removed Decorative Status Dots & Footer Noise**:
+  - Removed all decorative colored dots beside speaker names, guide toggles, and headers.
+  - Stripped footer noise ("Typing...", "Click to dismiss", "Press [C] for captions").
+  - Replaced with a clean, standard top-right dismiss action.
+- **Removed Redundant Capsule Pills**:
+  - Replaced generic capsule pill badges with structured enterprise tokens (`rounded-md`).
+  - Eliminated full-column background gradients in favor of authentic Fiori surface styling.
+- **Verification**:
+  - All content schemas validated (`npm run content:check`).
+  - TypeScript compiled with 0 errors (`npx tsc --noEmit`).
+  - 50/50 static pages exported into `./out` (`npm run build`).
+  - Zero em dashes across all modified files.
+
+---
+
 ## [6.62.0] - 2026-11-21 - Production Deployment to SAP BTP Cloud Foundry (aamya)
 
 ### Summary
