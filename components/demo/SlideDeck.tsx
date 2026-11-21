@@ -552,15 +552,18 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
                     </span>
                   </div>
                   {selectedPrompt && (
-                    <div className="mb-2 px-2.5 py-1 rounded-lg bg-[var(--brand-50,rgba(0,112,242,0.08))] border border-[var(--brand-200,rgba(0,112,242,0.2))] flex items-center justify-between gap-1.5 text-[11px] text-[var(--brand)] font-medium">
-                      <span className="truncate">Q: {selectedPrompt.question}</span>
+                    <div className="mb-2.5 px-2.5 py-1.5 rounded-md bg-slate-50 border border-slate-200/90 flex items-center justify-between gap-2 text-[11px] text-slate-700">
+                      <span className="truncate font-medium">
+                        <span className="text-[var(--brand)] font-semibold mr-1">Inquiry:</span>
+                        {selectedPrompt.question}
+                      </span>
                       <button
                         type="button"
                         onClick={handleResetPrompt}
-                        className="shrink-0 text-[10px] font-semibold underline hover:opacity-80 cursor-pointer"
+                        className="shrink-0 text-[10.5px] font-medium text-[var(--brand)] hover:underline cursor-pointer"
                         title="Return to slide narration"
                       >
-                        Reset
+                        Return
                       </button>
                     </div>
                   )}
@@ -568,9 +571,9 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
                     {currentDialogue}
                   </p>
                   {quickPrompts && quickPrompts.length > 0 && (
-                    <div className="mt-2.5 pt-2 border-t border-[var(--border)] flex flex-wrap gap-1.5">
-                      <span className="w-full text-[10px] font-bold uppercase tracking-wider text-[var(--text-dim)]">
-                        Ask Aayam:
+                    <div className="mt-2.5 pt-2 border-t border-slate-200/80 flex flex-wrap gap-1.5">
+                      <span className="w-full text-[10.5px] font-medium text-slate-500">
+                        Inquire with Architect:
                       </span>
                       {quickPrompts.map((p) => {
                         const isActive = selectedPrompt?.id === p.id;
@@ -585,10 +588,10 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ appData, slug }) => {
                                 handleSelectPrompt(p);
                               }
                             }}
-                            className={`text-[11px] font-medium px-2 py-0.5 rounded-full border transition-all cursor-pointer ${
+                            className={`text-[11px] font-medium px-2.5 py-1 rounded-md border transition-colors cursor-pointer ${
                               isActive
                                 ? 'bg-[var(--brand)] text-white border-[var(--brand)] shadow-xs'
-                                : 'bg-white text-[var(--text)] border-[var(--border)] hover:border-[var(--brand)]'
+                                : 'bg-slate-50/90 text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-100 hover:text-[var(--brand)]'
                             }`}
                           >
                             {p.label}

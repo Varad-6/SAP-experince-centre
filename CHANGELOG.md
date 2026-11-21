@@ -5,6 +5,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [6.61.0] - 2026-11-21 - Antislop & Enterprise Refinement for Architect Inquiries
+
+### Summary
+Refactored the dialogue inquiry section according to `/antislop:antislop-ui` standards to deliver an authentic SAP Fiori Horizon enterprise experience:
+- **Removal of Decorative Emojis**:
+  - Eliminated all casual emojis from question chips across all 13 enterprise solutions.
+  - Formatted prompt titles into clean, crisp text tokens: `Target User Groups`, `Clean Core`, `Business ROI`, and `3-Tier Architecture`.
+- **Antislop UI Hierarchy & Styling**:
+  - Replaced generic capsule pill shapes (`rounded-full`) with structured enterprise tokens (`rounded-md` with subtle border and matte elevation).
+  - Replaced aggressive all-caps header with natural enterprise label `Inquire with Architect:`.
+  - Upgraded active question banner to an understated, professional state bar with crisp typography and clear "Return" action.
+- **Verification**:
+  - All schemas validated (`npm run content:check`).
+  - TypeScript compiled with 0 errors (`npx tsc --noEmit`).
+  - 50/50 static pages successfully exported (`npm run build`).
+  - Strict compliance with zero em dashes rule.
+
+---
+
 ## [6.60.0] - 2026-11-21 - Interactive "Ask Aayam" Question Chips with Solution-Specific Architecture & ROI Guidance
 
 ### Summary

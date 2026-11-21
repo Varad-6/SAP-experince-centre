@@ -342,16 +342,16 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
             <span className="text-[11px] font-bold uppercase tracking-wider">{speakerName}</span>
           </div>
           {activeQuestion && (
-            <div className="mb-2 px-2.5 py-1 text-[11px] font-medium">
-              Q: {activeQuestion}
+            <div className="mb-2 px-2.5 py-1.5 text-[11px] font-medium">
+              Inquiry: {activeQuestion}
             </div>
           )}
           <p className="text-[13.5px] leading-relaxed m-0 font-normal">{text}</p>
           {quickPrompts && quickPrompts.length > 0 && (
             <div className="mt-2.5 pt-2 flex flex-wrap gap-1.5">
-              <span className="w-full text-[10px] font-bold uppercase tracking-wider">Ask Aayam:</span>
+              <span className="w-full text-[10.5px] font-medium text-slate-500">Inquire with Architect:</span>
               {quickPrompts.map((p) => (
-                <span key={p.id} className="text-[11px] font-medium px-2 py-0.5 rounded-full">
+                <span key={p.id} className="text-[11px] font-medium px-2.5 py-1 rounded-md">
                   {p.label}
                 </span>
               ))}
@@ -424,10 +424,13 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
             </button>
           </div>
 
-          {/* Active Question Badge */}
+          {/* Active Question Bar */}
           {activeQuestion && (
-            <div className="mb-2 px-2.5 py-1 rounded-lg bg-[var(--brand-50,rgba(0,112,242,0.08))] border border-[var(--brand-200,rgba(0,112,242,0.2))] flex items-center justify-between gap-1.5 text-[11px] text-[var(--brand)] font-medium">
-              <span className="truncate">Q: {activeQuestion}</span>
+            <div className="mb-2.5 px-2.5 py-1.5 rounded-md bg-slate-50 border border-slate-200/90 flex items-center justify-between gap-2 text-[11px] text-slate-700">
+              <span className="truncate font-medium">
+                <span className="text-[var(--brand)] font-semibold mr-1">Inquiry:</span>
+                {activeQuestion}
+              </span>
               {onResetPrompt && (
                 <button
                   type="button"
@@ -435,10 +438,10 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
                     e.stopPropagation();
                     onResetPrompt();
                   }}
-                  className="shrink-0 text-[10px] font-semibold underline hover:opacity-80 cursor-pointer"
+                  className="shrink-0 text-[10.5px] font-medium text-[var(--brand)] hover:underline cursor-pointer"
                   title="Return to slide narration"
                 >
-                  Reset
+                  Return
                 </button>
               )}
             </div>
@@ -462,11 +465,11 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
             </span>
           </div>
 
-          {/* Ask Aayam Quick Prompt Chips */}
+          {/* Architecture Inquiry Chips */}
           {quickPrompts && quickPrompts.length > 0 && (
-            <div className="mt-2.5 pt-2 border-t border-[var(--border)] flex flex-wrap gap-1.5">
-              <span className="w-full text-[10px] font-bold uppercase tracking-wider text-[var(--text-dim)]">
-                Ask Aayam:
+            <div className="mt-2.5 pt-2 border-t border-slate-200/80 flex flex-wrap gap-1.5">
+              <span className="w-full text-[10.5px] font-medium text-slate-500">
+                Inquire with Architect:
               </span>
               {quickPrompts.map((p) => {
                 const isActive = activePromptId === p.id;
@@ -482,10 +485,10 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
                         onSelectPrompt?.(p);
                       }
                     }}
-                    className={`text-[11px] font-medium px-2 py-0.5 rounded-full border transition-all cursor-pointer ${
+                    className={`text-[11px] font-medium px-2.5 py-1 rounded-md border transition-colors cursor-pointer ${
                       isActive
                         ? 'bg-[var(--brand)] text-white border-[var(--brand)] shadow-xs'
-                        : 'bg-[var(--surface-2,rgba(0,0,0,0.03))] text-[var(--text)] border-[var(--border)] hover:border-[var(--brand)] hover:text-[var(--brand)]'
+                        : 'bg-slate-50/90 text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-100 hover:text-[var(--brand)]'
                     }`}
                   >
                     {p.label}
