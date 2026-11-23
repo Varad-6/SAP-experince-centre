@@ -5,6 +5,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [6.64.0] - 2026-11-23 - Production Deployment to SAP BTP Cloud Foundry (aamya)
+
+### Summary
+Successfully deployed the antislop-refined AIS Experience Centre to SAP BTP Cloud Foundry:
+- **Deployment Details**:
+  - Re-authenticated with Cloud Foundry API (`https://api.cf.eu30.hana.ondemand.com`).
+  - Target Organization: `Abhiyanta_India Solutions Private Limited_sap-btp-ais-d0a7p7v8`.
+  - Target Space: `dev`.
+  - Application: `aamya`.
+  - Live Endpoint: `https://aamya-resplendent-cheetah-am.cfapps.eu30.hana.ondemand.com`.
+  - Instance State: 1/1 running and healthy (`ready: true`).
+
+---
+
 ## [6.63.0] - 2026-11-21 - Complete Elimination of AI Slop Artifacts across Dialogue & Guidance Components
 
 ### Summary
